@@ -211,7 +211,7 @@
           {
             "name": "Corrección Base",
             "price": "desde 189€",
-            "duration": "4–6 horas",
+            "duration": "2–4 horas",
             "description": "Corrección inicial para swirl marks leves y oxidación.",
             "includes": [
               "Pulido mecánico de una fase",
@@ -225,7 +225,7 @@
           {
             "name": "Preparación Cerámica",
             "price": "desde 339€",
-            "duration": "8–10 horas",
+            "duration": "3–5 horas",
             "description": "Corrección completa de dos fases, listo para recubrimiento cerámico.",
             "includes": [
               "Pulido mecánico de dos fases",
@@ -240,7 +240,7 @@
           {
             "name": "Cerámica Premium",
             "price": "desde 459€",
-            "duration": "Día completo",
+            "duration": "6–8 horas",
             "description": "Corrección máxima + recubrimiento cerámico profesional.",
             "includes": [
               "Corrección total de pintura multifase",

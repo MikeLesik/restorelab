@@ -211,7 +211,7 @@
           {
             "name": "Base Correction",
             "price": "from 189€",
-            "duration": "4–6 hours",
+            "duration": "2–4 hours",
             "description": "Entry-level correction for light swirls and oxidation.",
             "includes": [
               "Single-stage machine polishing",
@@ -225,7 +225,7 @@
           {
             "name": "Ceramic Prep",
             "price": "from 339€",
-            "duration": "8–10 hours",
+            "duration": "3–5 hours",
             "description": "Full two-stage correction, ready for ceramic coating.",
             "includes": [
               "Two-stage machine polishing",
@@ -240,7 +240,7 @@
           {
             "name": "Premium Ceramic",
             "price": "from 459€",
-            "duration": "Full day",
+            "duration": "6–8 hours",
             "description": "Maximum correction + professional ceramic coating.",
             "includes": [
               "Full multi-stage paint correction",
