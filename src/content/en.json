@@ -1,0 +1,370 @@
+{
+  "lang": "en",
+  "meta": {
+    "home": {
+      "title": "RestoreLab — Mobile Surface Restoration in Lisbon & Cascais",
+      "description": "Premium mobile paint correction, glass scratch removal and yacht gelcoat restoration. On-site service in Lisbon, Cascais, Sintra & Oeiras. No repainting. No replacement.",
+      "og_image": "/images/og-home.jpg"
+    },
+    "services": {
+      "title": "Our Services — Car, Glass & Yacht Restoration | RestoreLab",
+      "description": "Car paint correction, glass polishing, acrylic restoration and yacht gelcoat polishing. Mobile service across Lisbon & Cascais."
+    },
+    "car_paint": {
+      "title": "Car Paint Correction & Polishing Lisbon | RestoreLab",
+      "description": "Professional mobile paint correction in Lisbon. Remove swirl marks, scratches and restore deep gloss. Ceramic coating preparation. No repainting needed."
+    },
+    "glass": {
+      "title": "Glass Scratch Removal & Polishing Lisbon | RestoreLab",
+      "description": "Remove windshield scratches, water spots and wiper marks. Mobile glass polishing service in Lisbon, Cascais and Sintra. No replacement needed."
+    },
+    "acrylic": {
+      "title": "Acrylic & Polycarbonate Restoration Portugal | RestoreLab",
+      "description": "Yacht windows, boat hatches and clear plastic panel restoration. UV oxidation removal. Cost-effective alternative to replacement."
+    },
+    "yacht": {
+      "title": "Yacht Gelcoat Polishing Cascais | RestoreLab",
+      "description": "Professional yacht gelcoat polishing and oxidation removal in Cascais marinas. Marine-grade finishing. Mobile service across Lisbon area."
+    },
+    "pricing": {
+      "title": "Pricing — Car Polishing & Yacht Restoration | RestoreLab",
+      "description": "Transparent pricing for car paint correction, glass polishing and yacht gelcoat restoration. Packages from 189€. Free estimate via WhatsApp."
+    },
+    "cases": {
+      "title": "Before & After Cases — RestoreLab",
+      "description": "Real before and after results from our mobile restoration work. Car paint correction, glass polishing and yacht gelcoat restoration in Portugal."
+    },
+    "contact": {
+      "title": "Contact RestoreLab — Get a Free Quote",
+      "description": "Contact RestoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Lisbon, Cascais and Sintra."
+    },
+    "privacy": {
+      "title": "Privacy Policy | RestoreLab",
+      "description": "RestoreLab privacy policy — how we collect and use your personal data."
+    },
+    "terms": {
+      "title": "Terms & Conditions | RestoreLab",
+      "description": "RestoreLab terms and conditions of service."
+    }
+  },
+  "nav": {
+    "services": "Services",
+    "pricing": "Pricing",
+    "cases": "Cases",
+    "contact": "Contact",
+    "cta": "Get Quote"
+  },
+  "hero": {
+    "headline": "Restore. Don't Replace.",
+    "subheadline": "Mobile paint, glass and yacht surface restoration in Lisbon & Cascais.",
+    "cta_car": "Car Restoration",
+    "cta_yacht": "Yacht Restoration",
+    "sticky_cta": "Get Quote via WhatsApp",
+    "badge": "Premium Mobile Service"
+  },
+  "social_proof": {
+    "rating": "5.0",
+    "reviews_count": "47+ reviews",
+    "platform": "Google Reviews",
+    "areas": ["Lisbon", "Cascais", "Sintra", "Oeiras"],
+    "areas_label": "Areas served",
+    "testimonials": [
+      {
+        "name": "David M.",
+        "location": "Cascais",
+        "text": "Incredible result on my BMW. Deep scratches completely gone, paint looks like new. Came to my parking, no hassle. Highly recommended.",
+        "rating": 5,
+        "service": "Car Paint Correction"
+      },
+      {
+        "name": "Sofia R.",
+        "location": "Lisbon",
+        "text": "My windshield had deep wiper scratches after 3 years. RestoreLab removed them completely — saved me from a €400 replacement. Fantastic job!",
+        "rating": 5,
+        "service": "Glass Polishing"
+      },
+      {
+        "name": "João A.",
+        "location": "Oeiras Marina",
+        "text": "Our yacht gelcoat was badly oxidized. After their treatment it looks like we just bought the boat. Professional, fast and excellent value.",
+        "rating": 5,
+        "service": "Yacht Gelcoat"
+      },
+      {
+        "name": "Anna K.",
+        "location": "Sintra",
+        "text": "The acrylic windows on my boat were completely yellow. Now they're crystal clear. Amazing transformation — I can't believe it's the same boat.",
+        "rating": 5,
+        "service": "Acrylic Restoration"
+      }
+    ]
+  },
+  "services": {
+    "section_title": "What We Restore",
+    "section_subtitle": "Specialized in surfaces that others can't fix without replacement.",
+    "items": [
+      {
+        "id": "car-paint-correction",
+        "title": "Car Paint Correction",
+        "subtitle": "Swirl marks, scratches & gloss restoration",
+        "icon": "car",
+        "features": [
+          "Swirl mark removal",
+          "Scratch correction",
+          "Deep gloss restoration",
+          "Ceramic coating preparation",
+          "No repainting required",
+          "On-site mobile service"
+        ],
+        "tag": "Most popular"
+      },
+      {
+        "id": "glass-polishing",
+        "title": "Glass Scratch Removal",
+        "subtitle": "Windshields, windows & architectural glass",
+        "icon": "glass",
+        "features": [
+          "Car windshield restoration",
+          "Side & rear windows",
+          "Architectural glass panels",
+          "Yacht glass surfaces",
+          "Water spot removal",
+          "Wiper scratch elimination"
+        ],
+        "tag": null
+      },
+      {
+        "id": "acrylic-restoration",
+        "title": "Acrylic & Polycarbonate",
+        "subtitle": "Yacht windows, hatches & clear panels",
+        "icon": "acrylic",
+        "features": [
+          "Yacht windows restoration",
+          "Boat hatches polishing",
+          "Clear plastic panel clarity",
+          "UV oxidation removal",
+          "Full transparency restored",
+          "Cost-effective vs replacement"
+        ],
+        "tag": null
+      },
+      {
+        "id": "yacht-gelcoat",
+        "title": "Yacht Gelcoat Polishing",
+        "subtitle": "Oxidation removal & marine-grade finishing",
+        "icon": "yacht",
+        "features": [
+          "Oxidation removal",
+          "Shine & gloss restoration",
+          "Protection coating",
+          "Marine-grade finishing",
+          "Above & below waterline",
+          "At marina, no haulout needed"
+        ],
+        "tag": "Yacht specialists"
+      }
+    ],
+    "learn_more": "Learn more",
+    "get_quote": "Get Quote"
+  },
+  "how_it_works": {
+    "section_title": "How It Works",
+    "section_subtitle": "Simple process, zero hassle. We come to you.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Send Photos",
+        "description": "Send us photos of the damage via WhatsApp. We'll assess the condition and feasibility."
+      },
+      {
+        "number": "02",
+        "title": "Receive Estimate",
+        "description": "Get a transparent price estimate within hours. No hidden fees, no surprises."
+      },
+      {
+        "number": "03",
+        "title": "We Come to You",
+        "description": "We arrive at your location — home, office, or marina — with all equipment."
+      },
+      {
+        "number": "04",
+        "title": "Restore & Protect",
+        "description": "We restore and protect the surface to factory-level quality. You see the result."
+      }
+    ]
+  },
+  "pricing": {
+    "section_title": "Transparent Pricing",
+    "section_subtitle": "No surprises. Exact estimate after photo review.",
+    "cta_custom": "Need a custom quote?",
+    "cta_whatsapp": "Ask via WhatsApp",
+    "categories": [
+      {
+        "id": "car",
+        "title": "Car Polishing Packages",
+        "packages": [
+          {
+            "name": "Base Correction",
+            "price": "from 189€",
+            "duration": "4–6 hours",
+            "description": "Entry-level correction for light swirls and oxidation.",
+            "includes": [
+              "Single-stage machine polishing",
+              "Swirl mark & light scratch removal",
+              "Hand wash & clay bar decontamination",
+              "Final sealant protection"
+            ],
+            "best_for": "Daily driver with minor defects",
+            "highlight": false
+          },
+          {
+            "name": "Ceramic Prep",
+            "price": "from 339€",
+            "duration": "8–10 hours",
+            "description": "Full two-stage correction, ready for ceramic coating.",
+            "includes": [
+              "Two-stage machine polishing",
+              "Heavy swirl & scratch removal",
+              "Paint depth measurements",
+              "Panel wipedown & IPA cleanse",
+              "Ceramic base coat application"
+            ],
+            "best_for": "Vehicles preparing for ceramic coating",
+            "highlight": true
+          },
+          {
+            "name": "Premium Ceramic",
+            "price": "from 459€",
+            "duration": "Full day",
+            "description": "Maximum correction + professional ceramic coating.",
+            "includes": [
+              "Full multi-stage paint correction",
+              "Professional ceramic coating (2+ layers)",
+              "Windshield rain repellent treatment",
+              "Tyre dressing & trim restoration",
+              "12-month protection guarantee"
+            ],
+            "best_for": "Luxury & sports cars, maximum protection",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "yacht",
+        "title": "Yacht Gelcoat Polishing",
+        "packages": [
+          {
+            "name": "Gelcoat Polish",
+            "price": "from 15€/ft",
+            "duration": "Depends on size",
+            "description": "Full oxidation removal and gloss restoration for gelcoat.",
+            "includes": [
+              "Oxidation removal",
+              "Machine polishing to high gloss",
+              "Protective wax or sealant",
+              "At-marina service"
+            ],
+            "best_for": "Sailboats and motorboats up to 50ft",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "glass",
+        "title": "Glass & Acrylic",
+        "packages": [
+          {
+            "name": "Glass / Acrylic Restoration",
+            "price": "Custom quote",
+            "duration": "1–4 hours",
+            "description": "Price based on surface size and damage severity.",
+            "includes": [
+              "Surface assessment",
+              "Machine polishing of glass or acrylic",
+              "Water spot & scratch removal",
+              "Hydrophobic coating (optional)"
+            ],
+            "best_for": "Windshields, side windows, yacht ports",
+            "highlight": false
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "section_title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Do you come to my location?",
+        "answer": "Yes — we are a fully mobile service. We come to your home, office, or marina with all professional equipment. No need to drop off your car or boat anywhere."
+      },
+      {
+        "question": "Can all scratches be removed?",
+        "answer": "Deep scratches that have cut through the clear coat to the primer or metal cannot be fully removed by polishing alone. We will honestly assess your surfaces and tell you what's achievable before we start."
+      },
+      {
+        "question": "How long does the service take?",
+        "answer": "Car polishing typically takes 4–10 hours depending on the package and vehicle size. Glass or acrylic jobs take 1–4 hours. Yacht gelcoat depends on the boat length."
+      },
+      {
+        "question": "What areas do you cover?",
+        "answer": "We cover Lisbon, Cascais, Sintra, Oeiras, Almada and surrounding municipalities. For yacht work we cover all major marinas in the Lisbon coastal area."
+      },
+      {
+        "question": "How do I get a quote?",
+        "answer": "The fastest way is to send us photos of the damage via WhatsApp. We respond the same day with an honest estimate and no obligation."
+      },
+      {
+        "question": "Is paint correction safe for my car?",
+        "answer": "Yes, when performed by trained professionals with proper equipment. We always measure paint thickness before and during the process to ensure safe paint removal levels."
+      }
+    ]
+  },
+  "area": {
+    "section_title": "Areas We Serve",
+    "section_subtitle": "Mobile service across the Lisbon Metropolitan Area.",
+    "areas": [
+      { "name": "Lisbon", "note": "City & greater area" },
+      { "name": "Cascais", "note": "All marinas covered" },
+      { "name": "Sintra", "note": "Including Estoril" },
+      { "name": "Oeiras", "note": "Business & residential" },
+      { "name": "Almada", "note": "South bank" },
+      { "name": "Setúbal", "note": "On request" }
+    ]
+  },
+  "lead_form": {
+    "section_title": "Get Your Free Estimate",
+    "section_subtitle": "Send us details and we'll come back with an honest quote.",
+    "fields": {
+      "name": "Your Name",
+      "name_placeholder": "John Silva",
+      "phone": "Phone / WhatsApp",
+      "phone_placeholder": "+351 9XX XXX XXX",
+      "service": "Service Needed",
+      "service_options": [
+        "Car Paint Correction",
+        "Glass Scratch Removal",
+        "Acrylic / Polycarbonate Restoration",
+        "Yacht Gelcoat Polishing",
+        "Other / Not sure"
+      ],
+      "location": "Your Location",
+      "location_placeholder": "e.g. Cascais, marina name...",
+      "message": "Additional Details",
+      "message_placeholder": "Describe the damage or issue. The more detail, the better our estimate.",
+      "photo_note": "You can also send photos directly via WhatsApp after submitting.",
+      "submit": "Send via WhatsApp"
+    },
+    "whatsapp_template": "Hello RestoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}."
+  },
+  "footer": {
+    "tagline": "Premium mobile surface restoration.",
+    "services_title": "Services",
+    "contact_title": "Contact",
+    "legal_title": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "copyright": "© 2025 RestoreLab. All rights reserved.",
+    "made_in": "Made in Portugal."
+  }
+}

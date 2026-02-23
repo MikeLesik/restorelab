@@ -1,0 +1,88 @@
+---
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+}
+
+const { t, lang } = Astro.props;
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351912345678';
+const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-16">
+
+  <!-- Background grid pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+  </div>
+
+  <!-- Glow effects -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-sm font-medium mb-8">
+      <span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
+      {t.hero.badge}
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight tracking-tight">
+      {t.hero.headline.split('.')[0]}.
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-300">
+        {t.hero.headline.split('.')[1]?.trim() || ''}
+      </span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
+      {t.hero.subheadline}
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <a
+        href={`/${lang}/services/car-paint-correction`}
+        class="btn-primary text-base px-8 py-4 text-lg"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        {t.hero.cta_car}
+      </a>
+      <a
+        href={`/${lang}/services/yacht-gelcoat`}
+        class="btn-secondary text-base px-8 py-4 text-lg"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+        {t.hero.cta_yacht}
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+      <div class="text-center">
+        <div class="text-3xl font-display font-bold text-white mb-1">5.0★</div>
+        <div class="text-xs text-white/40 uppercase tracking-wider">Google Rating</div>
+      </div>
+      <div class="text-center border-x border-white/10">
+        <div class="text-3xl font-display font-bold text-white mb-1">500+</div>
+        <div class="text-xs text-white/40 uppercase tracking-wider">Jobs Done</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-display font-bold text-white mb-1">100%</div>
+        <div class="text-xs text-white/40 uppercase tracking-wider">Mobile</div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <div class="w-px h-8 bg-white/20 animate-pulse"></div>
+    </div>
+  </div>
+</section>

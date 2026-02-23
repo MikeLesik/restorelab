@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import en from '../../content/en.json';
+import es from '../../content/es.json';
+import pt from '../../content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+---
+
+<BaseLayout
+  title={t.meta.privacy.title}
+  description={t.meta.privacy.description}
+  lang={lang}
+  t={t}
+  currentPath="/privacy"
+>
+  <div class="pt-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 class="section-title text-4xl mb-8">{t.footer.privacy}</h1>
+
+      <div class="prose prose-invert prose-sm max-w-none text-white/70 space-y-8">
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">1. Information We Collect</h2>
+          <p>When you contact us via our website form or WhatsApp, we collect the information you voluntarily provide, including your name, phone number, location, and details about your vehicle or vessel.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">2. How We Use Your Information</h2>
+          <p>Your information is used solely to respond to your service inquiry, provide a quote, and schedule your appointment. We do not sell or share your data with third parties for marketing purposes.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">3. Data Retention</h2>
+          <p>We retain your contact information only as long as necessary to complete the service and for any follow-up warranty purposes. You may request deletion of your data at any time.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">4. Cookies</h2>
+          <p>This website uses minimal cookies for basic functionality only. We do not use tracking or advertising cookies.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">5. Your Rights (GDPR)</h2>
+          <p>Under GDPR, you have the right to access, correct, or delete your personal data. Contact us via WhatsApp or our contact form to exercise these rights.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">6. Contact</h2>
+          <p>For privacy-related inquiries, please contact us via the <a href={`/${lang}/contact`} class="text-brand-accent hover:underline">contact page</a>.</p>
+          <p class="mt-2 text-white/40 text-xs">Last updated: January 2025</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

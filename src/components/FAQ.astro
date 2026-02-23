@@ -1,0 +1,71 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="py-24 bg-brand-navy/30">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16">
+      <h2 class="section-title">{t.faq.section_title}</h2>
+    </div>
+
+    <div class="space-y-4" id="faq-list">
+      {t.faq.items.map((item: any, i: number) => (
+        <div class="card" data-faq={i}>
+          <button
+            class="w-full text-left flex items-center justify-between gap-4 faq-trigger"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-white pr-4">{item.question}</span>
+            <svg class="w-5 h-5 text-white/40 flex-shrink-0 transition-transform duration-200 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden mt-4 pt-4 border-t border-white/10">
+            <p class="text-white/60 text-sm leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": t.faq.items.map((item: any) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+})} />
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('[data-faq]');
+      const answer = card?.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = !answer?.classList.contains('hidden');
+
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach((a) => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach((ic) => ic.classList.remove('rotate-180'));
+      document.querySelectorAll('.faq-trigger').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+
+      if (!isOpen) {
+        answer?.classList.remove('hidden');
+        icon?.classList.add('rotate-180');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

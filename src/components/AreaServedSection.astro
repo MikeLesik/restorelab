@@ -1,0 +1,61 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div>
+        <h2 class="section-title">{t.area.section_title}</h2>
+        <p class="section-subtitle mb-10">{t.area.section_subtitle}</p>
+
+        <div class="grid grid-cols-2 gap-3">
+          {t.area.areas.map((area: any) => (
+            <div class="flex items-center gap-3 p-4 bg-white/3 border border-white/8 rounded-xl">
+              <div class="w-2 h-2 bg-brand-accent rounded-full flex-shrink-0"></div>
+              <div>
+                <div class="text-white font-medium text-sm">{area.name}</div>
+                <div class="text-white/35 text-xs">{area.note}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Map placeholder / visual -->
+      <div class="relative">
+        <div class="aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl bg-brand-navy border border-white/10 overflow-hidden flex items-center justify-center">
+          <div class="text-center p-8">
+            <div class="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-white text-xl mb-2">Lisbon Area</h3>
+            <p class="text-white/40 text-sm">Mobile service · We come to you</p>
+
+            <div class="mt-8 grid grid-cols-3 gap-2">
+              {t.area.areas.slice(0, 6).map((area: any) => (
+                <div class="relative">
+                  <div class="w-3 h-3 bg-brand-accent rounded-full mx-auto mb-1 animate-pulse"></div>
+                  <div class="text-xs text-white/50 text-center">{area.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative glow -->
+        <div class="absolute inset-0 -z-10 blur-3xl opacity-20 bg-brand-accent rounded-3xl"></div>
+      </div>
+    </div>
+  </div>
+</section>

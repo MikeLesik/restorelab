@@ -1,0 +1,35 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="py-24 bg-brand-navy/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16">
+      <h2 class="section-title">{t.how_it_works.section_title}</h2>
+      <p class="section-subtitle mx-auto">{t.how_it_works.section_subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+
+      <!-- Connecting line (desktop) -->
+      <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent"></div>
+
+      {t.how_it_works.steps.map((step: any, i: number) => (
+        <div class="relative text-center">
+          <!-- Step number -->
+          <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 mb-6 mx-auto">
+            <span class="font-display font-bold text-brand-accent text-xl">{step.number}</span>
+          </div>
+
+          <h3 class="font-display font-bold text-white text-lg mb-3">{step.title}</h3>
+          <p class="text-white/50 text-sm leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

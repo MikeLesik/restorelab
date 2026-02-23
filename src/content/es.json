@@ -1,0 +1,370 @@
+{
+  "lang": "es",
+  "meta": {
+    "home": {
+      "title": "RestoreLab — Restauración Móvil de Superficies en Lisboa & Cascais",
+      "description": "Servicio premium móvil de corrección de pintura, eliminación de arañazos en vidrio y restauración de gelcoat de yates. Servicio en Lisboa, Cascais, Sintra y Oeiras. Sin repintura. Sin sustitución.",
+      "og_image": "/images/og-home.jpg"
+    },
+    "services": {
+      "title": "Servicios — Restauración Auto, Vidrio y Yate | RestoreLab",
+      "description": "Corrección de pintura de automóvil, pulido de vidrio, restauración de acrílico y pulido de gelcoat de yates. Servicio móvil en Lisboa y Cascais."
+    },
+    "car_paint": {
+      "title": "Corrección de Pintura Automóvil Lisboa | RestoreLab",
+      "description": "Corrección de pintura móvil profesional en Lisboa. Elimine swirl marks, arañazos y restaure el brillo profundo. Preparación para recubrimiento cerámico. Sin repintura."
+    },
+    "glass": {
+      "title": "Eliminación de Arañazos en Vidrio Lisboa | RestoreLab",
+      "description": "Elimine arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Lisboa, Cascais y Sintra. Sin sustitución."
+    },
+    "acrylic": {
+      "title": "Restauración de Acrílico y Policarbonato Portugal | RestoreLab",
+      "description": "Restauración de ventanas de yates, escotillas y paneles plásticos. Eliminación de oxidación UV. Alternativa económica a la sustitución."
+    },
+    "yacht": {
+      "title": "Pulido de Gelcoat de Yate Cascais | RestoreLab",
+      "description": "Pulido profesional de gelcoat y eliminación de oxidación en las marinas de Cascais. Acabado de calidad marina. Servicio móvil en el área de Lisboa."
+    },
+    "pricing": {
+      "title": "Precios — Pulido Auto y Restauración de Yate | RestoreLab",
+      "description": "Precios transparentes para corrección de pintura, pulido de vidrio y restauración de gelcoat. Paquetes desde 189€. Presupuesto gratuito por WhatsApp."
+    },
+    "cases": {
+      "title": "Antes y Después — RestoreLab",
+      "description": "Resultados reales de nuestro trabajo de restauración móvil. Corrección de pintura, pulido de vidrio y restauración de gelcoat en Portugal."
+    },
+    "contact": {
+      "title": "Contacto RestoreLab — Presupuesto Gratuito",
+      "description": "Contacte RestoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Lisboa, Cascais y Sintra."
+    },
+    "privacy": {
+      "title": "Política de Privacidad | RestoreLab",
+      "description": "Política de privacidad de RestoreLab — cómo recopilamos y utilizamos sus datos personales."
+    },
+    "terms": {
+      "title": "Términos y Condiciones | RestoreLab",
+      "description": "Términos y condiciones del servicio de RestoreLab."
+    }
+  },
+  "nav": {
+    "services": "Servicios",
+    "pricing": "Precios",
+    "cases": "Portfolio",
+    "contact": "Contacto",
+    "cta": "Presupuesto"
+  },
+  "hero": {
+    "headline": "Restaurar. No Sustituir.",
+    "subheadline": "Restauración móvil de pintura, vidrio y superficies de yates en Lisboa & Cascais.",
+    "cta_car": "Restauración Auto",
+    "cta_yacht": "Restauración de Yate",
+    "sticky_cta": "Presupuesto via WhatsApp",
+    "badge": "Servicio Móvil Premium"
+  },
+  "social_proof": {
+    "rating": "5.0",
+    "reviews_count": "47+ reseñas",
+    "platform": "Google Reviews",
+    "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
+    "areas_label": "Áreas de servicio",
+    "testimonials": [
+      {
+        "name": "David M.",
+        "location": "Cascais",
+        "text": "Resultado increíble en mi BMW. Los arañazos profundos desaparecieron por completo, la pintura parece nueva. Vinieron a mi aparcamiento, sin complicaciones. Muy recomendado.",
+        "rating": 5,
+        "service": "Corrección de Pintura"
+      },
+      {
+        "name": "Sofia R.",
+        "location": "Lisboa",
+        "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. RestoreLab los eliminó por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
+        "rating": 5,
+        "service": "Pulido de Vidrio"
+      },
+      {
+        "name": "João A.",
+        "location": "Marina de Oeiras",
+        "text": "El gelcoat de nuestro yate estaba muy oxidado. Después del tratamiento parece que acabamos de comprar el barco. Profesional, rápido y excelente relación calidad-precio.",
+        "rating": 5,
+        "service": "Gelcoat de Yate"
+      },
+      {
+        "name": "Anna K.",
+        "location": "Sintra",
+        "text": "Las ventanas de acrílico de mi barco estaban completamente amarillas. Ahora están cristalinas. Transformación increíble — no puedo creer que sea el mismo barco.",
+        "rating": 5,
+        "service": "Restauración de Acrílico"
+      }
+    ]
+  },
+  "services": {
+    "section_title": "Qué Restauramos",
+    "section_subtitle": "Especializados en superficies que otros solo pueden solucionar con sustitución.",
+    "items": [
+      {
+        "id": "car-paint-correction",
+        "title": "Corrección de Pintura Auto",
+        "subtitle": "Eliminación de swirl marks, arañazos y restauración del brillo",
+        "icon": "car",
+        "features": [
+          "Eliminación de swirl marks",
+          "Corrección de arañazos",
+          "Restauración del brillo profundo",
+          "Preparación para cerámica",
+          "Sin repintura necesaria",
+          "Servicio móvil en su ubicación"
+        ],
+        "tag": "Más popular"
+      },
+      {
+        "id": "glass-polishing",
+        "title": "Eliminación de Arañazos en Vidrio",
+        "subtitle": "Parabrisas, ventanas y vidrio arquitectónico",
+        "icon": "glass",
+        "features": [
+          "Restauración de parabrisas",
+          "Ventanas laterales y traseras",
+          "Paneles de vidrio arquitectónico",
+          "Superficies de vidrio de yate",
+          "Eliminación de manchas de agua",
+          "Eliminación de arañazos del limpiaparabrisas"
+        ],
+        "tag": null
+      },
+      {
+        "id": "acrylic-restoration",
+        "title": "Acrílico y Policarbonato",
+        "subtitle": "Ventanas de yate, escotillas y paneles transparentes",
+        "icon": "acrylic",
+        "features": [
+          "Restauración de ventanas de yate",
+          "Pulido de escotillas",
+          "Claridad de paneles plásticos",
+          "Eliminación de oxidación UV",
+          "Transparencia completamente restaurada",
+          "Económico vs sustitución"
+        ],
+        "tag": null
+      },
+      {
+        "id": "yacht-gelcoat",
+        "title": "Pulido de Gelcoat de Yate",
+        "subtitle": "Eliminación de oxidación y acabado marino",
+        "icon": "yacht",
+        "features": [
+          "Eliminación de oxidación",
+          "Restauración del brillo",
+          "Recubrimiento protector",
+          "Acabado de calidad marina",
+          "Por encima y por debajo de la línea de flotación",
+          "En marina, sin varada necesaria"
+        ],
+        "tag": "Especialistas en yates"
+      }
+    ],
+    "learn_more": "Saber más",
+    "get_quote": "Presupuesto"
+  },
+  "how_it_works": {
+    "section_title": "Cómo Funciona",
+    "section_subtitle": "Proceso simple, sin complicaciones. Vamos a usted.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Envíe Fotos",
+        "description": "Envíenos fotos de los daños por WhatsApp. Evaluaremos las condiciones y la viabilidad."
+      },
+      {
+        "number": "02",
+        "title": "Reciba Presupuesto",
+        "description": "Reciba un presupuesto transparente en pocas horas. Sin tarifas ocultas, sin sorpresas."
+      },
+      {
+        "number": "03",
+        "title": "Vamos a Usted",
+        "description": "Nos desplazamos a su ubicación — casa, oficina o marina — con todo el equipo necesario."
+      },
+      {
+        "number": "04",
+        "title": "Restauración y Protección",
+        "description": "Restauramos y protegemos la superficie con calidad de fábrica. Usted ve el resultado."
+      }
+    ]
+  },
+  "pricing": {
+    "section_title": "Precios Transparentes",
+    "section_subtitle": "Sin sorpresas. Presupuesto exacto tras revisión de fotos.",
+    "cta_custom": "¿Necesita un presupuesto personalizado?",
+    "cta_whatsapp": "Preguntar por WhatsApp",
+    "categories": [
+      {
+        "id": "car",
+        "title": "Paquetes de Pulido Auto",
+        "packages": [
+          {
+            "name": "Corrección Base",
+            "price": "desde 189€",
+            "duration": "4–6 horas",
+            "description": "Corrección inicial para swirl marks leves y oxidación.",
+            "includes": [
+              "Pulido mecánico de una fase",
+              "Eliminación de swirl marks y arañazos leves",
+              "Lavado manual y descontaminación con clay bar",
+              "Protección final con sellante"
+            ],
+            "best_for": "Vehículo de uso diario con defectos leves",
+            "highlight": false
+          },
+          {
+            "name": "Preparación Cerámica",
+            "price": "desde 339€",
+            "duration": "8–10 horas",
+            "description": "Corrección completa de dos fases, listo para recubrimiento cerámico.",
+            "includes": [
+              "Pulido mecánico de dos fases",
+              "Eliminación de swirl marks y arañazos profundos",
+              "Medición del grosor de la pintura",
+              "Limpieza con IPA por panel",
+              "Aplicación de base cerámica"
+            ],
+            "best_for": "Vehículos preparándose para cerámica",
+            "highlight": true
+          },
+          {
+            "name": "Cerámica Premium",
+            "price": "desde 459€",
+            "duration": "Día completo",
+            "description": "Corrección máxima + recubrimiento cerámico profesional.",
+            "includes": [
+              "Corrección total de pintura multifase",
+              "Recubrimiento cerámico profesional (2+ capas)",
+              "Tratamiento repelente de lluvia en el parabrisas",
+              "Tratamiento de neumáticos y restauración de plásticos",
+              "Garantía de protección de 12 meses"
+            ],
+            "best_for": "Vehículos de lujo y deportivos, máxima protección",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "yacht",
+        "title": "Pulido de Gelcoat de Yate",
+        "packages": [
+          {
+            "name": "Pulido de Gelcoat",
+            "price": "desde 15€/pie",
+            "duration": "Depende del tamaño",
+            "description": "Eliminación completa de oxidación y restauración del brillo del gelcoat.",
+            "includes": [
+              "Eliminación de oxidación",
+              "Pulido mecánico hasta alto brillo",
+              "Cera o sellante protector",
+              "Servicio en marina"
+            ],
+            "best_for": "Veleros y motoras hasta 50 pies",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "glass",
+        "title": "Vidrio y Acrílico",
+        "packages": [
+          {
+            "name": "Restauración de Vidrio / Acrílico",
+            "price": "Presupuesto personalizado",
+            "duration": "1–4 horas",
+            "description": "Precio basado en el tamaño de la superficie y la gravedad de los daños.",
+            "includes": [
+              "Evaluación de la superficie",
+              "Pulido mecánico de vidrio o acrílico",
+              "Eliminación de manchas de agua y arañazos",
+              "Recubrimiento hidrofóbico (opcional)"
+            ],
+            "best_for": "Parabrisas, ventanas laterales, ojos de buey de yate",
+            "highlight": false
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "section_title": "Preguntas Frecuentes",
+    "items": [
+      {
+        "question": "¿Vienen a mi ubicación?",
+        "answer": "Sí — somos un servicio totalmente móvil. Nos desplazamos a su casa, oficina o marina con todo el equipo profesional. No necesita dejar el coche o barco en ningún sitio."
+      },
+      {
+        "question": "¿Se pueden eliminar todos los arañazos?",
+        "answer": "Los arañazos profundos que han penetrado el barniz hasta el primer o el metal no pueden eliminarse completamente solo con pulido. Siempre hacemos una evaluación honesta antes de comenzar."
+      },
+      {
+        "question": "¿Cuánto tiempo dura el servicio?",
+        "answer": "El pulido del automóvil suele tardar entre 4 y 10 horas, según el paquete y el tamaño del vehículo. Los trabajos de vidrio o acrílico tardan entre 1 y 4 horas. El gelcoat del yate depende de la eslora del barco."
+      },
+      {
+        "question": "¿Qué áreas cubren?",
+        "answer": "Cubrimos Lisboa, Cascais, Sintra, Oeiras, Almada y municipios circundantes. Para trabajos en yates, cubrimos todas las marinas principales del área costera de Lisboa."
+      },
+      {
+        "question": "¿Cómo obtengo un presupuesto?",
+        "answer": "La forma más rápida es enviarnos fotos de los daños por WhatsApp. Respondemos el mismo día con un presupuesto honesto y sin compromiso."
+      },
+      {
+        "question": "¿Es segura la corrección de pintura para mi coche?",
+        "answer": "Sí, cuando la realizan profesionales formados con el equipo adecuado. Siempre medimos el grosor de la pintura antes y durante el proceso para garantizar niveles seguros de eliminación."
+      }
+    ]
+  },
+  "area": {
+    "section_title": "Áreas de Servicio",
+    "section_subtitle": "Servicio móvil en toda el Área Metropolitana de Lisboa.",
+    "areas": [
+      { "name": "Lisboa", "note": "Ciudad y área metropolitana" },
+      { "name": "Cascais", "note": "Todas las marinas" },
+      { "name": "Sintra", "note": "Incluyendo Estoril" },
+      { "name": "Oeiras", "note": "Empresas y residencias" },
+      { "name": "Almada", "note": "Margen Sur" },
+      { "name": "Setúbal", "note": "Bajo petición" }
+    ]
+  },
+  "lead_form": {
+    "section_title": "Obtenga su Presupuesto Gratuito",
+    "section_subtitle": "Envíenos los detalles y le responderemos con un presupuesto honesto.",
+    "fields": {
+      "name": "Su Nombre",
+      "name_placeholder": "Juan García",
+      "phone": "Teléfono / WhatsApp",
+      "phone_placeholder": "+351 9XX XXX XXX",
+      "service": "Servicio Requerido",
+      "service_options": [
+        "Corrección de Pintura Auto",
+        "Eliminación de Arañazos en Vidrio",
+        "Restauración de Acrílico / Policarbonato",
+        "Pulido de Gelcoat de Yate",
+        "Otro / No estoy seguro"
+      ],
+      "location": "Su Ubicación",
+      "location_placeholder": "ej: Cascais, nombre de la marina...",
+      "message": "Detalles Adicionales",
+      "message_placeholder": "Describa los daños o el problema. Cuanto más detalle, mejor el presupuesto.",
+      "photo_note": "También puede enviar fotos directamente por WhatsApp después de enviar el formulario.",
+      "submit": "Enviar via WhatsApp"
+    },
+    "whatsapp_template": "¡Hola RestoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}."
+  },
+  "footer": {
+    "tagline": "Restauración premium móvil de superficies.",
+    "services_title": "Servicios",
+    "contact_title": "Contacto",
+    "legal_title": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "copyright": "© 2025 RestoreLab. Todos los derechos reservados.",
+    "made_in": "Hecho en Portugal."
+  }
+}

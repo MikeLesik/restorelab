@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  t: Record<string, any>;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description,
+  lang,
+  ogImage = '/images/og-home.jpg',
+  canonicalURL,
+  t,
+  currentPath = '',
+} = Astro.props;
+
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://restorelab.io';
+const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
+
+const langs = ['en', 'es', 'pt'];
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : lang === 'pt' ? 'pt_PT' : 'es_ES'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- hreflang -->
+    {langs.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l}
+        href={`${siteUrl}/${l}${currentPath}`}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath}`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "RestoreLab",
+      "description": "Premium mobile surface restoration — car paint correction, glass polishing and yacht gelcoat restoration.",
+      "url": siteUrl,
+      "telephone": "+351912345678",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cascais",
+        "addressRegion": "Lisboa",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6979,
+        "longitude": -9.4215
+      },
+      "areaServed": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada"],
+      "openingHours": "Mo-Sa 08:00-19:00",
+      "priceRange": "€€",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "47"
+      }
+    })} />
+  </head>
+  <body class="bg-brand-dark">
+    <Header t={t} lang={lang} currentPath={currentPath} />
+    <main>
+      <slot />
+    </main>
+    <Footer t={t} lang={lang} />
+    <StickyCTA label={t.hero.sticky_cta} />
+  </body>
+</html>

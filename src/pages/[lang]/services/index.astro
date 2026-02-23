@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServicesGrid from '../../../components/ServicesGrid.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+
+import en from '../../../content/en.json';
+import es from '../../../content/es.json';
+import pt from '../../../content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+---
+
+<BaseLayout
+  title={t.meta.services.title}
+  description={t.meta.services.description}
+  lang={lang}
+  t={t}
+  currentPath="/services"
+>
+  <div class="pt-24">
+    <!-- Page header -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <h1 class="section-title text-5xl mb-4">{t.services.section_title}</h1>
+      <p class="section-subtitle mx-auto">{t.services.section_subtitle}</p>
+    </div>
+
+    <ServicesGrid t={t} lang={lang} compact />
+    <LeadForm t={t} lang={lang} />
+  </div>
+</BaseLayout>

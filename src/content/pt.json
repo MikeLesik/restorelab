@@ -1,0 +1,370 @@
+{
+  "lang": "pt",
+  "meta": {
+    "home": {
+      "title": "RestoreLab — Restauro Móvel de Superfícies em Lisboa & Cascais",
+      "description": "Serviço premium móvel de correção de pintura, remoção de riscos em vidro e restauro de gelcoat de iates. Serviço em Lisboa, Cascais, Sintra e Oeiras. Sem repintura. Sem substituição.",
+      "og_image": "/images/og-home.jpg"
+    },
+    "services": {
+      "title": "Serviços — Restauro Auto, Vidro e Iate | RestoreLab",
+      "description": "Correção de pintura automóvel, polimento de vidros, restauro de acrílico e polimento de gelcoat de iates. Serviço móvel em Lisboa e Cascais."
+    },
+    "car_paint": {
+      "title": "Correção de Pintura Automóvel Lisboa | RestoreLab",
+      "description": "Correção de pintura móvel profissional em Lisboa. Remova swirl marks, riscos e restaure o brilho. Preparação para revestimento cerâmico. Sem repintura."
+    },
+    "glass": {
+      "title": "Remoção de Riscos em Vidro Lisboa | RestoreLab",
+      "description": "Remova riscos no para-brisas, manchas de água e marcas de limpa-vidros. Serviço móvel em Lisboa, Cascais e Sintra. Sem substituição."
+    },
+    "acrylic": {
+      "title": "Restauro de Acrílico e Policarbonato Portugal | RestoreLab",
+      "description": "Restauro de janelas de iates, escotilhas e painéis plásticos. Remoção de oxidação UV. Alternativa económica à substituição."
+    },
+    "yacht": {
+      "title": "Polimento de Gelcoat de Iate Cascais | RestoreLab",
+      "description": "Polimento profissional de gelcoat e remoção de oxidação nas marinas de Cascais. Acabamento de qualidade marinha. Serviço móvel na área de Lisboa."
+    },
+    "pricing": {
+      "title": "Preços — Polimento Auto e Restauro de Iate | RestoreLab",
+      "description": "Preços transparentes para correção de pintura, polimento de vidro e restauro de gelcoat. Pacotes a partir de 189€. Orçamento gratuito via WhatsApp."
+    },
+    "cases": {
+      "title": "Antes & Depois — RestoreLab",
+      "description": "Resultados reais do nosso trabalho de restauro móvel. Correção de pintura, polimento de vidro e restauro de gelcoat em Portugal."
+    },
+    "contact": {
+      "title": "Contacto RestoreLab — Orçamento Gratuito",
+      "description": "Contacte a RestoreLab para um orçamento gratuito. Envie fotos via WhatsApp e receba resposta em horas. Serviço móvel em Lisboa, Cascais e Sintra."
+    },
+    "privacy": {
+      "title": "Política de Privacidade | RestoreLab",
+      "description": "Política de privacidade da RestoreLab — como recolhemos e utilizamos os seus dados pessoais."
+    },
+    "terms": {
+      "title": "Termos e Condições | RestoreLab",
+      "description": "Termos e condições de serviço da RestoreLab."
+    }
+  },
+  "nav": {
+    "services": "Serviços",
+    "pricing": "Preços",
+    "cases": "Portfólio",
+    "contact": "Contacto",
+    "cta": "Orçamento"
+  },
+  "hero": {
+    "headline": "Restaurar. Não Substituir.",
+    "subheadline": "Restauro móvel de pintura, vidro e superfícies de iates em Lisboa & Cascais.",
+    "cta_car": "Restauro Auto",
+    "cta_yacht": "Restauro de Iate",
+    "sticky_cta": "Orçamento via WhatsApp",
+    "badge": "Serviço Móvel Premium"
+  },
+  "social_proof": {
+    "rating": "5.0",
+    "reviews_count": "47+ avaliações",
+    "platform": "Google Reviews",
+    "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
+    "areas_label": "Áreas de serviço",
+    "testimonials": [
+      {
+        "name": "David M.",
+        "location": "Cascais",
+        "text": "Resultado incrível no meu BMW. Riscos profundos completamente eliminados, pintura como nova. Vieram ao meu estacionamento, sem complicações. Recomendo muito.",
+        "rating": 5,
+        "service": "Correção de Pintura"
+      },
+      {
+        "name": "Sofia R.",
+        "location": "Lisboa",
+        "text": "O meu para-brisas tinha riscos profundos dos limpa-vidros após 3 anos. A RestoreLab removeu-os completamente — poupei €400 numa substituição. Trabalho fantástico!",
+        "rating": 5,
+        "service": "Polimento de Vidro"
+      },
+      {
+        "name": "João A.",
+        "location": "Marina de Oeiras",
+        "text": "O gelcoat do nosso iate estava muito oxidado. Após o tratamento parece que acabámos de comprar o barco. Profissional, rápido e excelente relação qualidade-preço.",
+        "rating": 5,
+        "service": "Gelcoat de Iate"
+      },
+      {
+        "name": "Anna K.",
+        "location": "Sintra",
+        "text": "As janelas de acrílico do meu barco estavam completamente amareladas. Agora estão cristalinas. Transformação incrível — não acredito que é o mesmo barco.",
+        "rating": 5,
+        "service": "Restauro de Acrílico"
+      }
+    ]
+  },
+  "services": {
+    "section_title": "O Que Restauramos",
+    "section_subtitle": "Especializados em superfícies que outros só conseguem resolver com substituição.",
+    "items": [
+      {
+        "id": "car-paint-correction",
+        "title": "Correção de Pintura Auto",
+        "subtitle": "Remoção de swirl marks, riscos e restauro de brilho",
+        "icon": "car",
+        "features": [
+          "Remoção de swirl marks",
+          "Correção de riscos",
+          "Restauro de brilho profundo",
+          "Preparação para cerâmica",
+          "Sem repintura necessária",
+          "Serviço móvel no local"
+        ],
+        "tag": "Mais popular"
+      },
+      {
+        "id": "glass-polishing",
+        "title": "Remoção de Riscos em Vidro",
+        "subtitle": "Para-brisas, janelas e vidros arquitetónicos",
+        "icon": "glass",
+        "features": [
+          "Restauro de para-brisas",
+          "Janelas laterais e traseiras",
+          "Vidros arquitetónicos",
+          "Superfícies de vidro de iate",
+          "Remoção de manchas de água",
+          "Eliminação de riscos de limpa-vidros"
+        ],
+        "tag": null
+      },
+      {
+        "id": "acrylic-restoration",
+        "title": "Acrílico e Policarbonato",
+        "subtitle": "Janelas de iate, escotilhas e painéis",
+        "icon": "acrylic",
+        "features": [
+          "Restauro de janelas de iate",
+          "Polimento de escotilhas",
+          "Clareza de painéis plásticos",
+          "Remoção de oxidação UV",
+          "Transparência totalmente restaurada",
+          "Económico vs substituição"
+        ],
+        "tag": null
+      },
+      {
+        "id": "yacht-gelcoat",
+        "title": "Polimento de Gelcoat de Iate",
+        "subtitle": "Remoção de oxidação e acabamento náutico",
+        "icon": "yacht",
+        "features": [
+          "Remoção de oxidação",
+          "Restauro de brilho",
+          "Revestimento protetor",
+          "Acabamento de qualidade marinha",
+          "Acima e abaixo da linha de água",
+          "Na marina, sem haul-out"
+        ],
+        "tag": "Especialistas em iates"
+      }
+    ],
+    "learn_more": "Saber mais",
+    "get_quote": "Orçamento"
+  },
+  "how_it_works": {
+    "section_title": "Como Funciona",
+    "section_subtitle": "Processo simples, sem complicações. Nós vamos até si.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Envie Fotos",
+        "description": "Envie-nos fotos dos danos via WhatsApp. Avaliaremos as condições e a viabilidade."
+      },
+      {
+        "number": "02",
+        "title": "Receba Orçamento",
+        "description": "Receba um orçamento transparente em poucas horas. Sem taxas ocultas, sem surpresas."
+      },
+      {
+        "number": "03",
+        "title": "Vamos até Si",
+        "description": "Deslocamo-nos até à sua localização — casa, escritório ou marina — com todo o equipamento."
+      },
+      {
+        "number": "04",
+        "title": "Restauro e Proteção",
+        "description": "Restauramos e protegemos a superfície com qualidade de fábrica. Vê o resultado in loco."
+      }
+    ]
+  },
+  "pricing": {
+    "section_title": "Preços Transparentes",
+    "section_subtitle": "Sem surpresas. Orçamento exato após análise de fotos.",
+    "cta_custom": "Precisa de um orçamento personalizado?",
+    "cta_whatsapp": "Perguntar via WhatsApp",
+    "categories": [
+      {
+        "id": "car",
+        "title": "Pacotes de Polimento Auto",
+        "packages": [
+          {
+            "name": "Correção Base",
+            "price": "a partir de 189€",
+            "duration": "4–6 horas",
+            "description": "Correção inicial para swirl marks ligeiros e oxidação.",
+            "includes": [
+              "Polimento mecânico de fase única",
+              "Remoção de swirl marks e riscos ligeiros",
+              "Lavagem manual e descontaminação com clay bar",
+              "Proteção final com selante"
+            ],
+            "best_for": "Veículo diário com defeitos ligeiros",
+            "highlight": false
+          },
+          {
+            "name": "Preparação Cerâmica",
+            "price": "a partir de 339€",
+            "duration": "8–10 horas",
+            "description": "Correção completa de duas fases, pronto para revestimento cerâmico.",
+            "includes": [
+              "Polimento mecânico de duas fases",
+              "Remoção de swirl marks e riscos pesados",
+              "Medição da espessura da pintura",
+              "Limpeza com IPA por painel",
+              "Aplicação de base cerâmica"
+            ],
+            "best_for": "Veículos a preparar para cerâmica",
+            "highlight": true
+          },
+          {
+            "name": "Cerâmica Premium",
+            "price": "a partir de 459€",
+            "duration": "Dia completo",
+            "description": "Correção máxima + revestimento cerâmico profissional.",
+            "includes": [
+              "Correção total de pintura multi-fase",
+              "Revestimento cerâmico profissional (2+ camadas)",
+              "Tratamento repelente de chuva no para-brisas",
+              "Tratamento de pneus e restauro de borrachas",
+              "Garantia de proteção de 12 meses"
+            ],
+            "best_for": "Viaturas de luxo e desporto, máxima proteção",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "yacht",
+        "title": "Polimento de Gelcoat de Iate",
+        "packages": [
+          {
+            "name": "Polimento de Gelcoat",
+            "price": "a partir de 15€/pé",
+            "duration": "Depende do tamanho",
+            "description": "Remoção total de oxidação e restauro de brilho do gelcoat.",
+            "includes": [
+              "Remoção de oxidação",
+              "Polimento mecânico para alto brilho",
+              "Cera ou selante protetor",
+              "Serviço na marina"
+            ],
+            "best_for": "Veleiros e motorizados até 50 pés",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "glass",
+        "title": "Vidro e Acrílico",
+        "packages": [
+          {
+            "name": "Restauro de Vidro / Acrílico",
+            "price": "Orçamento personalizado",
+            "duration": "1–4 horas",
+            "description": "Preço baseado na dimensão da superfície e gravidade dos danos.",
+            "includes": [
+              "Avaliação da superfície",
+              "Polimento mecânico de vidro ou acrílico",
+              "Remoção de manchas de água e riscos",
+              "Revestimento hidrofóbico (opcional)"
+            ],
+            "best_for": "Para-brisas, janelas laterais, portilhós de iates",
+            "highlight": false
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "section_title": "Perguntas Frequentes",
+    "items": [
+      {
+        "question": "Vêm até à minha localização?",
+        "answer": "Sim — somos um serviço totalmente móvel. Deslocamo-nos até à sua casa, escritório ou marina com todo o equipamento profissional. Não precisa de deixar o carro ou barco em lado nenhum."
+      },
+      {
+        "question": "Todos os riscos podem ser removidos?",
+        "answer": "Riscos profundos que penetraram o verniz até ao primer ou ao metal não podem ser completamente removidos apenas com polimento. Fazemos sempre uma avaliação honesta antes de começar."
+      },
+      {
+        "question": "Quanto tempo demora o serviço?",
+        "answer": "O polimento automóvel demora tipicamente 4 a 10 horas, consoante o pacote e o tamanho do veículo. Trabalhos de vidro ou acrílico demoram 1 a 4 horas. O gelcoat de iate depende do comprimento do barco."
+      },
+      {
+        "question": "Que áreas cobrem?",
+        "answer": "Cobrimos Lisboa, Cascais, Sintra, Oeiras, Almada e municípios circundantes. Para trabalhos em iates, cobrimos todas as marinas principais da área costeira de Lisboa."
+      },
+      {
+        "question": "Como obtenho um orçamento?",
+        "answer": "A forma mais rápida é enviar-nos fotos dos danos via WhatsApp. Respondemos no mesmo dia com um orçamento honesto e sem compromisso."
+      },
+      {
+        "question": "A correção de pintura é segura para o meu carro?",
+        "answer": "Sim, quando realizada por profissionais formados com equipamento adequado. Medimos sempre a espessura da pintura antes e durante o processo para garantir níveis seguros de remoção."
+      }
+    ]
+  },
+  "area": {
+    "section_title": "Áreas de Serviço",
+    "section_subtitle": "Serviço móvel em toda a Área Metropolitana de Lisboa.",
+    "areas": [
+      { "name": "Lisboa", "note": "Cidade e área metropolitana" },
+      { "name": "Cascais", "note": "Todas as marinas" },
+      { "name": "Sintra", "note": "Incluindo Estoril" },
+      { "name": "Oeiras", "note": "Empresas e residências" },
+      { "name": "Almada", "note": "Margem Sul" },
+      { "name": "Setúbal", "note": "Mediante pedido" }
+    ]
+  },
+  "lead_form": {
+    "section_title": "Obtenha o Seu Orçamento Gratuito",
+    "section_subtitle": "Envie-nos os detalhes e responderemos com um orçamento honesto.",
+    "fields": {
+      "name": "O Seu Nome",
+      "name_placeholder": "João Silva",
+      "phone": "Telemóvel / WhatsApp",
+      "phone_placeholder": "+351 9XX XXX XXX",
+      "service": "Serviço Pretendido",
+      "service_options": [
+        "Correção de Pintura Auto",
+        "Remoção de Riscos em Vidro",
+        "Restauro de Acrílico / Policarbonato",
+        "Polimento de Gelcoat de Iate",
+        "Outro / Não tenho a certeza"
+      ],
+      "location": "A Sua Localização",
+      "location_placeholder": "ex: Cascais, nome da marina...",
+      "message": "Detalhes Adicionais",
+      "message_placeholder": "Descreva os danos ou o problema. Quanto mais detalhe, melhor o orçamento.",
+      "photo_note": "Também pode enviar fotos diretamente via WhatsApp após o envio.",
+      "submit": "Enviar via WhatsApp"
+    },
+    "whatsapp_template": "Olá RestoreLab! O meu nome é {name}. Tenho interesse em: {service}. Localização: {location}. Info adicional: {message}. O meu contacto: {phone}."
+  },
+  "footer": {
+    "tagline": "Restauro premium móvel de superfícies.",
+    "services_title": "Serviços",
+    "contact_title": "Contacto",
+    "legal_title": "Legal",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos e Condições",
+    "copyright": "© 2025 RestoreLab. Todos os direitos reservados.",
+    "made_in": "Feito em Portugal."
+  }
+}

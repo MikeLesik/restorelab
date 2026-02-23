@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import en from '../../content/en.json';
+import es from '../../content/es.json';
+import pt from '../../content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+---
+
+<BaseLayout
+  title={t.meta.terms.title}
+  description={t.meta.terms.description}
+  lang={lang}
+  t={t}
+  currentPath="/terms"
+>
+  <div class="pt-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 class="section-title text-4xl mb-8">{t.footer.terms}</h1>
+
+      <div class="text-white/70 space-y-8 text-sm leading-relaxed">
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">1. Service Agreement</h2>
+          <p>By requesting services from RestoreLab, you agree to these terms. Our services are mobile and performed on-site at your location. You are responsible for providing safe and accessible working conditions.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">2. Quotes & Pricing</h2>
+          <p>All quotes are provided based on the description and photos you supply. Final pricing may vary if the actual condition of the surface differs significantly from what was described. We will inform you of any changes before beginning work.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">3. Results & Limitations</h2>
+          <p>Paint correction, glass polishing and surface restoration have inherent limitations. Scratches that penetrate through the clear coat to the primer or substrate cannot be fully removed by polishing. We will assess your surfaces and provide an honest expectation of results before starting.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">4. Cancellation</h2>
+          <p>Cancellations must be made at least 24 hours before the scheduled appointment. Last-minute cancellations or no-shows may incur a call-out fee to cover travel costs.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">5. Liability</h2>
+          <p>RestoreLab takes care with all surfaces worked on. We carry professional liability insurance. Claims for damage must be reported immediately upon completion of work and before the vehicle or vessel leaves the service location.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-semibold text-lg mb-3">6. Governing Law</h2>
+          <p>These terms are governed by Portuguese law. Any disputes shall be resolved in the courts of Lisboa, Portugal.</p>
+          <p class="mt-2 text-white/40 text-xs">Last updated: January 2025</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

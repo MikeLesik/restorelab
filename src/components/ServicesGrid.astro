@@ -1,0 +1,75 @@
+---
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+  compact?: boolean;
+}
+
+const { t, lang, compact = false } = Astro.props;
+
+const icons: Record<string, string> = {
+  car: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/>`,
+  glass: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
+  acrylic: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>`,
+  yacht: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>`,
+};
+---
+
+<section class={compact ? '' : 'py-24'}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {!compact && (
+      <div class="text-center mb-16">
+        <h2 class="section-title">{t.services.section_title}</h2>
+        <p class="section-subtitle mx-auto">{t.services.section_subtitle}</p>
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {t.services.items.map((service: any) => (
+        <div class="card group hover:border-brand-accent/40 transition-all duration-300 hover:-translate-y-1">
+
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center group-hover:bg-brand-accent/20 transition-colors">
+              <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[service.icon]} />
+            </div>
+            {service.tag && (
+              <span class="tag bg-brand-gold/10 text-brand-gold border border-brand-gold/20">
+                {service.tag}
+              </span>
+            )}
+          </div>
+
+          <h3 class="text-xl font-display font-bold text-white mb-1">{service.title}</h3>
+          <p class="text-white/50 text-sm mb-6">{service.subtitle}</p>
+
+          <ul class="space-y-2 mb-8">
+            {service.features.map((f: string) => (
+              <li class="flex items-center gap-3 text-sm text-white/70">
+                <svg class="w-4 h-4 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex gap-3">
+            <a
+              href={`/${lang}/services/${service.id}`}
+              class="flex-1 text-center py-2.5 px-4 border border-white/15 hover:border-brand-accent/40 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              {t.services.learn_more}
+            </a>
+            <a
+              href={`/${lang}/contact`}
+              class="flex-1 text-center py-2.5 px-4 bg-brand-accent hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              {t.services.get_quote}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

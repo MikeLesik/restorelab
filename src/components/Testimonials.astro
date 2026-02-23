@@ -1,0 +1,61 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex gap-1">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            ))}
+          </div>
+          <span class="text-white font-bold text-xl">{t.social_proof.rating}</span>
+          <span class="text-white/40 text-sm">— {t.social_proof.reviews_count}</span>
+        </div>
+        <h2 class="section-title">Client Results</h2>
+      </div>
+
+      <!-- Areas -->
+      <div class="flex flex-wrap gap-2">
+        {t.social_proof.areas.map((area: string) => (
+          <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-white/60">
+            {area}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {t.social_proof.testimonials.map((review: any) => (
+        <div class="card hover:border-white/20 transition-colors">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="font-semibold text-white">{review.name}</div>
+              <div class="text-xs text-white/40">{review.location} · {review.service}</div>
+            </div>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p class="text-white/65 text-sm leading-relaxed">"{review.text}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

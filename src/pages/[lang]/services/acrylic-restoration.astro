@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PricingCards from '../../../components/PricingCards.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import FAQ from '../../../components/FAQ.astro';
+
+import en from '../../../content/en.json';
+import es from '../../../content/es.json';
+import pt from '../../../content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const service = t.services.items.find((s: any) => s.id === 'acrylic-restoration');
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351912345678';
+const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'm+interested+in+Acrylic+Restoration.`;
+---
+
+<BaseLayout
+  title={t.meta.acrylic.title}
+  description={t.meta.acrylic.description}
+  lang={lang}
+  t={t}
+  currentPath="/services/acrylic-restoration"
+>
+  <div class="pt-24">
+    <section class="relative py-24 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <a href={`/${lang}/services`} class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white mb-8 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+              {t.nav.services}
+            </a>
+
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+              {service?.title}
+            </h1>
+            <p class="text-xl text-white/60 mb-8">{service?.subtitle}</p>
+
+            <ul class="space-y-3 mb-10">
+              {service?.features.map((f: string) => (
+                <li class="flex items-center gap-3 text-white/80">
+                  <svg class="w-5 h-5 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <div class="flex gap-4">
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp">{t.services.get_quote}</a>
+              <a href={`/${lang}/pricing`} class="btn-secondary">{t.nav.pricing}</a>
+            </div>
+          </div>
+
+          <div class="relative aspect-square max-w-md rounded-3xl bg-brand-navy/50 border border-white/10 flex items-center justify-center">
+            <div class="text-center p-8">
+              <svg class="w-24 h-24 text-brand-accent/30 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+              <p class="text-white/20 text-sm">Acrylic & Polycarbonate Restoration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Acrylic and Polycarbonate Restoration",
+      "provider": { "@type": "LocalBusiness", "name": "RestoreLab" },
+      "areaServed": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
+      "description": t.meta.acrylic.description
+    })} />
+
+    <PricingCards t={t} lang={lang} categoryId="glass" />
+    <FAQ t={t} />
+    <LeadForm t={t} lang={lang} />
+  </div>
+</BaseLayout>

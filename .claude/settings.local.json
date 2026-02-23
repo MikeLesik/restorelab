@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install 2>&1 | tail -5)",
+      "Bash(npm run build 2>&1)",
+      "Bash(open http://localhost:4321/en)",
+      "Bash(sleep 3 && screencapture -x /tmp/restorelab_home.png && echo \"done\")"
+    ]
+  }
+}

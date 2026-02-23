@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import PricingCards from '../../components/PricingCards.astro';
+import FAQ from '../../components/FAQ.astro';
+import AreaServedSection from '../../components/AreaServedSection.astro';
+import LeadForm from '../../components/LeadForm.astro';
+
+import en from '../../content/en.json';
+import es from '../../content/es.json';
+import pt from '../../content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+---
+
+<BaseLayout
+  title={t.meta.home.title}
+  description={t.meta.home.description}
+  lang={lang}
+  ogImage={t.meta.home.og_image}
+  t={t}
+  currentPath=""
+>
+  <Hero t={t} lang={lang} />
+  <ServicesGrid t={t} lang={lang} />
+  <HowItWorks t={t} />
+  <Testimonials t={t} />
+  <PricingCards t={t} lang={lang} categoryId="car" />
+  <AreaServedSection t={t} />
+  <FAQ t={t} />
+  <LeadForm t={t} lang={lang} />
+</BaseLayout>
