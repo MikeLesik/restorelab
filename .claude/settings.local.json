@@ -4,7 +4,14 @@
       "Bash(npm install 2>&1 | tail -5)",
       "Bash(npm run build 2>&1)",
       "Bash(open http://localhost:4321/en)",
-      "Bash(sleep 3 && screencapture -x /tmp/restorelab_home.png && echo \"done\")"
+      "Bash(sleep 3 && screencapture -x /tmp/restorelab_home.png && echo \"done\")",
+      "Bash(git add src/components/CasesGallery.astro public/images/ && git status)",
+      "Bash(git commit -m \"$\\(cat <<'EOF'\nAdd before/after slider with real car1 photos\n\n- CasesGallery: interactive drag slider for cards with real images\n- Add car1-before.jpg and car1-after.jpg\n- Other cards remain as styled placeholders until photos are added\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push 2>&1)",
+      "Bash(git add src/components/CasesGallery.astro && git commit -m \"$\\(cat <<'EOF'\nFix before/after slider: use clip-path instead of wrapper resize\n\nBoth images are now static full-size. The Before image is clipped\nfrom the right via clip-path: inset\\(\\). Dragging the handle updates\nonly the clip boundary and divider position — no stretching.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)",
+      "Bash(find /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/src /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/.env.example /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/README.md \\\\\n  -type f \\\\\n  | xargs sed -i '' 's/351912345678/351933817788/g'\necho \"done\")",
+      "Bash(find /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/src /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/.env.example /Users/hurma/Downloads/CodeVibe/Arbitrag/RestoreLab/README.md -type f -exec sed -i '' 's/351912345678/351933817788/g' {} \\\\;)",
+      "Bash(git add -A && git commit -m \"$\\(cat <<'EOF'\nUpdate WhatsApp number to +351933817788\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push)"
     ]
   }
 }

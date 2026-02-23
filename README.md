@@ -38,7 +38,7 @@ npm run preview
 
 | Переменная | Описание | Пример |
 |---|---|---|
-| `PUBLIC_WHATSAPP_NUMBER` | Номер WhatsApp, только цифры с кодом страны | `351912345678` |
+| `PUBLIC_WHATSAPP_NUMBER` | Номер WhatsApp, только цифры с кодом страны | `351933817788` |
 | `PUBLIC_SITE_URL` | URL продакшен-сайта | `https://restorelab.io` |
 
 **Никогда не коммить `.env` в git.** Файл `.gitignore` уже исключает его.
@@ -92,7 +92,7 @@ restorelab/
 ### Номер WhatsApp
 Отредактируй `.env`:
 ```
-PUBLIC_WHATSAPP_NUMBER=351912345678
+PUBLIC_WHATSAPP_NUMBER=351933817788
 ```
 
 ### Текст и переводы
@@ -150,7 +150,7 @@ git push -u origin main
 В Cloudflare Pages → твой проект → **Settings → Environment Variables**, добавь:
 
 ```
-PUBLIC_WHATSAPP_NUMBER = 351912345678
+PUBLIC_WHATSAPP_NUMBER = 351933817788
 PUBLIC_SITE_URL        = https://restorelab.io
 NODE_VERSION           = 20
 ```
