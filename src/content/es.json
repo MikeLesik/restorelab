@@ -55,8 +55,8 @@
     "cta": "Presupuesto"
   },
   "hero": {
-    "headline": "Restaurar. No Sustituir.",
-    "subheadline": "Restauración móvil de pintura, vidrio y superficies de yates en Lisboa & Cascais.",
+    "headline": "Restaurar. No Sustituir",
+    "subheadline": "Restauración móvil de pintura, vidrio y superficies de yates en Lisboa & Cascais",
     "cta_car": "Restauración Auto",
     "cta_yacht": "Restauración de Yate",
     "sticky_cta": "Presupuesto via WhatsApp",
@@ -66,7 +66,12 @@
     "rating": "5.0",
     "reviews_count": "47+ reseñas",
     "platform": "Google Reviews",
-    "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
+    "areas": [
+      "Lisboa",
+      "Cascais",
+      "Sintra",
+      "Oeiras"
+    ],
     "areas_label": "Áreas de servicio",
     "testimonials": [
       {
@@ -101,7 +106,7 @@
   },
   "services": {
     "section_title": "Qué Restauramos",
-    "section_subtitle": "Especializados en superficies que otros solo pueden solucionar con sustitución.",
+    "section_subtitle": "Especializados en superficies que otros solo pueden solucionar con sustitución",
     "items": [
       {
         "id": "car-paint-correction",
@@ -169,7 +174,7 @@
   },
   "how_it_works": {
     "section_title": "Cómo Funciona",
-    "section_subtitle": "Proceso simple, sin complicaciones. Vamos a usted.",
+    "section_subtitle": "Proceso simple, sin complicaciones. Vamos a usted",
     "steps": [
       {
         "number": "01",
@@ -195,7 +200,7 @@
   },
   "pricing": {
     "section_title": "Precios Transparentes",
-    "section_subtitle": "Sin sorpresas. Presupuesto exacto tras revisión de fotos.",
+    "section_subtitle": "Sin sorpresas. Presupuesto exacto tras revisión de fotos",
     "cta_custom": "¿Necesita un presupuesto personalizado?",
     "cta_whatsapp": "Preguntar por WhatsApp",
     "categories": [
@@ -322,19 +327,37 @@
   },
   "area": {
     "section_title": "Áreas de Servicio",
-    "section_subtitle": "Servicio móvil en toda el Área Metropolitana de Lisboa.",
+    "section_subtitle": "Servicio móvil en toda el Área Metropolitana de Lisboa",
     "areas": [
-      { "name": "Lisboa", "note": "Ciudad y área metropolitana" },
-      { "name": "Cascais", "note": "Todas las marinas" },
-      { "name": "Sintra", "note": "Incluyendo Estoril" },
-      { "name": "Oeiras", "note": "Empresas y residencias" },
-      { "name": "Almada", "note": "Margen Sur" },
-      { "name": "Setúbal", "note": "Bajo petición" }
+      {
+        "name": "Lisboa",
+        "note": "Ciudad y área metropolitana"
+      },
+      {
+        "name": "Cascais",
+        "note": "Todas las marinas"
+      },
+      {
+        "name": "Sintra",
+        "note": "Incluyendo Estoril"
+      },
+      {
+        "name": "Oeiras",
+        "note": "Empresas y residencias"
+      },
+      {
+        "name": "Almada",
+        "note": "Margen Sur"
+      },
+      {
+        "name": "Setúbal",
+        "note": "Bajo petición"
+      }
     ]
   },
   "lead_form": {
     "section_title": "Obtenga su Presupuesto Gratuito",
-    "section_subtitle": "Envíenos los detalles y le responderemos con un presupuesto honesto.",
+    "section_subtitle": "Envíenos los detalles y le responderemos con un presupuesto honesto",
     "fields": {
       "name": "Su Nombre",
       "name_placeholder": "Juan García",
@@ -358,7 +381,7 @@
     "whatsapp_template": "¡Hola RestoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}."
   },
   "footer": {
-    "tagline": "Restauración premium móvil de superficies.",
+    "tagline": "Restauración premium móvil de superficies",
     "services_title": "Servicios",
     "contact_title": "Contacto",
     "legal_title": "Legal",

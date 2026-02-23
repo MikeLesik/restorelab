@@ -55,8 +55,8 @@
     "cta": "Get Quote"
   },
   "hero": {
-    "headline": "Restore. Don't Replace.",
-    "subheadline": "Mobile paint, glass and yacht surface restoration in Lisbon & Cascais.",
+    "headline": "Restore. Don't Replace",
+    "subheadline": "Mobile paint, glass and yacht surface restoration in Lisbon & Cascais",
     "cta_car": "Car Restoration",
     "cta_yacht": "Yacht Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
@@ -66,7 +66,12 @@
     "rating": "5.0",
     "reviews_count": "47+ reviews",
     "platform": "Google Reviews",
-    "areas": ["Lisbon", "Cascais", "Sintra", "Oeiras"],
+    "areas": [
+      "Lisbon",
+      "Cascais",
+      "Sintra",
+      "Oeiras"
+    ],
     "areas_label": "Areas served",
     "testimonials": [
       {
@@ -101,7 +106,7 @@
   },
   "services": {
     "section_title": "What We Restore",
-    "section_subtitle": "Specialized in surfaces that others can't fix without replacement.",
+    "section_subtitle": "Specialized in surfaces that others can't fix without replacement",
     "items": [
       {
         "id": "car-paint-correction",
@@ -169,7 +174,7 @@
   },
   "how_it_works": {
     "section_title": "How It Works",
-    "section_subtitle": "Simple process, zero hassle. We come to you.",
+    "section_subtitle": "Simple process, zero hassle. We come to you",
     "steps": [
       {
         "number": "01",
@@ -195,7 +200,7 @@
   },
   "pricing": {
     "section_title": "Transparent Pricing",
-    "section_subtitle": "No surprises. Exact estimate after photo review.",
+    "section_subtitle": "No surprises. Exact estimate after photo review",
     "cta_custom": "Need a custom quote?",
     "cta_whatsapp": "Ask via WhatsApp",
     "categories": [
@@ -322,19 +327,37 @@
   },
   "area": {
     "section_title": "Areas We Serve",
-    "section_subtitle": "Mobile service across the Lisbon Metropolitan Area.",
+    "section_subtitle": "Mobile service across the Lisbon Metropolitan Area",
     "areas": [
-      { "name": "Lisbon", "note": "City & greater area" },
-      { "name": "Cascais", "note": "All marinas covered" },
-      { "name": "Sintra", "note": "Including Estoril" },
-      { "name": "Oeiras", "note": "Business & residential" },
-      { "name": "Almada", "note": "South bank" },
-      { "name": "Setúbal", "note": "On request" }
+      {
+        "name": "Lisbon",
+        "note": "City & greater area"
+      },
+      {
+        "name": "Cascais",
+        "note": "All marinas covered"
+      },
+      {
+        "name": "Sintra",
+        "note": "Including Estoril"
+      },
+      {
+        "name": "Oeiras",
+        "note": "Business & residential"
+      },
+      {
+        "name": "Almada",
+        "note": "South bank"
+      },
+      {
+        "name": "Setúbal",
+        "note": "On request"
+      }
     ]
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",
-    "section_subtitle": "Send us details and we'll come back with an honest quote.",
+    "section_subtitle": "Send us details and we'll come back with an honest quote",
     "fields": {
       "name": "Your Name",
       "name_placeholder": "John Silva",
@@ -358,7 +381,7 @@
     "whatsapp_template": "Hello RestoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}."
   },
   "footer": {
-    "tagline": "Premium mobile surface restoration.",
+    "tagline": "Premium mobile surface restoration",
     "services_title": "Services",
     "contact_title": "Contact",
     "legal_title": "Legal",
