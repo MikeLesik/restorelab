@@ -4,6 +4,15 @@ export interface Props {
 }
 
 const { t } = Astro.props;
+
+const markers = [
+  { name: 'Lisbon',   note: 'City & greater area',  lat: 38.7169, lng: -9.1399 },
+  { name: 'Cascais',  note: 'All marinas covered',   lat: 38.6979, lng: -9.4215 },
+  { name: 'Sintra',   note: 'Including Estoril',     lat: 38.7978, lng: -9.3878 },
+  { name: 'Oeiras',   note: 'Business & residential',lat: 38.6969, lng: -9.3147 },
+  { name: 'Almada',   note: 'South bank',            lat: 38.6769, lng: -9.1573 },
+  { name: 'Setúbal',  note: 'On request',            lat: 38.5244, lng: -8.8882 },
+];
 ---
 
 <section class="py-24">
@@ -29,33 +38,149 @@ const { t } = Astro.props;
         </div>
       </div>
 
-      <!-- Map placeholder / visual -->
+      <!-- Leaflet Map -->
       <div class="relative">
-        <div class="aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl bg-brand-navy border border-white/10 overflow-hidden flex items-center justify-center">
-          <div class="text-center p-8">
-            <div class="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-display font-bold text-white text-xl mb-2">Lisbon Area</h3>
-            <p class="text-white/40 text-sm">Mobile service · We come to you</p>
-
-            <div class="mt-8 grid grid-cols-3 gap-2">
-              {t.area.areas.slice(0, 6).map((area: any) => (
-                <div class="relative">
-                  <div class="w-3 h-3 bg-brand-accent rounded-full mx-auto mb-1 animate-pulse"></div>
-                  <div class="text-xs text-white/50 text-center">{area.name}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="height: 460px;">
+          <div id="service-map" style="width:100%; height:100%;"></div>
         </div>
-
         <!-- Decorative glow -->
-        <div class="absolute inset-0 -z-10 blur-3xl opacity-20 bg-brand-accent rounded-3xl"></div>
+        <div class="absolute inset-0 -z-10 blur-3xl opacity-15 bg-brand-accent rounded-3xl pointer-events-none"></div>
       </div>
+
     </div>
   </div>
 </section>
+
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+
+<script define:vars={{ markers }}>
+  // Lazy-load Leaflet JS only when map enters viewport
+  const mapEl = document.getElementById('service-map');
+  if (!mapEl) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    observer.disconnect();
+    initMap();
+  }, { threshold: 0.1 });
+  observer.observe(mapEl);
+
+  function initMap() {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=';
+    script.crossOrigin = '';
+    script.onload = () => buildMap();
+    document.head.appendChild(script);
+  }
+
+  function buildMap() {
+    const L = window.L;
+
+    // Dark tile layer — CartoDB Dark Matter (free, no API key)
+    const map = L.map('service-map', {
+      center: [38.68, -9.28],
+      zoom: 10,
+      zoomControl: true,
+      scrollWheelZoom: false,   // не мешает скроллу страницы
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Custom branded marker icon
+    const makeIcon = (active) => L.divIcon({
+      className: '',
+      html: `
+        <div style="
+          width: 36px; height: 36px;
+          background: ${active ? '#2A7FFF' : '#1B3A5C'};
+          border: 2px solid ${active ? '#60a5fa' : '#2A7FFF'};
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          box-shadow: 0 2px 12px rgba(42,127,255,0.5);
+          transition: background 0.2s;
+        ">
+          <div style="
+            width: 10px; height: 10px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+          "></div>
+        </div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 36],
+      popupAnchor: [0, -38],
+    });
+
+    // Popup styles injected once
+    const style = document.createElement('style');
+    style.textContent = `
+      .leaflet-popup-content-wrapper {
+        background: #0D1B2A;
+        border: 1px solid rgba(42,127,255,0.3);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        padding: 0;
+      }
+      .leaflet-popup-content {
+        margin: 12px 16px;
+        color: white;
+        font-family: Inter, sans-serif;
+      }
+      .leaflet-popup-tip {
+        background: #0D1B2A;
+      }
+      .leaflet-popup-close-button {
+        color: rgba(255,255,255,0.4) !important;
+        font-size: 18px !important;
+        top: 6px !important;
+        right: 8px !important;
+      }
+      .leaflet-control-zoom a {
+        background: #0D1B2A !important;
+        color: white !important;
+        border-color: rgba(255,255,255,0.1) !important;
+      }
+      .leaflet-control-zoom a:hover {
+        background: #1B3A5C !important;
+      }
+      .leaflet-control-attribution {
+        background: rgba(10,10,10,0.7) !important;
+        color: rgba(255,255,255,0.3) !important;
+        font-size: 10px !important;
+      }
+      .leaflet-control-attribution a { color: rgba(255,255,255,0.4) !important; }
+    `;
+    document.head.appendChild(style);
+
+    // Add markers
+    markers.forEach((m) => {
+      const marker = L.marker([m.lat, m.lng], { icon: makeIcon(true) });
+      marker.bindPopup(`
+        <div style="min-width:140px">
+          <div style="font-weight:600; font-size:14px; color:white; margin-bottom:4px">${m.name}</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.5)">${m.note}</div>
+        </div>
+      `);
+      marker.addTo(map);
+    });
+
+    // Fit map to markers bounds with padding
+    const group = L.featureGroup(
+      markers.map(m => L.marker([m.lat, m.lng]))
+    );
+    map.fitBounds(group.getBounds().pad(0.2));
+  }
+</script>
