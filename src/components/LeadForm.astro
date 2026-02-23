@@ -115,23 +115,22 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 <script define:vars={{ waNumber: wa, template: t.lead_form.whatsapp_template }}>
   document.getElementById('lead-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
+    const form = e.target;
     const data = new FormData(form);
 
-    const name = data.get('name') as string || '';
-    const phone = data.get('phone') as string || '';
-    const service = data.get('service') as string || '';
-    const location = data.get('location') as string || '';
-    const message = data.get('message') as string || '';
+    const name     = data.get('name')     || '';
+    const phone    = data.get('phone')    || '';
+    const service  = data.get('service')  || 'Not specified';
+    const location = data.get('location') || 'Not specified';
+    const message  = data.get('message')  || 'No additional info';
 
     const text = template
-      .replace('{name}', name)
-      .replace('{phone}', phone)
-      .replace('{service}', service || 'Not specified')
-      .replace('{location}', location || 'Not specified')
-      .replace('{message}', message || 'No additional info');
+      .replace('{name}',     name)
+      .replace('{phone}',    phone)
+      .replace('{service}',  service)
+      .replace('{location}', location)
+      .replace('{message}',  message);
 
-    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.location.href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text);
   });
 </script>
