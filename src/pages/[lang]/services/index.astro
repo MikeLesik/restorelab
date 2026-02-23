@@ -33,7 +33,7 @@ const { t } = Astro.props;
       <p class="section-subtitle mx-auto">{t.services.section_subtitle}</p>
     </div>
 
-    <ServicesGrid t={t} lang={lang} compact />
+    <ServicesGrid t={t} lang={lang} compact exclude={['acrylic-restoration']} />
     <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>
