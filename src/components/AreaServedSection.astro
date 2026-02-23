@@ -60,25 +60,12 @@ const markers = [
 />
 
 <script define:vars={{ markers }}>
-  // Lazy-load Leaflet JS only when map enters viewport
-  const mapEl = document.getElementById('service-map');
-  if (!mapEl) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    if (!entries[0].isIntersecting) return;
-    observer.disconnect();
-    initMap();
-  }, { threshold: 0.1 });
-  observer.observe(mapEl);
-
-  function initMap() {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=';
-    script.crossOrigin = '';
-    script.onload = () => buildMap();
-    document.head.appendChild(script);
-  }
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=';
+  script.crossOrigin = '';
+  script.onload = () => buildMap();
+  document.head.appendChild(script);
 
   function buildMap() {
     const L = window.L;
