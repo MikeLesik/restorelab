@@ -34,7 +34,7 @@ const { t } = Astro.props;
   currentPath=""
 >
   <Hero t={t} lang={lang} />
-  <ServicesGrid t={t} lang={lang} />
+  <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration']} />
   <HowItWorks t={t} />
   <Testimonials t={t} />
   <PricingCards t={t} lang={lang} categoryId="car" />
