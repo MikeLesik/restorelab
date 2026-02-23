@@ -47,8 +47,12 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
         href={`/${lang}/services/car-paint-correction`}
         class="btn-primary text-base px-8 py-4 text-lg"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17H3a2 2 0 01-2-2v-4l2-5h12l2 5v4a2 2 0 01-2 2h-2m-8 0a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z" />
+        <!-- Car icon -->
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M5 11l1.5-4.5h11L19 11M3 11h18v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5z"/>
+          <circle cx="7.5" cy="18" r="1.5"/>
+          <circle cx="16.5" cy="18" r="1.5"/>
+          <path d="M9 11V8m6 3V8"/>
         </svg>
         {t.hero.cta_car}
       </a>
@@ -56,8 +60,13 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
         href={`/${lang}/services/yacht-gelcoat`}
         class="btn-secondary text-base px-8 py-4 text-lg"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l9-13 9 13H3zM12 4v3M3 17h18" />
+        <!-- Yacht icon -->
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M12 3v13"/>
+          <path d="M12 3L4 16h8z"/>
+          <path d="M12 7l6 9h-6z"/>
+          <path d="M2 20h20"/>
+          <path d="M6 20c0 1.5 2.5 2 6 2s6-.5 6-2"/>
         </svg>
         {t.hero.cta_yacht}
       </a>
