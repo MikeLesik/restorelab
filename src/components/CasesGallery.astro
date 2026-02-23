@@ -7,12 +7,54 @@ export interface Props {
 const { t, lang } = Astro.props;
 
 const cases = [
-  { id: 1, title: 'BMW 3 Series — Paint Correction', category: 'car', before: '/images/cases/car1-before.jpg', after: '/images/cases/car1-after.jpg', result: 'Swirl marks eliminated, deep gloss restored' },
-  { id: 2, title: 'Porsche Cayenne — Ceramic Prep', category: 'car', before: '/images/cases/car2-before.jpg', after: '/images/cases/car2-after.jpg', result: 'Full two-stage correction + ceramic coating' },
-  { id: 3, title: 'Windshield — Wiper Scratches', category: 'glass', before: '/images/cases/glass1-before.jpg', after: '/images/cases/glass1-after.jpg', result: 'Deep wiper marks removed, saved €380' },
-  { id: 4, title: '45ft Sailboat — Gelcoat', category: 'yacht', before: '/images/cases/yacht1-before.jpg', after: '/images/cases/yacht1-after.jpg', result: 'Full oxidation removal, showroom finish' },
-  { id: 5, title: 'Yacht Acrylic Windows', category: 'acrylic', before: '/images/cases/acrylic1-before.jpg', after: '/images/cases/acrylic1-after.jpg', result: 'UV yellowing reversed, full clarity restored' },
-  { id: 6, title: 'Mercedes GLE — Scratch Removal', category: 'car', before: '/images/cases/car3-before.jpg', after: '/images/cases/car3-after.jpg', result: 'Deep scratch corrected, no repainting' },
+  {
+    id: 1,
+    title: 'BMW 3 Series — Paint Correction',
+    category: 'car',
+    before: '/images/car1-before.jpg',
+    after: '/images/car1-after.jpg',
+    result: 'Swirl marks eliminated, deep gloss restored',
+  },
+  {
+    id: 2,
+    title: 'Porsche Cayenne — Ceramic Prep',
+    category: 'car',
+    before: null,
+    after: null,
+    result: 'Full two-stage correction + ceramic coating',
+  },
+  {
+    id: 3,
+    title: 'Windshield — Wiper Scratches',
+    category: 'glass',
+    before: null,
+    after: null,
+    result: 'Deep wiper marks removed, saved €380',
+  },
+  {
+    id: 4,
+    title: '45ft Sailboat — Gelcoat',
+    category: 'yacht',
+    before: null,
+    after: null,
+    result: 'Full oxidation removal, showroom finish',
+  },
+  {
+    id: 5,
+    title: 'Yacht Acrylic Windows',
+    category: 'acrylic',
+    before: null,
+    after: null,
+    result: 'UV yellowing reversed, full clarity restored',
+  },
+  {
+    id: 6,
+    title: 'Mercedes GLE — Scratch Removal',
+    category: 'car',
+    before: null,
+    after: null,
+    result: 'Deep scratch corrected, no repainting',
+  },
 ];
 ---
 
@@ -44,34 +86,72 @@ const cases = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="cases-grid">
       {cases.map((c) => (
         <div class="card group overflow-hidden" data-category={c.category}>
-          <!-- Before/After visual placeholder -->
-          <div class="relative aspect-video bg-brand-navy rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-            <div class="absolute inset-0 flex">
-              <div class="flex-1 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="text-xs text-white/30 uppercase tracking-widest mb-1">Before</div>
-                  <div class="w-8 h-8 bg-white/5 rounded-full mx-auto"></div>
+
+          {c.before && c.after ? (
+            /* ── Реальные фото: before/after слайдер ── */
+            <div class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none" data-slider>
+              <!-- After (нижний слой — полная ширина) -->
+              <img
+                src={c.after}
+                alt={`After — ${c.title}`}
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <!-- Before (верхний слой — обрезается ползунком) -->
+              <div class="absolute inset-0 overflow-hidden" style="width: 50%" data-before-wrap>
+                <img
+                  src={c.before}
+                  alt={`Before — ${c.title}`}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  style="width: 200%; max-width: none;"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Разделитель -->
+              <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg" style="left: 50%" data-divider>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
+                  <svg class="w-4 h-4 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" />
+                  </svg>
                 </div>
               </div>
-              <div class="w-px bg-white/20"></div>
-              <div class="flex-1 bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center">
-                <div class="text-center">
-                  <div class="text-xs text-white/30 uppercase tracking-widest mb-1">After</div>
-                  <div class="w-8 h-8 bg-brand-accent/20 rounded-full mx-auto flex items-center justify-center">
-                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Category badge -->
-            <div class="absolute top-3 left-3">
-              <span class="px-2 py-1 bg-black/60 backdrop-blur-sm rounded-md text-xs text-white/70 uppercase tracking-wider">
+              <!-- Лейблы -->
+              <span class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-xs text-white/80 uppercase tracking-wider">Before</span>
+              <span class="absolute top-3 right-3 px-2 py-1 bg-brand-accent/80 backdrop-blur-sm rounded text-xs text-white uppercase tracking-wider">After</span>
+              <!-- Category badge -->
+              <span class="absolute bottom-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-sm rounded-md text-xs text-white/70 uppercase tracking-wider">
                 {c.category}
               </span>
             </div>
-          </div>
+          ) : (
+            /* ── Заглушка для карточек без фото ── */
+            <div class="relative aspect-video bg-brand-navy rounded-xl mb-4 overflow-hidden">
+              <div class="absolute inset-0 flex">
+                <div class="flex-1 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="text-xs text-white/30 uppercase tracking-widest mb-1">Before</div>
+                    <div class="w-8 h-8 bg-white/5 rounded-full mx-auto"></div>
+                  </div>
+                </div>
+                <div class="w-px bg-white/20"></div>
+                <div class="flex-1 bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center">
+                  <div class="text-center">
+                    <div class="text-xs text-white/30 uppercase tracking-widest mb-1">After</div>
+                    <div class="w-8 h-8 bg-brand-accent/20 rounded-full mx-auto flex items-center justify-center">
+                      <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute top-3 left-3">
+                <span class="px-2 py-1 bg-black/60 backdrop-blur-sm rounded-md text-xs text-white/70 uppercase tracking-wider">
+                  {c.category}
+                </span>
+              </div>
+            </div>
+          )}
 
           <h3 class="font-semibold text-white mb-1 text-sm">{c.title}</h3>
           <p class="text-xs text-brand-accent">{c.result}</p>
@@ -90,28 +170,52 @@ const cases = [
 </section>
 
 <script>
+  /* ── Фильтры ── */
   const filterBtns = document.querySelectorAll('[data-filter]');
   const cards = document.querySelectorAll('[data-category]');
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-filter');
-
       filterBtns.forEach((b) => {
         b.classList.remove('bg-brand-accent', 'text-white', 'border-brand-accent');
         b.classList.add('border-white/15', 'text-white/50');
       });
       btn.classList.add('bg-brand-accent', 'text-white', 'border-brand-accent');
       btn.classList.remove('border-white/15', 'text-white/50');
-
       cards.forEach((card) => {
         const el = card as HTMLElement;
-        if (filter === 'all' || el.dataset.category === filter) {
-          el.style.display = '';
-        } else {
-          el.style.display = 'none';
-        }
+        el.style.display = (filter === 'all' || el.dataset.category === filter) ? '' : 'none';
       });
     });
+  });
+
+  /* ── Before/After ползунок ── */
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const el = slider as HTMLElement;
+    const beforeWrap = el.querySelector('[data-before-wrap]') as HTMLElement;
+    const divider = el.querySelector('[data-divider]') as HTMLElement;
+    if (!beforeWrap || !divider) return;
+
+    let dragging = false;
+
+    const setPosition = (clientX: number) => {
+      const rect = el.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      beforeWrap.style.width = `${pct}%`;
+      divider.style.left = `${pct}%`;
+    };
+
+    divider.querySelector('div')!.addEventListener('mousedown', (e) => {
+      dragging = true;
+      e.preventDefault();
+    });
+    divider.querySelector('div')!.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
+
+    window.addEventListener('mousemove', (e) => { if (dragging) setPosition(e.clientX); });
+    window.addEventListener('touchmove', (e) => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    window.addEventListener('touchend', () => { dragging = false; });
   });
 </script>
