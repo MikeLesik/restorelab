@@ -90,23 +90,22 @@ const cases = [
           {c.before && c.after ? (
             /* ── Реальные фото: before/after слайдер ── */
             <div class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none" data-slider>
-              <!-- After (нижний слой — полная ширина) -->
+              <!-- After — статичный нижний слой, полная ширина -->
               <img
                 src={c.after}
                 alt={`After — ${c.title}`}
                 class="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <!-- Before (верхний слой — обрезается ползунком) -->
-              <div class="absolute inset-0 overflow-hidden" style="width: 50%" data-before-wrap>
-                <img
-                  src={c.before}
-                  alt={`Before — ${c.title}`}
-                  class="absolute inset-0 w-full h-full object-cover"
-                  style="width: 200%; max-width: none;"
-                  loading="lazy"
-                />
-              </div>
+              <!-- Before — статичный верхний слой, обрезается clip-path справа -->
+              <img
+                src={c.before}
+                alt={`Before — ${c.title}`}
+                class="absolute inset-0 w-full h-full object-cover"
+                style="clip-path: inset(0 50% 0 0)"
+                data-before-img
+                loading="lazy"
+              />
               <!-- Разделитель -->
               <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg" style="left: 50%" data-divider>
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
@@ -193,25 +192,24 @@ const cases = [
   /* ── Before/After ползунок ── */
   document.querySelectorAll('[data-slider]').forEach((slider) => {
     const el = slider as HTMLElement;
-    const beforeWrap = el.querySelector('[data-before-wrap]') as HTMLElement;
+    const beforeImg = el.querySelector('[data-before-img]') as HTMLElement;
     const divider = el.querySelector('[data-divider]') as HTMLElement;
-    if (!beforeWrap || !divider) return;
+    if (!beforeImg || !divider) return;
 
     let dragging = false;
 
     const setPosition = (clientX: number) => {
       const rect = el.getBoundingClientRect();
       let pct = ((clientX - rect.left) / rect.width) * 100;
-      pct = Math.max(2, Math.min(98, pct));
-      beforeWrap.style.width = `${pct}%`;
+      pct = Math.max(1, Math.min(99, pct));
+      // Оба фото статичны. Обрезаем "До" справа: показываем pct% слева
+      beforeImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
       divider.style.left = `${pct}%`;
     };
 
-    divider.querySelector('div')!.addEventListener('mousedown', (e) => {
-      dragging = true;
-      e.preventDefault();
-    });
-    divider.querySelector('div')!.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
+    const handle = divider.querySelector('div')!;
+    handle.addEventListener('mousedown', (e) => { dragging = true; e.preventDefault(); });
+    handle.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
 
     window.addEventListener('mousemove', (e) => { if (dragging) setPosition(e.clientX); });
     window.addEventListener('touchmove', (e) => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
