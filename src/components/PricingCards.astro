@@ -17,6 +17,12 @@ const categories = categoryId
 <section class="py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    {t.pricing.anchor_text && (
+      <div class="mb-12 p-5 rounded-xl bg-brand-gold/5 border border-brand-gold/20 text-center">
+        <p class="text-brand-gold text-sm font-medium">{t.pricing.anchor_text}</p>
+      </div>
+    )}
+
     {categories.map((category: any) => (
       <div class="mb-16">
         <h3 class="text-xl font-display font-semibold text-white/60 mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4">
@@ -45,7 +51,15 @@ const categories = categoryId
               <div class="mb-6">
                 <h4 class="font-display font-bold text-white text-xl mb-2">{pkg.name}</h4>
                 <div class="text-3xl font-display font-bold text-brand-accent mb-1">{pkg.price}</div>
-                <div class="text-xs text-white/40">{pkg.duration}</div>
+                <div class="text-xs text-white/40 mb-2">{pkg.duration}</div>
+                {pkg.savings && (
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
+                    <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-xs text-green-400 font-medium">{pkg.savings}</span>
+                  </div>
+                )}
               </div>
 
               <p class="text-sm text-white/50 mb-6 leading-relaxed">{pkg.description}</p>

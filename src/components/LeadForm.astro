@@ -9,14 +9,34 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 ---
 
 <section class="py-24 bg-brand-navy/40" id="contact-form">
-  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-12">
       <h2 class="section-title">{t.lead_form.section_title}</h2>
       <p class="section-subtitle mx-auto">{t.lead_form.section_subtitle}</p>
     </div>
 
-    <div class="card">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+      <!-- Trust sidebar -->
+      <div class="lg:col-span-2 space-y-6">
+        {t.guarantee?.items?.map((item: any) => (
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-brand-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white text-sm mb-1">{item.title}</h4>
+              <p class="text-white/40 text-xs leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-3 card">
       <form id="lead-form" class="space-y-5">
 
         <!-- Name -->
@@ -108,7 +128,8 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
           {t.lead_form.fields.submit}
         </button>
       </form>
-    </div>
+      </div><!-- end form card -->
+    </div><!-- end grid -->
   </div>
 </section>
 

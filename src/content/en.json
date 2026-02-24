@@ -56,11 +56,14 @@
   },
   "hero": {
     "headline": "Restore. Don't Replace",
-    "subheadline": "Mobile paint, glass and yacht surface restoration in Lisbon & Cascais",
+    "subheadline": "Save up to 70% vs replacement. Mobile paint, glass & yacht restoration — we come to your door in Lisbon & Cascais.",
+    "cta_primary": "Get Free Estimate",
+    "cta_secondary": "See Before & After",
+    "reply_time": "Average reply: 28 min",
     "cta_car": "Car Restoration",
     "cta_yacht": "Yacht Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
-    "badge": "Premium Mobile Service"
+    "badge": "★ Rated 5.0 • 500+ Jobs Done"
   },
   "social_proof": {
     "rating": "5.0",
@@ -113,13 +116,12 @@
         "title": "Car Paint Correction",
         "subtitle": "Swirl marks, scratches & gloss restoration",
         "icon": "car",
+        "starting_price": "from 189€",
+        "vs_price": "vs 800€+ repaint",
         "features": [
-          "Swirl mark removal",
-          "Scratch correction",
+          "Swirl mark & scratch removal",
           "Deep gloss restoration",
-          "Ceramic coating preparation",
-          "No repainting required",
-          "On-site mobile service"
+          "Ceramic coating preparation"
         ],
         "tag": "Most popular"
       },
@@ -128,11 +130,10 @@
         "title": "Glass Scratch Removal",
         "subtitle": "Windshields, windows & architectural glass",
         "icon": "glass",
+        "starting_price": "from 89€",
+        "vs_price": "vs 400€ replacement",
         "features": [
           "Car windshield restoration",
-          "Side & rear windows",
-          "Architectural glass panels",
-          "Yacht glass surfaces",
           "Water spot removal",
           "Wiper scratch elimination"
         ],
@@ -158,12 +159,11 @@
         "title": "Yacht Gelcoat Polishing",
         "subtitle": "Oxidation removal & marine-grade finishing",
         "icon": "yacht",
+        "starting_price": "from 29€/meter",
+        "vs_price": "vs full hull repaint",
         "features": [
           "Oxidation removal",
           "Shine & gloss restoration",
-          "Protection coating",
-          "Marine-grade finishing",
-          "Above & below waterline",
           "At marina, no haulout needed"
         ],
         "tag": "Yacht specialists"
@@ -184,23 +184,26 @@
       {
         "number": "02",
         "title": "Receive Estimate",
-        "description": "Get a transparent price estimate within hours. No hidden fees, no surprises."
+        "description": "Reply usually within 30 min. Transparent price, no hidden fees, no surprises."
       },
       {
         "number": "03",
         "title": "We Come to You",
-        "description": "We arrive at your location — home, office, or marina — with all equipment."
+        "description": "We arrive at your home, office, parking or marina with all professional equipment."
       },
       {
         "number": "04",
         "title": "Restore & Protect",
-        "description": "We restore and protect the surface to factory-level quality. You see the result."
+        "description": "Factory-level quality finish. Not satisfied with the result? We rework it free."
       }
-    ]
+    ],
+    "cta_banner": "Try it now — send us a photo and get your estimate",
+    "cta_banner_btn": "Send Photo via WhatsApp"
   },
   "pricing": {
     "section_title": "Transparent Pricing",
     "section_subtitle": "No surprises. Exact estimate after photo review",
+    "anchor_text": "Full repaint costs €800–2,000+. Our paint correction starts at €189.",
     "cta_custom": "Need a custom quote?",
     "cta_whatsapp": "Ask via WhatsApp",
     "categories": [
@@ -211,6 +214,7 @@
           {
             "name": "Base Correction",
             "price": "from 189€",
+            "savings": "Most clients save €600+ vs body shop",
             "duration": "2–4 hours",
             "description": "Entry-level correction for light swirls and oxidation.",
             "includes": [
@@ -225,6 +229,7 @@
           {
             "name": "Ceramic Prep",
             "price": "from 339€",
+            "savings": "Includes €89 ceramic base coat — FREE",
             "duration": "3–5 hours",
             "description": "Full two-stage correction, ready for ceramic coating.",
             "includes": [
@@ -240,6 +245,7 @@
           {
             "name": "Premium Ceramic",
             "price": "from 459€",
+            "savings": "12-month guarantee included",
             "duration": "6–8 hours",
             "description": "Maximum correction + professional ceramic coating.",
             "includes": [
@@ -301,7 +307,7 @@
     "items": [
       {
         "question": "Do you come to my location?",
-        "answer": "Yes — we are a fully mobile service. We come to your home, office, or marina with all professional equipment. No need to drop off your car or boat anywhere."
+        "answer": "Yes — we are a fully mobile service. We come to your home, office, parking or marina with all professional equipment. No need to drop off your car or boat anywhere. Still have questions? <a href='https://wa.me/351933817788' class='text-brand-accent hover:underline'>WhatsApp us</a>"
       },
       {
         "question": "Can all scratches be removed?",
@@ -309,19 +315,35 @@
       },
       {
         "question": "How long does the service take?",
-        "answer": "Car polishing typically takes 4–10 hours depending on the package and vehicle size. Glass or acrylic jobs take 1–4 hours. Yacht gelcoat depends on the boat length."
+        "answer": "Car polishing typically takes 2–8 hours depending on the package and vehicle size. Glass or acrylic jobs take 1–4 hours. Yacht gelcoat depends on the boat length."
       },
       {
         "question": "What areas do you cover?",
-        "answer": "We cover Lisbon, Cascais, Sintra, Oeiras, Almada and surrounding municipalities. For yacht work we cover all major marinas in the Lisbon coastal area."
+        "answer": "We cover Lisbon, Cascais, Sintra, Oeiras, Almada and surrounding municipalities. For yacht work we cover all major marinas: Cascais Marina, Oeiras Marina, Doca de Belém and more."
       },
       {
         "question": "How do I get a quote?",
-        "answer": "The fastest way is to send us photos of the damage via WhatsApp. We respond the same day with an honest estimate and no obligation."
+        "answer": "The fastest way is to send us photos of the damage via WhatsApp. We respond usually within 30 minutes with an honest estimate and no obligation."
       },
       {
         "question": "Is paint correction safe for my car?",
         "answer": "Yes, when performed by trained professionals with proper equipment. We always measure paint thickness before and during the process to ensure safe paint removal levels."
+      },
+      {
+        "question": "How much can I save vs replacement?",
+        "answer": "Typically 60–80%. A full car repaint costs €800–2,000+. Our paint correction starts at €189. Windshield replacement costs €300–500 — our glass polishing from €89. Yacht hull repaint can cost €5,000+ — our gelcoat restoration from €29/meter."
+      },
+      {
+        "question": "Do you offer a guarantee?",
+        "answer": "Yes. We offer a satisfaction promise — if you're not happy with the result, we rework it at no extra cost. Premium Ceramic packages include a 12-month coating protection warranty. The price you approve is the price you pay."
+      },
+      {
+        "question": "What car and yacht brands do you work with?",
+        "answer": "We work with all brands: BMW, Mercedes, Porsche, Tesla, Audi, Volkswagen, Range Rover, Ferrari and more. For yachts: Beneteau, Bavaria, Jeanneau, Sunseeker, Azimut and any GRP/gelcoat vessel."
+      },
+      {
+        "question": "Can I see examples of your work?",
+        "answer": "Yes — visit our <a href='/en/cases' class='text-brand-accent hover:underline'>Before & After gallery</a> to see real results. You can also find more examples on our Instagram @restorelab.pt"
       }
     ]
   },
@@ -355,9 +377,34 @@
       }
     ]
   },
+  "guarantee": {
+    "section_title": "Zero Risk. Guaranteed.",
+    "items": [
+      {
+        "icon": "assessment",
+        "title": "Honest Assessment",
+        "description": "We tell you upfront what's achievable. No upselling. No empty promises."
+      },
+      {
+        "icon": "satisfaction",
+        "title": "Satisfaction Promise",
+        "description": "Not happy with the result? We'll rework it at no extra cost."
+      },
+      {
+        "icon": "warranty",
+        "title": "Protection Warranty",
+        "description": "Up to 12 months coating protection guarantee on premium packages."
+      },
+      {
+        "icon": "price",
+        "title": "Fixed Price",
+        "description": "The quote you approve is the price you pay. Zero surprises."
+      }
+    ]
+  },
   "lead_form": {
-    "section_title": "Get Your Free Estimate",
-    "section_subtitle": "Send us details and we'll come back with an honest quote",
+    "section_title": "Get Your Free Estimate in 30 Minutes",
+    "section_subtitle": "Send photos of the damage. We'll reply with an honest price — no obligations, no hidden fees.",
     "fields": {
       "name": "Your Name",
       "name_placeholder": "John Silva",
@@ -382,6 +429,7 @@
   },
   "footer": {
     "tagline": "Premium mobile surface restoration",
+    "trust": "Trusted by 500+ clients in Lisbon & Cascais",
     "services_title": "Services",
     "contact_title": "Contact",
     "legal_title": "Legal",

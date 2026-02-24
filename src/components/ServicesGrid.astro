@@ -47,7 +47,16 @@ const icons: Record<string, string> = {
           </div>
 
           <h3 class="text-xl font-display font-bold text-white mb-1">{service.title}</h3>
-          <p class="text-white/50 text-sm mb-6">{service.subtitle}</p>
+          <p class="text-white/50 text-sm mb-4">{service.subtitle}</p>
+
+          {service.starting_price && (
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+              <span class="text-brand-accent font-bold text-lg">{service.starting_price}</span>
+              {service.vs_price && (
+                <span class="text-white/30 text-xs">{service.vs_price}</span>
+              )}
+            </div>
+          )}
 
           <ul class="space-y-2 mb-8">
             {service.features.map((f: string) => (

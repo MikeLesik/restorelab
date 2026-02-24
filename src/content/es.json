@@ -56,11 +56,14 @@
   },
   "hero": {
     "headline": "Restaurar. No Sustituir",
-    "subheadline": "Restauración móvil de pintura, vidrio y superficies de yates en Lisboa & Cascais",
+    "subheadline": "Ahorra hasta un 70% frente al reemplazo. Restauración móvil de pintura, cristal y yate — venimos a tu puerta en Lisboa y Cascais.",
     "cta_car": "Restauración Auto",
     "cta_yacht": "Restauración de Yate",
     "sticky_cta": "Presupuesto via WhatsApp",
-    "badge": "Servicio Móvil Premium"
+    "badge": "★ Valorado 5.0 • 500+ Trabajos",
+    "cta_primary": "Presupuesto Gratis",
+    "cta_secondary": "Ver Antes y Después",
+    "reply_time": "Respuesta media: 28 min"
   },
   "social_proof": {
     "rating": "5.0",
@@ -114,14 +117,13 @@
         "subtitle": "Eliminación de swirl marks, arañazos y restauración del brillo",
         "icon": "car",
         "features": [
-          "Eliminación de swirl marks",
-          "Corrección de arañazos",
-          "Restauración del brillo profundo",
-          "Preparación para cerámica",
-          "Sin repintura necesaria",
-          "Servicio móvil en su ubicación"
+          "Eliminación de remolinos y arañazos",
+          "Restauración de brillo profundo",
+          "Preparación para recubrimiento cerámico"
         ],
-        "tag": "Más popular"
+        "tag": "Más popular",
+        "starting_price": "desde 189€",
+        "vs_price": "vs 800€+ pintura"
       },
       {
         "id": "glass-polishing",
@@ -130,13 +132,12 @@
         "icon": "glass",
         "features": [
           "Restauración de parabrisas",
-          "Ventanas laterales y traseras",
-          "Paneles de vidrio arquitectónico",
-          "Superficies de vidrio de yate",
           "Eliminación de manchas de agua",
-          "Eliminación de arañazos del limpiaparabrisas"
+          "Eliminación de arañazos de limpiaparabrisas"
         ],
-        "tag": null
+        "tag": null,
+        "starting_price": "desde 89€",
+        "vs_price": "vs 400€ sustitución"
       },
       {
         "id": "acrylic-restoration",
@@ -160,13 +161,12 @@
         "icon": "yacht",
         "features": [
           "Eliminación de oxidación",
-          "Restauración del brillo",
-          "Recubrimiento protector",
-          "Acabado de calidad marina",
-          "Por encima y por debajo de la línea de flotación",
-          "En marina, sin varada necesaria"
+          "Restauración de brillo y lustre",
+          "En el puerto, sin necesidad de varada"
         ],
-        "tag": "Especialistas en yates"
+        "tag": "Especialistas en yates",
+        "starting_price": "desde 29€/metro",
+        "vs_price": "vs repintado completo"
       }
     ],
     "learn_more": "Saber más",
@@ -184,19 +184,21 @@
       {
         "number": "02",
         "title": "Reciba Presupuesto",
-        "description": "Reciba un presupuesto transparente en pocas horas. Sin tarifas ocultas, sin sorpresas."
+        "description": "Respuesta normalmente en 30 min. Precio transparente, sin costes ocultos."
       },
       {
         "number": "03",
         "title": "Vamos a Usted",
-        "description": "Nos desplazamos a su ubicación — casa, oficina o marina — con todo el equipo necesario."
+        "description": "Llegamos a tu casa, oficina, aparcamiento o puerto con todo el equipo profesional."
       },
       {
         "number": "04",
         "title": "Restauración y Protección",
-        "description": "Restauramos y protegemos la superficie con calidad de fábrica. Usted ve el resultado."
+        "description": "Acabado de calidad de fábrica. ¿No estás satisfecho? Lo rehacemos gratis."
       }
-    ]
+    ],
+    "cta_banner": "Pruébalo ahora — envíanos una foto y recibe tu presupuesto",
+    "cta_banner_btn": "Enviar foto por WhatsApp"
   },
   "pricing": {
     "section_title": "Precios Transparentes",
@@ -220,7 +222,8 @@
               "Protección final con sellante"
             ],
             "best_for": "Vehículo de uso diario con defectos leves",
-            "highlight": false
+            "highlight": false,
+            "savings": "La mayoría ahorra €600+ vs taller"
           },
           {
             "name": "Preparación Cerámica",
@@ -235,7 +238,8 @@
               "Aplicación de base cerámica"
             ],
             "best_for": "Vehículos preparándose para cerámica",
-            "highlight": true
+            "highlight": true,
+            "savings": "Incluye base cerámica de €89 — GRATIS"
           },
           {
             "name": "Cerámica Premium",
@@ -250,7 +254,8 @@
               "Garantía de protección de 12 meses"
             ],
             "best_for": "Vehículos de lujo y deportivos, máxima protección",
-            "highlight": false
+            "highlight": false,
+            "savings": "Garantía de 12 meses incluida"
           }
         ]
       },
@@ -294,7 +299,8 @@
           }
         ]
       }
-    ]
+    ],
+    "anchor_text": "Una pintura completa cuesta €800–2.000+. Nuestra corrección desde €189."
   },
   "faq": {
     "section_title": "Preguntas Frecuentes",
@@ -322,6 +328,22 @@
       {
         "question": "¿Es segura la corrección de pintura para mi coche?",
         "answer": "Sí, cuando la realizan profesionales formados con el equipo adecuado. Siempre medimos el grosor de la pintura antes y durante el proceso para garantizar niveles seguros de eliminación."
+      },
+      {
+        "question": "¿Cuánto puedo ahorrar frente a la sustitución?",
+        "answer": "Normalmente un 60–80%. Una pintura completa cuesta €800–2.000+. Nuestra corrección desde €189. La sustitución del parabrisas cuesta €300–500 — nuestro pulido de cristal desde €89."
+      },
+      {
+        "question": "¿Ofrecéis garantía?",
+        "answer": "Sí. Si no estás satisfecho con el resultado, lo rehacemos sin coste adicional. Los paquetes Premium incluyen garantía de 12 meses."
+      },
+      {
+        "question": "¿Con qué marcas de coches y yates trabajáis?",
+        "answer": "Trabajamos con todas las marcas: BMW, Mercedes, Porsche, Tesla, Audi, Volkswagen, Range Rover, Ferrari y más. Para yates: Beneteau, Bavaria, Jeanneau, Sunseeker, Azimut y cualquier embarcación GRP."
+      },
+      {
+        "question": "¿Puedo ver ejemplos de vuestro trabajo?",
+        "answer": "Sí — visita nuestra galería Antes y Después para ver resultados reales. También puedes encontrar más ejemplos en nuestro Instagram @restorelab.pt"
       }
     ]
   },
@@ -356,8 +378,8 @@
     ]
   },
   "lead_form": {
-    "section_title": "Obtenga su Presupuesto Gratuito",
-    "section_subtitle": "Envíenos los detalles y le responderemos con un presupuesto honesto",
+    "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",
+    "section_subtitle": "Envíanos fotos del daño. Te responderemos con un precio honesto — sin obligaciones, sin costes ocultos.",
     "fields": {
       "name": "Su Nombre",
       "name_placeholder": "Juan García",
@@ -388,6 +410,32 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
     "copyright": "© 2026 RestoreLab. Todos los derechos reservados.",
-    "made_in": "Hecho en Portugal."
+    "made_in": "Hecho en Portugal.",
+    "trust": "Con la confianza de más de 500 clientes en Lisboa y Cascais"
+  },
+  "guarantee": {
+    "section_title": "Cero Riesgo. Garantizado.",
+    "items": [
+      {
+        "icon": "assessment",
+        "title": "Evaluación Honesta",
+        "description": "Te decimos de antemano qué es posible. Sin ventas adicionales."
+      },
+      {
+        "icon": "satisfaction",
+        "title": "Promesa de Satisfacción",
+        "description": "¿No estás contento con el resultado? Lo rehacemos sin coste adicional."
+      },
+      {
+        "icon": "warranty",
+        "title": "Garantía de Protección",
+        "description": "Hasta 12 meses de garantía de protección del recubrimiento."
+      },
+      {
+        "icon": "price",
+        "title": "Precio Fijo",
+        "description": "El presupuesto que apruebas es el precio que pagas. Sin sorpresas."
+      }
+    ]
   }
 }

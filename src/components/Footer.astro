@@ -26,6 +26,9 @@ const waUrl = `https://wa.me/${wa}`;
           </span>
         </a>
         <p class="text-white/50 text-sm leading-relaxed">{t.footer.tagline}</p>
+        {t.footer.trust && (
+          <p class="text-white/30 text-xs mt-2">{t.footer.trust}</p>
+        )}
         <div class="flex items-center gap-3 mt-4">
           <a
             href={waUrl}
