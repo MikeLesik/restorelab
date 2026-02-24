@@ -1,0 +1,456 @@
+---
+export interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+---
+
+<section class="py-24 bg-brand-navy/30" id="estimate-calculator">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <h2 class="section-title">Get an Instant Estimate</h2>
+      <p class="section-subtitle mx-auto">Answer 4 quick questions and get a price range in under 30 seconds.</p>
+      <p class="text-white/30 text-sm mt-3">Final quote is confirmed after photo review or on-site inspection.</p>
+    </div>
+
+    <!-- Calculator card -->
+    <div class="max-w-2xl mx-auto">
+      <div id="calc-card" class="card" data-wa={wa}>
+
+        <!-- Progress zone (hidden on result screen) -->
+        <div id="calc-progress-zone" class="mb-8">
+          <div class="flex items-center justify-between mb-2">
+            <span id="calc-step-label" class="text-xs font-medium text-white/40 uppercase tracking-widest"></span>
+          </div>
+          <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+            <div
+              id="calc-progress-bar"
+              class="h-full bg-brand-accent rounded-full transition-all duration-300"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Step question -->
+        <h3 id="calc-question" class="font-display font-bold text-white text-xl mb-6"></h3>
+
+        <!-- Options area (aria-live for accessibility) -->
+        <div id="calc-options" aria-live="polite"></div>
+
+        <!-- Back button -->
+        <div class="mt-8">
+          <button
+            id="calc-back-btn"
+            style="display:none"
+            class="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-1"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { calculate, getBucket } from '../lib/calculatorConfig';
+  import type { Service, CalcInput } from '../lib/calculatorConfig';
+
+  // ── Types ────────────────────────────────────────────────────────────────────
+  type StepName =
+    | 'service'
+    | 'vehicleSize'
+    | 'glassType'
+    | 'areaSize'
+    | 'boatLength'
+    | 'condition'
+    | 'location';
+
+  interface State {
+    step: number;
+    service: Service | null;
+    vehicleSize: string | null;
+    glassType: string | null;
+    areaSize: string | null;
+    boatLength: string | null;
+    condition: string | null;
+    location: string | null;
+    isResult: boolean;
+  }
+
+  // ── State ────────────────────────────────────────────────────────────────────
+  const state: State = {
+    step: 0,
+    service: null,
+    vehicleSize: null,
+    glassType: null,
+    areaSize: null,
+    boatLength: null,
+    condition: null,
+    location: null,
+    isResult: false,
+  };
+
+  function resetState() {
+    state.step = 0;
+    state.service = null;
+    state.vehicleSize = null;
+    state.glassType = null;
+    state.areaSize = null;
+    state.boatLength = null;
+    state.condition = null;
+    state.location = null;
+    state.isResult = false;
+  }
+
+  // ── Flow ─────────────────────────────────────────────────────────────────────
+  function getFlow(): StepName[] {
+    if (!state.service) return ['service'];
+    if (state.service === 'car_paint')     return ['service', 'vehicleSize',  'condition', 'location'];
+    if (state.service === 'glass')         return ['service', 'glassType', 'areaSize', 'condition', 'location'];
+    if (state.service === 'yacht_gelcoat') return ['service', 'boatLength',  'condition', 'location'];
+    return ['service'];
+  }
+
+  // ── Options config ───────────────────────────────────────────────────────────
+  const OPTIONS: Record<StepName, { value: string; label: string; sub?: string }[]> = {
+    service: [
+      { value: 'car_paint',     label: 'Car Paint Correction', sub: 'Swirl marks, scratches & gloss restoration' },
+      { value: 'glass',         label: 'Glass Polishing',      sub: 'Windshields, windows & glass surfaces' },
+      { value: 'yacht_gelcoat', label: 'Yacht Gelcoat',        sub: 'Oxidation removal & marine finishing' },
+    ],
+    vehicleSize: [
+      { value: 's',        label: 'Hatchback / Sedan',  sub: 'Small car' },
+      { value: 'm',        label: 'Wagon / Crossover',  sub: 'Medium car' },
+      { value: 'l',        label: 'SUV / Van',           sub: 'Large vehicle' },
+      { value: 'not_sure', label: 'Not sure',            sub: '' },
+    ],
+    glassType: [
+      { value: 'car_side',     label: 'Car Side Window' },
+      { value: 'windshield',   label: 'Car Windshield' },
+      { value: 'home_window',  label: 'Home Window' },
+      { value: 'shower_glass', label: 'Shower Glass' },
+      { value: 'other',        label: 'Other / Not sure' },
+    ],
+    areaSize: [
+      { value: 'small',    label: 'Small',    sub: 'Single scratch or spot' },
+      { value: 'medium',   label: 'Medium',   sub: 'Partial surface' },
+      { value: 'large',    label: 'Large',    sub: 'Full panel or multiple areas' },
+      { value: 'not_sure', label: 'Not sure', sub: '' },
+    ],
+    boatLength: [
+      { value: 'le_25',         label: '≤ 25 ft' },
+      { value: 'from_26_to_30', label: '26–30 ft' },
+      { value: 'from_31_to_40', label: '31–40 ft' },
+      { value: 'gt_41',         label: '41+ ft' },
+      { value: 'not_sure',      label: 'Not sure' },
+    ],
+    condition: [
+      { value: 'light',    label: 'Light',    sub: 'Minor swirls or surface marks' },
+      { value: 'medium',   label: 'Medium',   sub: 'Noticeable scratches or dullness' },
+      { value: 'heavy',    label: 'Heavy',    sub: 'Deep scratches or severe oxidation' },
+      { value: 'not_sure', label: 'Not sure', sub: '' },
+    ],
+    location: [
+      { value: 'lisbon',        label: 'Lisbon' },
+      { value: 'cascais',       label: 'Cascais' },
+      { value: 'oeiras_sintra', label: 'Oeiras / Sintra' },
+      { value: 'almada',        label: 'Almada' },
+      { value: 'setubal',       label: 'Setúbal' },
+      { value: 'other',         label: 'Other area' },
+    ],
+  };
+
+  const QUESTIONS: Record<StepName, string> = {
+    service:     'What needs restoration?',
+    vehicleSize: 'What is your vehicle size?',
+    glassType:   'What type of glass is it?',
+    areaSize:    'How large is the affected area?',
+    boatLength:  'Boat length',
+    condition:   'How would you describe the condition?',
+    location:    'Where is the object located?',
+  };
+
+  // Label maps for WhatsApp message
+  const LABELS: Partial<Record<StepName, Record<string, string>>> = {
+    service:     { car_paint: 'Car Paint Correction', glass: 'Glass Polishing', yacht_gelcoat: 'Yacht Gelcoat' },
+    vehicleSize: { s: 'Hatchback / Sedan', m: 'Wagon / Crossover', l: 'SUV / Van', not_sure: 'Not sure' },
+    glassType:   { car_side: 'Car Side Window', windshield: 'Car Windshield', home_window: 'Home Window', shower_glass: 'Shower Glass', other: 'Other' },
+    areaSize:    { small: 'Small', medium: 'Medium', large: 'Large', not_sure: 'Not sure' },
+    boatLength:  { le_25: '≤25 ft', from_26_to_30: '26-30 ft', from_31_to_40: '31-40 ft', gt_41: '41+ ft', not_sure: 'Not sure' },
+    condition:   { light: 'Light', medium: 'Medium', heavy: 'Heavy', not_sure: 'Not sure' },
+    location:    { lisbon: 'Lisbon', cascais: 'Cascais', oeiras_sintra: 'Oeiras / Sintra', almada: 'Almada', setubal: 'Setúbal', other: 'Other area' },
+  };
+
+  // Grid layout per step
+  const GRID: Partial<Record<StepName, string>> = {
+    service:     'grid grid-cols-1 gap-3',
+    vehicleSize: 'grid grid-cols-1 sm:grid-cols-2 gap-3',
+    glassType:   'grid grid-cols-1 sm:grid-cols-2 gap-3',
+    areaSize:    'grid grid-cols-1 sm:grid-cols-2 gap-3',
+    boatLength:  'grid grid-cols-1 sm:grid-cols-2 gap-3',
+    condition:   'grid grid-cols-1 gap-3',
+    location:    'grid grid-cols-2 sm:grid-cols-3 gap-3',
+  };
+
+  // ── DOM refs ──────────────────────────────────────────────────────────────────
+  const card         = document.getElementById('calc-card')!;
+  const progressZone = document.getElementById('calc-progress-zone')!;
+  const stepLabel    = document.getElementById('calc-step-label')!;
+  const progressBar  = document.getElementById('calc-progress-bar')!;
+  const questionEl   = document.getElementById('calc-question')!;
+  const optionsEl    = document.getElementById('calc-options')!;
+  const backBtn      = document.getElementById('calc-back-btn')!;
+  const waNumber     = card.dataset.wa || '351933817788';
+
+  // ── Analytics ─────────────────────────────────────────────────────────────────
+  function dlPush(obj: Record<string, unknown>) {
+    const dl = (window as any).dataLayer as unknown[];
+    (window as any).dataLayer = dl || [];
+    ((window as any).dataLayer as unknown[]).push(obj);
+  }
+
+  // ── Render step ───────────────────────────────────────────────────────────────
+  function renderStep(stepName: StepName, displayStep: number, totalSteps: number) {
+    // Progress
+    progressZone.style.display = '';
+    stepLabel.textContent = `Step ${displayStep} of ${totalSteps}`;
+    progressBar.style.width = `${(displayStep / totalSteps) * 100}%`;
+
+    // Question
+    questionEl.style.display = '';
+    questionEl.textContent = QUESTIONS[stepName] ?? '';
+
+    // Options grid
+    const opts = OPTIONS[stepName] ?? [];
+    optionsEl.className = GRID[stepName] ?? 'grid grid-cols-1 gap-3';
+    optionsEl.innerHTML = opts.map(opt => `
+      <button
+        data-value="${opt.value}"
+        class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5
+               hover:border-brand-accent/50 hover:bg-brand-accent/5
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
+               transition-all duration-150"
+      >
+        <span class="block font-semibold text-white text-sm">${opt.label}</span>
+        ${opt.sub ? `<span class="block text-white/40 text-xs mt-0.5">${opt.sub}</span>` : ''}
+      </button>
+    `).join('');
+
+    optionsEl.querySelectorAll<HTMLButtonElement>('.calc-option').forEach(btn => {
+      btn.addEventListener('click', () => handleSelect(stepName, btn.dataset.value!));
+    });
+
+    // Back button
+    backBtn.style.display = displayStep > 1 ? 'inline-flex' : 'none';
+  }
+
+  // ── Handle option selection ───────────────────────────────────────────────────
+  function handleSelect(stepName: StepName, value: string) {
+    // Visual flash on selected
+    optionsEl.querySelectorAll('.calc-option').forEach(b => {
+      b.classList.remove('border-brand-accent', 'bg-brand-accent/10', 'ring-1', 'ring-brand-accent');
+    });
+    optionsEl.querySelector(`[data-value="${value}"]`)
+      ?.classList.add('border-brand-accent', 'bg-brand-accent/10', 'ring-1', 'ring-brand-accent');
+
+    // Save to state
+    switch (stepName) {
+      case 'service':     state.service     = value as Service; break;
+      case 'vehicleSize': state.vehicleSize = value; break;
+      case 'glassType':   state.glassType   = value; break;
+      case 'areaSize':    state.areaSize    = value; break;
+      case 'boatLength':  state.boatLength  = value; break;
+      case 'condition':   state.condition   = value; break;
+      case 'location':    state.location    = value; break;
+    }
+
+    // Analytics
+    if (stepName === 'service') {
+      dlPush({ event: 'calculator_service_select', service: value });
+    } else {
+      dlPush({ event: 'calculator_step_complete', step_name: stepName, service: state.service, [stepName]: value });
+    }
+
+    // Advance after brief visual delay
+    const flow = getFlow();
+    const next = state.step + 1;
+    setTimeout(() => {
+      if (next >= flow.length) {
+        state.isResult = true;
+        renderResult();
+      } else {
+        state.step = next;
+        render();
+      }
+    }, 180);
+  }
+
+  // ── Render result ─────────────────────────────────────────────────────────────
+  function renderResult() {
+    const input: CalcInput = {
+      service:     state.service!,
+      vehicleSize: state.vehicleSize  ?? undefined,
+      glassType:   state.glassType    ?? undefined,
+      areaSize:    state.areaSize     ?? undefined,
+      boatLength:  state.boatLength   ?? undefined,
+      condition:   state.condition    ?? 'not_sure',
+      location:    state.location     ?? 'lisbon',
+    };
+
+    const result = calculate(input);
+    const bucket = getBucket(result.min, result.max);
+
+    dlPush({
+      event:           'calculator_result_shown',
+      service:         state.service,
+      condition:       state.condition,
+      location:        state.location,
+      estimate_min:    result.min,
+      estimate_max:    result.max,
+      estimate_bucket: bucket,
+    });
+
+    // Build WA pre-fill message
+    const serviceLabel = LABELS.service?.[state.service ?? ''] ?? state.service ?? '';
+    const sizeLabel =
+      state.service === 'car_paint'     ? (LABELS.vehicleSize?.[state.vehicleSize ?? ''] ?? '') :
+      state.service === 'glass'         ? (LABELS.glassType?.[state.glassType ?? ''] ?? '') :
+                                          (LABELS.boatLength?.[state.boatLength ?? ''] ?? '');
+    const areaLabel    = state.areaSize  ? ` (${LABELS.areaSize?.[state.areaSize]   ?? state.areaSize})` : '';
+    const condLabel    = LABELS.condition?.[state.condition  ?? ''] ?? state.condition ?? '';
+    const locLabel     = LABELS.location?.[state.location    ?? ''] ?? state.location  ?? '';
+
+    let waMsg = `Hi! I used your estimate calculator.\n\n`;
+    waMsg    += `Service: ${serviceLabel}\n`;
+    waMsg    += `Type/Size: ${sizeLabel}${areaLabel}\n`;
+    waMsg    += `Condition: ${condLabel}\n`;
+    waMsg    += `Location: ${locLabel}\n`;
+    waMsg    += `Estimated range: €${result.min}–€${result.max}\n\n`;
+    waMsg    += `Please confirm the final quote. I can send photos.`;
+
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
+
+    // Hide progress, show result in content area
+    progressZone.style.display = 'none';
+    questionEl.style.display   = 'none';
+    optionsEl.className        = '';
+
+    optionsEl.innerHTML = `
+      <div>
+        <!-- Price range -->
+        <div class="text-center mb-8">
+          <p class="text-xs text-white/40 uppercase tracking-widest mb-3">Estimated Price Range</p>
+          <p class="text-5xl sm:text-6xl font-display font-bold text-brand-accent" aria-live="polite" aria-atomic="true">
+            €${result.min}–€${result.max}
+          </p>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="p-4 bg-white/5 border border-white/10 rounded-xl mb-4 text-sm text-white/50 leading-relaxed">
+          This is an estimate based on the details you selected.
+          Final quote may change based on photos, defect depth, access, and required correction stages.
+        </div>
+
+        ${result.warning ? `
+        <div class="p-4 bg-brand-gold/10 border border-brand-gold/20 rounded-xl mb-4 flex items-start gap-3">
+          <svg class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <p class="text-sm text-brand-gold">${result.warning}</p>
+        </div>
+        ` : ''}
+
+        ${state.service === 'yacht_gelcoat' ? `
+        <div class="p-3 bg-brand-accent/5 border border-brand-accent/15 rounded-xl mb-4">
+          <p class="text-xs text-brand-accent/80">
+            Typical base starts from €15/ft (≈ €49/m), depending on oxidation and access.
+          </p>
+        </div>
+        ` : ''}
+
+        <!-- WhatsApp CTA -->
+        <a
+          href="${waUrl}"
+          id="calc-wa-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event="wa_click"
+          class="btn-whatsapp w-full justify-center mb-3 flex"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Send to WhatsApp for Exact Quote
+        </a>
+
+        <!-- Start Over -->
+        <button
+          id="calc-restart-btn"
+          class="w-full text-center text-sm text-white/30 hover:text-white/70 transition-colors py-2"
+        >
+          Start Over
+        </button>
+      </div>
+    `;
+
+    // WA analytics
+    document.getElementById('calc-wa-btn')?.addEventListener('click', () => {
+      dlPush({
+        event:           'calculator_whatsapp_click',
+        service:         state.service,
+        estimate_min:    result.min,
+        estimate_max:    result.max,
+        estimate_bucket: bucket,
+      });
+    });
+
+    // Restart
+    document.getElementById('calc-restart-btn')?.addEventListener('click', () => {
+      dlPush({ event: 'calculator_restart' });
+      resetState();
+      render();
+    });
+
+    // Show Back on result screen too (spec requirement)
+    backBtn.style.display = 'inline-flex';
+  }
+
+  // ── Main render ───────────────────────────────────────────────────────────────
+  function render() {
+    if (state.isResult) {
+      renderResult();
+      return;
+    }
+    const flow       = getFlow();
+    const stepName   = flow[state.step];
+    const totalSteps = flow.length;
+    const display    = state.step + 1;
+    renderStep(stepName, display, totalSteps);
+  }
+
+  // ── Back button handler ───────────────────────────────────────────────────────
+  backBtn.addEventListener('click', () => {
+    if (state.isResult) {
+      state.isResult = false;
+      const flow = getFlow();
+      state.step = flow.length - 1;
+    } else if (state.step > 0) {
+      state.step--;
+    }
+    render();
+  });
+
+  // ── Init ─────────────────────────────────────────────────────────────────────
+  dlPush({ event: 'calculator_start' });
+  render();
+</script>

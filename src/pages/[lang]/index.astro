@@ -9,6 +9,7 @@ import FAQ from '../../components/FAQ.astro';
 import AreaServedSection from '../../components/AreaServedSection.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import GuaranteeBlock from '../../components/GuaranteeBlock.astro';
+import Calculator from '../../components/Calculator.astro';
 
 import en from '../../content/en.json';
 import es from '../../content/es.json';
@@ -39,6 +40,7 @@ const { t } = Astro.props;
   <HowItWorks t={t} lang={lang} />
   <Testimonials t={t} />
   <PricingCards t={t} lang={lang} categoryId="car" />
+  <Calculator lang={lang} />
   <AreaServedSection t={t} />
   <GuaranteeBlock t={t} />
   <FAQ t={t} />
