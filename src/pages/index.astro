@@ -1,6 +1,38 @@
 ---
-// Redirect root to /en
+// Root redirect page — fallback for non-Cloudflare environments (local dev).
+// On Cloudflare Pages, functions/index.ts handles this at the edge (faster).
 ---
-<meta http-equiv="refresh" content="0; url=/en" />
-<script>window.location.replace('/en');</script>
-<p>Redirecting to <a href="/en">/en</a>…</p>
+<script>
+(function () {
+  const VALID = ['en', 'es', 'pt'];
+  const PT = ['PT','BR','AO','MZ','CV','GW','ST','TL'];
+  const ES = ['ES','MX','AR','CO','CL','PE','VE','EC','BO','PY','UY','CR','PA','GT','HN','SV','NI','DO','CU','PR'];
+
+  // 1. Respect user's stored preference
+  const stored = localStorage.getItem('preferred_lang');
+  if (stored && VALID.includes(stored)) {
+    window.location.replace('/' + stored);
+    return;
+  }
+
+  // 2. Try IP detection via ipapi.co (free, no key)
+  fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(2500) })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      const cc = (data.country_code || 'XX').toUpperCase();
+      let lang = 'en';
+      if (PT.includes(cc)) lang = 'pt';
+      else if (ES.includes(cc)) lang = 'es';
+      window.location.replace('/' + lang);
+    })
+    .catch(function () {
+      window.location.replace('/en');
+    });
+})();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=/en" />
+</noscript>
+<p style="font-family:sans-serif;text-align:center;margin-top:4rem">
+  Redirecting… <a href="/en">Click here if not redirected</a>
+</p>

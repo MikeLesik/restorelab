@@ -87,6 +87,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
               <a
                 href={`/${l}${currentPath}`}
                 role="menuitem"
+                data-lang-switch={l}
                 class:list={[
                   'flex items-center gap-2 px-4 py-2.5 text-sm transition-colors',
                   lang === l
@@ -174,6 +175,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
         {['en', 'es', 'pt'].map((l) => (
           <a
             href={`/${l}${currentPath}`}
+            data-lang-switch={l}
             class:list={[
               'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors',
               lang === l
@@ -212,5 +214,18 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
   document.addEventListener('click', () => {
     langMenu?.classList.add('hidden');
     langBtn?.setAttribute('aria-expanded', 'false');
+  });
+
+  // Save language preference when user switches manually
+  // Sets both localStorage (for client-side fallback) and cookie (for Cloudflare edge function)
+  document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const lang = link.dataset.langSwitch;
+      if (lang) {
+        localStorage.setItem('preferred_lang', lang);
+        // 1-year cookie, readable by Cloudflare Pages Function on next root visit
+        document.cookie = `preferred_lang=${lang}; path=/; max-age=31536000; SameSite=Lax`;
+      }
+    });
   });
 </script>
