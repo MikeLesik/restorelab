@@ -39,6 +39,16 @@
   .tag {
     @apply inline-block text-xs font-semibold px-3 py-1 rounded-full;
   }
+  /* Typography scale — intermediate weights between section-title and body */
+  .lead {
+    @apply text-xl text-white/80 font-normal leading-relaxed;
+  }
+  .caption {
+    @apply text-sm text-white/40 leading-normal;
+  }
+  .label {
+    @apply text-[10px] font-semibold uppercase tracking-[0.12em] text-white/40;
+  }
 }
 
 /* Scrollbar */
