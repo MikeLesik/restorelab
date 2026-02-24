@@ -337,32 +337,28 @@
     ]
   },
   "area": {
-    "section_title": "Áreas de Serviço",
-    "section_subtitle": "Serviço móvel em toda a Área Metropolitana de Lisboa",
-    "areas": [
+    "section_title": "Cobrimos Todo o Portugal",
+    "section_subtitle": "3 bases operacionais — deslocamo-nos até si, onde quer que esteja",
+    "cta_prefix": "Orçamento em",
+    "travel_note": "Projeto grande de iate ou frota fora destas áreas? Viajamos — é só perguntar.",
+    "hubs": [
       {
-        "name": "Lisboa",
-        "note": "Cidade e área metropolitana"
+        "city": "Porto",
+        "region": "Norte de Portugal",
+        "coverage": "Raio de 50 km",
+        "areas": ["Porto", "Matosinhos", "Vila Nova de Gaia", "Braga", "Guimarães", "Aveiro"]
       },
       {
-        "name": "Cascais",
-        "note": "Todas as marinas"
+        "city": "Lisboa",
+        "region": "Área Metropolitana de Lisboa",
+        "coverage": "Raio de 60 km",
+        "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada", "Setúbal"]
       },
       {
-        "name": "Sintra",
-        "note": "Incluindo Estoril"
-      },
-      {
-        "name": "Oeiras",
-        "note": "Empresas e residências"
-      },
-      {
-        "name": "Almada",
-        "note": "Margem Sul"
-      },
-      {
-        "name": "Setúbal",
-        "note": "Mediante pedido"
+        "city": "Faro",
+        "region": "Algarve",
+        "coverage": "Toda a Costa do Algarve",
+        "areas": ["Faro", "Portimão", "Lagos", "Albufeira", "Vilamoura", "Tavira"]
       }
     ]
   },

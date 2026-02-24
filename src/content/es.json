@@ -337,32 +337,28 @@
     ]
   },
   "area": {
-    "section_title": "Áreas de Servicio",
-    "section_subtitle": "Servicio móvil en toda el Área Metropolitana de Lisboa",
-    "areas": [
+    "section_title": "Cubrimos Todo Portugal",
+    "section_subtitle": "3 bases operativas — vamos a donde estés",
+    "cta_prefix": "Presupuesto en",
+    "travel_note": "¿Proyecto grande de yate o flota fuera de estas áreas? Viajamos — solo pregunta.",
+    "hubs": [
       {
-        "name": "Lisboa",
-        "note": "Ciudad y área metropolitana"
+        "city": "Porto",
+        "region": "Norte de Portugal",
+        "coverage": "Radio de 50 km",
+        "areas": ["Porto", "Matosinhos", "Vila Nova de Gaia", "Braga", "Guimarães", "Aveiro"]
       },
       {
-        "name": "Cascais",
-        "note": "Todas las marinas"
+        "city": "Lisboa",
+        "region": "Área Metropolitana de Lisboa",
+        "coverage": "Radio de 60 km",
+        "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada", "Setúbal"]
       },
       {
-        "name": "Sintra",
-        "note": "Incluyendo Estoril"
-      },
-      {
-        "name": "Oeiras",
-        "note": "Empresas y residencias"
-      },
-      {
-        "name": "Almada",
-        "note": "Margen Sur"
-      },
-      {
-        "name": "Setúbal",
-        "note": "Bajo petición"
+        "city": "Faro",
+        "region": "Algarve",
+        "coverage": "Toda la Costa del Algarve",
+        "areas": ["Faro", "Portimão", "Lagos", "Albufeira", "Vilamoura", "Tavira"]
       }
     ]
   },

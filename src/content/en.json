@@ -337,32 +337,28 @@
     ]
   },
   "area": {
-    "section_title": "Areas We Serve",
-    "section_subtitle": "Mobile service across the Lisbon Metropolitan Area",
-    "areas": [
+    "section_title": "We Cover All of Portugal",
+    "section_subtitle": "3 operational hubs — we come to you, wherever you are",
+    "cta_prefix": "Get a Quote in",
+    "travel_note": "Large yacht or fleet project outside these areas? We travel — just ask.",
+    "hubs": [
       {
-        "name": "Lisbon",
-        "note": "City & greater area"
+        "city": "Porto",
+        "region": "North Portugal",
+        "coverage": "50 km radius",
+        "areas": ["Porto", "Matosinhos", "Vila Nova de Gaia", "Braga", "Guimarães", "Aveiro"]
       },
       {
-        "name": "Cascais",
-        "note": "All marinas covered"
+        "city": "Lisbon",
+        "region": "Lisbon Metropolitan Area",
+        "coverage": "60 km radius",
+        "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada", "Setúbal"]
       },
       {
-        "name": "Sintra",
-        "note": "Including Estoril"
-      },
-      {
-        "name": "Oeiras",
-        "note": "Business & residential"
-      },
-      {
-        "name": "Almada",
-        "note": "South bank"
-      },
-      {
-        "name": "Setúbal",
-        "note": "On request"
+        "city": "Faro",
+        "region": "Algarve",
+        "coverage": "Full Algarve Coast",
+        "areas": ["Faro", "Portimão", "Lagos", "Albufeira", "Vilamoura", "Tavira"]
       }
     ]
   },

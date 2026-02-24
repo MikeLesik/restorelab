@@ -1,171 +1,104 @@
 ---
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
 export interface Props {
   t: Record<string, any>;
 }
 
 const { t } = Astro.props;
+const wa = WHATSAPP_NUMBER;
 
-const markers = [
-  { name: 'Lisbon',   note: 'City & greater area',  lat: 38.7169, lng: -9.1399 },
-  { name: 'Cascais',  note: 'All marinas covered',   lat: 38.6979, lng: -9.4215 },
-  { name: 'Sintra',   note: 'Including Estoril',     lat: 38.7978, lng: -9.3878 },
-  { name: 'Oeiras',   note: 'Business & residential',lat: 38.6969, lng: -9.3147 },
-  { name: 'Almada',   note: 'South bank',            lat: 38.6769, lng: -9.1573 },
-  { name: 'Setúbal',  note: 'On request',            lat: 38.5244, lng: -8.8882 },
+const hubIcons = [
+  /* Porto — anchor (marinas + port city) */
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02.708.708M1 12h2m18 0h2M4.929 19.071l.707-.707M18.364 4.929l.708-.708"/>
+   <circle cx="12" cy="12" r="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
+  /* Lisbon — city skyline / bridge */
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M5 21V10l7-7 7 7v11M9 21v-5h6v5"/>`,
+  /* Faro — sun (Algarve = sun coast) */
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2M5.636 5.636l1.414 1.414m8.9 8.9 1.415 1.414M3 12h2m14 0h2M5.636 18.364l1.414-1.414m8.9-8.9 1.415-1.414"/>
+   <circle cx="12" cy="12" r="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
 ];
 ---
 
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 relative overflow-hidden">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <!-- Subtle Portugal silhouette background decoration -->
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none" aria-hidden="true">
+    <svg width="340" height="480" viewBox="0 0 340 480" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M200 10 L280 25 L310 60 L320 110 L315 160 L300 200 L310 240 L295 280
+               L270 310 L230 340 L200 370 L175 400 L155 430 L140 460 L130 470
+               L110 465 L80 450 L50 420 L30 380 L20 340 L25 290 L15 250
+               L10 200 L20 150 L30 110 L50 75 L80 45 L120 20 Z"/>
+    </svg>
+  </div>
 
-      <!-- Text -->
-      <div>
-        <h2 class="section-title">{t.area.section_title}</h2>
-        <p class="section-subtitle mb-10">{t.area.section_subtitle}</p>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="grid grid-cols-2 gap-3">
-          {t.area.areas.map((area: any) => (
-            <div class="flex items-center gap-3 p-4 bg-white/3 border border-white/8 rounded-xl">
-              <div class="w-2 h-2 bg-brand-accent rounded-full flex-shrink-0"></div>
-              <div>
-                <div class="text-white font-medium text-sm">{area.name}</div>
-                <div class="text-white/35 text-xs">{area.note}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Leaflet Map -->
-      <div class="relative">
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="height: 460px;">
-          <div id="service-map" style="width:100%; height:100%;"></div>
-        </div>
-        <!-- Decorative glow -->
-        <div class="absolute inset-0 -z-10 blur-3xl opacity-15 bg-brand-accent rounded-3xl pointer-events-none"></div>
-      </div>
-
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h2 class="section-title">{t.area.section_title}</h2>
+      <p class="section-subtitle mx-auto">{t.area.section_subtitle}</p>
     </div>
+
+    <!-- 3 City Hub Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.area.hubs.map((hub: any, i: number) => (
+        <div class="group relative rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm p-7 flex flex-col hover:border-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-accent/5">
+
+          {/* Top accent line */}
+          <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-accent/60 to-transparent rounded-full"></div>
+
+          {/* Hub number */}
+          <div class="absolute top-5 right-5 w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+            <span class="text-[10px] font-bold text-white/30">{i + 1}</span>
+          </div>
+
+          {/* Icon */}
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mb-5 group-hover:bg-brand-accent/20 transition-colors">
+            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={hubIcons[i]} />
+          </div>
+
+          {/* City + region */}
+          <h3 class="font-display font-bold text-white text-2xl mb-0.5">{hub.city}</h3>
+          <p class="label mb-4">{hub.region}</p>
+
+          {/* Coverage badge */}
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-brand-accent/8 border border-brand-accent/15 rounded-full mb-5 self-start">
+            <svg class="w-3 h-3 text-brand-accent/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <circle cx="12" cy="11" r="3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+            <span class="text-xs text-brand-accent/80 font-medium">{hub.coverage}</span>
+          </div>
+
+          {/* Areas */}
+          <div class="flex flex-wrap gap-1.5 mb-7 flex-1">
+            {hub.areas.map((area: string) => (
+              <span class="px-2.5 py-1 bg-white/5 border border-white/8 rounded-lg text-xs text-white/55">
+                {area}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <a
+            href={`https://wa.me/${wa}?text=${encodeURIComponent(`Hello RestoreLab! I'm in ${hub.city} and I'd like to get a quote.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-event="wa_click"
+            class="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-white bg-brand-whatsapp/90 hover:bg-brand-whatsapp rounded-xl transition-all"
+          >
+            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            {t.area.cta_prefix} {hub.city}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Travel note -->
+    <p class="text-center caption mt-8">{t.area.travel_note}</p>
+
   </div>
 </section>
-
-<!-- Leaflet CSS -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""
-/>
-
-<script define:vars={{ markers }}>
-  const script = document.createElement('script');
-  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  script.onload = () => buildMap();
-  document.head.appendChild(script);
-
-  function buildMap() {
-    const L = window.L;
-
-    // Dark tile layer — CartoDB Dark Matter (free, no API key)
-    const map = L.map('service-map', {
-      center: [38.68, -9.28],
-      zoom: 10,
-      zoomControl: true,
-      scrollWheelZoom: false,   // не мешает скроллу страницы
-    });
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }).addTo(map);
-
-    // Custom branded marker icon
-    const makeIcon = (active) => L.divIcon({
-      className: '',
-      html: `
-        <div style="
-          width: 36px; height: 36px;
-          background: ${active ? '#2A7FFF' : '#1B3A5C'};
-          border: 2px solid ${active ? '#60a5fa' : '#2A7FFF'};
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
-          box-shadow: 0 2px 12px rgba(42,127,255,0.5);
-          transition: background 0.2s;
-        ">
-          <div style="
-            width: 10px; height: 10px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-          "></div>
-        </div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -38],
-    });
-
-    // Popup styles injected once
-    const style = document.createElement('style');
-    style.textContent = `
-      .leaflet-popup-content-wrapper {
-        background: #0D1B2A;
-        border: 1px solid rgba(42,127,255,0.3);
-        border-radius: 12px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-        padding: 0;
-      }
-      .leaflet-popup-content {
-        margin: 12px 16px;
-        color: white;
-        font-family: Inter, sans-serif;
-      }
-      .leaflet-popup-tip {
-        background: #0D1B2A;
-      }
-      .leaflet-popup-close-button {
-        color: rgba(255,255,255,0.4) !important;
-        font-size: 18px !important;
-        top: 6px !important;
-        right: 8px !important;
-      }
-      .leaflet-control-zoom a {
-        background: #0D1B2A !important;
-        color: white !important;
-        border-color: rgba(255,255,255,0.1) !important;
-      }
-      .leaflet-control-zoom a:hover {
-        background: #1B3A5C !important;
-      }
-      .leaflet-control-attribution {
-        background: rgba(10,10,10,0.7) !important;
-        color: rgba(255,255,255,0.3) !important;
-        font-size: 10px !important;
-      }
-      .leaflet-control-attribution a { color: rgba(255,255,255,0.4) !important; }
-    `;
-    document.head.appendChild(style);
-
-    // Add markers
-    markers.forEach((m) => {
-      const marker = L.marker([m.lat, m.lng], { icon: makeIcon(true) });
-      marker.bindPopup(`
-        <div style="min-width:140px">
-          <div style="font-weight:600; font-size:14px; color:white; margin-bottom:4px">${m.name}</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.5)">${m.note}</div>
-        </div>
-      `);
-      marker.addTo(map);
-    });
-
-    // Fit map to markers bounds with padding
-    const group = L.featureGroup(
-      markers.map(m => L.marker([m.lat, m.lng]))
-    );
-    map.fitBounds(group.getBounds().pad(0.2));
-  }
-</script>

@@ -61,9 +61,9 @@ const waUrl = `https://wa.me/${wa}`;
           <div>
             <h3 class="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4">{t.area.section_title}</h3>
             <div class="flex flex-wrap gap-2">
-              {t.area.areas.map((area: any) => (
+              {t.area.hubs.map((hub: any) => (
                 <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-white/60">
-                  {area.name}
+                  {hub.city}
                 </span>
               ))}
             </div>
