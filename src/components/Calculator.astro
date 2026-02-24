@@ -24,22 +24,35 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
         <!-- Progress zone (hidden on result screen) -->
         <div id="calc-progress-zone" class="mb-8">
           <div class="flex items-center justify-between mb-2">
-            <span id="calc-step-label" class="text-xs font-medium text-white/40 uppercase tracking-widest"></span>
+            <span id="calc-step-label" class="text-xs font-medium text-white/40 uppercase tracking-widest">Step 1 of 4</span>
           </div>
           <div class="h-1 bg-white/10 rounded-full overflow-hidden">
             <div
               id="calc-progress-bar"
               class="h-full bg-brand-accent rounded-full transition-all duration-300"
-              style="width: 0%"
+              style="width: 25%"
             ></div>
           </div>
         </div>
 
-        <!-- Step question -->
-        <h3 id="calc-question" class="font-display font-bold text-white text-xl mb-6"></h3>
+        <!-- Step question — pre-rendered so it's visible without JS -->
+        <h3 id="calc-question" class="font-display font-bold text-white text-xl mb-6">What needs restoration?</h3>
 
-        <!-- Options area (aria-live for accessibility) -->
-        <div id="calc-options" aria-live="polite"></div>
+        <!-- Options area — pre-rendered first step so card is never empty -->
+        <div id="calc-options" aria-live="polite" class="grid grid-cols-1 gap-3">
+          <button data-value="car_paint" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
+            <span class="block font-semibold text-white text-sm">Car Paint Correction</span>
+            <span class="block text-white/40 text-xs mt-0.5">Swirl marks, scratches &amp; gloss restoration</span>
+          </button>
+          <button data-value="glass" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
+            <span class="block font-semibold text-white text-sm">Glass Polishing</span>
+            <span class="block text-white/40 text-xs mt-0.5">Windshields, windows &amp; glass surfaces</span>
+          </button>
+          <button data-value="yacht_gelcoat" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
+            <span class="block font-semibold text-white text-sm">Yacht Gelcoat</span>
+            <span class="block text-white/40 text-xs mt-0.5">Oxidation removal &amp; marine finishing</span>
+          </button>
+        </div>
 
         <!-- Back button -->
         <div class="mt-8">
@@ -63,6 +76,9 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 <script>
   import { calculate, getBucket } from '../lib/calculatorConfig';
   import type { Service, CalcInput } from '../lib/calculatorConfig';
+
+  // Guard: only run on pages that have the calculator card
+  function init() {
 
   // ── Types ────────────────────────────────────────────────────────────────────
   type StepName =
@@ -202,7 +218,9 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
   };
 
   // ── DOM refs ──────────────────────────────────────────────────────────────────
-  const card         = document.getElementById('calc-card')!;
+  const card = document.getElementById('calc-card');
+  if (!card) return; // not on a page with the calculator
+
   const progressZone = document.getElementById('calc-progress-zone')!;
   const stepLabel    = document.getElementById('calc-step-label')!;
   const progressBar  = document.getElementById('calc-progress-bar')!;
@@ -453,4 +471,8 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
   // ── Init ─────────────────────────────────────────────────────────────────────
   dlPush({ event: 'calculator_start' });
   render();
+
+  } // end init()
+
+  init();
 </script>
