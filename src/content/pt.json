@@ -303,47 +303,36 @@
     "anchor_text": "Uma pintura completa custa €800–2.000+. A nossa correção começa em €189."
   },
   "faq": {
-    "section_title": "Perguntas Frequentes",
+    "section_title": "Antes de Nos Contactar",
+    "section_subtitle": "Respostas práticas sobre o nosso serviço móvel — para saber exatamente o que esperar",
+    "cta_title": "Ainda tem dúvidas?",
+    "cta_subtitle": "Respondemos em menos de 30 minutos em média.",
+    "cta_btn": "Perguntar pelo WhatsApp",
     "items": [
       {
-        "question": "Vêm até à minha localização?",
-        "answer": "Sim — somos um serviço totalmente móvel. Deslocamo-nos até à sua casa, escritório ou marina com todo o equipamento profissional. Não precisa de deixar o carro ou barco em lado nenhum."
+        "icon": "bolt",
+        "question": "Preciso de ter tomada elétrica ou acesso a água disponível?",
+        "answer": "Não — somos 100% autossuficientes. Trazemos o nosso próprio gerador, máquinas de polimento profissionais e reservatório de água. Só precisa de nos fornecer um lugar de estacionamento ou acesso à amarração."
       },
       {
-        "question": "Todos os riscos podem ser removidos?",
-        "answer": "Riscos profundos que penetraram o verniz até ao primer ou ao metal não podem ser completamente removidos apenas com polimento. Fazemos sempre uma avaliação honesta antes de começar."
+        "icon": "space",
+        "question": "Quanto espaço livre é necessário à volta do carro ou barco?",
+        "answer": "Para um carro: idealmente 1 metro de espaço livre em cada lado de trabalho — uma vaga de estacionamento normal é suficiente. Para trabalhos em iates, operamos diretamente na sua amarração, sem necessidade de tirá-lo da água."
       },
       {
-        "question": "Quanto tempo demora o serviço?",
-        "answer": "O polimento automóvel demora tipicamente 4 a 10 horas, consoante o pacote e o tamanho do veículo. Trabalhos de vidro ou acrílico demoram 1 a 4 horas. O gelcoat de iate depende do comprimento do barco."
+        "icon": "rain",
+        "question": "O que acontece se chover ou as condições meteorológicas forem más?",
+        "answer": "Trabalhos em vidro e acrílico podem ser realizados com chuva leve. A correção de pintura e o revestimento cerâmico requerem condições secas. Verificamos a previsão com antecedência — se as condições não forem adequadas, remarcamos sem custos nem inconvenientes."
       },
       {
-        "question": "Que áreas cobrem?",
-        "answer": "Cobrimos Lisboa, Cascais, Sintra, Oeiras, Almada e municípios circundantes. Para trabalhos em iates, cobrimos todas as marinas principais da área costeira de Lisboa."
+        "icon": "user",
+        "question": "Preciso de estar presente durante todo o serviço?",
+        "answer": "De forma alguma. A maioria dos clientes deixa o carro ou o barco e segue com o seu dia. Deixe-nos acesso ao veículo e um número de contacto. Enviamos um relatório fotográfico quando o trabalho estiver concluído."
       },
       {
-        "question": "Como obtenho um orçamento?",
-        "answer": "A forma mais rápida é enviar-nos fotos dos danos via WhatsApp. Respondemos no mesmo dia com um orçamento honesto e sem compromisso."
-      },
-      {
-        "question": "A correção de pintura é segura para o meu carro?",
-        "answer": "Sim, quando realizada por profissionais formados com equipamento adequado. Medimos sempre a espessura da pintura antes e durante o processo para garantir níveis seguros de remoção."
-      },
-      {
-        "question": "Quanto posso poupar face à substituição?",
-        "answer": "Normalmente 60–80%. Uma pintura completa custa €800–2.000+. A nossa correção começa em €189. A substituição do para-brisas custa €300–500 — o nosso polimento de vidro começa em €89."
-      },
-      {
-        "question": "Oferecem garantia?",
-        "answer": "Sim. Se não ficar satisfeito com o resultado, refazemos sem custo adicional. Os pacotes Premium incluem garantia de 12 meses."
-      },
-      {
-        "question": "Com que marcas de carros e iates trabalham?",
-        "answer": "Trabalhamos com todas as marcas: BMW, Mercedes, Porsche, Tesla, Audi, Volkswagen, Range Rover, Ferrari e mais. Para iates: Beneteau, Bavaria, Jeanneau, Sunseeker, Azimut e qualquer embarcação GRP."
-      },
-      {
-        "question": "Posso ver exemplos do vosso trabalho?",
-        "answer": "Sim — visite a nossa galeria Antes e Depois para ver resultados reais. Pode também encontrar mais exemplos no nosso Instagram @restorelab.pt"
+        "icon": "shield",
+        "question": "Qual é a vossa garantia de satisfação?",
+        "answer": "Simples: se não ficar satisfeito com o resultado, voltamos e refazemos sem custo adicional. Os pacotes cerâmicos premium incluem 12 meses de garantia de proteção do revestimento. O preço que aprova é sempre o preço que paga — sem surpresas."
       }
     ]
   },
@@ -437,5 +426,12 @@
         "description": "O orçamento que aprova é o preço que paga. Sem surpresas."
       }
     ]
+  },
+  "pre_footer_cta": {
+    "title": "Pronto para restaurar?",
+    "subtitle": "Envie-nos uma foto e receba um orçamento honesto em menos de 30 minutos. Sem compromisso nem custos ocultos.",
+    "cta": "Enviar fotos pelo WhatsApp",
+    "trust_pill": "5.0 · 500+ trabalhos em Lisboa e Cascais",
+    "reply_note": "Resposta média: 28 min · Serviço móvel, vamos até si"
   }
 }

@@ -44,3 +44,33 @@
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0A0A0A; }
 ::-webkit-scrollbar-thumb { background: #1B3A5C; border-radius: 3px; }
+
+/* FAQ — answer slide-in animation */
+@keyframes faq-open {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+details[open] .faq-answer-body {
+  animation: faq-open 0.18s ease-out forwards;
+}
+
+/* How It Works — connector flow animation */
+@keyframes connector-flow {
+  0%   { background-position: -100% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-connector-flow {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(42, 127, 255, 0.0) 20%,
+    rgba(42, 127, 255, 0.7) 50%,
+    rgba(42, 127, 255, 0.0) 80%,
+    transparent 100%
+  );
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  animation: connector-flow 3s ease-in-out infinite;
+}

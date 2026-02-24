@@ -7,6 +7,11 @@ export interface Props {
 
 const { t, lang, currentPath = '' } = Astro.props;
 const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+
+function isActive(segment: string): boolean {
+  if (!segment) return currentPath === '' || currentPath === '/';
+  return currentPath === `/${segment}` || currentPath.startsWith(`/${segment}/`);
+}
 const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
 ---
 
@@ -28,10 +33,24 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
 
       <!-- Nav Desktop -->
       <nav class="hidden md:flex items-center gap-8">
-        <a href={`/${lang}/services`} class="text-sm text-white/70 hover:text-white transition-colors">{t.nav.services}</a>
-        <a href={`/${lang}/pricing`} class="text-sm text-white/70 hover:text-white transition-colors">{t.nav.pricing}</a>
-        <a href={`/${lang}/cases`} class="text-sm text-white/70 hover:text-white transition-colors">{t.nav.cases}</a>
-        <a href={`/${lang}/contact`} class="text-sm text-white/70 hover:text-white transition-colors">{t.nav.contact}</a>
+        {[
+          { segment: 'services', label: t.nav.services },
+          { segment: 'pricing',  label: t.nav.pricing  },
+          { segment: 'cases',    label: t.nav.cases    },
+          { segment: 'contact',  label: t.nav.contact  },
+        ].map(({ segment, label }) => (
+          <a
+            href={`/${lang}/${segment}`}
+            class:list={[
+              'text-sm transition-colors relative pb-0.5',
+              isActive(segment)
+                ? 'text-white font-medium after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-brand-accent'
+                : 'text-white/60 hover:text-white'
+            ]}
+          >
+            {label}
+          </a>
+        ))}
         <!-- Trust badge -->
         <div class="flex items-center gap-1.5 px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 rounded-full">
           <span class="text-brand-gold text-xs">★</span>
@@ -123,11 +142,25 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-brand-dark">
-    <div class="px-4 py-4 flex flex-col gap-4">
-      <a href={`/${lang}/services`} class="text-white/80 hover:text-white transition-colors py-2">{t.nav.services}</a>
-      <a href={`/${lang}/pricing`} class="text-white/80 hover:text-white transition-colors py-2">{t.nav.pricing}</a>
-      <a href={`/${lang}/cases`} class="text-white/80 hover:text-white transition-colors py-2">{t.nav.cases}</a>
-      <a href={`/${lang}/contact`} class="text-white/80 hover:text-white transition-colors py-2">{t.nav.contact}</a>
+    <div class="px-4 py-4 flex flex-col gap-1">
+      {[
+        { segment: 'services', label: t.nav.services },
+        { segment: 'pricing',  label: t.nav.pricing  },
+        { segment: 'cases',    label: t.nav.cases    },
+        { segment: 'contact',  label: t.nav.contact  },
+      ].map(({ segment, label }) => (
+        <a
+          href={`/${lang}/${segment}`}
+          class:list={[
+            'py-2.5 px-3 rounded-lg text-sm transition-colors flex items-center gap-2',
+            isActive(segment)
+              ? 'text-white font-medium bg-white/5 border-l-2 border-brand-accent pl-4'
+              : 'text-white/70 hover:text-white hover:bg-white/5'
+          ]}
+        >
+          {label}
+        </a>
+      ))}
       <div class="flex items-center gap-3 pt-2 border-t border-white/10">
         <span class="text-white/40 text-sm">Language:</span>
         {['en', 'es', 'pt'].map((l) => (

@@ -303,47 +303,36 @@
     "anchor_text": "Una pintura completa cuesta €800–2.000+. Nuestra corrección desde €189."
   },
   "faq": {
-    "section_title": "Preguntas Frecuentes",
+    "section_title": "Antes de Contactarnos",
+    "section_subtitle": "Respuestas prácticas sobre nuestro servicio móvil — para que sepas exactamente qué esperar",
+    "cta_title": "¿Tienes más preguntas?",
+    "cta_subtitle": "Respondemos en menos de 30 minutos de media.",
+    "cta_btn": "Preguntar por WhatsApp",
     "items": [
       {
-        "question": "¿Vienen a mi ubicación?",
-        "answer": "Sí — somos un servicio totalmente móvil. Nos desplazamos a su casa, oficina o marina con todo el equipo profesional. No necesita dejar el coche o barco en ningún sitio."
+        "icon": "bolt",
+        "question": "¿Necesito proporcionar enchufes eléctricos o suministro de agua?",
+        "answer": "No — somos 100% autosuficientes. Traemos nuestro propio generador, máquinas pulidoras profesionales y suministro de agua. Solo necesitas proporcionarnos una plaza de aparcamiento o acceso al amarre."
       },
       {
-        "question": "¿Se pueden eliminar todos los arañazos?",
-        "answer": "Los arañazos profundos que han penetrado el barniz hasta el primer o el metal no pueden eliminarse completamente solo con pulido. Siempre hacemos una evaluación honesta antes de comenzar."
+        "icon": "space",
+        "question": "¿Cuánto espacio libre necesitan alrededor del coche o barco?",
+        "answer": "Para un coche: idealmente 1 metro de espacio libre a cada lado de trabajo — una plaza de aparcamiento estándar es suficiente. Para trabajos en yates, operamos directamente en tu amarre, sin necesidad de sacarlo del agua."
       },
       {
-        "question": "¿Cuánto tiempo dura el servicio?",
-        "answer": "El pulido del automóvil suele tardar entre 4 y 10 horas, según el paquete y el tamaño del vehículo. Los trabajos de vidrio o acrílico tardan entre 1 y 4 horas. El gelcoat del yate depende de la eslora del barco."
+        "icon": "rain",
+        "question": "¿Qué pasa si llueve o las condiciones meteorológicas son malas?",
+        "answer": "Los trabajos de vidrio y acrílico pueden realizarse con lluvia ligera. La corrección de pintura y el recubrimiento cerámico requieren condiciones secas. Comprobamos la previsión con antelación — si las condiciones no son adecuadas, reprogramamos sin coste ni inconvenientes."
       },
       {
-        "question": "¿Qué áreas cubren?",
-        "answer": "Cubrimos Lisboa, Cascais, Sintra, Oeiras, Almada y municipios circundantes. Para trabajos en yates, cubrimos todas las marinas principales del área costera de Lisboa."
+        "icon": "user",
+        "question": "¿Necesito estar presente durante todo el servicio?",
+        "answer": "Para nada. La mayoría de los clientes dejan el coche o el barco y siguen con su día. Solo déjanos acceso al vehículo y un número de contacto. Te enviamos un informe fotográfico cuando el trabajo esté terminado."
       },
       {
-        "question": "¿Cómo obtengo un presupuesto?",
-        "answer": "La forma más rápida es enviarnos fotos de los daños por WhatsApp. Respondemos el mismo día con un presupuesto honesto y sin compromiso."
-      },
-      {
-        "question": "¿Es segura la corrección de pintura para mi coche?",
-        "answer": "Sí, cuando la realizan profesionales formados con el equipo adecuado. Siempre medimos el grosor de la pintura antes y durante el proceso para garantizar niveles seguros de eliminación."
-      },
-      {
-        "question": "¿Cuánto puedo ahorrar frente a la sustitución?",
-        "answer": "Normalmente un 60–80%. Una pintura completa cuesta €800–2.000+. Nuestra corrección desde €189. La sustitución del parabrisas cuesta €300–500 — nuestro pulido de cristal desde €89."
-      },
-      {
-        "question": "¿Ofrecéis garantía?",
-        "answer": "Sí. Si no estás satisfecho con el resultado, lo rehacemos sin coste adicional. Los paquetes Premium incluyen garantía de 12 meses."
-      },
-      {
-        "question": "¿Con qué marcas de coches y yates trabajáis?",
-        "answer": "Trabajamos con todas las marcas: BMW, Mercedes, Porsche, Tesla, Audi, Volkswagen, Range Rover, Ferrari y más. Para yates: Beneteau, Bavaria, Jeanneau, Sunseeker, Azimut y cualquier embarcación GRP."
-      },
-      {
-        "question": "¿Puedo ver ejemplos de vuestro trabajo?",
-        "answer": "Sí — visita nuestra galería Antes y Después para ver resultados reales. También puedes encontrar más ejemplos en nuestro Instagram @restorelab.pt"
+        "icon": "shield",
+        "question": "¿Cuál es su garantía de satisfacción?",
+        "answer": "Simple: si no estás satisfecho con el resultado, volvemos y lo rehacemos sin coste adicional. Los paquetes cerámicos premium incluyen 12 meses de garantía de protección del recubrimiento. El precio que apruebas es siempre el precio que pagas — sin sorpresas."
       }
     ]
   },
@@ -437,5 +426,12 @@
         "description": "El presupuesto que apruebas es el precio que pagas. Sin sorpresas."
       }
     ]
+  },
+  "pre_footer_cta": {
+    "title": "¿Listo para restaurar?",
+    "subtitle": "Envíanos una foto y recibe un presupuesto honesto en menos de 30 minutos. Sin compromiso ni costes ocultos.",
+    "cta": "Enviar fotos por WhatsApp",
+    "trust_pill": "5.0 · 500+ trabajos en Lisboa y Cascais",
+    "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
   }
 }
