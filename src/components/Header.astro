@@ -84,6 +84,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
         <!-- Phone -->
         <a
           href="tel:+351933817788"
+          data-event="phone_click"
           class="hidden lg:flex items-center gap-1.5 text-white/50 hover:text-white text-sm transition-colors"
         >
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,6 +98,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
+          data-event="wa_click"
           class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-lg transition-colors"
         >
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

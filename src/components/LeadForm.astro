@@ -37,7 +37,7 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
       <!-- Form -->
       <div class="lg:col-span-3 card">
-      <form id="lead-form" class="space-y-5">
+      <form id="lead-form" data-form="estimate" class="space-y-5">
 
         <!-- Name -->
         <div>
@@ -120,6 +120,7 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
         <!-- Submit -->
         <button
           type="submit"
+          data-event="estimate_submit"
           class="w-full btn-whatsapp py-4 text-base font-bold"
         >
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

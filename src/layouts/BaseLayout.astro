@@ -69,14 +69,11 @@ const langs = ['en', 'es', 'pt'];
     ))}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath}`} />
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "vmc619bvp9");
-    </script>
+    <!-- CookieConsent v3 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+
+    <!-- dataLayer init (must be before GTM) -->
+    <script>window.dataLayer = window.dataLayer || [];</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -118,5 +115,189 @@ const langs = ['en', 'es', 'pt'];
     </main>
     <Footer t={t} lang={lang} />
     <StickyCTA label={t.hero.sticky_cta} />
+
+    <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
+    <script define:vars={{ pageLang: lang }}>
+      // ── Loaders (called after consent) ──────────────────────────────────────
+
+      function loadGTM() {
+        if (window.__gtmLoaded) return;
+        window.__gtmLoaded = true;
+        (function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+          j.async=true;
+          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W34GRX86');
+        // GTM noscript fallback
+        var ns=document.createElement('noscript');
+        var iframe=document.createElement('iframe');
+        iframe.src='https://www.googletagmanager.com/ns.html?id=GTM-W34GRX86';
+        iframe.height='0'; iframe.width='0';
+        iframe.style.cssText='display:none;visibility:hidden';
+        ns.appendChild(iframe);
+        document.body.insertAdjacentElement('afterbegin',ns);
+      }
+
+      function loadClarity() {
+        if (window.__clarityLoaded) return;
+        window.__clarityLoaded = true;
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r); t.async=1;
+          t.src='https://www.clarity.ms/tag/'+i;
+          y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
+        })(window,document,'clarity','script','vmc619bvp9');
+      }
+
+      function loadMetaPixel() {
+        if (window.__pixelLoaded) return;
+        window.__pixelLoaded = true;
+        !function(f,b,e,v,n,t,s){
+          if(f.fbq)return;
+          n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+          n.queue=[]; t=b.createElement(e); t.async=!0; t.src=v;
+          s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+        }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','812107381591231');
+        fbq('track','PageView');
+      }
+
+      // ── Conversion event delegation ──────────────────────────────────────────
+
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('[data-event]');
+        if (!el) return;
+        var ev = el.getAttribute('data-event');
+        // Push to dataLayer (GTM picks up via custom event trigger)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: ev,
+          click_url: el.href || '',
+          click_text: (el.innerText || '').trim().substring(0,100)
+        });
+        // Meta Pixel: Contact on WhatsApp / phone clicks
+        if (typeof window.fbq === 'function') {
+          if (ev === 'wa_click' || ev === 'phone_click') fbq('track','Contact');
+        }
+      });
+
+      document.addEventListener('submit', function(e) {
+        if (!e.target.closest('[data-form="estimate"]')) return;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'estimate_submit' });
+        if (typeof window.fbq === 'function') fbq('track','Lead');
+      });
+
+      // Auto-tag any wa.me / tel: links that don't already have data-event
+      document.querySelectorAll('a[href*="wa.me"]:not([data-event])').forEach(function(el){
+        el.setAttribute('data-event','wa_click');
+      });
+      document.querySelectorAll('a[href^="tel:"]:not([data-event])').forEach(function(el){
+        el.setAttribute('data-event','phone_click');
+      });
+
+      // ── CookieConsent v3 ─────────────────────────────────────────────────────
+
+      // Force dark mode to match site theme
+      document.documentElement.classList.add('cc--darkmode');
+
+      var ccScript = document.createElement('script');
+      ccScript.src = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js';
+      ccScript.onload = function() {
+        CookieConsent.run({
+          guiOptions: {
+            consentModal: { layout: 'bar', position: 'bottom', equalWeightButtons: false }
+          },
+          categories: {
+            necessary: { enabled: true, readOnly: true },
+            analytics: {},
+            marketing: {}
+          },
+          onConsent: function() {
+            if (CookieConsent.acceptedCategory('analytics')) { loadGTM(); loadClarity(); }
+            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); }
+          },
+          onChange: function() {
+            if (CookieConsent.acceptedCategory('analytics')) { loadGTM(); loadClarity(); }
+            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); }
+          },
+          language: {
+            default: pageLang,
+            translations: {
+              en: {
+                consentModal: {
+                  title: 'We use cookies',
+                  description: 'We use cookies to improve your experience, analyse traffic and show relevant ads. Choose which categories to allow.',
+                  acceptAllBtn: 'Accept all',
+                  acceptNecessaryBtn: 'Necessary only',
+                  showPreferencesBtn: 'Manage preferences'
+                },
+                preferencesModal: {
+                  title: 'Cookie preferences',
+                  acceptAllBtn: 'Accept all',
+                  acceptNecessaryBtn: 'Necessary only',
+                  savePreferencesBtn: 'Save preferences',
+                  closeIconLabel: 'Close',
+                  sections: [
+                    { title: 'Strictly necessary', description: 'Required for the website to function correctly. Cannot be disabled.', linkedCategory: 'necessary' },
+                    { title: 'Analytics', description: 'Help us understand how visitors interact with the site (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Marketing', description: 'Used to show you personalised ads based on your interests (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+              es: {
+                consentModal: {
+                  title: 'Usamos cookies',
+                  description: 'Usamos cookies para mejorar tu experiencia, analizar el tráfico y mostrarte anuncios relevantes.',
+                  acceptAllBtn: 'Aceptar todo',
+                  acceptNecessaryBtn: 'Solo necesarias',
+                  showPreferencesBtn: 'Gestionar preferencias'
+                },
+                preferencesModal: {
+                  title: 'Preferencias de cookies',
+                  acceptAllBtn: 'Aceptar todo',
+                  acceptNecessaryBtn: 'Solo necesarias',
+                  savePreferencesBtn: 'Guardar preferencias',
+                  closeIconLabel: 'Cerrar',
+                  sections: [
+                    { title: 'Estrictamente necesarias', description: 'Necesarias para el funcionamiento del sitio. No pueden desactivarse.', linkedCategory: 'necessary' },
+                    { title: 'Analíticas', description: 'Nos ayudan a entender cómo interactúan los visitantes con el sitio (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Marketing', description: 'Se usan para mostrarte anuncios personalizados según tus intereses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+              pt: {
+                consentModal: {
+                  title: 'Usamos cookies',
+                  description: 'Usamos cookies para melhorar a sua experiência, analisar o tráfego e mostrar anúncios relevantes.',
+                  acceptAllBtn: 'Aceitar tudo',
+                  acceptNecessaryBtn: 'Apenas necessários',
+                  showPreferencesBtn: 'Gerir preferências'
+                },
+                preferencesModal: {
+                  title: 'Preferências de cookies',
+                  acceptAllBtn: 'Aceitar tudo',
+                  acceptNecessaryBtn: 'Apenas necessários',
+                  savePreferencesBtn: 'Guardar preferências',
+                  closeIconLabel: 'Fechar',
+                  sections: [
+                    { title: 'Estritamente necessários', description: 'Necessários para o funcionamento do site. Não podem ser desativados.', linkedCategory: 'necessary' },
+                    { title: 'Analíticos', description: 'Ajudam-nos a perceber como os visitantes interagem com o site (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Marketing', description: 'Usados para mostrar anúncios personalizados com base nos seus interesses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              }
+            }
+          }
+        });
+      };
+      document.head.appendChild(ccScript);
+    </script>
   </body>
 </html>
