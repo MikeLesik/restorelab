@@ -1,11 +1,13 @@
 ---
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
 export interface Props {
   t: Record<string, any>;
   lang: string;
 }
 
 const { t, lang } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
 ---
 
@@ -13,7 +15,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
 
   <!-- Background grid pattern -->
   <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(theme(colors.brand.accent/0.3)_1px,transparent_1px),linear-gradient(90deg,theme(colors.brand.accent/0.3)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
   </div>
 
   <!-- Glow effects -->
@@ -64,7 +66,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quot
     </div>
 
     <!-- Reply time micro-text -->
-    <p class="text-white/30 text-sm mb-12">{t.hero.reply_time}</p>
+    <p class="text-white/40 text-sm mb-12">{t.hero.reply_time}</p>
 
     <!-- Stats -->
     <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto mb-16">

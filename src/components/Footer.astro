@@ -1,11 +1,13 @@
 ---
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
 export interface Props {
   t: Record<string, any>;
   lang: string;
 }
 
 const { t, lang } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}`;
 ---
 
@@ -27,14 +29,14 @@ const waUrl = `https://wa.me/${wa}`;
         </a>
         <p class="text-white/50 text-sm leading-relaxed">{t.footer.tagline}</p>
         {t.footer.trust && (
-          <p class="text-white/30 text-xs mt-2">{t.footer.trust}</p>
+          <p class="text-white/40 text-xs mt-2">{t.footer.trust}</p>
         )}
         <div class="flex items-center gap-3 mt-4">
           <a
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+            class="flex items-center gap-2 text-brand-whatsapp hover:brightness-125 transition-all"
             aria-label="WhatsApp"
           >
             <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +75,7 @@ const waUrl = `https://wa.me/${wa}`;
               {t.nav.contact}
             </a>
           </li>
-          <li class="text-white/30">Lisbon · Cascais · Sintra</li>
+          <li class="text-white/40">Lisbon · Cascais · Sintra</li>
         </ul>
       </div>
 
@@ -97,8 +99,8 @@ const waUrl = `https://wa.me/${wa}`;
 
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-white/30 text-sm">{t.footer.copyright}</p>
-      <p class="text-white/30 text-sm">{t.footer.made_in}</p>
+      <p class="text-white/40 text-sm">{t.footer.copyright}</p>
+      <p class="text-white/40 text-sm">{t.footer.made_in}</p>
     </div>
   </div>
 </footer>

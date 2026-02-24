@@ -4,7 +4,8 @@ export interface Props {
 }
 
 const { lang } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+const wa = WHATSAPP_NUMBER;
 ---
 
 <section class="py-24 bg-brand-navy/30" id="estimate-calculator">
@@ -58,8 +59,7 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
         <div class="mt-8">
           <button
             id="calc-back-btn"
-            style="display:none"
-            class="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-1"
+            class="hidden inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-1"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -74,8 +74,8 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 </section>
 
 <script>
-  import { calculate, getBucket } from '../lib/calculatorConfig';
-  import type { Service, CalcInput } from '../lib/calculatorConfig';
+  import { calculate, getBucket } from '@/lib/calculatorConfig';
+  import type { Service, CalcInput } from '@/lib/calculatorConfig';
 
   // Guard: only run on pages that have the calculator card
   function init() {
@@ -227,7 +227,7 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
   const questionEl   = document.getElementById('calc-question')!;
   const optionsEl    = document.getElementById('calc-options')!;
   const backBtn      = document.getElementById('calc-back-btn')!;
-  const waNumber     = card.dataset.wa || '351933817788';
+  const waNumber     = card.dataset.wa || '';
 
   // ── Analytics ─────────────────────────────────────────────────────────────────
   function dlPush(obj: Record<string, unknown>) {
@@ -247,28 +247,33 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
     questionEl.style.display = '';
     questionEl.textContent = QUESTIONS[stepName] ?? '';
 
-    // Options grid
+    // Options grid — built with safe DOM methods
     const opts = OPTIONS[stepName] ?? [];
     optionsEl.className = GRID[stepName] ?? 'grid grid-cols-1 gap-3';
-    optionsEl.innerHTML = opts.map(opt => `
-      <button
-        data-value="${opt.value}"
-        class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5
-               hover:border-brand-accent/50 hover:bg-brand-accent/5
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
-               transition-all duration-150"
-      >
-        <span class="block font-semibold text-white text-sm">${opt.label}</span>
-        ${opt.sub ? `<span class="block text-white/40 text-xs mt-0.5">${opt.sub}</span>` : ''}
-      </button>
-    `).join('');
+    optionsEl.textContent = '';
+    opts.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.dataset.value = opt.value;
+      btn.className = 'calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150';
+      const labelSpan = document.createElement('span');
+      labelSpan.className = 'block font-semibold text-white text-sm';
+      labelSpan.textContent = opt.label;
+      btn.appendChild(labelSpan);
+      if (opt.sub) {
+        const subSpan = document.createElement('span');
+        subSpan.className = 'block text-white/40 text-xs mt-0.5';
+        subSpan.textContent = opt.sub;
+        btn.appendChild(subSpan);
+      }
+      optionsEl.appendChild(btn);
+    });
 
     optionsEl.querySelectorAll<HTMLButtonElement>('.calc-option').forEach(btn => {
       btn.addEventListener('click', () => handleSelect(stepName, btn.dataset.value!));
     });
 
     // Back button
-    backBtn.style.display = displayStep > 1 ? 'inline-flex' : 'none';
+    if (displayStep > 1) { backBtn.classList.remove('hidden'); } else { backBtn.classList.add('hidden'); }
   }
 
   // ── Handle option selection ───────────────────────────────────────────────────
@@ -357,72 +362,99 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
 
-    // Hide progress, show result in content area
+    // Hide progress, show result in content area — built with safe DOM methods
     progressZone.style.display = 'none';
     questionEl.style.display   = 'none';
     optionsEl.className        = '';
+    optionsEl.textContent      = '';
 
-    optionsEl.innerHTML = `
-      <div>
-        <!-- Price range -->
-        <div class="text-center mb-8">
-          <p class="text-xs text-white/40 uppercase tracking-widest mb-3">Estimated Price Range</p>
-          <p class="text-5xl sm:text-6xl font-display font-bold text-brand-accent" aria-live="polite" aria-atomic="true">
-            €${result.min}–€${result.max}
-          </p>
-        </div>
+    const wrapper = document.createElement('div');
 
-        <!-- Disclaimer -->
-        <div class="p-4 bg-white/5 border border-white/10 rounded-xl mb-4 text-sm text-white/50 leading-relaxed">
-          This is an estimate based on the details you selected.
-          Final quote may change based on photos, defect depth, access, and required correction stages.
-        </div>
+    // Price range
+    const priceSection = document.createElement('div');
+    priceSection.className = 'text-center mb-8';
+    const priceLabel = document.createElement('p');
+    priceLabel.className = 'text-xs text-white/40 uppercase tracking-widest mb-3';
+    priceLabel.textContent = 'Estimated Price Range';
+    const priceValue = document.createElement('p');
+    priceValue.className = 'text-5xl sm:text-6xl font-display font-bold text-brand-accent';
+    priceValue.setAttribute('aria-live', 'polite');
+    priceValue.setAttribute('aria-atomic', 'true');
+    priceValue.textContent = `€${result.min}–€${result.max}`;
+    priceSection.appendChild(priceLabel);
+    priceSection.appendChild(priceValue);
+    wrapper.appendChild(priceSection);
 
-        ${result.warning ? `
-        <div class="p-4 bg-brand-gold/10 border border-brand-gold/20 rounded-xl mb-4 flex items-start gap-3">
-          <svg class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-          </svg>
-          <p class="text-sm text-brand-gold">${result.warning}</p>
-        </div>
-        ` : ''}
+    // Disclaimer
+    const disclaimer = document.createElement('div');
+    disclaimer.className = 'p-4 bg-white/5 border border-white/10 rounded-xl mb-4 text-sm text-white/50 leading-relaxed';
+    disclaimer.textContent = 'This is an estimate based on the details you selected. Final quote may change based on photos, defect depth, access, and required correction stages.';
+    wrapper.appendChild(disclaimer);
 
-        ${state.service === 'yacht_gelcoat' ? `
-        <div class="p-3 bg-brand-accent/5 border border-brand-accent/15 rounded-xl mb-4">
-          <p class="text-xs text-brand-accent/80">
-            Typical base starts from €15/ft (≈ €49/m), depending on oxidation and access.
-          </p>
-        </div>
-        ` : ''}
+    // Warning (if any)
+    if (result.warning) {
+      const warningBox = document.createElement('div');
+      warningBox.className = 'p-4 bg-brand-gold/10 border border-brand-gold/20 rounded-xl mb-4 flex items-start gap-3';
+      const warnIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      warnIcon.setAttribute('class', 'w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5');
+      warnIcon.setAttribute('fill', 'none');
+      warnIcon.setAttribute('stroke', 'currentColor');
+      warnIcon.setAttribute('viewBox', '0 0 24 24');
+      const warnPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      warnPath.setAttribute('stroke-linecap', 'round');
+      warnPath.setAttribute('stroke-linejoin', 'round');
+      warnPath.setAttribute('stroke-width', '2');
+      warnPath.setAttribute('d', 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z');
+      warnIcon.appendChild(warnPath);
+      warningBox.appendChild(warnIcon);
+      const warnText = document.createElement('p');
+      warnText.className = 'text-sm text-brand-gold';
+      warnText.textContent = result.warning;
+      warningBox.appendChild(warnText);
+      wrapper.appendChild(warningBox);
+    }
 
-        <!-- WhatsApp CTA -->
-        <a
-          href="${waUrl}"
-          id="calc-wa-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-event="wa_click"
-          class="btn-whatsapp w-full justify-center mb-3 flex"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Send to WhatsApp for Exact Quote
-        </a>
+    // Yacht note
+    if (state.service === 'yacht_gelcoat') {
+      const yachtNote = document.createElement('div');
+      yachtNote.className = 'p-3 bg-brand-accent/5 border border-brand-accent/15 rounded-xl mb-4';
+      const yachtP = document.createElement('p');
+      yachtP.className = 'text-xs text-brand-accent/80';
+      yachtP.textContent = 'Typical base starts from €15/ft (≈ €49/m), depending on oxidation and access.';
+      yachtNote.appendChild(yachtP);
+      wrapper.appendChild(yachtNote);
+    }
 
-        <!-- Start Over -->
-        <button
-          id="calc-restart-btn"
-          class="w-full text-center text-sm text-white/30 hover:text-white/70 transition-colors py-2"
-        >
-          Start Over
-        </button>
-      </div>
-    `;
+    // WhatsApp CTA
+    const waLink = document.createElement('a');
+    waLink.href = waUrl;
+    waLink.id = 'calc-wa-btn';
+    waLink.target = '_blank';
+    waLink.rel = 'noopener noreferrer';
+    waLink.dataset.event = 'wa_click';
+    waLink.className = 'btn-whatsapp w-full justify-center mb-3 flex';
+    const waSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    waSvg.setAttribute('class', 'w-5 h-5');
+    waSvg.setAttribute('viewBox', '0 0 24 24');
+    waSvg.setAttribute('fill', 'currentColor');
+    const waPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    waPath.setAttribute('d', 'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z');
+    waSvg.appendChild(waPath);
+    waLink.appendChild(waSvg);
+    waLink.append(' Send to WhatsApp for Exact Quote');
+    wrapper.appendChild(waLink);
+
+    // Restart button
+    const restartBtn = document.createElement('button');
+    restartBtn.id = 'calc-restart-btn';
+    restartBtn.className = 'w-full text-center text-sm text-white/30 hover:text-white/70 transition-colors py-2';
+    restartBtn.textContent = 'Start Over';
+    wrapper.appendChild(restartBtn);
+
+    optionsEl.appendChild(wrapper);
 
     // WA analytics
-    document.getElementById('calc-wa-btn')?.addEventListener('click', () => {
+    waLink.addEventListener('click', () => {
       dlPush({
         event:           'calculator_whatsapp_click',
         service:         state.service,
@@ -433,14 +465,14 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
     });
 
     // Restart
-    document.getElementById('calc-restart-btn')?.addEventListener('click', () => {
+    restartBtn.addEventListener('click', () => {
       dlPush({ event: 'calculator_restart' });
       resetState();
       render();
     });
 
     // Show Back on result screen too (spec requirement)
-    backBtn.style.display = 'inline-flex';
+    backBtn.classList.remove('hidden');
   }
 
   // ── Main render ───────────────────────────────────────────────────────────────

@@ -1,9 +1,10 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import StickyCTA from '../components/StickyCTA.astro';
-import PreFooterCTA from '../components/PreFooterCTA.astro';
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import StickyCTA from '@/components/StickyCTA.astro';
+import PreFooterCTA from '@/components/PreFooterCTA.astro';
+import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
 export interface Props {
   title: string;
@@ -25,10 +26,13 @@ const {
   currentPath = '',
 } = Astro.props;
 
-const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://restorelab.io';
+const siteUrl = SITE_URL;
 const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
-
 const langs = ['en', 'es', 'pt'];
+
+const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
+const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
+const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
 ---
 
 <!doctype html>
@@ -70,11 +74,21 @@ const langs = ['en', 'es', 'pt'];
     ))}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath}`} />
 
+    <!-- Preconnect hints for external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
     <!-- CookieConsent v3 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css"
+      crossorigin="anonymous"
+    />
 
     <!-- dataLayer init (must be before GTM) -->
-    <script>window.dataLayer = window.dataLayer || [];</script>
+    <script>(window as any).dataLayer = (window as any).dataLayer || [];</script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -87,7 +101,7 @@ const langs = ['en', 'es', 'pt'];
       "name": "RestoreLab",
       "description": "Premium mobile surface restoration — car paint correction, glass polishing and yacht gelcoat restoration.",
       "url": siteUrl,
-      "telephone": "+351933817788",
+      "telephone": `+${WHATSAPP_NUMBER}`,
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cascais",
@@ -119,11 +133,11 @@ const langs = ['en', 'es', 'pt'];
     <StickyCTA label={t.hero.sticky_cta} />
 
     <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
-    <script define:vars={{ pageLang: lang }}>
+    <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId }}>
       // ── Loaders (called after consent) ──────────────────────────────────────
 
       function loadGTM() {
-        if (window.__gtmLoaded) return;
+        if (!gtmId || window.__gtmLoaded) return;
         window.__gtmLoaded = true;
         (function(w,d,s,l,i){
           w[l]=w[l]||[];
@@ -134,11 +148,11 @@ const langs = ['en', 'es', 'pt'];
           j.async=true;
           j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
           f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W34GRX86');
+        })(window,document,'script','dataLayer',gtmId);
         // GTM noscript fallback
         var ns=document.createElement('noscript');
         var iframe=document.createElement('iframe');
-        iframe.src='https://www.googletagmanager.com/ns.html?id=GTM-W34GRX86';
+        iframe.src='https://www.googletagmanager.com/ns.html?id='+gtmId;
         iframe.height='0'; iframe.width='0';
         iframe.style.cssText='display:none;visibility:hidden';
         ns.appendChild(iframe);
@@ -146,18 +160,18 @@ const langs = ['en', 'es', 'pt'];
       }
 
       function loadClarity() {
-        if (window.__clarityLoaded) return;
+        if (!clarityId || window.__clarityLoaded) return;
         window.__clarityLoaded = true;
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r); t.async=1;
           t.src='https://www.clarity.ms/tag/'+i;
           y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
-        })(window,document,'clarity','script','vmc619bvp9');
+        })(window,document,'clarity','script',clarityId);
       }
 
       function loadMetaPixel() {
-        if (window.__pixelLoaded) return;
+        if (!metaPixelId || window.__pixelLoaded) return;
         window.__pixelLoaded = true;
         !function(f,b,e,v,n,t,s){
           if(f.fbq)return;
@@ -166,7 +180,7 @@ const langs = ['en', 'es', 'pt'];
           n.queue=[]; t=b.createElement(e); t.async=!0; t.src=v;
           s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
         }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init','812107381591231');
+        fbq('init',metaPixelId);
         fbq('track','PageView');
       }
 
@@ -210,7 +224,8 @@ const langs = ['en', 'es', 'pt'];
       document.documentElement.classList.add('cc--darkmode');
 
       var ccScript = document.createElement('script');
-      ccScript.src = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js';
+      ccScript.src = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js';
+      ccScript.crossOrigin = 'anonymous';
       ccScript.onload = function() {
         CookieConsent.run({
           guiOptions: {

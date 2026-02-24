@@ -1,11 +1,13 @@
 ---
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
 export interface Props {
   t: Record<string, any>;
   lang: string;
 }
 
 const { t, lang } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+const wa = WHATSAPP_NUMBER;
 ---
 
 <section class="py-24 bg-brand-navy/40" id="contact-form">
@@ -41,13 +43,15 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
         <!-- Name -->
         <div>
-          <label class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-name" class="block text-sm font-medium text-white/70 mb-2">
             {t.lead_form.fields.name} <span class="text-brand-accent">*</span>
           </label>
           <input
+            id="lead-name"
             type="text"
             name="name"
             required
+            maxlength="100"
             placeholder={t.lead_form.fields.name_placeholder}
             class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
@@ -55,13 +59,15 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
         <!-- Phone -->
         <div>
-          <label class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-phone" class="block text-sm font-medium text-white/70 mb-2">
             {t.lead_form.fields.phone} <span class="text-brand-accent">*</span>
           </label>
           <input
+            id="lead-phone"
             type="tel"
             name="phone"
             required
+            maxlength="20"
             placeholder={t.lead_form.fields.phone_placeholder}
             class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
@@ -69,10 +75,11 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
         <!-- Service -->
         <div>
-          <label class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-service" class="block text-sm font-medium text-white/70 mb-2">
             {t.lead_form.fields.service}
           </label>
           <select
+            id="lead-service"
             name="service"
             class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm appearance-none"
           >
@@ -85,12 +92,14 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
         <!-- Location -->
         <div>
-          <label class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-location" class="block text-sm font-medium text-white/70 mb-2">
             {t.lead_form.fields.location}
           </label>
           <input
+            id="lead-location"
             type="text"
             name="location"
+            maxlength="100"
             placeholder={t.lead_form.fields.location_placeholder}
             class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
@@ -98,12 +107,14 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
 
         <!-- Message -->
         <div>
-          <label class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-message" class="block text-sm font-medium text-white/70 mb-2">
             {t.lead_form.fields.message}
           </label>
           <textarea
+            id="lead-message"
             name="message"
             rows="4"
+            maxlength="1000"
             placeholder={t.lead_form.fields.message_placeholder}
             class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm resize-none"
           ></textarea>
@@ -140,11 +151,11 @@ const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
     const form = e.target;
     const data = new FormData(form);
 
-    const name     = data.get('name')     || '';
-    const phone    = data.get('phone')    || '';
-    const service  = data.get('service')  || 'Not specified';
-    const location = data.get('location') || 'Not specified';
-    const message  = data.get('message')  || 'No additional info';
+    const name     = (data.get('name')     || '').toString().slice(0, 100);
+    const phone    = (data.get('phone')    || '').toString().slice(0, 20);
+    const service  = (data.get('service')  || 'Not specified').toString().slice(0, 100);
+    const location = (data.get('location') || 'Not specified').toString().slice(0, 100);
+    const message  = (data.get('message')  || 'No additional info').toString().slice(0, 1000);
 
     const text = template
       .replace('{name}',     name)

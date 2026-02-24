@@ -62,12 +62,14 @@ const cases = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Filter tabs -->
-    <div class="flex flex-wrap gap-2 justify-center mb-10" id="case-filters">
+    <div class="flex flex-wrap gap-2 justify-center mb-10" id="case-filters" role="tablist" aria-label="Filter cases by category">
       {['all', 'car', 'glass', 'yacht', 'acrylic'].map((filter) => (
         <button
           data-filter={filter}
+          role="tab"
+          aria-selected={filter === 'all' ? 'true' : 'false'}
           class:list={[
-            'px-4 py-2 rounded-full text-sm font-medium transition-colors border',
+            'px-4 py-2 rounded-full text-sm font-medium transition-colors border focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark',
             filter === 'all'
               ? 'bg-brand-accent text-white border-brand-accent'
               : 'border-white/15 text-white/50 hover:text-white hover:border-white/30'
@@ -83,33 +85,51 @@ const cases = [
         <div class="card group overflow-hidden" data-category={c.category}>
 
           {c.before && c.after ? (
-            /* ── Реальные фото: before/after слайдер ── */
-            <div class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none" data-slider>
-              <!-- After — статичный нижний слой, полная ширина -->
+            /* Before/after slider */
+            <div
+              class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none"
+              data-slider
+              role="group"
+              aria-label={`Before and after: ${c.title}`}
+            >
+              <!-- After layer -->
               <img
                 src={c.after}
                 alt={`After — ${c.title}`}
                 class="absolute inset-0 w-full h-full object-cover"
+                width="640"
+                height="360"
                 loading="lazy"
+                decoding="async"
               />
-              <!-- Before — статичный верхний слой, обрезается clip-path справа -->
+              <!-- Before layer (clipped) -->
               <img
                 src={c.before}
                 alt={`Before — ${c.title}`}
-                class="absolute inset-0 w-full h-full object-cover"
-                style="clip-path: inset(0 50% 0 0)"
+                class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]"
                 data-before-img
+                width="640"
+                height="360"
                 loading="lazy"
+                decoding="async"
               />
-              <!-- Разделитель -->
-              <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg" style="left: 50%" data-divider>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
+              <!-- Divider -->
+              <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg left-1/2" data-divider>
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize"
+                  role="slider"
+                  aria-label="Drag to compare before and after"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="50"
+                  tabindex="0"
+                >
                   <svg class="w-4 h-4 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" />
                   </svg>
                 </div>
               </div>
-              <!-- Лейблы -->
+              <!-- Labels -->
               <span class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-xs text-white/80 uppercase tracking-wider">Before</span>
               <span class="absolute top-3 right-3 px-2 py-1 bg-brand-accent/80 backdrop-blur-sm rounded text-xs text-white uppercase tracking-wider">After</span>
               <!-- Category badge -->
@@ -118,19 +138,19 @@ const cases = [
               </span>
             </div>
           ) : (
-            /* ── Заглушка для карточек без фото ── */
+            /* Placeholder for cards without photos */
             <div class="relative aspect-video bg-brand-navy rounded-xl mb-4 overflow-hidden">
               <div class="absolute inset-0 flex">
                 <div class="flex-1 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                   <div class="text-center">
-                    <div class="text-xs text-white/30 uppercase tracking-widest mb-1">Before</div>
+                    <div class="text-xs text-white/40 uppercase tracking-widest mb-1">Before</div>
                     <div class="w-8 h-8 bg-white/5 rounded-full mx-auto"></div>
                   </div>
                 </div>
                 <div class="w-px bg-white/20"></div>
                 <div class="flex-1 bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center">
                   <div class="text-center">
-                    <div class="text-xs text-white/30 uppercase tracking-widest mb-1">After</div>
+                    <div class="text-xs text-white/40 uppercase tracking-widest mb-1">After</div>
                     <div class="w-8 h-8 bg-brand-accent/20 rounded-full mx-auto flex items-center justify-center">
                       <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -164,7 +184,7 @@ const cases = [
 </section>
 
 <script>
-  /* ── Фильтры ── */
+  /* Filters */
   const filterBtns = document.querySelectorAll('[data-filter]');
   const cards = document.querySelectorAll('[data-category]');
 
@@ -174,9 +194,11 @@ const cases = [
       filterBtns.forEach((b) => {
         b.classList.remove('bg-brand-accent', 'text-white', 'border-brand-accent');
         b.classList.add('border-white/15', 'text-white/50');
+        b.setAttribute('aria-selected', 'false');
       });
       btn.classList.add('bg-brand-accent', 'text-white', 'border-brand-accent');
       btn.classList.remove('border-white/15', 'text-white/50');
+      btn.setAttribute('aria-selected', 'true');
       cards.forEach((card) => {
         const el = card as HTMLElement;
         el.style.display = (filter === 'all' || el.dataset.category === filter) ? '' : 'none';
@@ -184,12 +206,13 @@ const cases = [
     });
   });
 
-  /* ── Before/After ползунок ── */
+  /* Before/After slider */
   document.querySelectorAll('[data-slider]').forEach((slider) => {
     const el = slider as HTMLElement;
     const beforeImg = el.querySelector('[data-before-img]') as HTMLElement;
     const divider = el.querySelector('[data-divider]') as HTMLElement;
-    if (!beforeImg || !divider) return;
+    const handle = divider?.querySelector('[role="slider"]') as HTMLElement;
+    if (!beforeImg || !divider || !handle) return;
 
     let dragging = false;
 
@@ -197,14 +220,30 @@ const cases = [
       const rect = el.getBoundingClientRect();
       let pct = ((clientX - rect.left) / rect.width) * 100;
       pct = Math.max(1, Math.min(99, pct));
-      // Оба фото статичны. Обрезаем "До" справа: показываем pct% слева
       beforeImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
       divider.style.left = `${pct}%`;
+      handle.setAttribute('aria-valuenow', String(Math.round(pct)));
     };
 
-    const handle = divider.querySelector('div')!;
     handle.addEventListener('mousedown', (e) => { dragging = true; e.preventDefault(); });
     handle.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
+
+    // Keyboard support for slider
+    handle.addEventListener('keydown', (e) => {
+      const rect = el.getBoundingClientRect();
+      const currentLeft = divider.offsetLeft;
+      const currentPct = (currentLeft / rect.width) * 100;
+      let newPct = currentPct;
+
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { newPct = Math.max(1, currentPct - 2); e.preventDefault(); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { newPct = Math.min(99, currentPct + 2); e.preventDefault(); }
+
+      if (newPct !== currentPct) {
+        beforeImg.style.clipPath = `inset(0 ${100 - newPct}% 0 0)`;
+        divider.style.left = `${newPct}%`;
+        handle.setAttribute('aria-valuenow', String(Math.round(newPct)));
+      }
+    });
 
     window.addEventListener('mousemove', (e) => { if (dragging) setPosition(e.clientX); });
     window.addEventListener('touchmove', (e) => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
