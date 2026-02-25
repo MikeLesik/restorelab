@@ -55,15 +55,16 @@
     "cta": "Presupuesto"
   },
   "hero": {
-    "headline": "Restaurar. No Sustituir",
-    "subheadline": "Ahorra hasta un 70% frente al reemplazo. Restauración móvil de pintura, cristal y yate — venimos a tu puerta en Lisboa y Cascais.",
+    "headline": "Restaurar. No Sustituir.",
+    "subheadline": "Restauración móvil de pintura, cristal y yate en Lisboa y Cascais — venimos a ti. Ahorra hasta un 70% frente al reemplazo.",
+    "cta_primary": "Presupuesto Gratis por WhatsApp",
+    "cta_secondary": "Ver Antes y Después",
+    "reply_time": "Respuesta media: ~30 minutos",
+    "trust_line": "5.0 en Google · 47+ reseñas · 500+ trabajos · 100% móvil",
     "cta_car": "Restauración Auto",
     "cta_yacht": "Restauración de Yate",
     "sticky_cta": "Presupuesto via WhatsApp",
-    "badge": "★ Valorado 5.0 • 500+ Trabajos",
-    "cta_primary": "Presupuesto Gratis",
-    "cta_secondary": "Ver Antes y Después",
-    "reply_time": "Respuesta media: 28 min"
+    "badge": "★ Valorado 5.0 • 500+ Trabajos"
   },
   "social_proof": {
     "rating": "5.0",

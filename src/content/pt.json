@@ -55,15 +55,16 @@
     "cta": "Orçamento"
   },
   "hero": {
-    "headline": "Restaurar. Não Substituir",
-    "subheadline": "Poupe até 70% face à substituição. Restauração móvel de pintura, vidro e iate — vamos até à sua porta em Lisboa e Cascais.",
+    "headline": "Restaurar. Não Substituir.",
+    "subheadline": "Restauração móvel de pintura, vidro e iate em Lisboa e Cascais — vamos até si. Poupe até 70% face à substituição.",
+    "cta_primary": "Orçamento Grátis no WhatsApp",
+    "cta_secondary": "Ver Antes e Depois",
+    "reply_time": "Resposta média: ~30 minutos",
+    "trust_line": "5.0 no Google · 47+ avaliações · 500+ trabalhos · 100% móvel",
     "cta_car": "Restauro Auto",
     "cta_yacht": "Restauro de Iate",
     "sticky_cta": "Orçamento via WhatsApp",
-    "badge": "★ Avaliado 5.0 • 500+ Trabalhos",
-    "cta_primary": "Orçamento Grátis",
-    "cta_secondary": "Ver Antes e Depois",
-    "reply_time": "Resposta média: 28 min"
+    "badge": "★ Avaliado 5.0 • 500+ Trabalhos"
   },
   "social_proof": {
     "rating": "5.0",
