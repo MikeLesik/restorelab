@@ -110,35 +110,35 @@
   },
   "services": {
     "section_title": "O Que Restauramos",
-    "section_subtitle": "Especializados em superfícies que outros só conseguem resolver com substituição",
+    "section_subtitle": "Restauração móvel profissional para superfícies que a maioria substitui cedo demais.",
     "items": [
       {
         "id": "car-paint-correction",
         "title": "Correção de Pintura Auto",
         "subtitle": "Remoção de swirl marks, riscos e restauro de brilho",
         "icon": "car",
+        "starting_price": "A partir de 189€",
         "features": [
           "Remoção de redemoinhos e riscos",
-          "Restauração do brilho profundo",
-          "Preparação para revestimento cerâmico"
+          "Poupe vs pintura de 800€+",
+          "Serviço móvel na sua localização"
         ],
-        "tag": "Mais popular",
-        "starting_price": "a partir de 189€",
-        "vs_price": "vs 800€+ pintura"
+        "cta_label": "Orçamento Auto",
+        "tag": "Mais popular"
       },
       {
         "id": "glass-polishing",
         "title": "Remoção de Riscos em Vidro",
-        "subtitle": "Para-brisas, janelas e vidros arquitetónicos",
+        "subtitle": "Janelas, para-brisas e vidros arquitetónicos",
         "icon": "glass",
+        "starting_price": "A partir de 89€",
         "features": [
-          "Restauração do para-brisas",
-          "Remoção de manchas de água",
-          "Eliminação de riscos de limpa-vidros"
+          "Restauro da claridade do vidro",
+          "Poupe vs substituição de 400€",
+          "Manchas de água e riscos de limpa-vidros"
         ],
-        "tag": null,
-        "starting_price": "a partir de 89€",
-        "vs_price": "vs 400€ substituição"
+        "cta_label": "Orçamento Vidro",
+        "tag": null
       },
       {
         "id": "acrylic-restoration",
@@ -146,13 +146,11 @@
         "subtitle": "Janelas de iate, escotilhas e painéis",
         "icon": "acrylic",
         "features": [
-          "Restauro de janelas de iate",
-          "Polimento de escotilhas",
-          "Clareza de painéis plásticos",
           "Remoção de oxidação UV",
           "Transparência totalmente restaurada",
           "Económico vs substituição"
         ],
+        "cta_label": "Orçamento Acrílico",
         "tag": null
       },
       {
@@ -160,14 +158,14 @@
         "title": "Polimento de Gelcoat de Iate",
         "subtitle": "Remoção de oxidação e acabamento náutico",
         "icon": "yacht",
+        "starting_price": "A partir de 15€/pé (≈ 49€/m)",
         "features": [
           "Remoção de oxidação",
-          "Restauração do brilho e lustre",
-          "Na marina, sem necessidade de estaleiro"
+          "Recuperação do brilho e proteção",
+          "Na marina, sem estaleiro"
         ],
-        "tag": "Especialistas em iates",
-        "starting_price": "a partir de 29€/metro",
-        "vs_price": "vs repintura total"
+        "cta_label": "Orçamento Iate",
+        "tag": "Especialistas em iates"
       }
     ],
     "learn_more": "Saber mais",

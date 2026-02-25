@@ -12,37 +12,37 @@ const { t, lang, compact = false, exclude = [] } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const services = t.services.items.filter((s: any) => !exclude.includes(s.id));
 
-// Service-specific visual config
-const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: string; glow: string; iconPaths: string }> = {
+// Per-service visual config
+const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: string; iconPaths: string }> = {
   'car-paint-correction': {
     color: 'text-brand-accent',
     iconBg: 'bg-brand-accent/15 group-hover:bg-brand-accent/25',
     borderTop: 'border-t-2 border-brand-accent/60',
-    glow: 'hover:shadow-brand-accent/10',
     iconPaths: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 11l2-5h10l2 5M3 11h18v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/>`,
   },
   'glass-polishing': {
     color: 'text-cyan-400',
     iconBg: 'bg-cyan-500/15 group-hover:bg-cyan-500/25',
     borderTop: 'border-t-2 border-cyan-500/50',
-    glow: 'hover:shadow-cyan-500/10',
     iconPaths: `<rect x="3" y="4" width="18" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12h18M12 4v16"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7.5 8l1 1.5" opacity="0.5"/>`,
   },
   'acrylic-restoration': {
     color: 'text-violet-400',
     iconBg: 'bg-violet-500/15 group-hover:bg-violet-500/25',
     borderTop: 'border-t-2 border-violet-500/50',
-    glow: 'hover:shadow-violet-500/10',
     iconPaths: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>`,
   },
   'yacht-gelcoat': {
     color: 'text-teal-400',
     iconBg: 'bg-teal-500/15 group-hover:bg-teal-500/25',
     borderTop: 'border-t-2 border-teal-500/50',
-    glow: 'hover:shadow-teal-500/10',
     iconPaths: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v13M12 3L4 16h8zM12 7l6 9h-6zM2 20h20M6 20c0 1.5 2.5 2 6 2s6-.5 6-2"/>`,
   },
 };
+
+const colsClass = services.length === 3
+  ? 'grid-cols-1 md:grid-cols-3'
+  : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4';
 ---
 
 <section class={compact ? '' : 'pt-28 pb-36'}>
@@ -55,22 +55,20 @@ const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: 
       </div>
     )}
 
-    <div class:list={[
-      'grid gap-6',
-      services.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'
-    ]}>
+    <div class:list={['grid gap-6', colsClass]}>
       {services.map((service: any) => {
-        const cfg = serviceConfig[service.id] || serviceConfig['car-paint-correction'];
-        const isFeatured = service.tag === 'Most popular';
+        const cfg = serviceConfig[service.id] ?? serviceConfig['car-paint-correction'];
+        const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Mais popular';
+        const ctaLabel = service.cta_label ?? t.services.get_quote;
+        const waText = encodeURIComponent(`Hello RestoreLab! I'd like a quote for: ${service.title}`);
 
         return (
           <div class:list={[
             'group relative rounded-2xl border bg-white/5 backdrop-blur-sm p-6 flex flex-col',
             'transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
             cfg.borderTop,
-            cfg.glow,
             isFeatured
-              ? 'border-brand-accent/30 bg-gradient-to-b from-brand-accent/5 to-white/3 hover:border-brand-accent/50'
+              ? 'border-brand-accent/30 bg-gradient-to-b from-brand-accent/5 to-white/[0.03] hover:border-brand-accent/50'
               : 'border-white/10 hover:border-white/20'
           ]}>
 
@@ -79,14 +77,14 @@ const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: 
               <div class="absolute -inset-px rounded-2xl bg-gradient-to-b from-brand-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             )}
 
-            {/* Header row: icon + tag */}
+            {/* Icon + tag */}
             <div class="flex items-start justify-between mb-5">
               <div class:list={[
-                'w-14 h-14 rounded-2xl flex items-center justify-center transition-colors duration-200',
+                'w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-200',
                 cfg.iconBg
               ]}>
                 <svg
-                  class:list={['w-7 h-7', cfg.color]}
+                  class:list={['w-6 h-6', cfg.color]}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -106,27 +104,16 @@ const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: 
               )}
             </div>
 
-            {/* Title + subtitle + details link */}
+            {/* Title */}
             <h3 class="text-xl font-display font-bold text-white mb-1">{service.title}</h3>
-            <p class:list={['text-sm mb-1', isFeatured ? 'text-white/60' : 'text-white/45']}>{service.subtitle}</p>
-            <a href={`/${lang}/services/${service.id}`} class="inline-block text-xs text-white/35 hover:text-white/70 transition-colors mb-4">
-              {t.services.learn_more} →
-            </a>
 
-            {/* Price anchor */}
-            {service.starting_price && (
-              <div class="flex items-center gap-3 mb-5 pb-4 border-b border-white/8">
-                <span class:list={['font-bold text-lg', cfg.color]}>{service.starting_price}</span>
-                {service.vs_price && (
-                  <span class="text-white/30 text-xs">{service.vs_price}</span>
-                )}
-              </div>
-            )}
+            {/* Subtitle — 1 line */}
+            <p class="text-sm text-white/50 mb-5 leading-snug">{service.subtitle}</p>
 
-            {/* Features */}
-            <ul class="space-y-2 mb-8 flex-1">
+            {/* Features — exactly 3 bullets, flex-1 to push price+CTA down */}
+            <ul class="space-y-2.5 mb-5 flex-1">
               {service.features.map((f: string) => (
-                <li class="flex items-center gap-3 text-sm text-white/70">
+                <li class="flex items-center gap-2.5 text-sm text-white/70">
                   <svg class:list={['w-4 h-4 flex-shrink-0', cfg.color]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                   </svg>
@@ -135,24 +122,27 @@ const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: 
               ))}
             </ul>
 
-            {/* Single primary CTA */}
+            {/* Price */}
+            {service.starting_price && (
+              <div class="mb-4 pb-4 border-b border-white/8">
+                <span class:list={['font-bold text-lg', cfg.color]}>{service.starting_price}</span>
+              </div>
+            )}
+
+            {/* CTA — uniform green WhatsApp button on all cards */}
             <a
-              href={`https://wa.me/${wa}?text=${encodeURIComponent(`Hello RestoreLab! I'd like a quote for: ${service.title}`)}`}
+              href={`https://wa.me/${wa}?text=${waText}`}
               target="_blank"
               rel="noopener noreferrer"
               data-event="wa_click"
-              class:list={[
-                'mt-auto flex items-center justify-center gap-2 w-full py-2.5 px-4 text-white text-sm font-semibold rounded-lg transition-all',
-                isFeatured
-                  ? 'bg-brand-whatsapp hover:brightness-110'
-                  : 'bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20'
-              ]}
+              class="mt-auto flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-brand-whatsapp hover:brightness-110 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
             >
               <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              {t.services.get_quote}
+              {ctaLabel}
             </a>
+
           </div>
         );
       })}

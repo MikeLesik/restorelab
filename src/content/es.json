@@ -110,35 +110,35 @@
   },
   "services": {
     "section_title": "Qué Restauramos",
-    "section_subtitle": "Especializados en superficies que otros solo pueden solucionar con sustitución",
+    "section_subtitle": "Restauración móvil profesional para superficies que la mayoría sustituye demasiado pronto.",
     "items": [
       {
         "id": "car-paint-correction",
         "title": "Corrección de Pintura Auto",
         "subtitle": "Eliminación de swirl marks, arañazos y restauración del brillo",
         "icon": "car",
+        "starting_price": "Desde 189€",
         "features": [
           "Eliminación de remolinos y arañazos",
-          "Restauración de brillo profundo",
-          "Preparación para recubrimiento cerámico"
+          "Ahorra vs pintura de 800€+",
+          "Servicio móvil en tu ubicación"
         ],
-        "tag": "Más popular",
-        "starting_price": "desde 189€",
-        "vs_price": "vs 800€+ pintura"
+        "cta_label": "Presupuesto Auto",
+        "tag": "Más popular"
       },
       {
         "id": "glass-polishing",
         "title": "Eliminación de Arañazos en Vidrio",
-        "subtitle": "Parabrisas, ventanas y vidrio arquitectónico",
+        "subtitle": "Ventanas, parabrisas y vidrio arquitectónico",
         "icon": "glass",
+        "starting_price": "Desde 89€",
         "features": [
-          "Restauración de parabrisas",
-          "Eliminación de manchas de agua",
-          "Eliminación de arañazos de limpiaparabrisas"
+          "Restaura la claridad del vidrio",
+          "Ahorra vs sustitución de 400€",
+          "Manchas y arañazos de limpiaparabrisas"
         ],
-        "tag": null,
-        "starting_price": "desde 89€",
-        "vs_price": "vs 400€ sustitución"
+        "cta_label": "Presupuesto Vidrio",
+        "tag": null
       },
       {
         "id": "acrylic-restoration",
@@ -146,13 +146,11 @@
         "subtitle": "Ventanas de yate, escotillas y paneles transparentes",
         "icon": "acrylic",
         "features": [
-          "Restauración de ventanas de yate",
-          "Pulido de escotillas",
-          "Claridad de paneles plásticos",
           "Eliminación de oxidación UV",
           "Transparencia completamente restaurada",
           "Económico vs sustitución"
         ],
+        "cta_label": "Presupuesto Acrílico",
         "tag": null
       },
       {
@@ -160,14 +158,14 @@
         "title": "Pulido de Gelcoat de Yate",
         "subtitle": "Eliminación de oxidación y acabado marino",
         "icon": "yacht",
+        "starting_price": "Desde 15€/pie (≈ 49€/m)",
         "features": [
           "Eliminación de oxidación",
-          "Restauración de brillo y lustre",
-          "En el puerto, sin necesidad de varada"
+          "Recuperación del brillo y protección",
+          "En el puerto, sin varada"
         ],
-        "tag": "Especialistas en yates",
-        "starting_price": "desde 29€/metro",
-        "vs_price": "vs repintado completo"
+        "cta_label": "Presupuesto Yate",
+        "tag": "Especialistas en yates"
       }
     ],
     "learn_more": "Saber más",

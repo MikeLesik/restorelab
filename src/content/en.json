@@ -110,34 +110,34 @@
   },
   "services": {
     "section_title": "What We Restore",
-    "section_subtitle": "Specialized in surfaces that others can't fix without replacement",
+    "section_subtitle": "Professional mobile restoration for surfaces most people replace too early.",
     "items": [
       {
         "id": "car-paint-correction",
         "title": "Car Paint Correction",
         "subtitle": "Swirl marks, scratches & gloss restoration",
         "icon": "car",
-        "starting_price": "from 189€",
-        "vs_price": "vs 800€+ repaint",
+        "starting_price": "From €189",
         "features": [
           "Swirl mark & scratch removal",
-          "Deep gloss restoration",
-          "Ceramic coating preparation"
+          "Save vs €800+ repaint",
+          "Mobile service at your location"
         ],
+        "cta_label": "Get Car Estimate",
         "tag": "Most popular"
       },
       {
         "id": "glass-polishing",
         "title": "Glass Scratch Removal",
-        "subtitle": "Windshields, windows & architectural glass",
+        "subtitle": "Windows, windshields & architectural glass",
         "icon": "glass",
-        "starting_price": "from 89€",
-        "vs_price": "vs 400€ replacement",
+        "starting_price": "From €89",
         "features": [
-          "Car windshield restoration",
-          "Water spot removal",
-          "Wiper scratch elimination"
+          "Restore glass clarity",
+          "Save vs €400 replacement",
+          "Water spot & wiper marks removed"
         ],
+        "cta_label": "Get Glass Estimate",
         "tag": null
       },
       {
@@ -146,32 +146,30 @@
         "subtitle": "Yacht windows, hatches & clear panels",
         "icon": "acrylic",
         "features": [
-          "Yacht windows restoration",
-          "Boat hatches polishing",
-          "Clear plastic panel clarity",
           "UV oxidation removal",
           "Full transparency restored",
           "Cost-effective vs replacement"
         ],
+        "cta_label": "Get Acrylic Estimate",
         "tag": null
       },
       {
         "id": "yacht-gelcoat",
         "title": "Yacht Gelcoat Polishing",
-        "subtitle": "Oxidation removal & marine-grade finishing",
+        "subtitle": "Oxidation removal & marine-grade finish",
         "icon": "yacht",
-        "starting_price": "from 29€/meter",
-        "vs_price": "vs full hull repaint",
+        "starting_price": "From €15/ft (≈ €49/m)",
         "features": [
           "Oxidation removal",
-          "Shine & gloss restoration",
-          "At marina, no haulout needed"
+          "Gloss recovery & protection prep",
+          "Marina service, no haulout"
         ],
+        "cta_label": "Get Yacht Estimate",
         "tag": "Yacht specialists"
       }
     ],
     "learn_more": "Learn more",
-    "get_quote": "Get Quote"
+    "get_quote": "Get Estimate"
   },
   "how_it_works": {
     "section_title": "How It Works",
