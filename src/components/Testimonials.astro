@@ -5,7 +5,6 @@ export interface Props {
 
 const { t } = Astro.props;
 
-// Avatar colors cycle — gives each reviewer a unique identity
 const avatarColors = [
   'bg-brand-accent/20 text-brand-accent border-brand-accent/30',
   'bg-teal-500/20 text-teal-400 border-teal-500/30',
@@ -14,13 +13,13 @@ const avatarColors = [
 ];
 ---
 
-<section class="pt-24 pb-12">
+<section class="pt-24 pb-12 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
       <div>
-        <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center gap-3 mb-3">
           <div class="flex gap-1">
             {[1,2,3,4,5].map(() => (
               <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
@@ -31,73 +30,158 @@ const avatarColors = [
           <span class="text-white font-bold text-xl">{t.social_proof.rating}</span>
           <span class="text-white/40 text-sm">— {t.social_proof.reviews_count}</span>
         </div>
-        <h2 class="section-title">Client Results</h2>
+        <h2 class="section-title mb-0">Client Results</h2>
       </div>
 
-      <!-- Areas -->
-      <div class="flex flex-wrap gap-2">
-        {t.social_proof.areas.map((area: string) => (
-          <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-white/60">
-            {area}
-          </span>
-        ))}
+      <!-- Prev / Next buttons -->
+      <div class="flex items-center gap-2">
+        <button
+          id="t-prev"
+          aria-label="Previous review"
+          class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 hover:border-white/30 text-white/60 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          id="t-next"
+          aria-label="Next review"
+          class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 hover:border-white/30 text-white/60 hover:text-white flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
       </div>
     </div>
 
-    <!-- Testimonials grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {t.social_proof.testimonials.map((review: any, i: number) => (
-        <div class="card hover:border-white/20 transition-colors">
-          <div class="flex items-start justify-between mb-4">
-            <div class="flex items-center gap-3">
-              {/* Initials avatar */}
-              <div class:list={[
-                'w-10 h-10 rounded-full border flex items-center justify-center text-sm font-bold flex-shrink-0',
-                avatarColors[i % avatarColors.length]
-              ]}>
-                {review.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()}
-              </div>
-              <div>
-                <div class="flex items-center gap-2">
-                  <span class="font-semibold text-white text-sm">{review.name}</span>
-                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-brand-accent/80 bg-brand-accent/10 border border-brand-accent/20 px-1.5 py-0.5 rounded-full">
-                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    Verified
-                  </span>
-                </div>
-                <div class="text-xs text-white/40">{review.location} · {review.service}</div>
-              </div>
+  </div>
+
+  <!-- Scrollable track — full width, padding aligned with container -->
+  <div
+    id="t-track"
+    class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
+           [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
+           px-4 sm:px-6 lg:px-8"
+    style="padding-left: max(1rem, calc((100vw - 80rem) / 2 + 1rem)); padding-right: max(1rem, calc((100vw - 80rem) / 2 + 1rem));"
+  >
+    {t.social_proof.testimonials.map((review: any, i: number) => (
+      <div class="card flex-none w-[320px] sm:w-[380px] snap-start hover:border-white/20 transition-colors">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div class:list={[
+              'w-10 h-10 rounded-full border flex items-center justify-center text-sm font-bold flex-shrink-0',
+              avatarColors[i % avatarColors.length]
+            ]}>
+              {review.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()}
             </div>
-            <div class="flex gap-0.5 flex-shrink-0">
-              {[1,2,3,4,5].map(() => (
-                <svg class="w-3.5 h-3.5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-semibold text-white text-sm">{review.name}</span>
+                <span class="inline-flex items-center gap-1 text-[10px] font-medium text-brand-accent/80 bg-brand-accent/10 border border-brand-accent/20 px-1.5 py-0.5 rounded-full">
+                  <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                  Verified
+                </span>
+              </div>
+              <div class="text-xs text-white/40">{review.location} · {review.service}</div>
             </div>
           </div>
-          <p class="text-white/65 text-sm leading-relaxed">"{review.text}"</p>
+          <div class="flex gap-0.5 flex-shrink-0">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-3.5 h-3.5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            ))}
+          </div>
         </div>
+        <p class="text-white/65 text-sm leading-relaxed">"{review.text}"</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Dots + Google link -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+    <!-- Dot indicators -->
+    <div id="t-dots" class="flex gap-2">
+      {t.social_proof.testimonials.map((_: any, i: number) => (
+        <button
+          data-dot={i}
+          aria-label={`Go to review ${i + 1}`}
+          class:list={[
+            'h-1.5 rounded-full transition-all duration-300 focus:outline-none',
+            i === 0 ? 'w-6 bg-brand-accent' : 'w-1.5 bg-white/20'
+          ]}
+        />
       ))}
     </div>
 
-    <!-- Google Reviews link -->
-    <div class="mt-8 text-center">
-      <a
-        href="https://www.google.com/maps/search/RestoreLab+Cascais"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors group"
-      >
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        <span>See all {t.social_proof.reviews_count} on Google</span>
-        <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      </a>
-    </div>
+    <!-- Google link -->
+    <a
+      href="https://www.google.com/maps/search/RestoreLab+Cascais"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors group"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      <span>See all {t.social_proof.reviews_count} on Google</span>
+      <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
   </div>
 </section>
+
+<script>
+  const track = document.getElementById('t-track') as HTMLElement;
+  const prevBtn = document.getElementById('t-prev');
+  const nextBtn = document.getElementById('t-next');
+  const dots = document.querySelectorAll<HTMLButtonElement>('[data-dot]');
+
+  if (!track) throw new Error('t-track not found');
+
+  const cardWidth = () => {
+    const first = track.querySelector<HTMLElement>('.card');
+    return first ? first.offsetWidth + 20 : 360; // card width + gap-5 (20px)
+  };
+
+  const scrollTo = (index: number) => {
+    track.scrollTo({ left: index * cardWidth(), behavior: 'smooth' });
+  };
+
+  const updateDots = (index: number) => {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('w-6', i === index);
+      dot.classList.toggle('bg-brand-accent', i === index);
+      dot.classList.toggle('w-1.5', i !== index);
+      dot.classList.toggle('bg-white/20', i !== index);
+    });
+  };
+
+  const currentIndex = () => Math.round(track.scrollLeft / cardWidth());
+
+  prevBtn?.addEventListener('click', () => {
+    const i = Math.max(0, currentIndex() - 1);
+    scrollTo(i);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const max = dots.length - 1;
+    const i = Math.min(max, currentIndex() + 1);
+    scrollTo(i);
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => scrollTo(Number(dot.dataset.dot)));
+  });
+
+  track.addEventListener('scroll', () => updateDots(currentIndex()), { passive: true });
+</script>
