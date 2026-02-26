@@ -130,7 +130,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     </main>
     {currentPath !== '/contact' && <PreFooterCTA t={t} lang={lang} />}
     <Footer t={t} lang={lang} />
-    <StickyCTA label={t.hero.sticky_cta} />
+    <StickyCTA label={t.hero.sticky_cta} t={t} />
 
     <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
     <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId }}>

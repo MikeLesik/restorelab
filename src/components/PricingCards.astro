@@ -7,7 +7,6 @@ export interface Props {
 
 const { t, lang, categoryId } = Astro.props;
 const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
 
 const categories = categoryId
   ? t.pricing.categories.filter((c: any) => c.id === categoryId)
@@ -80,7 +79,7 @@ const categories = categoryId
                   <span class="font-medium text-white/50">Best for:</span> {pkg.best_for}
                 </div>
                 <a
-                  href={waUrl}
+                  href={`https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.pricing_plan.replace('{plan}', pkg.name).replace('{category}', category.title))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class:list={[
@@ -103,7 +102,7 @@ const categories = categoryId
     <div class="text-center mt-8 p-8 border border-dashed border-white/15 rounded-2xl">
       <p class="text-white/60 mb-4">{t.pricing.cta_custom}</p>
       <a
-        href={waUrl}
+        href={`https://wa.me/${wa}?text=${encodeURIComponent(categoryId && categories[0] ? t.wa_messages.pricing_custom.replace('{category}', categories[0].title) : t.wa_messages.pricing_custom_general)}`}
         target="_blank"
         rel="noopener noreferrer"
         class="btn-whatsapp"

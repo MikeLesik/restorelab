@@ -8,7 +8,7 @@ export interface Props {
 
 const { t, lang } = Astro.props;
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.footer)}`;
 ---
 
 <footer class="bg-brand-navy border-t border-white/10 mt-24">

@@ -8,7 +8,7 @@ export interface Props {
 
 const { t, lang } = Astro.props;
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.prefooter_cta)}`;
 ---
 
 <section class="relative pt-12 pb-10 overflow-hidden border-t border-white/5">

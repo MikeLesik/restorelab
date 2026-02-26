@@ -3,11 +3,12 @@ import { WHATSAPP_NUMBER } from '@/lib/constants';
 
 export interface Props {
   label: string;
+  t: Record<string, any>;
 }
 
-const { label } = Astro.props;
+const { label, t } = Astro.props;
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+quote.`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.sticky_cta)}`;
 ---
 
 <!-- Mobile Sticky CTA -->

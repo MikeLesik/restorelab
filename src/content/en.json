@@ -395,6 +395,17 @@
       }
     ]
   },
+  "wa_messages": {
+    "header": "Hello RestoreLab! I'd like to get a free estimate. [From website header]",
+    "hero": "Hello RestoreLab! I'd like to get a free estimate. [From homepage]",
+    "pricing_plan": "Hello RestoreLab! I'm interested in the \"{plan}\" plan ({category}). I'd like to get a quote.",
+    "pricing_custom": "Hello RestoreLab! I'd like to discuss a custom quote for {category}. [From pricing page]",
+    "pricing_custom_general": "Hello RestoreLab! I'd like to discuss a custom quote. [From pricing page]",
+    "sticky_cta": "Hello RestoreLab! I'd like to get a quote. [From mobile button]",
+    "prefooter_cta": "Hello RestoreLab! I'd like to get a quote. [From page footer CTA]",
+    "footer": "Hello RestoreLab! I have a question. [From footer]",
+    "contact": "Hello RestoreLab! I'd like to get in touch. [From contact page]"
+  },
   "lead_form": {
     "section_title": "Get Your Free Estimate in 30 Minutes",
     "section_subtitle": "Send photos of the damage. We'll reply with an honest price — no obligations, no hidden fees.",

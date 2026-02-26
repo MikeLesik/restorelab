@@ -9,7 +9,7 @@ export interface Props {
 
 const { t, lang, currentPath = '' } = Astro.props;
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'd+like+to+get+a+free+estimate.`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.header)}`;
 
 function isActive(segment: string): boolean {
   if (!segment) return currentPath === '' || currentPath === '/';

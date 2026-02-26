@@ -370,6 +370,17 @@
       }
     ]
   },
+  "wa_messages": {
+    "header": "¡Hola RestoreLab! Me gustaría obtener un presupuesto gratuito. [Desde el encabezado del sitio]",
+    "hero": "¡Hola RestoreLab! Me gustaría obtener un presupuesto gratuito. [Desde la página principal]",
+    "pricing_plan": "¡Hola RestoreLab! Me interesa el plan \"{plan}\" ({category}). Me gustaría obtener un presupuesto.",
+    "pricing_custom": "¡Hola RestoreLab! Me gustaría solicitar un presupuesto personalizado para {category}. [Desde la página de precios]",
+    "pricing_custom_general": "¡Hola RestoreLab! Me gustaría solicitar un presupuesto personalizado. [Desde la página de precios]",
+    "sticky_cta": "¡Hola RestoreLab! Me gustaría obtener un presupuesto. [Desde el botón móvil]",
+    "prefooter_cta": "¡Hola RestoreLab! Me gustaría obtener un presupuesto. [Desde el pie de página]",
+    "footer": "¡Hola RestoreLab! Tengo una pregunta. [Desde el pie de página]",
+    "contact": "¡Hola RestoreLab! Me gustaría ponerme en contacto. [Desde la página de contacto]"
+  },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",
     "section_subtitle": "Envíanos fotos del daño. Te responderemos con un precio honesto — sin obligaciones, sin costes ocultos.",
