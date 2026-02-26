@@ -7,25 +7,35 @@ import es from '@/content/es.json';
 import pt from '@/content/pt.json';
 
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' }, props: { t: en } },
-    { params: { lang: 'es' }, props: { t: es } },
-    { params: { lang: 'pt' }, props: { t: pt } },
+  const langs = [
+    { lang: 'en', t: en },
+    { lang: 'es', t: es },
+    { lang: 'pt', t: pt },
   ];
+
+  return langs.flatMap(({ lang, t }) =>
+    t.academy.articles
+      .filter((a: any) => a.status === 'published' && a.slug)
+      .map((a: any) => ({
+        params: { lang, slug: a.slug },
+        props: { t, card: a },
+      }))
+  );
 }
 
-const { lang } = Astro.params;
-const { t } = Astro.props;
-const article = t.academy_articles.equipment_selection;
-const sections = article.sections as Array<Record<string, any>>;
+const { lang, slug } = Astro.params;
+const { t, card } = Astro.props;
+const contentKey = (slug as string).replace(/-/g, '_');
+const content = (t.academy_articles as Record<string, any>)[contentKey];
+const sections = content.sections as Array<Record<string, any>>;
 ---
 
 <BaseLayout
-  title={t.meta.academy_equipment.title}
-  description={t.meta.academy_equipment.description}
+  title={content.seo_title}
+  description={content.seo_description}
   lang={lang}
   t={t}
-  currentPath="/academy/equipment-selection"
+  currentPath={`/academy/${slug}`}
 >
   <div class="pt-24">
 
@@ -43,13 +53,13 @@ const sections = article.sections as Array<Record<string, any>>;
         </a>
 
         <!-- Number tag -->
-        <span class="tag mb-6 inline-block">01</span>
+        <span class="tag mb-6 inline-block">{card.number}</span>
 
         <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
-          {article.title}
+          {content.title}
         </h1>
         <p class="text-xl text-white/60 mb-6 leading-relaxed">
-          {article.description}
+          {content.description}
         </p>
       </div>
     </section>
@@ -60,7 +70,7 @@ const sections = article.sections as Array<Record<string, any>>;
 
         <!-- Intro -->
         <p class="text-lg text-white/80 leading-relaxed mb-16">
-          {article.intro}
+          {content.intro}
         </p>
 
         <!-- Sections -->
@@ -95,7 +105,7 @@ const sections = article.sections as Array<Record<string, any>>;
               </ul>
             )}
 
-            <!-- Analogy callout -->
+            <!-- Analogy / engineering callout -->
             {section.analogy && (
               <div class="relative rounded-2xl border border-brand-gold/20 bg-brand-gold/5 p-6 sm:p-8 mb-8">
                 <div class="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 bg-brand-dark rounded-full border border-brand-gold/20">
@@ -141,7 +151,7 @@ const sections = article.sections as Array<Record<string, any>>;
               </p>
             )}
 
-            <!-- Tools list (section 2) -->
+            <!-- Tools / labeled list -->
             {section.tools && (
               <div class="space-y-4">
                 {section.tools_title && (

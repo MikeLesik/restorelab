@@ -463,18 +463,45 @@
       },
       {
         "number": "02",
-        "title": "A Física da Descontaminação",
-        "excerpt": "Partículas de ferro, alcatrão, seiva de árvores, depósitos minerais aderidos — a ciência de por que as barras de argila funcionam e quando a descontaminação química é a única opção segura."
+        "title": "Protocolos de Mascaramento: Proteger a Aresta",
+        "excerpt": "Por que a camada mais fina de verniz se encontra nas arestas? Aprenda a \"regra dos 2 mm\" e entenda por que mascarar as \"zonas vermelhas\" é o único seguro real contra uma repintura cara.",
+        "slug": "masking-protocols",
+        "status": "published"
       },
       {
         "number": "03",
-        "title": "A Mecânica da Correção",
-        "excerpt": "Como os pads de lã cortam de forma diferente da espuma, por que os abrasivos decrescentes se comportam como se comportam, e a engenharia por trás de um acabamento final impecável."
+        "title": "Protocolos de Correção Mecânica: A Arte do Corte",
+        "excerpt": "Domine a física do \"padrão serpente\" e o controlo de temperatura. Aprenda como 20 kg de pressão e um pad de lã cortam defeitos profundos preservando o verniz.",
+        "slug": "mechanical-correction",
+        "status": "published"
+      },
+      {
+        "number": "04",
+        "title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho",
+        "excerpt": "A transição da correção profunda para a clareza absoluta do verniz. Aprenda a eliminar a névoa de trabalho deixada pela lã e estabilizar a superfície sem hologramas.",
+        "slug": "refining-stabilization",
+        "status": "published"
+      },
+      {
+        "number": "05",
+        "title": "Protocolos de Proteção e Preservação: O Escudo Molecular",
+        "excerpt": "A etapa final da estabilização da superfície. Aprenda a selar o resultado com proteção de grafeno e a preservar um acabamento espelho durante anos.",
+        "slug": "protection-preservation",
+        "status": "published"
+      },
+      {
+        "number": "06",
+        "title": "Detailing Especializado: Protocolos para Motos",
+        "excerpt": "Trabalho de precisão em geometrias complexas. Por que as motos requerem uma abordagem exclusivamente suave e a arte de limpar metal e couro.",
+        "slug": "motorcycle-detailing",
+        "status": "published"
       }
     ]
   },
   "academy_articles": {
     "equipment_selection": {
+      "seo_title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | RestoreLab Academia",
+      "seo_description": "Por que 99% do resultado depende da seleção de ferramentas. Polidoras rotativas vs dupla ação — análise de engenharia, tabela comparativa e recomendações.",
       "title": "Escolha a Sua Arma: Rotativa vs. Dupla Ação",
       "description": "Física do Processo: Por Que 99% do Resultado Depende da Seleção de Ferramentas. Aprenda a distinguir o manuseio de um \"kart\" do comportamento de um \"camião\", e compreenda por que um centro de gravidade baixo é a base da correção profissional de pintura.",
       "intro": "No nosso laboratório, seguimos um protocolo claro: a primeira passagem — a que remove 99% de todos os riscos — é mais eficaz com uma polidora rotativa. A máquina de dupla ação, por outro lado, é uma ferramenta para a estabilização final da superfície.",
@@ -525,6 +552,300 @@
               "label": "Segmento premium",
               "text": "Soluções sem fio FLEX (XCE 8 125 e PXE 80) para máxima mobilidade ao trabalhar em áreas menores."
             }
+          ]
+        }
+      ]
+    },
+    "masking_protocols": {
+      "seo_title": "Protocolos de Mascaramento: Proteger a Aresta | RestoreLab Academia",
+      "seo_description": "Por que a camada mais fina de verniz está nas arestas. A regra dos 2 mm, fitas de contorno e técnicas de re-mascaramento para prevenir queimaduras.",
+      "title": "Protocolos de Mascaramento: Proteger a Aresta",
+      "description": "Por que a camada mais fina de verniz se encontra nas arestas? Aprenda a \"regra dos 2 mm\" e entenda por que mascarar as \"zonas vermelhas\" é o único seguro real contra uma repintura cara.",
+      "intro": "O mascaramento é o passo mais ignorado pelos principiantes — e a causa mais comum de queimadura do verniz. Na RestoreLab não confiamos na sorte; confiamos na fita de mascarar.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Zona de Risco: A Física do Verniz nas Arestas",
+          "paragraphs": [
+            "Nas arestas e linhas agudas da carroçaria, o verniz é sempre significativamente mais fino do que nas superfícies planas. Sem mascaramento, a primeira passagem com um pad de lã pode ser fatal para o painel."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "O Método de Mascaramento RestoreLab",
+          "paragraphs": [],
+          "tools": [
+            {
+              "label": "Regra do perímetro",
+              "text": "Mascaramos as arestas sobrepondo a fita 2 mm sobre o próprio painel. Isto protege a aresta enquanto trabalha a secção plana principal."
+            },
+            {
+              "label": "Painéis repintados",
+              "text": "Se o painel foi repintado, o risco de delaminação do verniz ao remover a fita aumenta."
+            },
+            {
+              "label": "Dica profissional",
+              "text": "Para reduzir esse risco, primeiro reduzimos a adesão da fita colando-a várias vezes numas calças de ganga antes de aplicar no painel."
+            },
+            {
+              "label": "Fitas de contorno",
+              "text": "Para curvas complexas e linhas estampadas, usamos fita de vinil estreita (6 mm), que nos permite seguir com precisão as linhas da carroçaria."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Re-Mascaramento para Passagens de Acabamento",
+          "paragraphs": [
+            "O mascaramento não é estático. Após a primeira passagem (agressiva) com um pad de lã, a fita é reposicionada \"sob a aresta\". Isto permite que as segunda e terceira etapas (com pads de espuma) refinem as próprias arestas, para que não se destaquem do brilho geral da superfície plana polida."
+          ]
+        }
+      ]
+    },
+    "mechanical_correction": {
+      "seo_title": "Protocolos de Correção Mecânica: A Arte do Corte | RestoreLab Academia",
+      "seo_description": "A técnica do padrão serpente, protocolo de 20 kg de pressão e física do pad de lã. Como cortar defeitos profundos preservando a integridade do verniz.",
+      "title": "Protocolos de Correção Mecânica: A Arte do Corte",
+      "description": "Domine a física do \"padrão serpente\" e o controlo de temperatura. Aprenda como 20 kg de pressão e um pad de lã podem cortar defeitos profundos preservando a integridade estrutural do verniz.",
+      "intro": "A primeira passagem é a etapa onde se decide o destino de 99,9% dos riscos. Na RestoreLab usamos a combinação Rotativa + Lã porque é a forma mais eficiente de chegar ao fundo de um risco sem perder tempo.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "O Protocolo \"40×40\" e a Técnica do \"Padrão Serpente\"",
+          "paragraphs": [
+            "Polir um painel inteiro de uma vez é o caminho mais rápido para o sobreaquecimento e resultados desiguais."
+          ],
+          "tools": [
+            {
+              "label": "Área de trabalho",
+              "text": "Dividimos sempre o painel em secções de 40×40 cm."
+            },
+            {
+              "label": "Padrão de movimento",
+              "text": "A máquina move-se num padrão serpente horizontal — de aresta a aresta, sem pausas nem paragens."
+            },
+            {
+              "label": "Controlo de nível",
+              "text": "A mão direita mantém constantemente um plano nivelado, enquanto a cauda da máquina é mantida a 45 graus em relação ao corpo para máximo controlo."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Gestão de Pressão e Temperatura",
+          "paragraphs": [
+            "A eficiência de corte depende diretamente de quanta força se aplica."
+          ],
+          "tools": [
+            {
+              "label": "Pressão",
+              "text": "Em superfícies horizontais grandes, usamos até 20 kg de pressão. Isto permite que o composto trabalhe a plena capacidade."
+            },
+            {
+              "label": "Controlo de calor",
+              "text": "A cada 20 segundos de trabalho, paramos e verificamos a temperatura do verniz com a palma da mão. Se a superfície estiver quente, passamos para uma secção vizinha e deixamos a primeira arrefecer."
+            },
+            {
+              "label": "Correção localizada",
+              "text": "Ao remover riscos profundos com uma rotativa pequena, a pressão é reduzida para 8–12 kg devido à menor área de contacto e maior agressividade."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "A Física do Pad de Lã",
+          "paragraphs": [
+            "A lã é a ferramenta de corte mais agressiva do nosso arsenal."
+          ],
+          "tools": [
+            {
+              "label": "Centro de eficiência",
+              "text": "Tenha em conta que a máxima potência de corte ocorre mais perto do centro do pad. Para trabalhar corretamente as arestas de um painel, o centro do pad deve estender-se para além do perímetro."
+            },
+            {
+              "label": "Risco de ângulo",
+              "text": "Não recomendamos aumentar o ângulo do pad mais de 5 graus. Inclinar a máquina aumenta a agressividade, mas também multiplica o risco de queimar o verniz."
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Higiene de Ferramentas: Limpeza do Pad de Lã",
+          "paragraphs": [
+            "Um pad de lã obstruído com composto gasto deixa de cortar e começa a \"saltar\" pelo painel."
+          ],
+          "tools": [
+            {
+              "label": "Rotina",
+              "text": "Limpamos o pad a cada duas passagens (uma passagem = aproximadamente 60 segundos de trabalho)."
+            },
+            {
+              "label": "Técnica",
+              "text": "Use um esporão dedicado para pads ou uma escova de limpeza de lã para pentear as fibras, depois gire o pad a velocidade para ejetar qualquer pó de polimento restante."
+            }
+          ],
+          "analogy": {
+            "title": "Analogia de engenharia RestoreLab",
+            "text": "Porquê caminhar quando se pode voar? A combinação Rotativa + Lã é o seu avião. Leva-o ao objetivo dramaticamente mais rápido e com muito menos esforço do que tentar cortar um risco profundo com espuma ou uma polidora de dupla ação."
+          }
+        }
+      ]
+    },
+    "refining_stabilization": {
+      "seo_title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho | RestoreLab Academia",
+      "seo_description": "Estabilização em duas etapas após correção profunda. Remova a névoa da lã, elimine hologramas e alcance clareza de verniz de grau espacial.",
+      "title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho",
+      "description": "A transição da correção profunda para a clareza absoluta do verniz. Aprenda a remover completamente a névoa de trabalho deixada pela lã e estabilizar a superfície para eliminar hologramas sob qualquer fonte de luz.",
+      "intro": "Após a passagem inicial com rotativa + lã, a superfície está livre de riscos profundos, mas fica com uma névoa microscópica ou marcas de corte. Na RestoreLab tratamos isto como uma condição intermédia que requer um processo de estabilização em duas etapas.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Segunda Passagem: Suavizar o Padrão de Corte",
+          "paragraphs": [
+            "O objetivo desta etapa é reduzir as marcas de trabalho deixadas pela lã, preparando o verniz para o brilho final. Isto reduz drasticamente o tempo que a polidora de dupla ação (DA) precisa no passo seguinte."
+          ],
+          "tools": [
+            { "label": "Equipamento", "text": "Polidora rotativa (Makita 9237CB) + pad de espuma amarelo (por exemplo, Rupes 130 mm)." },
+            { "label": "Composto", "text": "Composto de polimento de corte médio." }
+          ],
+          "key_params": [
+            "Velocidade: 1,7–1,9",
+            "Pressão: Cerca de 12 kg",
+            "Tempo: 30–50 segundos por secção de 40×40 cm usando um \"padrão serpente\" horizontal",
+            "Importante: Trate as peças de plástico adicionais (molduras, coberturas) com cuidado, sem pressão excessiva, pois a camada de verniz ali é mínima."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Terceira Passagem: Estabilização Final (O Bisturi)",
+          "paragraphs": [
+            "Aqui usamos uma polidora de dupla ação (DA) para levar o verniz a um acabamento de \"grau espacial\" — perfeitamente claro, com zero hologramas."
+          ],
+          "tools": [
+            { "label": "Equipamento", "text": "Polidora de dupla ação (DA) grande (por exemplo, FLEX XFE 7-15) + pad de espuma suave amarelo ou branco." },
+            { "label": "Composto", "text": "Polish de acabamento." }
+          ],
+          "key_params": [
+            "Pressão: 0–1 kg (a máquina trabalha sob o seu próprio peso)",
+            "Velocidade: Máxima (6), desde que o pad fique plano contra o painel",
+            "Área de cobertura: Uma DA permite trabalhar secções maiores de uma vez (até 80×80 cm)",
+            "Padrão de movimento: 2–3 repetições de \"padrões serpente\" horizontais e verticais durante 60–90 segundos"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Protocolo de Trabalho para Pintura Preta Sólida e Acrílico",
+          "paragraphs": [
+            "A pintura preta sólida não metálica e os acabamentos acrílicos são os materiais mais exigentes do nosso laboratório."
+          ],
+          "tools": [
+            { "label": "Acrílico", "text": "Durante o polimento, os pads vão adquirir a cor do veículo porque o pigmento está misturado no revestimento. Isto é normal — basta limpar os pads mais frequentemente com sabão doméstico." },
+            { "label": "Preto sólido", "text": "Se a combinação padrão continuar a deixar hologramas, o protocolo muda: substitua o pad de acabamento a cada 2–3 painéis, reduza a velocidade da DA para 2–3 e encurte o ciclo de trabalho para 15–20 segundos. Em casos extremos, use um polish de primer (CarPro Essence) e pads brancos ultra-suaves." }
+          ],
+          "analogy": {
+            "title": "Mandamento de engenharia RestoreLab",
+            "text": "Os hologramas são as impressões digitais de um amador. O verdadeiro brilho aparece apenas quando o verniz se torna opticamente nivelado e totalmente estabilizado."
+          }
+        }
+      ]
+    },
+    "protection_preservation": {
+      "seo_title": "Protocolos de Proteção e Preservação: O Escudo Molecular | RestoreLab Academia",
+      "seo_description": "Aplicação de revestimento cerâmico, o protocolo de três critérios e factos sobre a longevidade do verniz. Como selar um acabamento espelho durante anos.",
+      "title": "Protocolos de Proteção e Preservação: O Escudo Molecular",
+      "description": "A etapa final da estabilização da superfície. Aprenda a selar o resultado com proteção de grafeno, por que a cera é uma escolha de entusiastas e não de profissionais, e como preservar um acabamento espelho durante anos.",
+      "intro": "Após o polimento profundo, o verniz está no pico de adesão e pronto para absorver qualquer contaminação. Na RestoreLab completamos sempre o ciclo aplicando um revestimento protetor, para que as propriedades hidrofóbicas trabalhem a favor de manter o veículo limpo.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Escolher Proteção: O Protocolo dos \"Três Critérios\"",
+          "paragraphs": [
+            "Depois de testar dezenas de produtos, o nosso laboratório definiu três parâmetros obrigatórios para um revestimento cerâmico eficaz:"
+          ],
+          "key_params": [
+            "Acessibilidade e preço: O produto não deve custar tanto como repintar metade do carro.",
+            "Facilidade de aplicação: Deve ser possível nivelar e polir sem pressão, minimizando o risco de introduzir novos riscos durante a limpeza final.",
+            "Desempenho hidrofóbico: Um forte efeito repelente de água é o indicador chave de valor para o cliente."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocolo Técnico de Aplicação",
+          "paragraphs": [
+            "Antes da aplicação, a carroçaria deve estar completamente desengordurada."
+          ],
+          "tools": [
+            { "label": "Dosagem", "text": "O consumo médio é de 10 ml por camada." },
+            { "label": "Área de cobertura", "text": "Graças ao longo tempo de evaporação, pode revestir até um terço do veículo de uma vez, e depois proceder calmamente ao nivelamento e polimento." },
+            { "label": "Ferramentas", "text": "Use um conjunto de 6 toalhas de microfibra para nivelar e polir (4 toalhas de pelo curto para a passagem inicial e 2 toalhas de pelo longo para o acabamento final)." },
+            { "label": "Camadas", "text": "Recomenda-se uma aplicação de duas camadas, com um intervalo de uma hora entre camadas." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Estabilização e Cuidados Posteriores",
+          "paragraphs": [
+            "Um revestimento cerâmico precisa de tempo para completar o seu processo de cura química:"
+          ],
+          "tools": [
+            { "label": "Cura natural", "text": "12 horas num espaço seco (a secagem por infravermelhos é opcional, não obrigatória)." },
+            { "label": "Protocolo de lavagem", "text": "A primeira lavagem com produtos químicos não deve ocorrer antes de 7 dias após a aplicação." },
+            { "label": "Manutenção", "text": "Mesmo o melhor revestimento cerâmico não proporciona 100% de proteção contra riscos. No nosso laboratório recomendamos renovar a proteção uma vez por ano após um polimento ligeiro com dupla ação." }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Economia e Mitos: Quanto Dura o Verniz?",
+          "paragraphs": [
+            "Muitas pessoas temem o polimento porque acreditam que \"consome\" o verniz para sempre. Aqui estão os factos da RestoreLab:"
+          ],
+          "key_params": [
+            "A correção profunda com lã remove uma média de 5,5 mícrons.",
+            "O limite seguro de polimento é a espessura do verniz medida no batente da porta.",
+            "Com a abordagem correta, o polimento profundo profissional pode ser feito até 10 vezes, e o polimento ligeiro até 25 vezes durante a vida do veículo."
+          ],
+          "analogy": {
+            "title": "Conclusão de engenharia RestoreLab",
+            "text": "O profissionalismo não é apenas a capacidade de cortar um risco até zero, mas também saber quando parar para preservar esses valiosos mícrons de verniz para o futuro."
+          }
+        }
+      ]
+    },
+    "motorcycle_detailing": {
+      "seo_title": "Detailing Especializado: Protocolos para Motos | RestoreLab Academia",
+      "seo_description": "Polimento de precisão em geometrias complexas. Correção de toque leve, trabalho em painéis plásticos, limpeza de metal e cuidado de couro para motos.",
+      "title": "Detailing Especializado: Protocolos para Motos",
+      "description": "Trabalho de precisão em geometrias complexas. Por que as motos requerem uma abordagem exclusivamente de toque leve, como trabalhar em plástico quando a espessura do verniz não pode ser medida, e a arte de limpar metal.",
+      "intro": "Uma moto não é \"um carro pequeno\". É um objeto de engenharia complexo, onde 70% das peças pintadas são de plástico e o acesso a elas é limitado.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Protocolo de Segurança: Sem Corte Agressivo",
+          "paragraphs": [
+            "Ao contrário de um carro, uma moto não tem \"áreas de referência\" como os batentes das portas onde se pode determinar um limite de risco seguro para a remoção do verniz. A maioria das motos foi repintada em algum momento, e a espessura exata do verniz é sempre desconhecida."
+          ],
+          "tools": [
+            { "label": "Regra principal", "text": "As motos são polidas usando apenas correção ligeira. Sem corte profundo agressivo \"a zero\" — apenas melhoria do brilho." },
+            { "label": "Teste de profundidade", "text": "Para determinar se um risco pode ser removido com segurança, pulverizamos com desengordurador. Se desaparece sob a película líquida, está no verniz e pode ser corrigido com segurança." }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocolo Técnico de Correção",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Ferramentas", "text": "Usamos uma mini polidora rotativa (por exemplo, a Krauss R3-SET) na primeira velocidade com um pad amarelo Rupes e composto Sonax NP 03-06." },
+            { "label": "Secções planas", "text": "Devido às formas complexas de depósitos e carenagens, dividimos a peça em secções estreitas, trabalhando cada uma durante 10–15 segundos com 3–5 kg de pressão." },
+            { "label": "Áreas de difícil acesso", "text": "Áreas onde nem um prato de suporte de 30 mm consegue aceder são corrigidas à mão usando movimentos intensivos e 10–12 kg de pressão." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Limpeza de Metal e Cuidado de Couro",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Metal", "text": "Para tubos de escape e cromo, usamos polimentos metálicos especializados (Autosol) que removem a oxidação e restauram um acabamento espelho." },
+            { "label": "Couro", "text": "O protocolo RestoreLab inclui limpeza com uma escova macia e um limpador espumante, remoção de resíduos com uma toalha de microfibra húmida, e preservação obrigatória com um creme condicionador protetor." }
           ]
         }
       ]

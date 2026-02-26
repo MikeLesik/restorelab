@@ -463,18 +463,45 @@
       },
       {
         "number": "02",
-        "title": "La Física de la Descontaminación",
-        "excerpt": "Partículas de hierro, alquitrán, savia de árboles, depósitos minerales adheridos — la ciencia de por qué funcionan las barras de arcilla y cuándo la descontaminación química es la única opción segura."
+        "title": "Protocolos de Enmascarado: Proteger el Borde",
+        "excerpt": "¿Por qué la capa más fina de barniz se encuentra en los bordes? Aprende la \"regla de los 2 mm\" y entiende por qué enmascarar las \"zonas rojas\" es el único seguro real contra un repintado costoso.",
+        "slug": "masking-protocols",
+        "status": "published"
       },
       {
         "number": "03",
-        "title": "La Mecánica de la Corrección",
-        "excerpt": "Cómo las almohadillas de lana cortan de forma diferente a la espuma, por qué los abrasivos decrecientes se comportan como lo hacen, y la ingeniería detrás de un acabado final impecable."
+        "title": "Protocolos de Corrección Mecánica: El Arte del Corte",
+        "excerpt": "Domina la física del \"patrón serpiente\" y el control de temperatura. Aprende cómo 20 kg de presión y una almohadilla de lana cortan defectos profundos preservando el barniz.",
+        "slug": "mechanical-correction",
+        "status": "published"
+      },
+      {
+        "number": "04",
+        "title": "Protocolos de Refinado y Estabilización: El Acabado Espejo",
+        "excerpt": "La transición de la corrección profunda a la claridad absoluta del barniz. Aprende a eliminar la bruma de trabajo dejada por la lana y estabilizar la superficie sin hologramas.",
+        "slug": "refining-stabilization",
+        "status": "published"
+      },
+      {
+        "number": "05",
+        "title": "Protocolos de Protección y Preservación: El Escudo Molecular",
+        "excerpt": "La etapa final de estabilización de la superficie. Aprende a sellar el resultado con protección de grafeno y a preservar un acabado espejo durante años.",
+        "slug": "protection-preservation",
+        "status": "published"
+      },
+      {
+        "number": "06",
+        "title": "Detailing Especializado: Protocolos para Motos",
+        "excerpt": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente suave y el arte de limpiar metal y cuero.",
+        "slug": "motorcycle-detailing",
+        "status": "published"
       }
     ]
   },
   "academy_articles": {
     "equipment_selection": {
+      "seo_title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | RestoreLab Academia",
+      "seo_description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones.",
       "title": "Elige Tu Arma: Rotativa vs. Doble Acción",
       "description": "Física del Proceso: Por Qué el 99% del Resultado Depende de la Selección de Herramientas. Aprende a distinguir el manejo de un \"kart\" del comportamiento de un \"camión\", y comprende por qué un centro de gravedad bajo es la base de la corrección profesional de pintura.",
       "intro": "En nuestro laboratorio seguimos un protocolo claro: la primera pasada — la que elimina el 99% de todos los arañazos — se realiza de forma más eficaz con una pulidora rotativa. La máquina de doble acción, en cambio, es una herramienta para la estabilización final de la superficie.",
@@ -525,6 +552,300 @@
               "label": "Segmento premium",
               "text": "Soluciones inalámbricas FLEX (XCE 8 125 y PXE 80) para máxima movilidad al trabajar en áreas pequeñas."
             }
+          ]
+        }
+      ]
+    },
+    "masking_protocols": {
+      "seo_title": "Protocolos de Enmascarado: Proteger el Borde | RestoreLab Academia",
+      "seo_description": "Por qué la capa más fina de barniz está en los bordes. La regla de los 2 mm, cintas de contorno y técnicas de re-enmascarado para prevenir quemaduras.",
+      "title": "Protocolos de Enmascarado: Proteger el Borde",
+      "description": "¿Por qué la capa más fina de barniz se encuentra en los bordes? Aprende la \"regla de los 2 mm\" y entiende por qué enmascarar las \"zonas rojas\" es el único seguro real contra un repintado costoso.",
+      "intro": "El enmascarado es el paso más ignorado por los principiantes — y la causa más común de quemadura del barniz. En RestoreLab no confiamos en la suerte; confiamos en la cinta de enmascarar.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Zona de Riesgo: La Física del Barniz en los Bordes",
+          "paragraphs": [
+            "En los bordes y líneas agudas de la carrocería, el barniz siempre es significativamente más fino que en las superficies planas. Sin enmascarado, la primera pasada con una almohadilla de lana puede ser fatal para el panel."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Método de Enmascarado RestoreLab",
+          "paragraphs": [],
+          "tools": [
+            {
+              "label": "Regla del perímetro",
+              "text": "Enmascaramos los bordes superponiendo la cinta 2 mm sobre el propio panel. Esto protege el borde mientras trabajas la sección plana principal."
+            },
+            {
+              "label": "Paneles repintados",
+              "text": "Si el panel ha sido repintado, el riesgo de delaminación del barniz al retirar la cinta aumenta."
+            },
+            {
+              "label": "Consejo profesional",
+              "text": "Para reducir ese riesgo, primero rebajamos la adhesión de la cinta pegándola varias veces en unos vaqueros antes de aplicarla al panel."
+            },
+            {
+              "label": "Cintas de contorno",
+              "text": "Para curvas complejas y líneas estampadas, usamos cinta de vinilo estrecha (6 mm), que nos permite seguir con precisión las líneas de la carrocería."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Re-Enmascarado para Pasadas de Acabado",
+          "paragraphs": [
+            "El enmascarado no es estático. Después de la primera pasada (agresiva) con una almohadilla de lana, la cinta se reposiciona \"bajo el borde\". Esto permite que las segunda y tercera etapas (con almohadillas de espuma) refinen los propios bordes, para que no destaquen del brillo general de la superficie plana pulida."
+          ]
+        }
+      ]
+    },
+    "mechanical_correction": {
+      "seo_title": "Protocolos de Corrección Mecánica: El Arte del Corte | RestoreLab Academia",
+      "seo_description": "La técnica del patrón serpiente, protocolo de 20 kg de presión y física de la almohadilla de lana. Cómo cortar defectos profundos preservando el barniz.",
+      "title": "Protocolos de Corrección Mecánica: El Arte del Corte",
+      "description": "Domina la física del \"patrón serpiente\" y el control de temperatura. Aprende cómo 20 kg de presión y una almohadilla de lana pueden cortar defectos profundos preservando la integridad estructural del barniz.",
+      "intro": "La primera pasada es la etapa donde se decide el destino del 99,9% de los arañazos. En RestoreLab usamos la combinación Rotativa + Lana porque es la forma más eficiente de llegar al fondo de un arañazo sin perder tiempo.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "El Protocolo \"40×40\" y la Técnica del \"Patrón Serpiente\"",
+          "paragraphs": [
+            "Pulir un panel entero de una vez es el camino más rápido al sobrecalentamiento y resultados desiguales."
+          ],
+          "tools": [
+            {
+              "label": "Área de trabajo",
+              "text": "Siempre dividimos el panel en secciones de 40×40 cm."
+            },
+            {
+              "label": "Patrón de movimiento",
+              "text": "La máquina se mueve en un patrón serpiente horizontal — de borde a borde, sin pausas ni paradas."
+            },
+            {
+              "label": "Control de nivel",
+              "text": "La mano derecha mantiene constantemente un plano nivelado, mientras la cola de la máquina se sostiene a 45 grados respecto al cuerpo para máximo control."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Gestión de Presión y Temperatura",
+          "paragraphs": [
+            "La eficiencia de corte depende directamente de cuánta fuerza apliques."
+          ],
+          "tools": [
+            {
+              "label": "Presión",
+              "text": "En superficies horizontales grandes, usamos hasta 20 kg de presión. Esto permite que el compuesto trabaje a plena capacidad."
+            },
+            {
+              "label": "Control de calor",
+              "text": "Cada 20 segundos de trabajo, paramos y comprobamos la temperatura del barniz con la palma de la mano. Si la superficie está caliente, nos movemos a una sección vecina y dejamos que la primera se enfríe."
+            },
+            {
+              "label": "Corrección localizada",
+              "text": "Al eliminar arañazos profundos con una rotativa pequeña, la presión se reduce a 8–12 kg debido al área de contacto menor y la mayor agresividad."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "La Física de la Almohadilla de Lana",
+          "paragraphs": [
+            "La lana es la herramienta de corte más agresiva de nuestro arsenal."
+          ],
+          "tools": [
+            {
+              "label": "Centro de eficiencia",
+              "text": "Ten en cuenta que la máxima potencia de corte se produce más cerca del centro de la almohadilla. Para trabajar correctamente los bordes de un panel, el centro de la almohadilla debe extenderse más allá del perímetro."
+            },
+            {
+              "label": "Riesgo de ángulo",
+              "text": "No recomendamos aumentar el ángulo de la almohadilla más de 5 grados. Inclinar la máquina aumenta la agresividad, pero también multiplica el riesgo de quemar el barniz."
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Higiene de Herramientas: Limpieza de la Almohadilla de Lana",
+          "paragraphs": [
+            "Una almohadilla de lana obstruida con compuesto gastado deja de cortar y empieza a \"saltar\" por el panel."
+          ],
+          "tools": [
+            {
+              "label": "Rutina",
+              "text": "Limpiamos la almohadilla cada dos pasadas (una pasada = aproximadamente 60 segundos de trabajo)."
+            },
+            {
+              "label": "Técnica",
+              "text": "Usa un espolón dedicado para almohadillas o un cepillo de limpieza de lana para peinar las fibras, luego gira la almohadilla a velocidad para expulsar el polvo de pulido restante."
+            }
+          ],
+          "analogy": {
+            "title": "Analogía de ingeniería RestoreLab",
+            "text": "¿Por qué caminar cuando puedes volar? La combinación Rotativa + Lana es tu avión. Te lleva al objetivo dramáticamente más rápido y con mucho menos esfuerzo que intentar cortar un arañazo profundo con espuma o una pulidora de doble acción."
+          }
+        }
+      ]
+    },
+    "refining_stabilization": {
+      "seo_title": "Protocolos de Refinado y Estabilización: El Acabado Espejo | RestoreLab Academia",
+      "seo_description": "Estabilización en dos etapas después de la corrección profunda. Elimina la bruma de la lana, los hologramas y logra una claridad de barniz de grado espacial.",
+      "title": "Protocolos de Refinado y Estabilización: El Acabado Espejo",
+      "description": "La transición de la corrección profunda a la claridad absoluta del barniz. Aprende a eliminar completamente la bruma de trabajo dejada por la lana y estabilizar la superficie para eliminar hologramas bajo cualquier fuente de luz.",
+      "intro": "Después de la pasada inicial con rotativa + lana, la superficie está libre de arañazos profundos, pero queda con una bruma microscópica o marcas de corte. En RestoreLab tratamos esto como una condición intermedia que requiere un proceso de estabilización en dos etapas.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Segunda Pasada: Suavizar el Patrón de Corte",
+          "paragraphs": [
+            "El objetivo de esta etapa es reducir las marcas de trabajo dejadas por la lana, preparando el barniz para el brillo final. Esto reduce drásticamente el tiempo que la pulidora de doble acción (DA) necesita en el siguiente paso."
+          ],
+          "tools": [
+            { "label": "Equipo", "text": "Pulidora rotativa (Makita 9237CB) + almohadilla de espuma amarilla (por ejemplo, Rupes 130 mm)." },
+            { "label": "Compuesto", "text": "Compuesto de pulido de corte medio." }
+          ],
+          "key_params": [
+            "Velocidad: 1,7–1,9",
+            "Presión: Alrededor de 12 kg",
+            "Tiempo: 30–50 segundos por sección de 40×40 cm usando un \"patrón serpiente\" horizontal",
+            "Importante: Trata las piezas de plástico añadidas (molduras, cubiertas) con cuidado, sin presión excesiva, ya que la capa de barniz allí es mínima."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Tercera Pasada: Estabilización Final (El Bisturí)",
+          "paragraphs": [
+            "Aquí usamos una pulidora de doble acción (DA) para llevar el barniz a un acabado de \"grado espacial\" — perfectamente claro, con cero hologramas."
+          ],
+          "tools": [
+            { "label": "Equipo", "text": "Pulidora de doble acción (DA) grande (por ejemplo, FLEX XFE 7-15) + almohadilla de espuma suave amarilla o blanca." },
+            { "label": "Compuesto", "text": "Polish de acabado." }
+          ],
+          "key_params": [
+            "Presión: 0–1 kg (la máquina trabaja bajo su propio peso)",
+            "Velocidad: Máxima (6), siempre que la almohadilla quede plana contra el panel",
+            "Área de cobertura: Una DA permite trabajar secciones más grandes de una vez (hasta 80×80 cm)",
+            "Patrón de movimiento: 2–3 repeticiones de \"patrones serpiente\" horizontales y verticales durante 60–90 segundos"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Protocolo de Trabajo para Pintura Negra Sólida y Acrílico",
+          "paragraphs": [
+            "La pintura negra sólida no metálica y los acabados acrílicos son los materiales más exigentes de nuestro laboratorio."
+          ],
+          "tools": [
+            { "label": "Acrílico", "text": "Durante el pulido, las almohadillas tomarán el color del vehículo porque el pigmento está mezclado en el recubrimiento. Esto es normal — solo limpia las almohadillas más frecuentemente con jabón doméstico." },
+            { "label": "Negro sólido", "text": "Si la combinación estándar sigue dejando hologramas, el protocolo cambia: reemplaza la almohadilla de acabado cada 2–3 paneles, reduce la velocidad de la DA a 2–3 y acorta el ciclo de trabajo a 15–20 segundos. En casos extremos, usa un polish de imprimación (CarPro Essence) y almohadillas blancas ultrasuaves." }
+          ],
+          "analogy": {
+            "title": "Mandamiento de ingeniería RestoreLab",
+            "text": "Los hologramas son las huellas de un aficionado. El verdadero brillo aparece solo cuando el barniz se vuelve ópticamente nivelado y completamente estabilizado."
+          }
+        }
+      ]
+    },
+    "protection_preservation": {
+      "seo_title": "Protocolos de Protección y Preservación: El Escudo Molecular | RestoreLab Academia",
+      "seo_description": "Aplicación de recubrimiento cerámico, el protocolo de tres criterios y datos sobre longevidad del barniz. Cómo sellar un acabado espejo durante años.",
+      "title": "Protocolos de Protección y Preservación: El Escudo Molecular",
+      "description": "La etapa final de estabilización de la superficie. Aprende a sellar el resultado con protección de grafeno, por qué la cera es una elección de entusiastas y no de profesionales, y cómo preservar un acabado espejo durante años.",
+      "intro": "Después del pulido profundo, el barniz está en su punto máximo de adhesión y listo para absorber cualquier contaminación. En RestoreLab siempre completamos el ciclo aplicando un recubrimiento protector, para que las propiedades hidrofóbicas trabajen a favor de mantener el vehículo limpio.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Elegir Protección: El Protocolo de \"Tres Criterios\"",
+          "paragraphs": [
+            "Después de probar docenas de productos, nuestro laboratorio definió tres parámetros obligatorios para un recubrimiento cerámico eficaz:"
+          ],
+          "key_params": [
+            "Accesibilidad y precio: El producto no debería costar tanto como repintar medio coche.",
+            "Facilidad de aplicación: Debe ser posible nivelar y pulir sin presión, minimizando el riesgo de introducir nuevos arañazos durante el limpiado final.",
+            "Rendimiento hidrofóbico: Un fuerte efecto repelente al agua es el indicador clave de valor para el cliente."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocolo Técnico de Aplicación",
+          "paragraphs": [
+            "Antes de la aplicación, la carrocería debe estar completamente desengrasada."
+          ],
+          "tools": [
+            { "label": "Dosificación", "text": "El consumo medio es de 10 ml por capa." },
+            { "label": "Área de cobertura", "text": "Gracias al largo tiempo de evaporación, puedes recubrir hasta un tercio del vehículo de una vez, y luego proceder tranquilamente al nivelado y pulido." },
+            { "label": "Herramientas", "text": "Usa un juego de 6 toallas de microfibra para nivelar y pulir (4 toallas de pelo corto para la pasada inicial y 2 toallas de pelo largo para el acabado final)." },
+            { "label": "Capas", "text": "Se recomienda una aplicación de dos capas, con un intervalo de una hora entre capas." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Estabilización y Cuidado Posterior",
+          "paragraphs": [
+            "Un recubrimiento cerámico necesita tiempo para completar su proceso de curado químico:"
+          ],
+          "tools": [
+            { "label": "Curado natural", "text": "12 horas en un espacio seco (el secado por infrarrojos es opcional, no obligatorio)." },
+            { "label": "Protocolo de lavado", "text": "El primer lavado con productos químicos no debe realizarse antes de 7 días después de la aplicación." },
+            { "label": "Mantenimiento", "text": "Incluso el mejor recubrimiento cerámico no proporciona 100% de protección contra arañazos. En nuestro laboratorio recomendamos renovar la protección una vez al año después de un pulido ligero con doble acción." }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Economía y Mitos: ¿Cuánto Dura el Barniz?",
+          "paragraphs": [
+            "Muchas personas temen el pulido porque creen que \"consume\" el barniz para siempre. Aquí están los datos de RestoreLab:"
+          ],
+          "key_params": [
+            "La corrección profunda con lana elimina una media de 5,5 micras.",
+            "El umbral seguro de pulido es el grosor del barniz medido en el marco de la puerta.",
+            "Con el enfoque correcto, el pulido profundo profesional puede realizarse hasta 10 veces, y el pulido ligero hasta 25 veces durante la vida del vehículo."
+          ],
+          "analogy": {
+            "title": "Conclusión de ingeniería RestoreLab",
+            "text": "El profesionalismo no es solo la capacidad de cortar un arañazo hasta cero, sino también saber cuándo parar para preservar esas valiosas micras de barniz para el futuro."
+          }
+        }
+      ]
+    },
+    "motorcycle_detailing": {
+      "seo_title": "Detailing Especializado: Protocolos para Motos | RestoreLab Academia",
+      "seo_description": "Pulido de precisión en geometrías complejas. Corrección de toque ligero, trabajo en paneles plásticos, limpieza de metal y cuidado del cuero para motos.",
+      "title": "Detailing Especializado: Protocolos para Motos",
+      "description": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente de toque ligero, cómo trabajar en plástico cuando no se puede medir el grosor del barniz, y el arte de limpiar metal.",
+      "intro": "Una moto no es \"un coche pequeño\". Es un objeto de ingeniería complejo, donde el 70% de las piezas pintadas son de plástico y el acceso a ellas es limitado.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Protocolo de Seguridad: Sin Corte Agresivo",
+          "paragraphs": [
+            "A diferencia de un coche, una moto no tiene \"áreas de referencia\" como los marcos de las puertas donde puedes determinar un umbral de riesgo seguro para la eliminación del barniz. La mayoría de las motos han sido repintadas en algún momento, y el grosor exacto del barniz siempre es desconocido."
+          ],
+          "tools": [
+            { "label": "Regla principal", "text": "Las motos se pulen usando solo corrección ligera. Sin corte profundo agresivo \"a cero\" — solo mejora del brillo." },
+            { "label": "Test de profundidad", "text": "Para determinar si un arañazo se puede eliminar de forma segura, lo rociamos con desengrasante. Si desaparece bajo la película líquida, está en el barniz y se puede corregir de forma segura." }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocolo Técnico de Corrección",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Herramientas", "text": "Usamos una mini pulidora rotativa (por ejemplo, la Krauss R3-SET) en la primera velocidad con una almohadilla amarilla Rupes y compuesto Sonax NP 03-06." },
+            { "label": "Secciones planas", "text": "Debido a las formas complejas de depósitos y carenados, dividimos la pieza en secciones estrechas, trabajando cada una durante 10–15 segundos con 3–5 kg de presión." },
+            { "label": "Áreas de difícil acceso", "text": "Las áreas donde ni siquiera un plato de soporte de 30 mm puede acceder se corrigen a mano usando movimientos intensivos y 10–12 kg de presión." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Limpieza de Metal y Cuidado del Cuero",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Metal", "text": "Para tubos de escape y cromo, usamos pulimentos metálicos especializados (Autosol) que eliminan la oxidación y restauran un acabado espejo." },
+            { "label": "Cuero", "text": "El protocolo RestoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora." }
           ]
         }
       ]

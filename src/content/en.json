@@ -463,18 +463,45 @@
       },
       {
         "number": "02",
-        "title": "The Physics of Decontamination",
-        "excerpt": "Iron fallout, tar, tree sap, bonded mineral deposits — the science of why clay bars work and when chemical decontamination is the only safe option."
+        "title": "Masking Protocols: Protecting the Edge",
+        "excerpt": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
+        "slug": "masking-protocols",
+        "status": "published"
       },
       {
         "number": "03",
-        "title": "The Mechanics of Correction",
-        "excerpt": "How wool pads cut differently from foam, why diminishing abrasives behave the way they do, and the engineering behind a flawless final finish."
+        "title": "Mechanical Correction Protocols: The Art of the Cut",
+        "excerpt": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the clear coat.",
+        "slug": "mechanical-correction",
+        "status": "published"
+      },
+      {
+        "number": "04",
+        "title": "Refining & Stabilization Protocols: The Mirror Finish",
+        "excerpt": "The transition from deep correction to absolute clear-coat clarity. Learn how to remove the working haze left by wool and stabilize the surface to eliminate holograms.",
+        "slug": "refining-stabilization",
+        "status": "published"
+      },
+      {
+        "number": "05",
+        "title": "Protection & Preservation Protocols: The Molecular Shield",
+        "excerpt": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection and how to preserve a mirror finish for years.",
+        "slug": "protection-preservation",
+        "status": "published"
+      },
+      {
+        "number": "06",
+        "title": "Specialty Detailing: Motorcycle Protocols",
+        "excerpt": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach and the art of cleaning metal and leather.",
+        "slug": "motorcycle-detailing",
+        "status": "published"
       }
     ]
   },
   "academy_articles": {
     "equipment_selection": {
+      "seo_title": "Equipment Selection Protocols — Rotary vs Dual Action | RestoreLab Academy",
+      "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations.",
       "title": "Choosing Your Weapon: Rotary vs. Dual Action",
       "description": "Process Physics: Why 99% of the Result Depends on Tool Selection. Learn to distinguish the handling of a \"go-kart\" from the behavior of a \"semi-truck,\" and understand why a low center of gravity is the foundation of professional paint correction.",
       "intro": "In our lab, we follow a clear protocol: the first pass — the one that removes 99% of all scratches — is most effectively done with a rotary polisher. The dual action machine, by contrast, is a tool for final surface stabilization.",
@@ -525,6 +552,300 @@
               "label": "Premium segment",
               "text": "Cordless FLEX solutions (XCE 8 125 and PXE 80) for maximum mobility when working on smaller areas."
             }
+          ]
+        }
+      ]
+    },
+    "masking_protocols": {
+      "seo_title": "Masking Protocols: Protecting the Edge | RestoreLab Academy",
+      "seo_description": "Why the thinnest clear coat is on edges. The 2 mm rule, contour tapes, and re-masking techniques that prevent burn-through during paint correction.",
+      "title": "Masking Protocols: Protecting the Edge",
+      "description": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
+      "intro": "Masking is the most overlooked step among beginners — and the most common cause of clear coat burn-through. At RestoreLab, we do not rely on luck; we rely on masking tape.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Risk Zone: The Physics of Clear Coat on Edges",
+          "paragraphs": [
+            "On edges and sharp body lines, the clear coat is always significantly thinner than on flat surfaces. Without masking, the very first pass with a wool pad can be fatal for the panel."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "The RestoreLab Masking Method",
+          "paragraphs": [],
+          "tools": [
+            {
+              "label": "Perimeter rule",
+              "text": "We mask edges by overlapping the tape 2 mm onto the panel itself. This protects the edge while you work the main flat section."
+            },
+            {
+              "label": "Repainted panels",
+              "text": "If the panel has been repainted, the risk of clear coat delamination when removing the tape increases."
+            },
+            {
+              "label": "Pro tip",
+              "text": "To reduce that risk, we first lower the tape's adhesion by sticking it to a pair of jeans several times before applying it to the panel."
+            },
+            {
+              "label": "Contour tapes",
+              "text": "For complex curves and stamped lines, we use narrow vinyl tape (6 mm), which allows us to precisely follow the body lines."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Re-Masking for Finishing Passes",
+          "paragraphs": [
+            "Masking is not static. After the first (aggressive) pass with a wool pad, the tape is repositioned \"under the edge.\" This allows the second and third stages (with foam pads) to refine the edges themselves, so they do not stand out from the overall gloss of the polished flat surface."
+          ]
+        }
+      ]
+    },
+    "mechanical_correction": {
+      "seo_title": "Mechanical Correction Protocols: The Art of the Cut | RestoreLab Academy",
+      "seo_description": "The snake pattern technique, 20 kg pressure protocol, and wool pad physics. How to cut deep defects while preserving clear coat structural integrity.",
+      "title": "Mechanical Correction Protocols: The Art of the Cut",
+      "description": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the structural integrity of the clear coat.",
+      "intro": "The first pass is the stage where the fate of 99.9% of scratches is decided. At RestoreLab, we use the Rotary + Wool combination because it is the most efficient way to reach the bottom of a scratch without wasting time.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "The \"40×40\" Protocol and the \"Snake Pattern\" Technique",
+          "paragraphs": [
+            "Polishing an entire panel at once is the fastest route to overheating and uneven results."
+          ],
+          "tools": [
+            {
+              "label": "Working area",
+              "text": "We always divide the panel into 40×40 cm sections."
+            },
+            {
+              "label": "Movement pattern",
+              "text": "The machine moves in a horizontal snake pattern — from edge to edge, without pauses or stops."
+            },
+            {
+              "label": "Level control",
+              "text": "The right hand constantly maintains a level plane, while the tail of the machine is held at a 45-degree angle to the body for maximum control."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Pressure and Temperature Management",
+          "paragraphs": [
+            "Cutting efficiency directly depends on how much force you apply."
+          ],
+          "tools": [
+            {
+              "label": "Pressure",
+              "text": "On large horizontal surfaces, we use up to 20 kg of pressure. This allows the compound to work at full capacity."
+            },
+            {
+              "label": "Heat control",
+              "text": "Every 20 seconds of work, we stop and check the temperature of the clear coat with the palm of the hand. If the surface feels hot, we move to a neighboring section and let the first one cool down."
+            },
+            {
+              "label": "Localized correction",
+              "text": "When removing deep scratches with a small rotary, pressure is reduced to 8–12 kg due to the smaller contact area and increased aggressiveness."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "The Physics of the Wool Pad",
+          "paragraphs": [
+            "Wool is the most aggressive cutting tool in our arsenal."
+          ],
+          "tools": [
+            {
+              "label": "Center of efficiency",
+              "text": "Keep in mind that maximum cutting power occurs closer to the center of the pad. To properly work the edges of a panel, the center of the pad must extend beyond the perimeter."
+            },
+            {
+              "label": "Angle risk",
+              "text": "We do not recommend increasing the pad angle by more than 5 degrees. Tilting the machine increases aggressiveness, but it also multiplies the risk of burning through the clear coat."
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Tool Hygiene: Cleaning the Wool Pad",
+          "paragraphs": [
+            "A wool pad clogged with spent compound stops cutting and starts \"skipping\" across the panel."
+          ],
+          "tools": [
+            {
+              "label": "Routine",
+              "text": "We clean the pad after every second pass (one pass = approximately 60 seconds of work)."
+            },
+            {
+              "label": "Technique",
+              "text": "Use a dedicated pad spur or wool cleaning brush to comb the fibers, then spin the pad out at speed to eject any remaining polishing dust."
+            }
+          ],
+          "analogy": {
+            "title": "RestoreLab engineering analogy",
+            "text": "Why walk when you can fly? The Rotary + Wool combination is your airplane. It gets you to the target dramatically faster and with far less effort than trying to cut out a deep scratch with foam or a dual action polisher."
+          }
+        }
+      ]
+    },
+    "refining_stabilization": {
+      "seo_title": "Refining & Stabilization Protocols: The Mirror Finish | RestoreLab Academy",
+      "seo_description": "Two-stage stabilization after deep correction. Remove wool haze, eliminate holograms, and achieve space-grade clear coat clarity.",
+      "title": "Refining & Stabilization Protocols: The Mirror Finish",
+      "description": "The transition from deep correction to absolute clear-coat clarity. Learn how to completely remove the working haze left by wool and stabilize the surface to eliminate holograms under any light source.",
+      "intro": "After the initial rotary + wool pass, the surface is free of deep scratches, but it is left with microscopic haze or cutting marks. At RestoreLab, we treat this as an intermediate condition that requires a two-stage stabilization process.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Second Pass: Smoothing the Cut Pattern",
+          "paragraphs": [
+            "The goal of this stage is to reduce the working marks left by wool, preparing the clear coat for the final gloss. This dramatically reduces the amount of time the dual action (DA) polisher needs on the next step."
+          ],
+          "tools": [
+            { "label": "Equipment", "text": "Rotary polisher (Makita 9237CB) + yellow foam pad (for example, Rupes 130 mm)." },
+            { "label": "Compound", "text": "Medium-cut polishing compound." }
+          ],
+          "key_params": [
+            "Speed: 1.7–1.9",
+            "Pressure: Around 12 kg",
+            "Time: 30–50 seconds per 40×40 cm section using a horizontal \"snake pattern\"",
+            "Important: Refresh add-on plastic trim pieces (moldings, covers) carefully, without excessive pressure, since the clear coat layer there is minimal."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Third Pass: Final Stabilization (The Scalpel)",
+          "paragraphs": [
+            "Here we use a dual action (DA) polisher to bring the clear coat into a \"space-grade\" finish — perfectly clear, with zero holograms."
+          ],
+          "tools": [
+            { "label": "Equipment", "text": "Large dual action (DA) polisher (for example, FLEX XFE 7-15) + soft yellow or white foam pad." },
+            { "label": "Compound", "text": "Finishing polish." }
+          ],
+          "key_params": [
+            "Pressure: 0–1 kg (the machine works under its own weight)",
+            "Speed: Maximum (6), as long as the pad lies flat against the panel",
+            "Coverage area: A DA allows you to work larger sections at once (up to 80×80 cm)",
+            "Movement pattern: 2–3 repetitions of horizontal and vertical \"snake patterns\" over 60–90 seconds"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Working Protocol for Solid Black Paint and Acrylic",
+          "paragraphs": [
+            "Solid black non-metallic paint and acrylic finishes are the most demanding materials in our lab."
+          ],
+          "tools": [
+            { "label": "Acrylic", "text": "During polishing, the pads will take on the color of the vehicle because the pigment is mixed into the coating. This is normal — just clean the pads more frequently with household soap." },
+            { "label": "Solid Black", "text": "If the standard combination still leaves holograms, the protocol changes: replace the finishing pad every 2–3 panels, reduce the DA speed to 2–3 and shorten the working cycle to 15–20 seconds. In extreme cases, use a primer polish (CarPro Essence) and ultra-soft white pads." }
+          ],
+          "analogy": {
+            "title": "RestoreLab engineering commandment",
+            "text": "Holograms are the fingerprints of an amateur. True gloss appears only when the clear coat becomes optically level and fully stabilized."
+          }
+        }
+      ]
+    },
+    "protection_preservation": {
+      "seo_title": "Protection & Preservation Protocols: The Molecular Shield | RestoreLab Academy",
+      "seo_description": "Ceramic coating application, the three criteria protocol, and clear coat longevity facts. How to lock in a mirror finish for years.",
+      "title": "Protection & Preservation Protocols: The Molecular Shield",
+      "description": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection, why wax is a choice for enthusiasts rather than professionals, and how to preserve a mirror finish for years.",
+      "intro": "After deep polishing, the clear coat is at peak adhesion and ready to absorb any contamination. At RestoreLab, we always complete the cycle by applying a protective coating, so the hydrophobic properties work in favor of keeping the vehicle clean.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Choosing Protection: The \"Three Criteria\" Protocol",
+          "paragraphs": [
+            "After testing dozens of products, our lab defined three mandatory parameters for an effective ceramic coating:"
+          ],
+          "key_params": [
+            "Accessibility and price: The product should not cost as much as repainting half the car.",
+            "Ease of application: It should be possible to level and buff it off without pressure, minimizing the risk of introducing new scratches during the final wipe-down.",
+            "Hydrophobic performance: A strong water-repellent effect is the key indicator of value for the client."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Technical Application Protocol",
+          "paragraphs": [
+            "Before application, the body must be thoroughly degreased."
+          ],
+          "tools": [
+            { "label": "Dosage", "text": "Average consumption is 10 ml per layer." },
+            { "label": "Coverage area", "text": "Thanks to the long flash time, you can coat up to one-third of the vehicle at once, then calmly proceed to leveling and buffing." },
+            { "label": "Tools", "text": "Use a set of 6 microfiber towels for leveling and buffing (4 short-pile towels for the initial pass and 2 long-pile towels for the final gloss finish)." },
+            { "label": "Layers", "text": "A two-layer application is recommended, with a one-hour interval between coats." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Stabilization and Aftercare",
+          "paragraphs": [
+            "A ceramic coating needs time to complete its chemical curing process:"
+          ],
+          "tools": [
+            { "label": "Natural curing", "text": "12 hours in a dry bay (infrared drying is optional, not mandatory)." },
+            { "label": "Washing protocol", "text": "The first wash using chemicals should not take place earlier than 7 days after application." },
+            { "label": "Maintenance", "text": "Even the best ceramic coating does not provide 100% scratch protection. In our lab, we recommend renewing the protection once a year after a light dual action polish." }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Economics and Myths: How Long Does Clear Coat Last?",
+          "paragraphs": [
+            "Many people fear polishing because they believe it \"eats away\" the clear coat forever. Here are the RestoreLab facts:"
+          ],
+          "key_params": [
+            "Deep correction with wool removes an average of 5.5 microns.",
+            "The safe polishing threshold is the clear-coat thickness measured in the door jamb.",
+            "With the right approach, professional deep polishing can be done up to 10 times, and light polishing up to 25 times over the life of the vehicle."
+          ],
+          "analogy": {
+            "title": "RestoreLab engineering conclusion",
+            "text": "Professionalism is not only the ability to cut a scratch down to zero, but also knowing when to stop in order to preserve those valuable microns of clear coat for the future."
+          }
+        }
+      ]
+    },
+    "motorcycle_detailing": {
+      "seo_title": "Specialty Detailing: Motorcycle Protocols | RestoreLab Academy",
+      "seo_description": "Precision polishing on complex geometries. Light-touch correction, plastic panel work, metal cleaning, and leather care for motorcycles.",
+      "title": "Specialty Detailing: Motorcycle Protocols",
+      "description": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach, how to work on plastic when clear-coat thickness cannot be measured, and the art of cleaning metal.",
+      "intro": "A motorcycle is not \"a small car.\" It is a complex engineering object, where 70% of the painted parts are made of plastic and access to them is limited.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Safety Protocol: No Heavy Cutting",
+          "paragraphs": [
+            "Unlike a car, a motorcycle has no \"reference areas\" such as door jambs where you can determine a safe risk threshold for clear-coat removal. Most bikes have been repainted at some point, and the exact clear-coat thickness always remains unknown."
+          ],
+          "tools": [
+            { "label": "Main rule", "text": "Motorcycles are polished using light correction only. No aggressive deep cutting \"to zero\" — only gloss enhancement." },
+            { "label": "Depth test", "text": "To determine whether a scratch can be safely removed, we spray it with a degreaser. If it disappears under the liquid film, it is in the clear coat and can be corrected safely." }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Technical Correction Protocol",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Tools", "text": "We use a mini rotary polisher (for example, the Krauss R3-SET) on the first speed setting with a yellow Rupes pad and Sonax NP 03-06 compound." },
+            { "label": "Flat sections", "text": "Because of the complex shapes of tanks and fairings, we divide the part into narrow sections, working each one for 10–15 seconds with 3–5 kg of pressure." },
+            { "label": "Hard-to-reach areas", "text": "Areas where even a 30 mm backing plate cannot fit are corrected by hand using intensive movements and 10–12 kg of pressure." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Metal Cleaning and Leather Care",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Metal", "text": "For exhaust pipes and chrome, we use specialized metal polishes (Autosol) that remove oxidation and restore a mirror finish." },
+            { "label": "Leather", "text": "The RestoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream." }
           ]
         }
       ]
