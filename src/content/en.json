@@ -69,7 +69,7 @@
     "cta_primary": "Get Free Estimate on WhatsApp",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
-    "trust_line": "5.0 Google rating · 47+ reviews · 500+ jobs · 100% mobile",
+    "trust_pills": ["★ 5.0 Google", "47+ Reviews", "500+ Jobs", "100% Mobile"],
     "cta_car": "Car Restoration",
     "cta_yacht": "Yacht Restoration",
     "sticky_cta": "Get Quote via WhatsApp",

@@ -69,7 +69,7 @@
     "cta_primary": "Orçamento Grátis no WhatsApp",
     "cta_secondary": "Ver Antes e Depois",
     "reply_time": "Resposta média: ~30 minutos",
-    "trust_line": "5.0 no Google · 47+ avaliações · 500+ trabalhos · 100% móvel",
+    "trust_pills": ["★ 5.0 Google", "47+ Avaliações", "500+ Trabalhos", "100% Móvel"],
     "cta_car": "Restauro Auto",
     "cta_yacht": "Restauro de Iate",
     "sticky_cta": "Orçamento via WhatsApp",
