@@ -69,8 +69,11 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
 
     <!-- Trust pills -->
     <div class="flex flex-wrap justify-center gap-2">
-      {t.hero.trust_pills.map((pill: string) => (
-        <span class="px-3 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-xs font-medium">
+      {t.hero.trust_pills.map((pill: string, i: number) => (
+        <span class:list={[
+          "px-3 py-1.5 rounded-full border border-brand-gold/40 backdrop-blur-sm bg-brand-gold/10 text-brand-gold text-xs font-medium hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-gold/20 transition-all duration-200 cursor-default",
+          i === 0 && "animate-pulse"
+        ]}>
           {pill}
         </span>
       ))}
