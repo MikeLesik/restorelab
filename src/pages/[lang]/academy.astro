@@ -59,18 +59,31 @@ const { t } = Astro.props;
         <h2 class="section-title text-3xl mb-12 text-center">{t.academy.articles_title}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.academy.articles.map((article: { number: string; title: string; excerpt: string }) => (
-            <div class="card p-6 flex flex-col">
-              <div class="flex items-center justify-between mb-4">
-                <span class="tag">{article.number}</span>
-                <span class="text-xs font-medium text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded-full">
-                  {t.academy.coming_soon}
-                </span>
-              </div>
-              <h3 class="font-display font-bold text-lg text-white mb-3">{article.title}</h3>
-              <p class="text-sm text-white/60 leading-relaxed flex-1">{article.excerpt}</p>
-            </div>
-          ))}
+          {t.academy.articles.map((article: { number: string; title: string; excerpt: string; slug?: string; status?: string }) => {
+            const isPublished = article.status === 'published' && article.slug;
+            const Wrapper = isPublished ? 'a' : 'div';
+            return (
+              <Wrapper
+                href={isPublished ? `/${lang}/academy/${article.slug}` : undefined}
+                class:list={["card p-6 flex flex-col", isPublished && "hover:border-brand-accent/30 transition-colors group focus-visible:ring-2 focus-visible:ring-brand-accent rounded-2xl"]}
+              >
+                <div class="flex items-center justify-between mb-4">
+                  <span class="tag">{article.number}</span>
+                  {isPublished ? (
+                    <span class="text-xs font-medium text-brand-accent bg-brand-accent/10 px-2.5 py-1 rounded-full">
+                      {t.academy.read_article} →
+                    </span>
+                  ) : (
+                    <span class="text-xs font-medium text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded-full">
+                      {t.academy.coming_soon}
+                    </span>
+                  )}
+                </div>
+                <h3 class="font-display font-bold text-lg text-white mb-3">{article.title}</h3>
+                <p class="text-sm text-white/60 leading-relaxed flex-1">{article.excerpt}</p>
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>

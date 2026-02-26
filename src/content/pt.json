@@ -49,6 +49,10 @@
     "academy": {
       "title": "Academia: Excelência em Engenharia | RestoreLab",
       "description": "Mergulho profundo na ciência e no ofício por trás do restauro profissional de superfícies. Protocolos de equipamentos, física da descontaminação e mecânica de correção."
+    },
+    "academy_equipment": {
+      "title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | RestoreLab Academia",
+      "description": "Por que 99% do resultado depende da seleção de ferramentas. Polidoras rotativas vs dupla ação — análise de engenharia, tabela comparativa e recomendações profissionais."
     }
   },
   "nav": {
@@ -447,11 +451,15 @@
     "closing": "Os artigos são publicados à medida que são escritos. Sem subscrição — basta guardar esta página e voltar a visitá-la.",
     "articles_title": "Artigos",
     "coming_soon": "Em Breve",
+    "read_article": "Ler Artigo",
+    "back_label": "Voltar à Academia",
     "articles": [
       {
         "number": "01",
         "title": "Protocolos de Seleção de Equipamentos",
-        "excerpt": "Por que escolhemos polidoras rotativas e DA específicas, pratos de suporte e compostos de pads para cada trabalho — e como a escolha errada pode danificar uma superfície permanentemente."
+        "excerpt": "Por que escolhemos polidoras rotativas e DA específicas, pratos de suporte e compostos de pads para cada trabalho — e como a escolha errada pode danificar uma superfície permanentemente.",
+        "slug": "equipment-selection",
+        "status": "published"
       },
       {
         "number": "02",
@@ -464,5 +472,62 @@
         "excerpt": "Como os pads de lã cortam de forma diferente da espuma, por que os abrasivos decrescentes se comportam como se comportam, e a engenharia por trás de um acabamento final impecável."
       }
     ]
+  },
+  "academy_articles": {
+    "equipment_selection": {
+      "title": "Escolha a Sua Arma: Rotativa vs. Dupla Ação",
+      "description": "Física do Processo: Por Que 99% do Resultado Depende da Seleção de Ferramentas. Aprenda a distinguir o manuseio de um \"kart\" do comportamento de um \"camião\", e compreenda por que um centro de gravidade baixo é a base da correção profissional de pintura.",
+      "intro": "No nosso laboratório, seguimos um protocolo claro: a primeira passagem — a que remove 99% de todos os riscos — é mais eficaz com uma polidora rotativa. A máquina de dupla ação, por outro lado, é uma ferramenta para a estabilização final da superfície.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Polidora Rotativa: Potência e Controlo",
+          "paragraphs": [
+            "A rotativa é a base da correção profunda. Ao selecionar uma máquina, focamo-nos em três parâmetros críticos:"
+          ],
+          "key_params": [
+            "Estabilidade sob carga — sem \"queda\" (perda de RPM) sob pressão a baixas velocidades.",
+            "Centro de gravidade baixo — quanto mais curto o eixo, mais perto a ferramenta fica da superfície e maior é o controlo do processo.",
+            "Modulação de potência — a capacidade de controlar com precisão as RPM para operação segura em curvas e linhas da carroçaria."
+          ],
+          "analogy": {
+            "title": "Analogia de engenharia RestoreLab",
+            "text": "Trabalhar com uma ferramenta que tem um centro de gravidade alto ou deslocado é como conduzir um camião alto — vira, mas nunca terá a precisão de um kart. Uma polidora rotativa profissional (por exemplo, a Makita 9237CB) é um kart: baixa, previsível e extremamente eficiente."
+          },
+          "table": {
+            "caption": "Análise comparativa de sistemas rotativos",
+            "headers": ["Modelo", "Queda de RPM sob pressão", "Centro de gravidade baixo", "Controlo de RPM", "Alta fiabilidade"],
+            "rows": [
+              ["Makita 9237CB", "Não", "Sim", "Sim", "Sim"],
+              ["DeWALT DWP849X", "Sim", "Não", "Sim", "Sim"],
+              ["FLEX PE 14-2 150", "Não", "Sim", "Sim", "Sim"]
+            ]
+          },
+          "conclusion": "A escolha do nosso laboratório é a Makita 9237CB. Oferece um manuseio ideal graças ao seu centro de gravidade baixo e estabilidade em configurações de velocidade baixa."
+        },
+        {
+          "number": "2",
+          "title": "Dupla Ação: O Bisturi do Acabamento",
+          "paragraphs": [
+            "Uma vez que os defeitos principais foram removidos com a rotativa, começa a fase de acabamento. O prato de suporte de uma polidora de dupla ação realiza dois tipos de movimento simultaneamente: rotacional e oscilante. Isto permite alcançar uma superfície perfeitamente limpa sem hologramas."
+          ],
+          "tools_title": "Equipamento profissional de dupla ação da RestoreLab",
+          "tools": [
+            {
+              "label": "Para painéis grandes",
+              "text": "FLEX XFE 7-15 ou Rupes LHR15 Mark II com prato de suporte de 125/150 mm."
+            },
+            {
+              "label": "Para áreas localizadas",
+              "text": "Mini polidora Rupes LHR75E (75 mm) para trabalhar secções complexas."
+            },
+            {
+              "label": "Segmento premium",
+              "text": "Soluções sem fio FLEX (XCE 8 125 e PXE 80) para máxima mobilidade ao trabalhar em áreas menores."
+            }
+          ]
+        }
+      ]
+    }
   }
 }

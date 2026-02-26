@@ -49,6 +49,10 @@
     "academy": {
       "title": "Academia: Excelencia en Ingeniería | RestoreLab",
       "description": "Inmersión profunda en la ciencia y el oficio detrás de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
+    },
+    "academy_equipment": {
+      "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | RestoreLab Academia",
+      "description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones profesionales."
     }
   },
   "nav": {
@@ -447,11 +451,15 @@
     "closing": "Los artículos se publican a medida que se escriben. Sin suscripción — solo guarda esta página y vuelve a visitarla.",
     "articles_title": "Artículos",
     "coming_soon": "Próximamente",
+    "read_article": "Leer Artículo",
+    "back_label": "Volver a la Academia",
     "articles": [
       {
         "number": "01",
         "title": "Protocolos de Selección de Equipos",
-        "excerpt": "Por qué elegimos pulidoras rotativas y DA específicas, platos de soporte y compuestos de almohadillas para cada trabajo — y cómo la elección incorrecta puede dañar una superficie permanentemente."
+        "excerpt": "Por qué elegimos pulidoras rotativas y DA específicas, platos de soporte y compuestos de almohadillas para cada trabajo — y cómo la elección incorrecta puede dañar una superficie permanentemente.",
+        "slug": "equipment-selection",
+        "status": "published"
       },
       {
         "number": "02",
@@ -464,5 +472,62 @@
         "excerpt": "Cómo las almohadillas de lana cortan de forma diferente a la espuma, por qué los abrasivos decrecientes se comportan como lo hacen, y la ingeniería detrás de un acabado final impecable."
       }
     ]
+  },
+  "academy_articles": {
+    "equipment_selection": {
+      "title": "Elige Tu Arma: Rotativa vs. Doble Acción",
+      "description": "Física del Proceso: Por Qué el 99% del Resultado Depende de la Selección de Herramientas. Aprende a distinguir el manejo de un \"kart\" del comportamiento de un \"camión\", y comprende por qué un centro de gravedad bajo es la base de la corrección profesional de pintura.",
+      "intro": "En nuestro laboratorio seguimos un protocolo claro: la primera pasada — la que elimina el 99% de todos los arañazos — se realiza de forma más eficaz con una pulidora rotativa. La máquina de doble acción, en cambio, es una herramienta para la estabilización final de la superficie.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Pulidora Rotativa: Potencia y Control",
+          "paragraphs": [
+            "La rotativa es la base de la corrección profunda. Al seleccionar una máquina, nos centramos en tres parámetros críticos:"
+          ],
+          "key_params": [
+            "Estabilidad bajo carga — sin \"caída\" (pérdida de RPM) bajo presión a bajas velocidades.",
+            "Centro de gravedad bajo — cuanto más corto sea el eje, más cerca queda la herramienta de la superficie y mayor es el control del proceso.",
+            "Modulación de potencia — la capacidad de controlar con precisión las RPM para una operación segura en curvas y líneas de la carrocería."
+          ],
+          "analogy": {
+            "title": "Analogía de ingeniería RestoreLab",
+            "text": "Trabajar con una herramienta que tiene un centro de gravedad alto o desplazado es como conducir un camión alto — gira, pero nunca tendrá la precisión de un kart. Una pulidora rotativa profesional (por ejemplo, la Makita 9237CB) es un kart: baja, predecible y extremadamente eficiente."
+          },
+          "table": {
+            "caption": "Análisis comparativo de sistemas rotativos",
+            "headers": ["Modelo", "Caída de RPM bajo presión", "Centro de gravedad bajo", "Control de RPM", "Alta fiabilidad"],
+            "rows": [
+              ["Makita 9237CB", "No", "Sí", "Sí", "Sí"],
+              ["DeWALT DWP849X", "Sí", "No", "Sí", "Sí"],
+              ["FLEX PE 14-2 150", "No", "Sí", "Sí", "Sí"]
+            ]
+          },
+          "conclusion": "La elección de nuestro laboratorio es la Makita 9237CB. Ofrece un manejo ideal gracias a su centro de gravedad bajo y estabilidad en ajustes de velocidad baja."
+        },
+        {
+          "number": "2",
+          "title": "Doble Acción: El Bisturí del Acabado",
+          "paragraphs": [
+            "Una vez que los defectos principales se han eliminado con la rotativa, comienza la fase de acabado. El plato de soporte de una pulidora de doble acción realiza dos tipos de movimiento simultáneamente: rotacional y oscilante. Esto permite lograr una superficie perfectamente limpia sin hologramas."
+          ],
+          "tools_title": "Equipamiento profesional de doble acción de RestoreLab",
+          "tools": [
+            {
+              "label": "Para paneles grandes",
+              "text": "FLEX XFE 7-15 o Rupes LHR15 Mark II con plato de soporte de 125/150 mm."
+            },
+            {
+              "label": "Para áreas localizadas",
+              "text": "Mini pulidora Rupes LHR75E (75 mm) para trabajar secciones complejas."
+            },
+            {
+              "label": "Segmento premium",
+              "text": "Soluciones inalámbricas FLEX (XCE 8 125 y PXE 80) para máxima movilidad al trabajar en áreas pequeñas."
+            }
+          ]
+        }
+      ]
+    }
   }
 }

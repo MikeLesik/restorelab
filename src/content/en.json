@@ -49,6 +49,10 @@
     "academy": {
       "title": "Academy: Engineering Excellence | RestoreLab",
       "description": "Deep-dive into the science and craft behind professional surface restoration. Equipment protocols, decontamination physics, and correction mechanics."
+    },
+    "academy_equipment": {
+      "title": "Equipment Selection Protocols — Rotary vs Dual Action | RestoreLab Academy",
+      "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations."
     }
   },
   "nav": {
@@ -447,11 +451,15 @@
     "closing": "Articles are released as they're written. Subscribe-free — just bookmark this page and check back.",
     "articles_title": "Articles",
     "coming_soon": "Coming Soon",
+    "read_article": "Read Article",
+    "back_label": "Back to Academy",
     "articles": [
       {
         "number": "01",
         "title": "Equipment Selection Protocols",
-        "excerpt": "Why we choose specific rotary and DA polishers, backing plates, and pad compounds for each job — and how the wrong choice can damage a surface permanently."
+        "excerpt": "Why we choose specific rotary and DA polishers, backing plates, and pad compounds for each job — and how the wrong choice can damage a surface permanently.",
+        "slug": "equipment-selection",
+        "status": "published"
       },
       {
         "number": "02",
@@ -464,5 +472,62 @@
         "excerpt": "How wool pads cut differently from foam, why diminishing abrasives behave the way they do, and the engineering behind a flawless final finish."
       }
     ]
+  },
+  "academy_articles": {
+    "equipment_selection": {
+      "title": "Choosing Your Weapon: Rotary vs. Dual Action",
+      "description": "Process Physics: Why 99% of the Result Depends on Tool Selection. Learn to distinguish the handling of a \"go-kart\" from the behavior of a \"semi-truck,\" and understand why a low center of gravity is the foundation of professional paint correction.",
+      "intro": "In our lab, we follow a clear protocol: the first pass — the one that removes 99% of all scratches — is most effectively done with a rotary polisher. The dual action machine, by contrast, is a tool for final surface stabilization.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Rotary Polisher: Power and Control",
+          "paragraphs": [
+            "The rotary is the foundation of deep correction. When selecting a machine, we focus on three critical parameters:"
+          ],
+          "key_params": [
+            "Stability under load — no \"drop-off\" (loss of RPM) under pressure at low speeds.",
+            "Low center of gravity — the shorter the spindle (shaft), the closer the tool sits to the surface, and the greater the control over the process.",
+            "Power modulation — the ability to precisely control RPM for safe operation on curves and body lines."
+          ],
+          "analogy": {
+            "title": "RestoreLab engineering analogy",
+            "text": "Working with a tool that has a high or shifted center of gravity is like driving a tall semi-truck — it turns, but it will never have the precision of a go-kart. A professional rotary polisher (for example, the Makita 9237CB) is a go-kart: low-slung, predictable, and extremely efficient."
+          },
+          "table": {
+            "caption": "Comparative analysis of rotary systems",
+            "headers": ["Model", "RPM drop under pressure", "Low center of gravity", "RPM control", "High reliability"],
+            "rows": [
+              ["Makita 9237CB", "No", "Yes", "Yes", "Yes"],
+              ["DeWALT DWP849X", "Yes", "No", "Yes", "Yes"],
+              ["FLEX PE 14-2 150", "No", "Yes", "Yes", "Yes"]
+            ]
+          },
+          "conclusion": "Our lab's choice is the Makita 9237CB. It delivers ideal handling thanks to its low center of gravity and stability at lower speed settings."
+        },
+        {
+          "number": "2",
+          "title": "Dual Action: The Finishing Scalpel",
+          "paragraphs": [
+            "Once the major defects have been removed with the rotary, the finishing stage begins. The backing plate of a dual action polisher performs two types of motion at once: rotational and oscillating. This makes it possible to achieve a perfectly clean surface without holograms."
+          ],
+          "tools_title": "RestoreLab's professional dual action lineup",
+          "tools": [
+            {
+              "label": "For large panels",
+              "text": "FLEX XFE 7-15 or Rupes LHR15 Mark II with a 125/150 mm backing plate."
+            },
+            {
+              "label": "For localized areas",
+              "text": "Rupes LHR75E mini polisher (75 mm) for working complex sections."
+            },
+            {
+              "label": "Premium segment",
+              "text": "Cordless FLEX solutions (XCE 8 125 and PXE 80) for maximum mobility when working on smaller areas."
+            }
+          ]
+        }
+      ]
+    }
   }
 }

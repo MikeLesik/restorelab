@@ -1,0 +1,168 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PreFooterCTA from '@/components/PreFooterCTA.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import pt from '@/content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const article = t.academy_articles.equipment_selection;
+const sections = article.sections as Array<Record<string, any>>;
+---
+
+<BaseLayout
+  title={t.meta.academy_equipment.title}
+  description={t.meta.academy_equipment.description}
+  lang={lang}
+  t={t}
+  currentPath="/academy/equipment-selection"
+>
+  <div class="pt-24">
+
+    <!-- Hero -->
+    <section class="relative py-24 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <a href={`/${lang}/academy`} class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white mb-8 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          {t.academy.back_label}
+        </a>
+
+        <!-- Number tag -->
+        <span class="tag mb-6 inline-block">01</span>
+
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+          {article.title}
+        </h1>
+        <p class="text-xl text-white/60 mb-6 leading-relaxed">
+          {article.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <article class="py-16 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Intro -->
+        <p class="text-lg text-white/80 leading-relaxed mb-16">
+          {article.intro}
+        </p>
+
+        <!-- Sections -->
+        {sections.map((section) => (
+          <section class="mb-20">
+            <!-- Section heading -->
+            <div class="flex items-center gap-4 mb-8">
+              <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-display font-bold text-sm">
+                {section.number}
+              </span>
+              <h2 class="text-2xl md:text-3xl font-display font-bold text-white">
+                {section.title}
+              </h2>
+            </div>
+
+            <!-- Paragraphs -->
+            {section.paragraphs?.map((p: string) => (
+              <p class="text-white/70 leading-relaxed mb-6">{p}</p>
+            ))}
+
+            <!-- Key params (bullet list) -->
+            {section.key_params && (
+              <ul class="space-y-4 mb-8">
+                {section.key_params.map((param: string) => (
+                  <li class="flex items-start gap-3 text-white/80">
+                    <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="leading-relaxed">{param}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <!-- Analogy callout -->
+            {section.analogy && (
+              <div class="relative rounded-2xl border border-brand-gold/20 bg-brand-gold/5 p-6 sm:p-8 mb-8">
+                <div class="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 bg-brand-dark rounded-full border border-brand-gold/20">
+                  <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider">{section.analogy.title}</span>
+                </div>
+                <p class="text-white/80 leading-relaxed mt-2">{section.analogy.text}</p>
+              </div>
+            )}
+
+            <!-- Comparison table -->
+            {section.table && (
+              <div class="mb-8">
+                <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">{section.table.caption}</p>
+                <div class="overflow-x-auto rounded-xl border border-white/10">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b border-white/10 bg-white/5">
+                        {section.table.headers.map((header: string) => (
+                          <th class="px-4 py-3 text-left font-semibold text-white/90 whitespace-nowrap">{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row: string[], idx: number) => (
+                        <tr class:list={["border-b border-white/5", { "bg-white/[0.02]": idx % 2 === 1 }]}>
+                          {row.map((cell: string, cellIdx: number) => (
+                            <td class:list={["px-4 py-3 whitespace-nowrap", cellIdx === 0 ? "font-medium text-white" : "text-white/70"]}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            <!-- Conclusion -->
+            {section.conclusion && (
+              <p class="text-white/80 leading-relaxed font-medium border-l-2 border-brand-accent pl-4 mb-8">
+                {section.conclusion}
+              </p>
+            )}
+
+            <!-- Tools list (section 2) -->
+            {section.tools && (
+              <div class="space-y-4">
+                {section.tools_title && (
+                  <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">{section.tools_title}</p>
+                )}
+                {section.tools.map((tool: { label: string; text: string }) => (
+                  <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                    <span class="flex-shrink-0 px-2.5 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium whitespace-nowrap">
+                      {tool.label}
+                    </span>
+                    <p class="text-white/70 leading-relaxed">{tool.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        ))}
+
+      </div>
+    </article>
+
+    <PreFooterCTA t={t} lang={lang} />
+  </div>
+</BaseLayout>
