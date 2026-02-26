@@ -39,12 +39,12 @@ const sections = content.sections as Array<Record<string, any>>;
   <div class="pt-24">
 
     <!-- Hero -->
-    <section class="relative py-24 overflow-hidden bg-gradient-hero">
+    <section class="relative py-14 sm:py-16 overflow-hidden bg-gradient-hero">
       <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
       <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Breadcrumb -->
-        <a href={`/${lang}/academy`} class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white mb-8 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+        <a href={`/${lang}/academy`} class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white mb-5 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -52,31 +52,31 @@ const sections = content.sections as Array<Record<string, any>>;
         </a>
 
         <!-- Number tag -->
-        <span class="tag mb-6 inline-block">{card.number}</span>
+        <span class="tag mb-4 inline-block">{card.number}</span>
 
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
           {content.title}
         </h1>
-        <p class="text-xl text-white/60 mb-6 leading-relaxed">
+        <p class="text-xl text-white/60 mb-0 leading-relaxed">
           {content.description}
         </p>
       </div>
     </section>
 
     <!-- Article body -->
-    <article class="py-16 sm:py-24">
+    <article class="py-10 sm:py-14">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Intro -->
-        <p class="text-lg text-white/80 leading-relaxed mb-16">
+        <p class="text-lg text-white/80 leading-relaxed mb-10">
           {content.intro}
         </p>
 
         <!-- Sections -->
         {sections.map((section) => (
-          <section class="mb-20">
+          <section class="mb-12">
             <!-- Section heading -->
-            <div class="flex items-center gap-4 mb-8">
+            <div class="flex items-center gap-4 mb-5">
               <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-display font-bold text-sm">
                 {section.number}
               </span>
@@ -92,7 +92,7 @@ const sections = content.sections as Array<Record<string, any>>;
 
             <!-- Key params (bullet list) -->
             {section.key_params && (
-              <ul class="space-y-4 mb-8">
+              <ul class="space-y-3 mb-6">
                 {section.key_params.map((param: string) => (
                   <li class="flex items-start gap-3 text-white/80">
                     <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ const sections = content.sections as Array<Record<string, any>>;
 
             <!-- Analogy / engineering callout -->
             {section.analogy && (
-              <div class="relative rounded-2xl border border-brand-gold/20 bg-brand-gold/5 p-6 sm:p-8 mb-8">
+              <div class="relative rounded-2xl border border-brand-gold/20 bg-brand-gold/5 p-5 sm:p-6 mb-6">
                 <div class="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 bg-brand-dark rounded-full border border-brand-gold/20">
                   <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider">{section.analogy.title}</span>
                 </div>
@@ -116,7 +116,7 @@ const sections = content.sections as Array<Record<string, any>>;
 
             <!-- Comparison table -->
             {section.table && (
-              <div class="mb-8">
+              <div class="mb-6">
                 <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">{section.table.caption}</p>
                 <div class="overflow-x-auto rounded-xl border border-white/10">
                   <table class="w-full text-sm">
@@ -145,28 +145,28 @@ const sections = content.sections as Array<Record<string, any>>;
 
             <!-- Conclusion -->
             {section.conclusion && (
-              <p class="text-white/80 leading-relaxed font-medium border-l-2 border-brand-accent pl-4 mb-8">
+              <p class="text-white/80 leading-relaxed font-medium border-l-2 border-brand-accent pl-4 mb-6">
                 {section.conclusion}
               </p>
             )}
 
             <!-- Tools / labeled list (table layout for aligned columns) -->
             {section.tools && (
-              <div class="mb-8">
+              <div class="mb-6">
                 {section.tools_title && (
-                  <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">{section.tools_title}</p>
+                  <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-3">{section.tools_title}</p>
                 )}
                 <div class="rounded-xl border border-white/5 overflow-hidden">
                   <table class="w-full">
                     <tbody>
                       {section.tools.map((tool: { label: string; text: string }, idx: number) => (
                         <tr class:list={["bg-white/[0.03]", idx > 0 && "border-t border-white/5"]}>
-                          <td class="p-4 pr-2 align-middle whitespace-nowrap">
+                          <td class="py-3 pl-4 pr-2 align-middle whitespace-nowrap">
                             <span class="inline-block px-2.5 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium">
                               {tool.label}
                             </span>
                           </td>
-                          <td class="p-4 pl-2 text-white/70 leading-relaxed">
+                          <td class="py-3 pr-4 pl-2 text-white/70 leading-relaxed">
                             {tool.text}
                           </td>
                         </tr>
