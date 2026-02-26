@@ -45,6 +45,10 @@
     "terms": {
       "title": "Términos y Condiciones | RestoreLab",
       "description": "Términos y condiciones del servicio de RestoreLab."
+    },
+    "academy": {
+      "title": "Academia: Excelencia en Ingeniería | RestoreLab",
+      "description": "Inmersión profunda en la ciencia y el oficio detrás de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
     }
   },
   "nav": {
@@ -52,6 +56,7 @@
     "pricing": "Precios",
     "cases": "Portfolio",
     "contact": "Contacto",
+    "academy": "Academia",
     "cta": "Presupuesto"
   },
   "hero": {
@@ -428,5 +433,36 @@
     "cta": "Enviar fotos por WhatsApp",
     "trust_pill": "5.0 · 500+ trabajos en Lisboa y Cascais",
     "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
+  },
+  "academy": {
+    "headline": "Academia: Excelencia en Ingeniería",
+    "intro": "Cada restauración que realizamos se basa en la ciencia de materiales, no en suposiciones. Esta sección es donde compartimos los principios de ingeniería detrás de nuestro trabajo — para que entiendas exactamente por qué nuestros resultados son diferentes.",
+    "what_awaits": "Lo que te espera dentro:",
+    "bullets": [
+      "Lógica de selección de equipos — por qué usamos máquinas, almohadillas y compuestos específicos para cada tipo de superficie",
+      "La física detrás de la descontaminación de pintura — partículas de hierro, alquitrán y depósitos minerales adheridos",
+      "Mecánica de corrección — cómo las partículas abrasivas interactúan con la capa transparente a nivel microscópico",
+      "Desglose de casos reales — documentación paso a paso de restauraciones complejas"
+    ],
+    "closing": "Los artículos se publican a medida que se escriben. Sin suscripción — solo guarda esta página y vuelve a visitarla.",
+    "articles_title": "Artículos",
+    "coming_soon": "Próximamente",
+    "articles": [
+      {
+        "number": "01",
+        "title": "Protocolos de Selección de Equipos",
+        "excerpt": "Por qué elegimos pulidoras rotativas y DA específicas, platos de soporte y compuestos de almohadillas para cada trabajo — y cómo la elección incorrecta puede dañar una superficie permanentemente."
+      },
+      {
+        "number": "02",
+        "title": "La Física de la Descontaminación",
+        "excerpt": "Partículas de hierro, alquitrán, savia de árboles, depósitos minerales adheridos — la ciencia de por qué funcionan las barras de arcilla y cuándo la descontaminación química es la única opción segura."
+      },
+      {
+        "number": "03",
+        "title": "La Mecánica de la Corrección",
+        "excerpt": "Cómo las almohadillas de lana cortan de forma diferente a la espuma, por qué los abrasivos decrecientes se comportan como lo hacen, y la ingeniería detrás de un acabado final impecable."
+      }
+    ]
   }
 }

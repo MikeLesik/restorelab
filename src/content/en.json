@@ -45,6 +45,10 @@
     "terms": {
       "title": "Terms & Conditions | RestoreLab",
       "description": "RestoreLab terms and conditions of service."
+    },
+    "academy": {
+      "title": "Academy: Engineering Excellence | RestoreLab",
+      "description": "Deep-dive into the science and craft behind professional surface restoration. Equipment protocols, decontamination physics, and correction mechanics."
     }
   },
   "nav": {
@@ -52,6 +56,7 @@
     "pricing": "Pricing",
     "cases": "Cases",
     "contact": "Contact",
+    "academy": "Academy",
     "cta": "Get Estimate"
   },
   "hero": {
@@ -428,5 +433,36 @@
     "terms": "Terms & Conditions",
     "copyright": "© 2026 RestoreLab. All rights reserved.",
     "made_in": "Made in Portugal."
+  },
+  "academy": {
+    "headline": "Academy: Engineering Excellence",
+    "intro": "Every restoration we perform is rooted in material science, not guesswork. This section is where we share the engineering principles behind our work — so you understand exactly why our results are different.",
+    "what_awaits": "What awaits you inside:",
+    "bullets": [
+      "Equipment selection logic — why we use specific machines, pads and compounds for each surface type",
+      "The physics behind paint decontamination — iron fallout, tar, and bonded mineral deposits",
+      "Correction mechanics — how abrasive particles interact with clear coat at a microscopic level",
+      "Real case breakdowns — step-by-step documentation of complex restorations"
+    ],
+    "closing": "Articles are released as they're written. Subscribe-free — just bookmark this page and check back.",
+    "articles_title": "Articles",
+    "coming_soon": "Coming Soon",
+    "articles": [
+      {
+        "number": "01",
+        "title": "Equipment Selection Protocols",
+        "excerpt": "Why we choose specific rotary and DA polishers, backing plates, and pad compounds for each job — and how the wrong choice can damage a surface permanently."
+      },
+      {
+        "number": "02",
+        "title": "The Physics of Decontamination",
+        "excerpt": "Iron fallout, tar, tree sap, bonded mineral deposits — the science of why clay bars work and when chemical decontamination is the only safe option."
+      },
+      {
+        "number": "03",
+        "title": "The Mechanics of Correction",
+        "excerpt": "How wool pads cut differently from foam, why diminishing abrasives behave the way they do, and the engineering behind a flawless final finish."
+      }
+    ]
   }
 }

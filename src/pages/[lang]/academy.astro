@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import pt from '@/content/pt.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'pt' }, props: { t: pt } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+---
+
+<BaseLayout
+  title={t.meta.academy.title}
+  description={t.meta.academy.description}
+  lang={lang}
+  t={t}
+  currentPath="/academy"
+>
+  <div class="pt-20">
+
+    <!-- Hero / Intro -->
+    <section class="bg-gradient-hero py-16 sm:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="section-title text-4xl sm:text-5xl mb-6">{t.academy.headline}</h1>
+        <p class="lead text-white/70 max-w-2xl mx-auto mb-10">
+          {t.academy.intro}
+        </p>
+
+        <!-- Bullet list -->
+        <div class="text-left max-w-2xl mx-auto mb-10">
+          <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">
+            {t.academy.what_awaits}
+          </p>
+          <ul class="space-y-3">
+            {t.academy.bullets.map((item: string) => (
+              <li class="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-accent flex-shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p class="caption text-white/40">{t.academy.closing}</p>
+      </div>
+    </section>
+
+    <!-- Article Stubs -->
+    <section class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-3xl mb-12 text-center">{t.academy.articles_title}</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.academy.articles.map((article: { number: string; title: string; excerpt: string }) => (
+            <div class="card p-6 flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span class="tag">{article.number}</span>
+                <span class="text-xs font-medium text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded-full">
+                  {t.academy.coming_soon}
+                </span>
+              </div>
+              <h3 class="font-display font-bold text-lg text-white mb-3">{article.title}</h3>
+              <p class="text-sm text-white/60 leading-relaxed flex-1">{article.excerpt}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

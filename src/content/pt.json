@@ -45,6 +45,10 @@
     "terms": {
       "title": "Termos e Condições | RestoreLab",
       "description": "Termos e condições de serviço da RestoreLab."
+    },
+    "academy": {
+      "title": "Academia: Excelência em Engenharia | RestoreLab",
+      "description": "Mergulho profundo na ciência e no ofício por trás do restauro profissional de superfícies. Protocolos de equipamentos, física da descontaminação e mecânica de correção."
     }
   },
   "nav": {
@@ -52,6 +56,7 @@
     "pricing": "Preços",
     "cases": "Portfólio",
     "contact": "Contacto",
+    "academy": "Academia",
     "cta": "Orçamento"
   },
   "hero": {
@@ -428,5 +433,36 @@
     "cta": "Enviar fotos pelo WhatsApp",
     "trust_pill": "5.0 · 500+ trabalhos em Lisboa e Cascais",
     "reply_note": "Resposta média: 28 min · Serviço móvel, vamos até si"
+  },
+  "academy": {
+    "headline": "Academia: Excelência em Engenharia",
+    "intro": "Cada restauro que realizamos baseia-se na ciência dos materiais, não em suposições. Esta secção é onde partilhamos os princípios de engenharia por trás do nosso trabalho — para que entenda exatamente por que os nossos resultados são diferentes.",
+    "what_awaits": "O que o espera lá dentro:",
+    "bullets": [
+      "Lógica de seleção de equipamentos — por que usamos máquinas, pads e compostos específicos para cada tipo de superfície",
+      "A física por trás da descontaminação de pintura — partículas de ferro, alcatrão e depósitos minerais aderidos",
+      "Mecânica de correção — como as partículas abrasivas interagem com o verniz a nível microscópico",
+      "Análise de casos reais — documentação passo a passo de restauros complexos"
+    ],
+    "closing": "Os artigos são publicados à medida que são escritos. Sem subscrição — basta guardar esta página e voltar a visitá-la.",
+    "articles_title": "Artigos",
+    "coming_soon": "Em Breve",
+    "articles": [
+      {
+        "number": "01",
+        "title": "Protocolos de Seleção de Equipamentos",
+        "excerpt": "Por que escolhemos polidoras rotativas e DA específicas, pratos de suporte e compostos de pads para cada trabalho — e como a escolha errada pode danificar uma superfície permanentemente."
+      },
+      {
+        "number": "02",
+        "title": "A Física da Descontaminação",
+        "excerpt": "Partículas de ferro, alcatrão, seiva de árvores, depósitos minerais aderidos — a ciência de por que as barras de argila funcionam e quando a descontaminação química é a única opção segura."
+      },
+      {
+        "number": "03",
+        "title": "A Mecânica da Correção",
+        "excerpt": "Como os pads de lã cortam de forma diferente da espuma, por que os abrasivos decrescentes se comportam como se comportam, e a engenharia por trás de um acabamento final impecável."
+      }
+    ]
   }
 }
