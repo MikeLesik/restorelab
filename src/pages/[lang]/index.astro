@@ -8,6 +8,7 @@ import PricingCards from '@/components/PricingCards.astro';
 import FAQ from '@/components/FAQ.astro';
 import AreaServedSection from '@/components/AreaServedSection.astro';
 import LeadForm from '@/components/LeadForm.astro';
+import BeforeAfterCarousel from '@/components/BeforeAfterCarousel.astro';
 import GuaranteeBlock from '@/components/GuaranteeBlock.astro';
 
 import en from '@/content/en.json';
@@ -38,8 +39,9 @@ const { t } = Astro.props;
   <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration']} />
   <HowItWorks t={t} lang={lang} />
   <Testimonials t={t} />
+  <BeforeAfterCarousel t={t} lang={lang} />
   <PricingCards t={t} lang={lang} categoryId="car" />
-  <AreaServedSection t={t} />
+  <!-- <AreaServedSection t={t} /> -->
   <GuaranteeBlock t={t} />
   <FAQ t={t} />
   <LeadForm t={t} lang={lang} />

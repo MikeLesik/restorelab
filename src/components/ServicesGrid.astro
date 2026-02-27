@@ -60,7 +60,7 @@ const colsClass = services.length === 3
         const cfg = serviceConfig[service.id] ?? serviceConfig['car-paint-correction'];
         const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Mais popular';
         const ctaLabel = service.cta_label ?? t.services.get_quote;
-        const waText = encodeURIComponent(`Hello RestoreLab! I'd like a quote for: ${service.title}`);
+        const waText = encodeURIComponent(`Hello restoreLab! I'd like a quote for: ${service.title}`);
 
         return (
           <div class:list={[

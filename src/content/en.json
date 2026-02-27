@@ -2,56 +2,56 @@
   "lang": "en",
   "meta": {
     "home": {
-      "title": "RestoreLab — Mobile Surface Restoration in Lisbon & Cascais",
+      "title": "restoreLab — Mobile Surface Restoration in Lisbon & Cascais",
       "description": "Premium mobile paint correction, glass scratch removal and yacht gelcoat restoration. On-site service in Lisbon, Cascais, Sintra & Oeiras. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Our Services — Car, Glass & Yacht Restoration | RestoreLab",
+      "title": "Our Services — Car, Glass & Yacht Restoration | restoreLab",
       "description": "Car paint correction, glass polishing, acrylic restoration and yacht gelcoat polishing. Mobile service across Lisbon & Cascais."
     },
     "car_paint": {
-      "title": "Car Paint Correction & Polishing Lisbon | RestoreLab",
+      "title": "Car Paint Correction & Polishing Lisbon | restoreLab",
       "description": "Professional mobile paint correction in Lisbon. Remove swirl marks, scratches and restore deep gloss. Ceramic coating preparation. No repainting needed."
     },
     "glass": {
-      "title": "Glass Scratch Removal & Polishing Lisbon | RestoreLab",
+      "title": "Glass Scratch Removal & Polishing Lisbon | restoreLab",
       "description": "Remove windshield scratches, water spots and wiper marks. Mobile glass polishing service in Lisbon, Cascais and Sintra. No replacement needed."
     },
     "acrylic": {
-      "title": "Acrylic & Polycarbonate Restoration Portugal | RestoreLab",
+      "title": "Acrylic & Polycarbonate Restoration Portugal | restoreLab",
       "description": "Yacht windows, boat hatches and clear plastic panel restoration. UV oxidation removal. Cost-effective alternative to replacement."
     },
     "yacht": {
-      "title": "Yacht Gelcoat Polishing Cascais | RestoreLab",
+      "title": "Yacht Gelcoat Polishing Cascais | restoreLab",
       "description": "Professional yacht gelcoat polishing and oxidation removal in Cascais marinas. Marine-grade finishing. Mobile service across Lisbon area."
     },
     "pricing": {
-      "title": "Pricing — Car Polishing & Yacht Restoration | RestoreLab",
+      "title": "Pricing — Car Polishing & Yacht Restoration | restoreLab",
       "description": "Transparent pricing for car paint correction, glass polishing and yacht gelcoat restoration. Packages from 189€. Free estimate via WhatsApp."
     },
     "cases": {
-      "title": "Before & After Cases — RestoreLab",
+      "title": "Before & After Cases — restoreLab",
       "description": "Real before and after results from our mobile restoration work. Car paint correction, glass polishing and yacht gelcoat restoration in Portugal."
     },
     "contact": {
-      "title": "Contact RestoreLab — Get a Free Quote",
-      "description": "Contact RestoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Lisbon, Cascais and Sintra."
+      "title": "Contact restoreLab — Get a Free Quote",
+      "description": "Contact restoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Lisbon, Cascais and Sintra."
     },
     "privacy": {
-      "title": "Privacy Policy | RestoreLab",
-      "description": "RestoreLab privacy policy — how we collect and use your personal data."
+      "title": "Privacy Policy | restoreLab",
+      "description": "restoreLab privacy policy — how we collect and use your personal data."
     },
     "terms": {
-      "title": "Terms & Conditions | RestoreLab",
-      "description": "RestoreLab terms and conditions of service."
+      "title": "Terms & Conditions | restoreLab",
+      "description": "restoreLab terms and conditions of service."
     },
     "academy": {
-      "title": "Academy: Engineering Excellence | RestoreLab",
+      "title": "Academy: Engineering Excellence | restoreLab",
       "description": "Deep-dive into the science and craft behind professional surface restoration. Equipment protocols, decontamination physics, and correction mechanics."
     },
     "academy_equipment": {
-      "title": "Equipment Selection Protocols — Rotary vs Dual Action | RestoreLab Academy",
+      "title": "Equipment Selection Protocols — Rotary vs Dual Action | restoreLab Academy",
       "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations."
     }
   },
@@ -97,7 +97,7 @@
       {
         "name": "Sofia R.",
         "location": "Lisbon",
-        "text": "My windshield had deep wiper scratches after 3 years. RestoreLab removed them completely — saved me from a €400 replacement. Fantastic job!",
+        "text": "My windshield had deep wiper scratches after 3 years. restoreLab removed them completely — saved me from a €400 replacement. Fantastic job!",
         "rating": 5,
         "service": "Glass Polishing"
       },
@@ -395,16 +395,21 @@
       }
     ]
   },
+  "cases_section": {
+    "section_title": "Before & After",
+    "section_subtitle": "Real results from our mobile restoration work across Lisbon & Cascais",
+    "view_all": "View All Cases"
+  },
   "wa_messages": {
-    "header": "Hello RestoreLab! I'd like to get a free estimate. [From website header]",
-    "hero": "Hello RestoreLab! I'd like to get a free estimate. [From homepage]",
-    "pricing_plan": "Hello RestoreLab! I'm interested in the \"{plan}\" plan ({category}). I'd like to get a quote.",
-    "pricing_custom": "Hello RestoreLab! I'd like to discuss a custom quote for {category}. [From pricing page]",
-    "pricing_custom_general": "Hello RestoreLab! I'd like to discuss a custom quote. [From pricing page]",
-    "sticky_cta": "Hello RestoreLab! I'd like to get a quote. [From mobile button]",
-    "prefooter_cta": "Hello RestoreLab! I'd like to get a quote. [From page footer CTA]",
-    "footer": "Hello RestoreLab! I have a question. [From footer]",
-    "contact": "Hello RestoreLab! I'd like to get in touch. [From contact page]"
+    "header": "Hello restoreLab! I'd like to get a free estimate. [From website header]",
+    "hero": "Hello restoreLab! I'd like to get a free estimate. [From homepage]",
+    "pricing_plan": "Hello restoreLab! I'm interested in the \"{plan}\" plan ({category}). I'd like to get a quote.",
+    "pricing_custom": "Hello restoreLab! I'd like to discuss a custom quote for {category}. [From pricing page]",
+    "pricing_custom_general": "Hello restoreLab! I'd like to discuss a custom quote. [From pricing page]",
+    "sticky_cta": "Hello restoreLab! I'd like to get a quote. [From mobile button]",
+    "prefooter_cta": "Hello restoreLab! I'd like to get a quote. [From page footer CTA]",
+    "footer": "Hello restoreLab! I have a question. [From footer]",
+    "contact": "Hello restoreLab! I'd like to get in touch. [From contact page]"
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate in 30 Minutes",
@@ -429,7 +434,7 @@
       "photo_note": "You can also send photos directly via WhatsApp after submitting.",
       "submit": "Send via WhatsApp"
     },
-    "whatsapp_template": "Hello RestoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}."
+    "whatsapp_template": "Hello restoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}."
   },
   "pre_footer_cta": {
     "title": "Ready to restore?",
@@ -446,11 +451,11 @@
     "legal_title": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
-    "copyright": "© 2026 RestoreLab. All rights reserved.",
+    "copyright": "© 2026 restoreLab. All rights reserved.",
     "made_in": "Made in Portugal."
   },
   "academy": {
-    "headline": "Academy: Engineering Excellence",
+    "headline": "restoreLab Academy: Engineering Excellence",
     "intro": "Every restoration we perform is rooted in material science, not guesswork. This section is where we share the engineering principles behind our work — so you understand exactly why our results are different.",
     "what_awaits": "What awaits you inside:",
     "bullets": [
@@ -511,7 +516,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Equipment Selection Protocols — Rotary vs Dual Action | RestoreLab Academy",
+      "seo_title": "Equipment Selection Protocols — Rotary vs Dual Action | restoreLab Academy",
       "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations.",
       "title": "Choosing Your Weapon: Rotary vs. Dual Action",
       "description": "Process Physics: Why 99% of the Result Depends on Tool Selection. Learn to distinguish the handling of a \"go-kart\" from the behavior of a \"semi-truck,\" and understand why a low center of gravity is the foundation of professional paint correction.",
@@ -529,7 +534,7 @@
             "Power modulation — the ability to precisely control RPM for safe operation on curves and body lines."
           ],
           "analogy": {
-            "title": "RestoreLab engineering analogy",
+            "title": "restoreLab engineering analogy",
             "text": "Working with a tool that has a high or shifted center of gravity is like driving a tall semi-truck — it turns, but it will never have the precision of a go-kart. A professional rotary polisher (for example, the Makita 9237CB) is a go-kart: low-slung, predictable, and extremely efficient."
           },
           "table": {
@@ -549,7 +554,7 @@
           "paragraphs": [
             "Once the major defects have been removed with the rotary, the finishing stage begins. The backing plate of a dual action polisher performs two types of motion at once: rotational and oscillating. This makes it possible to achieve a perfectly clean surface without holograms."
           ],
-          "tools_title": "RestoreLab's professional dual action lineup",
+          "tools_title": "restoreLab's professional dual action lineup",
           "tools": [
             {
               "label": "For large panels",
@@ -568,11 +573,11 @@
       ]
     },
     "masking_protocols": {
-      "seo_title": "Masking Protocols: Protecting the Edge | RestoreLab Academy",
+      "seo_title": "Masking Protocols: Protecting the Edge | restoreLab Academy",
       "seo_description": "Why the thinnest clear coat is on edges. The 2 mm rule, contour tapes, and re-masking techniques that prevent burn-through during paint correction.",
       "title": "Masking Protocols: Protecting the Edge",
       "description": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
-      "intro": "Masking is the most overlooked step among beginners — and the most common cause of clear coat burn-through. At RestoreLab, we do not rely on luck; we rely on masking tape.",
+      "intro": "Masking is the most overlooked step among beginners — and the most common cause of clear coat burn-through. At restoreLab, we do not rely on luck; we rely on masking tape.",
       "sections": [
         {
           "number": "1",
@@ -583,7 +588,7 @@
         },
         {
           "number": "2",
-          "title": "The RestoreLab Masking Method",
+          "title": "The restoreLab Masking Method",
           "paragraphs": [],
           "tools": [
             {
@@ -614,11 +619,11 @@
       ]
     },
     "mechanical_correction": {
-      "seo_title": "Mechanical Correction Protocols: The Art of the Cut | RestoreLab Academy",
+      "seo_title": "Mechanical Correction Protocols: The Art of the Cut | restoreLab Academy",
       "seo_description": "The snake pattern technique, 20 kg pressure protocol, and wool pad physics. How to cut deep defects while preserving clear coat structural integrity.",
       "title": "Mechanical Correction Protocols: The Art of the Cut",
       "description": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the structural integrity of the clear coat.",
-      "intro": "The first pass is the stage where the fate of 99.9% of scratches is decided. At RestoreLab, we use the Rotary + Wool combination because it is the most efficient way to reach the bottom of a scratch without wasting time.",
+      "intro": "The first pass is the stage where the fate of 99.9% of scratches is decided. At restoreLab, we use the Rotary + Wool combination because it is the most efficient way to reach the bottom of a scratch without wasting time.",
       "sections": [
         {
           "number": "1",
@@ -696,18 +701,18 @@
             }
           ],
           "analogy": {
-            "title": "RestoreLab engineering analogy",
+            "title": "restoreLab engineering analogy",
             "text": "Why walk when you can fly? The Rotary + Wool combination is your airplane. It gets you to the target dramatically faster and with far less effort than trying to cut out a deep scratch with foam or a dual action polisher."
           }
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Refining & Stabilization Protocols: The Mirror Finish | RestoreLab Academy",
+      "seo_title": "Refining & Stabilization Protocols: The Mirror Finish | restoreLab Academy",
       "seo_description": "Two-stage stabilization after deep correction. Remove wool haze, eliminate holograms, and achieve space-grade clear coat clarity.",
       "title": "Refining & Stabilization Protocols: The Mirror Finish",
       "description": "The transition from deep correction to absolute clear-coat clarity. Learn how to completely remove the working haze left by wool and stabilize the surface to eliminate holograms under any light source.",
-      "intro": "After the initial rotary + wool pass, the surface is free of deep scratches, but it is left with microscopic haze or cutting marks. At RestoreLab, we treat this as an intermediate condition that requires a two-stage stabilization process.",
+      "intro": "After the initial rotary + wool pass, the surface is free of deep scratches, but it is left with microscopic haze or cutting marks. At restoreLab, we treat this as an intermediate condition that requires a two-stage stabilization process.",
       "sections": [
         {
           "number": "1",
@@ -754,18 +759,18 @@
             { "label": "Solid Black", "text": "If the standard combination still leaves holograms, the protocol changes: replace the finishing pad every 2–3 panels, reduce the DA speed to 2–3 and shorten the working cycle to 15–20 seconds. In extreme cases, use a primer polish (CarPro Essence) and ultra-soft white pads." }
           ],
           "analogy": {
-            "title": "RestoreLab engineering commandment",
+            "title": "restoreLab engineering commandment",
             "text": "Holograms are the fingerprints of an amateur. True gloss appears only when the clear coat becomes optically level and fully stabilized."
           }
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protection & Preservation Protocols: The Molecular Shield | RestoreLab Academy",
+      "seo_title": "Protection & Preservation Protocols: The Molecular Shield | restoreLab Academy",
       "seo_description": "Ceramic coating application, the three criteria protocol, and clear coat longevity facts. How to lock in a mirror finish for years.",
       "title": "Protection & Preservation Protocols: The Molecular Shield",
       "description": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection, why wax is a choice for enthusiasts rather than professionals, and how to preserve a mirror finish for years.",
-      "intro": "After deep polishing, the clear coat is at peak adhesion and ready to absorb any contamination. At RestoreLab, we always complete the cycle by applying a protective coating, so the hydrophobic properties work in favor of keeping the vehicle clean.",
+      "intro": "After deep polishing, the clear coat is at peak adhesion and ready to absorb any contamination. At restoreLab, we always complete the cycle by applying a protective coating, so the hydrophobic properties work in favor of keeping the vehicle clean.",
       "sections": [
         {
           "number": "1",
@@ -808,7 +813,7 @@
           "number": "4",
           "title": "Economics and Myths: How Long Does Clear Coat Last?",
           "paragraphs": [
-            "Many people fear polishing because they believe it \"eats away\" the clear coat forever. Here are the RestoreLab facts:"
+            "Many people fear polishing because they believe it \"eats away\" the clear coat forever. Here are the restoreLab facts:"
           ],
           "key_params": [
             "Deep correction with wool removes an average of 5.5 microns.",
@@ -816,14 +821,14 @@
             "With the right approach, professional deep polishing can be done up to 10 times, and light polishing up to 25 times over the life of the vehicle."
           ],
           "analogy": {
-            "title": "RestoreLab engineering conclusion",
+            "title": "restoreLab engineering conclusion",
             "text": "Professionalism is not only the ability to cut a scratch down to zero, but also knowing when to stop in order to preserve those valuable microns of clear coat for the future."
           }
         }
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Specialty Detailing: Motorcycle Protocols | RestoreLab Academy",
+      "seo_title": "Specialty Detailing: Motorcycle Protocols | restoreLab Academy",
       "seo_description": "Precision polishing on complex geometries. Light-touch correction, plastic panel work, metal cleaning, and leather care for motorcycles.",
       "title": "Specialty Detailing: Motorcycle Protocols",
       "description": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach, how to work on plastic when clear-coat thickness cannot be measured, and the art of cleaning metal.",
@@ -856,7 +861,7 @@
           "paragraphs": [],
           "tools": [
             { "label": "Metal", "text": "For exhaust pipes and chrome, we use specialized metal polishes (Autosol) that remove oxidation and restore a mirror finish." },
-            { "label": "Leather", "text": "The RestoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream." }
+            { "label": "Leather", "text": "The restoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream." }
           ]
         }
       ]

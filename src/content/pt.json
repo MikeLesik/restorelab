@@ -2,56 +2,56 @@
   "lang": "pt",
   "meta": {
     "home": {
-      "title": "RestoreLab — Restauro Móvel de Superfícies em Lisboa & Cascais",
+      "title": "restoreLab — Restauro Móvel de Superfícies em Lisboa & Cascais",
       "description": "Serviço premium móvel de correção de pintura, remoção de riscos em vidro e restauro de gelcoat de iates. Serviço em Lisboa, Cascais, Sintra e Oeiras. Sem repintura. Sem substituição.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Serviços — Restauro Auto, Vidro e Iate | RestoreLab",
+      "title": "Serviços — Restauro Auto, Vidro e Iate | restoreLab",
       "description": "Correção de pintura automóvel, polimento de vidros, restauro de acrílico e polimento de gelcoat de iates. Serviço móvel em Lisboa e Cascais."
     },
     "car_paint": {
-      "title": "Correção de Pintura Automóvel Lisboa | RestoreLab",
+      "title": "Correção de Pintura Automóvel Lisboa | restoreLab",
       "description": "Correção de pintura móvel profissional em Lisboa. Remova swirl marks, riscos e restaure o brilho. Preparação para revestimento cerâmico. Sem repintura."
     },
     "glass": {
-      "title": "Remoção de Riscos em Vidro Lisboa | RestoreLab",
+      "title": "Remoção de Riscos em Vidro Lisboa | restoreLab",
       "description": "Remova riscos no para-brisas, manchas de água e marcas de limpa-vidros. Serviço móvel em Lisboa, Cascais e Sintra. Sem substituição."
     },
     "acrylic": {
-      "title": "Restauro de Acrílico e Policarbonato Portugal | RestoreLab",
+      "title": "Restauro de Acrílico e Policarbonato Portugal | restoreLab",
       "description": "Restauro de janelas de iates, escotilhas e painéis plásticos. Remoção de oxidação UV. Alternativa económica à substituição."
     },
     "yacht": {
-      "title": "Polimento de Gelcoat de Iate Cascais | RestoreLab",
+      "title": "Polimento de Gelcoat de Iate Cascais | restoreLab",
       "description": "Polimento profissional de gelcoat e remoção de oxidação nas marinas de Cascais. Acabamento de qualidade marinha. Serviço móvel na área de Lisboa."
     },
     "pricing": {
-      "title": "Preços — Polimento Auto e Restauro de Iate | RestoreLab",
+      "title": "Preços — Polimento Auto e Restauro de Iate | restoreLab",
       "description": "Preços transparentes para correção de pintura, polimento de vidro e restauro de gelcoat. Pacotes a partir de 189€. Orçamento gratuito via WhatsApp."
     },
     "cases": {
-      "title": "Antes & Depois — RestoreLab",
+      "title": "Antes & Depois — restoreLab",
       "description": "Resultados reais do nosso trabalho de restauro móvel. Correção de pintura, polimento de vidro e restauro de gelcoat em Portugal."
     },
     "contact": {
-      "title": "Contacto RestoreLab — Orçamento Gratuito",
-      "description": "Contacte a RestoreLab para um orçamento gratuito. Envie fotos via WhatsApp e receba resposta em horas. Serviço móvel em Lisboa, Cascais e Sintra."
+      "title": "Contacto restoreLab — Orçamento Gratuito",
+      "description": "Contacte a restoreLab para um orçamento gratuito. Envie fotos via WhatsApp e receba resposta em horas. Serviço móvel em Lisboa, Cascais e Sintra."
     },
     "privacy": {
-      "title": "Política de Privacidade | RestoreLab",
-      "description": "Política de privacidade da RestoreLab — como recolhemos e utilizamos os seus dados pessoais."
+      "title": "Política de Privacidade | restoreLab",
+      "description": "Política de privacidade da restoreLab — como recolhemos e utilizamos os seus dados pessoais."
     },
     "terms": {
-      "title": "Termos e Condições | RestoreLab",
-      "description": "Termos e condições de serviço da RestoreLab."
+      "title": "Termos e Condições | restoreLab",
+      "description": "Termos e condições de serviço da restoreLab."
     },
     "academy": {
-      "title": "Academia: Excelência em Engenharia | RestoreLab",
+      "title": "Academia: Excelência em Engenharia | restoreLab",
       "description": "Mergulho profundo na ciência e no ofício por trás do restauro profissional de superfícies. Protocolos de equipamentos, física da descontaminação e mecânica de correção."
     },
     "academy_equipment": {
-      "title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | RestoreLab Academia",
+      "title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | restoreLab Academia",
       "description": "Por que 99% do resultado depende da seleção de ferramentas. Polidoras rotativas vs dupla ação — análise de engenharia, tabela comparativa e recomendações profissionais."
     }
   },
@@ -97,7 +97,7 @@
       {
         "name": "Sofia R.",
         "location": "Lisboa",
-        "text": "O meu para-brisas tinha riscos profundos dos limpa-vidros após 3 anos. A RestoreLab removeu-os completamente — poupei €400 numa substituição. Trabalho fantástico!",
+        "text": "O meu para-brisas tinha riscos profundos dos limpa-vidros após 3 anos. A restoreLab removeu-os completamente — poupei €400 numa substituição. Trabalho fantástico!",
         "rating": 5,
         "service": "Polimento de Vidro"
       },
@@ -371,15 +371,15 @@
     ]
   },
   "wa_messages": {
-    "header": "Olá RestoreLab! Gostaria de obter um orçamento gratuito. [Do cabeçalho do site]",
-    "hero": "Olá RestoreLab! Gostaria de obter um orçamento gratuito. [Da página inicial]",
-    "pricing_plan": "Olá RestoreLab! Tenho interesse no plano \"{plan}\" ({category}). Gostaria de obter um orçamento.",
-    "pricing_custom": "Olá RestoreLab! Gostaria de solicitar um orçamento personalizado para {category}. [Da página de preços]",
-    "pricing_custom_general": "Olá RestoreLab! Gostaria de solicitar um orçamento personalizado. [Da página de preços]",
-    "sticky_cta": "Olá RestoreLab! Gostaria de obter um orçamento. [Do botão móvel]",
-    "prefooter_cta": "Olá RestoreLab! Gostaria de obter um orçamento. [Do rodapé da página]",
-    "footer": "Olá RestoreLab! Tenho uma pergunta. [Do rodapé]",
-    "contact": "Olá RestoreLab! Gostaria de entrar em contacto. [Da página de contacto]"
+    "header": "Olá restoreLab! Gostaria de obter um orçamento gratuito. [Do cabeçalho do site]",
+    "hero": "Olá restoreLab! Gostaria de obter um orçamento gratuito. [Da página inicial]",
+    "pricing_plan": "Olá restoreLab! Tenho interesse no plano \"{plan}\" ({category}). Gostaria de obter um orçamento.",
+    "pricing_custom": "Olá restoreLab! Gostaria de solicitar um orçamento personalizado para {category}. [Da página de preços]",
+    "pricing_custom_general": "Olá restoreLab! Gostaria de solicitar um orçamento personalizado. [Da página de preços]",
+    "sticky_cta": "Olá restoreLab! Gostaria de obter um orçamento. [Do botão móvel]",
+    "prefooter_cta": "Olá restoreLab! Gostaria de obter um orçamento. [Do rodapé da página]",
+    "footer": "Olá restoreLab! Tenho uma pergunta. [Do rodapé]",
+    "contact": "Olá restoreLab! Gostaria de entrar em contacto. [Da página de contacto]"
   },
   "lead_form": {
     "section_title": "Obtenha o Seu Orçamento Gratuito em 30 Minutos",
@@ -404,7 +404,7 @@
       "photo_note": "Também pode enviar fotos diretamente via WhatsApp após o envio.",
       "submit": "Enviar via WhatsApp"
     },
-    "whatsapp_template": "Olá RestoreLab! O meu nome é {name}. Tenho interesse em: {service}. Localização: {location}. Info adicional: {message}. O meu contacto: {phone}."
+    "whatsapp_template": "Olá restoreLab! O meu nome é {name}. Tenho interesse em: {service}. Localização: {location}. Info adicional: {message}. O meu contacto: {phone}."
   },
   "footer": {
     "tagline": "Restauro premium móvel de superfícies",
@@ -413,7 +413,7 @@
     "legal_title": "Legal",
     "privacy": "Política de Privacidade",
     "terms": "Termos e Condições",
-    "copyright": "© 2026 RestoreLab. Todos os direitos reservados.",
+    "copyright": "© 2026 restoreLab. Todos os direitos reservados.",
     "made_in": "Feito em Portugal.",
     "trust": "Com a confiança de mais de 500 clientes em Lisboa e Cascais"
   },
@@ -442,6 +442,11 @@
       }
     ]
   },
+  "cases_section": {
+    "section_title": "Antes e Depois",
+    "section_subtitle": "Resultados reais do nosso serviço móvel de restauro em Lisboa e Cascais",
+    "view_all": "Ver Todos os Casos"
+  },
   "pre_footer_cta": {
     "title": "Pronto para restaurar?",
     "subtitle": "Envie-nos uma foto e receba um orçamento honesto em menos de 30 minutos. Sem compromisso nem custos ocultos.",
@@ -450,7 +455,7 @@
     "reply_note": "Resposta média: 28 min · Serviço móvel, vamos até si"
   },
   "academy": {
-    "headline": "Academia: Excelência em Engenharia",
+    "headline": "restoreLab Academia: Excelência em Engenharia",
     "intro": "Cada restauro que realizamos baseia-se na ciência dos materiais, não em suposições. Esta secção é onde partilhamos os princípios de engenharia por trás do nosso trabalho — para que entenda exatamente por que os nossos resultados são diferentes.",
     "what_awaits": "O que o espera lá dentro:",
     "bullets": [
@@ -511,7 +516,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | RestoreLab Academia",
+      "seo_title": "Protocolos de Seleção de Equipamentos — Rotativa vs Dupla Ação | restoreLab Academia",
       "seo_description": "Por que 99% do resultado depende da seleção de ferramentas. Polidoras rotativas vs dupla ação — análise de engenharia, tabela comparativa e recomendações.",
       "title": "Escolha a Sua Arma: Rotativa vs. Dupla Ação",
       "description": "Física do Processo: Por Que 99% do Resultado Depende da Seleção de Ferramentas. Aprenda a distinguir o manuseio de um \"kart\" do comportamento de um \"camião\", e compreenda por que um centro de gravidade baixo é a base da correção profissional de pintura.",
@@ -529,7 +534,7 @@
             "Modulação de potência — a capacidade de controlar com precisão as RPM para operação segura em curvas e linhas da carroçaria."
           ],
           "analogy": {
-            "title": "Analogia de engenharia RestoreLab",
+            "title": "Analogia de engenharia restoreLab",
             "text": "Trabalhar com uma ferramenta que tem um centro de gravidade alto ou deslocado é como conduzir um camião alto — vira, mas nunca terá a precisão de um kart. Uma polidora rotativa profissional (por exemplo, a Makita 9237CB) é um kart: baixa, previsível e extremamente eficiente."
           },
           "table": {
@@ -549,7 +554,7 @@
           "paragraphs": [
             "Uma vez que os defeitos principais foram removidos com a rotativa, começa a fase de acabamento. O prato de suporte de uma polidora de dupla ação realiza dois tipos de movimento simultaneamente: rotacional e oscilante. Isto permite alcançar uma superfície perfeitamente limpa sem hologramas."
           ],
-          "tools_title": "Equipamento profissional de dupla ação da RestoreLab",
+          "tools_title": "Equipamento profissional de dupla ação da restoreLab",
           "tools": [
             {
               "label": "Para painéis grandes",
@@ -568,11 +573,11 @@
       ]
     },
     "masking_protocols": {
-      "seo_title": "Protocolos de Mascaramento: Proteger a Aresta | RestoreLab Academia",
+      "seo_title": "Protocolos de Mascaramento: Proteger a Aresta | restoreLab Academia",
       "seo_description": "Por que a camada mais fina de verniz está nas arestas. A regra dos 2 mm, fitas de contorno e técnicas de re-mascaramento para prevenir queimaduras.",
       "title": "Protocolos de Mascaramento: Proteger a Aresta",
       "description": "Por que a camada mais fina de verniz se encontra nas arestas? Aprenda a \"regra dos 2 mm\" e entenda por que mascarar as \"zonas vermelhas\" é o único seguro real contra uma repintura cara.",
-      "intro": "O mascaramento é o passo mais ignorado pelos principiantes — e a causa mais comum de queimadura do verniz. Na RestoreLab não confiamos na sorte; confiamos na fita de mascarar.",
+      "intro": "O mascaramento é o passo mais ignorado pelos principiantes — e a causa mais comum de queimadura do verniz. Na restoreLab não confiamos na sorte; confiamos na fita de mascarar.",
       "sections": [
         {
           "number": "1",
@@ -583,7 +588,7 @@
         },
         {
           "number": "2",
-          "title": "O Método de Mascaramento RestoreLab",
+          "title": "O Método de Mascaramento restoreLab",
           "paragraphs": [],
           "tools": [
             {
@@ -614,11 +619,11 @@
       ]
     },
     "mechanical_correction": {
-      "seo_title": "Protocolos de Correção Mecânica: A Arte do Corte | RestoreLab Academia",
+      "seo_title": "Protocolos de Correção Mecânica: A Arte do Corte | restoreLab Academia",
       "seo_description": "A técnica do padrão serpente, protocolo de 20 kg de pressão e física do pad de lã. Como cortar defeitos profundos preservando a integridade do verniz.",
       "title": "Protocolos de Correção Mecânica: A Arte do Corte",
       "description": "Domine a física do \"padrão serpente\" e o controlo de temperatura. Aprenda como 20 kg de pressão e um pad de lã podem cortar defeitos profundos preservando a integridade estrutural do verniz.",
-      "intro": "A primeira passagem é a etapa onde se decide o destino de 99,9% dos riscos. Na RestoreLab usamos a combinação Rotativa + Lã porque é a forma mais eficiente de chegar ao fundo de um risco sem perder tempo.",
+      "intro": "A primeira passagem é a etapa onde se decide o destino de 99,9% dos riscos. Na restoreLab usamos a combinação Rotativa + Lã porque é a forma mais eficiente de chegar ao fundo de um risco sem perder tempo.",
       "sections": [
         {
           "number": "1",
@@ -696,18 +701,18 @@
             }
           ],
           "analogy": {
-            "title": "Analogia de engenharia RestoreLab",
+            "title": "Analogia de engenharia restoreLab",
             "text": "Porquê caminhar quando se pode voar? A combinação Rotativa + Lã é o seu avião. Leva-o ao objetivo dramaticamente mais rápido e com muito menos esforço do que tentar cortar um risco profundo com espuma ou uma polidora de dupla ação."
           }
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho | RestoreLab Academia",
+      "seo_title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho | restoreLab Academia",
       "seo_description": "Estabilização em duas etapas após correção profunda. Remova a névoa da lã, elimine hologramas e alcance clareza de verniz de grau espacial.",
       "title": "Protocolos de Refinamento e Estabilização: O Acabamento Espelho",
       "description": "A transição da correção profunda para a clareza absoluta do verniz. Aprenda a remover completamente a névoa de trabalho deixada pela lã e estabilizar a superfície para eliminar hologramas sob qualquer fonte de luz.",
-      "intro": "Após a passagem inicial com rotativa + lã, a superfície está livre de riscos profundos, mas fica com uma névoa microscópica ou marcas de corte. Na RestoreLab tratamos isto como uma condição intermédia que requer um processo de estabilização em duas etapas.",
+      "intro": "Após a passagem inicial com rotativa + lã, a superfície está livre de riscos profundos, mas fica com uma névoa microscópica ou marcas de corte. Na restoreLab tratamos isto como uma condição intermédia que requer um processo de estabilização em duas etapas.",
       "sections": [
         {
           "number": "1",
@@ -754,18 +759,18 @@
             { "label": "Preto sólido", "text": "Se a combinação padrão continuar a deixar hologramas, o protocolo muda: substitua o pad de acabamento a cada 2–3 painéis, reduza a velocidade da DA para 2–3 e encurte o ciclo de trabalho para 15–20 segundos. Em casos extremos, use um polish de primer (CarPro Essence) e pads brancos ultra-suaves." }
           ],
           "analogy": {
-            "title": "Mandamento de engenharia RestoreLab",
+            "title": "Mandamento de engenharia restoreLab",
             "text": "Os hologramas são as impressões digitais de um amador. O verdadeiro brilho aparece apenas quando o verniz se torna opticamente nivelado e totalmente estabilizado."
           }
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protocolos de Proteção e Preservação: O Escudo Molecular | RestoreLab Academia",
+      "seo_title": "Protocolos de Proteção e Preservação: O Escudo Molecular | restoreLab Academia",
       "seo_description": "Aplicação de revestimento cerâmico, o protocolo de três critérios e factos sobre a longevidade do verniz. Como selar um acabamento espelho durante anos.",
       "title": "Protocolos de Proteção e Preservação: O Escudo Molecular",
       "description": "A etapa final da estabilização da superfície. Aprenda a selar o resultado com proteção de grafeno, por que a cera é uma escolha de entusiastas e não de profissionais, e como preservar um acabamento espelho durante anos.",
-      "intro": "Após o polimento profundo, o verniz está no pico de adesão e pronto para absorver qualquer contaminação. Na RestoreLab completamos sempre o ciclo aplicando um revestimento protetor, para que as propriedades hidrofóbicas trabalhem a favor de manter o veículo limpo.",
+      "intro": "Após o polimento profundo, o verniz está no pico de adesão e pronto para absorver qualquer contaminação. Na restoreLab completamos sempre o ciclo aplicando um revestimento protetor, para que as propriedades hidrofóbicas trabalhem a favor de manter o veículo limpo.",
       "sections": [
         {
           "number": "1",
@@ -808,7 +813,7 @@
           "number": "4",
           "title": "Economia e Mitos: Quanto Dura o Verniz?",
           "paragraphs": [
-            "Muitas pessoas temem o polimento porque acreditam que \"consome\" o verniz para sempre. Aqui estão os factos da RestoreLab:"
+            "Muitas pessoas temem o polimento porque acreditam que \"consome\" o verniz para sempre. Aqui estão os factos da restoreLab:"
           ],
           "key_params": [
             "A correção profunda com lã remove uma média de 5,5 mícrons.",
@@ -816,14 +821,14 @@
             "Com a abordagem correta, o polimento profundo profissional pode ser feito até 10 vezes, e o polimento ligeiro até 25 vezes durante a vida do veículo."
           ],
           "analogy": {
-            "title": "Conclusão de engenharia RestoreLab",
+            "title": "Conclusão de engenharia restoreLab",
             "text": "O profissionalismo não é apenas a capacidade de cortar um risco até zero, mas também saber quando parar para preservar esses valiosos mícrons de verniz para o futuro."
           }
         }
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Detailing Especializado: Protocolos para Motos | RestoreLab Academia",
+      "seo_title": "Detailing Especializado: Protocolos para Motos | restoreLab Academia",
       "seo_description": "Polimento de precisão em geometrias complexas. Correção de toque leve, trabalho em painéis plásticos, limpeza de metal e cuidado de couro para motos.",
       "title": "Detailing Especializado: Protocolos para Motos",
       "description": "Trabalho de precisão em geometrias complexas. Por que as motos requerem uma abordagem exclusivamente de toque leve, como trabalhar em plástico quando a espessura do verniz não pode ser medida, e a arte de limpar metal.",
@@ -856,7 +861,7 @@
           "paragraphs": [],
           "tools": [
             { "label": "Metal", "text": "Para tubos de escape e cromo, usamos polimentos metálicos especializados (Autosol) que removem a oxidação e restauram um acabamento espelho." },
-            { "label": "Couro", "text": "O protocolo RestoreLab inclui limpeza com uma escova macia e um limpador espumante, remoção de resíduos com uma toalha de microfibra húmida, e preservação obrigatória com um creme condicionador protetor." }
+            { "label": "Couro", "text": "O protocolo restoreLab inclui limpeza com uma escova macia e um limpador espumante, remoção de resíduos com uma toalha de microfibra húmida, e preservação obrigatória com um creme condicionador protetor." }
           ]
         }
       ]

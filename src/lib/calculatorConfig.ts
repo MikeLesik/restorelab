@@ -1,4 +1,4 @@
-// ── RestoreLab Price Calculator — Config & Logic ──────────────────────────────
+// ── restoreLab Price Calculator — Config & Logic ──────────────────────────────
 // All pricing tables, coefficients and pure calculation functions.
 // NO DOM, NO Astro — importable by any bundler.
 

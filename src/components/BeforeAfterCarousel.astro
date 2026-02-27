@@ -1,0 +1,262 @@
+---
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+}
+
+const { t, lang } = Astro.props;
+
+const cases = [
+  {
+    id: 1,
+    title: 'BMW 3 Series — Paint Correction',
+    category: 'car',
+    before: '/images/cases/car1-before.jpg',
+    after: '/images/cases/car1-after.jpg',
+    result: 'Swirl marks eliminated, deep gloss restored',
+    metric: '95% clarity',
+    location: 'Cascais',
+  },
+  {
+    id: 2,
+    title: 'Porsche Cayenne — Ceramic Prep',
+    category: 'car',
+    before: '/images/cases/car2-before.jpg',
+    after: '/images/cases/car2-after.jpg',
+    result: 'Full two-stage correction + ceramic coating',
+    metric: 'Saved €900',
+    location: 'Lisbon',
+  },
+  {
+    id: 3,
+    title: 'Windshield — Wiper Scratches',
+    category: 'glass',
+    before: '/images/cases/glass1-before.jpg',
+    after: '/images/cases/glass1-after.jpg',
+    result: 'Deep wiper marks removed',
+    metric: 'Saved €380',
+    location: 'Sintra',
+  },
+  {
+    id: 4,
+    title: '45ft Sailboat — Gelcoat Restore',
+    category: 'yacht',
+    before: '/images/cases/yacht1-before.jpg',
+    after: '/images/cases/yacht1-after.jpg',
+    result: 'Full oxidation removed, showroom finish',
+    metric: 'Saved €3 200',
+    location: 'Marina Cascais',
+  },
+  {
+    id: 5,
+    title: 'Yacht Acrylic Windows',
+    category: 'acrylic',
+    before: '/images/cases/car5-before.jpg',
+    after: '/images/cases/car5-after.jpg',
+    result: 'UV yellowing reversed, clarity restored',
+    metric: '100% clarity',
+    location: 'Marina Lisboa',
+  },
+  {
+    id: 6,
+    title: 'Mercedes GLE — Scratch Removal',
+    category: 'car',
+    before: '/images/cases/car3-before.jpg',
+    after: '/images/cases/car3-after.jpg',
+    result: 'Deep scratch corrected — no repainting',
+    metric: 'Saved €1 100',
+    location: 'Oeiras',
+  },
+];
+
+const categoryColors: Record<string, string> = {
+  car: 'text-brand-accent',
+  glass: 'text-cyan-400',
+  yacht: 'text-teal-400',
+  acrylic: 'text-violet-400',
+};
+---
+
+<section class="pt-8 pb-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h2 class="section-title">{t.cases_section.section_title}</h2>
+      <p class="section-subtitle mx-auto">{t.cases_section.section_subtitle}</p>
+    </div>
+
+    <!-- Horizontal scroll container -->
+    <div class="relative" id="ba-carousel">
+      <!-- Scroll track -->
+      <div
+        class="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+        id="ba-track"
+        role="region"
+        aria-label="Before and after cases"
+      >
+        {cases.map((c) => {
+          const color = categoryColors[c.category] || 'text-brand-accent';
+          return (
+            <div class="flex-shrink-0 w-[320px] sm:w-[360px] snap-start">
+              <div class="card group overflow-hidden hover:border-white/20 transition-all duration-300">
+                <!-- Before/After slider -->
+                <div
+                  class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none"
+                  data-ba-slider
+                  role="group"
+                  aria-label={`Before and after: ${c.title}`}
+                >
+                  <img
+                    src={c.after}
+                    alt={`After — ${c.title}`}
+                    class="absolute inset-0 w-full h-full object-cover"
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src={c.before}
+                    alt={`Before — ${c.title}`}
+                    class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]"
+                    data-ba-before
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <!-- Divider -->
+                  <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg left-1/2" data-ba-divider>
+                    <div
+                      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize"
+                      role="slider"
+                      aria-label="Drag to compare before and after"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-valuenow="50"
+                      tabindex="0"
+                    >
+                      <svg class="w-4 h-4 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" />
+                      </svg>
+                    </div>
+                  </div>
+                  <!-- Labels -->
+                  <span class="absolute top-3 left-3 px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-xs text-white/80 uppercase tracking-wider">Before</span>
+                  <span class="absolute top-3 right-3 px-2 py-1 bg-brand-accent/80 backdrop-blur-sm rounded text-xs text-white uppercase tracking-wider">After</span>
+                  <!-- Metric -->
+                  <span class:list={['absolute bottom-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10', color]}>
+                    {c.metric}
+                  </span>
+                </div>
+                <!-- Card info -->
+                <h3 class="font-semibold text-white mb-1 text-sm">{c.title}</h3>
+                <p class:list={['text-xs', color]}>{c.result}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Scroll arrows (desktop) -->
+      <button
+        class="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-navy/90 border border-white/10 items-center justify-center text-white/60 hover:text-white hover:border-white/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        id="ba-prev"
+        aria-label="Previous case"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button
+        class="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-navy/90 border border-white/10 items-center justify-center text-white/60 hover:text-white hover:border-white/20 transition-colors z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        id="ba-next"
+        aria-label="Next case"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+
+    <!-- View all link -->
+    <div class="text-center mt-8">
+      <a
+        href={`/${lang}/cases`}
+        class="btn-secondary text-sm"
+      >
+        {t.cases_section.view_all}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  /* Navigation arrows */
+  const track = document.getElementById('ba-track');
+  const prevBtn = document.getElementById('ba-prev');
+  const nextBtn = document.getElementById('ba-next');
+
+  if (track && prevBtn && nextBtn) {
+    const scrollAmount = 380;
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+  /* Before/After sliders */
+  document.querySelectorAll('[data-ba-slider]').forEach((slider) => {
+    const el = slider as HTMLElement;
+    const beforeImg = el.querySelector('[data-ba-before]') as HTMLElement;
+    const divider = el.querySelector('[data-ba-divider]') as HTMLElement;
+    const handle = divider?.querySelector('[role="slider"]') as HTMLElement;
+    if (!beforeImg || !divider || !handle) return;
+
+    let dragging = false;
+
+    const setPosition = (clientX: number) => {
+      const rect = el.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(1, Math.min(99, pct));
+      beforeImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      divider.style.left = `${pct}%`;
+      handle.setAttribute('aria-valuenow', String(Math.round(pct)));
+    };
+
+    handle.addEventListener('mousedown', (e) => { dragging = true; e.preventDefault(); });
+    handle.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
+
+    handle.addEventListener('keydown', (e) => {
+      const rect = el.getBoundingClientRect();
+      const currentLeft = divider.offsetLeft;
+      const currentPct = (currentLeft / rect.width) * 100;
+      let newPct = currentPct;
+
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { newPct = Math.max(1, currentPct - 2); e.preventDefault(); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { newPct = Math.min(99, currentPct + 2); e.preventDefault(); }
+
+      if (newPct !== currentPct) {
+        beforeImg.style.clipPath = `inset(0 ${100 - newPct}% 0 0)`;
+        divider.style.left = `${newPct}%`;
+        handle.setAttribute('aria-valuenow', String(Math.round(newPct)));
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => { if (dragging) setPosition(e.clientX); });
+    window.addEventListener('touchmove', (e) => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    window.addEventListener('touchend', () => { dragging = false; });
+  });
+</script>

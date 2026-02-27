@@ -20,7 +20,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'yacht-gelcoat');
 const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'm+interested+in+Yacht+Gelcoat+Polishing.`;
+const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Yacht+Gelcoat+Polishing.`;
 ---
 
 <BaseLayout
@@ -91,7 +91,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'm+interested+in+Yach
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Yacht Gelcoat Polishing",
-      "provider": { "@type": "LocalBusiness", "name": "RestoreLab" },
+      "provider": { "@type": "LocalBusiness", "name": "restoreLab" },
       "areaServed": ["Cascais", "Lisboa", "Sintra", "Oeiras"],
       "description": t.meta.yacht.description
     })} />

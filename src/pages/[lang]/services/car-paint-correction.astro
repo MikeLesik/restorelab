@@ -20,7 +20,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'car-paint-correction');
 const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
-const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'm+interested+in+Car+Paint+Correction.`;
+const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Car+Paint+Correction.`;
 ---
 
 <BaseLayout
@@ -98,7 +98,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+RestoreLab!+I'm+interested+in+Car+
       "serviceType": "Car Paint Correction",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "RestoreLab"
+        "name": "restoreLab"
       },
       "areaServed": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
       "description": t.meta.car_paint.description

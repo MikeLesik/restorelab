@@ -2,56 +2,56 @@
   "lang": "es",
   "meta": {
     "home": {
-      "title": "RestoreLab — Restauración Móvil de Superficies en Lisboa & Cascais",
+      "title": "restoreLab — Restauración Móvil de Superficies en Lisboa & Cascais",
       "description": "Servicio premium móvil de corrección de pintura, eliminación de arañazos en vidrio y restauración de gelcoat de yates. Servicio en Lisboa, Cascais, Sintra y Oeiras. Sin repintura. Sin sustitución.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Servicios — Restauración Auto, Vidrio y Yate | RestoreLab",
+      "title": "Servicios — Restauración Auto, Vidrio y Yate | restoreLab",
       "description": "Corrección de pintura de automóvil, pulido de vidrio, restauración de acrílico y pulido de gelcoat de yates. Servicio móvil en Lisboa y Cascais."
     },
     "car_paint": {
-      "title": "Corrección de Pintura Automóvil Lisboa | RestoreLab",
+      "title": "Corrección de Pintura Automóvil Lisboa | restoreLab",
       "description": "Corrección de pintura móvil profesional en Lisboa. Elimine swirl marks, arañazos y restaure el brillo profundo. Preparación para recubrimiento cerámico. Sin repintura."
     },
     "glass": {
-      "title": "Eliminación de Arañazos en Vidrio Lisboa | RestoreLab",
+      "title": "Eliminación de Arañazos en Vidrio Lisboa | restoreLab",
       "description": "Elimine arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Lisboa, Cascais y Sintra. Sin sustitución."
     },
     "acrylic": {
-      "title": "Restauración de Acrílico y Policarbonato Portugal | RestoreLab",
+      "title": "Restauración de Acrílico y Policarbonato Portugal | restoreLab",
       "description": "Restauración de ventanas de yates, escotillas y paneles plásticos. Eliminación de oxidación UV. Alternativa económica a la sustitución."
     },
     "yacht": {
-      "title": "Pulido de Gelcoat de Yate Cascais | RestoreLab",
+      "title": "Pulido de Gelcoat de Yate Cascais | restoreLab",
       "description": "Pulido profesional de gelcoat y eliminación de oxidación en las marinas de Cascais. Acabado de calidad marina. Servicio móvil en el área de Lisboa."
     },
     "pricing": {
-      "title": "Precios — Pulido Auto y Restauración de Yate | RestoreLab",
+      "title": "Precios — Pulido Auto y Restauración de Yate | restoreLab",
       "description": "Precios transparentes para corrección de pintura, pulido de vidrio y restauración de gelcoat. Paquetes desde 189€. Presupuesto gratuito por WhatsApp."
     },
     "cases": {
-      "title": "Antes y Después — RestoreLab",
+      "title": "Antes y Después — restoreLab",
       "description": "Resultados reales de nuestro trabajo de restauración móvil. Corrección de pintura, pulido de vidrio y restauración de gelcoat en Portugal."
     },
     "contact": {
-      "title": "Contacto RestoreLab — Presupuesto Gratuito",
-      "description": "Contacte RestoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Lisboa, Cascais y Sintra."
+      "title": "Contacto restoreLab — Presupuesto Gratuito",
+      "description": "Contacte restoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Lisboa, Cascais y Sintra."
     },
     "privacy": {
-      "title": "Política de Privacidad | RestoreLab",
-      "description": "Política de privacidad de RestoreLab — cómo recopilamos y utilizamos sus datos personales."
+      "title": "Política de Privacidad | restoreLab",
+      "description": "Política de privacidad de restoreLab — cómo recopilamos y utilizamos sus datos personales."
     },
     "terms": {
-      "title": "Términos y Condiciones | RestoreLab",
-      "description": "Términos y condiciones del servicio de RestoreLab."
+      "title": "Términos y Condiciones | restoreLab",
+      "description": "Términos y condiciones del servicio de restoreLab."
     },
     "academy": {
-      "title": "Academia: Excelencia en Ingeniería | RestoreLab",
+      "title": "Academia: Excelencia en Ingeniería | restoreLab",
       "description": "Inmersión profunda en la ciencia y el oficio detrás de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
     },
     "academy_equipment": {
-      "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | RestoreLab Academia",
+      "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones profesionales."
     }
   },
@@ -97,7 +97,7 @@
       {
         "name": "Sofia R.",
         "location": "Lisboa",
-        "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. RestoreLab los eliminó por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
+        "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. restoreLab los eliminó por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
         "rating": 5,
         "service": "Pulido de Vidrio"
       },
@@ -371,15 +371,15 @@
     ]
   },
   "wa_messages": {
-    "header": "¡Hola RestoreLab! Me gustaría obtener un presupuesto gratuito. [Desde el encabezado del sitio]",
-    "hero": "¡Hola RestoreLab! Me gustaría obtener un presupuesto gratuito. [Desde la página principal]",
-    "pricing_plan": "¡Hola RestoreLab! Me interesa el plan \"{plan}\" ({category}). Me gustaría obtener un presupuesto.",
-    "pricing_custom": "¡Hola RestoreLab! Me gustaría solicitar un presupuesto personalizado para {category}. [Desde la página de precios]",
-    "pricing_custom_general": "¡Hola RestoreLab! Me gustaría solicitar un presupuesto personalizado. [Desde la página de precios]",
-    "sticky_cta": "¡Hola RestoreLab! Me gustaría obtener un presupuesto. [Desde el botón móvil]",
-    "prefooter_cta": "¡Hola RestoreLab! Me gustaría obtener un presupuesto. [Desde el pie de página]",
-    "footer": "¡Hola RestoreLab! Tengo una pregunta. [Desde el pie de página]",
-    "contact": "¡Hola RestoreLab! Me gustaría ponerme en contacto. [Desde la página de contacto]"
+    "header": "¡Hola restoreLab! Me gustaría obtener un presupuesto gratuito. [Desde el encabezado del sitio]",
+    "hero": "¡Hola restoreLab! Me gustaría obtener un presupuesto gratuito. [Desde la página principal]",
+    "pricing_plan": "¡Hola restoreLab! Me interesa el plan \"{plan}\" ({category}). Me gustaría obtener un presupuesto.",
+    "pricing_custom": "¡Hola restoreLab! Me gustaría solicitar un presupuesto personalizado para {category}. [Desde la página de precios]",
+    "pricing_custom_general": "¡Hola restoreLab! Me gustaría solicitar un presupuesto personalizado. [Desde la página de precios]",
+    "sticky_cta": "¡Hola restoreLab! Me gustaría obtener un presupuesto. [Desde el botón móvil]",
+    "prefooter_cta": "¡Hola restoreLab! Me gustaría obtener un presupuesto. [Desde el pie de página]",
+    "footer": "¡Hola restoreLab! Tengo una pregunta. [Desde el pie de página]",
+    "contact": "¡Hola restoreLab! Me gustaría ponerme en contacto. [Desde la página de contacto]"
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",
@@ -404,7 +404,7 @@
       "photo_note": "También puede enviar fotos directamente por WhatsApp después de enviar el formulario.",
       "submit": "Enviar via WhatsApp"
     },
-    "whatsapp_template": "¡Hola RestoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}."
+    "whatsapp_template": "¡Hola restoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}."
   },
   "footer": {
     "tagline": "Restauración premium móvil de superficies",
@@ -413,7 +413,7 @@
     "legal_title": "Legal",
     "privacy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
-    "copyright": "© 2026 RestoreLab. Todos los derechos reservados.",
+    "copyright": "© 2026 restoreLab. Todos los derechos reservados.",
     "made_in": "Hecho en Portugal.",
     "trust": "Con la confianza de más de 500 clientes en Lisboa y Cascais"
   },
@@ -442,6 +442,11 @@
       }
     ]
   },
+  "cases_section": {
+    "section_title": "Antes y Después",
+    "section_subtitle": "Resultados reales de nuestro servicio móvil de restauración en Lisboa y Cascais",
+    "view_all": "Ver Todos los Casos"
+  },
   "pre_footer_cta": {
     "title": "¿Listo para restaurar?",
     "subtitle": "Envíanos una foto y recibe un presupuesto honesto en menos de 30 minutos. Sin compromiso ni costes ocultos.",
@@ -450,7 +455,7 @@
     "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
   },
   "academy": {
-    "headline": "Academia: Excelencia en Ingeniería",
+    "headline": "restoreLab Academia: Excelencia en Ingeniería",
     "intro": "Cada restauración que realizamos se basa en la ciencia de materiales, no en suposiciones. Esta sección es donde compartimos los principios de ingeniería detrás de nuestro trabajo — para que entiendas exactamente por qué nuestros resultados son diferentes.",
     "what_awaits": "Lo que te espera dentro:",
     "bullets": [
@@ -511,7 +516,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | RestoreLab Academia",
+      "seo_title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
       "seo_description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones.",
       "title": "Elige Tu Arma: Rotativa vs. Doble Acción",
       "description": "Física del Proceso: Por Qué el 99% del Resultado Depende de la Selección de Herramientas. Aprende a distinguir el manejo de un \"kart\" del comportamiento de un \"camión\", y comprende por qué un centro de gravedad bajo es la base de la corrección profesional de pintura.",
@@ -529,7 +534,7 @@
             "Modulación de potencia — la capacidad de controlar con precisión las RPM para una operación segura en curvas y líneas de la carrocería."
           ],
           "analogy": {
-            "title": "Analogía de ingeniería RestoreLab",
+            "title": "Analogía de ingeniería restoreLab",
             "text": "Trabajar con una herramienta que tiene un centro de gravedad alto o desplazado es como conducir un camión alto — gira, pero nunca tendrá la precisión de un kart. Una pulidora rotativa profesional (por ejemplo, la Makita 9237CB) es un kart: baja, predecible y extremadamente eficiente."
           },
           "table": {
@@ -549,7 +554,7 @@
           "paragraphs": [
             "Una vez que los defectos principales se han eliminado con la rotativa, comienza la fase de acabado. El plato de soporte de una pulidora de doble acción realiza dos tipos de movimiento simultáneamente: rotacional y oscilante. Esto permite lograr una superficie perfectamente limpia sin hologramas."
           ],
-          "tools_title": "Equipamiento profesional de doble acción de RestoreLab",
+          "tools_title": "Equipamiento profesional de doble acción de restoreLab",
           "tools": [
             {
               "label": "Para paneles grandes",
@@ -568,11 +573,11 @@
       ]
     },
     "masking_protocols": {
-      "seo_title": "Protocolos de Enmascarado: Proteger el Borde | RestoreLab Academia",
+      "seo_title": "Protocolos de Enmascarado: Proteger el Borde | restoreLab Academia",
       "seo_description": "Por qué la capa más fina de barniz está en los bordes. La regla de los 2 mm, cintas de contorno y técnicas de re-enmascarado para prevenir quemaduras.",
       "title": "Protocolos de Enmascarado: Proteger el Borde",
       "description": "¿Por qué la capa más fina de barniz se encuentra en los bordes? Aprende la \"regla de los 2 mm\" y entiende por qué enmascarar las \"zonas rojas\" es el único seguro real contra un repintado costoso.",
-      "intro": "El enmascarado es el paso más ignorado por los principiantes — y la causa más común de quemadura del barniz. En RestoreLab no confiamos en la suerte; confiamos en la cinta de enmascarar.",
+      "intro": "El enmascarado es el paso más ignorado por los principiantes — y la causa más común de quemadura del barniz. En restoreLab no confiamos en la suerte; confiamos en la cinta de enmascarar.",
       "sections": [
         {
           "number": "1",
@@ -583,7 +588,7 @@
         },
         {
           "number": "2",
-          "title": "El Método de Enmascarado RestoreLab",
+          "title": "El Método de Enmascarado restoreLab",
           "paragraphs": [],
           "tools": [
             {
@@ -614,11 +619,11 @@
       ]
     },
     "mechanical_correction": {
-      "seo_title": "Protocolos de Corrección Mecánica: El Arte del Corte | RestoreLab Academia",
+      "seo_title": "Protocolos de Corrección Mecánica: El Arte del Corte | restoreLab Academia",
       "seo_description": "La técnica del patrón serpiente, protocolo de 20 kg de presión y física de la almohadilla de lana. Cómo cortar defectos profundos preservando el barniz.",
       "title": "Protocolos de Corrección Mecánica: El Arte del Corte",
       "description": "Domina la física del \"patrón serpiente\" y el control de temperatura. Aprende cómo 20 kg de presión y una almohadilla de lana pueden cortar defectos profundos preservando la integridad estructural del barniz.",
-      "intro": "La primera pasada es la etapa donde se decide el destino del 99,9% de los arañazos. En RestoreLab usamos la combinación Rotativa + Lana porque es la forma más eficiente de llegar al fondo de un arañazo sin perder tiempo.",
+      "intro": "La primera pasada es la etapa donde se decide el destino del 99,9% de los arañazos. En restoreLab usamos la combinación Rotativa + Lana porque es la forma más eficiente de llegar al fondo de un arañazo sin perder tiempo.",
       "sections": [
         {
           "number": "1",
@@ -696,18 +701,18 @@
             }
           ],
           "analogy": {
-            "title": "Analogía de ingeniería RestoreLab",
+            "title": "Analogía de ingeniería restoreLab",
             "text": "¿Por qué caminar cuando puedes volar? La combinación Rotativa + Lana es tu avión. Te lleva al objetivo dramáticamente más rápido y con mucho menos esfuerzo que intentar cortar un arañazo profundo con espuma o una pulidora de doble acción."
           }
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Protocolos de Refinado y Estabilización: El Acabado Espejo | RestoreLab Academia",
+      "seo_title": "Protocolos de Refinado y Estabilización: El Acabado Espejo | restoreLab Academia",
       "seo_description": "Estabilización en dos etapas después de la corrección profunda. Elimina la bruma de la lana, los hologramas y logra una claridad de barniz de grado espacial.",
       "title": "Protocolos de Refinado y Estabilización: El Acabado Espejo",
       "description": "La transición de la corrección profunda a la claridad absoluta del barniz. Aprende a eliminar completamente la bruma de trabajo dejada por la lana y estabilizar la superficie para eliminar hologramas bajo cualquier fuente de luz.",
-      "intro": "Después de la pasada inicial con rotativa + lana, la superficie está libre de arañazos profundos, pero queda con una bruma microscópica o marcas de corte. En RestoreLab tratamos esto como una condición intermedia que requiere un proceso de estabilización en dos etapas.",
+      "intro": "Después de la pasada inicial con rotativa + lana, la superficie está libre de arañazos profundos, pero queda con una bruma microscópica o marcas de corte. En restoreLab tratamos esto como una condición intermedia que requiere un proceso de estabilización en dos etapas.",
       "sections": [
         {
           "number": "1",
@@ -754,18 +759,18 @@
             { "label": "Negro sólido", "text": "Si la combinación estándar sigue dejando hologramas, el protocolo cambia: reemplaza la almohadilla de acabado cada 2–3 paneles, reduce la velocidad de la DA a 2–3 y acorta el ciclo de trabajo a 15–20 segundos. En casos extremos, usa un polish de imprimación (CarPro Essence) y almohadillas blancas ultrasuaves." }
           ],
           "analogy": {
-            "title": "Mandamiento de ingeniería RestoreLab",
+            "title": "Mandamiento de ingeniería restoreLab",
             "text": "Los hologramas son las huellas de un aficionado. El verdadero brillo aparece solo cuando el barniz se vuelve ópticamente nivelado y completamente estabilizado."
           }
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protocolos de Protección y Preservación: El Escudo Molecular | RestoreLab Academia",
+      "seo_title": "Protocolos de Protección y Preservación: El Escudo Molecular | restoreLab Academia",
       "seo_description": "Aplicación de recubrimiento cerámico, el protocolo de tres criterios y datos sobre longevidad del barniz. Cómo sellar un acabado espejo durante años.",
       "title": "Protocolos de Protección y Preservación: El Escudo Molecular",
       "description": "La etapa final de estabilización de la superficie. Aprende a sellar el resultado con protección de grafeno, por qué la cera es una elección de entusiastas y no de profesionales, y cómo preservar un acabado espejo durante años.",
-      "intro": "Después del pulido profundo, el barniz está en su punto máximo de adhesión y listo para absorber cualquier contaminación. En RestoreLab siempre completamos el ciclo aplicando un recubrimiento protector, para que las propiedades hidrofóbicas trabajen a favor de mantener el vehículo limpio.",
+      "intro": "Después del pulido profundo, el barniz está en su punto máximo de adhesión y listo para absorber cualquier contaminación. En restoreLab siempre completamos el ciclo aplicando un recubrimiento protector, para que las propiedades hidrofóbicas trabajen a favor de mantener el vehículo limpio.",
       "sections": [
         {
           "number": "1",
@@ -808,7 +813,7 @@
           "number": "4",
           "title": "Economía y Mitos: ¿Cuánto Dura el Barniz?",
           "paragraphs": [
-            "Muchas personas temen el pulido porque creen que \"consume\" el barniz para siempre. Aquí están los datos de RestoreLab:"
+            "Muchas personas temen el pulido porque creen que \"consume\" el barniz para siempre. Aquí están los datos de restoreLab:"
           ],
           "key_params": [
             "La corrección profunda con lana elimina una media de 5,5 micras.",
@@ -816,14 +821,14 @@
             "Con el enfoque correcto, el pulido profundo profesional puede realizarse hasta 10 veces, y el pulido ligero hasta 25 veces durante la vida del vehículo."
           ],
           "analogy": {
-            "title": "Conclusión de ingeniería RestoreLab",
+            "title": "Conclusión de ingeniería restoreLab",
             "text": "El profesionalismo no es solo la capacidad de cortar un arañazo hasta cero, sino también saber cuándo parar para preservar esas valiosas micras de barniz para el futuro."
           }
         }
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Detailing Especializado: Protocolos para Motos | RestoreLab Academia",
+      "seo_title": "Detailing Especializado: Protocolos para Motos | restoreLab Academia",
       "seo_description": "Pulido de precisión en geometrías complejas. Corrección de toque ligero, trabajo en paneles plásticos, limpieza de metal y cuidado del cuero para motos.",
       "title": "Detailing Especializado: Protocolos para Motos",
       "description": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente de toque ligero, cómo trabajar en plástico cuando no se puede medir el grosor del barniz, y el arte de limpiar metal.",
@@ -856,7 +861,7 @@
           "paragraphs": [],
           "tools": [
             { "label": "Metal", "text": "Para tubos de escape y cromo, usamos pulimentos metálicos especializados (Autosol) que eliminan la oxidación y restauran un acabado espejo." },
-            { "label": "Cuero", "text": "El protocolo RestoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora." }
+            { "label": "Cuero", "text": "El protocolo restoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora." }
           ]
         }
       ]
