@@ -15,7 +15,7 @@ const [h1First, ...h1Rest] = t.hero.headline.split('.');
 const h1Second = h1Rest.filter(Boolean).join('.').trim();
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-16">
+<section class="relative min-h-screen flex flex-col items-center overflow-hidden bg-gradient-hero pt-16">
 
   <!-- Background grid -->
   <div class="absolute inset-0 opacity-10 pointer-events-none">
@@ -26,7 +26,10 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
   <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+  <!-- Top spacer -->
+  <div class="flex-1"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
     <!-- H1 -->
     <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight tracking-tight">
@@ -65,9 +68,12 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
     </div>
 
     <!-- Microcopy -->
-    <p class="text-white/35 text-sm mb-10">{t.hero.reply_time}</p>
+    <p class="text-white/35 text-sm">{t.hero.reply_time}</p>
 
-    <!-- Trust pills -->
+  </div>
+
+  <!-- Trust pills — centered between microcopy and scroll -->
+  <div class="flex-1 flex items-center justify-center px-4">
     <div class="flex flex-nowrap justify-center gap-1 sm:gap-2">
       {t.hero.trust_pills.map((pill: string, i: number) => (
         <span class:list={[
@@ -78,11 +84,10 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
         </span>
       ))}
     </div>
-
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25">
+  <div class="pb-8 flex flex-col items-center gap-2 text-white/25">
     <span class="text-xs uppercase tracking-widest">Scroll</span>
     <div class="w-px h-8 bg-white/20 animate-pulse"></div>
   </div>
