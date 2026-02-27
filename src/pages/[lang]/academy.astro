@@ -29,7 +29,7 @@ const { t } = Astro.props;
     <!-- Hero / Intro -->
     <section class="bg-gradient-hero py-12 sm:py-16">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="section-title text-4xl sm:text-5xl mb-6">{t.academy.headline}</h1>
+        <h1 class="section-title text-4xl sm:text-5xl mb-6" set:html={t.academy.headline.replace('restoreLab', 'restore<span class="text-brand-accent">Lab</span>')} />
         <p class="lead text-white/70 max-w-2xl mx-auto mb-10">
           {t.academy.intro}
         </p>
