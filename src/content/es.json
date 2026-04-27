@@ -3,7 +3,7 @@
   "meta": {
     "home": {
       "title": "restoreLab — Restauración Móvil de Superficies en Sant Cugat y Barcelona",
-      "description": "Servicio premium móvil de corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio en Sant Cugat, Barcelona, Terrassa y Sabadell. Sin repintura. Sin sustitución.",
+      "description": "Corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio móvil en Sant Cugat y Barcelona. Sin repintura.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
@@ -12,7 +12,7 @@
     },
     "car_paint": {
       "title": "Corrección de Pintura Automóvil Sant Cugat | restoreLab",
-      "description": "Corrección de pintura móvil profesional en Sant Cugat y Barcelona. Elimine swirl marks, arañazos y restaure el brillo profundo. Preparación para recubrimiento cerámico. Sin repintura."
+      "description": "Corrección de pintura móvil en Sant Cugat y Barcelona. Elimine swirl marks, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
     },
     "glass": {
       "title": "Eliminación de Arañazos en Vidrio Barcelona | restoreLab",
@@ -44,11 +44,11 @@
     },
     "academy": {
       "title": "Academia: Excelencia en Ingeniería | restoreLab",
-      "description": "Inmersión profunda en la ciencia y el oficio detrás de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
+      "description": "Ciencia y técnica de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
     },
     "academy_equipment": {
       "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
-      "description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones profesionales."
+      "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
     }
   },
   "nav": {
@@ -284,7 +284,7 @@
       {
         "icon": "rain",
         "question": "¿Qué pasa si llueve o las condiciones meteorológicas son malas?",
-        "answer": "Los trabajos de vidrio y acrílico pueden realizarse con lluvia ligera. La corrección de pintura y el recubrimiento cerámico requieren condiciones secas. Comprobamos la previsión con antelación — si las condiciones no son adecuadas, reprogramamos sin coste ni inconvenientes."
+        "answer": "Los trabajos de <a href='/es/services/glass-polishing' class='text-brand-accent hover:underline'>vidrio</a> y <a href='/es/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrílico</a> pueden realizarse con lluvia ligera. La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> y el recubrimiento cerámico requieren condiciones secas. Comprobamos la previsión con antelación — si las condiciones no son adecuadas, reprogramamos sin coste ni inconvenientes."
       },
       {
         "icon": "user",
@@ -294,7 +294,7 @@
       {
         "icon": "shield",
         "question": "¿Cuál es su garantía de satisfacción?",
-        "answer": "Simple: si no estás satisfecho con el resultado, volvemos y lo rehacemos sin coste adicional. Los paquetes cerámicos premium incluyen 12 meses de garantía de protección del recubrimiento. El precio que apruebas es siempre el precio que pagas — sin sorpresas."
+        "answer": "Simple: si no estás satisfecho con el resultado, volvemos y lo rehacemos sin coste adicional. Los paquetes cerámicos premium incluyen 12 meses de garantía de protección del recubrimiento. El precio que apruebas es siempre el precio que pagas — sin sorpresas. Consulta nuestros <a href='/es/pricing' class='text-brand-accent hover:underline'>precios</a> y <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
       }
     ]
   },
@@ -368,7 +368,9 @@
     "terms": "Términos y Condiciones",
     "copyright": "© 2026 restoreLab. Todos los derechos reservados.",
     "made_in": "Hecho en España.",
-    "trust": "Con la confianza de más de 500 clientes en Sant Cugat y Barcelona"
+    "trust": "Con la confianza de más de 500 clientes en Sant Cugat y Barcelona",
+    "gbp_url": "https://g.page/restorelab-santcugat",
+    "gbp_label": "Google Reviews"
   },
   "guarantee": {
     "section_title": "Cero Riesgo. Garantizado.",
@@ -463,6 +465,34 @@
         "title": "Detailing Especializado: Protocolos para Motos",
         "excerpt": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente suave y el arte de limpiar metal y cuero.",
         "slug": "motorcycle-detailing",
+        "status": "published"
+      },
+      {
+        "number": "07",
+        "title": "Cómo Eliminar Marcas Circulares de la Pintura",
+        "excerpt": "Entiende qué causa esos arañazos circulares en tu pintura y el proceso profesional paso a paso para eliminarlos permanentemente.",
+        "slug": "remove-swirl-marks",
+        "status": "published"
+      },
+      {
+        "number": "08",
+        "title": "Reparación de Arañazos en Parabrisas: DIY vs Profesional",
+        "excerpt": "¿Cuándo puedes arreglar los arañazos del parabrisas tú mismo y cuándo debes llamar a un profesional? Comparación honesta de métodos, costes y resultados.",
+        "slug": "windshield-scratch-repair",
+        "status": "published"
+      },
+      {
+        "number": "09",
+        "title": "Guía de Precios Corrección de Pintura Barcelona 2025",
+        "excerpt": "¿Cuánto cuesta realmente la corrección profesional de pintura en Barcelona? Desglose transparente de factores de precio, niveles de paquetes y qué afecta al presupuesto final.",
+        "slug": "paint-correction-cost-barcelona",
+        "status": "published"
+      },
+      {
+        "number": "10",
+        "title": "Daño UV en Ventanas Acrílicas: Prevención y Restauración",
+        "excerpt": "Cómo la radiación UV degrada las superficies acrílicas y de policarbonato con el tiempo, y el proceso profesional de restauración que les devuelve la transparencia total.",
+        "slug": "uv-damage-acrylic-restoration",
         "status": "published"
       }
     ]
@@ -818,6 +848,234 @@
           ]
         }
       ]
+    },
+    "remove_swirl_marks": {
+      "seo_title": "Cómo Eliminar Marcas Circulares de la Pintura | restoreLab Academia",
+      "seo_description": "Qué causa las marcas circulares y cómo las eliminan los profesionales. Proceso de corrección paso a paso, herramientas y consejos de prevención.",
+      "title": "Cómo Eliminar Marcas Circulares de la Pintura",
+      "description": "Entiende qué causa esos arañazos circulares visibles bajo luz directa — y el proceso profesional exacto para eliminarlos permanentemente sin dañar el barniz.",
+      "intro": "Las marcas circulares (swirl marks) son el defecto de pintura más común que encontramos. Aparecen como arañazos circulares o en forma de telaraña visibles bajo la luz solar directa o iluminación artificial. En restoreLab, las vemos en 9 de cada 10 vehículos que pasan por nuestro servicio.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "¿Qué Causa las Marcas Circulares?",
+          "paragraphs": [
+            "Las marcas circulares son micro-arañazos en el barniz causados por técnicas inadecuadas de lavado y secado. Los culpables más comunes son:"
+          ],
+          "key_params": [
+            "Lavados automáticos con cepillos giratorios que arrastran suciedad sobre la pintura",
+            "Usar el método de un solo cubo sin rejilla anti-suciedad",
+            "Secar el coche con una toalla seca o sucia",
+            "Aplicar cera o pulimento con un aplicador contaminado"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Proceso Profesional de Eliminación",
+          "paragraphs": [
+            "Eliminar las marcas circulares requiere pulido mecánico — no existe un atajo químico. El proceso implica abrasión controlada del barniz para nivelar la superficie por debajo de la profundidad de los arañazos."
+          ],
+          "tools": [
+            { "label": "Paso 1", "text": "Lavado exhaustivo y descontaminación con clay bar para eliminar todos los contaminantes adheridos." },
+            { "label": "Paso 2", "text": "Medición del grosor de la pintura para determinar los límites seguros de pulido." },
+            { "label": "Paso 3", "text": "Pulido mecánico con pulidora de doble acción, compuesto de corte medio y almohadilla de espuma." },
+            { "label": "Paso 4", "text": "Pasada de acabado con polish fino para lograr la máxima claridad." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Prevención: Mantener los Swirls Lejos",
+          "paragraphs": [
+            "Después de la corrección, proteger el resultado es esencial. Estos son los hábitos clave para evitar que las marcas circulares vuelvan:"
+          ],
+          "key_params": [
+            "Usa el método de dos cubos con rejilla anti-suciedad en cada cubo",
+            "Nunca uses lavados automáticos — solo lavado a mano",
+            "Usa toallas de microfibra de alta calidad y reemplázalas regularmente",
+            "Aplica un recubrimiento cerámico o sellante para protección a largo plazo"
+          ]
+        }
+      ]
+    },
+    "windshield_scratch_repair": {
+      "seo_title": "Reparación de Arañazos en Parabrisas: DIY vs Profesional | restoreLab Academia",
+      "seo_description": "Cuándo arreglar arañazos del parabrisas tú mismo y cuándo llamar a un profesional. Comparación honesta de kits DIY vs pulido profesional.",
+      "title": "Reparación de Arañazos en Parabrisas: DIY vs Profesional",
+      "description": "Una comparación honesta entre kits de reparación caseros y el pulido profesional de vidrio. Desglosamos costes, riesgos y cuándo tiene sentido cada opción.",
+      "intro": "Los arañazos en el parabrisas causados por limpiaparabrisas desgastados son uno de los problemas más comunes. La pregunta siempre es la misma: ¿puedo arreglarlo yo mismo o necesito un profesional? Esta es nuestra respuesta honesta.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Kits DIY: Qué Pueden y Qué No Pueden Hacer",
+          "paragraphs": [
+            "Los kits de eliminación de arañazos de vidrio suelen incluir polvo de óxido de cerio y una rueda de pulido de fieltro. Pueden funcionar para arañazos superficiales muy leves, pero tienen limitaciones significativas."
+          ],
+          "key_params": [
+            "Efectivos solo en arañazos que no se sienten con la uña",
+            "Riesgo de crear distorsión óptica si se aplican de forma desigual",
+            "Requieren típicamente 2-4 horas de trabajo manual por zona pequeña",
+            "Coste: 20-50€ por kit, pero los resultados suelen ser inconsistentes"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Pulido Profesional de Vidrio",
+          "paragraphs": [
+            "El pulido profesional de vidrio utiliza equipamiento especializado y compuestos que trabajan a un nivel diferente que los kits DIY. La diferencia clave es precisión y consistencia."
+          ],
+          "tools": [
+            { "label": "Equipo", "text": "Pulidora rotativa profesional con almohadillas específicas para vidrio y suspensión de óxido de cerio." },
+            { "label": "Proceso", "text": "Pasadas controladas y medidas que eliminan material uniformemente sin crear distorsión." },
+            { "label": "Resultado", "text": "Eliminación completa de arañazos con claridad óptica mantenida. Ahorra 300-500€ vs sustitución del parabrisas." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Cuándo Elegir Cada Opción",
+          "paragraphs": [],
+          "tools": [
+            { "label": "DIY", "text": "Arañazos superficiales finos en ventanas laterales donde la perfección óptica es menos crítica." },
+            { "label": "Profesional", "text": "Arañazos de limpiaparabrisas, arañazos profundos que se sienten al tacto, o cualquier arañazo en la línea de visión del conductor." },
+            { "label": "Sustituir", "text": "Grietas, impactos que se han extendido, o daños en la capa laminada del parabrisas." }
+          ]
+        }
+      ]
+    },
+    "paint_correction_cost_barcelona": {
+      "seo_title": "Guía de Precios Corrección de Pintura Barcelona 2025 | restoreLab",
+      "seo_description": "¿Cuánto cuesta la corrección de pintura en Barcelona? Guía de precios transparente con paquetes desde 189€. Factores que afectan al presupuesto.",
+      "title": "Guía de Precios Corrección de Pintura Barcelona 2025",
+      "description": "Un desglose transparente de lo que cuesta la corrección profesional de pintura en el área metropolitana de Barcelona. Niveles de paquetes, factores de precio y cómo obtener el mejor valor para tu vehículo.",
+      "intro": "Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta la corrección de pintura? La respuesta honesta es que depende de varios factores — pero creemos en la transparencia total. Aquí está nuestra guía completa de precios para 2025.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "¿Qué Afecta al Precio?",
+          "paragraphs": [
+            "Varios factores determinan el coste final de un trabajo de corrección de pintura. Entenderlos te ayuda a saber qué esperar."
+          ],
+          "key_params": [
+            "Tamaño del vehículo: un coche compacto requiere menos tiempo que un SUV o furgoneta",
+            "Estado de la pintura: swirls leves requieren una fase, arañazos profundos requieren dos o tres",
+            "Tipo de pintura: los colores sólidos son directos; los metalizados y perlados necesitan más cuidado",
+            "Nivel de protección: añadir recubrimiento cerámico aumenta el precio pero aporta valor a largo plazo"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Nuestros Niveles de Paquetes",
+          "paragraphs": [
+            "En restoreLab ofrecemos tres paquetes claramente definidos para que no haya sorpresas."
+          ],
+          "tools": [
+            { "label": "Corrección Base", "text": "Desde 189€. Pulido de una fase para swirls leves y oxidación. Ideal para vehículos de uso diario con defectos menores. Duración: 2-4 horas." },
+            { "label": "Preparación Cerámica", "text": "Desde 339€. Corrección de dos fases más base cerámica. Ideal para vehículos que se preparan para cerámica. Duración: 3-5 horas." },
+            { "label": "Cerámica Premium", "text": "Desde 459€. Corrección multifase más recubrimiento cerámico profesional con garantía de 12 meses. Ideal para coches de lujo y deportivos. Duración: 6-8 horas." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Cómo Obtener un Presupuesto",
+          "paragraphs": [
+            "La forma más rápida de obtener un presupuesto exacto es enviarnos fotos de tu vehículo por WhatsApp. Evaluaremos el estado de la pintura y recomendaremos el paquete adecuado — sin obligaciones, sin presión."
+          ],
+          "key_params": [
+            "Envía 4-6 fotos a la luz directa del sol mostrando la pintura desde diferentes ángulos",
+            "Incluye primeros planos de las zonas más afectadas",
+            "Menciona la marca, modelo y año de tu vehículo",
+            "Respondemos en una media de 30 minutos con una evaluación honesta y precio"
+          ]
+        }
+      ]
+    },
+    "uv_damage_acrylic_restoration": {
+      "seo_title": "Daño UV en Ventanas Acrílicas: Prevención y Restauración | restoreLab Academia",
+      "seo_description": "Cómo la radiación UV degrada las ventanas acrílicas y el proceso profesional de restauración. Consejos de prevención y alternativas económicas.",
+      "title": "Daño UV en Ventanas Acrílicas: Prevención y Restauración",
+      "description": "Cómo la radiación ultravioleta degrada progresivamente las superficies acrílicas y de policarbonato, volviéndolas amarillas y opacas — y el proceso profesional de restauración que les devuelve la transparencia total.",
+      "intro": "Las ventanas acrílicas y de policarbonato son ligeras, resistentes a impactos y ampliamente utilizadas en barcos, caravanas, claraboyas e instalaciones arquitectónicas. Pero tienen una debilidad: la radiación UV. Con el tiempo, los rayos UV rompen las cadenas de polímero, causando amarillamiento, opacidad y fragilidad.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Cómo el UV Daña el Acrílico",
+          "paragraphs": [
+            "La luz ultravioleta causa foto-oxidación en superficies de acrílico (PMMA) y policarbonato. Este proceso químico degrada la capa superficial, resultando en cambios visibles."
+          ],
+          "key_params": [
+            "Amarillamiento: la señal más visible, causada por la formación de cromóforos en el polímero",
+            "Opacidad: el micro-agrietamiento en la superficie dispersa la luz, reduciendo la transparencia",
+            "Fragilidad: la exposición prolongada debilita el material, haciéndolo propenso a grietas",
+            "Cronología: la degradación notable comienza típicamente tras 3-5 años de exposición solar directa"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Proceso Profesional de Restauración",
+          "paragraphs": [
+            "A diferencia del vidrio, el acrílico puede restaurarse mediante pulido porque el material es más blando y uniforme. El proceso implica abrasivos progresivamente más finos para eliminar la capa superficial dañada."
+          ],
+          "tools": [
+            { "label": "Evaluación", "text": "Evaluar la profundidad del daño UV y comprobar la integridad estructural." },
+            { "label": "Lijado húmedo", "text": "Comenzando con grano P800-P1200 para eliminar la capa oxidada. El acrílico debe mantenerse húmedo para prevenir acumulación de calor." },
+            { "label": "Pulido mecánico", "text": "Etapas progresivas con compuestos dedicados para acrílico, desde corte medio hasta acabado ultrafino." },
+            { "label": "Protección UV", "text": "Aplicación de recubrimiento con estabilizador UV para ralentizar la degradación futura." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Consejos de Prevención",
+          "paragraphs": [
+            "Proteger el acrílico del daño UV es más efectivo que restaurarlo después. Estas son las recomendaciones profesionales:"
+          ],
+          "key_params": [
+            "Aplica recubrimiento protector UV anualmente a todas las superficies acrílicas expuestas",
+            "Usa fundas cuando la superficie no esté en uso activo (fundas de barco, toldos de caravana)",
+            "Limpia solo con limpiadores de pH neutro — evita productos a base de amoníaco",
+            "Nunca seques el acrílico en seco — siempre usa una toalla de microfibra húmeda para prevenir arañazos"
+          ]
+        }
+      ]
     }
+  },
+  "area_pages": {
+    "meta_title_tpl": "Restauración Móvil de Superficies en {city} | restoreLab",
+    "meta_desc_tpl": "Corrección de pintura, pulido de vidrio y restauración de acrílico en {city}. Vamos a tu ubicación. Presupuesto gratuito por WhatsApp.",
+    "h1_tpl": "Restauración de Superficies en {city}",
+    "intro_tpl": "restoreLab ofrece servicios premium de restauración móvil en {city} y alrededores. Nuestro equipo se desplaza directamente a tu ubicación con todo el equipamiento profesional — sin necesidad de ir a un taller.",
+    "services_heading": "Nuestros Servicios en {city}",
+    "cta_tpl": "Presupuesto Gratuito en {city}",
+    "areas_heading": "Áreas que cubrimos desde {city}",
+    "cities": [
+      {
+        "slug": "sant-cugat",
+        "name": "Sant Cugat del Vallès",
+        "short": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "lat": 41.4736,
+        "lng": 2.0868,
+        "description": "Con base en el corazón de Sant Cugat, cubrimos toda la comarca del Vallès Occidental. Desde comunidades residenciales hasta parques empresariales, nuestra unidad móvil llega en menos de 30 minutos.",
+        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+      },
+      {
+        "slug": "barcelona",
+        "name": "Barcelona",
+        "short": "Barcelona",
+        "region": "Área Metropolitana de Barcelona",
+        "lat": 41.3851,
+        "lng": 2.1734,
+        "description": "Servimos todos los distritos de Barcelona y municipios cercanos. Ya estés en el Eixample, Sarrià-Sant Gervasi o Badalona — vamos a tu plaza de aparcamiento con todo el equipo profesional.",
+        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+      },
+      {
+        "slug": "terrassa",
+        "name": "Terrassa",
+        "short": "Terrassa",
+        "region": "Vallès Interior",
+        "lat": 41.5630,
+        "lng": 2.0089,
+        "description": "Nuestro hub del Vallès cubre Terrassa, Sabadell y pueblos cercanos. Polígonos industriales, zonas residenciales y aparcamientos subterráneos — nos adaptamos a cualquier ubicación.",
+        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+      }
+    ]
   }
 }

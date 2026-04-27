@@ -107,11 +107,13 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
 
-    <!-- CookieConsent v3 CSS -->
+    <!-- CookieConsent v3 CSS (non-render-blocking) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css"
       crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- dataLayer init (must be before GTM) -->
@@ -146,6 +148,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
         "longitude": 2.0868
       },
       "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell", "Rubí"],
+      "sameAs": ["https://g.page/restorelab-santcugat"],
       "openingHours": "Mo-Sa 08:00-19:00",
       "priceRange": "€€",
       "aggregateRating": {

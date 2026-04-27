@@ -75,6 +75,13 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
               {t.nav.contact}
             </a>
           </li>
+          {t.footer.gbp_url && (
+            <li>
+              <a href={t.footer.gbp_url} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
+                {t.footer.gbp_label || 'Google Reviews'}
+              </a>
+            </li>
+          )}
         </ul>
       </div>
 

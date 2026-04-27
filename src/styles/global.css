@@ -130,22 +130,3 @@ details[open] .faq-answer-body {
   animation: faq-open 0.18s ease-out forwards;
 }
 
-/* How It Works — connector flow animation */
-@keyframes connector-flow {
-  0%   { background-position: -100% center; }
-  100% { background-position: 200% center; }
-}
-
-.animate-connector-flow {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgb(var(--brand-accent) / 0) 20%,
-    rgb(var(--brand-accent) / 0.7) 50%,
-    rgb(var(--brand-accent) / 0) 80%,
-    transparent 100%
-  );
-  background-size: 60% 100%;
-  background-repeat: no-repeat;
-  animation: connector-flow 3s ease-in-out infinite;
-}

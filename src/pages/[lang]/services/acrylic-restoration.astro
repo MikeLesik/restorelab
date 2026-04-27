@@ -6,6 +6,7 @@ import FAQ from '@/components/FAQ.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
+import { SITE_URL } from '@/lib/constants';
 
 export function getStaticPaths() {
   return [
@@ -76,6 +77,17 @@ const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Acry
       </div>
     </section>
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": t.nav.services, "item": `${SITE_URL}/${lang}/services` },
+        { "@type": "ListItem", "position": 3, "name": service?.title }
+      ]
+    })} />
+
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
@@ -86,6 +98,15 @@ const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Acry
     })} />
 
     <PricingCards t={t} lang={lang} categoryId="glass" />
+
+    <!-- See our work CTA -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
+      <a href={`/${lang}/cases`} class="inline-flex items-center gap-2 text-brand-accent hover:text-blue-400 text-sm font-medium transition-colors">
+        {lang === 'es' ? 'Ver nuestro trabajo — antes y después' : 'See our work — before & after results'}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
     <FAQ t={t} />
     <LeadForm t={t} lang={lang} />
   </div>

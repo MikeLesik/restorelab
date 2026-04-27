@@ -98,6 +98,31 @@ const categories = categoryId
       </div>
     ))}
 
+    <!-- Offer Schema (SEO) -->
+    {categories.map((category: any) => {
+      const offers = category.packages
+        .filter((pkg: any) => pkg.price && !pkg.price.toLowerCase().includes('custom') && !pkg.price.toLowerCase().includes('personalizado'))
+        .map((pkg: any) => {
+          const priceMatch = pkg.price.match(/(\d+)/);
+          return priceMatch ? {
+            "@type": "Offer",
+            "name": pkg.name,
+            "price": priceMatch[1],
+            "priceCurrency": "EUR"
+          } : null;
+        })
+        .filter(Boolean);
+      return offers.length > 0 ? (
+        <script type="application/ld+json" set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": category.title,
+          "provider": { "@type": "LocalBusiness", "name": "restoreLab" },
+          "offers": offers
+        })} />
+      ) : null;
+    })}
+
     <!-- Custom quote CTA -->
     <div class="text-center mt-8 p-8 border border-dashed border-th-border/15 rounded-2xl">
       <p class="text-th-muted mb-4">{t.pricing.cta_custom}</p>

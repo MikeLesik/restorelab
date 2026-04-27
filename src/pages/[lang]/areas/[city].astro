@@ -1,0 +1,135 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQ from '@/components/FAQ.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
+
+export function getStaticPaths() {
+  const langs = [
+    { lang: 'en', t: en },
+    { lang: 'es', t: es },
+  ];
+
+  return langs.flatMap(({ lang, t }) =>
+    t.area_pages.cities.map((city: any) => ({
+      params: { lang, city: city.slug },
+      props: { t, city },
+    }))
+  );
+}
+
+const { lang } = Astro.params;
+const { t, city } = Astro.props;
+const ap = t.area_pages;
+const wa = WHATSAPP_NUMBER;
+
+const fill = (tpl: string) => tpl.replace(/\{city\}/g, city.name);
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.replace('[From homepage]', `[From ${city.short} area page]`))}`;
+---
+
+<BaseLayout
+  title={fill(ap.meta_title_tpl)}
+  description={fill(ap.meta_desc_tpl)}
+  lang={lang}
+  t={t}
+  currentPath={`/areas/${city.slug}`}
+>
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+      { "@type": "ListItem", "position": 2, "name": city.name }
+    ]
+  })} />
+
+  <!-- LocalBusiness Schema with geo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "restoreLab",
+    "url": SITE_URL,
+    "telephone": `+${wa}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": city.name,
+      "addressRegion": "Barcelona",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": city.lat,
+      "longitude": city.lng
+    },
+    "areaServed": [city.name, ...city.nearby]
+  })} />
+
+  <div class="pt-24">
+    <!-- Hero -->
+    <section class="relative py-14 sm:py-16 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-block px-3 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium mb-6">
+          {city.region}
+        </span>
+
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-6 leading-tight">
+          {fill(ap.h1_tpl)}
+        </h1>
+
+        <p class="text-xl text-th-muted mb-8 leading-relaxed">
+          {fill(ap.intro_tpl)}
+        </p>
+
+        <p class="text-th-body/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+          {city.description}
+        </p>
+
+        <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          {fill(ap.cta_tpl)}
+        </a>
+      </div>
+    </section>
+
+    <!-- Services in this city -->
+    <section class="py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-10">{fill(ap.services_heading)}</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.services.items.map((s: any) => (
+            <a href={`/${lang}/services/${s.id}`} class="card hover:border-th-border/20 transition-colors group">
+              <h3 class="font-display font-semibold text-th-heading text-lg mb-2 group-hover:text-brand-accent transition-colors">{s.title}</h3>
+              <p class="text-th-muted text-sm mb-4">{s.subtitle}</p>
+              <span class="text-brand-accent text-sm font-medium">{s.starting_price || t.services.get_quote}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas covered -->
+    <section class="py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-8">{fill(ap.areas_heading)}</h2>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-sm font-medium">
+            {city.name}
+          </span>
+          {city.nearby.map((area: string) => (
+            <span class="px-4 py-2 bg-th-surface/5 border border-th-border/10 rounded-full text-th-muted text-sm">
+              {area}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <FAQ t={t} />
+  </div>
+</BaseLayout>

@@ -17,6 +17,7 @@
     "@fontsource-variable/space-grotesk": "^5.2.10",
     "@fontsource-variable/syne": "^5.2.7",
     "astro": "^4.16.18",
+    "astro-critters": "^2.2.1",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {

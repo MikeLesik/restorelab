@@ -115,8 +115,14 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
                 role="group"
                 aria-label={`Before and after: ${c.title}`}
               >
-                <img src={c.after} alt={`After — ${c.title}`} class="absolute inset-0 w-full h-full object-cover" width="640" height="360" loading="lazy" decoding="async" />
-                <img src={c.before} alt={`Before — ${c.title}`} class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]" data-before-img width="640" height="360" loading="lazy" decoding="async" />
+                <picture>
+                  <source srcset={c.after.replace('.jpg', '.webp')} type="image/webp" />
+                  <img src={c.after} alt={`After — ${c.title}`} class="absolute inset-0 w-full h-full object-cover" width="640" height="360" loading="lazy" decoding="async" />
+                </picture>
+                <picture>
+                  <source srcset={c.before.replace('.jpg', '.webp')} type="image/webp" />
+                  <img src={c.before} alt={`Before — ${c.title}`} class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]" data-before-img width="640" height="360" loading="lazy" decoding="async" />
+                </picture>
                 <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg left-1/2" data-divider>
                   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize" role="slider" aria-label="Drag to compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
                     <svg class="w-4 h-4 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" /></svg>

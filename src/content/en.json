@@ -3,7 +3,7 @@
   "meta": {
     "home": {
       "title": "restoreLab — Mobile Surface Restoration in Sant Cugat & Barcelona",
-      "description": "Premium mobile paint correction, glass scratch removal and acrylic restoration. On-site service in Sant Cugat, Barcelona, Terrassa & Sabadell. No repainting. No replacement.",
+      "description": "Premium mobile paint correction, glass scratch removal & acrylic restoration in Sant Cugat & Barcelona. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
@@ -12,7 +12,7 @@
     },
     "car_paint": {
       "title": "Car Paint Correction & Polishing Sant Cugat | restoreLab",
-      "description": "Professional mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches and restore deep gloss. Ceramic coating preparation. No repainting needed."
+      "description": "Mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches & restore deep gloss. Ceramic prep available. No repaint."
     },
     "glass": {
       "title": "Glass Scratch Removal & Polishing Barcelona | restoreLab",
@@ -284,7 +284,7 @@
       {
         "icon": "rain",
         "question": "What happens if it rains or weather conditions are poor?",
-        "answer": "Glass and acrylic jobs can proceed in light rain. Paint correction and ceramic coating require dry conditions. We check the forecast in advance — if conditions are unsuitable, we reschedule at no charge and no inconvenience to you."
+        "answer": "<a href='/en/services/glass-polishing' class='text-brand-accent hover:underline'>Glass</a> and <a href='/en/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrylic</a> jobs can proceed in light rain. <a href='/en/services/car-paint-correction' class='text-brand-accent hover:underline'>Paint correction</a> and ceramic coating require dry conditions. We check the forecast in advance — if conditions are unsuitable, we reschedule at no charge and no inconvenience to you."
       },
       {
         "icon": "user",
@@ -294,7 +294,7 @@
       {
         "icon": "shield",
         "question": "What is your satisfaction guarantee?",
-        "answer": "Simple: if you are not satisfied with the result, we come back and redo it at zero extra cost. Premium ceramic packages include a 12-month coating protection warranty. The price you approve is always the price you pay — no surprises."
+        "answer": "Simple: if you are not satisfied with the result, we come back and redo it at zero extra cost. Premium ceramic packages include a 12-month coating protection warranty. The price you approve is always the price you pay — no surprises. See our <a href='/en/pricing' class='text-brand-accent hover:underline'>pricing</a> and <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
       }
     ]
   },
@@ -405,7 +405,9 @@
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "copyright": "© 2026 restoreLab. All rights reserved.",
-    "made_in": "Made in Spain."
+    "made_in": "Made in Spain.",
+    "gbp_url": "https://g.page/restorelab-santcugat",
+    "gbp_label": "Google Reviews"
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",
@@ -463,6 +465,34 @@
         "title": "Specialty Detailing: Motorcycle Protocols",
         "excerpt": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach and the art of cleaning metal and leather.",
         "slug": "motorcycle-detailing",
+        "status": "published"
+      },
+      {
+        "number": "07",
+        "title": "How to Remove Swirl Marks from Car Paint",
+        "excerpt": "Understanding what causes those circular scratches in your paint and the step-by-step professional process to eliminate them permanently.",
+        "slug": "remove-swirl-marks",
+        "status": "published"
+      },
+      {
+        "number": "08",
+        "title": "Windshield Scratch Repair: DIY vs Professional",
+        "excerpt": "When can you fix windshield scratches yourself and when should you call a professional? An honest comparison of methods, costs and results.",
+        "slug": "windshield-scratch-repair",
+        "status": "published"
+      },
+      {
+        "number": "09",
+        "title": "Car Paint Correction Cost Guide Barcelona 2025",
+        "excerpt": "What does professional paint correction actually cost in the Barcelona area? A transparent breakdown of pricing factors, package tiers and what affects the final quote.",
+        "slug": "paint-correction-cost-barcelona",
+        "status": "published"
+      },
+      {
+        "number": "10",
+        "title": "UV Damage on Acrylic Windows: Prevention & Restoration",
+        "excerpt": "How UV radiation degrades acrylic and polycarbonate surfaces over time, and the professional restoration process that brings them back to full transparency.",
+        "slug": "uv-damage-acrylic-restoration",
         "status": "published"
       }
     ]
@@ -818,6 +848,234 @@
           ]
         }
       ]
+    },
+    "remove_swirl_marks": {
+      "seo_title": "How to Remove Swirl Marks from Car Paint | restoreLab Academy",
+      "seo_description": "What causes swirl marks and how professionals remove them. Step-by-step correction process, tools used, and prevention tips.",
+      "title": "How to Remove Swirl Marks from Car Paint",
+      "description": "Understanding what causes those circular scratches visible under direct light — and the exact professional process to eliminate them permanently without damaging the clear coat.",
+      "intro": "Swirl marks are the most common paint defect we encounter. They appear as circular or spider-web-like scratches visible under direct sunlight or artificial lighting. At restoreLab, we see them on 9 out of 10 vehicles that come through our service.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "What Causes Swirl Marks?",
+          "paragraphs": [
+            "Swirl marks are micro-scratches in the clear coat caused by improper washing and drying techniques. The most common culprits are:"
+          ],
+          "key_params": [
+            "Automatic car washes with spinning brushes that drag dirt across the paint",
+            "Using a single bucket wash method without a grit guard",
+            "Wiping the car with a dry or dirty towel",
+            "Applying wax or polish with a contaminated applicator"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "The Professional Removal Process",
+          "paragraphs": [
+            "Removing swirl marks requires machine polishing — there is no chemical shortcut. The process involves controlled abrasion of the clear coat to level the surface below the depth of the scratches."
+          ],
+          "tools": [
+            { "label": "Step 1", "text": "Thorough wash and clay bar decontamination to remove all bonded contaminants." },
+            { "label": "Step 2", "text": "Paint depth measurement to determine safe polishing limits." },
+            { "label": "Step 3", "text": "Machine polishing with a dual action polisher, medium-cut compound and foam pad." },
+            { "label": "Step 4", "text": "Finishing pass with a fine polish to achieve maximum clarity." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Prevention: Keeping Swirls Away",
+          "paragraphs": [
+            "After correction, protecting the result is essential. Here are the key habits that prevent swirl marks from returning:"
+          ],
+          "key_params": [
+            "Use the two-bucket wash method with a grit guard in each bucket",
+            "Never use automatic car washes — hand wash only",
+            "Use high-quality microfiber towels and replace them regularly",
+            "Apply a ceramic coating or sealant for long-term protection"
+          ]
+        }
+      ]
+    },
+    "windshield_scratch_repair": {
+      "seo_title": "Windshield Scratch Repair: DIY vs Professional | restoreLab Academy",
+      "seo_description": "When to fix windshield scratches yourself and when to call a pro. Honest comparison of DIY kits vs professional glass polishing results.",
+      "title": "Windshield Scratch Repair: DIY vs Professional",
+      "description": "An honest comparison of do-it-yourself windshield repair kits versus professional glass polishing. We break down costs, risks, and when each approach makes sense.",
+      "intro": "Windshield scratches from worn wiper blades are one of the most common issues drivers face. The question is always the same: can I fix this myself, or do I need a professional? Here is our honest answer.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "DIY Kits: What They Can and Cannot Do",
+          "paragraphs": [
+            "DIY glass scratch removal kits typically include cerium oxide powder and a felt polishing wheel. They can work for very light surface scratches, but they have significant limitations."
+          ],
+          "key_params": [
+            "Effective only on scratches you cannot feel with your fingernail",
+            "Risk of creating optical distortion if applied unevenly",
+            "Typically require 2-4 hours of manual work per small area",
+            "Cost: €20-50 for a kit, but results are often inconsistent"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Professional Glass Polishing",
+          "paragraphs": [
+            "Professional glass polishing uses specialized equipment and compounds that work at a different level than DIY kits. The key difference is precision and consistency."
+          ],
+          "tools": [
+            { "label": "Equipment", "text": "Professional-grade rotary polisher with glass-specific pads and cerium oxide slurry." },
+            { "label": "Process", "text": "Controlled, measured passes that remove material evenly without creating distortion." },
+            { "label": "Result", "text": "Complete scratch removal with optical clarity maintained. Saves €300-500 vs windshield replacement." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "When to Choose Each Option",
+          "paragraphs": [],
+          "tools": [
+            { "label": "DIY", "text": "Hairline surface scratches on side windows where optical perfection is less critical." },
+            { "label": "Professional", "text": "Wiper scratches on windshield, deep scratches you can feel, or any scratch in the driver's line of sight." },
+            { "label": "Replace", "text": "Cracks, chips that have spread, or damage to the laminated layer of the windshield." }
+          ]
+        }
+      ]
+    },
+    "paint_correction_cost_barcelona": {
+      "seo_title": "Car Paint Correction Cost Guide Barcelona 2025 | restoreLab",
+      "seo_description": "What does paint correction cost in Barcelona? Transparent pricing guide with package breakdowns from 189 EUR. Factors that affect your quote.",
+      "title": "Car Paint Correction Cost Guide Barcelona 2025",
+      "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, and how to get the best value for your vehicle.",
+      "intro": "One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2025.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "What Affects the Price?",
+          "paragraphs": [
+            "Several factors determine the final cost of a paint correction job. Understanding them helps you know what to expect."
+          ],
+          "key_params": [
+            "Vehicle size: a compact car takes less time than an SUV or van",
+            "Paint condition: light swirls require one stage, deep scratches require two or three",
+            "Paint type: solid colors are straightforward; metallic and pearl finishes need more care",
+            "Protection level: adding ceramic coating increases the package price but adds long-term value"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Our Package Tiers",
+          "paragraphs": [
+            "At restoreLab, we offer three clearly defined packages so there are no surprises."
+          ],
+          "tools": [
+            { "label": "Base Correction", "text": "From 189 EUR. Single-stage polishing for light swirls and oxidation. Best for daily drivers with minor defects. Duration: 2-4 hours." },
+            { "label": "Ceramic Prep", "text": "From 339 EUR. Two-stage correction plus ceramic base coat. Best for vehicles preparing for ceramic coating. Duration: 3-5 hours." },
+            { "label": "Premium Ceramic", "text": "From 459 EUR. Multi-stage correction plus professional ceramic coating with 12-month guarantee. Best for luxury and sports cars. Duration: 6-8 hours." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "How to Get a Quote",
+          "paragraphs": [
+            "The fastest way to get an accurate quote is to send us photos of your vehicle via WhatsApp. We will assess the paint condition and recommend the right package — no obligations, no pressure."
+          ],
+          "key_params": [
+            "Send 4-6 photos in direct sunlight showing the paint from different angles",
+            "Include close-ups of the worst areas",
+            "Mention your vehicle make, model and year",
+            "We reply within 30 minutes on average with an honest assessment and price"
+          ]
+        }
+      ]
+    },
+    "uv_damage_acrylic_restoration": {
+      "seo_title": "UV Damage on Acrylic Windows: Prevention & Restoration | restoreLab Academy",
+      "seo_description": "How UV radiation degrades acrylic windows and the professional restoration process. Prevention tips and cost-effective alternatives to replacement.",
+      "title": "UV Damage on Acrylic Windows: Prevention & Restoration",
+      "description": "How ultraviolet radiation progressively degrades acrylic and polycarbonate surfaces, turning them yellow and hazy — and the professional restoration process that brings them back to full transparency.",
+      "intro": "Acrylic and polycarbonate windows are lightweight, impact-resistant, and widely used in boats, caravans, skylights, and architectural installations. But they have one weakness: UV radiation. Over time, UV breaks down the polymer chains, causing yellowing, hazing, and brittleness.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "How UV Damages Acrylic",
+          "paragraphs": [
+            "Ultraviolet light causes photo-oxidation in acrylic (PMMA) and polycarbonate surfaces. This chemical process degrades the surface layer, resulting in visible changes."
+          ],
+          "key_params": [
+            "Yellowing: the most visible sign, caused by chromophore formation in the polymer",
+            "Hazing: micro-crazing on the surface scatters light, reducing transparency",
+            "Brittleness: prolonged exposure weakens the material, making it prone to cracking",
+            "Timeline: noticeable degradation typically begins after 3-5 years of direct sun exposure"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "The Professional Restoration Process",
+          "paragraphs": [
+            "Unlike glass, acrylic can be restored by polishing because the material is softer and more uniform. The process involves progressively finer abrasives to remove the damaged surface layer."
+          ],
+          "tools": [
+            { "label": "Assessment", "text": "Evaluate the depth of UV damage and check for structural integrity." },
+            { "label": "Wet sanding", "text": "Starting with P800-P1200 grit to remove the oxidized layer. Acrylic must stay wet to prevent heat buildup." },
+            { "label": "Machine polishing", "text": "Progressive stages with dedicated acrylic compounds, moving from medium-cut to ultra-fine finish." },
+            { "label": "UV protection", "text": "Application of UV-stabilized coating to slow future degradation." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Prevention Tips",
+          "paragraphs": [
+            "Protecting acrylic from UV damage is more effective than restoring it after the fact. Here are professional recommendations:"
+          ],
+          "key_params": [
+            "Apply UV-protective coating annually to all exposed acrylic surfaces",
+            "Use covers when the surface is not in active use (boat covers, caravan shades)",
+            "Clean with pH-neutral cleaners only — avoid ammonia-based products",
+            "Never dry-wipe acrylic — always use a damp microfiber towel to prevent scratching"
+          ]
+        }
+      ]
     }
+  },
+  "area_pages": {
+    "meta_title_tpl": "Mobile Surface Restoration in {city} | restoreLab",
+    "meta_desc_tpl": "Professional mobile paint correction, glass polishing & acrylic restoration in {city}. We come to you. Free estimate via WhatsApp.",
+    "h1_tpl": "Surface Restoration in {city}",
+    "intro_tpl": "restoreLab provides premium mobile restoration services across {city} and surrounding areas. Our team comes directly to your location with all professional equipment — no need to visit a workshop.",
+    "services_heading": "Our Services in {city}",
+    "cta_tpl": "Get a Free Estimate in {city}",
+    "areas_heading": "Areas We Cover from {city}",
+    "cities": [
+      {
+        "slug": "sant-cugat",
+        "name": "Sant Cugat del Vallès",
+        "short": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "lat": 41.4736,
+        "lng": 2.0868,
+        "description": "Based in the heart of Sant Cugat, we serve the entire Vallès Occidental region. From residential communities to commercial parks, our mobile unit reaches you within 30 minutes.",
+        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+      },
+      {
+        "slug": "barcelona",
+        "name": "Barcelona",
+        "short": "Barcelona",
+        "region": "Barcelona Metropolitan Area",
+        "lat": 41.3851,
+        "lng": 2.1734,
+        "description": "Serving all Barcelona districts and surrounding municipalities. Whether you're in Eixample, Sarrià-Sant Gervasi or Badalona — we come to your parking spot with full professional equipment.",
+        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+      },
+      {
+        "slug": "terrassa",
+        "name": "Terrassa",
+        "short": "Terrassa",
+        "region": "Vallès Interior",
+        "lat": 41.5630,
+        "lng": 2.0089,
+        "description": "Our Vallès hub covers Terrassa, Sabadell and surrounding towns. Industrial estates, residential areas and underground parkings — we adapt to any location.",
+        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+      }
+    ]
   }
 }

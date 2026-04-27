@@ -121,7 +121,7 @@ const avatarColors = [
 
     <!-- Google link -->
     <a
-      href="https://www.google.com/maps/search/restoreLab+Sant+Cugat"
+      href={t.footer.gbp_url || "https://g.page/restorelab-santcugat"}
       target="_blank"
       rel="noopener noreferrer"
       class="inline-flex items-center gap-2 text-sm text-th-faint hover:text-th-muted transition-colors group"
@@ -139,6 +139,24 @@ const avatarColors = [
     </a>
   </div>
 </section>
+
+<!-- Review Schema (SEO) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "restoreLab",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": t.social_proof.rating,
+    "reviewCount": "47"
+  },
+  "review": t.social_proof.testimonials.map((r: any) => ({
+    "@type": "Review",
+    "author": { "@type": "Person", "name": r.name },
+    "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 },
+    "reviewBody": r.text
+  }))
+})} />
 
 <script>
   const track = document.getElementById('t-track') as HTMLElement;

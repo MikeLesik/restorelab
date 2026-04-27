@@ -95,25 +95,31 @@ const categoryColors: Record<string, string> = {
                   role="group"
                   aria-label={`Before and after: ${c.title}`}
                 >
-                  <img
-                    src={c.after}
-                    alt={`After — ${c.title}`}
-                    class="absolute inset-0 w-full h-full object-cover"
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <img
-                    src={c.before}
-                    alt={`Before — ${c.title}`}
-                    class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]"
-                    data-ba-before
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source srcset={c.after.replace('.jpg', '.webp')} type="image/webp" />
+                    <img
+                      src={c.after}
+                      alt={`After — ${c.title}`}
+                      class="absolute inset-0 w-full h-full object-cover"
+                      width="640"
+                      height="477"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                  <picture>
+                    <source srcset={c.before.replace('.jpg', '.webp')} type="image/webp" />
+                    <img
+                      src={c.before}
+                      alt={`Before — ${c.title}`}
+                      class="absolute inset-0 w-full h-full object-cover [clip-path:inset(0_50%_0_0)]"
+                      data-ba-before
+                      width="640"
+                      height="477"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <!-- Divider -->
                   <div class="absolute top-0 bottom-0 w-0.5 bg-white/80 shadow-lg left-1/2" data-ba-divider>
                     <div
