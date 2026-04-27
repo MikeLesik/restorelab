@@ -164,6 +164,39 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <Footer t={t} lang={lang} />
     <StickyCTA label={t.hero.sticky_cta} t={t} />
 
+    <!-- ── Brand name styling: "Lab" in accent color ── -->
+    <script is:inline>
+      (function(){
+        var walker = document.createTreeWalker(
+          document.querySelector('main') || document.body,
+          NodeFilter.SHOW_TEXT,
+          null
+        );
+        var nodes = [];
+        while (walker.nextNode()) {
+          if (walker.currentNode.nodeValue && walker.currentNode.nodeValue.indexOf('restoreLab') !== -1) {
+            nodes.push(walker.currentNode);
+          }
+        }
+        // Also check footer
+        var fw = document.createTreeWalker(
+          document.querySelector('footer') || document.body,
+          NodeFilter.SHOW_TEXT,
+          null
+        );
+        while (fw.nextNode()) {
+          if (fw.currentNode.nodeValue && fw.currentNode.nodeValue.indexOf('restoreLab') !== -1) {
+            nodes.push(fw.currentNode);
+          }
+        }
+        nodes.forEach(function(node) {
+          var span = document.createElement('span');
+          span.innerHTML = node.nodeValue.replace(/restoreLab/g, 'restore<span class="text-brand-accent font-semibold">Lab</span>');
+          node.parentNode.replaceChild(span, node);
+        });
+      })();
+    </script>
+
     <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
     <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId }}>
       // ── Loaders (called after consent) ──────────────────────────────────────
