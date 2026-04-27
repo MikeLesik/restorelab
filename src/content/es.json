@@ -2,41 +2,37 @@
   "lang": "es",
   "meta": {
     "home": {
-      "title": "restoreLab — Restauración Móvil de Superficies en Lisboa & Cascais",
-      "description": "Servicio premium móvil de corrección de pintura, eliminación de arañazos en vidrio y restauración de gelcoat de yates. Servicio en Lisboa, Cascais, Sintra y Oeiras. Sin repintura. Sin sustitución.",
+      "title": "restoreLab — Restauración Móvil de Superficies en Sant Cugat y Barcelona",
+      "description": "Servicio premium móvil de corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio en Sant Cugat, Barcelona, Terrassa y Sabadell. Sin repintura. Sin sustitución.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Servicios — Restauración Auto, Vidrio y Yate | restoreLab",
-      "description": "Corrección de pintura de automóvil, pulido de vidrio, restauración de acrílico y pulido de gelcoat de yates. Servicio móvil en Lisboa y Cascais."
+      "title": "Servicios — Restauración Auto, Vidrio y Acrílico | restoreLab",
+      "description": "Corrección de pintura de automóvil, pulido de vidrio y restauración de acrílico. Servicio móvil en Sant Cugat y Barcelona."
     },
     "car_paint": {
-      "title": "Corrección de Pintura Automóvil Lisboa | restoreLab",
-      "description": "Corrección de pintura móvil profesional en Lisboa. Elimine swirl marks, arañazos y restaure el brillo profundo. Preparación para recubrimiento cerámico. Sin repintura."
+      "title": "Corrección de Pintura Automóvil Sant Cugat | restoreLab",
+      "description": "Corrección de pintura móvil profesional en Sant Cugat y Barcelona. Elimine swirl marks, arañazos y restaure el brillo profundo. Preparación para recubrimiento cerámico. Sin repintura."
     },
     "glass": {
-      "title": "Eliminación de Arañazos en Vidrio Lisboa | restoreLab",
-      "description": "Elimine arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Lisboa, Cascais y Sintra. Sin sustitución."
+      "title": "Eliminación de Arañazos en Vidrio Barcelona | restoreLab",
+      "description": "Elimine arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Sant Cugat, Barcelona y Terrassa. Sin sustitución."
     },
     "acrylic": {
-      "title": "Restauración de Acrílico y Policarbonato Portugal | restoreLab",
-      "description": "Restauración de ventanas de yates, escotillas y paneles plásticos. Eliminación de oxidación UV. Alternativa económica a la sustitución."
-    },
-    "yacht": {
-      "title": "Pulido de Gelcoat de Yate Cascais | restoreLab",
-      "description": "Pulido profesional de gelcoat y eliminación de oxidación en las marinas de Cascais. Acabado de calidad marina. Servicio móvil en el área de Lisboa."
+      "title": "Restauración de Acrílico y Policarbonato España | restoreLab",
+      "description": "Restauración de paneles transparentes, ventanas y escotillas. Eliminación de oxidación UV. Alternativa económica a la sustitución."
     },
     "pricing": {
-      "title": "Precios — Pulido Auto y Restauración de Yate | restoreLab",
-      "description": "Precios transparentes para corrección de pintura, pulido de vidrio y restauración de gelcoat. Paquetes desde 189€. Presupuesto gratuito por WhatsApp."
+      "title": "Precios — Pulido Auto y Restauración de Superficies | restoreLab",
+      "description": "Precios transparentes para corrección de pintura, pulido de vidrio y restauración de acrílico. Paquetes desde 189€. Presupuesto gratuito por WhatsApp."
     },
     "cases": {
       "title": "Antes y Después — restoreLab",
-      "description": "Resultados reales de nuestro trabajo de restauración móvil. Corrección de pintura, pulido de vidrio y restauración de gelcoat en Portugal."
+      "description": "Resultados reales de nuestro trabajo de restauración móvil. Corrección de pintura, pulido de vidrio y restauración de acrílico en España."
     },
     "contact": {
       "title": "Contacto restoreLab — Presupuesto Gratuito",
-      "description": "Contacte restoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Lisboa, Cascais y Sintra."
+      "description": "Contacte restoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Sant Cugat, Barcelona y Terrassa."
     },
     "privacy": {
       "title": "Política de Privacidad | restoreLab",
@@ -65,13 +61,12 @@
   },
   "hero": {
     "headline": "Restaurar. No Sustituir.",
-    "subheadline": "Restauración móvil de pintura, cristal y yate en Portugal — venimos a ti. Ahorra hasta un 70% frente al reemplazo.",
+    "subheadline": "Restauración móvil de pintura, cristal y acrílico en España — venimos a ti. Ahorra hasta un 70% frente al reemplazo.",
     "cta_primary": "Presupuesto Gratis por WhatsApp",
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
     "trust_pills": ["★ 5.0 Google", "47+ Reseñas", "500+ Trabajos", "100% Móvil"],
     "cta_car": "Restauración Auto",
-    "cta_yacht": "Restauración de Yate",
     "sticky_cta": "Presupuesto via WhatsApp",
     "badge": "★ Valorado 5.0 • 500+ Trabajos"
   },
@@ -80,38 +75,31 @@
     "reviews_count": "47+ reseñas",
     "platform": "Google Reviews",
     "areas": [
-      "Lisboa",
-      "Cascais",
-      "Sintra",
-      "Oeiras"
+      "Sant Cugat",
+      "Barcelona",
+      "Terrassa",
+      "Sabadell"
     ],
     "areas_label": "Áreas de servicio",
     "testimonials": [
       {
         "name": "David M.",
-        "location": "Cascais",
+        "location": "Sant Cugat",
         "text": "Resultado increíble en mi BMW. Los arañazos profundos desaparecieron por completo, la pintura parece nueva. Vinieron a mi aparcamiento, sin complicaciones. Muy recomendado.",
         "rating": 5,
         "service": "Corrección de Pintura"
       },
       {
         "name": "Sofia R.",
-        "location": "Lisboa",
+        "location": "Barcelona",
         "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. restoreLab los eliminó por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
         "rating": 5,
         "service": "Pulido de Vidrio"
       },
       {
-        "name": "João A.",
-        "location": "Marina de Oeiras",
-        "text": "El gelcoat de nuestro yate estaba muy oxidado. Después del tratamiento parece que acabamos de comprar el barco. Profesional, rápido y excelente relación calidad-precio.",
-        "rating": 5,
-        "service": "Gelcoat de Yate"
-      },
-      {
         "name": "Anna K.",
-        "location": "Sintra",
-        "text": "Las ventanas de acrílico de mi barco estaban completamente amarillas. Ahora están cristalinas. Transformación increíble — no puedo creer que sea el mismo barco.",
+        "location": "Terrassa",
+        "text": "Las ventanas de acrílico de mi proyecto estaban completamente amarillas. Ahora están cristalinas. Transformación increíble — no puedo creer la diferencia.",
         "rating": 5,
         "service": "Restauración de Acrílico"
       }
@@ -152,7 +140,7 @@
       {
         "id": "acrylic-restoration",
         "title": "Acrílico y Policarbonato",
-        "subtitle": "Ventanas de yate, escotillas y paneles transparentes",
+        "subtitle": "Ventanas, escotillas y paneles transparentes",
         "icon": "acrylic",
         "features": [
           "Eliminación de oxidación UV",
@@ -161,20 +149,6 @@
         ],
         "cta_label": "Presupuesto Acrílico",
         "tag": null
-      },
-      {
-        "id": "yacht-gelcoat",
-        "title": "Pulido de Gelcoat de Yate",
-        "subtitle": "Eliminación de oxidación y acabado marino",
-        "icon": "yacht",
-        "starting_price": "Desde 15€/pie (≈ 49€/m)",
-        "features": [
-          "Eliminación de oxidación",
-          "Recuperación del brillo y protección",
-          "En el puerto, sin varada"
-        ],
-        "cta_label": "Presupuesto Yate",
-        "tag": "Especialistas en yates"
       }
     ],
     "learn_more": "Saber más",
@@ -197,7 +171,7 @@
       {
         "number": "03",
         "title": "Vamos a Usted",
-        "description": "Llegamos a tu casa, oficina, aparcamiento o puerto con todo el equipo profesional."
+        "description": "Llegamos a tu casa, oficina o aparcamiento con todo el equipo profesional."
       },
       {
         "number": "04",
@@ -268,26 +242,6 @@
         ]
       },
       {
-        "id": "yacht",
-        "title": "Pulido de Gelcoat de Yate",
-        "packages": [
-          {
-            "name": "Pulido de Gelcoat",
-            "price": "desde 15€/pie",
-            "duration": "Depende del tamaño",
-            "description": "Eliminación completa de oxidación y restauración del brillo del gelcoat.",
-            "includes": [
-              "Eliminación de oxidación",
-              "Pulido mecánico hasta alto brillo",
-              "Cera o sellante protector",
-              "Servicio en marina"
-            ],
-            "best_for": "Veleros y motoras hasta 50 pies",
-            "highlight": false
-          }
-        ]
-      },
-      {
         "id": "glass",
         "title": "Vidrio y Acrílico",
         "packages": [
@@ -302,7 +256,7 @@
               "Eliminación de manchas de agua y arañazos",
               "Recubrimiento hidrofóbico (opcional)"
             ],
-            "best_for": "Parabrisas, ventanas laterales, ojos de buey de yate",
+            "best_for": "Parabrisas, ventanas laterales, paneles acrílicos",
             "highlight": false
           }
         ]
@@ -320,12 +274,12 @@
       {
         "icon": "bolt",
         "question": "¿Necesito proporcionar enchufes eléctricos o suministro de agua?",
-        "answer": "No — somos 100% autosuficientes. Traemos nuestro propio generador, máquinas pulidoras profesionales y suministro de agua. Solo necesitas proporcionarnos una plaza de aparcamiento o acceso al amarre."
+        "answer": "No — somos 100% autosuficientes. Traemos nuestro propio generador, máquinas pulidoras profesionales y suministro de agua. Solo necesitas proporcionarnos una plaza de aparcamiento."
       },
       {
         "icon": "space",
-        "question": "¿Cuánto espacio libre necesitan alrededor del coche o barco?",
-        "answer": "Para un coche: idealmente 1 metro de espacio libre a cada lado de trabajo — una plaza de aparcamiento estándar es suficiente. Para trabajos en yates, operamos directamente en tu amarre, sin necesidad de sacarlo del agua."
+        "question": "¿Cuánto espacio libre necesitan alrededor del coche?",
+        "answer": "Idealmente 1 metro de espacio libre a cada lado de trabajo — una plaza de aparcamiento estándar es suficiente."
       },
       {
         "icon": "rain",
@@ -335,7 +289,7 @@
       {
         "icon": "user",
         "question": "¿Necesito estar presente durante todo el servicio?",
-        "answer": "Para nada. La mayoría de los clientes dejan el coche o el barco y siguen con su día. Solo déjanos acceso al vehículo y un número de contacto. Te enviamos un informe fotográfico cuando el trabajo esté terminado."
+        "answer": "Para nada. La mayoría de los clientes dejan el coche y siguen con su día. Solo déjanos acceso al vehículo y un número de contacto. Te enviamos un informe fotográfico cuando el trabajo esté terminado."
       },
       {
         "icon": "shield",
@@ -345,28 +299,28 @@
     ]
   },
   "area": {
-    "section_title": "Cubrimos Todo Portugal",
+    "section_title": "Cubrimos el Área Metropolitana de Barcelona",
     "section_subtitle": "3 bases operativas — vamos a donde estés",
     "cta_prefix": "Presupuesto en",
-    "travel_note": "¿Proyecto grande de yate o flota fuera de estas áreas? Viajamos — solo pregunta.",
+    "travel_note": "¿Proyecto grande o flota fuera de estas áreas? Viajamos — solo pregunta.",
     "hubs": [
       {
-        "city": "Porto",
-        "region": "Norte de Portugal",
-        "coverage": "Radio de 50 km",
-        "areas": ["Porto", "Matosinhos", "Vila Nova de Gaia", "Braga", "Guimarães", "Aveiro"]
+        "city": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "coverage": "Radio de 20 km",
+        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
       },
       {
-        "city": "Lisboa",
-        "region": "Área Metropolitana de Lisboa",
-        "coverage": "Radio de 60 km",
-        "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada", "Setúbal"]
+        "city": "Barcelona",
+        "region": "Área Metropolitana de Barcelona",
+        "coverage": "Radio de 30 km",
+        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
       },
       {
-        "city": "Faro",
-        "region": "Algarve",
-        "coverage": "Toda la Costa del Algarve",
-        "areas": ["Faro", "Portimão", "Lagos", "Albufeira", "Vilamoura", "Tavira"]
+        "city": "Vallès",
+        "region": "Vallès Interior",
+        "coverage": "Radio de 30 km",
+        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
       }
     ]
   },
@@ -388,17 +342,16 @@
       "name": "Su Nombre",
       "name_placeholder": "Juan García",
       "phone": "Teléfono / WhatsApp",
-      "phone_placeholder": "+351 9XX XXX XXX",
+      "phone_placeholder": "+34 6XX XXX XXX",
       "service": "Servicio Requerido",
       "service_options": [
         "Corrección de Pintura Auto",
         "Eliminación de Arañazos en Vidrio",
         "Restauración de Acrílico / Policarbonato",
-        "Pulido de Gelcoat de Yate",
         "Otro / No estoy seguro"
       ],
       "location": "Su Ubicación",
-      "location_placeholder": "ej: Cascais, nombre de la marina...",
+      "location_placeholder": "ej: Sant Cugat, Barcelona...",
       "message": "Detalles Adicionales",
       "message_placeholder": "Describa los daños o el problema. Cuanto más detalle, mejor el presupuesto.",
       "photo_note": "También puede enviar fotos directamente por WhatsApp después de enviar el formulario.",
@@ -414,8 +367,8 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
     "copyright": "© 2026 restoreLab. Todos los derechos reservados.",
-    "made_in": "Hecho en Portugal.",
-    "trust": "Con la confianza de más de 500 clientes en Lisboa y Cascais"
+    "made_in": "Hecho en España.",
+    "trust": "Con la confianza de más de 500 clientes en Sant Cugat y Barcelona"
   },
   "guarantee": {
     "section_title": "Cero Riesgo. Garantizado.",
@@ -444,14 +397,14 @@
   },
   "cases_section": {
     "section_title": "Antes y Después",
-    "section_subtitle": "Resultados reales de nuestro servicio móvil de restauración en Lisboa y Cascais",
+    "section_subtitle": "Resultados reales de nuestro servicio móvil de restauración en Sant Cugat y Barcelona",
     "view_all": "Ver Todos los Casos"
   },
   "pre_footer_cta": {
     "title": "¿Listo para restaurar?",
     "subtitle": "Envíanos una foto y recibe un presupuesto honesto en menos de 30 minutos. Sin compromiso ni costes ocultos.",
     "cta": "Enviar fotos por WhatsApp",
-    "trust_pill": "5.0 · 500+ trabajos en Lisboa y Cascais",
+    "trust_pill": "5.0 · 500+ trabajos en Sant Cugat y Barcelona",
     "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
   },
   "academy": {

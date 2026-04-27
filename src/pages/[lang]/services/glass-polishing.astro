@@ -6,20 +6,18 @@ import FAQ from '@/components/FAQ.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
-import pt from '@/content/pt.json';
 
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' }, props: { t: en } },
     { params: { lang: 'es' }, props: { t: es } },
-    { params: { lang: 'pt' }, props: { t: pt } },
   ];
 }
 
 const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'glass-polishing');
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '34680265190';
 const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Glass+Polishing.`;
 ---
 
@@ -86,7 +84,7 @@ const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Glas
       "@type": "Service",
       "serviceType": "Glass Scratch Removal",
       "provider": { "@type": "LocalBusiness", "name": "restoreLab" },
-      "areaServed": ["Lisboa", "Cascais", "Sintra", "Oeiras"],
+      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"],
       "description": t.meta.glass.description
     })} />
 

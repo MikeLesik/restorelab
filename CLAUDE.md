@@ -2,7 +2,7 @@
 
 ## Project Overview
 RestoreLab (restorelab.io) — premium mobile surface restoration service website.
-Business area: Lisbon, Cascais, Sintra, Oeiras, Almada (Portugal).
+Business area: Sant Cugat del Vallès, Barcelona, Terrassa, Sabadell, Rubí (Spain).
 Primary conversion channel: WhatsApp. Secondary: lead form.
 
 ## Tech Stack
@@ -14,12 +14,12 @@ Primary conversion channel: WhatsApp. Secondary: lead form.
 - **Domain**: restorelab.io
 
 ## i18n Architecture
-- 3 languages: EN (default), ES, PT
-- Content lives in `src/content/{en,es,pt}.json` — imported as plain JSON (NOT Astro Content Collections)
-- All routes: `src/pages/[lang]/...` with `getStaticPaths()` returning `[{params:{lang:'en'},props:{t:en}}, ...]`
-- Root `/` redirects to `/en` via `public/_redirects`
+- 2 languages: ES (default), EN
+- Content lives in `src/content/{en,es}.json` — imported as plain JSON (NOT Astro Content Collections)
+- All routes: `src/pages/[lang]/...` with `getStaticPaths()` returning `[{params:{lang:'en'},props:{t:en}}, {params:{lang:'es'},props:{t:es}}]`
+- Root `/` redirects to `/es` via `public/_redirects` + Cloudflare edge function (`functions/index.ts`)
 - Every component receives `t` (translations object) and `lang` as props
-- **Any new user-facing text MUST be added to all 3 JSON files**
+- **Any new user-facing text MUST be added to both JSON files (en, es)**
 
 ## Project Structure
 ```
@@ -38,7 +38,6 @@ src/
         index.astro               — services listing
         car-paint-correction.astro
         glass-polishing.astro
-        yacht-gelcoat.astro
         acrylic-restoration.astro
   components/
     Header.astro                  — nav, language switcher, mobile menu
@@ -60,12 +59,12 @@ src/
     constants.ts                  — WHATSAPP_NUMBER, SITE_URL (from env vars)
     calculatorConfig.ts           — calculator pricing data
   content/
-    en.json, es.json, pt.json    — all translatable content
+    en.json, es.json             — all translatable content
   styles/
     global.css                    — @fontsource imports, Tailwind layers, utility classes
 public/
   _headers                        — Cloudflare security headers (CSP, HSTS, cache)
-  _redirects                      — / → /en
+  _redirects                      — / → /es
   robots.txt                      — sitemap reference
   images/                         — static images
 ```
@@ -73,7 +72,7 @@ public/
 ## Content JSON Structure
 Each `{lang}.json` has these top-level keys:
 - `lang` — language code
-- `meta` — per-page SEO (title, description) keyed by: `home`, `services`, `car_paint`, `glass`, `acrylic`, `yacht`, `pricing`, `cases`, `contact`, `privacy`, `terms`
+- `meta` — per-page SEO (title, description) keyed by: `home`, `services`, `car_paint`, `glass`, `acrylic`, `pricing`, `cases`, `contact`, `privacy`, `terms`
 - `nav` — navigation labels
 - `hero` — homepage hero content
 - `social_proof` — rating, testimonials array
@@ -91,7 +90,7 @@ Each `{lang}.json` has these top-level keys:
 ## Environment Variables
 Defined in `.env`, reference in `.env.example`:
 ```
-PUBLIC_WHATSAPP_NUMBER=351933817788   # digits only, with country code
+PUBLIC_WHATSAPP_NUMBER=34680265190    # digits only, with country code
 PUBLIC_SITE_URL=https://restorelab.io
 PUBLIC_GTM_ID=GTM-W34GRX86
 PUBLIC_CLARITY_ID=vmc619bvp9
@@ -121,18 +120,18 @@ Reusable CSS classes in `global.css`: `.btn-primary`, `.btn-secondary`, `.btn-wh
 ```bash
 npm run dev       # dev server
 npm run check     # TypeScript check
-npm run build     # astro check && astro build (34 pages → dist/)
+npm run build     # astro check && astro build (35 pages → dist/)
 npm run preview   # preview built site
 ```
 
 ## Build Output
-- 34 static pages (3 langs × 10 routes + 4 service subpages)
+- 35 static pages (2 langs × 10 routes + 3 service subpages per lang + academy pages)
 - Sitemap: `dist/sitemap-index.xml`
 - Build must pass with 0 errors and 0 warnings
 
 ## SEO & Tracking
 - JSON-LD schemas: `LocalBusiness` (BaseLayout), `Service` (each service page), `FAQPage` (FAQ component)
-- hreflang: EN/ES/PT + x-default → EN
+- hreflang: EN/ES + x-default → ES
 - OpenGraph + Twitter Card meta on every page
 - Tracking loaded after CookieConsent v3: GTM → analytics, Clarity → analytics, Meta Pixel → marketing
 - `data-event` attributes on CTA links for GTM event delegation
@@ -145,8 +144,8 @@ npm run preview   # preview built site
 - `.env` is gitignored, secrets never committed
 
 ## Critical Rules — DO NOT BREAK
-1. **Routing**: `/en`, `/es`, `/pt` prefix on all routes — never create routes without `[lang]`
-2. **Translations**: any new text → add to ALL 3 JSON files (en, es, pt)
+1. **Routing**: `/en`, `/es` prefix on all routes — never create routes without `[lang]`
+2. **Translations**: any new text → add to BOTH JSON files (en, es)
 3. **WhatsApp links**: always use `WHATSAPP_NUMBER` from `constants.ts`, never hardcode
 4. **Imports**: always use `@/` alias, never relative (`../../`)
 5. **Colors**: use `brand-*` tokens from Tailwind theme, never hardcode hex in templates
@@ -157,13 +156,11 @@ npm run preview   # preview built site
 ## Service IDs (used in JSON and route matching)
 - `car-paint-correction` → route: `/services/car-paint-correction`
 - `glass-polishing` → route: `/services/glass-polishing`
-- `yacht-gelcoat` → route: `/services/yacht-gelcoat`
 - `acrylic-restoration` → route: `/services/acrylic-restoration`
 
 ## Pricing Category IDs (PricingCards `categoryId` prop)
 - `car` — car paint correction plans
 - `glass` — glass polishing plans
-- `yacht` — yacht gelcoat plans
 - `acrylic` — acrylic restoration plans
 
 ## Git Conventions

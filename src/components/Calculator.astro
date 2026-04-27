@@ -49,10 +49,6 @@ const wa = WHATSAPP_NUMBER;
             <span class="block font-semibold text-white text-sm">Glass Polishing</span>
             <span class="block text-white/40 text-xs mt-0.5">Windshields, windows &amp; glass surfaces</span>
           </button>
-          <button data-value="yacht_gelcoat" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
-            <span class="block font-semibold text-white text-sm">Yacht Gelcoat</span>
-            <span class="block text-white/40 text-xs mt-0.5">Oxidation removal &amp; marine finishing</span>
-          </button>
         </div>
 
         <!-- Back button -->
@@ -86,7 +82,6 @@ const wa = WHATSAPP_NUMBER;
     | 'vehicleSize'
     | 'glassType'
     | 'areaSize'
-    | 'boatLength'
     | 'condition'
     | 'location';
 
@@ -96,7 +91,6 @@ const wa = WHATSAPP_NUMBER;
     vehicleSize: string | null;
     glassType: string | null;
     areaSize: string | null;
-    boatLength: string | null;
     condition: string | null;
     location: string | null;
     isResult: boolean;
@@ -109,7 +103,6 @@ const wa = WHATSAPP_NUMBER;
     vehicleSize: null,
     glassType: null,
     areaSize: null,
-    boatLength: null,
     condition: null,
     location: null,
     isResult: false,
@@ -121,7 +114,6 @@ const wa = WHATSAPP_NUMBER;
     state.vehicleSize = null;
     state.glassType = null;
     state.areaSize = null;
-    state.boatLength = null;
     state.condition = null;
     state.location = null;
     state.isResult = false;
@@ -132,7 +124,6 @@ const wa = WHATSAPP_NUMBER;
     if (!state.service) return ['service'];
     if (state.service === 'car_paint')     return ['service', 'vehicleSize',  'condition', 'location'];
     if (state.service === 'glass')         return ['service', 'glassType', 'areaSize', 'condition', 'location'];
-    if (state.service === 'yacht_gelcoat') return ['service', 'boatLength',  'condition', 'location'];
     return ['service'];
   }
 
@@ -141,7 +132,6 @@ const wa = WHATSAPP_NUMBER;
     service: [
       { value: 'car_paint',     label: 'Car Paint Correction', sub: 'Swirl marks, scratches & gloss restoration' },
       { value: 'glass',         label: 'Glass Polishing',      sub: 'Windshields, windows & glass surfaces' },
-      { value: 'yacht_gelcoat', label: 'Yacht Gelcoat',        sub: 'Oxidation removal & marine finishing' },
     ],
     vehicleSize: [
       { value: 's',        label: 'Hatchback / Sedan',  sub: 'Small car' },
@@ -162,13 +152,6 @@ const wa = WHATSAPP_NUMBER;
       { value: 'large',    label: 'Large',    sub: 'Full panel or multiple areas' },
       { value: 'not_sure', label: 'Not sure', sub: '' },
     ],
-    boatLength: [
-      { value: 'le_25',         label: '≤ 25 ft' },
-      { value: 'from_26_to_30', label: '26–30 ft' },
-      { value: 'from_31_to_40', label: '31–40 ft' },
-      { value: 'gt_41',         label: '41+ ft' },
-      { value: 'not_sure',      label: 'Not sure' },
-    ],
     condition: [
       { value: 'light',    label: 'Light',    sub: 'Minor swirls or surface marks' },
       { value: 'medium',   label: 'Medium',   sub: 'Noticeable scratches or dullness' },
@@ -176,12 +159,11 @@ const wa = WHATSAPP_NUMBER;
       { value: 'not_sure', label: 'Not sure', sub: '' },
     ],
     location: [
-      { value: 'lisbon',        label: 'Lisbon' },
-      { value: 'cascais',       label: 'Cascais' },
-      { value: 'oeiras_sintra', label: 'Oeiras / Sintra' },
-      { value: 'almada',        label: 'Almada' },
-      { value: 'setubal',       label: 'Setúbal' },
-      { value: 'other',         label: 'Other area' },
+      { value: 'sant_cugat',         label: 'Sant Cugat' },
+      { value: 'barcelona',         label: 'Barcelona' },
+      { value: 'terrassa_sabadell', label: 'Terrassa / Sabadell' },
+      { value: 'rubi',              label: 'Rubí' },
+      { value: 'other',             label: 'Other area' },
     ],
   };
 
@@ -190,20 +172,18 @@ const wa = WHATSAPP_NUMBER;
     vehicleSize: 'What is your vehicle size?',
     glassType:   'What type of glass is it?',
     areaSize:    'How large is the affected area?',
-    boatLength:  'Boat length',
     condition:   'How would you describe the condition?',
     location:    'Where is the object located?',
   };
 
   // Label maps for WhatsApp message
   const LABELS: Partial<Record<StepName, Record<string, string>>> = {
-    service:     { car_paint: 'Car Paint Correction', glass: 'Glass Polishing', yacht_gelcoat: 'Yacht Gelcoat' },
+    service:     { car_paint: 'Car Paint Correction', glass: 'Glass Polishing' },
     vehicleSize: { s: 'Hatchback / Sedan', m: 'Wagon / Crossover', l: 'SUV / Van', not_sure: 'Not sure' },
     glassType:   { car_side: 'Car Side Window', windshield: 'Car Windshield', home_window: 'Home Window', shower_glass: 'Shower Glass', other: 'Other' },
     areaSize:    { small: 'Small', medium: 'Medium', large: 'Large', not_sure: 'Not sure' },
-    boatLength:  { le_25: '≤25 ft', from_26_to_30: '26-30 ft', from_31_to_40: '31-40 ft', gt_41: '41+ ft', not_sure: 'Not sure' },
     condition:   { light: 'Light', medium: 'Medium', heavy: 'Heavy', not_sure: 'Not sure' },
-    location:    { lisbon: 'Lisbon', cascais: 'Cascais', oeiras_sintra: 'Oeiras / Sintra', almada: 'Almada', setubal: 'Setúbal', other: 'Other area' },
+    location:    { sant_cugat: 'Sant Cugat', barcelona: 'Barcelona', terrassa_sabadell: 'Terrassa / Sabadell', rubi: 'Rubí', other: 'Other area' },
   };
 
   // Grid layout per step
@@ -212,7 +192,6 @@ const wa = WHATSAPP_NUMBER;
     vehicleSize: 'grid grid-cols-1 sm:grid-cols-2 gap-3',
     glassType:   'grid grid-cols-1 sm:grid-cols-2 gap-3',
     areaSize:    'grid grid-cols-1 sm:grid-cols-2 gap-3',
-    boatLength:  'grid grid-cols-1 sm:grid-cols-2 gap-3',
     condition:   'grid grid-cols-1 gap-3',
     location:    'grid grid-cols-2 sm:grid-cols-3 gap-3',
   };
@@ -291,7 +270,6 @@ const wa = WHATSAPP_NUMBER;
       case 'vehicleSize': state.vehicleSize = value; break;
       case 'glassType':   state.glassType   = value; break;
       case 'areaSize':    state.areaSize    = value; break;
-      case 'boatLength':  state.boatLength  = value; break;
       case 'condition':   state.condition   = value; break;
       case 'location':    state.location    = value; break;
     }
@@ -324,9 +302,8 @@ const wa = WHATSAPP_NUMBER;
       vehicleSize: state.vehicleSize  ?? undefined,
       glassType:   state.glassType    ?? undefined,
       areaSize:    state.areaSize     ?? undefined,
-      boatLength:  state.boatLength   ?? undefined,
       condition:   state.condition    ?? 'not_sure',
-      location:    state.location     ?? 'lisbon',
+      location:    state.location     ?? 'sant_cugat',
     };
 
     const result = calculate(input);
@@ -346,8 +323,7 @@ const wa = WHATSAPP_NUMBER;
     const serviceLabel = LABELS.service?.[state.service ?? ''] ?? state.service ?? '';
     const sizeLabel =
       state.service === 'car_paint'     ? (LABELS.vehicleSize?.[state.vehicleSize ?? ''] ?? '') :
-      state.service === 'glass'         ? (LABELS.glassType?.[state.glassType ?? ''] ?? '') :
-                                          (LABELS.boatLength?.[state.boatLength ?? ''] ?? '');
+                                          (LABELS.glassType?.[state.glassType ?? ''] ?? '');
     const areaLabel    = state.areaSize  ? ` (${LABELS.areaSize?.[state.areaSize]   ?? state.areaSize})` : '';
     const condLabel    = LABELS.condition?.[state.condition  ?? ''] ?? state.condition ?? '';
     const locLabel     = LABELS.location?.[state.location    ?? ''] ?? state.location  ?? '';
@@ -412,17 +388,6 @@ const wa = WHATSAPP_NUMBER;
       warnText.textContent = result.warning;
       warningBox.appendChild(warnText);
       wrapper.appendChild(warningBox);
-    }
-
-    // Yacht note
-    if (state.service === 'yacht_gelcoat') {
-      const yachtNote = document.createElement('div');
-      yachtNote.className = 'p-3 bg-brand-accent/5 border border-brand-accent/15 rounded-xl mb-4';
-      const yachtP = document.createElement('p');
-      yachtP.className = 'text-xs text-brand-accent/80';
-      yachtP.textContent = 'Typical base starts from €15/ft (≈ €49/m), depending on oxidation and access.';
-      yachtNote.appendChild(yachtP);
-      wrapper.appendChild(yachtNote);
     }
 
     // WhatsApp CTA

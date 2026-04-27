@@ -3,13 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
-import pt from '@/content/pt.json';
 
 export function getStaticPaths() {
   const langs = [
     { lang: 'en', t: en },
     { lang: 'es', t: es },
-    { lang: 'pt', t: pt },
   ];
 
   return langs.flatMap(({ lang, t }) =>

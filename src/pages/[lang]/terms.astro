@@ -2,13 +2,11 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import en from '@/content/en.json';
 import es from '@/content/es.json';
-import pt from '@/content/pt.json';
 
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' }, props: { t: en } },
     { params: { lang: 'es' }, props: { t: es } },
-    { params: { lang: 'pt' }, props: { t: pt } },
   ];
 }
 
@@ -55,7 +53,7 @@ const { t } = Astro.props;
 
         <section>
           <h2 class="text-white font-semibold text-lg mb-3">6. Governing Law</h2>
-          <p>These terms are governed by Portuguese law. Any disputes shall be resolved in the courts of Lisboa, Portugal.</p>
+          <p>These terms are governed by Spanish law. Any disputes shall be resolved in the courts of Barcelona, Spain.</p>
           <p class="mt-2 text-white/40 text-xs">Last updated: January 2025</p>
         </section>
       </div>

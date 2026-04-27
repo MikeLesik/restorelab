@@ -2,7 +2,7 @@
 // All pricing tables, coefficients and pure calculation functions.
 // NO DOM, NO Astro — importable by any bundler.
 
-export type Service = 'car_paint' | 'glass' | 'yacht_gelcoat';
+export type Service = 'car_paint' | 'glass';
 
 export interface CalcInput {
   service: Service;
@@ -11,8 +11,6 @@ export interface CalcInput {
   // Glass
   glassType?: string;
   areaSize?: string;
-  // Yacht
-  boatLength?: string;
   // Common
   condition: string;
   location: string;
@@ -32,7 +30,7 @@ const CAR_CONDITION: Record<string, number> = {
   light: 1.00, medium: 1.25, heavy: 1.60, not_sure: 1.30,
 };
 const CAR_LOCATION: Record<string, number> = {
-  lisbon: 0, cascais: 0, oeiras_sintra: 20, almada: 20, setubal: 40, other: 50,
+  sant_cugat: 0, barcelona: 0, terrassa_sabadell: 20, rubi: 10, other: 40,
 };
 const CAR_FLOOR = 120;
 
@@ -47,21 +45,9 @@ const GLASS_CONDITION: Record<string, number> = {
   light: 1.00, medium: 1.30, heavy: 1.80, not_sure: 1.40,
 };
 const GLASS_LOCATION: Record<string, number> = {
-  lisbon: 0, cascais: 0, oeiras_sintra: 20, almada: 20, setubal: 40, other: 50,
+  sant_cugat: 0, barcelona: 0, terrassa_sabadell: 20, rubi: 10, other: 40,
 };
 const GLASS_FLOOR = 70;
-
-// ── Yacht Gelcoat ─────────────────────────────────────────────────────────────
-const YACHT_BASE: Record<string, number> = {
-  le_25: 375, from_26_to_30: 450, from_31_to_40: 600, gt_41: 850, not_sure: 550,
-};
-const YACHT_CONDITION: Record<string, number> = {
-  light: 1.00, medium: 1.25, heavy: 1.60, not_sure: 1.30,
-};
-const YACHT_LOCATION: Record<string, number> = {
-  lisbon: 0, cascais: 0, oeiras_sintra: 0, almada: 30, setubal: 50, other: 70,
-};
-const YACHT_FLOOR = 300;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function roundTo10(x: number): number {
@@ -70,14 +56,14 @@ function roundTo10(x: number): number {
 
 function isUncertain(input: CalcInput): boolean {
   return [
-    input.vehicleSize, input.glassType, input.boatLength,
+    input.vehicleSize, input.glassType,
     input.areaSize, input.condition, input.location,
   ].some(v => v === 'not_sure' || v === 'other');
 }
 
 // ── Main calculation ──────────────────────────────────────────────────────────
 export function calculate(input: CalcInput): CalcResult {
-  const loc  = input.location  || 'lisbon';
+  const loc  = input.location  || 'sant_cugat';
   const cond = input.condition || 'not_sure';
 
   let base = 0;
@@ -86,7 +72,7 @@ export function calculate(input: CalcInput): CalcResult {
   if (input.service === 'car_paint') {
     const bp = CAR_BASE[input.vehicleSize ?? 'not_sure'] ?? 240;
     const cf = CAR_CONDITION[cond] ?? 1.30;
-    const la = CAR_LOCATION[loc]   ?? 50;
+    const la = CAR_LOCATION[loc]   ?? 40;
     base  = bp * cf + la;
     floor = CAR_FLOOR;
 
@@ -94,16 +80,9 @@ export function calculate(input: CalcInput): CalcResult {
     const bp = GLASS_BASE[input.glassType ?? 'other']  ?? 120;
     const af = GLASS_AREA[input.areaSize ?? 'not_sure'] ?? 1.40;
     const cf = GLASS_CONDITION[cond]                    ?? 1.40;
-    const la = GLASS_LOCATION[loc]                      ?? 50;
+    const la = GLASS_LOCATION[loc]                      ?? 40;
     base  = bp * af * cf + la;
     floor = GLASS_FLOOR;
-
-  } else if (input.service === 'yacht_gelcoat') {
-    const bp = YACHT_BASE[input.boatLength ?? 'not_sure'] ?? 550;
-    const cf = YACHT_CONDITION[cond]                       ?? 1.30;
-    const la = YACHT_LOCATION[loc]                         ?? 70;
-    base  = bp * cf + la;
-    floor = YACHT_FLOOR;
   }
 
   const uncertain = isUncertain(input);

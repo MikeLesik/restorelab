@@ -28,7 +28,7 @@ const {
 
 const siteUrl = SITE_URL;
 const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
-const langs = ['en', 'es', 'pt'];
+const langs = ['en', 'es'];
 
 const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
@@ -56,7 +56,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : lang === 'pt' ? 'pt_PT' : 'es_ES'} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -72,7 +72,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
         href={`${siteUrl}/${l}${currentPath}`}
       />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${currentPath}`} />
 
     <!-- Preconnect hints for external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -99,21 +99,21 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "restoreLab",
-      "description": "Premium mobile surface restoration — car paint correction, glass polishing and yacht gelcoat restoration.",
+      "description": "Premium mobile surface restoration — car paint correction, glass polishing and acrylic restoration.",
       "url": siteUrl,
       "telephone": `+${WHATSAPP_NUMBER}`,
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Cascais",
-        "addressRegion": "Lisboa",
-        "addressCountry": "PT"
+        "addressLocality": "Sant Cugat del Vallès",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 38.6979,
-        "longitude": -9.4215
+        "latitude": 41.4736,
+        "longitude": 2.0868
       },
-      "areaServed": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada"],
+      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell", "Rubí"],
       "openingHours": "Mo-Sa 08:00-19:00",
       "priceRange": "€€",
       "aggregateRating": {
@@ -289,27 +289,6 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
                   ]
                 }
               },
-              pt: {
-                consentModal: {
-                  title: 'Usamos cookies',
-                  description: 'Usamos cookies para melhorar a sua experiência, analisar o tráfego e mostrar anúncios relevantes.',
-                  acceptAllBtn: 'Aceitar tudo',
-                  acceptNecessaryBtn: 'Apenas necessários',
-                  showPreferencesBtn: 'Gerir preferências'
-                },
-                preferencesModal: {
-                  title: 'Preferências de cookies',
-                  acceptAllBtn: 'Aceitar tudo',
-                  acceptNecessaryBtn: 'Apenas necessários',
-                  savePreferencesBtn: 'Guardar preferências',
-                  closeIconLabel: 'Fechar',
-                  sections: [
-                    { title: 'Estritamente necessários', description: 'Necessários para o funcionamento do site. Não podem ser desativados.', linkedCategory: 'necessary' },
-                    { title: 'Analíticos', description: 'Ajudam-nos a perceber como os visitantes interagem com o site (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
-                    { title: 'Marketing', description: 'Usados para mostrar anúncios personalizados com base nos seus interesses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
-                  ]
-                }
-              }
             }
           }
         });

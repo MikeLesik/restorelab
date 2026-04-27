@@ -13,13 +13,11 @@ import GuaranteeBlock from '@/components/GuaranteeBlock.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
-import pt from '@/content/pt.json';
 
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' }, props: { t: en } },
     { params: { lang: 'es' }, props: { t: es } },
-    { params: { lang: 'pt' }, props: { t: pt } },
   ];
 }
 

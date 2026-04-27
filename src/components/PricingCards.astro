@@ -6,7 +6,7 @@ export interface Props {
 }
 
 const { t, lang, categoryId } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '351933817788';
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '34680265190';
 
 const categories = categoryId
   ? t.pricing.categories.filter((c: any) => c.id === categoryId)

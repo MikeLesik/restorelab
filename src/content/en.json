@@ -2,41 +2,37 @@
   "lang": "en",
   "meta": {
     "home": {
-      "title": "restoreLab — Mobile Surface Restoration in Lisbon & Cascais",
-      "description": "Premium mobile paint correction, glass scratch removal and yacht gelcoat restoration. On-site service in Lisbon, Cascais, Sintra & Oeiras. No repainting. No replacement.",
+      "title": "restoreLab — Mobile Surface Restoration in Sant Cugat & Barcelona",
+      "description": "Premium mobile paint correction, glass scratch removal and acrylic restoration. On-site service in Sant Cugat, Barcelona, Terrassa & Sabadell. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Our Services — Car, Glass & Yacht Restoration | restoreLab",
-      "description": "Car paint correction, glass polishing, acrylic restoration and yacht gelcoat polishing. Mobile service across Lisbon & Cascais."
+      "title": "Our Services — Car, Glass & Acrylic Restoration | restoreLab",
+      "description": "Car paint correction, glass polishing and acrylic restoration. Mobile service across Sant Cugat & Barcelona."
     },
     "car_paint": {
-      "title": "Car Paint Correction & Polishing Lisbon | restoreLab",
-      "description": "Professional mobile paint correction in Lisbon. Remove swirl marks, scratches and restore deep gloss. Ceramic coating preparation. No repainting needed."
+      "title": "Car Paint Correction & Polishing Sant Cugat | restoreLab",
+      "description": "Professional mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches and restore deep gloss. Ceramic coating preparation. No repainting needed."
     },
     "glass": {
-      "title": "Glass Scratch Removal & Polishing Lisbon | restoreLab",
-      "description": "Remove windshield scratches, water spots and wiper marks. Mobile glass polishing service in Lisbon, Cascais and Sintra. No replacement needed."
+      "title": "Glass Scratch Removal & Polishing Barcelona | restoreLab",
+      "description": "Remove windshield scratches, water spots and wiper marks. Mobile glass polishing service in Sant Cugat, Barcelona and Terrassa. No replacement needed."
     },
     "acrylic": {
-      "title": "Acrylic & Polycarbonate Restoration Portugal | restoreLab",
-      "description": "Yacht windows, boat hatches and clear plastic panel restoration. UV oxidation removal. Cost-effective alternative to replacement."
-    },
-    "yacht": {
-      "title": "Yacht Gelcoat Polishing Cascais | restoreLab",
-      "description": "Professional yacht gelcoat polishing and oxidation removal in Cascais marinas. Marine-grade finishing. Mobile service across Lisbon area."
+      "title": "Acrylic & Polycarbonate Restoration Spain | restoreLab",
+      "description": "Clear plastic panel, window and hatch restoration. UV oxidation removal. Cost-effective alternative to replacement."
     },
     "pricing": {
-      "title": "Pricing — Car Polishing & Yacht Restoration | restoreLab",
-      "description": "Transparent pricing for car paint correction, glass polishing and yacht gelcoat restoration. Packages from 189€. Free estimate via WhatsApp."
+      "title": "Pricing — Car Polishing & Surface Restoration | restoreLab",
+      "description": "Transparent pricing for car paint correction, glass polishing and acrylic restoration. Packages from 189€. Free estimate via WhatsApp."
     },
     "cases": {
       "title": "Before & After Cases — restoreLab",
-      "description": "Real before and after results from our mobile restoration work. Car paint correction, glass polishing and yacht gelcoat restoration in Portugal."
+      "description": "Real before and after results from our mobile restoration work. Car paint correction, glass polishing and acrylic restoration in Spain."
     },
     "contact": {
       "title": "Contact restoreLab — Get a Free Quote",
-      "description": "Contact restoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Lisbon, Cascais and Sintra."
+      "description": "Contact restoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Sant Cugat, Barcelona and Terrassa."
     },
     "privacy": {
       "title": "Privacy Policy | restoreLab",
@@ -65,13 +61,12 @@
   },
   "hero": {
     "headline": "Restore. Don't Replace.",
-    "subheadline": "Mobile paint, glass & yacht restoration in Portugal — we come to you. Save up to 70% vs replacement.",
+    "subheadline": "Mobile paint, glass & acrylic restoration in Spain — we come to you. Save up to 70% vs replacement.",
     "cta_primary": "Get Free Estimate on WhatsApp",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
     "trust_pills": ["★ 5.0 Google", "47+ Reviews", "500+ Jobs", "100% Mobile"],
     "cta_car": "Car Restoration",
-    "cta_yacht": "Yacht Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
     "badge": "★ Rated 5.0 • 500+ Jobs Done"
   },
@@ -80,38 +75,31 @@
     "reviews_count": "47+ reviews",
     "platform": "Google Reviews",
     "areas": [
-      "Lisbon",
-      "Cascais",
-      "Sintra",
-      "Oeiras"
+      "Sant Cugat",
+      "Barcelona",
+      "Terrassa",
+      "Sabadell"
     ],
     "areas_label": "Areas served",
     "testimonials": [
       {
         "name": "David M.",
-        "location": "Cascais",
+        "location": "Sant Cugat",
         "text": "Incredible result on my BMW. Deep scratches completely gone, paint looks like new. Came to my parking, no hassle. Highly recommended.",
         "rating": 5,
         "service": "Car Paint Correction"
       },
       {
         "name": "Sofia R.",
-        "location": "Lisbon",
+        "location": "Barcelona",
         "text": "My windshield had deep wiper scratches after 3 years. restoreLab removed them completely — saved me from a €400 replacement. Fantastic job!",
         "rating": 5,
         "service": "Glass Polishing"
       },
       {
-        "name": "João A.",
-        "location": "Oeiras Marina",
-        "text": "Our yacht gelcoat was badly oxidized. After their treatment it looks like we just bought the boat. Professional, fast and excellent value.",
-        "rating": 5,
-        "service": "Yacht Gelcoat"
-      },
-      {
         "name": "Anna K.",
-        "location": "Sintra",
-        "text": "The acrylic windows on my boat were completely yellow. Now they're crystal clear. Amazing transformation — I can't believe it's the same boat.",
+        "location": "Terrassa",
+        "text": "The acrylic windows on my project were completely yellow. Now they're crystal clear. Amazing transformation — I can't believe the difference.",
         "rating": 5,
         "service": "Acrylic Restoration"
       }
@@ -152,7 +140,7 @@
       {
         "id": "acrylic-restoration",
         "title": "Acrylic & Polycarbonate",
-        "subtitle": "Yacht windows, hatches & clear panels",
+        "subtitle": "Windows, hatches & clear panels",
         "icon": "acrylic",
         "features": [
           "UV oxidation removal",
@@ -161,20 +149,6 @@
         ],
         "cta_label": "Get Acrylic Estimate",
         "tag": null
-      },
-      {
-        "id": "yacht-gelcoat",
-        "title": "Yacht Gelcoat Polishing",
-        "subtitle": "Oxidation removal & marine-grade finish",
-        "icon": "yacht",
-        "starting_price": "From €15/ft (≈ €49/m)",
-        "features": [
-          "Oxidation removal",
-          "Gloss recovery & protection prep",
-          "Marina service, no haulout"
-        ],
-        "cta_label": "Get Yacht Estimate",
-        "tag": "Yacht specialists"
       }
     ],
     "learn_more": "Learn more",
@@ -197,7 +171,7 @@
       {
         "number": "03",
         "title": "We Come to You",
-        "description": "We arrive at your home, office, parking or marina with all professional equipment."
+        "description": "We arrive at your home, office or parking with all professional equipment."
       },
       {
         "number": "04",
@@ -269,26 +243,6 @@
         ]
       },
       {
-        "id": "yacht",
-        "title": "Yacht Gelcoat Polishing",
-        "packages": [
-          {
-            "name": "Gelcoat Polish",
-            "price": "from 15€/ft",
-            "duration": "Depends on size",
-            "description": "Full oxidation removal and gloss restoration for gelcoat.",
-            "includes": [
-              "Oxidation removal",
-              "Machine polishing to high gloss",
-              "Protective wax or sealant",
-              "At-marina service"
-            ],
-            "best_for": "Sailboats and motorboats up to 50ft",
-            "highlight": false
-          }
-        ]
-      },
-      {
         "id": "glass",
         "title": "Glass & Acrylic",
         "packages": [
@@ -303,7 +257,7 @@
               "Water spot & scratch removal",
               "Hydrophobic coating (optional)"
             ],
-            "best_for": "Windshields, side windows, yacht ports",
+            "best_for": "Windshields, side windows, acrylic panels",
             "highlight": false
           }
         ]
@@ -320,12 +274,12 @@
       {
         "icon": "bolt",
         "question": "Do I need to provide a power outlet or water supply?",
-        "answer": "No — we are 100% self-sufficient. We bring our own generator, professional-grade polishing machines, and water supply. All you need to provide is a parking spot or marina berth access."
+        "answer": "No — we are 100% self-sufficient. We bring our own generator, professional-grade polishing machines, and water supply. All you need to provide is a parking spot."
       },
       {
         "icon": "space",
-        "question": "How much clear space do you need around the car or boat?",
-        "answer": "For a car: approximately 1 metre of clear space on each working side is ideal — a standard parking bay is sufficient. For yacht work, we operate directly at your marina berth with no haulout required."
+        "question": "How much clear space do you need around the car?",
+        "answer": "Approximately 1 metre of clear space on each working side is ideal — a standard parking bay is sufficient."
       },
       {
         "icon": "rain",
@@ -335,7 +289,7 @@
       {
         "icon": "user",
         "question": "Do I need to be present during the entire service?",
-        "answer": "Not at all. Most clients leave their car or boat and get on with their day. Just leave us access to the vehicle and a contact number. We send you a photo report when the job is complete."
+        "answer": "Not at all. Most clients leave their car and get on with their day. Just leave us access to the vehicle and a contact number. We send you a photo report when the job is complete."
       },
       {
         "icon": "shield",
@@ -345,28 +299,28 @@
     ]
   },
   "area": {
-    "section_title": "We Cover All of Portugal",
+    "section_title": "We Cover the Barcelona Metro Area",
     "section_subtitle": "3 operational hubs — we come to you, wherever you are",
     "cta_prefix": "Get a Quote in",
-    "travel_note": "Large yacht or fleet project outside these areas? We travel — just ask.",
+    "travel_note": "Large project or fleet outside these areas? We travel — just ask.",
     "hubs": [
       {
-        "city": "Porto",
-        "region": "North Portugal",
-        "coverage": "50 km radius",
-        "areas": ["Porto", "Matosinhos", "Vila Nova de Gaia", "Braga", "Guimarães", "Aveiro"]
+        "city": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "coverage": "20 km radius",
+        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
       },
       {
-        "city": "Lisbon",
-        "region": "Lisbon Metropolitan Area",
-        "coverage": "60 km radius",
-        "areas": ["Lisboa", "Cascais", "Sintra", "Oeiras", "Almada", "Setúbal"]
+        "city": "Barcelona",
+        "region": "Barcelona Metropolitan Area",
+        "coverage": "30 km radius",
+        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
       },
       {
-        "city": "Faro",
-        "region": "Algarve",
-        "coverage": "Full Algarve Coast",
-        "areas": ["Faro", "Portimão", "Lagos", "Albufeira", "Vilamoura", "Tavira"]
+        "city": "Vallès",
+        "region": "Vallès Interior",
+        "coverage": "30 km radius",
+        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
       }
     ]
   },
@@ -397,7 +351,7 @@
   },
   "cases_section": {
     "section_title": "Before & After",
-    "section_subtitle": "Real results from our mobile restoration work across Lisbon & Cascais",
+    "section_subtitle": "Real results from our mobile restoration work across Sant Cugat & Barcelona",
     "view_all": "View All Cases"
   },
   "wa_messages": {
@@ -416,19 +370,18 @@
     "section_subtitle": "Send photos of the damage. We'll reply with an honest price — no obligations, no hidden fees.",
     "fields": {
       "name": "Your Name",
-      "name_placeholder": "John Silva",
+      "name_placeholder": "John García",
       "phone": "Phone / WhatsApp",
-      "phone_placeholder": "+351 9XX XXX XXX",
+      "phone_placeholder": "+34 6XX XXX XXX",
       "service": "Service Needed",
       "service_options": [
         "Car Paint Correction",
         "Glass Scratch Removal",
         "Acrylic / Polycarbonate Restoration",
-        "Yacht Gelcoat Polishing",
         "Other / Not sure"
       ],
       "location": "Your Location",
-      "location_placeholder": "e.g. Cascais, marina name...",
+      "location_placeholder": "e.g. Sant Cugat, Barcelona...",
       "message": "Additional Details",
       "message_placeholder": "Describe the damage or issue. The more detail, the better our estimate.",
       "photo_note": "You can also send photos directly via WhatsApp after submitting.",
@@ -440,19 +393,19 @@
     "title": "Ready to restore?",
     "subtitle": "Send us a photo and get an honest estimate in under 30 minutes. No obligations, no hidden fees.",
     "cta": "Send Photos via WhatsApp",
-    "trust_pill": "5.0 · 500+ jobs in Lisbon & Cascais",
+    "trust_pill": "5.0 · 500+ jobs in Sant Cugat & Barcelona",
     "reply_note": "Average reply: 28 min · Mobile service, we come to you"
   },
   "footer": {
     "tagline": "Premium mobile surface restoration",
-    "trust": "Trusted by 500+ clients in Lisbon & Cascais",
+    "trust": "Trusted by 500+ clients in Sant Cugat & Barcelona",
     "services_title": "Services",
     "contact_title": "Contact",
     "legal_title": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "copyright": "© 2026 restoreLab. All rights reserved.",
-    "made_in": "Made in Portugal."
+    "made_in": "Made in Spain."
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",
