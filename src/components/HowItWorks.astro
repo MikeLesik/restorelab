@@ -30,7 +30,7 @@ const stepIcons: string[] = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
 
       <!-- Animated connector line (desktop only) -->
-      <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/8 overflow-hidden">
+      <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-th-surface/8 overflow-hidden">
         <div class="absolute inset-0 animate-connector-flow"></div>
       </div>
 
@@ -52,8 +52,8 @@ const stepIcons: string[] = [
             </span>
           </div>
 
-          <h3 class="font-display font-bold text-white text-lg mb-3">{step.title}</h3>
-          <p class="text-white/50 text-sm leading-relaxed">{step.description}</p>
+          <h3 class="font-display font-bold text-th-heading text-lg mb-3">{step.title}</h3>
+          <p class="text-th-muted text-sm leading-relaxed">{step.description}</p>
         </div>
       ))}
     </div>

@@ -42,7 +42,7 @@ const sections = content.sections as Array<Record<string, any>>;
 
       <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Breadcrumb -->
-        <a href={`/${lang}/academy`} class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white mb-5 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+        <a href={`/${lang}/academy`} class="inline-flex items-center gap-2 text-sm text-th-faint hover:text-th-heading mb-5 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -52,10 +52,10 @@ const sections = content.sections as Array<Record<string, any>>;
         <!-- Number tag -->
         <span class="tag mb-4 inline-block">{card.number}</span>
 
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-4 leading-tight">
           {content.title}
         </h1>
-        <p class="text-xl text-white/60 mb-0 leading-relaxed">
+        <p class="text-xl text-th-muted mb-0 leading-relaxed">
           {content.description}
         </p>
       </div>
@@ -66,7 +66,7 @@ const sections = content.sections as Array<Record<string, any>>;
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Intro -->
-        <p class="text-lg text-white/80 leading-relaxed mb-10">
+        <p class="text-lg text-th-body leading-relaxed mb-10">
           {content.intro}
         </p>
 
@@ -78,21 +78,21 @@ const sections = content.sections as Array<Record<string, any>>;
               <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-display font-bold text-sm">
                 {section.number}
               </span>
-              <h2 class="text-2xl md:text-3xl font-display font-bold text-white">
+              <h2 class="text-2xl md:text-3xl font-display font-bold text-th-heading">
                 {section.title}
               </h2>
             </div>
 
             <!-- Paragraphs -->
             {section.paragraphs?.map((p: string) => (
-              <p class="text-white/70 leading-relaxed mb-6">{p}</p>
+              <p class="text-th-body/80 leading-relaxed mb-6">{p}</p>
             ))}
 
             <!-- Key params (bullet list) -->
             {section.key_params && (
               <ul class="space-y-3 mb-6">
                 {section.key_params.map((param: string) => (
-                  <li class="flex items-start gap-3 text-white/80">
+                  <li class="flex items-start gap-3 text-th-body">
                     <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                     </svg>
@@ -108,7 +108,7 @@ const sections = content.sections as Array<Record<string, any>>;
                 <div class="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 bg-brand-dark rounded-full border border-brand-gold/20">
                   <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider">{section.analogy.title}</span>
                 </div>
-                <p class="text-white/80 leading-relaxed mt-2">{section.analogy.text}</p>
+                <p class="text-th-body leading-relaxed mt-2">{section.analogy.text}</p>
               </div>
             )}
 
@@ -116,20 +116,20 @@ const sections = content.sections as Array<Record<string, any>>;
             {section.table && (
               <div class="mb-6">
                 <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4">{section.table.caption}</p>
-                <div class="overflow-x-auto rounded-xl border border-white/10">
+                <div class="overflow-x-auto rounded-xl border border-th-border/10">
                   <table class="w-full text-sm">
                     <thead>
-                      <tr class="border-b border-white/10 bg-white/5">
+                      <tr class="border-b border-th-border/10 bg-th-surface/5">
                         {section.table.headers.map((header: string) => (
-                          <th class="px-4 py-3 text-left font-semibold text-white/90 whitespace-nowrap">{header}</th>
+                          <th class="px-4 py-3 text-left font-semibold text-th-heading whitespace-nowrap">{header}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       {section.table.rows.map((row: string[], idx: number) => (
-                        <tr class:list={["border-b border-white/5", { "bg-white/[0.02]": idx % 2 === 1 }]}>
+                        <tr class:list={["border-b border-th-border/5", { "bg-th-surface/[0.02]": idx % 2 === 1 }]}>
                           {row.map((cell: string, cellIdx: number) => (
-                            <td class:list={["px-4 py-3 whitespace-nowrap", cellIdx === 0 ? "font-medium text-white" : "text-white/70"]}>
+                            <td class:list={["px-4 py-3 whitespace-nowrap", cellIdx === 0 ? "font-medium text-th-heading" : "text-th-body/80"]}>
                               {cell}
                             </td>
                           ))}
@@ -143,7 +143,7 @@ const sections = content.sections as Array<Record<string, any>>;
 
             <!-- Conclusion -->
             {section.conclusion && (
-              <p class="text-white/80 leading-relaxed font-medium border-l-2 border-brand-accent pl-4 mb-6">
+              <p class="text-th-body leading-relaxed font-medium border-l-2 border-brand-accent pl-4 mb-6">
                 {section.conclusion}
               </p>
             )}
@@ -154,17 +154,17 @@ const sections = content.sections as Array<Record<string, any>>;
                 {section.tools_title && (
                   <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-3">{section.tools_title}</p>
                 )}
-                <div class="rounded-xl border border-white/5 overflow-hidden">
+                <div class="rounded-xl border border-th-border/5 overflow-hidden">
                   <table class="w-full">
                     <tbody>
                       {section.tools.map((tool: { label: string; text: string }, idx: number) => (
-                        <tr class:list={["bg-white/[0.03]", idx > 0 && "border-t border-white/5"]}>
+                        <tr class:list={["bg-th-surface/[0.03]", idx > 0 && "border-t border-th-border/5"]}>
                           <td class="py-3 pl-4 pr-2 align-middle whitespace-nowrap">
                             <span class="inline-block px-2.5 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium">
                               {tool.label}
                             </span>
                           </td>
-                          <td class="py-3 pr-4 pl-2 text-white/70 leading-relaxed">
+                          <td class="py-3 pr-4 pl-2 text-th-body/80 leading-relaxed">
                             {tool.text}
                           </td>
                         </tr>

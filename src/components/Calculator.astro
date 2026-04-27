@@ -15,7 +15,7 @@ const wa = WHATSAPP_NUMBER;
     <div class="text-center mb-12">
       <h2 class="section-title">Get an Instant Estimate</h2>
       <p class="section-subtitle mx-auto">Answer 4 quick questions and get a price range in under 30 seconds.</p>
-      <p class="text-white/30 text-sm mt-3">Final quote is confirmed after photo review or on-site inspection.</p>
+      <p class="text-th-faint text-sm mt-3">Final quote is confirmed after photo review or on-site inspection.</p>
     </div>
 
     <!-- Calculator card -->
@@ -25,9 +25,9 @@ const wa = WHATSAPP_NUMBER;
         <!-- Progress zone (hidden on result screen) -->
         <div id="calc-progress-zone" class="mb-8">
           <div class="flex items-center justify-between mb-2">
-            <span id="calc-step-label" class="text-xs font-medium text-white/40 uppercase tracking-widest">Step 1 of 4</span>
+            <span id="calc-step-label" class="text-xs font-medium text-th-faint uppercase tracking-widest">Step 1 of 4</span>
           </div>
-          <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+          <div class="h-1 bg-th-surface/10 rounded-full overflow-hidden">
             <div
               id="calc-progress-bar"
               class="h-full bg-brand-accent rounded-full transition-all duration-300"
@@ -37,17 +37,17 @@ const wa = WHATSAPP_NUMBER;
         </div>
 
         <!-- Step question — pre-rendered so it's visible without JS -->
-        <h3 id="calc-question" class="font-display font-bold text-white text-xl mb-6">What needs restoration?</h3>
+        <h3 id="calc-question" class="font-display font-bold text-th-heading text-xl mb-6">What needs restoration?</h3>
 
         <!-- Options area — pre-rendered first step so card is never empty -->
         <div id="calc-options" aria-live="polite" class="grid grid-cols-1 gap-3">
-          <button data-value="car_paint" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
-            <span class="block font-semibold text-white text-sm">Car Paint Correction</span>
-            <span class="block text-white/40 text-xs mt-0.5">Swirl marks, scratches &amp; gloss restoration</span>
+          <button data-value="car_paint" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-th-border/15 bg-th-surface/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
+            <span class="block font-semibold text-th-heading text-sm">Car Paint Correction</span>
+            <span class="block text-th-faint text-xs mt-0.5">Swirl marks, scratches &amp; gloss restoration</span>
           </button>
-          <button data-value="glass" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
-            <span class="block font-semibold text-white text-sm">Glass Polishing</span>
-            <span class="block text-white/40 text-xs mt-0.5">Windshields, windows &amp; glass surfaces</span>
+          <button data-value="glass" class="calc-option w-full text-left px-5 py-4 rounded-xl border border-th-border/15 bg-th-surface/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150">
+            <span class="block font-semibold text-th-heading text-sm">Glass Polishing</span>
+            <span class="block text-th-faint text-xs mt-0.5">Windshields, windows &amp; glass surfaces</span>
           </button>
         </div>
 
@@ -55,7 +55,7 @@ const wa = WHATSAPP_NUMBER;
         <div class="mt-8">
           <button
             id="calc-back-btn"
-            class="hidden inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-1"
+            class="hidden inline-flex items-center gap-1.5 text-sm text-th-faint hover:text-th-heading transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded px-1 py-1"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -233,14 +233,14 @@ const wa = WHATSAPP_NUMBER;
     opts.forEach(opt => {
       const btn = document.createElement('button');
       btn.dataset.value = opt.value;
-      btn.className = 'calc-option w-full text-left px-5 py-4 rounded-xl border border-white/15 bg-white/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150';
+      btn.className = 'calc-option w-full text-left px-5 py-4 rounded-xl border border-th-border/15 bg-th-surface/5 hover:border-brand-accent/50 hover:bg-brand-accent/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent transition-all duration-150';
       const labelSpan = document.createElement('span');
-      labelSpan.className = 'block font-semibold text-white text-sm';
+      labelSpan.className = 'block font-semibold text-th-heading text-sm';
       labelSpan.textContent = opt.label;
       btn.appendChild(labelSpan);
       if (opt.sub) {
         const subSpan = document.createElement('span');
-        subSpan.className = 'block text-white/40 text-xs mt-0.5';
+        subSpan.className = 'block text-th-faint text-xs mt-0.5';
         subSpan.textContent = opt.sub;
         btn.appendChild(subSpan);
       }
@@ -350,7 +350,7 @@ const wa = WHATSAPP_NUMBER;
     const priceSection = document.createElement('div');
     priceSection.className = 'text-center mb-8';
     const priceLabel = document.createElement('p');
-    priceLabel.className = 'text-xs text-white/40 uppercase tracking-widest mb-3';
+    priceLabel.className = 'text-xs text-th-faint uppercase tracking-widest mb-3';
     priceLabel.textContent = 'Estimated Price Range';
     const priceValue = document.createElement('p');
     priceValue.className = 'text-5xl sm:text-6xl font-display font-bold text-brand-accent';
@@ -363,7 +363,7 @@ const wa = WHATSAPP_NUMBER;
 
     // Disclaimer
     const disclaimer = document.createElement('div');
-    disclaimer.className = 'p-4 bg-white/5 border border-white/10 rounded-xl mb-4 text-sm text-white/50 leading-relaxed';
+    disclaimer.className = 'p-4 bg-th-surface/5 border border-th-border/10 rounded-xl mb-4 text-sm text-th-muted leading-relaxed';
     disclaimer.textContent = 'This is an estimate based on the details you selected. Final quote may change based on photos, defect depth, access, and required correction stages.';
     wrapper.appendChild(disclaimer);
 
@@ -412,7 +412,7 @@ const wa = WHATSAPP_NUMBER;
     // Restart button
     const restartBtn = document.createElement('button');
     restartBtn.id = 'calc-restart-btn';
-    restartBtn.className = 'w-full text-center text-sm text-white/30 hover:text-white/70 transition-colors py-2';
+    restartBtn.className = 'w-full text-center text-sm text-th-faint hover:text-th-body/80 transition-colors py-2';
     restartBtn.textContent = 'Start Over';
     wrapper.appendChild(restartBtn);
 

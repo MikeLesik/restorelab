@@ -5,6 +5,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme: Dark (default) ─────────────────────────────────────────────── */
+.dark {
+  --brand-dark:   10 10 10;       /* #0A0A0A */
+  --brand-navy:   13 27 42;       /* #0D1B2A */
+  --brand-blue:   27 58 92;       /* #1B3A5C */
+  --brand-accent: 42 127 255;     /* #2A7FFF */
+  --brand-gold:   212 165 55;     /* #D4A537 */
+  --brand-light:  245 245 245;    /* #F5F5F5 */
+  --brand-white:  255 255 255;    /* #FFFFFF */
+
+  --th-heading: 255 255 255;
+  --th-body:    245 245 245;
+  --th-muted:   180 180 180;
+  --th-faint:   120 120 120;
+  --th-surface: 255 255 255;
+  --th-border:  255 255 255;
+
+  --hero-from: #0A0A0A;
+  --hero-via:  #0D1B2A;
+  --hero-to:   #1B3A5C;
+}
+
+/* ── Theme: Light ──────────────────────────────────────────────────────── */
+:root:not(.dark) {
+  --brand-dark:   255 255 255;    /* #FFFFFF */
+  --brand-navy:   247 248 250;    /* #F7F8FA */
+  --brand-blue:   226 230 237;    /* #E2E6ED */
+  --brand-accent: 26 102 229;     /* #1A66E5 */
+  --brand-gold:   184 145 31;     /* #B8911F */
+  --brand-light:  26 26 46;       /* #1A1A2E */
+  --brand-white:  13 13 26;       /* #0D0D1A */
+
+  --th-heading: 13 13 26;
+  --th-body:    26 26 46;
+  --th-muted:   80 80 100;
+  --th-faint:   140 140 160;
+  --th-surface: 13 13 26;
+  --th-border:  13 13 26;
+
+  --hero-from: #FFFFFF;
+  --hero-via:  #F0F4FF;
+  --hero-to:   #E8EEFF;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,39 +66,59 @@
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-accent text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-th-border/20 text-th-heading font-semibold rounded-lg hover:bg-th-surface/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
   }
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-whatsapp text-white font-semibold rounded-lg hover:brightness-110 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
   }
   .section-title {
-    @apply text-3xl md:text-4xl font-display font-bold text-white mb-4;
+    @apply text-3xl md:text-4xl font-display font-bold text-th-heading mb-4;
   }
   .section-subtitle {
-    @apply text-lg text-white/60 max-w-2xl;
+    @apply text-lg text-th-muted max-w-2xl;
   }
   .card {
-    @apply bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm;
+    @apply rounded-2xl p-6;
+  }
+  .card-dark {
+    @apply bg-th-surface/5 border border-th-border/10 backdrop-blur-sm;
+  }
+  .card-light {
+    @apply bg-brand-dark border border-th-border/10 shadow-lg;
   }
   .tag {
     @apply inline-block text-xs font-semibold px-3 py-1 rounded-full;
   }
-  /* Typography scale — intermediate weights between section-title and body */
+  /* Typography scale */
   .lead {
-    @apply text-xl text-white/80 font-normal leading-relaxed;
+    @apply text-xl text-th-body font-normal leading-relaxed;
   }
   .caption {
-    @apply text-sm text-white/40 leading-normal;
+    @apply text-sm text-th-faint leading-normal;
   }
   .label {
-    @apply text-[10px] font-semibold uppercase tracking-[0.12em] text-white/40;
+    @apply text-[10px] font-semibold uppercase tracking-[0.12em] text-th-faint;
   }
 }
 
+/* Card theme helper — auto-select dark/light style */
+.dark .card { @apply bg-th-surface/5 border border-th-border/10 backdrop-blur-sm; }
+:root:not(.dark) .card { @apply bg-brand-dark border border-th-border/10 shadow-lg; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: theme('colors.brand.dark'); }
-::-webkit-scrollbar-thumb { background: theme('colors.brand.blue'); border-radius: 3px; }
+.dark ::-webkit-scrollbar-track { background: #0A0A0A; }
+.dark ::-webkit-scrollbar-thumb { background: #1B3A5C; border-radius: 3px; }
+:root:not(.dark) ::-webkit-scrollbar-track { background: #F7F8FA; }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: #C0C4CC; border-radius: 3px; }
+
+/* Theme transition */
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
 
 /* FAQ — answer slide-in animation */
 @keyframes faq-open {
@@ -76,9 +140,9 @@ details[open] .faq-answer-body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    theme('colors.brand.accent / 0') 20%,
-    theme('colors.brand.accent / 0.7') 50%,
-    theme('colors.brand.accent / 0') 80%,
+    rgb(var(--brand-accent) / 0) 20%,
+    rgb(var(--brand-accent) / 0.7) 50%,
+    rgb(var(--brand-accent) / 0) 80%,
     transparent 100%
   );
   background-size: 60% 100%;

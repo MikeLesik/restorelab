@@ -24,7 +24,7 @@ const categories = categoryId
 
     {categories.map((category: any) => (
       <div class="mb-10">
-        <h3 class="text-xl font-display font-semibold text-white/60 mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4">
+        <h3 class="text-xl font-display font-semibold text-th-muted mb-8 uppercase tracking-widest text-sm border-b border-th-border/10 pb-4">
           {category.title}
         </h3>
 
@@ -37,7 +37,7 @@ const categories = categoryId
               'card relative flex flex-col transition-all duration-300',
               pkg.highlight
                 ? 'border-brand-accent/50 bg-brand-accent/5 hover:border-brand-accent'
-                : 'hover:border-white/20'
+                : 'hover:border-th-border/20'
             ]}>
               {pkg.highlight && (
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -48,9 +48,9 @@ const categories = categoryId
               )}
 
               <div class="mb-6">
-                <h4 class="font-display font-bold text-white text-xl mb-2">{pkg.name}</h4>
+                <h4 class="font-display font-bold text-th-heading text-xl mb-2">{pkg.name}</h4>
                 <div class="text-3xl font-display font-bold text-brand-accent mb-1">{pkg.price}</div>
-                <div class="text-xs text-white/40 mb-2">{pkg.duration}</div>
+                <div class="text-xs text-th-faint mb-2">{pkg.duration}</div>
                 {pkg.savings && (
                   <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
                     <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,11 +61,11 @@ const categories = categoryId
                 )}
               </div>
 
-              <p class="text-sm text-white/50 mb-6 leading-relaxed">{pkg.description}</p>
+              <p class="text-sm text-th-muted mb-6 leading-relaxed">{pkg.description}</p>
 
               <ul class="space-y-2.5 mb-8 flex-1">
                 {pkg.includes.map((item: string) => (
-                  <li class="flex items-start gap-2.5 text-sm text-white/70">
+                  <li class="flex items-start gap-2.5 text-sm text-th-body/80">
                     <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                     </svg>
@@ -75,8 +75,8 @@ const categories = categoryId
               </ul>
 
               <div class="mt-auto">
-                <div class="text-xs text-white/30 mb-4">
-                  <span class="font-medium text-white/50">Best for:</span> {pkg.best_for}
+                <div class="text-xs text-th-faint/70 mb-4">
+                  <span class="font-medium text-th-muted">Best for:</span> {pkg.best_for}
                 </div>
                 <a
                   href={`https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.pricing_plan.replace('{plan}', pkg.name).replace('{category}', category.title))}`}
@@ -86,7 +86,7 @@ const categories = categoryId
                     'w-full text-center py-3 rounded-lg font-semibold text-sm transition-colors block',
                     pkg.highlight
                       ? 'bg-brand-accent hover:bg-blue-500 text-white'
-                      : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'
+                      : 'bg-th-surface/5 hover:bg-th-surface/10 text-th-heading border border-th-border/10'
                   ]}
                 >
                   Get Quote
@@ -99,8 +99,8 @@ const categories = categoryId
     ))}
 
     <!-- Custom quote CTA -->
-    <div class="text-center mt-8 p-8 border border-dashed border-white/15 rounded-2xl">
-      <p class="text-white/60 mb-4">{t.pricing.cta_custom}</p>
+    <div class="text-center mt-8 p-8 border border-dashed border-th-border/15 rounded-2xl">
+      <p class="text-th-muted mb-4">{t.pricing.cta_custom}</p>
       <a
         href={`https://wa.me/${wa}?text=${encodeURIComponent(categoryId && categories[0] ? t.wa_messages.pricing_custom.replace('{category}', categories[0].title) : t.wa_messages.pricing_custom_general)}`}
         target="_blank"

@@ -11,7 +11,7 @@ const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.footer)}`;
 ---
 
-<footer class="bg-brand-navy border-t border-white/10 mt-24">
+<footer class="bg-brand-navy border-t border-th-border/10 mt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -23,13 +23,13 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span class="font-display font-bold text-xl text-white">
+          <span class="font-display font-bold text-xl text-th-heading">
             restore<span class="text-brand-accent">Lab</span>
           </span>
         </a>
-        <p class="text-white/50 text-sm leading-relaxed">{t.footer.tagline}</p>
+        <p class="text-th-muted text-sm leading-relaxed">{t.footer.tagline}</p>
         {t.footer.trust && (
-          <p class="text-white/40 text-xs mt-2">{t.footer.trust}</p>
+          <p class="text-th-faint text-xs mt-2">{t.footer.trust}</p>
         )}
         <div class="flex items-center gap-3 mt-4">
           <a
@@ -49,11 +49,11 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
 
       <!-- Services -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.services_title}</h3>
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.services_title}</h3>
         <ul class="space-y-2">
           {t.services.items.map((s: any) => (
             <li>
-              <a href={`/${lang}/services/${s.id}`} class="text-white/50 hover:text-white text-sm transition-colors">
+              <a href={`/${lang}/services/${s.id}`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
                 {s.title}
               </a>
             </li>
@@ -63,15 +63,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
 
       <!-- Contact -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.contact_title}</h3>
-        <ul class="space-y-2 text-sm text-white/50">
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.contact_title}</h3>
+        <ul class="space-y-2 text-sm text-th-muted">
           <li>
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
               WhatsApp
             </a>
           </li>
           <li>
-            <a href={`/${lang}/contact`} class="hover:text-white transition-colors">
+            <a href={`/${lang}/contact`} class="hover:text-th-heading transition-colors">
               {t.nav.contact}
             </a>
           </li>
@@ -80,15 +80,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
 
       <!-- Legal -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.legal_title}</h3>
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.legal_title}</h3>
         <ul class="space-y-2">
           <li>
-            <a href={`/${lang}/privacy`} class="text-white/50 hover:text-white text-sm transition-colors">
+            <a href={`/${lang}/privacy`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
               {t.footer.privacy}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/terms`} class="text-white/50 hover:text-white text-sm transition-colors">
+            <a href={`/${lang}/terms`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
               {t.footer.terms}
             </a>
           </li>
@@ -97,9 +97,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
     </div>
 
     <!-- Bottom bar -->
-    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-white/40 text-sm">{t.footer.copyright}</p>
-      <p class="text-white/40 text-sm">{t.footer.made_in}</p>
+    <div class="mt-12 pt-8 border-t border-th-border/10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-th-faint text-sm">{t.footer.copyright}</p>
+      <p class="text-th-faint text-sm">{t.footer.made_in}</p>
     </div>
   </div>
 </footer>

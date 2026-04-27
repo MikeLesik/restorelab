@@ -43,14 +43,14 @@ const hubIcons = [
     <!-- 3 City Hub Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {t.area.hubs.map((hub: any, i: number) => (
-        <div class="group relative rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm p-7 flex flex-col hover:border-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-accent/5">
+        <div class="group relative rounded-2xl border border-th-border/10 bg-th-surface/4 backdrop-blur-sm p-7 flex flex-col hover:border-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-accent/5">
 
           {/* Top accent line */}
           <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-accent/60 to-transparent rounded-full"></div>
 
           {/* Hub number */}
-          <div class="absolute top-5 right-5 w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-            <span class="text-[10px] font-bold text-white/30">{i + 1}</span>
+          <div class="absolute top-5 right-5 w-6 h-6 rounded-full bg-th-surface/5 border border-th-border/10 flex items-center justify-center">
+            <span class="text-[10px] font-bold text-th-faint">{i + 1}</span>
           </div>
 
           {/* Icon */}
@@ -59,7 +59,7 @@ const hubIcons = [
           </div>
 
           {/* City + region */}
-          <h3 class="font-display font-bold text-white text-2xl mb-0.5">{hub.city}</h3>
+          <h3 class="font-display font-bold text-th-heading text-2xl mb-0.5">{hub.city}</h3>
           <p class="label mb-4">{hub.region}</p>
 
           {/* Coverage badge */}
@@ -74,7 +74,7 @@ const hubIcons = [
           {/* Areas */}
           <div class="flex flex-wrap gap-1.5 mb-7 flex-1">
             {hub.areas.map((area: string) => (
-              <span class="px-2.5 py-1 bg-white/5 border border-white/8 rounded-lg text-xs text-white/55">
+              <span class="px-2.5 py-1 bg-th-surface/5 border border-th-border/8 rounded-lg text-xs text-th-muted">
                 {area}
               </span>
             ))}

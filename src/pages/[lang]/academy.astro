@@ -28,7 +28,7 @@ const { t } = Astro.props;
     <section class="bg-gradient-hero py-12 sm:py-16">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="section-title text-4xl sm:text-5xl mb-6" set:html={t.academy.headline.replace('restoreLab', 'restore<span class="text-brand-accent">Lab</span>')} />
-        <p class="lead text-white/70 max-w-2xl mx-auto mb-10">
+        <p class="lead text-th-body/80 max-w-2xl mx-auto mb-10">
           {t.academy.intro}
         </p>
 
@@ -39,7 +39,7 @@ const { t } = Astro.props;
           </p>
           <ul class="space-y-3">
             {t.academy.bullets.map((item: string) => (
-              <li class="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+              <li class="flex items-start gap-3 text-th-body/80 text-sm leading-relaxed">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-accent flex-shrink-0" />
                 {item}
               </li>
@@ -47,7 +47,7 @@ const { t } = Astro.props;
           </ul>
         </div>
 
-        <p class="caption text-white/40">{t.academy.closing}</p>
+        <p class="caption text-th-faint">{t.academy.closing}</p>
       </div>
     </section>
 
@@ -77,8 +77,8 @@ const { t } = Astro.props;
                     </span>
                   )}
                 </div>
-                <h3 class="font-display font-bold text-lg text-white mb-3">{article.title}</h3>
-                <p class="text-sm text-white/60 leading-relaxed flex-1">{article.excerpt}</p>
+                <h3 class="font-display font-bold text-lg text-th-heading mb-3">{article.title}</h3>
+                <p class="text-sm text-th-muted leading-relaxed flex-1">{article.excerpt}</p>
               </Wrapper>
             );
           })}

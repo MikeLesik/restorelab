@@ -36,11 +36,26 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang} class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Theme init: prevent FOUC by applying stored preference before render -->
+    <script is:inline>
+      (function(){
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var isDark = stored ? stored === 'dark' : prefersDark;
+        if (!isDark) {
+          document.documentElement.classList.remove('dark');
+        }
+        // Update theme-color meta
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', isDark ? '#0A0A0A' : '#FFFFFF');
+      })();
+    </script>
 
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="0fYdZyt-ipgrVVu6-tcvbXLN4BXYnWayt_5LsOfD8T0" />
@@ -225,8 +240,12 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
 
       // ── CookieConsent v3 ─────────────────────────────────────────────────────
 
-      // Force dark mode to match site theme
-      document.documentElement.classList.add('cc--darkmode');
+      // Sync CookieConsent dark mode with site theme
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.add('cc--darkmode');
+      } else {
+        document.documentElement.classList.remove('cc--darkmode');
+      }
 
       var ccScript = document.createElement('script');
       ccScript.src = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js';

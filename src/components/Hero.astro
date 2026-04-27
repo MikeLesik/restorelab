@@ -32,7 +32,7 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
   <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
     <!-- H1 -->
-    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight tracking-tight">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-th-heading mb-6 leading-tight tracking-tight">
       {h1First}.{' '}
       <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-300">
         {h1Second}.
@@ -40,7 +40,7 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
     </h1>
 
     <!-- Subheadline -->
-    <p class="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+    <p class="text-xl md:text-2xl text-th-muted max-w-2xl mx-auto mb-10 leading-relaxed">
       {t.hero.subheadline}
     </p>
 
@@ -68,7 +68,7 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
     </div>
 
     <!-- Microcopy -->
-    <p class="text-white/35 text-sm">{t.hero.reply_time}</p>
+    <p class="text-th-faint/80 text-sm">{t.hero.reply_time}</p>
 
   </div>
 
@@ -87,9 +87,9 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
   </div>
 
   <!-- Scroll indicator -->
-  <div class="pb-8 flex flex-col items-center gap-2 text-white/25">
+  <div class="pb-8 flex flex-col items-center gap-2 text-th-faint/60">
     <span class="text-xs uppercase tracking-widest">Scroll</span>
-    <div class="w-px h-8 bg-white/20 animate-pulse"></div>
+    <div class="w-px h-8 bg-th-surface/20 animate-pulse"></div>
   </div>
 
 </section>

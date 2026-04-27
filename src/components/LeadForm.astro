@@ -30,8 +30,8 @@ const wa = WHATSAPP_NUMBER;
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-white text-sm mb-1">{item.title}</h4>
-              <p class="text-white/40 text-xs leading-relaxed">{item.description}</p>
+              <h4 class="font-semibold text-th-heading text-sm mb-1">{item.title}</h4>
+              <p class="text-th-faint text-xs leading-relaxed">{item.description}</p>
             </div>
           </div>
         ))}
@@ -43,7 +43,7 @@ const wa = WHATSAPP_NUMBER;
 
         <!-- Name -->
         <div>
-          <label for="lead-name" class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-name" class="block text-sm font-medium text-th-body mb-2">
             {t.lead_form.fields.name} <span class="text-brand-accent">*</span>
           </label>
           <input
@@ -53,13 +53,13 @@ const wa = WHATSAPP_NUMBER;
             required
             maxlength="100"
             placeholder={t.lead_form.fields.name_placeholder}
-            class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
+            class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
         </div>
 
         <!-- Phone -->
         <div>
-          <label for="lead-phone" class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-phone" class="block text-sm font-medium text-th-body mb-2">
             {t.lead_form.fields.phone} <span class="text-brand-accent">*</span>
           </label>
           <input
@@ -69,19 +69,19 @@ const wa = WHATSAPP_NUMBER;
             required
             maxlength="20"
             placeholder={t.lead_form.fields.phone_placeholder}
-            class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
+            class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
         </div>
 
         <!-- Service -->
         <div>
-          <label for="lead-service" class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-service" class="block text-sm font-medium text-th-body mb-2">
             {t.lead_form.fields.service}
           </label>
           <select
             id="lead-service"
             name="service"
-            class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm appearance-none"
+            class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm appearance-none"
           >
             <option value="" class="bg-brand-navy">—</option>
             {t.lead_form.fields.service_options.map((opt: string) => (
@@ -92,7 +92,7 @@ const wa = WHATSAPP_NUMBER;
 
         <!-- Location -->
         <div>
-          <label for="lead-location" class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-location" class="block text-sm font-medium text-th-body mb-2">
             {t.lead_form.fields.location}
           </label>
           <input
@@ -101,13 +101,13 @@ const wa = WHATSAPP_NUMBER;
             name="location"
             maxlength="100"
             placeholder={t.lead_form.fields.location_placeholder}
-            class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
+            class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
           />
         </div>
 
         <!-- Message -->
         <div>
-          <label for="lead-message" class="block text-sm font-medium text-white/70 mb-2">
+          <label for="lead-message" class="block text-sm font-medium text-th-body mb-2">
             {t.lead_form.fields.message}
           </label>
           <textarea
@@ -116,7 +116,7 @@ const wa = WHATSAPP_NUMBER;
             rows="4"
             maxlength="1000"
             placeholder={t.lead_form.fields.message_placeholder}
-            class="w-full px-4 py-3 bg-white/5 border border-white/15 rounded-lg text-white placeholder-white/25 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm resize-none"
+            class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm resize-none"
           ></textarea>
         </div>
 
@@ -125,7 +125,7 @@ const wa = WHATSAPP_NUMBER;
           <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p class="text-xs text-white/50">{t.lead_form.fields.photo_note}</p>
+          <p class="text-xs text-th-muted">{t.lead_form.fields.photo_note}</p>
         </div>
 
         <!-- Submit -->

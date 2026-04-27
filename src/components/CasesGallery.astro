@@ -93,7 +93,7 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
             'px-4 py-2 rounded-full text-sm font-medium transition-colors border focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark',
             filter === 'all'
               ? 'bg-brand-accent text-white border-brand-accent'
-              : 'border-white/15 text-white/50 hover:text-white hover:border-white/30'
+              : 'border-th-border/15 text-th-muted hover:text-th-heading hover:border-th-border/30'
           ]}
         >
           {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -105,7 +105,7 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
       {cases.map((c) => {
         const cfg = categoryConfig[c.category] || categoryConfig['car'];
         return (
-          <div class="card group overflow-hidden hover:border-white/20 transition-all duration-300" data-category={c.category}>
+          <div class="card group overflow-hidden hover:border-th-border/20 transition-all duration-300" data-category={c.category}>
 
             {c.before && c.after ? (
               /* Before/after slider — activated when real photos are added */
@@ -133,10 +133,10 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 20px 20px;"></div>
 
                 {/* Before half */}
-                <div class="absolute inset-y-0 left-0 w-1/2 flex flex-col items-center justify-center gap-2 border-r border-white/10">
+                <div class="absolute inset-y-0 left-0 w-1/2 flex flex-col items-center justify-center gap-2 border-r border-th-border/10">
                   <span class="label opacity-40">Before</span>
-                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.iconPaths} />
+                  <div class="w-10 h-10 rounded-xl bg-th-surface/5 border border-th-border/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-th-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.iconPaths} />
                   </div>
                 </div>
 
@@ -149,28 +149,28 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
                 </div>
 
                 {/* Divider line */}
-                <div class="absolute inset-y-0 left-1/2 w-px bg-white/20 flex items-center justify-center">
-                  <div class="w-6 h-6 rounded-full bg-brand-dark border border-white/20 flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" /></svg>
+                <div class="absolute inset-y-0 left-1/2 w-px bg-th-surface/20 flex items-center justify-center">
+                  <div class="w-6 h-6 rounded-full bg-brand-dark border border-th-border/20 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-th-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3M16 9l3 3-3 3" /></svg>
                   </div>
                 </div>
 
                 {/* Metric badge */}
                 <div class="absolute bottom-3 right-3">
-                  <span class:list={['text-xs font-bold px-2.5 py-1 rounded-full bg-brand-dark/70 backdrop-blur-sm border border-white/10', cfg.color]}>
+                  <span class:list={['text-xs font-bold px-2.5 py-1 rounded-full bg-brand-dark/70 backdrop-blur-sm border border-th-border/10', cfg.color]}>
                     {c.metric}
                   </span>
                 </div>
 
                 {/* Category + location */}
                 <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                  <span class="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-md text-xs text-white/60 uppercase tracking-wider">{c.category}</span>
-                  <span class="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-md text-xs text-white/40">{c.location}</span>
+                  <span class="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-md text-xs text-th-muted uppercase tracking-wider">{c.category}</span>
+                  <span class="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-md text-xs text-th-faint">{c.location}</span>
                 </div>
               </div>
             )}
 
-            <h3 class="font-semibold text-white mb-1 text-sm">{c.title}</h3>
+            <h3 class="font-semibold text-th-heading mb-1 text-sm">{c.title}</h3>
             <p class:list={['text-xs', cfg.color]}>{c.result}</p>
           </div>
         );
@@ -179,7 +179,7 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
 
     <!-- CTA -->
     <div class="text-center mt-16">
-      <p class="text-white/40 text-sm mb-4">Want results like these?</p>
+      <p class="text-th-faint text-sm mb-4">Want results like these?</p>
       <a href={`/${lang}/contact`} class="btn-primary">
         Get Your Free Estimate
       </a>
@@ -197,11 +197,11 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
       const filter = btn.getAttribute('data-filter');
       filterBtns.forEach((b) => {
         b.classList.remove('bg-brand-accent', 'text-white', 'border-brand-accent');
-        b.classList.add('border-white/15', 'text-white/50');
+        b.classList.add('border-th-border/15', 'text-th-muted');
         b.setAttribute('aria-selected', 'false');
       });
       btn.classList.add('bg-brand-accent', 'text-white', 'border-brand-accent');
-      btn.classList.remove('border-white/15', 'text-white/50');
+      btn.classList.remove('border-th-border/15', 'text-th-muted');
       btn.setAttribute('aria-selected', 'true');
       cards.forEach((card) => {
         const el = card as HTMLElement;

@@ -11,7 +11,7 @@ const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.prefooter_cta)}`;
 ---
 
-<section class="relative pt-12 pb-10 overflow-hidden border-t border-white/5">
+<section class="relative pt-12 pb-10 overflow-hidden border-t border-th-border/5">
 
   <!-- Subtle gradient background -->
   <div class="absolute inset-0 bg-gradient-to-b from-brand-navy/60 via-brand-navy/30 to-transparent pointer-events-none"></div>
@@ -28,12 +28,12 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.prefo
     </div>
 
     <!-- Headline -->
-    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
+    <h2 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-4 leading-tight">
       {t.pre_footer_cta.title}
     </h2>
 
     <!-- Subtitle -->
-    <p class="text-white/55 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+    <p class="text-th-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
       {t.pre_footer_cta.subtitle}
     </p>
 
@@ -52,6 +52,6 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.prefo
     </a>
 
     <!-- Reply time -->
-    <p class="text-white/40 text-sm mt-5">{t.pre_footer_cta.reply_note}</p>
+    <p class="text-th-faint text-sm mt-5">{t.pre_footer_cta.reply_note}</p>
   </div>
 </section>
