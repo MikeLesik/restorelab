@@ -42,8 +42,16 @@ const sections = content.sections as Array<Record<string, any>>;
     "headline": content.title,
     "description": content.seo_description,
     "author": { "@type": "Organization", "name": "restoreLab" },
-    "publisher": { "@type": "Organization", "name": "restoreLab" },
-    "datePublished": "2025-01-15",
+    "publisher": {
+      "@type": "Organization",
+      "name": "restoreLab",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/favicon.svg`
+      }
+    },
+    "datePublished": card.date || "2025-01-15",
+    "dateModified": card.date || "2025-01-15",
     "mainEntityOfPage": `${SITE_URL}/${lang}/academy/${slug}`
   })} />
 

@@ -430,6 +430,7 @@
         "title": "Equipment Selection Protocols",
         "excerpt": "Why we choose specific rotary and DA polishers, backing plates, and pad compounds for each job — and how the wrong choice can damage a surface permanently.",
         "slug": "equipment-selection",
+        "date": "2025-01-15",
         "status": "published"
       },
       {
@@ -437,6 +438,7 @@
         "title": "Masking Protocols: Protecting the Edge",
         "excerpt": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
         "slug": "masking-protocols",
+        "date": "2025-02-05",
         "status": "published"
       },
       {
@@ -444,6 +446,7 @@
         "title": "Mechanical Correction Protocols: The Art of the Cut",
         "excerpt": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the clear coat.",
         "slug": "mechanical-correction",
+        "date": "2025-02-19",
         "status": "published"
       },
       {
@@ -451,6 +454,7 @@
         "title": "Refining & Stabilization Protocols: The Mirror Finish",
         "excerpt": "The transition from deep correction to absolute clear-coat clarity. Learn how to remove the working haze left by wool and stabilize the surface to eliminate holograms.",
         "slug": "refining-stabilization",
+        "date": "2025-03-12",
         "status": "published"
       },
       {
@@ -458,6 +462,7 @@
         "title": "Protection & Preservation Protocols: The Molecular Shield",
         "excerpt": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection and how to preserve a mirror finish for years.",
         "slug": "protection-preservation",
+        "date": "2025-03-26",
         "status": "published"
       },
       {
@@ -465,6 +470,7 @@
         "title": "Specialty Detailing: Motorcycle Protocols",
         "excerpt": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach and the art of cleaning metal and leather.",
         "slug": "motorcycle-detailing",
+        "date": "2025-04-16",
         "status": "published"
       },
       {
@@ -472,6 +478,7 @@
         "title": "How to Remove Swirl Marks from Car Paint",
         "excerpt": "Understanding what causes those circular scratches in your paint and the step-by-step professional process to eliminate them permanently.",
         "slug": "remove-swirl-marks",
+        "date": "2025-05-07",
         "status": "published"
       },
       {
@@ -479,6 +486,7 @@
         "title": "Windshield Scratch Repair: DIY vs Professional",
         "excerpt": "When can you fix windshield scratches yourself and when should you call a professional? An honest comparison of methods, costs and results.",
         "slug": "windshield-scratch-repair",
+        "date": "2025-05-28",
         "status": "published"
       },
       {
@@ -486,6 +494,7 @@
         "title": "Car Paint Correction Cost Guide Barcelona 2025",
         "excerpt": "What does professional paint correction actually cost in the Barcelona area? A transparent breakdown of pricing factors, package tiers and what affects the final quote.",
         "slug": "paint-correction-cost-barcelona",
+        "date": "2025-06-11",
         "status": "published"
       },
       {
@@ -493,6 +502,7 @@
         "title": "UV Damage on Acrylic Windows: Prevention & Restoration",
         "excerpt": "How UV radiation degrades acrylic and polycarbonate surfaces over time, and the professional restoration process that brings them back to full transparency.",
         "slug": "uv-damage-acrylic-restoration",
+        "date": "2025-07-02",
         "status": "published"
       }
     ]
