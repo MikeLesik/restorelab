@@ -231,31 +231,28 @@ function isActive(segment: string): boolean {
       document.querySelectorAll('.theme-icon-moon').forEach(el => el.classList.toggle('hidden', isDark));
     }
 
+    function applyTheme(isDark: boolean) {
+      html.classList.toggle('dark', isDark);
+      html.classList.toggle('cc--darkmode', isDark);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', isDark ? '#0A0A0A' : '#FFFFFF');
+      syncIcons();
+    }
+
     function toggleTheme() {
-      // Add transition class
       html.classList.add('theme-transitioning');
       const isDark = html.classList.contains('dark');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const newIsDark = !isDark;
 
-      if (isDark) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
+      // If toggling back to system default, clear localStorage so OS controls it
+      if (newIsDark === systemDark) {
+        localStorage.removeItem('theme');
       } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
       }
 
-      // Sync CookieConsent dark mode
-      if (html.classList.contains('dark')) {
-        html.classList.add('cc--darkmode');
-      } else {
-        html.classList.remove('cc--darkmode');
-      }
-
-      // Update theme-color meta
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', html.classList.contains('dark') ? '#0A0A0A' : '#FFFFFF');
-
-      syncIcons();
+      applyTheme(newIsDark);
 
       // Remove transition class after animation
       setTimeout(() => html.classList.remove('theme-transitioning'), 350);

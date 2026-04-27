@@ -45,15 +45,27 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <!-- Theme init: prevent FOUC by applying stored preference before render -->
     <script is:inline>
       (function(){
+        function applyTheme(isDark) {
+          document.documentElement.classList.toggle('dark', isDark);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', isDark ? '#0A0A0A' : '#FFFFFF');
+        }
+
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var isDark = stored ? stored === 'dark' : prefersDark;
-        if (!isDark) {
-          document.documentElement.classList.remove('dark');
-        }
-        // Update theme-color meta
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', isDark ? '#0A0A0A' : '#FFFFFF');
+        applyTheme(stored ? stored === 'dark' : prefersDark);
+
+        // React to OS theme changes in real-time (when no manual override)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches);
+            // Sync CookieConsent
+            document.documentElement.classList.toggle('cc--darkmode', e.matches);
+            // Sync toggle icons
+            document.querySelectorAll('.theme-icon-sun').forEach(function(el) { el.classList.toggle('hidden', !e.matches); });
+            document.querySelectorAll('.theme-icon-moon').forEach(function(el) { el.classList.toggle('hidden', e.matches); });
+          }
+        });
       })();
     </script>
 
