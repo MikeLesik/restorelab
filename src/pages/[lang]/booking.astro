@@ -83,15 +83,15 @@ const detailSlug = 'detail-booking';
         </p>
 
         <!-- Cal.com Embed Container -->
-        <div class="card p-0 overflow-hidden rounded-2xl min-h-[600px]">
+        <div class="card p-0 overflow-hidden rounded-2xl">
           <div id="cal-embed-estimate">
             <iframe
               src={`https://app.cal.com/${calUser}/${estimateSlug}?embed=true&layout=month_view&theme=dark`}
               width="100%"
-              height="600"
+              height="1000"
               frameborder="0"
               loading="lazy"
-              style="border: none; min-height: 600px;"
+              style="border: none; min-height: 100vh;"
               title="Book Estimate Visit"
               allow="payment"
             ></iframe>
@@ -100,10 +100,10 @@ const detailSlug = 'detail-booking';
             <iframe
               src={`https://app.cal.com/${calUser}/${detailSlug}?embed=true&layout=month_view&theme=dark`}
               width="100%"
-              height="600"
+              height="1000"
               frameborder="0"
               loading="lazy"
-              style="border: none; min-height: 600px;"
+              style="border: none; min-height: 100vh;"
               title="Book Detail Session"
               allow="payment"
             ></iframe>
