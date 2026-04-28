@@ -54,6 +54,10 @@
       "title": "Care Plans — Subscription Paint Protection | restoreLab",
       "description": "Monthly care plans for ongoing paint protection. Scheduled maintenance, ceramic top-ups, priority booking. From €39/month."
     },
+    "booking": {
+      "title": "Book an Appointment | restoreLab",
+      "description": "Book a free estimate visit or schedule your detailing appointment online. Mobile service in Sant Cugat, Barcelona and Terrassa."
+    },
     "privacy": {
       "title": "Privacy Policy | restoreLab",
       "description": "restoreLab privacy policy — how we collect and use your personal data."
@@ -816,6 +820,7 @@
     "ev_link": "EV Protection",
     "commercial_glass_link": "Commercial Glass",
     "plans_link": "Care Plans",
+    "booking_link": "Book Online",
     "legal_entity": "restoreLab S.L.",
     "legal_nif": "B-XXXXXXXX",
     "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
@@ -2246,5 +2251,22 @@
     "cta_section_subtitle": "Message us on WhatsApp to discuss which plan fits your car — or book a free initial assessment.",
     "cta_whatsapp": "Choose My Plan",
     "cta_email": "Email Us"
+  },
+  "booking": {
+    "hero_title": "Book your appointment",
+    "hero_subtitle": "Choose a free estimate visit or schedule your detailing session. We come to you — Sant Cugat, Barcelona and surrounding areas.",
+    "tabs": {
+      "estimate": "Free Estimate",
+      "detail": "Detail Booking"
+    },
+    "estimate_desc": "30-minute on-site visit. We inspect your vehicle, measure paint thickness and recommend the right package — no cost, no obligation.",
+    "detail_desc": "Book your detailing session. Select a date and time that works for you. We confirm within 2 hours.",
+    "info_title": "Before your appointment",
+    "info_items": [
+      "We need a standard parking bay with ~1m clearance on each side",
+      "The vehicle should be reasonably accessible (not blocked in)",
+      "We bring everything — generator, water supply, all equipment",
+      "You'll receive a WhatsApp confirmation with exact arrival time"
+    ]
   }
 }

@@ -54,6 +54,10 @@
       "title": "Plans de Cura — Protecció de Pintura per Subscripció | restoreLab",
       "description": "Plans mensuals de cura per a protecció contínua. Manteniment programat, recàrregues ceràmiques, reserva prioritària. Des de 39€/mes."
     },
+    "booking": {
+      "title": "Reservar Cita | restoreLab",
+      "description": "Reserva una visita de valoració gratuïta o programa la teva sessió de detailing online. Servei mòbil a Sant Cugat, Barcelona i Terrassa."
+    },
     "privacy": {
       "title": "Política de Privadesa | restoreLab",
       "description": "Política de privadesa de restoreLab — com recopilem i utilitzem les vostres dades personals."
@@ -757,6 +761,7 @@
     "ev_link": "Protecció EV",
     "commercial_glass_link": "Vidre Comercial",
     "plans_link": "Plans de Cura",
+    "booking_link": "Reservar Online",
     "legal_entity": "restoreLab S.L.",
     "legal_nif": "B-XXXXXXXX",
     "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
@@ -2246,5 +2251,22 @@
     "cta_section_subtitle": "Envia'ns un missatge per WhatsApp per parlar sobre quin pla s'adapta al teu cotxe — o reserva una avaluació inicial gratuïta.",
     "cta_whatsapp": "Tria el Meu Pla",
     "cta_email": "Envia'ns un Email"
+  },
+  "booking": {
+    "hero_title": "Reserva la teva cita",
+    "hero_subtitle": "Tria una visita de valoració gratuïta o programa la teva sessió de detailing. Anem a tu — Sant Cugat, Barcelona i rodalia.",
+    "tabs": {
+      "estimate": "Valoració Gratuïta",
+      "detail": "Reservar Detailing"
+    },
+    "estimate_desc": "Visita presencial de 30 minuts. Inspeccionem el teu vehicle, mesurem el gruix de la pintura i recomanem el paquet adequat — sense cost, sense compromís.",
+    "detail_desc": "Reserva la teva sessió de detailing. Selecciona data i hora que et convinguin. Confirmem en 2 hores.",
+    "info_title": "Abans de la teva cita",
+    "info_items": [
+      "Necessitem una plaça d'aparcament estàndard amb ~1m de marge a cada costat",
+      "El vehicle ha d'estar raonablement accessible (no bloquejat)",
+      "Portem tot — generador, subministrament d'aigua, tot l'equip",
+      "Rebràs una confirmació per WhatsApp amb l'hora exacta d'arribada"
+    ]
   }
 }
