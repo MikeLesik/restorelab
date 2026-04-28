@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Preus — Polit Auto i Restauració de Superfícies | restoreLab",
-      "description": "6 paquets de correcció de pintura i ceràmic des de 149€ fins a PPF. Preus base sedan amb multiplicadors per mida. Pressupost gratuït per WhatsApp."
+      "description": "5 paquets de correcció de pintura i ceràmic des de 149€ fins a 1 049€. Preus base sedan amb multiplicadors per mida. Pressupost gratuït per WhatsApp."
     },
     "cases": {
       "title": "Abans i Després — restoreLab",
@@ -44,7 +44,7 @@
     },
     "ev": {
       "title": "Protecció de Pintura Tesla i Vehicles Elèctrics Barcelona | restoreLab",
-      "description": "Ceràmic i PPF especialitzat per a vehicles elèctrics: Tesla, Polestar, Taycan. Aplicació segura per a sensors. Protecció UV mediterrània."
+      "description": "Ceràmic especialitzat per a vehicles elèctrics: Tesla, Polestar, Taycan. Aplicació segura per a sensors. Protecció UV mediterrània."
     },
     "commercial_glass": {
       "title": "Restauració de Vidre Comercial Barcelona | restoreLab",
@@ -108,7 +108,6 @@
       { "name": "Gtechniq", "status": "authorized" },
       { "name": "Rupes", "status": "equipment" },
       { "name": "Koch Chemie", "status": "equipment" },
-      { "name": "XPEL", "status": "ppf" },
       { "name": "CarPro", "status": "products" }
     ],
     "certifications": [
@@ -427,23 +426,6 @@
               "Garantia de 2 anys sobre el coating"
             ],
             "best_for": "Vehicles de luxe i esportius, màxima protecció a llarg termini",
-            "highlight": false
-          },
-          {
-            "name": "Flagship PPF + Ceràmic",
-            "slug": "flagship-ppf",
-            "price": "des de 2 290€",
-            "duration": "1,5–2 dies",
-            "description": "Film de protecció de pintura en zones d'impacte més ceràmic de 5 anys a tot el vehicle. La defensa definitiva.",
-            "includes": [
-              "Correcció multifase completa",
-              "PPF en capó, para-xocs, retrovisors i vores de porta",
-              "Ceràmic de 5 anys (carrosseria completa)",
-              "Ceràmic en parabrisa i llantes",
-              "Restauració completa de plàstics",
-              "Inspecció anual inclosa"
-            ],
-            "best_for": "Vehicles nous o d'alt valor que mereixen protecció total",
             "highlight": false
           }
         ]
@@ -829,7 +811,7 @@
     "philosophy_title": "Restaurar, no reemplaçar",
     "philosophy_text": "Cada restauració allarga la vida dels materials existents. Sense residus de pintura, sense vidre a l'abocador, sense peces de recanvi innecessàries. És millor per a la teva butxaca i millor per al medi ambient. Creiem que la reparació més sostenible és la que no genera nous residus.",
     "equipment_title": "Equipament professional",
-    "equipment_text": "Treballem exclusivament amb polidores Rupes, ceràmics Gyeon i Gtechniq, compostos Koch Chemie, i film de protecció XPEL. Cada producte se selecciona pel seu rendiment, no pel màrqueting — i cada tècnic està format per utilitzar-los correctament.",
+    "equipment_text": "Treballem exclusivament amb polidores Rupes, ceràmics Gyeon i Gtechniq, i compostos Koch Chemie. Cada producte se selecciona pel seu rendiment, no pel màrqueting — i cada tècnic està format per utilitzar-los correctament.",
     "local_title": "Compromís local",
     "local_text": "Amb base a Sant Cugat del Vallès, servim tota l'àrea metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. La nostra unitat mòbil va a casa teva, oficina o plaça d'aparcament. Sense necessitat de deixar el teu cotxe en un taller.",
     "certifications_title": "Certificacions i Formació",
@@ -1424,7 +1406,7 @@
     },
     "paint_correction_cost_barcelona": {
       "seo_title": "Guia de Preus Correcció de Pintura Barcelona 2025 | restoreLab",
-      "seo_description": "Quant costa la correcció de pintura a Barcelona? 6 paquets des de 149€ Express Refresh fins a 2 290€ PPF + Ceràmic. Multiplicadors per mida.",
+      "seo_description": "Quant costa la correcció de pintura a Barcelona? 5 paquets des de 149€ Express Refresh fins a 1 049€ Ceràmic Premium 5 Anys. Multiplicadors per mida.",
       "title": "Guia de Preus Correcció de Pintura Barcelona 2025",
       "description": "Un desglossament transparent del que costa la correcció professional de pintura a l'àrea metropolitana de Barcelona. Nivells de paquets, factors de preu i com obtenir el millor valor per al teu vehicle.",
       "intro": "Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2025.",
@@ -1446,15 +1428,14 @@
           "number": "2",
           "title": "Els Nostres Nivells de Paquets",
           "paragraphs": [
-            "A restoreLab oferim sis paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +20%, SUV gran +35%."
+            "A restoreLab oferim cinc paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +20%, SUV gran +35%."
           ],
           "tools": [
             { "label": "Express Refresh", "text": "149€. Rentat descontaminant, clay bar, polit suau i segellant esprai. ~2 hores." },
             { "label": "Correcció Single-Stage", "text": "289€. Polit mecànic d'un pas que elimina fins al 70% de swirls. 3-4 hores." },
             { "label": "Correcció Two-Stage", "text": "549€. Compound + polit complet, 90%+ eliminació de defectes. 5-7 hores." },
             { "label": "Ceràmic 2 Anys", "text": "649€. Correcció two-stage + ceràmic certificat de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular." },
-            { "label": "Ceràmic Premium 5 Anys", "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores." },
-            { "label": "Flagship PPF + Ceràmic", "text": "Des de 2 290€. PPF en zones d'impacte + ceràmic 5 anys complet. 1,5-2 dies." }
+            { "label": "Ceràmic Premium 5 Anys", "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores." }
           ]
         },
         {
@@ -1722,7 +1703,7 @@
           "paragraphs": [
             "Viure a menys de 30 quilòmetres de la costa mediterrània significa exposició constant a partícules de sal a l'aire. El Garbí (brisa marina del sud-oest) transporta cristalls microscòpics de sal marina terra endins — arribant a Sant Cugat, Bellaterra i fins i tot Terrassa durant els mesos d'estiu. Aquestes partícules de clorur aterren sobre la superfície de la pintura, es dissolen en la rosada matinal o la humitat, i creen punts àcids localitzats que graven el vernís.",
             "L'efecte és més pronunciat en zones de descrostaments on el metall nu està exposat. La sal accelera l'oxidació de la imprimació i el metall exposats a 3-5 vegades la velocitat dels entorns no costaners. Un petit descrostament que romandria cosmètic durant anys en una ubicació interior pot desenvolupar anells d'òxid visibles en 6-12 mesos a Castelldefels o la costa del Maresme. Per això sempre recomanem tractar els descrostaments puntualment i protegir la pintura circumdant.",
-            "Per a vehicles costaners a Castelldefels, Gavà, Sitges i la zona del Maresme, la nostra recomanació és el paquet Ceràmic Premium 5Y a 1.049 euros, que inclou recobriment ceràmic de grafè per a tota la carrosseria, tractament hidrofòbic del parabrisa i ceràmic de llantes. L'efecte hidrofòbic fa que la humitat carregada de sal formi gotes i escorri en lloc de romandre sobre la superfície gravant-la. Per a vehicles a la zona de major risc (dins de 5 km de la costa), suggerim afegir Film de Protecció de Pintura (PPF) en capó, para-xocs i retrovisors a través del nostre paquet Flagship PPF + Ceràmic des de 2.290 euros."
+            "Per a vehicles costaners a Castelldefels, Gavà, Sitges i la zona del Maresme, la nostra recomanació és el paquet Ceràmic Premium 5Y a 1.049 euros, que inclou recobriment ceràmic de grafè per a tota la carrosseria, tractament hidrofòbic del parabrisa i ceràmic de llantes. L'efecte hidrofòbic fa que la humitat carregada de sal formi gotes i escorri en lloc de romandre sobre la superfície gravant-la."
           ]
         },
         {
@@ -1957,7 +1938,7 @@
   },
   "ev": {
     "hero_title": "Protecció de Pintura Especialitzada per a Vehicles Elèctrics",
-    "hero_subtitle": "Ceràmic i PPF segurs per a sensors. Per a Tesla, Polestar, Taycan i cada vehicle elèctric a les carreteres de Barcelona.",
+    "hero_subtitle": "Ceràmic segur per a sensors. Per a Tesla, Polestar, Taycan i cada vehicle elèctric a les carreteres de Barcelona.",
     "hero_cta": "Sol·licitar Pressupost EV",
     "pain_points_title": "Per Què la Pintura del teu EV Necessita una Cura Especial",
     "pain_points": [
@@ -1996,21 +1977,13 @@
         "desc": "Correcció completa per a EVs d'ús diari + ceràmic grafè 5 anys. Màxima protecció UV i química.",
         "includes": ["Correcció de pintura en dues fases", "Gtechniq Crystal Serum Ultra 5Y", "Set complet hidrofòbic vidres", "Ceràmic llandes + pinces", "Restauració motllures plàstiques", "Condicionat cuir interior"],
         "popular": true
-      },
-      {
-        "id": "ev-ppf",
-        "name": "PPF Frontal Tesla / EV",
-        "price_from": "1690",
-        "desc": "PPF en capó, para-xocs, aletes, retrovisors + ceràmic a la resta. Protecció màxima en zones d'alt impacte.",
-        "includes": ["XPEL Ultimate Plus PPF (frontal)", "Correcció en dues fases resta de carrosseria", "Ceràmic 5 anys a la resta", "Ajust de precisió zona sensors", "Garantia PPF 10 anys"],
-        "popular": false
       }
     ],
     "compatibility_title": "Compatibilitat per Marca",
     "compatibility": [
-      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escut Premium EV o PPF Frontal" },
+      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escut Premium EV" },
       { "brand": "Polestar 2 / 3 / 4", "recommended": "Escut Premium EV" },
-      { "brand": "Porsche Taycan", "recommended": "Escut Premium EV o PPF Frontal" },
+      { "brand": "Porsche Taycan", "recommended": "Escut Premium EV" },
       { "brand": "BMW iX / i4 / i5", "recommended": "Protecció Cotxe Nou o Escut Premium" },
       { "brand": "Mercedes EQS / EQE", "recommended": "Escut Premium EV" },
       { "brand": "Audi e-tron / Q8 e-tron", "recommended": "Escut Premium EV" },
@@ -2212,7 +2185,7 @@
           "Retoc mensual amb polidora de màquina",
           "Retoc ceràmic mensual",
           "Renovació del recobriment de rodes (trimestral)",
-          "Inspecció i segellat de vores del PPF",
+          "Inspecció i retoc de vores del coating",
           "Detall del compartiment del motor (semestral)",
           "Programació prioritària el mateix dia",
           "20% de descompte en qualsevol servei addicional"

@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Pricing — Car Polishing & Surface Restoration | restoreLab",
-      "description": "6 paint correction & ceramic coating packages from €149 to PPF. Sedan baseline pricing with size multipliers. Free estimate via WhatsApp."
+      "description": "5 paint correction & ceramic coating packages from €149 to €1 049. Sedan baseline pricing with size multipliers. Free estimate via WhatsApp."
     },
     "cases": {
       "title": "Before & After Cases — restoreLab",
@@ -44,7 +44,7 @@
     },
     "ev": {
       "title": "Tesla & EV Paint Protection Barcelona | restoreLab",
-      "description": "EV-specialised ceramic coating and PPF for Tesla, Polestar, Taycan. Sensor-safe application. Mediterranean UV protection."
+      "description": "EV-specialised ceramic coating for Tesla, Polestar, Taycan. Sensor-safe application. Mediterranean UV protection."
     },
     "commercial_glass": {
       "title": "Commercial Glass Restoration Barcelona | restoreLab",
@@ -108,7 +108,6 @@
       { "name": "Gtechniq", "status": "authorized" },
       { "name": "Rupes", "status": "equipment" },
       { "name": "Koch Chemie", "status": "equipment" },
-      { "name": "XPEL", "status": "ppf" },
       { "name": "CarPro", "status": "products" }
     ],
     "certifications": [
@@ -428,23 +427,6 @@
               "2-year warranty on coating"
             ],
             "best_for": "Luxury & sports cars, maximum long-term protection",
-            "highlight": false
-          },
-          {
-            "name": "Flagship PPF + Ceramic",
-            "slug": "flagship-ppf",
-            "price": "from 2 290€",
-            "duration": "1.5–2 days",
-            "description": "Paint protection film on high-impact zones plus 5-year ceramic on the entire vehicle. The ultimate defence.",
-            "includes": [
-              "Full multi-stage correction",
-              "PPF on bonnet, bumper, mirrors & door edges",
-              "5-year ceramic coating (full body)",
-              "Windshield & wheel ceramic coatings",
-              "Complete trim restoration",
-              "Annual inspection included"
-            ],
-            "best_for": "New or high-value vehicles that deserve total protection",
             "highlight": false
           }
         ]
@@ -806,7 +788,7 @@
     "philosophy_title": "Restore, don't replace",
     "philosophy_text": "Every restoration extends the life of existing materials. No paint waste, no glass going to landfill, no unnecessary replacement parts. It's better for your wallet and better for the environment. We believe the most sustainable repair is the one that doesn't create new waste.",
     "equipment_title": "Professional equipment",
-    "equipment_text": "We work exclusively with Rupes polishing machines, Gyeon and Gtechniq ceramic coatings, Koch Chemie compounds, and XPEL paint protection film. Every product is selected based on performance data, not marketing — and every technician is trained to use them correctly.",
+    "equipment_text": "We work exclusively with Rupes polishing machines, Gyeon and Gtechniq ceramic coatings, and Koch Chemie compounds. Every product is selected based on performance data, not marketing — and every technician is trained to use them correctly.",
     "local_title": "Local commitment",
     "local_text": "Based in Sant Cugat del Vallès, we serve the entire Barcelona metropolitan area — from Matadepera to Castelldefels, from Pedralbes to Terrassa. Our mobile unit comes to your home, office or parking spot. No need to leave your car at a workshop.",
     "certifications_title": "Certifications & Training",
@@ -1424,7 +1406,7 @@
     },
     "paint_correction_cost_barcelona": {
       "seo_title": "Car Paint Correction Cost Guide Barcelona 2025 | restoreLab",
-      "seo_description": "What does paint correction cost in Barcelona? 6-tier pricing from €149 Express Refresh to €2 290 PPF + Ceramic. Size multipliers and quote guide.",
+      "seo_description": "What does paint correction cost in Barcelona? 5-tier pricing from €149 Express Refresh to €1 049 Premium Ceramic 5Y. Size multipliers and quote guide.",
       "title": "Car Paint Correction Cost Guide Barcelona 2025",
       "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, and how to get the best value for your vehicle.",
       "intro": "One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2025.",
@@ -1446,15 +1428,14 @@
           "number": "2",
           "title": "Our Package Tiers",
           "paragraphs": [
-            "At restoreLab, we offer six clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +20%, large SUV +35%."
+            "At restoreLab, we offer five clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +20%, large SUV +35%."
           ],
           "tools": [
             { "label": "Express Refresh", "text": "149 EUR. Decon wash, clay bar, light hand polish & spray sealant. ~2 hours." },
             { "label": "Single-Stage Correction", "text": "289 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours." },
             { "label": "Two-Stage Correction", "text": "549 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours." },
             { "label": "Ceramic Coating 2Y", "text": "649 EUR. Two-stage correction + 2-year certified ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular." },
-            { "label": "Premium Ceramic 5Y", "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours." },
-            { "label": "Flagship PPF + Ceramic", "text": "From 2 290 EUR. PPF on impact zones + 5-year ceramic full body. 1.5-2 days." }
+            { "label": "Premium Ceramic 5Y", "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours." }
           ]
         },
         {
@@ -1722,7 +1703,7 @@
           "paragraphs": [
             "Living within 30 kilometres of the Mediterranean coastline means constant exposure to airborne salt particles. The Garbí (southwest onshore breeze) carries microscopic sea salt crystals far inland — reaching Sant Cugat, Bellaterra and even Terrassa during summer months. These chloride particles land on the paint surface, dissolve in morning dew or humidity, and create localised acidic points that etch the clear coat.",
             "The effect is most pronounced in stone chip sites where bare metal is exposed. Salt accelerates oxidation of exposed primer and metal at 3-5 times the rate of non-coastal environments. A small stone chip that would remain cosmetic for years in an inland location can develop visible rust rings within 6-12 months in Castelldefels or the Maresme coast. This is why we always recommend addressing stone chips promptly and protecting the surrounding paint.",
-            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Premium Ceramic 5Y package at 1,049 euros, which includes full-body graphene ceramic coating, windshield hydrophobic treatment and wheel ceramic. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching. For vehicles in the highest-risk zone (within 5 km of the coastline), we suggest adding Paint Protection Film (PPF) on the bonnet, bumper and mirrors through our Flagship PPF + Ceramic package from 2,290 euros."
+            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Premium Ceramic 5Y package at 1,049 euros, which includes full-body graphene ceramic coating, windshield hydrophobic treatment and wheel ceramic. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching."
           ]
         },
         {
@@ -1957,7 +1938,7 @@
   },
   "ev": {
     "hero_title": "EV-Specialised Paint Protection",
-    "hero_subtitle": "Sensor-safe ceramic coating and PPF for Tesla, Polestar, Taycan and every electric vehicle on Barcelona's roads.",
+    "hero_subtitle": "Sensor-safe ceramic coating for Tesla, Polestar, Taycan and every electric vehicle on Barcelona's roads.",
     "hero_cta": "Get an EV Quote",
     "pain_points_title": "Why EV Paint Needs Special Care",
     "pain_points": [
@@ -1996,21 +1977,13 @@
         "desc": "Full correction for daily-driven EVs + 5-year graphene ceramic. Maximum UV and chemical protection.",
         "includes": ["Two-stage paint correction", "Gtechniq Crystal Serum Ultra 5Y", "Full glass hydrophobic set", "Wheel + caliper ceramic", "Plastic trim restoration", "Interior leather conditioning"],
         "popular": true
-      },
-      {
-        "id": "ev-ppf",
-        "name": "Tesla / EV PPF Front-End",
-        "price_from": "1690",
-        "desc": "PPF on hood, front bumper, fenders, mirrors + ceramic topcoat on rest. Ultimate protection for high-impact zones.",
-        "includes": ["XPEL Ultimate Plus PPF (front-end)", "Two-stage correction on rest of body", "5-year ceramic topcoat", "Sensor-area precision fit", "10-year PPF warranty"],
-        "popular": false
       }
     ],
     "compatibility_title": "Brand Compatibility",
     "compatibility": [
-      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "EV Premium Shield or PPF Front-End" },
+      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "EV Premium Shield" },
       { "brand": "Polestar 2 / 3 / 4", "recommended": "EV Premium Shield" },
-      { "brand": "Porsche Taycan", "recommended": "EV Premium Shield or PPF Front-End" },
+      { "brand": "Porsche Taycan", "recommended": "EV Premium Shield" },
       { "brand": "BMW iX / i4 / i5", "recommended": "EV New-Car Protection or Premium Shield" },
       { "brand": "Mercedes EQS / EQE", "recommended": "EV Premium Shield" },
       { "brand": "Audi e-tron / Q8 e-tron", "recommended": "EV Premium Shield" },
@@ -2212,7 +2185,7 @@
           "Monthly machine polish touch-up",
           "Monthly ceramic top-up",
           "Wheel coating refresh (quarterly)",
-          "PPF edge inspection & sealing",
+          "Coating edge inspection & touch-up",
           "Engine bay detail (bi-annually)",
           "Priority same-day scheduling",
           "20% off any additional service"

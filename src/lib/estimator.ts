@@ -103,15 +103,6 @@ const TIERS = [
     forGoals: ['add_ceramic', 'long_term_protection'] as ServiceGoal[],
     description: 'Two-stage correction + Gtechniq Crystal Serum Ultra 5-year ceramic.',
   },
-  {
-    id: 'flagship',
-    name: 'Flagship PPF + Ceramic',
-    basePrice: 2290,
-    eta: '2–3 days',
-    forConditions: ['light', 'medium', 'heavy'] as PaintCondition[],
-    forGoals: ['add_ceramic', 'long_term_protection'] as ServiceGoal[],
-    description: 'Full correction + XPEL PPF on high-impact zones + ceramic topcoat.',
-  },
 ];
 
 // ── Add-on definitions ────────────────────────────────────────────────────────
