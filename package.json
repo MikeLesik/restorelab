@@ -7,7 +7,9 @@
     "check": "astro check",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "new:case": "node scripts/new-case.mjs",
+    "new:post": "node scripts/new-post.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",

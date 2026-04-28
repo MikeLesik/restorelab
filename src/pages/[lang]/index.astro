@@ -11,13 +11,19 @@ import LeadForm from '@/components/LeadForm.astro';
 import BeforeAfterCarousel from '@/components/BeforeAfterCarousel.astro';
 import GuaranteeBlock from '@/components/GuaranteeBlock.astro';
 
+import BrandsStrip from '@/components/BrandsStrip.astro';
+import CertificationsRow from '@/components/CertificationsRow.astro';
+import Estimator from '@/components/Estimator.astro';
+
 import en from '@/content/en.json';
 import es from '@/content/es.json';
+import ca from '@/content/ca.json';
 
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' }, props: { t: en } },
     { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
   ];
 }
 
@@ -34,12 +40,15 @@ const { t } = Astro.props;
   currentPath=""
 >
   <Hero t={t} lang={lang} />
-  <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration']} />
+  <BrandsStrip t={t} />
+  <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration', 'trim-restoration', 'wheel-ceramic', 'engine-bay']} />
   <HowItWorks t={t} lang={lang} />
   <Testimonials t={t} />
   <BeforeAfterCarousel t={t} lang={lang} />
+  <Estimator t={t} lang={lang} />
   <PricingCards t={t} lang={lang} categoryId="car" />
   <!-- <AreaServedSection t={t} /> -->
+  <CertificationsRow t={t} />
   <GuaranteeBlock t={t} />
   <FAQ t={t} />
   <LeadForm t={t} lang={lang} />

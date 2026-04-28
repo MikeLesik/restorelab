@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Precios — Pulido Auto y Restauración de Superficies | restoreLab",
-      "description": "Precios transparentes para corrección de pintura, pulido de vidrio y restauración de acrílico. Paquetes desde 189€. Presupuesto gratuito por WhatsApp."
+      "description": "6 paquetes de corrección de pintura y cerámico desde 149€ hasta PPF. Precios base sedán con multiplicadores por tamaño. Presupuesto gratis por WhatsApp."
     },
     "cases": {
       "title": "Antes y Después — restoreLab",
@@ -33,6 +33,26 @@
     "contact": {
       "title": "Contacto restoreLab — Presupuesto Gratuito",
       "description": "Contacte restoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Sant Cugat, Barcelona y Terrassa."
+    },
+    "about": {
+      "title": "Sobre restoreLab — Nuestra Historia y Misión | restoreLab",
+      "description": "Conoce al equipo de restoreLab. Corrección de pintura móvil y cerámico en Sant Cugat y Barcelona. Certificados, asegurados, apasionados."
+    },
+    "business": {
+      "title": "Detailing Móvil B2B para Concesionarios y Flotas | restoreLab",
+      "description": "Detailing pre-venta móvil para concesionarios de Barcelona y flotas corporativas. Entrega ≤24h, informes fotográficos, facturación NET-30."
+    },
+    "ev": {
+      "title": "Protección de Pintura Tesla y Vehículos Eléctricos Barcelona | restoreLab",
+      "description": "Cerámico y PPF especializado para vehículos eléctricos: Tesla, Polestar, Taycan. Aplicación segura para sensores. Protección UV mediterránea."
+    },
+    "commercial_glass": {
+      "title": "Restauración de Cristal Comercial Barcelona | restoreLab",
+      "description": "Eliminación de arañazos en cristal comercial fuera de horario. Escaparates, oficinas y hoteles. Ahorra 70-80% vs sustitución."
+    },
+    "plans": {
+      "title": "Planes de Cuidado — Protección de Pintura por Suscripción | restoreLab",
+      "description": "Planes mensuales de cuidado para protección continua. Mantenimiento programado, recargas cerámicas, reserva prioritaria. Desde 39€/mes."
     },
     "privacy": {
       "title": "Política de Privacidad | restoreLab",
@@ -49,6 +69,18 @@
     "academy_equipment": {
       "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
+    },
+    "headlight": {
+      "title": "Restauración de Faros Sant Cugat y Barcelona | restoreLab",
+      "description": "Restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
+    },
+    "interior_leather": {
+      "title": "Limpieza de Cuero Interior y Cerámico | restoreLab",
+      "description": "Limpieza profunda de cuero, eliminación de manchas y cerámico opcional. Asientos, salpicadero y paneles. Desde 189€. Servicio móvil."
+    },
+    "pre_sale": {
+      "title": "Pack Pre-Venta — Maximiza el Valor de Reventa | restoreLab",
+      "description": "Corrección de pintura, limpieza interior profunda y detailing del motor en un paquete. 249€ para sedán. Aumenta el valor de reventa de tu coche."
     }
   },
   "nav": {
@@ -60,15 +92,40 @@
     "cta": "Presupuesto"
   },
   "hero": {
-    "headline": "Restaurar. No Sustituir.",
-    "subheadline": "Restauración móvil de pintura, cristal y acrílico en España — venimos a ti. Ahorra hasta un 70% frente al reemplazo.",
-    "cta_primary": "Presupuesto Gratis por WhatsApp",
+    "headline": "Acabado de fábrica. En tu garaje.",
+    "subheadline": "Corrección de pintura y cerámico premium en Sant Cugat, Barcelona y Vallès Occidental — vamos a ti.",
+    "cta_primary": "Presupuesto Gratuito",
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
-    "trust_pills": ["★ 5.0 Google", "47+ Reseñas", "500+ Trabajos", "100% Móvil"],
+    "trust_pills": ["★ 5.0 Google", "47+ Reseñas", "500+ Trabajos", "Seguro 500K€"],
     "cta_car": "Restauración Auto",
     "sticky_cta": "Presupuesto via WhatsApp",
     "badge": "★ Valorado 5.0 • 500+ Trabajos"
+  },
+  "trust": {
+    "brands": [
+      { "name": "Gyeon", "status": "authorized" },
+      { "name": "Gtechniq", "status": "authorized" },
+      { "name": "Rupes", "status": "equipment" },
+      { "name": "Koch Chemie", "status": "equipment" },
+      { "name": "XPEL", "status": "ppf" },
+      { "name": "CarPro", "status": "products" }
+    ],
+    "certifications": [
+      { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
+      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" },
+      { "name": "Miembro IDA", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
+      { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
+    ],
+    "insurance": {
+      "label": "Seguro de Responsabilidad Civil 500K€",
+      "detail": "La póliza cubre todo el trabajo in situ, incluyendo daños a vehículos de terceros."
+    },
+    "founder": {
+      "text": "Fundado en Sant Cugat. Servicio móvil desde el primer día.",
+      "link_label": "Sobre nosotros",
+      "link_url": "/about"
+    }
   },
   "social_proof": {
     "rating": "5.0",
@@ -114,7 +171,7 @@
         "title": "Corrección de Pintura Auto",
         "subtitle": "Eliminación de swirl marks, arañazos y restauración del brillo",
         "icon": "car",
-        "starting_price": "Desde 189€",
+        "starting_price": "Desde 149€",
         "features": [
           "Eliminación de remolinos y arañazos",
           "Ahorra vs pintura de 800€+",
@@ -149,6 +206,90 @@
         ],
         "cta_label": "Presupuesto Acrílico",
         "tag": null
+      },
+      {
+        "id": "headlight-restoration",
+        "title": "Restauración de Faros",
+        "subtitle": "Faros amarillentos u opacos restaurados a claridad cristalina",
+        "icon": "headlight",
+        "starting_price": "Desde 79€",
+        "features": [
+          "Eliminación de oxidación UV y amarilleo",
+          "Lijado húmedo y pulido a máquina",
+          "Sellante UV opcional (2+ años)"
+        ],
+        "cta_label": "Presupuesto Faros",
+        "tag": null
+      },
+      {
+        "id": "trim-restoration",
+        "title": "Restauración de Plásticos",
+        "subtitle": "Paragolpes, retrovisores y molduras exteriores revividas",
+        "icon": "trim",
+        "starting_price": "Desde 69€",
+        "features": [
+          "Negro profundo restaurado en plásticos",
+          "Protección UV aplicada",
+          "Vehículo completo desde 189€"
+        ],
+        "cta_label": "Presupuesto Plásticos",
+        "tag": null
+      },
+      {
+        "id": "wheel-ceramic",
+        "title": "Cerámico en Llantas",
+        "subtitle": "Coating repelente de polvo de freno para las 4 llantas",
+        "icon": "wheel",
+        "starting_price": "189€",
+        "features": [
+          "4 llantas limpiadas y descontaminadas",
+          "Cerámico (12+ meses de durabilidad)",
+          "El polvo de freno se desliza sin esfuerzo"
+        ],
+        "cta_label": "Presupuesto Llantas",
+        "tag": null
+      },
+      {
+        "id": "engine-bay",
+        "title": "Detailing del Motor",
+        "subtitle": "Bajo el capó — limpio, vestido y protegido",
+        "icon": "engine",
+        "starting_price": "119€",
+        "features": [
+          "Desengrase completo y limpieza a vapor",
+          "Tratamiento de plásticos y gomas",
+          "Proceso seguro para componentes eléctricos"
+        ],
+        "cta_label": "Presupuesto Motor",
+        "tag": null
+      },
+      {
+        "id": "interior-leather",
+        "title": "Limpieza de Cuero Interior",
+        "subtitle": "Asientos, salpicadero y paneles limpiados y protegidos",
+        "icon": "interior",
+        "starting_price": "Desde 189€",
+        "features": [
+          "Limpieza profunda y acondicionamiento del cuero",
+          "Eliminación de manchas y transferencia de tinte",
+          "Cerámico opcional (289€)"
+        ],
+        "cta_label": "Presupuesto Interior",
+        "tag": null
+      },
+      {
+        "id": "pre-sale-pack",
+        "title": "Pack Pre-Venta",
+        "subtitle": "Maximiza el valor de reventa antes de vender o entregar",
+        "icon": "sale",
+        "starting_price": "249€",
+        "features": [
+          "Corrección de pintura single-stage",
+          "Limpieza profunda del interior",
+          "Detailing del motor incluido"
+        ],
+        "cta_label": "Presupuesto Pre-Venta",
+        "tag": "Pack ahorro"
       }
     ],
     "learn_more": "Saber más",
@@ -187,57 +328,123 @@
     "section_subtitle": "Sin sorpresas. Presupuesto exacto tras revisión de fotos",
     "cta_custom": "¿Necesita un presupuesto personalizado?",
     "cta_whatsapp": "Preguntar por WhatsApp",
+    "ui": {
+      "most_popular": "Más Popular",
+      "best_for": "Ideal para:",
+      "get_quote": "Pedir Presupuesto",
+      "size_title": "Multiplicadores por Tamaño de Vehículo",
+      "size_subtitle": "Los precios indicados son para vehículos tipo sedán. Ajusta según tu vehículo:",
+      "sensitive_paint": "Recargo pintura sensible",
+      "sensitive_paint_note": "Negro azabache, Audi Brilliant Black, Porsche Carrara White, etc.",
+      "size_categories": [
+        { "name": "Compacto", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
+        { "name": "Sedán", "examples": "Serie 3, Clase C, A4", "modifier": "Base" },
+        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
+        { "name": "SUV grande / 7 plazas", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
+        { "name": "Deportivo / Superdeportivo", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+      ],
+      "sensitive_paint_surcharge": "+60–100 €"
+    },
     "categories": [
       {
         "id": "car",
-        "title": "Paquetes de Pulido Auto",
+        "title": "Corrección de Pintura y Cerámico",
         "packages": [
           {
-            "name": "Corrección Base",
-            "price": "desde 189€",
-            "duration": "2–4 horas",
-            "description": "Corrección inicial para swirl marks leves y oxidación.",
+            "name": "Express Refresh",
+            "slug": "express-refresh",
+            "price": "149€",
+            "duration": "~2 horas",
+            "description": "Lavado descontaminante rápido y pulido a mano para contaminación ligera. Mantenimiento ideal entre correcciones completas.",
             "includes": [
-              "Pulido mecánico de una fase",
+              "Lavado descontaminante",
+              "Tratamiento con clay bar",
+              "Pulido suave a mano",
+              "Protección con sellante spray (1–2 meses)"
+            ],
+            "best_for": "Vehículos nuevos o bien mantenidos que necesitan un repaso",
+            "highlight": false
+          },
+          {
+            "name": "Corrección Single-Stage",
+            "slug": "single-stage",
+            "price": "289€",
+            "duration": "3–4 horas",
+            "description": "Corrección mecánica en un paso que elimina hasta el 70% de swirl marks y arañazos leves.",
+            "includes": [
+              "Lavado descontaminante completo + clay bar",
+              "Pulido mecánico de un paso",
               "Eliminación de swirl marks y arañazos leves",
-              "Lavado manual y descontaminación con clay bar",
-              "Protección final con sellante"
+              "Protección con sellante de 6 meses"
             ],
-            "best_for": "Vehículo de uso diario con defectos leves",
-            "highlight": false,
-            "savings": "La mayoría ahorra €600+ vs taller"
+            "best_for": "Vehículos de uso diario con swirl marks moderados",
+            "highlight": false
           },
           {
-            "name": "Preparación Cerámica",
-            "price": "desde 339€",
-            "duration": "3–5 horas",
-            "description": "Corrección completa de dos fases, listo para recubrimiento cerámico.",
+            "name": "Corrección Two-Stage",
+            "slug": "two-stage",
+            "price": "549€",
+            "duration": "5–7 horas",
+            "description": "Corrección completa en dos pasos (compound + pulido). Elimina el 90%+ de defectos sin cerámico — ideal si ya tienes coating.",
             "includes": [
-              "Pulido mecánico de dos fases",
-              "Eliminación de swirl marks y arañazos profundos",
-              "Medición del grosor de la pintura",
-              "Limpieza con IPA por panel",
-              "Aplicación de base cerámica"
+              "Descontaminación completa + clay bar",
+              "Corrección en dos pasos (compound + pulido)",
+              "Medición del grosor de pintura",
+              "Limpieza IPA panel a panel",
+              "Acabado con sellante temporal"
             ],
-            "best_for": "Vehículos preparándose para cerámica",
-            "highlight": true,
-            "savings": "Incluye base cerámica de €89 — GRATIS"
+            "best_for": "Vehículos muy dañados o preparación pre-coating",
+            "highlight": false
           },
           {
-            "name": "Cerámica Premium",
-            "price": "desde 459€",
+            "name": "Cerámico 2 Años",
+            "slug": "ceramic-2y",
+            "price": "649€",
             "duration": "6–8 horas",
-            "description": "Corrección máxima + recubrimiento cerámico profesional.",
+            "description": "Corrección two-stage más recubrimiento cerámico certificado de 2 años (Gyeon / Gtechniq).",
             "includes": [
-              "Corrección total de pintura multifase",
-              "Recubrimiento cerámico profesional (2+ capas)",
-              "Tratamiento repelente de lluvia en el parabrisas",
-              "Tratamiento de neumáticos y restauración de plásticos",
-              "Garantía de protección de 12 meses"
+              "Corrección completa two-stage",
+              "Medición del grosor de pintura",
+              "Limpieza IPA y preparación de superficie",
+              "Cerámico de 2 años (Gyeon / Gtechniq)",
+              "Tratamiento de neumáticos y plásticos"
             ],
-            "best_for": "Vehículos de lujo y deportivos, máxima protección",
-            "highlight": false,
-            "savings": "Garantía de 12 meses incluida"
+            "best_for": "Quien busca protección duradera con acabado de exposición",
+            "highlight": true
+          },
+          {
+            "name": "Cerámico Premium 5 Años",
+            "slug": "premium-5y",
+            "price": "1 049€",
+            "duration": "8–10 horas",
+            "description": "Corrección multifase con cerámico grafeno de 5 años. Incluye parabrisas y llantas.",
+            "includes": [
+              "Corrección de pintura multifase",
+              "Cerámico grafeno de 5 años",
+              "Coating hidrofóbico en parabrisas",
+              "Cerámico en llantas",
+              "Restauración de plásticos y neumáticos",
+              "Garantía de 2 años sobre el coating"
+            ],
+            "best_for": "Vehículos de lujo y deportivos, máxima protección a largo plazo",
+            "highlight": false
+          },
+          {
+            "name": "Flagship PPF + Cerámico",
+            "slug": "flagship-ppf",
+            "price": "desde 2 290€",
+            "duration": "1,5–2 días",
+            "description": "Film de protección de pintura en zonas de impacto más cerámico de 5 años en todo el vehículo. La defensa definitiva.",
+            "includes": [
+              "Corrección multifase completa",
+              "PPF en capó, paragolpes, retrovisores y bordes de puerta",
+              "Cerámico de 5 años (carrocería completa)",
+              "Cerámico en parabrisas y llantas",
+              "Restauración completa de plásticos",
+              "Inspección anual incluida"
+            ],
+            "best_for": "Vehículos nuevos o de alto valor que merecen protección total",
+            "highlight": false
           }
         ]
       },
@@ -246,23 +453,190 @@
         "title": "Vidrio y Acrílico",
         "packages": [
           {
-            "name": "Restauración de Vidrio / Acrílico",
-            "price": "Presupuesto personalizado",
-            "duration": "1–4 horas",
-            "description": "Precio basado en el tamaño de la superficie y la gravedad de los daños.",
+            "name": "Pulido de Parabrisas",
+            "slug": "windshield-polish",
+            "price": "119€",
+            "duration": "1–2 horas",
+            "description": "Elimina arañazos de limpiaparabrisas, manchas de agua y opacidad leve.",
             "includes": [
               "Evaluación de la superficie",
-              "Pulido mecánico de vidrio o acrílico",
-              "Eliminación de manchas de agua y arañazos",
+              "Pulido mecánico del parabrisas",
+              "Eliminación de arañazos y manchas"
+            ],
+            "best_for": "Parabrisas con marcas de limpiaparabrisas o depósitos minerales",
+            "highlight": false
+          },
+          {
+            "name": "Parabrisas + Hidrofóbico",
+            "slug": "windshield-hydrophobic",
+            "price": "179€",
+            "duration": "1,5–2,5 horas",
+            "description": "Pulido de parabrisas más coating hidrofóbico repelente de lluvia para mejor visibilidad.",
+            "includes": [
+              "Pulido completo del parabrisas",
+              "Eliminación de arañazos y manchas",
+              "Aplicación de coating hidrofóbico",
+              "La lluvia se desliza a partir de 60 km/h"
+            ],
+            "best_for": "Conductores que quieren mejor visibilidad en lluvia",
+            "highlight": true
+          },
+          {
+            "name": "Set Completo de Vidrios",
+            "slug": "full-glass-set",
+            "price": "289€",
+            "duration": "3–4 horas",
+            "description": "Todos los vidrios pulidos y tratados — parabrisas, laterales y luneta trasera.",
+            "includes": [
+              "Todas las superficies de vidrio pulidas",
+              "Eliminación de arañazos y manchas",
+              "Coating hidrofóbico en todos los vidrios",
+              "Luneta trasera incluida"
+            ],
+            "best_for": "Restauración completa de vidrios del vehículo",
+            "highlight": false
+          },
+          {
+            "name": "Solo Coating Hidrofóbico",
+            "slug": "hydrophobic-standalone",
+            "price": "desde 89€",
+            "duration": "30 min – 1 hora",
+            "description": "Coating repelente de lluvia sobre vidrio limpio. Parabrisas 89€, set completo 159€.",
+            "includes": [
+              "Preparación y descontaminación de superficie",
+              "Coating hidrofóbico profesional",
+              "Parabrisas o set completo de vidrios"
+            ],
+            "best_for": "Vidrios ya limpios que necesitan repelencia al agua",
+            "highlight": false
+          },
+          {
+            "name": "Restauración de Acrílico",
+            "price": "Presupuesto personalizado",
+            "duration": "1–4 horas",
+            "description": "Precio basado en el tamaño de la superficie y la gravedad de los daños. Paneles acrílicos y policarbonato.",
+            "includes": [
+              "Evaluación de la superficie",
+              "Pulido mecánico de paneles acrílicos",
+              "Eliminación de oxidación UV",
               "Recubrimiento hidrofóbico (opcional)"
             ],
-            "best_for": "Parabrisas, ventanas laterales, paneles acrílicos",
+            "best_for": "Ventanas acrílicas, escotillas, paneles de barco",
             "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "extras",
+        "title": "Servicios Adicionales",
+        "packages": [
+          {
+            "name": "Restauración de Faros",
+            "slug": "headlight-restoration",
+            "price": "79€ / par",
+            "duration": "45 min – 1 hora",
+            "description": "Restaura faros amarillentos u opacos a claridad cristalina. Sellante UV opcional por 119€.",
+            "includes": [
+              "Lijado húmedo y pulido a máquina (ambos faros)",
+              "Eliminación de oxidación y amarilleo",
+              "Barniz o sellante UV (opcional +40€)"
+            ],
+            "best_for": "Faros opacos, amarillentos o nublados",
+            "highlight": false
+          },
+          {
+            "name": "Cerámico en Llantas",
+            "slug": "wheel-ceramic",
+            "price": "189€",
+            "duration": "2–3 horas",
+            "description": "4 llantas descontaminadas y tratadas con cerámico repelente de polvo de freno.",
+            "includes": [
+              "Descontaminación de hierro (4 llantas)",
+              "Limpieza de barril y cara",
+              "Aplicación de cerámico",
+              "12+ meses de durabilidad"
+            ],
+            "best_for": "Quien está cansado de fregar polvo de freno",
+            "highlight": false
+          },
+          {
+            "name": "Detailing del Motor",
+            "slug": "engine-bay",
+            "price": "119€",
+            "duration": "1–1,5 horas",
+            "description": "Desengrase completo, limpieza a vapor y tratamiento — seguro para componentes eléctricos.",
+            "includes": [
+              "Desengrase completo y limpieza a vapor",
+              "Tratamiento de plásticos y gomas",
+              "Proceso seguro para componentes eléctricos"
+            ],
+            "best_for": "Preparación pre-venta o mantenimiento anual",
+            "highlight": false
+          },
+          {
+            "name": "Pack Pre-Venta",
+            "slug": "pre-sale-pack",
+            "price": "249€",
+            "duration": "4–5 horas",
+            "description": "Corrección de pintura + limpieza interior + motor — todo lo que inspecciona un comprador.",
+            "includes": [
+              "Corrección de pintura single-stage",
+              "Aspirado y limpieza completa del interior",
+              "Detailing del motor",
+              "Tratamiento de neumáticos y plásticos"
+            ],
+            "best_for": "Vender o entregar tu vehículo",
+            "highlight": true
           }
         ]
       }
     ],
-    "anchor_text": "Una pintura completa cuesta €800–2.000+. Nuestra corrección desde €189."
+    "anchor_text": "Corrección de pintura y cerámico premium por detailers certificados. Precios para sedán — consulta los multiplicadores por tamaño."
+  },
+  "estimator": {
+    "title": "Obtén tu Presupuesto Instantáneo",
+    "subtitle": "Responde 4 preguntas rápidas y recibe un rango de precio en segundos.",
+    "step1_title": "Tamaño del vehículo",
+    "size_small": "Pequeño",
+    "size_small_desc": "Compacto, sedán",
+    "size_medium": "Mediano",
+    "size_medium_desc": "Familiar, coupé, SUV pequeño",
+    "size_large": "Grande",
+    "size_large_desc": "SUV grande, furgoneta, camión",
+    "step2_title": "Estado de la pintura",
+    "cond_light": "Leve",
+    "cond_light_desc": "Marcas circulares leves, manchas de agua",
+    "cond_medium": "Medio",
+    "cond_medium_desc": "Arañazos visibles, acabado opaco",
+    "cond_heavy": "Severo",
+    "cond_heavy_desc": "Arañazos profundos, oxidación",
+    "step3_title": "Color de la pintura",
+    "color_standard": "Estándar",
+    "color_standard_desc": "Rojo, azul, verde…",
+    "color_metallic": "Metalizado",
+    "color_metallic_desc": "Plata, gris metalizado",
+    "color_black": "Negro",
+    "color_black_desc": "Negro sólido o metalizado",
+    "color_white": "Blanco",
+    "color_white_desc": "Blanco sólido o perlado",
+    "step4_title": "¿Qué necesitas?",
+    "step4_hint": "Selecciona uno o más objetivos",
+    "goal_gloss": "Restaurar brillo y eliminar arañazos",
+    "goal_ceramic": "Aplicar recubrimiento cerámico",
+    "goal_presale": "Preparar para venta",
+    "goal_protection": "Protección de pintura a largo plazo",
+    "goal_glass": "Eliminación de arañazos en cristal",
+    "submit": "Ver Mi Presupuesto",
+    "result_title": "Tus Opciones Recomendadas",
+    "addons_title": "Complementos sugeridos",
+    "cta_whatsapp": "Enviar por WhatsApp",
+    "cta_restart": "Empezar de Nuevo",
+    "back": "Atrás",
+    "recommended_tag": "Recomendado",
+    "note_black": "La pintura negra muestra cada imperfección. Se recomienda corrección en dos fases como mínimo.",
+    "note_heavy": "Los defectos severos pueden requerir medición de espesor de pintura. Evaluación gratuita in situ incluida.",
+    "note_large": "Los vehículos grandes requieren tiempo adicional. Los tiempos mostrados son aproximados.",
+    "wa_message": "¡Hola restoreLab! He usado el estimador:\n• Vehículo: {vehicleSize}\n• Estado: {paintCondition}\n• Color: {colorSensitivity}\n• Objetivos: {goals}\n• Recomendado: {tierName} (€{min}–{max})\n\nMe gustaría recibir un presupuesto."
   },
   "faq": {
     "section_title": "Antes de Contactarnos",
@@ -274,12 +648,12 @@
       {
         "icon": "money",
         "question": "¿Cuánto cuesta la corrección de pintura en Barcelona?",
-        "answer": "Desde 189 € para corrección base, 339 € con preparación cerámica y 459 € para corrección premium multicapa. El precio final depende del tamaño del vehículo y el estado de la pintura. Ofrecemos <a href='/es/pricing' class='text-brand-accent hover:underline'>presupuesto gratuito por WhatsApp</a> — envíanos unas fotos y te respondemos en menos de 30 minutos. Cubrimos Sant Cugat, Barcelona, Terrassa y todo el área metropolitana."
+        "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección two-stage completa más coating certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto — respondemos en menos de 30 minutos. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
         "icon": "swap",
         "question": "¿Cuál es la diferencia entre pulir y repintar un coche?",
-        "answer": "La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> elimina defectos del barniz original (swirl marks, arañazos, oxidación) sin añadir pintura nueva. Cuesta un 70-80% menos que repintar (desde 189 € vs 800-2.000+ €), se completa en horas en vez de días y conserva la pintura de fábrica. Repintar solo es necesario cuando la pintura está físicamente perdida o dañada más allá del barniz. Consulta nuestros <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
+        "answer": "La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> elimina defectos del barniz original (swirl marks, arañazos, oxidación) sin añadir pintura nueva. Cuesta significativamente menos que repintar (desde 149 € vs 800-2.000+ €), se completa en horas en vez de días y conserva la pintura de fábrica. Repintar solo es necesario cuando la pintura está físicamente perdida o dañada más allá del barniz. Consulta nuestros <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
       },
       {
         "icon": "glass",
@@ -289,7 +663,7 @@
       {
         "icon": "clock",
         "question": "¿Cuánto tiempo dura el servicio y el resultado?",
-        "answer": "La corrección de pintura tarda entre 3 y 8 horas según el tamaño y estado del vehículo. El pulido de vidrio, 1-2 horas. La corrección en sí es permanente — esos defectos no vuelven solos. El recubrimiento cerámico protege durante 12+ meses con cuidado adecuado; el sellante base del paquete de 189 € dura 3-6 meses. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
+        "answer": "La corrección de pintura tarda entre 2 y 10 horas según el paquete y el tamaño del vehículo. El pulido de vidrio, 1-2 horas. La corrección en sí es permanente — esos defectos no vuelven solos. Nuestro Cerámico 2 Años dura 2+ años, el Premium 5 Años dura 5+ años; el sellante del Express Refresh dura 1-2 meses. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
         "icon": "car",
@@ -391,11 +765,21 @@
     "legal_title": "Legal",
     "privacy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
+    "cookies": "Política de Cookies",
     "copyright": "© 2026 restoreLab. Todos los derechos reservados.",
     "made_in": "Hecho en España.",
     "trust": "Con la confianza de más de 500 clientes en Sant Cugat y Barcelona",
     "gbp_url": "https://g.page/restorelab-santcugat",
-    "gbp_label": "Google Reviews"
+    "gbp_label": "Google Reviews",
+    "business_link": "Para Empresas",
+    "ev_link": "Protección EV",
+    "commercial_glass_link": "Cristal Comercial",
+    "plans_link": "Planes de Cuidado",
+    "legal_entity": "restoreLab S.L.",
+    "legal_nif": "B-XXXXXXXX",
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "legal_provisional": "(Provisional — pendiente de registro)",
+    "legal_insurance": "Seguro de responsabilidad profesional — cobertura de €500.000"
   },
   "guarantee": {
     "section_title": "Cero Riesgo. Garantizado.",
@@ -433,6 +817,28 @@
     "cta": "Enviar fotos por WhatsApp",
     "trust_pill": "5.0 · 500+ trabajos en Sant Cugat y Barcelona",
     "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
+  },
+  "about": {
+    "hero_title": "Nacidos en Sant Cugat. Impulsados por la artesanía.",
+    "hero_subtitle": "restoreLab es un estudio móvil de restauración de superficies que sirve al área metropolitana de Barcelona. Llevamos corrección y protección profesional directamente a tu ubicación.",
+    "founder_name": "[Nombre del Fundador]",
+    "founder_role": "Fundador y Técnico Principal",
+    "founder_photo_note": "⚠ Placeholder — añadir foto real del fundador en /images/team/founder.jpg",
+    "origin_title": "Por qué existe restoreLab",
+    "origin_text": "restoreLab nació de una observación simple: la mayoría de daños en pintura no necesitan repintado, y la mayoría de arañazos en vidrio no requieren sustitución. La industria opta por la opción más cara. Nosotros elegimos otro camino — restaurar superficies a su estado de fábrica con equipamiento de precisión y los mejores productos disponibles.",
+    "philosophy_title": "Restaurar, no reemplazar",
+    "philosophy_text": "Cada restauración extiende la vida de los materiales existentes. Sin residuos de pintura, sin vidrio al vertedero, sin piezas de repuesto innecesarias. Es mejor para tu bolsillo y mejor para el medio ambiente. Creemos que la reparación más sostenible es la que no genera nuevos residuos.",
+    "equipment_title": "Equipamiento profesional",
+    "equipment_text": "Trabajamos exclusivamente con pulidoras Rupes, cerámicos Gyeon y Gtechniq, compuestos Koch Chemie, y film de protección XPEL. Cada producto se selecciona por rendimiento, no por marketing — y cada técnico está formado para usarlos correctamente.",
+    "local_title": "Compromiso local",
+    "local_text": "Con base en Sant Cugat del Vallès, servimos toda el área metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. Nuestra unidad móvil va a tu casa, oficina o plaza de aparcamiento. Sin necesidad de dejar tu coche en un taller.",
+    "certifications_title": "Certificaciones y Formación",
+    "stats": [
+      { "value": "500+", "label": "Vehículos restaurados" },
+      { "value": "5.0", "label": "Valoración Google" },
+      { "value": "€500K", "label": "Cobertura de seguro" },
+      { "value": "0", "label": "Repintados necesarios" }
+    ]
   },
   "academy": {
     "headline": "restoreLab Academia: Excelencia en Ingeniería",
@@ -528,6 +934,46 @@
         "excerpt": "Cómo la radiación UV degrada las superficies acrílicas y de policarbonato con el tiempo, y el proceso profesional de restauración que les devuelve la transparencia total.",
         "slug": "uv-damage-acrylic-restoration",
         "date": "2025-07-02",
+        "status": "published"
+      },
+      {
+        "number": "11",
+        "title": "Pulir o Repintar: Cuándo Tiene Sentido la Restauración de Pintura en Barcelona",
+        "excerpt": "Comparación basada en datos entre corrección de pintura y repintado para vehículos en el área de Barcelona. Cuándo el pulido te ahorra miles — y los casos excepcionales donde el repintado es la única opción.",
+        "slug": "polish-vs-repaint-barcelona",
+        "date": "2025-07-23",
+        "status": "published"
+      },
+      {
+        "number": "12",
+        "title": "Cuidado de Pintura para Tesla y Vehículos Eléctricos en el Mediterráneo",
+        "excerpt": "Por qué la pintura de los vehículos eléctricos — especialmente el notoriamente blando barniz de Tesla — exige una estrategia de protección diferente en el clima de alta radiación UV y costa de Barcelona.",
+        "slug": "tesla-ev-paint-care-mediterranean",
+        "date": "2025-08-13",
+        "status": "published"
+      },
+      {
+        "number": "13",
+        "title": "Guía de Restauración de Faros: Guía 2026 para Conductores de Barcelona",
+        "excerpt": "Todo lo que necesitas saber sobre la restauración de faros en España — desde los requisitos de la ITV hasta la ciencia de la degradación UV y las técnicas profesionales de restauración.",
+        "slug": "headlight-restoration-guide-barcelona",
+        "date": "2025-09-03",
+        "status": "published"
+      },
+      {
+        "number": "14",
+        "title": "Checklist de Detailing Pre-Venta: Qué Buscan los Compradores en Cataluña",
+        "excerpt": "Maximiza el valor de reventa de tu coche con un detailing profesional pre-venta. Qué inspeccionan los compradores catalanes, qué defectos cuestan más y el ROI de la corrección antes de anunciar.",
+        "slug": "pre-sale-detailing-checklist-catalonia",
+        "date": "2025-09-24",
+        "status": "published"
+      },
+      {
+        "number": "15",
+        "title": "Clima Mediterráneo y la Pintura de tu Coche: Guía de Protección",
+        "excerpt": "Sol, sal, polen, polvo del Sáhara — por qué los coches del área de Barcelona enfrentan un cóctel único de amenazas para la pintura, y los protocolos de protección que mantienen tu acabado intacto todo el año.",
+        "slug": "mediterranean-climate-car-paint-protection",
+        "date": "2025-10-15",
         "status": "published"
       }
     ]
@@ -978,7 +1424,7 @@
     },
     "paint_correction_cost_barcelona": {
       "seo_title": "Guía de Precios Corrección de Pintura Barcelona 2025 | restoreLab",
-      "seo_description": "¿Cuánto cuesta la corrección de pintura en Barcelona? Guía de precios transparente con paquetes desde 189€. Factores que afectan al presupuesto.",
+      "seo_description": "¿Cuánto cuesta la corrección de pintura en Barcelona? 6 paquetes desde 149€ Express Refresh hasta 2 290€ PPF + Cerámico. Multiplicadores por tamaño.",
       "title": "Guía de Precios Corrección de Pintura Barcelona 2025",
       "description": "Un desglose transparente de lo que cuesta la corrección profesional de pintura en el área metropolitana de Barcelona. Niveles de paquetes, factores de precio y cómo obtener el mejor valor para tu vehículo.",
       "intro": "Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta la corrección de pintura? La respuesta honesta es que depende de varios factores — pero creemos en la transparencia total. Aquí está nuestra guía completa de precios para 2025.",
@@ -1000,12 +1446,15 @@
           "number": "2",
           "title": "Nuestros Niveles de Paquetes",
           "paragraphs": [
-            "En restoreLab ofrecemos tres paquetes claramente definidos para que no haya sorpresas."
+            "En restoreLab ofrecemos seis paquetes claramente definidos (precio base sedán) para que no haya sorpresas. Se aplican multiplicadores por tamaño: compacto −10%, SUV +20%, SUV grande +35%."
           ],
           "tools": [
-            { "label": "Corrección Base", "text": "Desde 189€. Pulido de una fase para swirls leves y oxidación. Ideal para vehículos de uso diario con defectos menores. Duración: 2-4 horas." },
-            { "label": "Preparación Cerámica", "text": "Desde 339€. Corrección de dos fases más base cerámica. Ideal para vehículos que se preparan para cerámica. Duración: 3-5 horas." },
-            { "label": "Cerámica Premium", "text": "Desde 459€. Corrección multifase más recubrimiento cerámico profesional con garantía de 12 meses. Ideal para coches de lujo y deportivos. Duración: 6-8 horas." }
+            { "label": "Express Refresh", "text": "149€. Lavado descontaminante, clay bar, pulido suave y sellante spray. ~2 horas." },
+            { "label": "Corrección Single-Stage", "text": "289€. Pulido mecánico de un paso que elimina hasta el 70% de swirls. 3-4 horas." },
+            { "label": "Corrección Two-Stage", "text": "549€. Compound + pulido completo, 90%+ eliminación de defectos. 5-7 horas." },
+            { "label": "Cerámico 2 Años", "text": "649€. Corrección two-stage + cerámico certificado de 2 años (Gyeon/Gtechniq). 6-8 horas. Más popular." },
+            { "label": "Cerámico Premium 5 Años", "text": "1 049€. Corrección multifase + cerámico grafeno 5 años + parabrisas + llantas. 8-10 horas." },
+            { "label": "Flagship PPF + Cerámico", "text": "Desde 2 290€. PPF en zonas de impacto + cerámico 5 años completo. 1,5-2 días." }
           ]
         },
         {
@@ -1070,6 +1519,231 @@
           ]
         }
       ]
+    },
+    "polish_vs_repaint_barcelona": {
+      "seo_title": "¿Pulir o Repintar? Guía de Restauración de Pintura Barcelona | restoreLab",
+      "seo_description": "¿Cuándo la corrección de pintura supera al repintado en Barcelona? Comparación de costes, criterios de decisión y qué significa el clima mediterráneo para tu pintura.",
+      "title": "Pulir o Repintar: Cuándo Tiene Sentido la Restauración de Pintura en Barcelona",
+      "description": "Una guía práctica basada en datos para elegir entre corrección de pintura y repintado — con análisis de costes específico para el área metropolitana de Barcelona.",
+      "intro": "Cada semana recibimos fotos de propietarios de vehículos en Sant Cugat, Barcelona y el Vallès Occidental haciendo la misma pregunta: ¿debería pulir o repintar? La respuesta depende de la profundidad y el tipo de daño — pero en aproximadamente el 85% de los casos, la corrección profesional de pintura ofrece un resultado superior a una fracción del coste. Esta guía explica cómo tomar esa decisión con confianza.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Entendiendo el Daño: Barniz vs Capa Base",
+          "paragraphs": [
+            "Antes de decidir entre corrección y repintado, necesitas entender dónde se sitúa el daño en el sistema de pintura. La pintura automotriz moderna consta de cuatro capas: la capa e-coat (imprimación por electrodeposición), la imprimación-aparejo, la capa base (color) y el barniz encima. El barniz tiene típicamente 40-60 micras de grosor en un acabado de fábrica y actúa como la capa de protección sacrificial.",
+            "Las marcas circulares (swirl marks), arañazos leves, oxidación, manchas de agua y marcas de excrementos de aves se sitúan dentro de esta capa de barniz. Una corrección profesional de pintura — usando pulidoras como la Rupes LHR15 Mark III o Makita 9237CB — funciona nivelando el barniz a una profundidad uniforme, eliminando los defectos sin tocar el color subyacente. En restoreLab, medimos la profundidad de pintura con un medidor digital (Elcometer 456) antes de cada trabajo, asegurando que nunca comprometemos la integridad estructural del acabado.",
+            "El repintado, por el contrario, solo es necesario cuando el daño se extiende a través del barniz hasta la capa base — hablamos de arañazos profundos de llave donde se ve la imprimación o el metal desnudo, grandes desconchones que se han oxidado, o paneles donde el barniz se ha delaminado por completo. En el clima mediterráneo de Barcelona, donde los índices UV alcanzan regularmente 9-10 en verano y las temperaturas superan los 35 grados Celsius, el fallo del barniz en vehículos mal mantenidos es más común que en el norte de Europa."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Comparación de Costes: Corrección vs Repintado en Barcelona",
+          "paragraphs": [
+            "La economía favorece claramente la corrección en la mayoría de los casos. Una corrección de pintura completa en dos fases en restoreLab empieza en 549 euros para un sedán, mientras que un repintado profesional de un solo panel en un taller de chapa de Barcelona oscila entre 300 y 600 euros — y un repintado completo del vehículo cuesta entre 2.000 y 5.000 euros según la calidad. Nuestro paquete más popular, el Cerámico 2Y a 649 euros, incluye una corrección completa en dos fases más un recubrimiento cerámico certificado de 2 años con Gyeon o Gtechniq — ofreciendo tanto restauración como protección a largo plazo.",
+            "Más allá del coste directo, hay gastos ocultos del repintado: el coste del coche de alquiler durante los 3-7 días que el coche está en el taller, la depreciación por una pintura no original (que queda registrada en el historial del vehículo y es visible bajo inspección), y el riesgo de desajuste de color, especialmente en acabados metalizados y perlados. Nuestros clientes en Sant Cugat y Barcelona comprueban sistemáticamente que la corrección preserva tanto la integridad original de fábrica como el valor de reventa. Consulta nuestro desglose completo de precios en la página de precios.",
+            "También está el factor tiempo. Una corrección de pintura móvil lleva 5-7 horas en tu ubicación — tu garaje en Sant Cugat, tu aparcamiento de oficina en Barcelona o tu entrada en Terrassa. Sin dejar el coche, sin alquiler, sin interrupciones. Llevamos todo lo necesario: generador, pulidoras Rupes, compuestos Koch Chemie, suministro de agua y luces de inspección LED."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "El Marco de Decisión: Pulir, Repintar o Proteger",
+          "paragraphs": [
+            "En restoreLab, utilizamos un marco sencillo para cada evaluación. Primero, medimos el grosor de pintura en cada panel con un medidor digital. Si el barniz marca por encima de 80 micras en la mayoría de las zonas, hay material suficiente para una corrección completa en múltiples fases. Si las lecturas son inferiores a 60 micras en ciertos paneles, eso indica repintado previo o corrección intensiva — y ajustamos nuestro enfoque en consecuencia.",
+            "Segundo, realizamos la 'prueba de la uña' en los arañazos más profundos. Si tu uña se engancha firmemente en un arañazo, probablemente se extienda a través del barniz, y ese arañazo específico puede no ser completamente eliminable. Sin embargo, normalmente podemos reducir su visibilidad en un 70-80% y hacerlo imperceptible en condiciones normales de visión. Solo cuando los arañazos han expuesto el metal desnudo o la imprimación, el repintado se convierte en la recomendación correcta.",
+            "Tercero, evaluamos el estado general en relación con el valor del vehículo y los objetivos del propietario. Un coche de uso diario de 15 años con marcas circulares moderadas se beneficia enormemente de una corrección en una fase a 289 euros — el retorno en términos de apariencia es excepcional. Un nuevo BMW M4 en Sant Cugat merece el Cerámico Premium 5Y a 1.049 euros para máxima protección a largo plazo. Y un vehículo destinado a la reventa debería considerar nuestro Pack Pre-Venta a 249 euros para el mejor retorno de inversión. Puedes ver resultados reales de todos estos escenarios en nuestra galería de antes y después."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Factores Específicos de Barcelona: Clima y Entorno",
+          "paragraphs": [
+            "El área metropolitana de Barcelona presenta desafíos específicos que afectan esta decisión. El índice UV en verano alcanza 9-10 (extremo), lo que acelera la oxidación del barniz — particularmente en vehículos aparcados al exterior en Sant Cugat o las zonas costeras de Castelldefels y Gavà. El aire salino mediterráneo transporta partículas de cloruro tierra adentro, especialmente durante los vientos de Garbí, contribuyendo a la micro-corrosión en zonas de desconchones.",
+            "Los episodios de polvo sahariano (calima) depositan partículas abrasivas finas que causan marcas circulares durante el lavado si no se manejan correctamente. La resina de pino de los árboles que bordean muchas calles de Sant Cugat, Bellaterra y Matadepera graba el barniz en 48 horas si no se elimina. Todos estos factores hacen que la protección regular de pintura — no el repintado — sea la inversión lógica para los vehículos del área de Barcelona.",
+            "Nuestra recomendación para la mayoría de vehículos en el área de Barcelona: una corrección profesional en dos fases seguida de un recubrimiento cerámico (desde 649 euros) proporciona 2-5 años de protección activa contra estas amenazas ambientales. Esto es mucho más rentable que esperar a que el daño se acumule y entonces enfrentarse a un repintado completo. La prevención siempre es más barata que la reparación — especialmente en este clima. Para precios específicos y detalles de paquetes, visita nuestra página de precios o envía fotos por WhatsApp para una evaluación gratuita."
+          ]
+        }
+      ]
+    },
+    "tesla_ev_paint_care_mediterranean": {
+      "seo_title": "Cuidado de Pintura Tesla y VE Clima Mediterráneo | restoreLab",
+      "seo_description": "Por qué los barnices de Tesla y vehículos eléctricos necesitan cuidado especial en el clima de Barcelona. Soluciones para pintura blanda, cerámico y protocolos.",
+      "title": "Cuidado de Pintura para Tesla y Vehículos Eléctricos en el Mediterráneo",
+      "description": "Por qué la pintura de los vehículos eléctricos — especialmente el notoriamente blando barniz de Tesla — exige una estrategia diferente de corrección y protección en el entorno de alta radiación UV y brisa marina de Barcelona.",
+      "intro": "Los vehículos eléctricos están por todas partes en Barcelona. Los Tesla Model 3 y Model Y dominan las calles de Sant Cugat, la Diagonal y los aparcamientos de Pedralbes. Pero los propietarios de VE descubren rápidamente una realidad frustrante: la pintura de muchos vehículos eléctricos — Tesla en particular — es significativamente más blanda y fina que la de fabricantes tradicionales. Combinado con la intensa radiación UV de Barcelona, el aire salino y el polvo sahariano, esto crea una tormenta perfecta de degradación de pintura que exige un enfoque especializado.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Por Qué la Pintura de los VE Es Diferente",
+          "paragraphs": [
+            "La pintura de fábrica de Tesla ha sido un punto débil conocido desde la era del Model S. Las mediciones independientes de profundidad de pintura muestran consistentemente un grosor de barniz de 25-35 micras en vehículos Tesla — comparado con 45-60 micras en fabricantes alemanes comparables como BMW, Mercedes y Audi. Este barniz más fino significa menos margen de error durante la corrección y una degradación más rápida por la exposición UV.",
+            "El problema no es exclusivo de Tesla. Muchos fabricantes de VE utilizan sistemas de pintura al agua con menores emisiones de VOC, lo cual es positivo para el medio ambiente pero resulta en barnices más blandos. Polestar, BYD e incluso algunos acabados del Porsche Taycan muestran características similares. La pintura es más susceptible a marcas circulares de lavados automáticos, marcas de secado incorrecto y grabado por excrementos de aves o resina de árboles — todo lo cual se acelera con las más de 2.500 horas anuales de sol de Barcelona.",
+            "En restoreLab, hemos corregido más de 80 vehículos Tesla en el área de Sant Cugat y Barcelona. Hemos desarrollado protocolos específicos para estos sistemas de pintura blanda que difieren sustancialmente de nuestros procedimientos estándar de corrección automotriz. El principio clave: menos corte agresivo, acabado más refinado y protección cerámica obligatoria después."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Protocolo de Corrección para VE de restoreLab",
+          "paragraphs": [
+            "Nuestro protocolo de corrección para Tesla y VE comienza con una medición precisa de la profundidad de pintura en cada panel usando un medidor Elcometer 456. En un Tesla Model 3 típico con 28-32 micras de barniz, sabemos inmediatamente que la corrección rotativa agresiva queda descartada. En su lugar, usamos una pulidora de doble acción Rupes LHR15 Mark III con un pad de espuma de corte medio (Rupes amarillo) y compuesto Koch Chemie F6.01 Fine Cut — una combinación que elimina el 60-70% de las marcas circulares eliminando solo 1-2 micras de barniz.",
+            "Para defectos más profundos en pintura Tesla, usamos una micro-rotativa (Rupes LHR75E con plato de soporte de 75 mm) para corrección puntual dirigida a presión reducida — máximo 5-8 kg frente a los 15-20 kg que usamos en pintura alemana con barnices gruesos. El paso de acabado utiliza Sonax Perfect Finish 04-06 con un pad Rupes azul (ultrafino) para lograr una claridad sin hologramas.",
+            "La gestión de la temperatura es crítica en condiciones mediterráneas. Las temperaturas superficiales en verano en Barcelona pueden alcanzar los 60-65 grados Celsius en paneles de color oscuro aparcados al sol. Siempre trabajamos en sombra o en aparcamiento cubierto, y monitorizamos la temperatura del barniz durante la corrección. En el Tesla Midnight Silver Metallic y Solid Black — los dos acabados más desafiantes — reducimos el tiempo de pasada a intervalos de 15 segundos y limpiamos el pad después de cada sección del panel."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Protección Cerámica: Imprescindible para VE",
+          "paragraphs": [
+            "Para cualquier Tesla o VE en el área de Barcelona, consideramos el recubrimiento cerámico una necesidad, no una opción. El barniz fino simplemente no puede soportar ciclos repetidos de exposición UV, aire salino, resina de pino y polvo sahariano sin degradarse rápidamente. Un recubrimiento cerámico de calidad actúa como un escudo sacrificial, absorbiendo el daño ambiental que de otro modo atacaría directamente al barniz.",
+            "Nuestro mínimo recomendado para propietarios de Tesla es el paquete Cerámico 2Y a 649 euros — que incluye una cuidadosa corrección en dos fases seguida de una aplicación certificada de Gyeon MOHS o Gtechniq Crystal Serum Light. Para propietarios de Tesla que quieran máxima protección, nuestro Cerámico Premium 5Y a 1.049 euros añade una capa superior infusionada con grafeno, tratamiento hidrofóbico del parabrisas y cerámico en llantas — creando una barrera integral contra las amenazas ambientales de Barcelona.",
+            "Los números respaldan esta inversión. Un repintado completo de Tesla Model 3 en Barcelona cuesta entre 3.500 y 5.000 euros. Una corrección y protección cerámica a 649-1.049 euros, renovada cada 2-5 años, mantiene la pintura original de fábrica intacta durante toda la vida del vehículo. El recubrimiento cerámico también facilita drásticamente el mantenimiento semanal — un simple aclarado elimina la mayoría de la contaminación, reduciendo el riesgo de marcas circulares por lavado. Para más detalles sobre la tecnología de recubrimiento cerámico, consulta nuestro artículo sobre protocolos de protección y preservación en la Academia."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Protocolo de Mantenimiento para VE Protegidos",
+          "paragraphs": [
+            "Después de la aplicación del recubrimiento cerámico, el protocolo de mantenimiento determina cuánto dura la protección. Para propietarios de Tesla y VE en Barcelona, recomendamos el siguiente calendario: un lavado a mano con pH neutro cada dos semanas usando el método de dos cubos con champú CarPro Reset (formulado para vehículos con recubrimiento). Nunca uses un lavado automático — los cepillos destruirán el blando barniz bajo el cerámico.",
+            "Cada tres meses, descontamina la pintura con CarPro Iron X para eliminar las partículas de hierro incrustadas del tráfico pesado de Barcelona y el polvo de frenos. Cada seis meses, aplica un booster cerámico (Gyeon Cure o spray de mantenimiento Gtechniq Crystal Serum Light) para refrescar la capa hidrofóbica. Este protocolo extiende la vida efectiva de un recubrimiento de 2 años a más de 3 años, y uno de 5 años a 6-7 años en condiciones mediterráneas.",
+            "Los excrementos de aves y la resina de pino — ambos extremadamente comunes en Sant Cugat, Bellaterra y Matadepera — deben eliminarse en un plazo de 24-48 horas incluso en vehículos con recubrimiento. La acidez graba a través de los recubrimientos cerámicos si se dejan demasiado tiempo, alcanzando el blando barniz debajo. Mantén un spray de detailer rápido (Koch Chemie Quick and Shine) y una toalla de microfibra en el coche para la eliminación inmediata de contaminantes — especialmente si aparcas bajo árboles en la zona de Sant Cugat. Para precios de nuestros paquetes de mantenimiento o para reservar tu corrección de Tesla, visita nuestra página de precios o envíanos un mensaje por WhatsApp."
+          ]
+        }
+      ]
+    },
+    "headlight_restoration_guide_barcelona": {
+      "seo_title": "Guía Restauración de Faros Barcelona 2026 | restoreLab",
+      "seo_description": "Guía completa de restauración de faros para conductores de Barcelona. ITV, ciencia de degradación UV, DIY vs profesional y precios desde 79 euros.",
+      "title": "Guía de Restauración de Faros: Guía 2026 para Conductores de Barcelona",
+      "description": "Todo lo que los conductores del área de Barcelona necesitan saber sobre la restauración de faros — desde los requisitos de la ITV hasta la ciencia de la degradación UV y las técnicas profesionales que restauran la claridad total.",
+      "intro": "Los faros amarillentos y opacos no son solo un problema estético — son un peligro de seguridad y un posible punto de fallo en la ITV. En el clima de Barcelona, con más de 2.500 horas de sol al año e índices UV que alcanzan 9-10 en verano, las ópticas de los faros se degradan más rápido que en la mayoría de ciudades europeas. Esta guía cubre la ciencia detrás de la degradación, cuándo la restauración profesional tiene sentido, y lo que los conductores de Barcelona necesitan saber sobre el cumplimiento de la ITV en 2026.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Por Qué Amarillean los Faros: La Ciencia del UV",
+          "paragraphs": [
+            "Las ópticas modernas de los faros están fabricadas con policarbonato — un plástico ligero y resistente a impactos que sustituyó al vidrio a finales de los años 90. El policarbonato es un excelente material óptico, pero tiene una vulnerabilidad significativa: la radiación ultravioleta rompe las cadenas de polímero en la superficie, causando foto-oxidación. Esto se manifiesta como amarillamiento, opacidad y eventualmente micro-agrietamiento que dispersa la luz y reduce la emisión.",
+            "Los faros de fábrica vienen con un recubrimiento duro resistente a los UV aplicado durante la fabricación. Este recubrimiento dura típicamente 3-5 años en condiciones normales — pero en el clima mediterráneo de Barcelona, la degradación comienza antes. La combinación de más de 2.500 horas anuales de sol, altas temperaturas ambientales (medias de verano de 28-30 grados Celsius con temperaturas superficiales que superan los 60 grados) y la radiación UV reflejada por los edificios de colores claros típicos del Mediterráneo acelera el proceso. Regularmente vemos un amarillamiento significativo en vehículos de apenas 3 años en la zona de Sant Cugat y Barcelona.",
+            "Una vez que falla el recubrimiento UV de fábrica, la degradación se acelera exponencialmente. En 12-18 meses, el policarbonato desarrolla una opacidad amarillenta uniforme que reduce la emisión de luz un 30-50%. En esta fase, los faros aún pueden pasar la ITV — pero el conductor circula con una visibilidad nocturna significativamente comprometida, particularmente peligrosa en carreteras sin iluminación como las de Collserola, Vallvidrera o la aproximación por la AP-7 a Terrassa."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Cumplimiento de la ITV: Lo Que Necesitas Saber en 2026",
+          "paragraphs": [
+            "La ITV (Inspección Técnica de Vehículos) comprueba el rendimiento de los faros como parte de la inspección del sistema de iluminación. La prueba mide la intensidad de la emisión de luz y el patrón del haz. Las ópticas amarillentas u opacas reducen los lux medidos en el punto de prueba, y los faros gravemente degradados pueden causar un suspenso en la ITV — clasificado como 'defecto grave' que debe corregirse antes de que el vehículo pase.",
+            "En la práctica, el umbral depende de la estación ITV específica y del inspector. Ópticas ligeramente amarillentas en vehículos más nuevos con potentes bombillas LED o xenón pueden seguir produciendo suficiente emisión para aprobar. Pero los vehículos más antiguos equipados con halógenas y ópticas degradadas frecuentemente suspenden. El coste de la repetición en una estación ITV de Barcelona (típicamente 20-30 euros por repetición) se acumula si suspendes varias inspecciones.",
+            "La restauración profesional de faros es la solución más rentable. En restoreLab, nuestro servicio de restauración de faros comienza en 79 euros por par — comparado con 300-800 euros por ópticas OEM de recambio, o 150-400 euros por unidades de calidad del mercado de accesorios. Nuestro proceso restaura la óptica a una claridad casi original y aplica un sellador UV que protege el policarbonato durante más de 2 años. Para vehículos que se acercan a su fecha de ITV, recomendamos programar la restauración al menos dos semanas antes de la inspección para asegurar la máxima emisión de luz. Visita nuestra página del servicio de restauración de faros para todos los detalles."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "El Proceso Profesional de Restauración",
+          "paragraphs": [
+            "Nuestro protocolo de restauración de faros en restoreLab sigue un proceso de cuatro fases diseñado para lograr la máxima claridad óptica aplicando protección UV duradera. Todo el proceso lleva de 45 minutos a 1 hora para un par de faros y se realiza in situ en tu ubicación en cualquier punto del área metropolitana de Barcelona.",
+            "Fase uno: enmascarado y preparación. Protegemos con cinta toda la pintura, molduras y juntas de goma circundantes con cinta de enmascarar automotriz 3M para prevenir cualquier daño por contacto. Fase dos: lijado húmedo. Usando una progresión de discos 3M Trizact — comenzando por P1000 para oxidación severa o P1500 para amarillamiento moderado — eliminamos la capa superficial degradada. La óptica debe permanecer húmeda durante todo el proceso para evitar la acumulación de calor en el policarbonato. Normalmente progresamos a través de granos P1000, P1500, P2000 y P3000.",
+            "Fase tres: pulido mecánico. Usando una pulidora mini Rupes LHR75E con un pad de espuma de 75 mm y un compuesto dedicado para plástico/policarbonato, refinamos la superficie lijada hasta lograr claridad óptica. El movimiento de doble acción previene la concentración de calor y consigue una claridad uniforme en toda la óptica. Fase cuatro: aplicación de sellador UV. Aplicamos una capa transparente estabilizada contra UV (ya sea un sellador dedicado para faros o Gtechniq C4 Permanent Trim Restorer) que recrea la barrera UV de fábrica. Este es el paso crítico que previene el re-amarillamiento — sin él, la óptica restaurada se degradaría de nuevo en 3-6 meses. Para detalles de precios, consulta nuestra página completa de precios."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "DIY vs Profesional: Una Evaluación Honesta",
+          "paragraphs": [
+            "Los kits de restauración de faros DIY están ampliamente disponibles en Norauto, Feu Vert y tiendas online por 15-40 euros. Normalmente incluyen hojas de lija, un compuesto de pulido y a veces una toallita UV. ¿Pueden funcionar? Sí, para una opacidad leve en la superficie de un vehículo al que no le des mucha importancia. Pero los resultados raramente igualan la restauración profesional, y aquí explicamos por qué.",
+            "La mayor limitación de los kits DIY es la ausencia de pulido mecánico — el pulido a mano no puede lograr la misma uniformidad y claridad. El segundo problema es la protección UV: la mayoría de selladores de kits duran 3-6 meses antes de que vuelva el amarillamiento, comparado con más de 2 años con recubrimientos UV profesionales. Tercero, existe un riesgo real de empeorar las cosas — el lijado manual desigual crea distorsión óptica que afecta al patrón del haz, potencialmente creando una situación más peligrosa que el amarillamiento original.",
+            "Nuestra recomendación honesta: si tienes un vehículo de 15 años con faros ligeramente opacos y un presupuesto ajustado, un kit DIY es un primer intento razonable. Para cualquier cosa más allá de una ligera opacidad superficial, para cualquier vehículo que planees conservar o vender, o para vehículos que se acercan a la ITV — la restauración profesional a 79 euros ofrece resultados drásticamente mejores, dura más y no conlleva riesgo de distorsión óptica. Muchos de nuestros clientes en Barcelona y Sant Cugat combinan la restauración de faros con otro servicio para obtener el mejor valor. Consulta nuestras fotos de antes y después para ejemplos reales."
+          ]
+        }
+      ]
+    },
+    "pre_sale_detailing_checklist_catalonia": {
+      "seo_title": "Checklist Detailing Pre-Venta Cataluña | restoreLab",
+      "seo_description": "Maximiza el valor de reventa de tu coche en Cataluña. Qué inspeccionan los compradores, qué defectos cuestan más y el ROI del detailing profesional pre-venta.",
+      "title": "Checklist de Detailing Pre-Venta: Qué Buscan los Compradores en Cataluña",
+      "description": "Una guía profesional para maximizar el valor de reventa de tu vehículo mediante un detailing dirigido — basado en lo que los compradores catalanes realmente inspeccionan y lo que influye en su oferta.",
+      "intro": "Vender un coche en Cataluña es un negocio competitivo. Entre Wallapop, Milanuncios y las redes de concesionarios establecidas, los compradores tienen opciones infinitas — y se han vuelto cada vez más informados sobre el estado del vehículo. En restoreLab, preparamos docenas de vehículos para la venta cada mes en Sant Cugat, Barcelona, Terrassa y el área metropolitana. Esta guía comparte los pasos de detailing específicos que ofrecen el mayor retorno de inversión al vender en el mercado catalán.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Qué Inspeccionan Realmente los Compradores Catalanes",
+          "paragraphs": [
+            "Basándonos en nuestra experiencia preparando vehículos pre-venta en Barcelona y hablando directamente con nuestros clientes sobre lo que notaron los compradores, hay una jerarquía clara de puntos de inspección. Lo primero que hace todo comprador es dar una vuelta al vehículo a la luz del día, examinando la pintura desde múltiples ángulos. Las marcas circulares, arañazos, oxidación y zonas opacas señalan inmediatamente 'mal mantenido' — incluso si el estado mecánico es perfecto. Bajo la intensa luz solar de Barcelona, estos defectos son imposibles de ocultar.",
+            "Segundo, los compradores abren las puertas e inspeccionan el interior con notable atención. Asientos de cuero manchados, paneles de puerta rozados, techo interior sucio y volante desgastado sugieren alto kilometraje o negligencia. Tercero, revisan el compartimento del motor — no necesariamente entendiendo lo que ven, pero un motor limpio y tratado comunica cuidado y disciplina de mantenimiento. Cuarto, comprueban los faros y todos los cristales buscando opacidad, arañazos y daños.",
+            "La clave es que los compradores toman una decisión emocional en los primeros 60 segundos al ver el vehículo. Un coche que luce impecable consigue una oferta más alta — a menudo 1.000-3.000 euros más que un vehículo idéntico en estado cosmético medio. El detailing profesional pre-venta no consiste en engañar; se trata de presentar el vehículo en su mejor estado real, eliminando daños reversibles que de otro modo rebajarían el valor percibido."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Protocolo de Detailing Pre-Venta",
+          "paragraphs": [
+            "En restoreLab, nuestro Pack Pre-Venta está específicamente diseñado para abordar los puntos de inspección listados anteriormente en una sola sesión en tu ubicación. El paquete a 249 euros para un sedán incluye: corrección de pintura en una fase para eliminar el 60-70% de las marcas circulares y arañazos leves, limpieza profunda del interior completo (aspirado, limpieza de cuero o tela, tratamiento de salpicadero y molduras), y detailing del compartimento del motor (desengrasado, limpieza a vapor, tratamiento de plásticos).",
+            "Para vehículos con daños de pintura más significativos o aquellos del segmento premium donde los compradores son aún más exigentes, recomendamos actualizar a la Corrección en Dos Fases a 549 euros o al Cerámico 2Y a 649 euros. El cerámico añade un brillo visible de aspecto mojado que fotografía excepcionalmente bien para los anuncios online — y el efecto hidrofóbico impresiona durante las pruebas de conducción. Un vehículo con recubrimiento cerámico reciente se ve y se siente notablemente diferente de uno con solo un lavado y cera.",
+            "Los números favorecen al vendedor. El coche medio en el rango de 10.000-30.000 euros en Barcelona pierde 500-1.500 euros en descuento negociado debido a defectos visibles de pintura. Un detailing pre-venta de 249 euros elimina esto por completo, mientras que una corrección más cerámico de 649 euros puede aumentar el precio de venta en 1.000-2.500 euros. Eso es un retorno de inversión de 2x a 5x — sin contar el tiempo de venta más rápido que viene con un vehículo que se presenta bien en fotos. Consulta nuestra página de precios para detalles completos de los paquetes."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Consejos de Fotografía para Máximo Impacto Online",
+          "paragraphs": [
+            "Después del detailing profesional, la calidad de las fotos de tu anuncio determina cuántas consultas recibes. Barcelona ofrece excelentes condiciones de luz natural para la fotografía de vehículos, pero el momento importa. Fotografía en la 'hora dorada' — la primera hora después del amanecer o la última hora antes del atardecer — cuando la luz es cálida y suave. Evita el sol del mediodía, que crea sombras duras y resalta cada imperfección restante.",
+            "Fotografía el vehículo con la pintura recién corregida y tratada ligeramente húmeda tras una aplicación final de detailer rápido — los reflejos crean un efecto de sala de exposición que destaca en los anuncios online. Incluye al menos 15-20 fotos: exterior desde las cuatro esquinas, un perfil lateral completo, primeros planos de las llantas, el interior desde ambas puertas delanteras, el salpicadero, los asientos traseros, el maletero, el compartimento del motor y una foto del cuentakilómetros digital. En Wallapop y Milanuncios, los anuncios con más de 15 fotos de calidad profesional reciben 3-4 veces más consultas.",
+            "Incluye una mención del detailing profesional en la descripción de tu anuncio. 'Recientemente detallado por restoreLab — corrección de pintura y recubrimiento cerámico aplicado' señala a los compradores que este vehículo se ha mantenido con un alto estándar. Diferencia tu anuncio de los cientos de vehículos similares que simplemente han pasado por un túnel de lavado. Puedes ver el tipo de transformación que ofrece nuestro trabajo en nuestra galería de antes y después."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Timing y ROI: Cuándo Hacer el Detailing Antes de Vender",
+          "paragraphs": [
+            "El momento ideal para el detailing pre-venta es 1-2 semanas antes de publicar el vehículo online. Esto da tiempo al recubrimiento cerámico para curar completamente (12-24 horas) y te permite fotografiar el vehículo en condiciones óptimas. No hagas el detailing meses antes de vender — el beneficio de la protección es máximo cuando es reciente, y el impacto visual disminuye con el tiempo con el uso normal.",
+            "Para consideraciones estacionales en Barcelona: la primavera (marzo-mayo) y el inicio del otoño (septiembre-octubre) son las temporadas pico de compra de coches usados en Cataluña. Si planeas vender durante estas ventanas, reserva tu detailing pre-venta con 2-3 semanas de antelación para asegurar disponibilidad. El verano es más lento para las ventas privadas (muchos compradores potenciales están de vacaciones), mientras que enero ve un repunte en la demanda cuando la gente empieza el año nuevo buscando un nuevo vehículo.",
+            "La conclusión: el detailing profesional pre-venta es la inversión con mayor ROI que puedes hacer al vender un vehículo en Cataluña. Nuestro Pack Pre-Venta a 249 euros típicamente se paga solo 2-5 veces en menor negociación del comprador. Para vehículos premium, la Corrección en Dos Fases a 549 euros o el Cerámico 2Y a 649 euros ofrece retornos aún mayores. Envíanos fotos de tu vehículo por WhatsApp para una evaluación honesta de qué paquete maximizaría tu valor de reventa específico."
+          ]
+        }
+      ]
+    },
+    "mediterranean_climate_car_paint_protection": {
+      "seo_title": "Protección de Pintura Clima Mediterráneo Barcelona | restoreLab",
+      "seo_description": "Cómo el sol, sal, polen y polvo sahariano de Barcelona atacan la pintura. Estrategias de protección, cerámico y protocolos de mantenimiento.",
+      "title": "Clima Mediterráneo y la Pintura de tu Coche: Guía de Protección",
+      "description": "Una guía completa para entender y combatir las amenazas únicas que el clima mediterráneo de Barcelona presenta para la pintura — desde la degradación UV hasta el aire salino, el polen y los episodios de polvo sahariano.",
+      "intro": "Barcelona disfruta de uno de los climas más deseados de Europa — 2.524 horas de sol al año, inviernos suaves y veranos cálidos. Pero ese mismo entorno mediterráneo es hostil para la pintura automotriz. La radiación UV, la sal del aire, la resina de pino, el polvo de calima y las partículas industriales crean un cóctel de amenazas que acelera la degradación de la pintura muy por encima de lo que sufren los vehículos en el norte de Europa. En restoreLab, vemos la evidencia a diario: los vehículos aparcados al exterior en Sant Cugat, Castelldefels y la costa de Barcelona se degradan 2-3 veces más rápido que los coches guardados en garaje en la misma zona. Esta guía explica cada amenaza y las estrategias profesionales de protección que las contrarrestan.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Radiación UV: El Destructor Silencioso",
+          "paragraphs": [
+            "Barcelona recibe un índice UV anual medio que se sitúa entre los más altos de la Europa continental. De mayo a septiembre, el índice UV alcanza regularmente 9-10 (clasificado como 'muy alto' a 'extremo' por la OMS), con temperaturas superficiales máximas en vehículos de color oscuro que superan los 65 grados Celsius. Esta intensa exposición UV impulsa la foto-oxidación del barniz — el mismo proceso químico que amarillea los faros, pero actuando más lentamente sobre los barnices automotrices.",
+            "Los efectos visibles de la exposición crónica a los UV incluyen pérdida progresiva de brillo, pulverización (un residuo polvoriento blanco en la superficie), decoloración del color en acabados no metalizados y eventual fallo del barniz. En un vehículo aparcado al exterior permanentemente en Sant Cugat o Barcelona, la oxidación notable aparece típicamente en 3-4 años sin protección — comparado con 6-8 años en un clima como el norte de Alemania o el Reino Unido.",
+            "Los recubrimientos cerámicos profesionales proporcionan la barrera UV más efectiva disponible. Productos como Gyeon MOHS y Gtechniq Crystal Serum Light contienen compuestos absorbentes de UV que reducen la energía que llega al barniz hasta un 90%. Nuestro paquete Cerámico 2Y a 649 euros y el Cerámico Premium 5Y a 1.049 euros incluyen ambos estos recubrimientos protectores UV. Para vehículos aparcados al exterior en condiciones mediterráneas, consideramos el recubrimiento cerámico la inversión más importante para la longevidad de la pintura. Para detalles sobre cómo funcionan estos recubrimientos, consulta nuestro artículo sobre protocolos de protección y preservación."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Aire Salino, Exposición Costera y Corrosión por Cloruros",
+          "paragraphs": [
+            "Vivir a menos de 30 kilómetros de la costa mediterránea significa exposición constante a partículas de sal en el aire. El Garbí (brisa marina del suroeste) transporta cristales microscópicos de sal marina tierra adentro — llegando a Sant Cugat, Bellaterra e incluso Terrassa durante los meses de verano. Estas partículas de cloruro aterrizan sobre la superficie de la pintura, se disuelven en el rocío matinal o la humedad, y crean puntos ácidos localizados que graban el barniz.",
+            "El efecto es más pronunciado en zonas de desconchones donde el metal desnudo está expuesto. La sal acelera la oxidación de la imprimación y el metal expuestos a 3-5 veces la velocidad de los entornos no costeros. Un pequeño desconchón que permanecería cosmético durante años en una ubicación interior puede desarrollar anillos de óxido visibles en 6-12 meses en Castelldefels o la costa del Maresme. Por esto siempre recomendamos tratar los desconchones puntualmente y proteger la pintura circundante.",
+            "Para vehículos costeros en Castelldefels, Gavà, Sitges y la zona del Maresme, nuestra recomendación es el paquete Cerámico Premium 5Y a 1.049 euros, que incluye recubrimiento cerámico de grafeno para toda la carrocería, tratamiento hidrofóbico del parabrisas y cerámico de llantas. El efecto hidrofóbico hace que la humedad cargada de sal forme gotas y escurra en lugar de permanecer sobre la superficie grabándola. Para vehículos en la zona de mayor riesgo (dentro de 5 km de la costa), sugerimos añadir Film de Protección de Pintura (PPF) en capó, paragolpes y retrovisores a través de nuestro paquete Flagship PPF + Cerámico desde 2.290 euros."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Polen, Resina de Pino y Contaminantes Orgánicos",
+          "paragraphs": [
+            "El extenso arbolado urbano de Barcelona — particularmente los pinos y plátanos que bordean las calles de Sant Cugat, Sarrià, Pedralbes y gran parte del Vallès Occidental — produce cantidades significativas de polen, savia y resina que caen sobre los vehículos aparcados. La resina de pino es particularmente dañina: se adhiere al barniz en cuestión de horas tras el contacto y comienza a grabar químicamente en 24-48 horas, dejando marcas permanentes si no se elimina a tiempo.",
+            "La savia de los plátanos es menos agresiva inmediatamente pero se acumula como una película pegajosa que atrae el polvo y crea una capa de contaminación compuesta. Los excrementos de aves — cortesía de las palomas, gaviotas y estorninos de Barcelona — son ácidos (pH 3-4,5) y graban a través del barniz en tan solo 4-8 horas durante el calor del verano. Vemos daños por grabado de excrementos de aves en vehículos de clientes en Sant Cugat prácticamente cada semana durante los meses más cálidos.",
+            "El recubrimiento cerámico proporciona una protección significativa contra estos contaminantes orgánicos. La superficie hidrofóbica impide que la resina y la savia se adhieran directamente al barniz, dándote una ventana más amplia para la eliminación antes de que se produzca daño. Con un recubrimiento cerámico de calidad, la resina de pino que gravaría permanentemente la pintura sin proteger puede eliminarse con seguridad hasta 72 horas después del contacto usando una toallita con alcohol isopropílico. Recomendamos llevar un bote de Koch Chemie Quick and Shine y toallas de microfibra en el vehículo para la eliminación inmediata de contaminantes — especialmente si aparcas bajo árboles en la zona de Sant Cugat."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Polvo Sahariano (Calima) y Partículas Industriales",
+          "paragraphs": [
+            "Barcelona experimenta de 5 a 15 episodios significativos de polvo sahariano por año, con una frecuencia en aumento debido a los cambios en los patrones atmosféricos. Estos episodios de calima depositan partículas minerales finas — principalmente óxidos de hierro y silicatos — que se asientan sobre toda superficie al exterior. Las partículas son abrasivas (dureza Mohs 5-7) y causan marcas circulares cuando se arrastran por la pintura durante un lavado incorrecto. Después de una calima fuerte, lo peor que puedes hacer es pasar el coche por un túnel de lavado automático o limpiarlo con un trapo seco.",
+            "El protocolo correcto post-calima es: primero, aclarar todo el vehículo a fondo con una hidrolimpiadora o manguera para eliminar las partículas sueltas sin tocar la superficie. Segundo, realizar un prelavado con espuma activa usando un cañón de espuma con un champú de pH neutro (usamos Koch Chemie Green Star) para encapsular las partículas restantes. Tercero, proceder con un lavado de contacto usando el método de dos cubos con una manopla de microfibra de felpa. Nunca uses una esponja — la superficie plana atrapa las partículas y las arrastra por la pintura.",
+            "Las partículas industriales son otra amenaza persistente en el área metropolitana de Barcelona. Las zonas industriales cerca de Zona Franca, Martorell (corredor de la fábrica de SEAT) y el puerto de Barcelona liberan partículas metálicas que se incrustan en el barniz como puntos naranjas o marrones — a menudo confundidos con óxido. Estas requieren descontaminación química con un eliminador de hierro (usamos CarPro Iron X) antes de cualquier pulido. Nuestro paquete Express Refresh a 149 euros incluye un lavado de descontaminación completo, tratamiento con clay bar y sellador protector — el servicio de mantenimiento ideal entre correcciones mayores. Consulta nuestra página de precios para detalles completos de todos los paquetes."
+          ]
+        }
+      ]
     }
   },
   "area_pages": {
@@ -1110,7 +1784,494 @@
         "lng": 2.0089,
         "description": "Nuestro hub del Vallès cubre Terrassa, Sabadell y pueblos cercanos. Polígonos industriales, zonas residenciales y aparcamientos subterráneos — nos adaptamos a cualquier ubicación.",
         "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+      },
+      {
+        "slug": "matadepera",
+        "name": "Matadepera",
+        "short": "Matadepera",
+        "region": "Vallès Occidental",
+        "lat": 41.5960,
+        "lng": 2.0253,
+        "description": "Al pie de Sant Llorenç del Munt, Matadepera alberga algunas de las fincas privadas más exclusivas de Cataluña. Nuestra unidad móvil es perfecta para urbanizaciones cerradas y villas con aparcamiento privado — servicio discreto sin mover tu coche. A solo 15 minutos de nuestra base en Sant Cugat.",
+        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+      },
+      {
+        "slug": "sant-just-desvern",
+        "name": "Sant Just Desvern",
+        "short": "Sant Just Desvern",
+        "region": "Baix Llobregat",
+        "lat": 41.3808,
+        "lng": 2.0750,
+        "description": "Uno de los municipios con mayor renta per cápita de Cataluña, Sant Just Desvern combina zonas residenciales ejecutivas con fácil acceso a Barcelona. Atendemos garajes privados y aparcamientos subterráneos en Walden, Can Candeler y las villas de la ladera.",
+        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+      },
+      {
+        "slug": "sant-quirze-del-valles",
+        "name": "Sant Quirze del Vallès",
+        "short": "Sant Quirze",
+        "region": "Vallès Occidental",
+        "lat": 41.5330,
+        "lng": 2.0830,
+        "description": "Un tranquilo municipio residencial entre Sant Cugat y Sabadell, Sant Quirze del Vallès destaca por sus urbanizaciones familiares y casas unifamiliares modernas. Llegamos a cualquier punto de Sant Quirze en menos de 10 minutos desde nuestra base.",
+        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+      },
+      {
+        "slug": "bellaterra",
+        "name": "Bellaterra",
+        "short": "Bellaterra",
+        "region": "Vallès Occidental",
+        "lat": 41.5020,
+        "lng": 2.1050,
+        "description": "Sede del campus de la UAB y rodeado de núcleos residenciales ejecutivos, Bellaterra combina prestigio académico con viviendas de alto nivel. Atendemos vehículos en residencias privadas y aparcamientos del campus — a solo 5 minutos de nuestro centro de operaciones en Sant Cugat.",
+        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+      },
+      {
+        "slug": "pedralbes",
+        "name": "Pedralbes",
+        "short": "Pedralbes",
+        "region": "Barcelona",
+        "lat": 41.3900,
+        "lng": 2.1150,
+        "description": "El barrio residencial más exclusivo de Barcelona, Pedralbes cuenta con mansiones privadas, residencias diplomáticas y bloques de apartamentos premium. Realizamos corrección de pintura y tratamiento cerámico en vehículos de alta gama en garajes subterráneos y entradas privadas de toda la Zona Alta.",
+        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+      },
+      {
+        "slug": "sant-gervasi",
+        "name": "Sant Gervasi – Tres Torres",
+        "short": "Sant Gervasi",
+        "region": "Barcelona",
+        "lat": 41.4000,
+        "lng": 2.1380,
+        "description": "La zona de Tres Torres y Bonanova se sitúa en el corazón de la Zona Alta de Barcelona — uno de los distritos residenciales más cotizados. Con sus calles arboladas e instalaciones de aparcamiento premium, es territorio ideal para nuestro servicio de detailing móvil. Trabajamos en garajes comunitarios y entradas privadas.",
+        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+      },
+      {
+        "slug": "castelldefels",
+        "name": "Castelldefels",
+        "short": "Castelldefels",
+        "region": "Baix Llobregat",
+        "lat": 41.2800,
+        "lng": 1.9780,
+        "description": "Municipio costero premium al sur de Barcelona, Castelldefels atrae tanto a residentes como a propietarios de segunda residencia con sus villas frente al mar y fincas en la montaña. La brisa marina y la exposición UV hacen esencial la protección regular de pintura. Nos desplazamos desde nuestra base con cita programada.",
+        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+      },
+      {
+        "slug": "alella-tiana-teia",
+        "name": "Alella · Tiana · Teià",
+        "short": "Maresme Premium",
+        "region": "Maresme",
+        "lat": 41.4950,
+        "lng": 2.2950,
+        "description": "La costa del Maresme al norte de Barcelona — Alella, Tiana y Teià forman un núcleo residencial premium con fincas entre viñedos y villas con vistas al mar. El clima mediterráneo implica intensa exposición UV y salina. Ofrecemos servicio móvil programado en esta zona, con corrección de pintura y tratamiento cerámico completo in situ.",
+        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
       }
     ]
+  },
+  "business": {
+    "hero_title": "Detailing Móvil Pre-Venta para Concesionarios de Barcelona",
+    "hero_subtitle": "Vamos a tu concesionario. Corrección de pintura profesional, cerámico y detailing interior — servicio in situ con entrega en ≤24h.",
+    "hero_cta": "Reservar Llamada de 15 min",
+    "hero_cta_secondary": "Descargar Tarifa",
+    "value_props_title": "Diseñado para Operaciones de Concesionario",
+    "value_props": [
+      {
+        "icon": "clock",
+        "title": "Entrega ≤24h",
+        "desc": "Servicio en el mismo día o al día siguiente para la mayoría de vehículos. Opción Express 4h para preparaciones urgentes."
+      },
+      {
+        "icon": "camera",
+        "title": "Informe Fotográfico por Vehículo",
+        "desc": "Documentación fotográfica antes/después para cada trabajo. Úsalo en anuncios, comparte con compradores, guarda para tus registros."
+      },
+      {
+        "icon": "invoice",
+        "title": "Facturación NET-30",
+        "desc": "Factura mensual única. Sin pagos por trabajo individual. Descuentos por volumen desde 5+ vehículos por semana."
+      },
+      {
+        "icon": "shield",
+        "title": "Seguro RC €500K",
+        "desc": "Cobertura total de responsabilidad civil. Tus vehículos están protegidos mientras están bajo nuestro cuidado."
+      }
+    ],
+    "pricing_title": "Precios Concesionario (sin IVA)",
+    "pricing_subtitle": "Precio base sedán. Descuentos por volumen se aplican automáticamente en factura mensual.",
+    "pricing_tiers": [
+      {
+        "name": "Lot-Ready Estándar",
+        "price": "169",
+        "desc": "Lavado descontaminante + pulido en una fase + aspirado interior + acondicionado neumáticos. Ideal para stock hasta 30.000€.",
+        "includes": ["Lavado descontaminante + clay bar", "Pulido mecánico en una fase", "Aspirado y limpieza interior", "Acondicionado de neumáticos y molduras", "Informe fotográfico"]
+      },
+      {
+        "name": "Lot-Ready SUV",
+        "price": "229",
+        "desc": "Igual que Estándar para SUV, crossovers y familiares. Paneles más grandes, más tiempo.",
+        "includes": ["Todo lo de Estándar", "Cobertura tamaño SUV/familiar", "Maletero y zona de carga", "Informe fotográfico ampliado"]
+      },
+      {
+        "name": "Showroom Sports",
+        "price": "299",
+        "desc": "Corrección en dos fases para vehículos premium y deportivos. Diseñado para coches de más de 40.000€.",
+        "includes": ["Corrección de pintura en dos fases", "Detailing interior completo", "Pulido de cristales y vano motor", "Detalle de llantas + cerámica molduras", "Informe de 30 fotos"]
+      }
+    ],
+    "volume_title": "Descuentos por Volumen",
+    "volume_tiers": [
+      { "label": "5+ por semana", "discount": "−10%" },
+      { "label": "10+ por semana", "discount": "−15%" },
+      { "label": "20+ por semana", "discount": "Presupuesto personalizado" }
+    ],
+    "faq_title": "FAQ Concesionarios",
+    "faq_items": [
+      {
+        "question": "¿Hay un pedido mínimo?",
+        "answer": "No. Sin embargo, los precios por volumen empiezan a partir de 5+ vehículos por semana. La mayoría de concesionarios empiezan con una prueba de 3 vehículos."
+      },
+      {
+        "question": "¿Trabajáis in situ en el concesionario?",
+        "answer": "Sí. Llegamos con nuestro propio suministro de agua, electricidad y equipamiento. Solo necesitamos un espacio cubierto o con sombra y acceso a los vehículos."
+      },
+      {
+        "question": "¿Cómo funciona la facturación?",
+        "answer": "Facturación mensual NET-30 por email. Cada factura incluye detalle por vehículo con matrícula, servicio realizado y enlace al informe fotográfico."
+      },
+      {
+        "question": "¿Qué pasa con el seguro?",
+        "answer": "Disponemos de seguro de responsabilidad civil de €500K que cubre todos los vehículos bajo nuestro cuidado. Detalles de la póliza disponibles bajo petición."
+      },
+      {
+        "question": "¿Podéis preparar todo el stock para un evento o jornada de puertas abiertas?",
+        "answer": "Sí. Con 48h de aviso podemos movilizar técnicos adicionales para preparar todo el stock. Hemos preparado más de 15 vehículos en un solo fin de semana."
+      },
+      {
+        "question": "¿Qué zonas cubrís?",
+        "answer": "Todos los concesionarios del área metropolitana de Barcelona: Sant Cugat, Terrassa, Sabadell, Rubí, Cerdanyola, Castelldefels y Barcelona ciudad. Cobertura ampliada disponible para contratos de mayor volumen."
+      }
+    ],
+    "cta_section_title": "¿Listo para optimizar la preparación de tu stock?",
+    "cta_section_subtitle": "Reserva una llamada de 15 minutos para hablar de volumen y calendario.",
+    "cta_whatsapp": "Escríbenos por WhatsApp",
+    "cta_email": "Envíanos un Email"
+  },
+  "ev": {
+    "hero_title": "Protección de Pintura Especializada para Vehículos Eléctricos",
+    "hero_subtitle": "Cerámico y PPF seguros para sensores. Para Tesla, Polestar, Taycan y cada vehículo eléctrico en las carreteras de Barcelona.",
+    "hero_cta": "Solicitar Presupuesto EV",
+    "pain_points_title": "Por Qué la Pintura de tu EV Necesita un Cuidado Especial",
+    "pain_points": [
+      {
+        "title": "Barniz Más Blando",
+        "desc": "Tesla, Polestar y muchos EVs usan pintura al agua con un barniz notoriamente fino y blando. Los métodos de lavado estándar causan marcas circulares en pocos meses."
+      },
+      {
+        "title": "Proceso Seguro para Sensores",
+        "desc": "Sensores ultrasónicos, cámaras y LiDAR requieren enmascarado cuidadoso y cero contaminación de compuesto. Nuestros técnicos están formados en cada layout de sensores EV."
+      },
+      {
+        "title": "Intensidad UV Mediterránea",
+        "desc": "Las más de 2.500 horas de sol anuales de Barcelona aceleran la degradación del barniz en EVs no protegidos 2-3× más rápido que en el norte de Europa."
+      },
+      {
+        "title": "Compatible con Lavado Sin Contacto",
+        "desc": "El cerámico permite lavado de mantenimiento sin contacto, preservando la corrección y reduciendo la acumulación de micro-arañazos entre servicios."
+      }
+    ],
+    "packages_title": "Paquetes de Protección EV",
+    "packages_subtitle": "Precio base sedán — multiplicadores por tamaño aplican para Model X, EQS, e-tron SUV.",
+    "packages": [
+      {
+        "id": "ev-new-car",
+        "name": "Protección EV Coche Nuevo",
+        "price": "749",
+        "desc": "Para EVs recién salidos de fábrica. Pulido suave para eliminar marcas de transporte + cerámico 2 años.",
+        "includes": ["Descontaminación de pintura", "Pulido en una fase (marcas de transporte)", "Cerámico Gyeon MOHS 2 años", "Hidrofóbico parabrisas", "Cerámico de llantas"],
+        "popular": false
+      },
+      {
+        "id": "ev-premium",
+        "name": "Escudo Premium EV",
+        "price": "1290",
+        "desc": "Corrección completa para EVs de uso diario + cerámico grafeno 5 años. Máxima protección UV y química.",
+        "includes": ["Corrección de pintura en dos fases", "Gtechniq Crystal Serum Ultra 5Y", "Set completo hidrofóbico cristales", "Cerámico llantas + pinzas", "Restauración molduras plásticas", "Acondicionado cuero interior"],
+        "popular": true
+      },
+      {
+        "id": "ev-ppf",
+        "name": "PPF Frontal Tesla / EV",
+        "price_from": "1690",
+        "desc": "PPF en capó, paragolpes, aletas, retrovisores + cerámico en el resto. Protección máxima en zonas de alto impacto.",
+        "includes": ["XPEL Ultimate Plus PPF (frontal)", "Corrección en dos fases resto de carrocería", "Cerámico 5 años en resto", "Ajuste de precisión zona sensores", "Garantía PPF 10 años"],
+        "popular": false
+      }
+    ],
+    "compatibility_title": "Compatibilidad por Marca",
+    "compatibility": [
+      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escudo Premium EV o PPF Frontal" },
+      { "brand": "Polestar 2 / 3 / 4", "recommended": "Escudo Premium EV" },
+      { "brand": "Porsche Taycan", "recommended": "Escudo Premium EV o PPF Frontal" },
+      { "brand": "BMW iX / i4 / i5", "recommended": "Protección Coche Nuevo o Escudo Premium" },
+      { "brand": "Mercedes EQS / EQE", "recommended": "Escudo Premium EV" },
+      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "Escudo Premium EV" },
+      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "Protección EV Coche Nuevo" },
+      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "Protección EV Coche Nuevo" }
+    ],
+    "faq_title": "FAQ Específico Vehículos Eléctricos",
+    "faq_items": [
+      {
+        "question": "¿El cerámico afectará a mis sensores o cámaras?",
+        "answer": "No. Enmascaramos todas las carcasas de sensores, cámaras y unidades LiDAR antes de pulir y aplicar el cerámico. El cerámico solo se aplica en paneles pintados, nunca sobre superficies de sensores."
+      },
+      {
+        "question": "¿Es seguro el proceso para las cámaras de Autopilot / FSD de Tesla?",
+        "answer": "Sí. Seguimos protocolos de enmascarado específicos para Tesla. Las cámaras de pilares, paragolpes y sensores ultrasónicos están completamente protegidos durante todo el proceso."
+      },
+      {
+        "question": "¿Cómo funciona el cerámico con los lavados sin contacto?",
+        "answer": "Perfectamente. El cerámico crea una superficie hidrofóbica que repele la suciedad, haciendo los lavados sin contacto muy efectivos. Es el método de mantenimiento ideal para EVs con cerámico."
+      },
+      {
+        "question": "Mi Tesla tiene marcas circulares a los 6 meses. ¿Es normal?",
+        "answer": "Desafortunadamente sí. La pintura al agua de Tesla es más blanda que la pintura automotriz tradicional. La corrección profesional elimina las marcas existentes, y el cerámico reduce significativamente la acumulación futura."
+      },
+      {
+        "question": "¿Necesitáis cargar el vehículo durante el servicio?",
+        "answer": "Pedimos que el vehículo llegue con al menos un 20% de carga para poder reposicionarlo según sea necesario. No necesitamos acceso a punto de carga en la ubicación del servicio."
+      }
+    ],
+    "cta_section_title": "Protege tu inversión en movilidad eléctrica",
+    "cta_section_subtitle": "Envíanos los datos de tu vehículo por WhatsApp para un presupuesto personalizado."
+  },
+  "commercial_glass": {
+    "hero_title": "Restauración Móvil de Cristal Fuera de Horario",
+    "hero_subtitle": "Eliminación de arañazos en escaparates, fachadas de oficinas, ventanas de restaurantes y lobbies de hoteles — sin interrumpir tu negocio.",
+    "hero_cta": "Solicita una Visita Técnica",
+    "use_cases_title": "Restauramos Cristal Para",
+    "use_cases": [
+      {
+        "icon": "storefront",
+        "title": "Escaparates Comerciales",
+        "desc": "Eliminación de arañazos en cristales de Passeig de Gràcia, Portal de l'Àngel, Diagonal y centros comerciales de toda Barcelona."
+      },
+      {
+        "icon": "office",
+        "title": "Fachadas de Oficinas",
+        "desc": "Torres del distrito 22@, parques empresariales de Sant Cugat y oficinas corporativas. Trabajamos fuera de horario o fines de semana — sin molestar a tus inquilinos."
+      },
+      {
+        "icon": "restaurant",
+        "title": "Ventanas de Restaurantes",
+        "desc": "Arañazos de grafiti, grabados y desgaste en cerramientos de terrazas. Restauramos la claridad sin sustituir el panel."
+      },
+      {
+        "icon": "hotel",
+        "title": "Lobbies y Zonas Comunes de Hoteles",
+        "desc": "Mamparas de cristal, barandillas y paneles de entrada. Ideal para la puesta a punto de temporada en el sector hotelero de Barcelona."
+      }
+    ],
+    "roi_title": "Restauración vs Sustitución",
+    "roi_subtitle": "¿Por qué restaurar pudiendo sustituir? Porque cuesta un 70-80% menos.",
+    "roi_items": [
+      { "label": "Sustitución de escaparate (estándar)", "cost": "€1.500–3.000", "type": "replace" },
+      { "label": "Restauración de arañazos en escaparate", "cost": "€280–600", "type": "restore" },
+      { "label": "Sustitución de panel de oficina (por m²)", "cost": "€180–350", "type": "replace" },
+      { "label": "Restauración de panel de oficina (por m²)", "cost": "€45–90", "type": "restore" },
+      { "label": "Tiempo de inactividad (sustitución)", "cost": "1–3 días", "type": "replace" },
+      { "label": "Tiempo de inactividad (restauración)", "cost": "0 — se realiza fuera de horario", "type": "restore" }
+    ],
+    "pricing_title": "Precios de Cristal Comercial",
+    "pricing_subtitle": "Todos los precios sin IVA. Evaluación in situ incluida sin cargo.",
+    "pricing_tiers": [
+      {
+        "name": "Por Incidencia",
+        "price_from": "280",
+        "desc": "Un solo panel o ventana con arañazos visibles. Ideal para reparaciones puntuales.",
+        "includes": ["Evaluación in situ", "Pulido a máquina", "Sellador hidrofóbico", "Informe fotográfico"]
+      },
+      {
+        "name": "Tarifa por m²",
+        "price_from": "45",
+        "desc": "Para superficies grandes — fachadas de oficinas, escaparates completos, mamparas de cristal.",
+        "includes": ["Precio por volumen", "Servicio fuera de horario", "Múltiples paneles en una visita", "Opción de plan de mantenimiento"]
+      },
+      {
+        "name": "Plan de Mantenimiento",
+        "price_from": "Personalizado",
+        "desc": "Contrato mensual o trimestral para empresas de facility management con múltiples propiedades.",
+        "includes": ["Programación prioritaria", "Gestor de cuenta dedicado", "Tarifa mensual fija", "Intervenciones ilimitadas (uso razonable)"]
+      }
+    ],
+    "faq_title": "Preguntas Frecuentes sobre Cristal Comercial",
+    "faq_items": [
+      {
+        "question": "¿Podéis trabajar fuera del horario comercial?",
+        "answer": "Sí. Programamos los trabajos de cristal comercial por las tardes, noches o fines de semana. Cero interrupciones para tu negocio, clientes o inquilinos."
+      },
+      {
+        "question": "¿Qué tipos de daños en cristal podéis restaurar?",
+        "answer": "Arañazos superficiales, grabados de grafiti, daños por polvo de obra, manchas de cal y desgaste general. Las grietas o desconchones profundos que comprometen la integridad estructural requieren sustitución — te lo diremos con honestidad durante la evaluación."
+      },
+      {
+        "question": "¿Cuánto se tarda en restaurar un escaparate?",
+        "answer": "Un panel de escaparate normalmente requiere 1–2 horas según la profundidad de los arañazos. Podemos hacer varios paneles en una sola visita."
+      },
+      {
+        "question": "¿Trabajáis en toda Barcelona?",
+        "answer": "Sí. Cubrimos Barcelona ciudad, Sant Cugat, Terrassa, Sabadell, Hospitalet, Badalona y toda el área metropolitana. Para múltiples ubicaciones, ofrecemos programación optimizada por rutas."
+      },
+      {
+        "question": "¿Podéis gestionar una cartera de múltiples propiedades?",
+        "answer": "Por supuesto. Nuestros planes de mantenimiento están diseñados para facility managers con múltiples propiedades. Una sola factura, un único interlocutor, mantenimiento programado en todas tus ubicaciones."
+      }
+    ],
+    "cta_section_title": "Restaura tu cristal. Cuida tu presupuesto.",
+    "cta_section_subtitle": "Envía fotos del daño por WhatsApp para una evaluación remota gratuita.",
+    "cta_whatsapp": "Evaluación por WhatsApp",
+    "cta_email": "Email al Equipo de Instalaciones"
+  },
+  "plans": {
+    "hero_tag": "Planes de Cuidado",
+    "hero_title": "Tu coche, siempre como de exposición",
+    "hero_subtitle": "Planes de mantenimiento por suscripción que mantienen tu pintura, cristales y revestimiento cerámico en perfecto estado — todo el año.",
+    "hero_cta": "Elige Tu Plan",
+
+    "why_title": "¿Por qué un plan de cuidado?",
+    "why_items": [
+      {
+        "icon": "calendar",
+        "title": "Mantenimiento Programado",
+        "desc": "Vamos a tu ubicación según un calendario fijo — sin necesidad de recordar ni volver a reservar. Tu coche se mantiene protegido automáticamente."
+      },
+      {
+        "icon": "shield",
+        "title": "Protege Tu Inversión",
+        "desc": "La descontaminación regular y los refuerzos cerámicos alargan la vida del revestimiento 2–3× en comparación con no hacer nada."
+      },
+      {
+        "icon": "percent",
+        "title": "Ahorro vs. Sesiones Sueltas",
+        "desc": "Los miembros del plan de cuidado ahorran entre un 20–35% en comparación con reservar sesiones individuales a precio completo."
+      },
+      {
+        "icon": "star",
+        "title": "Reserva Prioritaria",
+        "desc": "Los miembros del plan de cuidado tienen prioridad en la programación y disponibilidad en la misma semana — incluso en temporada alta."
+      }
+    ],
+
+    "plans_title": "Elige Tu Plan",
+    "plans_subtitle": "Todos los planes incluyen servicio a domicilio — vamos a tu casa u oficina.",
+    "plans_toggle_monthly": "Mensual",
+    "plans_toggle_annual": "Anual (ahorra 15%)",
+    "tiers": [
+      {
+        "id": "essential",
+        "name": "Essential",
+        "price_monthly": 39,
+        "price_annual": 33,
+        "period": "/mes",
+        "desc": "Mantén tu vehículo limpio y protegido entre correcciones completas.",
+        "includes": [
+          "Lavado exterior y descontaminación mensual",
+          "Aplicación de refuerzo cerámico trimestral",
+          "Renovación de repelente de agua en cristales",
+          "Informe de inspección de arañazos y marcas",
+          "Reserva prioritaria por WhatsApp"
+        ],
+        "best_for": "Coches de uso diario y vehículos de renting"
+      },
+      {
+        "id": "plus",
+        "name": "Plus",
+        "popular": true,
+        "price_monthly": 69,
+        "price_annual": 59,
+        "period": "/mes",
+        "desc": "Programa completo de protección para entusiastas que quieren su coche perfecto.",
+        "includes": [
+          "Todo lo incluido en Essential",
+          "Descontaminación de pintura bimensual (hierro + alquitrán)",
+          "Retoque de pulido en una fase trimestral",
+          "Refuerzo cerámico cada 4 meses",
+          "Limpieza profunda de interior (trimestral)",
+          "Medición anual del espesor de pintura",
+          "10% de descuento en cualquier servicio adicional"
+        ],
+        "best_for": "Coches premium y entusiastas"
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price_monthly": 119,
+        "price_annual": 101,
+        "period": "/mes",
+        "desc": "El programa de cuidado definitivo para coleccionistas, coches exóticos y vehículos que deben estar siempre impecables.",
+        "includes": [
+          "Todo lo incluido en Plus",
+          "Retoque de pulido a máquina mensual",
+          "Refuerzo cerámico mensual",
+          "Renovación del revestimiento de llantas (trimestral)",
+          "Inspección y sellado de bordes de PPF",
+          "Detallado del vano motor (semestral)",
+          "Programación prioritaria en el mismo día",
+          "20% de descuento en cualquier servicio adicional"
+        ],
+        "best_for": "Vehículos exóticos y de colección"
+      }
+    ],
+
+    "how_title": "Cómo Funciona",
+    "how_steps": [
+      {
+        "step": "1",
+        "title": "Elige un plan",
+        "desc": "Selecciona el nivel que se adapta a tu coche y a tus expectativas."
+      },
+      {
+        "step": "2",
+        "title": "Evaluación inicial",
+        "desc": "Inspeccionamos tu vehículo y establecemos una línea base de mantenimiento — espesor de pintura, estado del revestimiento, zonas problemáticas."
+      },
+      {
+        "step": "3",
+        "title": "Visitas programadas",
+        "desc": "Vamos a tu ubicación en un calendario fijo. Recibes un recordatorio por WhatsApp 24h antes de cada visita."
+      },
+      {
+        "step": "4",
+        "title": "Informes de estado",
+        "desc": "Después de cada visita, recibes fotos y un informe digital documentando el trabajo realizado y el estado de la pintura."
+      }
+    ],
+
+    "faq_title": "FAQ de Planes de Cuidado",
+    "faq_items": [
+      {
+        "question": "¿Hay un compromiso mínimo?",
+        "answer": "Los planes mensuales tienen un mínimo de 3 meses. Los planes anuales se facturan anualmente y se pueden cancelar en cualquier fecha de renovación con 30 días de preaviso."
+      },
+      {
+        "question": "¿Qué pasa si mi coche necesita una corrección completa?",
+        "answer": "Los planes de cuidado cubren mantenimiento — no correcciones mayores. Si detectamos un problema que necesita una corrección completa, te enviaremos un presupuesto aparte con el descuento de tu plan aplicado."
+      },
+      {
+        "question": "¿Puedo subir o bajar de plan?",
+        "answer": "Sí, en cualquier fecha de renovación mensual. Los cambios se aplican en el siguiente ciclo de facturación."
+      },
+      {
+        "question": "¿Dónde realizáis el servicio?",
+        "answer": "En tu casa, oficina o donde esté aparcado tu coche. Somos completamente móviles — solo necesitamos una plaza de aparcamiento y acceso a agua."
+      },
+      {
+        "question": "¿Qué pasa si necesito saltar un mes?",
+        "answer": "Los planes anuales incluyen una pausa gratuita al año (hasta 4 semanas). Los planes mensuales se pueden pausar con 7 días de preaviso — no se te cobra por los meses pausados."
+      }
+    ],
+
+    "cta_section_title": "Empieza a proteger tu inversión",
+    "cta_section_subtitle": "Escríbenos por WhatsApp para hablar de qué plan se adapta a tu coche — o reserva una evaluación inicial gratuita.",
+    "cta_whatsapp": "Elegir Mi Plan",
+    "cta_email": "Envíanos un Email"
   }
 }

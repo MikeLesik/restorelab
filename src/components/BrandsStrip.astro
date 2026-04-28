@@ -1,0 +1,29 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+const brands = t.trust?.brands || [
+  { name: 'Gyeon', status: 'authorized' },
+  { name: 'Gtechniq', status: 'authorized' },
+  { name: 'Rupes', status: 'equipment' },
+  { name: 'Koch Chemie', status: 'equipment' },
+  { name: 'XPEL', status: 'ppf' },
+  { name: 'CarPro', status: 'products' },
+];
+---
+
+<section class="py-6 border-y border-th-border/5">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+      {brands.map((brand: any) => (
+        <div class="group flex items-center gap-2 opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default">
+          <span class="font-display font-bold text-th-muted text-sm sm:text-base tracking-wide group-hover:text-th-heading transition-colors">
+            {brand.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

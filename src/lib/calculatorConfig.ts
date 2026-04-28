@@ -22,9 +22,9 @@ export interface CalcResult {
   warning?: string;
 }
 
-// ── Car Paint ─────────────────────────────────────────────────────────────────
+// ── Car Paint (aligned to 6-tier pricing: 149 / 289 / 549 / 649 / 1049 / 2290) ─
 const CAR_BASE: Record<string, number> = {
-  s: 180, m: 240, l: 320, not_sure: 240,
+  s: 260, m: 340, l: 430, not_sure: 340,
 };
 const CAR_CONDITION: Record<string, number> = {
   light: 1.00, medium: 1.25, heavy: 1.60, not_sure: 1.30,
@@ -32,7 +32,7 @@ const CAR_CONDITION: Record<string, number> = {
 const CAR_LOCATION: Record<string, number> = {
   sant_cugat: 0, barcelona: 0, terrassa_sabadell: 20, rubi: 10, other: 40,
 };
-const CAR_FLOOR = 120;
+const CAR_FLOOR = 140;
 
 // ── Glass Polishing ───────────────────────────────────────────────────────────
 const GLASS_BASE: Record<string, number> = {

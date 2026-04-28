@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Pricing — Car Polishing & Surface Restoration | restoreLab",
-      "description": "Transparent pricing for car paint correction, glass polishing and acrylic restoration. Packages from 189€. Free estimate via WhatsApp."
+      "description": "6 paint correction & ceramic coating packages from €149 to PPF. Sedan baseline pricing with size multipliers. Free estimate via WhatsApp."
     },
     "cases": {
       "title": "Before & After Cases — restoreLab",
@@ -33,6 +33,26 @@
     "contact": {
       "title": "Contact restoreLab — Get a Free Quote",
       "description": "Contact restoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Sant Cugat, Barcelona and Terrassa."
+    },
+    "about": {
+      "title": "About restoreLab — Our Story & Mission | restoreLab",
+      "description": "Meet the team behind restoreLab. Mobile paint correction & ceramic coating in Sant Cugat and Barcelona. Certified, insured, passion-driven."
+    },
+    "business": {
+      "title": "B2B Mobile Detailing for Dealers & Fleets | restoreLab",
+      "description": "Mobile pre-sale detailing for Barcelona dealers and corporate fleets. ≤24h turnaround, photo reports, NET-30 invoicing."
+    },
+    "ev": {
+      "title": "Tesla & EV Paint Protection Barcelona | restoreLab",
+      "description": "EV-specialised ceramic coating and PPF for Tesla, Polestar, Taycan. Sensor-safe application. Mediterranean UV protection."
+    },
+    "commercial_glass": {
+      "title": "Commercial Glass Restoration Barcelona | restoreLab",
+      "description": "After-hours mobile glass scratch removal for storefronts, offices and hotels. Save 70-80% vs replacement. No business interruption."
+    },
+    "plans": {
+      "title": "Care Plans — Subscription Paint Protection | restoreLab",
+      "description": "Monthly care plans for ongoing paint protection. Scheduled maintenance, ceramic top-ups, priority booking. From €39/month."
     },
     "privacy": {
       "title": "Privacy Policy | restoreLab",
@@ -49,6 +69,18 @@
     "academy_equipment": {
       "title": "Equipment Selection Protocols — Rotary vs Dual Action | restoreLab Academy",
       "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations."
+    },
+    "headlight": {
+      "title": "Headlight Restoration Sant Cugat & Barcelona | restoreLab",
+      "description": "Professional headlight restoration — remove yellowing, haze and UV oxidation. From €79/pair. Mobile service in Sant Cugat & Barcelona."
+    },
+    "interior_leather": {
+      "title": "Interior Leather Cleaning & Ceramic Coating | restoreLab",
+      "description": "Deep leather cleaning, stain removal and optional ceramic coating. Seats, dashboard & door cards. From €189. Mobile service."
+    },
+    "pre_sale": {
+      "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
+      "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value."
     }
   },
   "nav": {
@@ -60,15 +92,40 @@
     "cta": "Get Estimate"
   },
   "hero": {
-    "headline": "Restore. Don't Replace.",
-    "subheadline": "Mobile paint, glass & acrylic restoration in Spain — we come to you. Save up to 70% vs replacement.",
-    "cta_primary": "Get Free Estimate on WhatsApp",
+    "headline": "Factory finish. At your doorstep.",
+    "subheadline": "Premium paint correction & ceramic coating in Sant Cugat, Barcelona and Vallès Occidental — we come to your garage.",
+    "cta_primary": "Get a Free Estimate",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
-    "trust_pills": ["★ 5.0 Google", "47+ Reviews", "500+ Jobs", "100% Mobile"],
+    "trust_pills": ["★ 5.0 Google", "47+ Reviews", "500+ Jobs", "€500K Insurance"],
     "cta_car": "Car Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
     "badge": "★ Rated 5.0 • 500+ Jobs Done"
+  },
+  "trust": {
+    "brands": [
+      { "name": "Gyeon", "status": "authorized" },
+      { "name": "Gtechniq", "status": "authorized" },
+      { "name": "Rupes", "status": "equipment" },
+      { "name": "Koch Chemie", "status": "equipment" },
+      { "name": "XPEL", "status": "ppf" },
+      { "name": "CarPro", "status": "products" }
+    ],
+    "certifications": [
+      { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
+      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" },
+      { "name": "IDA Member", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
+      { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
+    ],
+    "insurance": {
+      "label": "€500K Civil Liability Insurance",
+      "detail": "Policy covers all on-site work including third-party vehicle damage."
+    },
+    "founder": {
+      "text": "Founded in Sant Cugat. Mobile-first since day one.",
+      "link_label": "About us",
+      "link_url": "/about"
+    }
   },
   "social_proof": {
     "rating": "5.0",
@@ -114,7 +171,7 @@
         "title": "Car Paint Correction",
         "subtitle": "Swirl marks, scratches & gloss restoration",
         "icon": "car",
-        "starting_price": "From €189",
+        "starting_price": "From €149",
         "features": [
           "Swirl mark & scratch removal",
           "Save vs €800+ repaint",
@@ -149,6 +206,90 @@
         ],
         "cta_label": "Get Acrylic Estimate",
         "tag": null
+      },
+      {
+        "id": "headlight-restoration",
+        "title": "Headlight Restoration",
+        "subtitle": "Yellowed or hazy lenses restored to crystal clarity",
+        "icon": "headlight",
+        "starting_price": "From €79",
+        "features": [
+          "UV oxidation & yellowing removal",
+          "Wet-sand and machine polish",
+          "Optional UV sealant (2+ years)"
+        ],
+        "cta_label": "Get Headlight Estimate",
+        "tag": null
+      },
+      {
+        "id": "trim-restoration",
+        "title": "Plastic Trim Restoration",
+        "subtitle": "Faded bumpers, mirrors & exterior trim revived",
+        "icon": "trim",
+        "starting_price": "From €69",
+        "features": [
+          "Deep black restored on plastic trim",
+          "UV protection applied",
+          "Full vehicle trim from €189"
+        ],
+        "cta_label": "Get Trim Estimate",
+        "tag": null
+      },
+      {
+        "id": "wheel-ceramic",
+        "title": "Wheel Ceramic Coating",
+        "subtitle": "Brake dust repellent coating for all 4 wheels",
+        "icon": "wheel",
+        "starting_price": "€189",
+        "features": [
+          "All 4 wheels cleaned & decontaminated",
+          "Ceramic coating (12+ month durability)",
+          "Brake dust slides off effortlessly"
+        ],
+        "cta_label": "Get Wheel Estimate",
+        "tag": null
+      },
+      {
+        "id": "engine-bay",
+        "title": "Engine Bay Detailing",
+        "subtitle": "Under the bonnet — cleaned, dressed & protected",
+        "icon": "engine",
+        "starting_price": "€119",
+        "features": [
+          "Full degrease & steam clean",
+          "Plastic & rubber dressing",
+          "Electrical-safe process"
+        ],
+        "cta_label": "Get Engine Bay Estimate",
+        "tag": null
+      },
+      {
+        "id": "interior-leather",
+        "title": "Interior Leather Refresh",
+        "subtitle": "Seats, dashboard & door cards cleaned and protected",
+        "icon": "interior",
+        "starting_price": "From €189",
+        "features": [
+          "Deep leather cleaning & conditioning",
+          "Stain & dye transfer removal",
+          "Optional ceramic coating (€289)"
+        ],
+        "cta_label": "Get Interior Estimate",
+        "tag": null
+      },
+      {
+        "id": "pre-sale-pack",
+        "title": "Pre-Sale Detail Pack",
+        "subtitle": "Maximise resale value before selling or trading in",
+        "icon": "sale",
+        "starting_price": "€249",
+        "features": [
+          "Single-stage paint correction",
+          "Interior deep clean",
+          "Engine bay detailing included"
+        ],
+        "cta_label": "Get Pre-Sale Estimate",
+        "tag": "Value pack"
       }
     ],
     "learn_more": "Learn more",
@@ -185,59 +326,125 @@
   "pricing": {
     "section_title": "Transparent Pricing",
     "section_subtitle": "No surprises. Exact estimate after photo review",
-    "anchor_text": "Full repaint costs €800–2,000+. Our paint correction starts at €189.",
+    "anchor_text": "Premium paint correction & ceramic coating by certified detailers. Sedan prices shown — see size multipliers below.",
     "cta_custom": "Need a custom quote?",
     "cta_whatsapp": "Ask via WhatsApp",
+    "ui": {
+      "most_popular": "Most Popular",
+      "best_for": "Best for:",
+      "get_quote": "Get Quote",
+      "size_title": "Vehicle Size Multipliers",
+      "size_subtitle": "Prices above are for sedan-size vehicles. Adjust based on your vehicle:",
+      "sensitive_paint": "Sensitive paint surcharge",
+      "sensitive_paint_note": "Jet black, Audi Brilliant Black, Porsche Carrara White, etc.",
+      "size_categories": [
+        { "name": "Compact", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
+        { "name": "Sedan", "examples": "3 Series, C-Class, A4", "modifier": "Baseline" },
+        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
+        { "name": "Large SUV / 7-seater", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
+        { "name": "Sports / Supercar", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+      ],
+      "sensitive_paint_surcharge": "+€60–100"
+    },
     "categories": [
       {
         "id": "car",
-        "title": "Car Polishing Packages",
+        "title": "Paint Correction & Ceramic Coating",
         "packages": [
           {
-            "name": "Base Correction",
-            "price": "from 189€",
-            "savings": "Most clients save €600+ vs body shop",
-            "duration": "2–4 hours",
-            "description": "Entry-level correction for light swirls and oxidation.",
+            "name": "Express Refresh",
+            "slug": "express-refresh",
+            "price": "149€",
+            "duration": "~2 hours",
+            "description": "Quick decon wash and hand polish for light contamination. Ideal maintenance between full corrections.",
             "includes": [
-              "Single-stage machine polishing",
-              "Swirl mark & light scratch removal",
-              "Hand wash & clay bar decontamination",
-              "Final sealant protection"
+              "Decontamination wash",
+              "Clay bar treatment",
+              "Light hand polish",
+              "Spray sealant protection (1–2 months)"
             ],
-            "best_for": "Daily driver with minor defects",
+            "best_for": "New or well-maintained vehicles needing a refresh",
             "highlight": false
           },
           {
-            "name": "Ceramic Prep",
-            "price": "from 339€",
-            "savings": "Includes €89 ceramic base coat — FREE",
-            "duration": "3–5 hours",
-            "description": "Full two-stage correction, ready for ceramic coating.",
+            "name": "Single-Stage Correction",
+            "slug": "single-stage",
+            "price": "289€",
+            "duration": "3–4 hours",
+            "description": "One-step machine correction removing up to 70% of swirl marks and light scratches.",
             "includes": [
-              "Two-stage machine polishing",
-              "Heavy swirl & scratch removal",
-              "Paint depth measurements",
-              "Panel wipedown & IPA cleanse",
-              "Ceramic base coat application"
+              "Full decontamination wash + clay bar",
+              "Single-step machine polishing",
+              "Swirl mark & light scratch removal",
+              "6-month sealant protection"
             ],
-            "best_for": "Vehicles preparing for ceramic coating",
+            "best_for": "Daily drivers with moderate swirl marks",
+            "highlight": false
+          },
+          {
+            "name": "Two-Stage Correction",
+            "slug": "two-stage",
+            "price": "549€",
+            "duration": "5–7 hours",
+            "description": "Full two-step compound and polish. Removes 90%+ of defects with no ceramic — ideal if you already have a coating.",
+            "includes": [
+              "Full decontamination & clay bar",
+              "Two-step machine correction (compound + polish)",
+              "Paint depth gauge measurements",
+              "Panel-by-panel IPA wipedown",
+              "Short-term sealant finish"
+            ],
+            "best_for": "Heavily swirled vehicles or pre-coating prep",
+            "highlight": false
+          },
+          {
+            "name": "Ceramic Coating 2Y",
+            "slug": "ceramic-2y",
+            "price": "649€",
+            "duration": "6–8 hours",
+            "description": "Two-stage correction topped with a certified 2-year ceramic coating (Gyeon / Gtechniq).",
+            "includes": [
+              "Full two-stage correction",
+              "Paint depth measurements",
+              "IPA wipedown & surface prep",
+              "2-year ceramic coating (Gyeon / Gtechniq)",
+              "Tyre & trim dressing"
+            ],
+            "best_for": "Anyone wanting long-term protection with a showroom finish",
             "highlight": true
           },
           {
-            "name": "Premium Ceramic",
-            "price": "from 459€",
-            "savings": "12-month guarantee included",
-            "duration": "6–8 hours",
-            "description": "Maximum correction + professional ceramic coating.",
+            "name": "Premium Ceramic 5Y",
+            "slug": "premium-5y",
+            "price": "1 049€",
+            "duration": "8–10 hours",
+            "description": "Multi-stage correction with flagship 5-year graphene ceramic. Windshield and wheel coatings included.",
             "includes": [
-              "Full multi-stage paint correction",
-              "Professional ceramic coating (2+ layers)",
-              "Windshield rain repellent treatment",
-              "Tyre dressing & trim restoration",
-              "12-month protection guarantee"
+              "Multi-stage paint correction",
+              "5-year graphene ceramic coating",
+              "Windshield hydrophobic coating",
+              "Wheel ceramic coating",
+              "Trim & tyre restoration",
+              "2-year warranty on coating"
             ],
-            "best_for": "Luxury & sports cars, maximum protection",
+            "best_for": "Luxury & sports cars, maximum long-term protection",
+            "highlight": false
+          },
+          {
+            "name": "Flagship PPF + Ceramic",
+            "slug": "flagship-ppf",
+            "price": "from 2 290€",
+            "duration": "1.5–2 days",
+            "description": "Paint protection film on high-impact zones plus 5-year ceramic on the entire vehicle. The ultimate defence.",
+            "includes": [
+              "Full multi-stage correction",
+              "PPF on bonnet, bumper, mirrors & door edges",
+              "5-year ceramic coating (full body)",
+              "Windshield & wheel ceramic coatings",
+              "Complete trim restoration",
+              "Annual inspection included"
+            ],
+            "best_for": "New or high-value vehicles that deserve total protection",
             "highlight": false
           }
         ]
@@ -247,22 +454,189 @@
         "title": "Glass & Acrylic",
         "packages": [
           {
-            "name": "Glass / Acrylic Restoration",
-            "price": "Custom quote",
-            "duration": "1–4 hours",
-            "description": "Price based on surface size and damage severity.",
+            "name": "Windshield Polish",
+            "slug": "windshield-polish",
+            "price": "119€",
+            "duration": "1–2 hours",
+            "description": "Remove wiper scratches, water spots and light haze from your windshield.",
             "includes": [
               "Surface assessment",
-              "Machine polishing of glass or acrylic",
-              "Water spot & scratch removal",
+              "Machine polishing of windshield",
+              "Wiper scratch & water spot removal"
+            ],
+            "best_for": "Windshields with wiper marks or mineral deposits",
+            "highlight": false
+          },
+          {
+            "name": "Windshield + Hydrophobic",
+            "slug": "windshield-hydrophobic",
+            "price": "179€",
+            "duration": "1.5–2.5 hours",
+            "description": "Windshield polish plus rain-repellent hydrophobic coating for improved visibility.",
+            "includes": [
+              "Full windshield polish",
+              "Scratch & water spot removal",
+              "Hydrophobic coating application",
+              "Rain beads off at 60 km/h+"
+            ],
+            "best_for": "Daily drivers wanting better rainy-day visibility",
+            "highlight": true
+          },
+          {
+            "name": "Full Glass Set",
+            "slug": "full-glass-set",
+            "price": "289€",
+            "duration": "3–4 hours",
+            "description": "All windows polished and treated — windshield, side windows and rear glass.",
+            "includes": [
+              "All glass surfaces polished",
+              "Scratch & water spot removal",
+              "Hydrophobic coating on all glass",
+              "Rear window included"
+            ],
+            "best_for": "Full vehicle glass restoration",
+            "highlight": false
+          },
+          {
+            "name": "Hydrophobic Coating Only",
+            "slug": "hydrophobic-standalone",
+            "price": "from 89€",
+            "duration": "30 min – 1 hour",
+            "description": "Rain-repellent coating applied to clean glass. Windshield €89, full set €159.",
+            "includes": [
+              "Surface prep & decontamination",
+              "Professional hydrophobic coating",
+              "Windshield or full glass set"
+            ],
+            "best_for": "Already-clean glass that needs rain repellency",
+            "highlight": false
+          },
+          {
+            "name": "Acrylic Restoration",
+            "price": "Custom quote",
+            "duration": "1–4 hours",
+            "description": "Price based on surface size and damage severity. Acrylic & polycarbonate panels.",
+            "includes": [
+              "Surface assessment",
+              "Machine polishing of acrylic panels",
+              "UV oxidation removal",
               "Hydrophobic coating (optional)"
             ],
-            "best_for": "Windshields, side windows, acrylic panels",
+            "best_for": "Acrylic windows, hatches, boat panels",
             "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "extras",
+        "title": "Add-On Services",
+        "packages": [
+          {
+            "name": "Headlight Restoration",
+            "slug": "headlight-restoration",
+            "price": "79€ / pair",
+            "duration": "45 min – 1 hour",
+            "description": "Restore yellowed or hazy lenses to crystal clarity. Optional UV sealant for €119.",
+            "includes": [
+              "Wet-sand & machine polish (both lenses)",
+              "Oxidation & yellowing removal",
+              "Clear coat or UV sealant (optional +€40)"
+            ],
+            "best_for": "Hazy, yellowed or cloudy headlight lenses",
+            "highlight": false
+          },
+          {
+            "name": "Wheel Ceramic Coating",
+            "slug": "wheel-ceramic",
+            "price": "189€",
+            "duration": "2–3 hours",
+            "description": "All 4 wheels decontaminated and coated with brake-dust-repellent ceramic.",
+            "includes": [
+              "Iron decontamination (all 4 wheels)",
+              "Barrel & face cleaning",
+              "Ceramic coating application",
+              "12+ month durability"
+            ],
+            "best_for": "Anyone tired of scrubbing brake dust",
+            "highlight": false
+          },
+          {
+            "name": "Engine Bay Detailing",
+            "slug": "engine-bay",
+            "price": "119€",
+            "duration": "1–1.5 hours",
+            "description": "Full degrease, steam clean and dress — safe for all electrical components.",
+            "includes": [
+              "Full degrease & steam clean",
+              "Plastic & rubber dressing",
+              "Electrical-safe process"
+            ],
+            "best_for": "Pre-sale prep or annual maintenance",
+            "highlight": false
+          },
+          {
+            "name": "Pre-Sale Detail Pack",
+            "slug": "pre-sale-pack",
+            "price": "249€",
+            "duration": "4–5 hours",
+            "description": "Paint correction + interior clean + engine bay — everything a buyer inspects.",
+            "includes": [
+              "Single-stage paint correction",
+              "Full interior vacuum & clean",
+              "Engine bay detailing",
+              "Tyre & trim dressing"
+            ],
+            "best_for": "Selling or trading in your vehicle",
+            "highlight": true
           }
         ]
       }
     ]
+  },
+  "estimator": {
+    "title": "Get Your Instant Estimate",
+    "subtitle": "Answer 4 quick questions and get a price range in seconds.",
+    "step1_title": "Vehicle size",
+    "size_small": "Small",
+    "size_small_desc": "Hatchback, sedan",
+    "size_medium": "Medium",
+    "size_medium_desc": "Estate, coupé, small SUV",
+    "size_large": "Large",
+    "size_large_desc": "Large SUV, van, truck",
+    "step2_title": "Paint condition",
+    "cond_light": "Light",
+    "cond_light_desc": "Minor swirls, water spots",
+    "cond_medium": "Medium",
+    "cond_medium_desc": "Visible scratches, dull finish",
+    "cond_heavy": "Heavy",
+    "cond_heavy_desc": "Deep scratches, oxidation",
+    "step3_title": "Paint colour",
+    "color_standard": "Standard",
+    "color_standard_desc": "Red, blue, green…",
+    "color_metallic": "Metallic",
+    "color_metallic_desc": "Silver, grey metallic",
+    "color_black": "Black",
+    "color_black_desc": "Solid or metallic black",
+    "color_white": "White",
+    "color_white_desc": "Solid or pearl white",
+    "step4_title": "What do you need?",
+    "step4_hint": "Select one or more goals",
+    "goal_gloss": "Restore gloss & remove scratches",
+    "goal_ceramic": "Add ceramic coating",
+    "goal_presale": "Prepare for sale",
+    "goal_protection": "Long-term paint protection",
+    "goal_glass": "Glass scratch removal",
+    "submit": "See My Estimate",
+    "result_title": "Your Recommended Options",
+    "addons_title": "Suggested add-ons",
+    "cta_whatsapp": "Send to WhatsApp",
+    "cta_restart": "Start Over",
+    "back": "Back",
+    "recommended_tag": "Recommended",
+    "note_black": "Black paint shows every imperfection. Two-stage correction minimum recommended.",
+    "note_heavy": "Heavy defects may require paint depth measurement. Free on-site assessment included.",
+    "note_large": "Large vehicles require additional time. ETAs shown are approximate.",
+    "wa_message": "Hello restoreLab! I used the estimator:\n• Vehicle: {vehicleSize}\n• Condition: {paintCondition}\n• Colour: {colorSensitivity}\n• Goals: {goals}\n• Recommended: {tierName} (€{min}–{max})\n\nI'd like to proceed with a quote."
   },
   "faq": {
     "section_title": "Before You Get in Touch",
@@ -274,12 +648,12 @@
       {
         "icon": "money",
         "question": "How much does paint correction cost in Barcelona?",
-        "answer": "From €189 for base correction, €339 with ceramic prep, and €459 for premium multi-stage correction. The final price depends on vehicle size and paint condition. We offer a <a href='/en/pricing' class='text-brand-accent hover:underline'>free quote via WhatsApp</a> — send us a few photos and we reply within 30 minutes. We cover Sant Cugat, Barcelona, Terrassa and the entire metropolitan area."
+        "answer": "Sedan prices range from €149 for an Express Refresh to €1 049 for Premium 5-Year Ceramic. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a certified 2-year coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise quote — we reply within 30 minutes. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "icon": "swap",
         "question": "What is the difference between paint correction and repainting?",
-        "answer": "<a href='/en/services/car-paint-correction' class='text-brand-accent hover:underline'>Paint correction</a> removes defects from the existing clear coat (swirl marks, scratches, oxidation) without adding new paint. It costs 70-80% less than repainting (from €189 vs €800-2,000+), takes hours instead of days, and preserves the original factory paint. Repainting is only necessary when the paint is physically missing or damaged beyond the clear coat. See our <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
+        "answer": "<a href='/en/services/car-paint-correction' class='text-brand-accent hover:underline'>Paint correction</a> removes defects from the existing clear coat (swirl marks, scratches, oxidation) without adding new paint. It costs significantly less than repainting (from €149 vs €800-2,000+), takes hours instead of days, and preserves the original factory paint. Repainting is only necessary when the paint is physically missing or damaged beyond the clear coat. See our <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
       },
       {
         "icon": "glass",
@@ -289,7 +663,7 @@
       {
         "icon": "clock",
         "question": "How long does the service take and how long do results last?",
-        "answer": "Paint correction takes 3-8 hours depending on vehicle size and condition. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Ceramic coating protection lasts 12+ months with proper care; the base sealant in the €189 package lasts 3-6 months. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
+        "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years, Premium 5Y lasts 5+ years; the sealant in the Express Refresh package lasts 1-2 months. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "icon": "car",
@@ -421,6 +795,28 @@
     "trust_pill": "5.0 · 500+ jobs in Sant Cugat & Barcelona",
     "reply_note": "Average reply: 28 min · Mobile service, we come to you"
   },
+  "about": {
+    "hero_title": "Built in Sant Cugat. Driven by craft.",
+    "hero_subtitle": "restoreLab is a mobile surface restoration studio serving the Barcelona metro area. We bring professional-grade correction and protection directly to your location.",
+    "founder_name": "[Founder Name]",
+    "founder_role": "Founder & Lead Technician",
+    "founder_photo_note": "⚠ Placeholder — add real founder photo to /images/team/founder.jpg",
+    "origin_title": "Why restoreLab exists",
+    "origin_text": "restoreLab was born from a simple observation: most paint damage doesn't need repainting, and most glass scratches don't require replacement. The industry defaults to the most expensive option. We chose a different path — restoring surfaces to factory condition using precision equipment and the best products available.",
+    "philosophy_title": "Restore, don't replace",
+    "philosophy_text": "Every restoration extends the life of existing materials. No paint waste, no glass going to landfill, no unnecessary replacement parts. It's better for your wallet and better for the environment. We believe the most sustainable repair is the one that doesn't create new waste.",
+    "equipment_title": "Professional equipment",
+    "equipment_text": "We work exclusively with Rupes polishing machines, Gyeon and Gtechniq ceramic coatings, Koch Chemie compounds, and XPEL paint protection film. Every product is selected based on performance data, not marketing — and every technician is trained to use them correctly.",
+    "local_title": "Local commitment",
+    "local_text": "Based in Sant Cugat del Vallès, we serve the entire Barcelona metropolitan area — from Matadepera to Castelldefels, from Pedralbes to Terrassa. Our mobile unit comes to your home, office or parking spot. No need to leave your car at a workshop.",
+    "certifications_title": "Certifications & Training",
+    "stats": [
+      { "value": "500+", "label": "Vehicles restored" },
+      { "value": "5.0", "label": "Google rating" },
+      { "value": "€500K", "label": "Insurance coverage" },
+      { "value": "0", "label": "Repaints needed" }
+    ]
+  },
   "footer": {
     "tagline": "Premium mobile surface restoration",
     "trust": "Trusted by 500+ clients in Sant Cugat & Barcelona",
@@ -429,10 +825,20 @@
     "legal_title": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
+    "cookies": "Cookie Policy",
     "copyright": "© 2026 restoreLab. All rights reserved.",
     "made_in": "Made in Spain.",
     "gbp_url": "https://g.page/restorelab-santcugat",
-    "gbp_label": "Google Reviews"
+    "gbp_label": "Google Reviews",
+    "business_link": "For Business",
+    "ev_link": "EV Protection",
+    "commercial_glass_link": "Commercial Glass",
+    "plans_link": "Care Plans",
+    "legal_entity": "restoreLab S.L.",
+    "legal_nif": "B-XXXXXXXX",
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "legal_provisional": "(Provisional — pending registration)",
+    "legal_insurance": "Professional liability insurance — €500,000 coverage"
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",
@@ -528,6 +934,46 @@
         "excerpt": "How UV radiation degrades acrylic and polycarbonate surfaces over time, and the professional restoration process that brings them back to full transparency.",
         "slug": "uv-damage-acrylic-restoration",
         "date": "2025-07-02",
+        "status": "published"
+      },
+      {
+        "number": "11",
+        "title": "Polish or Repaint: When Paint Restoration Makes Sense in Barcelona",
+        "excerpt": "A data-driven comparison of paint correction vs repainting for Barcelona-area vehicles. When polishing saves you thousands — and the rare cases where a respray is the only option.",
+        "slug": "polish-vs-repaint-barcelona",
+        "date": "2025-07-23",
+        "status": "published"
+      },
+      {
+        "number": "12",
+        "title": "Tesla & EV Paint Care in the Mediterranean",
+        "excerpt": "Why electric vehicle paint — especially Tesla's notoriously soft clear coat — demands a different protection strategy in Barcelona's high-UV, coastal climate.",
+        "slug": "tesla-ev-paint-care-mediterranean",
+        "date": "2025-08-13",
+        "status": "published"
+      },
+      {
+        "number": "13",
+        "title": "Headlight Restoration Guide: 2026 Guide for Barcelona Drivers",
+        "excerpt": "Everything you need to know about headlight restoration in Spain — from ITV compliance requirements to UV degradation science and professional restoration techniques.",
+        "slug": "headlight-restoration-guide-barcelona",
+        "date": "2025-09-03",
+        "status": "published"
+      },
+      {
+        "number": "14",
+        "title": "Pre-Sale Detailing Checklist: What Buyers in Catalonia Look For",
+        "excerpt": "Maximise your car's resale value with a professional pre-sale detail. What Catalan buyers inspect, which defects cost you the most, and the ROI of correction before listing.",
+        "slug": "pre-sale-detailing-checklist-catalonia",
+        "date": "2025-09-24",
+        "status": "published"
+      },
+      {
+        "number": "15",
+        "title": "Mediterranean Climate & Your Car's Paint: Protection Guide",
+        "excerpt": "Sun, salt, pollen, Saharan dust — why Barcelona-area cars face a unique cocktail of paint threats, and the protection protocols that keep your finish intact year-round.",
+        "slug": "mediterranean-climate-car-paint-protection",
+        "date": "2025-10-15",
         "status": "published"
       }
     ]
@@ -978,7 +1424,7 @@
     },
     "paint_correction_cost_barcelona": {
       "seo_title": "Car Paint Correction Cost Guide Barcelona 2025 | restoreLab",
-      "seo_description": "What does paint correction cost in Barcelona? Transparent pricing guide with package breakdowns from 189 EUR. Factors that affect your quote.",
+      "seo_description": "What does paint correction cost in Barcelona? 6-tier pricing from €149 Express Refresh to €2 290 PPF + Ceramic. Size multipliers and quote guide.",
       "title": "Car Paint Correction Cost Guide Barcelona 2025",
       "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, and how to get the best value for your vehicle.",
       "intro": "One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2025.",
@@ -1000,12 +1446,15 @@
           "number": "2",
           "title": "Our Package Tiers",
           "paragraphs": [
-            "At restoreLab, we offer three clearly defined packages so there are no surprises."
+            "At restoreLab, we offer six clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +20%, large SUV +35%."
           ],
           "tools": [
-            { "label": "Base Correction", "text": "From 189 EUR. Single-stage polishing for light swirls and oxidation. Best for daily drivers with minor defects. Duration: 2-4 hours." },
-            { "label": "Ceramic Prep", "text": "From 339 EUR. Two-stage correction plus ceramic base coat. Best for vehicles preparing for ceramic coating. Duration: 3-5 hours." },
-            { "label": "Premium Ceramic", "text": "From 459 EUR. Multi-stage correction plus professional ceramic coating with 12-month guarantee. Best for luxury and sports cars. Duration: 6-8 hours." }
+            { "label": "Express Refresh", "text": "149 EUR. Decon wash, clay bar, light hand polish & spray sealant. ~2 hours." },
+            { "label": "Single-Stage Correction", "text": "289 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours." },
+            { "label": "Two-Stage Correction", "text": "549 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours." },
+            { "label": "Ceramic Coating 2Y", "text": "649 EUR. Two-stage correction + 2-year certified ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular." },
+            { "label": "Premium Ceramic 5Y", "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours." },
+            { "label": "Flagship PPF + Ceramic", "text": "From 2 290 EUR. PPF on impact zones + 5-year ceramic full body. 1.5-2 days." }
           ]
         },
         {
@@ -1070,6 +1519,231 @@
           ]
         }
       ]
+    },
+    "polish_vs_repaint_barcelona": {
+      "seo_title": "Polish or Repaint? Paint Restoration Guide Barcelona | restoreLab",
+      "seo_description": "When does paint correction beat repainting in Barcelona? Cost comparison, decision criteria, and what Mediterranean climate means for your paint.",
+      "title": "Polish or Repaint: When Paint Restoration Makes Sense in Barcelona",
+      "description": "A practical, data-driven guide to choosing between paint correction and repainting — with specific cost analysis for the Barcelona metropolitan area.",
+      "intro": "Every week, we receive photos from vehicle owners in Sant Cugat, Barcelona and the wider Vallès Occidental asking the same question: should I polish or repaint? The answer depends on the depth and type of damage — but in roughly 85% of cases, professional paint correction delivers a superior result at a fraction of the cost. This guide explains how to make that decision with confidence.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Understanding the Damage: Clear Coat vs Base Coat",
+          "paragraphs": [
+            "Before deciding between correction and repainting, you need to understand where the damage sits in your paint system. Modern automotive paint consists of four layers: the e-coat (electrodeposition primer), the primer-surfacer, the base coat (colour), and the clear coat on top. The clear coat is typically 40-60 microns thick on a factory finish and acts as the sacrificial protection layer.",
+            "Swirl marks, light scratches, oxidation, water spots and bird-etching all sit within this clear coat layer. A professional paint correction — using machine polishers like the Rupes LHR15 Mark III or Makita 9237CB — works by levelling the clear coat to a uniform depth, removing the defects without touching the colour underneath. At restoreLab, we measure paint depth with a digital gauge (Elcometer 456) before every job, ensuring we never compromise the structural integrity of the finish.",
+            "Repainting, by contrast, is necessary only when the damage extends through the clear coat into the base coat — think deep key scratches where you can see primer or bare metal, large stone chips that have rusted, or panels where the clear coat has delaminated entirely. In Barcelona's Mediterranean climate, where UV indices regularly hit 9-10 in summer and temperatures exceed 35 degrees Celsius, clear coat failure on poorly maintained vehicles is more common than in northern Europe."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Cost Comparison: Correction vs Repaint in Barcelona",
+          "paragraphs": [
+            "The economics strongly favour correction in most cases. A full two-stage paint correction at restoreLab starts at 549 euros for a sedan, while a professional respray of a single panel at a Barcelona body shop ranges from 300 to 600 euros — and a full-vehicle repaint runs between 2,000 and 5,000 euros depending on quality. Our most popular package, the Ceramic Coating 2Y at 649 euros, includes a full two-stage correction plus a certified 2-year Gyeon or Gtechniq ceramic coating — delivering both restoration and long-term protection.",
+            "Beyond the direct cost, there are hidden expenses to repainting: rental car costs during the 3-7 days the car is in the shop, depreciation from a non-original paint job (which is recorded in vehicle history and visible under inspection), and the risk of colour mismatch, especially on metallic and pearl finishes. Our clients in Sant Cugat and Barcelona consistently find that correction preserves both the vehicle's original factory integrity and its resale value. Check our full pricing breakdown on the pricing page.",
+            "There is also the time factor. A mobile paint correction takes 5-7 hours at your location — your garage in Sant Cugat, your office parking in Barcelona, or your driveway in Terrassa. No drop-off, no rental, no disruption. We bring everything: generator, Rupes polishers, Koch Chemie compounds, water supply and LED inspection lights."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "The Decision Framework: Polish, Repaint, or Protect",
+          "paragraphs": [
+            "At restoreLab, we use a straightforward framework for every assessment. First, we measure paint thickness on every panel with a digital gauge. If the clear coat reads above 80 microns in most areas, there is sufficient material for a full multi-stage correction. If readings are below 60 microns on certain panels, that indicates previous repainting or heavy correction — and we adjust our approach accordingly.",
+            "Second, we perform the 'fingernail test' on the deepest scratches. If your fingernail catches firmly in a scratch, it likely extends through the clear coat, and that specific scratch may not be fully removable. However, we can typically reduce its visibility by 70-80% and make it unnoticeable under normal viewing conditions. Only when scratches have exposed bare metal or primer does repainting become the correct recommendation.",
+            "Third, we evaluate the overall condition against the vehicle's value and the owner's goals. A 15-year-old daily driver with moderate swirls benefits enormously from a single-stage correction at 289 euros — the ROI in terms of appearance is outstanding. A new BMW M4 in Sant Cugat deserves the Premium Ceramic 5Y at 1,049 euros for maximum long-term protection. And a vehicle headed for resale should consider our Pre-Sale Detail Pack at 249 euros for the best return on investment. You can see real results from all these scenarios in our before and after cases gallery."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Barcelona-Specific Factors: Climate and Environment",
+          "paragraphs": [
+            "The Barcelona metropolitan area presents specific challenges that affect this decision. The UV index in summer reaches 9-10 (extreme), which accelerates clear coat oxidation — particularly on vehicles parked outdoors in Sant Cugat or the coastal areas of Castelldefels and Gavà. Mediterranean salt air carries chloride particles inland, especially during onshore Garbí winds, contributing to micro-corrosion in stone chip sites.",
+            "Saharan dust events (calima) deposit fine abrasive particles that cause swirl marks during washing if not handled correctly. Pine resin from the trees lining many streets in Sant Cugat, Bellaterra and Matadepera etches into clear coat within 48 hours if not removed. All of these factors make regular paint protection — not repainting — the logical investment for Barcelona-area vehicles.",
+            "Our recommendation for most vehicles in the Barcelona area: a professional two-stage correction followed by a ceramic coating (from 649 euros) provides 2-5 years of active protection against these environmental threats. This is far more cost-effective than waiting for the damage to accumulate and then facing a full respray. Prevention is always cheaper than repair — especially in this climate. For specific pricing and package details, visit our pricing page or send photos via WhatsApp for a free assessment."
+          ]
+        }
+      ]
+    },
+    "tesla_ev_paint_care_mediterranean": {
+      "seo_title": "Tesla & EV Paint Care Mediterranean Climate | restoreLab",
+      "seo_description": "Why Tesla and EV clear coats need special care in Barcelona's climate. Soft paint solutions, ceramic coating, and protection protocols.",
+      "title": "Tesla & EV Paint Care in the Mediterranean",
+      "description": "Why electric vehicle paint — especially Tesla's notoriously soft clear coat — demands a different correction and protection strategy in Barcelona's high-UV, salt-air environment.",
+      "intro": "Electric vehicles are everywhere in Barcelona. Tesla Model 3 and Model Y dominate the streets of Sant Cugat, the Diagonal, and the parking structures of Pedralbes. But EV owners quickly discover a frustrating reality: the paint on many electric vehicles — Tesla in particular — is significantly softer and thinner than on traditional manufacturers. Combined with Barcelona's intense UV, salt air and Saharan dust, this creates a perfect storm of paint degradation that demands a specialised approach.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Why EV Paint Is Different",
+          "paragraphs": [
+            "Tesla's factory paint has been a known weak point since the Model S era. Independent paint depth measurements consistently show clear coat thickness of 25-35 microns on Tesla vehicles — compared to 45-60 microns on comparable German manufacturers like BMW, Mercedes and Audi. This thinner clear coat means less margin for error during correction and faster degradation from UV exposure.",
+            "The issue is not unique to Tesla. Many EV manufacturers use water-based paint systems with lower VOC emissions, which is environmentally positive but results in softer clear coats. Polestar, BYD and even some Porsche Taycan finishes show similar characteristics. The paint is more susceptible to swirl marks from automated car washes, marring from improper drying, and etching from bird droppings or tree sap — all of which are accelerated by Barcelona's 2,500+ hours of annual sunshine.",
+            "At restoreLab, we have corrected over 80 Tesla vehicles in the Sant Cugat and Barcelona area. We have developed specific protocols for these soft paint systems that differ substantially from our standard automotive correction procedures. The key principle: less aggressive cutting, more refined finishing, and mandatory ceramic protection afterwards."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "The restoreLab EV Correction Protocol",
+          "paragraphs": [
+            "Our Tesla and EV correction protocol begins with precise paint depth measurement on every panel using an Elcometer 456 gauge. On a typical Tesla Model 3 with 28-32 microns of clear coat, we know immediately that aggressive rotary correction is off the table. Instead, we use a Rupes LHR15 Mark III dual action polisher with a medium-cut foam pad (Rupes yellow) and Koch Chemie F6.01 Fine Cut compound — a combination that removes 60-70% of swirl marks while removing only 1-2 microns of clear coat.",
+            "For deeper defects on Tesla paint, we use a micro-rotary (Rupes LHR75E with 75mm backing plate) for targeted spot correction at reduced pressure — 5-8 kg maximum versus the 15-20 kg we use on German paint with thick clear coats. The finishing pass uses Sonax Perfect Finish 04-06 with a Rupes blue (ultra-fine) pad to achieve hologram-free clarity.",
+            "Temperature management is critical in Mediterranean conditions. Barcelona summer surface temperatures can reach 60-65 degrees Celsius on dark-coloured panels parked in the sun. We always work in shade or enclosed parking, and we monitor clear coat temperature during correction. On Tesla Midnight Silver Metallic and Solid Black — the two most challenging finishes — we reduce pass time to 15-second intervals and clean the pad after every panel section."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Ceramic Protection: Non-Negotiable for EVs",
+          "paragraphs": [
+            "For any Tesla or EV in the Barcelona area, we consider ceramic coating a necessity, not an option. The thin clear coat simply cannot withstand repeated cycles of UV exposure, salt air, pine resin and Saharan dust without degrading rapidly. A quality ceramic coating acts as a sacrificial shield, absorbing environmental damage that would otherwise attack the clear coat directly.",
+            "Our recommended minimum for Tesla owners is the Ceramic Coating 2Y package at 649 euros — which includes a careful two-stage correction followed by a certified Gyeon MOHS or Gtechniq Crystal Serum Light application. For Tesla owners who want maximum protection, our Premium Ceramic 5Y at 1,049 euros adds a graphene-infused top coat, windshield hydrophobic coating and wheel ceramic — creating a comprehensive barrier against Barcelona's environmental threats.",
+            "The numbers support this investment. A Tesla Model 3 full respray in Barcelona costs 3,500-5,000 euros. A correction and ceramic protection at 649-1,049 euros, renewed every 2-5 years, keeps the original factory paint intact for the life of the vehicle. The ceramic coating also makes weekly maintenance dramatically easier — a simple rinse removes most contamination, reducing the risk of wash-induced swirl marks. For more details on ceramic coating technology, see our protection and preservation protocols article in the Academy."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Maintenance Protocol for Protected EVs",
+          "paragraphs": [
+            "After ceramic coating application, the maintenance protocol determines how long the protection lasts. For Tesla and EV owners in Barcelona, we recommend the following schedule: a pH-neutral hand wash every two weeks using the two-bucket method with CarPro Reset shampoo (formulated for coated vehicles). Never use an automatic car wash — the brushes will destroy the soft clear coat underneath the ceramic.",
+            "Every three months, decontaminate the paint with CarPro Iron X to remove embedded iron fallout from Barcelona's heavy traffic and brake dust. Every six months, apply a ceramic booster (Gyeon Cure or Gtechniq Crystal Serum Light maintenance spray) to refresh the hydrophobic layer. This protocol extends the effective life of a 2-year coating to 3+ years and a 5-year coating to 6-7 years in Mediterranean conditions.",
+            "Bird droppings and pine resin — both extremely common in Sant Cugat, Bellaterra and Matadepera — must be removed within 24-48 hours even on coated vehicles. The acidity etches through ceramic coatings if left too long, reaching the soft clear coat beneath. Keep a quick-detailer spray (Koch Chemie Quick and Shine) and microfiber towel in the car for immediate spot removal. For pricing on our maintenance packages or to book your Tesla correction, visit our pricing page or message us via WhatsApp."
+          ]
+        }
+      ]
+    },
+    "headlight_restoration_guide_barcelona": {
+      "seo_title": "Headlight Restoration Guide Barcelona 2026 | restoreLab",
+      "seo_description": "Complete headlight restoration guide for Barcelona drivers. ITV compliance, UV degradation science, DIY vs professional, and pricing from 79 euros.",
+      "title": "Headlight Restoration Guide: 2026 Guide for Barcelona Drivers",
+      "description": "Everything Barcelona-area drivers need to know about headlight restoration — from ITV inspection requirements to UV degradation science and the professional techniques that restore full clarity.",
+      "intro": "Yellowed, hazy headlights are not just an aesthetic issue — they are a safety hazard and a potential ITV failure point. In Barcelona's climate, with over 2,500 hours of sunshine per year and UV indices reaching 9-10 in summer, headlight lenses degrade faster than in most European cities. This guide covers the science behind the degradation, when professional restoration makes sense, and what Barcelona drivers need to know about ITV compliance in 2026.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Why Headlights Yellow: The UV Science",
+          "paragraphs": [
+            "Modern headlight lenses are made from polycarbonate — a lightweight, impact-resistant plastic that replaced glass in the late 1990s. Polycarbonate is an excellent optical material, but it has one significant vulnerability: ultraviolet radiation breaks down the polymer chains on the surface, causing photo-oxidation. This manifests as yellowing, hazing and eventually micro-crazing that scatters light and reduces output.",
+            "Factory headlights come with a UV-resistant hard coat applied during manufacturing. This coating typically lasts 3-5 years under normal conditions — but in Barcelona's Mediterranean climate, degradation starts earlier. The combination of 2,500+ annual sunshine hours, high ambient temperatures (summer averages of 28-30 degrees Celsius with surface temperatures reaching 60+ degrees), and reflected UV from light-coloured Mediterranean buildings accelerates the process. We regularly see significant yellowing on vehicles as young as 3 years old in the Sant Cugat and Barcelona area.",
+            "Once the factory UV coating fails, degradation accelerates exponentially. Within 12-18 months, the polycarbonate develops a uniform yellow haze that reduces light output by 30-50%. At this stage, the headlights may still pass ITV — but the driver is operating with significantly compromised night visibility, particularly dangerous on unlit roads in areas like Collserola, Vallvidrera or the AP-7 approach to Terrassa."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "ITV Compliance: What You Need to Know in 2026",
+          "paragraphs": [
+            "The ITV (Inspección Técnica de Vehículos) tests headlight performance as part of the lighting system inspection. The test measures light output intensity and beam pattern. Yellowed or hazy lenses reduce the measured lux at the test point, and severely degraded headlights can cause an ITV failure — classified as a 'defecto grave' that must be corrected before the vehicle passes.",
+            "In practice, the threshold depends on the specific ITV station and inspector. Mildly yellowed lenses on newer vehicles with powerful LED or xenon bulbs may still produce sufficient output to pass. But older halogen-equipped vehicles with degraded lenses frequently fail. The cost of retesting at a Barcelona ITV station (typically 20-30 euros per retest) adds up if you fail multiple inspections.",
+            "Professional headlight restoration is the most cost-effective solution. At restoreLab, our headlight restoration service starts at 79 euros per pair — compared to 300-800 euros for replacement OEM lenses, or 150-400 euros for quality aftermarket units. Our process restores the lens to near-original clarity and applies a UV sealant that protects the polycarbonate for 2+ years. For vehicles approaching their ITV date, we recommend scheduling restoration at least two weeks before the inspection to ensure maximum light output. Visit our headlight restoration service page for full details."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "The Professional Restoration Process",
+          "paragraphs": [
+            "Our headlight restoration protocol at restoreLab follows a four-stage process designed to achieve maximum optical clarity while applying durable UV protection. The entire process takes 45 minutes to 1 hour for a pair of headlights and is performed on-site at your location anywhere in the Barcelona metro area.",
+            "Stage one: masking and preparation. We tape off all surrounding paintwork, trim and rubber seals with 3M automotive masking tape to prevent any contact damage. Stage two: wet sanding. Using a progression of 3M Trizact discs — starting at P1000 for heavy oxidation or P1500 for moderate yellowing — we remove the degraded surface layer. The lens must stay wet throughout to prevent heat buildup in the polycarbonate. We typically progress through P1000, P1500, P2000 and P3000 grits.",
+            "Stage three: machine polishing. Using a Rupes LHR75E mini polisher with a 75mm foam pad and a dedicated plastic/polycarbonate compound, we refine the sanded surface to optical clarity. The dual action movement prevents heat concentration and achieves uniform clarity across the entire lens. Stage four: UV sealant application. We apply a UV-stabilised clear coat (either a dedicated headlight sealant or Gtechniq C4 Permanent Trim Restorer) that recreates the factory UV barrier. This is the critical step that prevents re-yellowing — without it, the restored lens would degrade again within 3-6 months. For pricing details, see our full pricing page."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "DIY vs Professional: An Honest Assessment",
+          "paragraphs": [
+            "DIY headlight restoration kits are widely available at Norauto, Feu Vert and online retailers for 15-40 euros. They typically include sandpaper sheets, a polishing compound and sometimes a UV wipe. Can they work? Yes, for mild surface haze on a vehicle you are not particular about. But the results rarely match professional-grade restoration, and here is why.",
+            "The biggest limitation of DIY kits is the absence of machine polishing — hand polishing cannot achieve the same uniformity and clarity. The second issue is the UV protection: most kit sealants last 3-6 months before the yellowing returns, compared to 2+ years with professional UV coatings. Third, there is real risk of making things worse — uneven hand sanding creates optical distortion that affects beam pattern, potentially creating a more dangerous situation than the original yellowing.",
+            "Our honest recommendation: if you have a 15-year-old vehicle with mildly hazy headlights and a tight budget, a DIY kit is a reasonable first attempt. For anything beyond mild surface haze, for any vehicle you plan to keep or sell, or for vehicles approaching ITV — professional restoration at 79 euros delivers dramatically better results, lasts longer, and carries zero risk of optical distortion. Many of our clients in Barcelona and Sant Cugat combine headlight restoration with another service for the best value. See our before and after cases for real examples."
+          ]
+        }
+      ]
+    },
+    "pre_sale_detailing_checklist_catalonia": {
+      "seo_title": "Pre-Sale Detailing Checklist Catalonia | restoreLab",
+      "seo_description": "Maximise your car's resale value in Catalonia. What buyers inspect, which defects cost the most, and the ROI of professional pre-sale detailing.",
+      "title": "Pre-Sale Detailing Checklist: What Buyers in Catalonia Look For",
+      "description": "A professional guide to maximising your vehicle's resale value through targeted detailing — based on what Catalan buyers actually inspect and what influences their offer price.",
+      "intro": "Selling a car in Catalonia is a competitive business. Between Wallapop, Milanuncios and the established dealership networks, buyers have endless options — and they have become increasingly educated about vehicle condition. At restoreLab, we prepare dozens of vehicles for sale every month across Sant Cugat, Barcelona, Terrassa and the wider metropolitan area. This guide shares the specific detailing steps that deliver the highest return on investment when selling in the Catalan market.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "What Catalan Buyers Actually Inspect",
+          "paragraphs": [
+            "Based on our experience preparing pre-sale vehicles in Barcelona and speaking directly with our clients about what buyers noticed, there is a clear hierarchy of inspection points. The first thing every buyer does is walk around the vehicle in daylight, examining the paint from multiple angles. Swirl marks, scratches, oxidation and dull patches immediately signal 'poorly maintained' — even if the mechanical condition is perfect. In Barcelona's intense sunlight, these defects are impossible to hide.",
+            "Second, buyers open the doors and inspect the interior with remarkable attention. Stained leather seats, scuffed door cards, a dirty headliner and a worn steering wheel all suggest high mileage or negligent ownership. Third, they check the engine bay — not necessarily understanding what they are looking at, but a clean, dressed engine bay communicates care and maintenance discipline. Fourth, they check the headlights and all glass for hazing, scratches and damage.",
+            "The key insight is that buyers make an emotional decision within the first 60 seconds of seeing the vehicle. A car that looks immaculate commands a higher offer — often 1,000-3,000 euros more than an identical vehicle in average cosmetic condition. Professional pre-sale detailing is not about deception; it is about presenting the vehicle at its genuine best, removing reversible damage that would otherwise lower perceived value."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "The Pre-Sale Detailing Protocol",
+          "paragraphs": [
+            "At restoreLab, our Pre-Sale Detail Pack is specifically designed to address the inspection points listed above in a single session at your location. The package at 249 euros for a sedan includes: single-stage paint correction to remove 60-70% of swirl marks and light scratches, full interior deep clean (vacuuming, leather or fabric cleaning, dashboard and trim dressing), and engine bay detailing (degrease, steam clean, plastic dressing).",
+            "For vehicles with more significant paint damage or those in the premium segment where buyers are even more demanding, we recommend upgrading to the Two-Stage Correction at 549 euros or the Ceramic Coating 2Y at 649 euros. The ceramic adds a visible wet-look gloss that photographs exceptionally well for online listings — and the hydrophobic effect impresses during test drives. A vehicle with fresh ceramic coating looks and feels notably different from one with just a wash and wax.",
+            "The numbers work in the seller's favour. The average car in the 10,000-30,000 euro range in Barcelona loses 500-1,500 euros in negotiated discount due to visible paint defects. A 249 euro pre-sale detail eliminates this entirely, while a 649 euro correction plus ceramic can increase the sale price by 1,000-2,500 euros. That is a 2x to 5x return on investment — before accounting for the faster sale time that comes with a vehicle that shows well in photos. Check our pricing page for full package details."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Photography Tips for Maximum Online Impact",
+          "paragraphs": [
+            "After professional detailing, the quality of your listing photos determines how many enquiries you receive. Barcelona offers excellent natural light conditions for vehicle photography, but timing matters. Shoot in the 'golden hour' — the first hour after sunrise or the last hour before sunset — when the light is warm and soft. Avoid midday sun, which creates harsh shadows and highlights every remaining imperfection.",
+            "Photograph the vehicle with the freshly corrected and coated paint slightly damp after a final spray with quick detailer — the reflections create a showroom effect that stands out in online listings. Include at least 15-20 photos: exterior from all four corners, a full side profile, close-ups of the wheels, the interior from both front doors, the dashboard, rear seats, boot space, engine bay, and a shot of the digital odometer. On Wallapop and Milanuncios, listings with 15+ professional-quality photos receive 3-4x more enquiries.",
+            "Include a mention of the professional detailing in your listing description. 'Recently detailed by restoreLab — paint correction and ceramic coating applied' signals to buyers that this vehicle has been maintained to a high standard. It differentiates your listing from the hundreds of similar vehicles that have simply been run through a car wash. You can see the kind of transformation our work delivers in our before and after cases gallery."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Timing and ROI: When to Detail Before Selling",
+          "paragraphs": [
+            "The ideal timing for pre-sale detailing is 1-2 weeks before listing the vehicle online. This gives the ceramic coating time to fully cure (12-24 hours) and allows you to photograph the vehicle in optimal conditions. Do not detail the car months before selling — the protection benefit is maximum when fresh, and the visual impact diminishes over time with normal use.",
+            "For seasonal considerations in Barcelona: spring (March-May) and early autumn (September-October) are peak used-car buying seasons in Catalonia. If you are planning to sell during these windows, book your pre-sale detail 2-3 weeks in advance to ensure availability. Summer is slower for private sales (many potential buyers are on holiday), while January sees a spike in demand as people start the new year looking for a new vehicle.",
+            "The bottom line: professional pre-sale detailing is the single highest-ROI investment you can make when selling a vehicle in Catalonia. Our Pre-Sale Detail Pack at 249 euros typically pays for itself 2-5 times over in reduced buyer negotiation. For premium vehicles, the Two-Stage Correction at 549 euros or Ceramic 2Y at 649 euros delivers even greater returns. Send us photos of your vehicle via WhatsApp for an honest assessment of which package would maximise your specific resale value."
+          ]
+        }
+      ]
+    },
+    "mediterranean_climate_car_paint_protection": {
+      "seo_title": "Mediterranean Climate Car Paint Protection Barcelona | restoreLab",
+      "seo_description": "How Barcelona's sun, salt, pollen and Saharan dust attack car paint. Protection strategies, ceramic coating, and maintenance protocols for Mediterranean vehicles.",
+      "title": "Mediterranean Climate & Your Car's Paint: Protection Guide",
+      "description": "A comprehensive guide to understanding and combating the unique paint threats that Barcelona's Mediterranean climate presents — from UV degradation to salt air, pollen, and Saharan dust events.",
+      "intro": "Barcelona enjoys one of Europe's most desirable climates — 2,524 hours of sunshine per year, mild winters and warm summers. But that same Mediterranean environment is hostile to automotive paint. UV radiation, airborne salt, pine resin, calima dust and industrial fallout create a cocktail of threats that accelerates paint degradation far beyond what vehicles face in northern Europe. At restoreLab, we see the evidence daily: vehicles parked outdoors in Sant Cugat, Castelldefels and the Barcelona coastline degrade 2-3 times faster than garage-kept cars in the same area. This guide explains each threat and the professional protection strategies that counter them.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "UV Radiation: The Silent Destroyer",
+          "paragraphs": [
+            "Barcelona receives an average annual UV index that ranks among the highest in continental Europe. From May through September, the UV index regularly reaches 9-10 (classified as 'very high' to 'extreme' by the WHO), with peak surface temperatures on dark-coloured vehicles exceeding 65 degrees Celsius. This intense UV exposure drives photo-oxidation of the clear coat — the same chemical process that yellows headlights, but working more slowly on automotive clear coats.",
+            "The visible effects of chronic UV exposure include progressive loss of gloss, chalking (a white powdery residue on the surface), colour fading on non-metallic finishes, and eventual clear coat failure. On a vehicle parked outdoors full-time in Sant Cugat or Barcelona, noticeable oxidation typically appears within 3-4 years without protection — compared to 6-8 years in a climate like northern Germany or the UK.",
+            "Professional ceramic coatings provide the most effective UV barrier available. Products like Gyeon MOHS and Gtechniq Crystal Serum Light contain UV-absorbing compounds that reduce the energy reaching the clear coat by up to 90%. Our Ceramic Coating 2Y package at 649 euros and Premium Ceramic 5Y at 1,049 euros both include these UV-protective coatings. For vehicles parked outdoors in Mediterranean conditions, we consider ceramic coating the single most important investment in paint longevity. For details on how these coatings work, see our protection and preservation protocols article."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Salt Air, Coastal Exposure and Chloride Corrosion",
+          "paragraphs": [
+            "Living within 30 kilometres of the Mediterranean coastline means constant exposure to airborne salt particles. The Garbí (southwest onshore breeze) carries microscopic sea salt crystals far inland — reaching Sant Cugat, Bellaterra and even Terrassa during summer months. These chloride particles land on the paint surface, dissolve in morning dew or humidity, and create localised acidic points that etch the clear coat.",
+            "The effect is most pronounced in stone chip sites where bare metal is exposed. Salt accelerates oxidation of exposed primer and metal at 3-5 times the rate of non-coastal environments. A small stone chip that would remain cosmetic for years in an inland location can develop visible rust rings within 6-12 months in Castelldefels or the Maresme coast. This is why we always recommend addressing stone chips promptly and protecting the surrounding paint.",
+            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Premium Ceramic 5Y package at 1,049 euros, which includes full-body graphene ceramic coating, windshield hydrophobic treatment and wheel ceramic. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching. For vehicles in the highest-risk zone (within 5 km of the coastline), we suggest adding Paint Protection Film (PPF) on the bonnet, bumper and mirrors through our Flagship PPF + Ceramic package from 2,290 euros."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Pollen, Pine Resin and Organic Contaminants",
+          "paragraphs": [
+            "Barcelona's extensive urban tree canopy — particularly the pines and plane trees that line streets in Sant Cugat, Sarrià, Pedralbes and much of the Vallès Occidental — produces significant quantities of pollen, sap and resin that land on parked vehicles. Pine resin is particularly damaging: it bonds to clear coat within hours of contact and begins chemical etching within 24-48 hours, leaving permanent marks if not removed promptly.",
+            "Plane tree sap is less immediately aggressive but builds up as a sticky film that attracts dust and creates a compound contamination layer. Bird droppings — courtesy of Barcelona's pigeons, seagulls and starlings — are acidic (pH 3-4.5) and will etch through clear coat in as little as 4-8 hours in summer heat. We see etching damage from bird droppings on client vehicles in Sant Cugat virtually every week during the warmer months.",
+            "Ceramic coating provides meaningful protection against these organic contaminants. The hydrophobic surface prevents resin and sap from bonding directly to the clear coat, giving you a wider window for removal before damage occurs. With a quality ceramic coating, pine resin that would permanently etch unprotected paint can be safely removed up to 72 hours after contact using an isopropyl alcohol wipe. We recommend keeping a bottle of Koch Chemie Quick and Shine and microfiber towels in the vehicle for prompt contaminant removal — especially if you park under trees in the Sant Cugat area."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Saharan Dust (Calima) and Mineral Fallout",
+          "paragraphs": [
+            "Barcelona experiences 5-15 significant Saharan dust events per year, with frequency increasing due to changing atmospheric patterns. These calima episodes deposit fine mineral particles — primarily iron oxides and silicates — that settle on every outdoor surface. The particles are abrasive (Mohs hardness 5-7) and cause swirl marks when dragged across paint during improper washing. After a heavy calima, the worst thing you can do is run the car through an automatic car wash or wipe it down with a dry cloth.",
+            "The correct post-calima protocol is: first, rinse the entire vehicle thoroughly with a pressure washer or garden hose to remove loose particles without touching the surface. Second, perform a snow-foam pre-wash using a foam cannon with a pH-neutral shampoo (we use Koch Chemie Green Star) to encapsulate remaining particles. Third, proceed with a contact wash using the two-bucket method with a plush microfiber wash mitt. Never use a sponge — the flat surface traps particles and drags them across the paint.",
+            "Industrial fallout is another persistent threat in the Barcelona metropolitan area. The industrial zones near Zona Franca, Martorell (SEAT factory corridor) and the port of Barcelona release metallic particles that embed in clear coat as orange or brown spots — often mistaken for rust. These require chemical decontamination with an iron remover (we use CarPro Iron X) before any polishing. Our Express Refresh package at 149 euros includes a full decontamination wash, clay bar treatment and protective sealant — the ideal maintenance service between major corrections. Check our pricing page for complete details on all packages."
+          ]
+        }
+      ]
     }
   },
   "area_pages": {
@@ -1110,7 +1784,494 @@
         "lng": 2.0089,
         "description": "Our Vallès hub covers Terrassa, Sabadell and surrounding towns. Industrial estates, residential areas and underground parkings — we adapt to any location.",
         "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+      },
+      {
+        "slug": "matadepera",
+        "name": "Matadepera",
+        "short": "Matadepera",
+        "region": "Vallès Occidental",
+        "lat": 41.5960,
+        "lng": 2.0253,
+        "description": "Nestled at the foot of Sant Llorenç del Munt, Matadepera is home to some of Catalonia's finest private estates. Our mobile unit is perfectly suited for gated communities and large villa driveways — discreet service without moving your car. Just 15 minutes from our Sant Cugat base.",
+        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+      },
+      {
+        "slug": "sant-just-desvern",
+        "name": "Sant Just Desvern",
+        "short": "Sant Just Desvern",
+        "region": "Baix Llobregat",
+        "lat": 41.3808,
+        "lng": 2.0750,
+        "description": "One of the highest per-capita income municipalities in Catalonia, Sant Just Desvern combines executive residential zones with easy access to Barcelona. We service the private garages and underground parkings across Walden, Can Candeler and the hillside villas regularly.",
+        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+      },
+      {
+        "slug": "sant-quirze-del-valles",
+        "name": "Sant Quirze del Vallès",
+        "short": "Sant Quirze",
+        "region": "Vallès Occidental",
+        "lat": 41.5330,
+        "lng": 2.0830,
+        "description": "A quiet residential town between Sant Cugat and Sabadell, Sant Quirze del Vallès is known for its family-friendly neighborhoods and modern detached houses. We reach any location in Sant Quirze within 10 minutes from our base.",
+        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+      },
+      {
+        "slug": "bellaterra",
+        "name": "Bellaterra",
+        "short": "Bellaterra",
+        "region": "Vallès Occidental",
+        "lat": 41.5020,
+        "lng": 2.1050,
+        "description": "Home to the UAB campus and surrounded by executive residential clusters, Bellaterra combines academic prestige with upscale living. We frequently service vehicles at private residences and the campus parking facilities — just 5 minutes from our Sant Cugat operations center.",
+        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+      },
+      {
+        "slug": "pedralbes",
+        "name": "Pedralbes",
+        "short": "Pedralbes",
+        "region": "Barcelona",
+        "lat": 41.3900,
+        "lng": 2.1150,
+        "description": "Barcelona's most exclusive residential neighborhood, Pedralbes features private mansions, diplomatic residences and premium apartment blocks. We handle paint correction and ceramic coating on prestige vehicles in underground garages and private driveways throughout the Zona Alta.",
+        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+      },
+      {
+        "slug": "sant-gervasi",
+        "name": "Sant Gervasi – Tres Torres",
+        "short": "Sant Gervasi",
+        "region": "Barcelona",
+        "lat": 41.4000,
+        "lng": 2.1380,
+        "description": "The Tres Torres and Bonanova area sits at the heart of Barcelona's Zona Alta — one of the city's most sought-after residential districts. With its tree-lined streets and premium parking facilities, it's ideal territory for our mobile detailing service. We work in communal garages and private driveways alike.",
+        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+      },
+      {
+        "slug": "castelldefels",
+        "name": "Castelldefels",
+        "short": "Castelldefels",
+        "region": "Baix Llobregat",
+        "lat": 41.2800,
+        "lng": 1.9780,
+        "description": "A coastal premium town south of Barcelona, Castelldefels attracts both residents and vacation homeowners with its beachfront villas and hillside estates. Salt air and UV exposure make regular paint protection essential here. We travel from our base for scheduled appointments throughout the week.",
+        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+      },
+      {
+        "slug": "alella-tiana-teia",
+        "name": "Alella · Tiana · Teià",
+        "short": "Maresme Premium",
+        "region": "Maresme",
+        "lat": 41.4950,
+        "lng": 2.2950,
+        "description": "The Maresme coast north of Barcelona — Alella, Tiana and Teià form a premium residential cluster with vineyard estates and sea-view villas. Mediterranean climate means intense UV and salt exposure. We provide scheduled mobile service for clients in this area, with full paint correction and ceramic coating capabilities on-site.",
+        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
       }
     ]
+  },
+  "business": {
+    "hero_title": "Mobile Pre-Sale Detailing for Barcelona Dealers",
+    "hero_subtitle": "We come to your lot. Professional paint correction, ceramic coating and interior detailing — delivered on-site with ≤24h turnaround.",
+    "hero_cta": "Book a 15-min Call",
+    "hero_cta_secondary": "Download Rate Card",
+    "value_props_title": "Built for Dealership Operations",
+    "value_props": [
+      {
+        "icon": "clock",
+        "title": "≤24h Turnaround",
+        "desc": "Same-day or next-day service for most vehicles. Express 4h option for urgent lot prep."
+      },
+      {
+        "icon": "camera",
+        "title": "Photo Report per Vehicle",
+        "desc": "Before/after photo documentation for every job. Use in listings, share with buyers, keep for records."
+      },
+      {
+        "icon": "invoice",
+        "title": "NET-30 Invoicing",
+        "desc": "Single monthly bill. No per-job payments. Volume discounts for 5+ vehicles per week."
+      },
+      {
+        "icon": "shield",
+        "title": "€500K Liability Insurance",
+        "desc": "Full civil liability coverage. Your vehicles are protected while on our lift."
+      }
+    ],
+    "pricing_title": "Dealer Pricing (ex. VAT)",
+    "pricing_subtitle": "Sedan baseline. Volume discounts applied automatically on monthly invoice.",
+    "pricing_tiers": [
+      {
+        "name": "Lot-Ready Standard",
+        "price": "169",
+        "desc": "Decon wash + single-stage polish + interior vacuum + tyre dress. Perfect for stock cars under €30K.",
+        "includes": ["Decon wash & clay bar", "Single-stage machine polish", "Interior vacuum & wipe", "Tyre & trim dressing", "Photo report"]
+      },
+      {
+        "name": "Lot-Ready SUV",
+        "price": "229",
+        "desc": "Same as Standard for SUVs, crossovers and estates. Larger panels, more time.",
+        "includes": ["Everything in Standard", "SUV/estate size coverage", "Boot & cargo area", "Extended photo report"]
+      },
+      {
+        "name": "Showroom Sports",
+        "price": "299",
+        "desc": "Two-stage correction for premium and sports vehicles. Designed for cars listed above €40K.",
+        "includes": ["Two-stage paint correction", "Full interior detail", "Glass polish & engine bay", "Wheel detail + ceramic trim", "30-photo report"]
+      }
+    ],
+    "volume_title": "Volume Discounts",
+    "volume_tiers": [
+      { "label": "5+ per week", "discount": "−10%" },
+      { "label": "10+ per week", "discount": "−15%" },
+      { "label": "20+ per week", "discount": "Custom quote" }
+    ],
+    "faq_title": "Dealer FAQ",
+    "faq_items": [
+      {
+        "question": "What's the minimum order?",
+        "answer": "No minimum. However, volume pricing kicks in at 5+ vehicles per week. Most dealers start with a 3-vehicle trial."
+      },
+      {
+        "question": "Do you work on-site at the dealership?",
+        "answer": "Yes. We arrive with our own water, power, and equipment. All we need is a covered or shaded space and access to the vehicles."
+      },
+      {
+        "question": "How does invoicing work?",
+        "answer": "NET-30 monthly invoicing via email. Each invoice includes line-item detail per vehicle with VIN, service performed, and photo report link."
+      },
+      {
+        "question": "What about insurance?",
+        "answer": "We carry €500K civil liability insurance covering all vehicles while in our care. Policy details available on request."
+      },
+      {
+        "question": "Can you handle a full lot before an event or open day?",
+        "answer": "Yes. With 48h notice we can mobilise additional technicians for lot-wide prep. We've handled 15+ vehicles in a single weekend."
+      },
+      {
+        "question": "What areas do you cover?",
+        "answer": "All dealerships in the Barcelona metropolitan area: Sant Cugat, Terrassa, Sabadell, Rubí, Cerdanyola, Castelldefels, and Barcelona city. Extended coverage available for larger contracts."
+      }
+    ],
+    "cta_section_title": "Ready to streamline your lot prep?",
+    "cta_section_subtitle": "Book a 15-minute call to discuss your volume and schedule.",
+    "cta_whatsapp": "WhatsApp Us",
+    "cta_email": "Email Us"
+  },
+  "ev": {
+    "hero_title": "EV-Specialised Paint Protection",
+    "hero_subtitle": "Sensor-safe ceramic coating and PPF for Tesla, Polestar, Taycan and every electric vehicle on Barcelona's roads.",
+    "hero_cta": "Get an EV Quote",
+    "pain_points_title": "Why EV Paint Needs Special Care",
+    "pain_points": [
+      {
+        "title": "Softer Clear Coat",
+        "desc": "Tesla, Polestar and many EVs use water-based paint with a notoriously thin and soft clear coat. Standard wash methods cause swirl marks within months."
+      },
+      {
+        "title": "Sensor-Safe Process",
+        "desc": "Ultrasonic sensors, cameras and LiDAR require careful masking and zero-compound contamination. Our technicians are trained on every EV sensor layout."
+      },
+      {
+        "title": "Mediterranean UV Intensity",
+        "desc": "Barcelona's 2,500+ hours of annual sunshine accelerate clear coat degradation on unprotected EVs 2–3× faster than northern Europe."
+      },
+      {
+        "title": "No-Touch Wash Compatibility",
+        "desc": "Ceramic coating enables touchless maintenance washing, preserving the correction and reducing micro-scratch accumulation between services."
+      }
+    ],
+    "packages_title": "EV Protection Packages",
+    "packages_subtitle": "Sedan baseline — size multipliers apply for Model X, EQS, e-tron SUV.",
+    "packages": [
+      {
+        "id": "ev-new-car",
+        "name": "EV New-Car Protection",
+        "price": "749",
+        "desc": "For factory-fresh EVs. Light single-stage polish to remove transport marks + 2-year ceramic coating.",
+        "includes": ["Paint decontamination", "Single-stage polish (transport marks)", "Gyeon MOHS 2-year ceramic", "Windshield hydrophobic", "Wheel ceramic coating"],
+        "popular": false
+      },
+      {
+        "id": "ev-premium",
+        "name": "EV Premium Shield",
+        "price": "1290",
+        "desc": "Full correction for daily-driven EVs + 5-year graphene ceramic. Maximum UV and chemical protection.",
+        "includes": ["Two-stage paint correction", "Gtechniq Crystal Serum Ultra 5Y", "Full glass hydrophobic set", "Wheel + caliper ceramic", "Plastic trim restoration", "Interior leather conditioning"],
+        "popular": true
+      },
+      {
+        "id": "ev-ppf",
+        "name": "Tesla / EV PPF Front-End",
+        "price_from": "1690",
+        "desc": "PPF on hood, front bumper, fenders, mirrors + ceramic topcoat on rest. Ultimate protection for high-impact zones.",
+        "includes": ["XPEL Ultimate Plus PPF (front-end)", "Two-stage correction on rest of body", "5-year ceramic topcoat", "Sensor-area precision fit", "10-year PPF warranty"],
+        "popular": false
+      }
+    ],
+    "compatibility_title": "Brand Compatibility",
+    "compatibility": [
+      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "EV Premium Shield or PPF Front-End" },
+      { "brand": "Polestar 2 / 3 / 4", "recommended": "EV Premium Shield" },
+      { "brand": "Porsche Taycan", "recommended": "EV Premium Shield or PPF Front-End" },
+      { "brand": "BMW iX / i4 / i5", "recommended": "EV New-Car Protection or Premium Shield" },
+      { "brand": "Mercedes EQS / EQE", "recommended": "EV Premium Shield" },
+      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "EV Premium Shield" },
+      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "EV New-Car Protection" },
+      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "EV New-Car Protection" }
+    ],
+    "faq_title": "EV-Specific FAQ",
+    "faq_items": [
+      {
+        "question": "Will ceramic coating affect my sensors or cameras?",
+        "answer": "No. We mask all sensor housings, cameras and LiDAR units before polishing and coating. The ceramic is applied to painted panels only, never on sensor surfaces."
+      },
+      {
+        "question": "Is the process safe for Tesla Autopilot / FSD cameras?",
+        "answer": "Yes. We follow Tesla-specific masking protocols. The pillar cameras, bumper cameras and ultrasonic sensors are fully protected throughout the process."
+      },
+      {
+        "question": "How does ceramic coating work with touchless car washes?",
+        "answer": "Perfectly. Ceramic coating creates a hydrophobic surface that sheds dirt more easily, making touchless washes highly effective. This is the ideal maintenance method for coated EVs."
+      },
+      {
+        "question": "My Tesla has swirl marks after 6 months. Is that normal?",
+        "answer": "Unfortunately yes. Tesla's water-based paint is softer than traditional automotive paint. Professional correction removes existing swirls, and ceramic coating significantly reduces future accumulation."
+      },
+      {
+        "question": "Do you need to charge the vehicle during service?",
+        "answer": "We ask that the vehicle arrives with at least 20% charge so we can reposition it as needed. We don't require charging access at the service location."
+      }
+    ],
+    "cta_section_title": "Protect your EV investment",
+    "cta_section_subtitle": "Send us your vehicle details via WhatsApp for a personalised quote."
+  },
+  "commercial_glass": {
+    "hero_title": "After-Hours Mobile Glass Restoration",
+    "hero_subtitle": "Scratch removal for storefronts, office facades, restaurant windows and hotel lobbies — with zero business interruption.",
+    "hero_cta": "Request a Site Survey",
+    "use_cases_title": "We Restore Glass For",
+    "use_cases": [
+      {
+        "icon": "storefront",
+        "title": "Retail Storefronts",
+        "desc": "Scratch removal on display windows along Passeig de Gràcia, Portal de l'Àngel, Diagonal and commercial centres across Barcelona."
+      },
+      {
+        "icon": "office",
+        "title": "Office Facades",
+        "desc": "22@ district towers, business parks in Sant Cugat and corporate offices. We work after hours or weekends — no disruption to your tenants."
+      },
+      {
+        "icon": "restaurant",
+        "title": "Restaurant Windows",
+        "desc": "Graffiti scratches, etching and wear on terrace enclosures. We restore clarity without replacing the panel."
+      },
+      {
+        "icon": "hotel",
+        "title": "Hotel Lobbies & Common Areas",
+        "desc": "Glass partitions, balustrades and entrance panels. Ideal for pre-season refresh in Barcelona's hospitality sector."
+      }
+    ],
+    "roi_title": "Restoration vs Replacement",
+    "roi_subtitle": "Why restore when you can replace? Because it costs 70-80% less.",
+    "roi_items": [
+      { "label": "Storefront replacement (standard)", "cost": "€1,500–3,000", "type": "replace" },
+      { "label": "Storefront scratch restoration", "cost": "€280–600", "type": "restore" },
+      { "label": "Office panel replacement (per m²)", "cost": "€180–350", "type": "replace" },
+      { "label": "Office panel restoration (per m²)", "cost": "€45–90", "type": "restore" },
+      { "label": "Downtime (replacement)", "cost": "1–3 days", "type": "replace" },
+      { "label": "Downtime (restoration)", "cost": "0 — done after hours", "type": "restore" }
+    ],
+    "pricing_title": "Commercial Glass Pricing",
+    "pricing_subtitle": "All prices ex. VAT. On-site assessment included free of charge.",
+    "pricing_tiers": [
+      {
+        "name": "Per-Incident",
+        "price_from": "280",
+        "desc": "Single panel or window with visible scratches. Ideal for one-off repairs.",
+        "includes": ["On-site assessment", "Machine polishing", "Hydrophobic sealant", "Photo report"]
+      },
+      {
+        "name": "Per m² Rate",
+        "price_from": "45",
+        "desc": "For larger surfaces — office facades, full storefronts, glass partitions.",
+        "includes": ["Volume pricing", "After-hours service", "Multiple panels same visit", "Maintenance plan option"]
+      },
+      {
+        "name": "Retainer Plan",
+        "price_from": "Custom",
+        "desc": "Monthly or quarterly retainer for facility management companies with multiple properties.",
+        "includes": ["Priority scheduling", "Dedicated account manager", "Fixed monthly rate", "Unlimited call-outs (fair use)"]
+      }
+    ],
+    "faq_title": "Commercial Glass FAQ",
+    "faq_items": [
+      {
+        "question": "Can you work outside business hours?",
+        "answer": "Yes. We schedule commercial glass work for evenings, nights or weekends. Zero disruption to your business operations, customers or tenants."
+      },
+      {
+        "question": "What types of glass damage can you restore?",
+        "answer": "Surface scratches, graffiti etching, construction dust damage, hard water staining and general wear. Deep chips or cracks that compromise structural integrity require replacement — we'll tell you honestly during the assessment."
+      },
+      {
+        "question": "How long does a storefront restoration take?",
+        "answer": "A single storefront panel typically takes 1–2 hours depending on scratch depth. We can do multiple panels in a single visit."
+      },
+      {
+        "question": "Do you work across all of Barcelona?",
+        "answer": "Yes. We cover Barcelona city, Sant Cugat, Terrassa, Sabadell, Hospitalet, Badalona and the wider metropolitan area. For multiple locations, we offer route-optimised scheduling."
+      },
+      {
+        "question": "Can you handle a multi-property portfolio?",
+        "answer": "Absolutely. Our retainer plans are designed for facility managers handling multiple properties. One invoice, one point of contact, scheduled maintenance across all your locations."
+      }
+    ],
+    "cta_section_title": "Restore your glass. Keep your budget.",
+    "cta_section_subtitle": "Send photos of the damage via WhatsApp for a free remote assessment.",
+    "cta_whatsapp": "WhatsApp Assessment",
+    "cta_email": "Email Facilities Team"
+  },
+  "plans": {
+    "hero_tag": "Care Plans",
+    "hero_title": "Your car, always showroom-ready",
+    "hero_subtitle": "Subscription-based maintenance plans that keep your paint, glass and ceramic coating in peak condition — year-round.",
+    "hero_cta": "Choose Your Plan",
+
+    "why_title": "Why a care plan?",
+    "why_items": [
+      {
+        "icon": "calendar",
+        "title": "Scheduled Maintenance",
+        "desc": "We come to you on a fixed schedule — no need to remember or rebook. Your car stays protected automatically."
+      },
+      {
+        "icon": "shield",
+        "title": "Preserve Your Investment",
+        "desc": "Regular decontamination and ceramic top-ups extend coating life by 2–3× compared to neglect."
+      },
+      {
+        "icon": "percent",
+        "title": "Savings vs. One-Off",
+        "desc": "Care plan members save 20–35% compared to booking individual sessions at full price."
+      },
+      {
+        "icon": "star",
+        "title": "Priority Booking",
+        "desc": "Care plan members get priority scheduling and same-week availability — even during peak season."
+      }
+    ],
+
+    "plans_title": "Choose Your Plan",
+    "plans_subtitle": "All plans include mobile service — we come to your home or office.",
+    "plans_toggle_monthly": "Monthly",
+    "plans_toggle_annual": "Annual (save 15%)",
+    "tiers": [
+      {
+        "id": "essential",
+        "name": "Essential",
+        "price_monthly": 39,
+        "price_annual": 33,
+        "period": "/mo",
+        "desc": "Maintain a clean, protected vehicle between full corrections.",
+        "includes": [
+          "Monthly exterior wash & decontamination",
+          "Quarterly ceramic booster application",
+          "Glass water-repellent refresh",
+          "Scratch & swirl inspection report",
+          "WhatsApp priority booking"
+        ],
+        "best_for": "Daily drivers & leased vehicles"
+      },
+      {
+        "id": "plus",
+        "name": "Plus",
+        "popular": true,
+        "price_monthly": 69,
+        "price_annual": 59,
+        "period": "/mo",
+        "desc": "Full protection programme for enthusiasts who want their car perfect.",
+        "includes": [
+          "Everything in Essential",
+          "Bi-monthly paint decontamination (iron + tar)",
+          "Quarterly single-stage polish touch-up",
+          "Ceramic top-up every 4 months",
+          "Interior deep clean (quarterly)",
+          "Annual paint thickness measurement",
+          "10% off any additional service"
+        ],
+        "best_for": "Premium cars & enthusiasts"
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price_monthly": 119,
+        "price_annual": 101,
+        "period": "/mo",
+        "desc": "The ultimate care programme for collectors, exotic cars and showroom-critical vehicles.",
+        "includes": [
+          "Everything in Plus",
+          "Monthly machine polish touch-up",
+          "Monthly ceramic top-up",
+          "Wheel coating refresh (quarterly)",
+          "PPF edge inspection & sealing",
+          "Engine bay detail (bi-annually)",
+          "Priority same-day scheduling",
+          "20% off any additional service"
+        ],
+        "best_for": "Exotic & collector vehicles"
+      }
+    ],
+
+    "how_title": "How It Works",
+    "how_steps": [
+      {
+        "step": "1",
+        "title": "Choose a plan",
+        "desc": "Select the tier that matches your car and your expectations."
+      },
+      {
+        "step": "2",
+        "title": "Initial assessment",
+        "desc": "We inspect your vehicle and set a maintenance baseline — paint thickness, coating condition, problem areas."
+      },
+      {
+        "step": "3",
+        "title": "Scheduled visits",
+        "desc": "We come to your location on a fixed schedule. You get a WhatsApp reminder 24h before each visit."
+      },
+      {
+        "step": "4",
+        "title": "Condition reports",
+        "desc": "After each visit, you receive photos and a digital report documenting work done and paint condition."
+      }
+    ],
+
+    "faq_title": "Care Plans FAQ",
+    "faq_items": [
+      {
+        "question": "Is there a minimum commitment?",
+        "answer": "Monthly plans have a 3-month minimum. Annual plans are billed yearly and can be cancelled at any renewal date with 30 days notice."
+      },
+      {
+        "question": "What if my car needs a full correction?",
+        "answer": "Care plans cover maintenance — not major corrections. If we spot a problem that needs a full correction, we'll quote it separately with your plan discount applied."
+      },
+      {
+        "question": "Can I upgrade or downgrade my plan?",
+        "answer": "Yes, at any monthly renewal date. Changes take effect on the next billing cycle."
+      },
+      {
+        "question": "Where do you perform the service?",
+        "answer": "At your home, office, or wherever your car is parked. We're fully mobile — all we need is a parking spot and access to water."
+      },
+      {
+        "question": "What if I need to skip a month?",
+        "answer": "Annual plans include one free pause per year (up to 4 weeks). Monthly plans can be paused with 7 days notice — you're not charged for paused months."
+      }
+    ],
+
+    "cta_section_title": "Start protecting your investment",
+    "cta_section_subtitle": "Message us on WhatsApp to discuss which plan fits your car — or book a free initial assessment.",
+    "cta_whatsapp": "Choose My Plan",
+    "cta_email": "Email Us"
   }
 }

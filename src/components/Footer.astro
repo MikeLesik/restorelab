@@ -82,6 +82,31 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
               </a>
             </li>
           )}
+          <li>
+            <a href={`/${lang}/about`} class="hover:text-th-heading transition-colors">
+              {t.trust?.founder?.link_label || 'About us'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/business`} class="hover:text-th-heading transition-colors">
+              {t.footer.business_link || 'For Business'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/ev`} class="hover:text-th-heading transition-colors">
+              {t.footer.ev_link || 'EV Protection'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/commercial-glass`} class="hover:text-th-heading transition-colors">
+              {t.footer.commercial_glass_link || 'Commercial Glass'}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/plans`} class="hover:text-th-heading transition-colors">
+              {t.footer.plans_link || 'Care Plans'}
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -100,6 +125,14 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
             </a>
           </li>
         </ul>
+        {t.footer.legal_entity && (
+          <div class="mt-4 pt-4 border-t border-th-border/10 space-y-1">
+            <p class="text-th-faint text-xs font-medium">{t.footer.legal_entity}</p>
+            <p class="text-th-faint text-xs">NIF: {t.footer.legal_nif} <span class="text-th-faint/60">{t.footer.legal_provisional}</span></p>
+            <p class="text-th-faint text-xs">{t.footer.legal_address}</p>
+            <p class="text-th-faint text-xs">{t.footer.legal_insurance}</p>
+          </div>
+        )}
       </div>
     </div>
 

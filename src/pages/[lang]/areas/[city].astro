@@ -4,12 +4,14 @@ import FAQ from '@/components/FAQ.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
+import ca from '@/content/ca.json';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
 export function getStaticPaths() {
   const langs = [
     { lang: 'en', t: en },
     { lang: 'es', t: es },
+    { lang: 'ca', t: ca },
   ];
 
   return langs.flatMap(({ lang, t }) =>
@@ -46,17 +48,18 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.
     ]
   })} />
 
-  <!-- LocalBusiness Schema with geo -->
+  <!-- AutomotiveBusiness Schema with geo -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "AutomotiveBusiness",
     "name": "restoreLab",
     "url": SITE_URL,
+    "image": `${SITE_URL}/images/og-home.jpg`,
     "telephone": `+${wa}`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city.name,
-      "addressRegion": "Barcelona",
+      "addressRegion": "Catalonia",
       "addressCountry": "ES"
     },
     "geo": {
@@ -64,6 +67,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.
       "latitude": city.lat,
       "longitude": city.lng
     },
+    "priceRange": "€€€",
     "areaServed": [city.name, ...city.nearby]
   })} />
 

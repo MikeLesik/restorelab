@@ -1,0 +1,285 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LeadForm from '@/components/LeadForm.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+import { SITE_URL, WHATSAPP_NUMBER } from '@/lib/constants';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const p = t.plans || {};
+const wa = WHATSAPP_NUMBER;
+const waMsg = lang === 'es'
+  ? 'Hola restoreLab! Me interesan los planes de cuidado para mi coche.'
+  : lang === 'ca'
+  ? 'Hola restoreLab! M\'interessen els plans de cura per al meu cotxe.'
+  : 'Hello restoreLab! I\'m interested in your care plans for my car.';
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
+---
+
+<BaseLayout
+  title={t.meta.plans?.title || 'Care Plans | restoreLab'}
+  description={t.meta.plans?.description || ''}
+  lang={lang}
+  t={t}
+  currentPath="/plans"
+>
+  <div class="pt-20">
+    <!-- Hero -->
+    <section class="relative py-16 sm:py-20 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="inline-block px-3 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium mb-6">
+            {p.hero_tag}
+          </span>
+
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-6 leading-tight">
+            {p.hero_title}
+          </h1>
+          <p class="text-xl text-th-muted mb-10">{p.hero_subtitle}</p>
+
+          <a href="#plans" class="btn-primary">
+            {p.hero_cta}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": p.hero_tag || "Care Plans" }
+      ]
+    })} />
+
+    <!-- Service Schema with Offers -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Vehicle Care Subscription Plan",
+      "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "restoreLab"
+      },
+      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell", "Rubí"],
+      "description": t.meta.plans?.description,
+      "offers": [
+        { "@type": "Offer", "name": "Essential Care Plan", "price": "39", "priceCurrency": "EUR", "billingIncrement": "P1M" },
+        { "@type": "Offer", "name": "Plus Care Plan", "price": "69", "priceCurrency": "EUR", "billingIncrement": "P1M" },
+        { "@type": "Offer", "name": "Pro Care Plan", "price": "119", "priceCurrency": "EUR", "billingIncrement": "P1M" }
+      ]
+    })} />
+
+    <!-- Why a Care Plan -->
+    <section class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-10">{p.why_title}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {p.why_items?.map((item: any) => (
+            <div class="card p-6 text-center">
+              <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-accent/10 flex items-center justify-center">
+                {item.icon === 'calendar' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                )}
+                {item.icon === 'shield' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                )}
+                {item.icon === 'percent' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M17 17h.01M7 17L17 7"/><circle cx="7" cy="7" r="2" stroke-width="2" fill="none"/><circle cx="17" cy="17" r="2" stroke-width="2" fill="none"/></svg>
+                )}
+                {item.icon === 'star' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                )}
+              </div>
+              <h3 class="text-th-heading font-semibold text-sm mb-2">{item.title}</h3>
+              <p class="text-th-muted text-xs leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section id="plans" class="py-14 bg-th-surface/5 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="section-title mb-2">{p.plans_title}</h2>
+          <p class="text-th-muted text-sm mb-6">{p.plans_subtitle}</p>
+
+          <!-- Monthly/Annual Toggle -->
+          <div class="inline-flex items-center gap-3 bg-th-surface/10 rounded-full p-1" id="billing-toggle">
+            <button
+              type="button"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-all text-white bg-brand-accent"
+              data-billing="monthly"
+            >
+              {p.plans_toggle_monthly}
+            </button>
+            <button
+              type="button"
+              class="px-4 py-1.5 rounded-full text-sm font-medium transition-all text-th-muted hover:text-th-heading"
+              data-billing="annual"
+            >
+              {p.plans_toggle_annual}
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {p.tiers?.map((tier: any) => (
+            <div class:list={['card p-6 relative flex flex-col', tier.popular && 'border-brand-accent/30 bg-brand-accent/5']}>
+              {tier.popular && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 tag text-[10px]">
+                  {lang === 'es' ? 'Más Popular' : lang === 'ca' ? 'Més Popular' : 'Most Popular'}
+                </span>
+              )}
+
+              <h3 class="text-th-heading font-display font-bold text-lg mb-1">{tier.name}</h3>
+
+              <div class="mb-3">
+                <span class="text-brand-accent font-display font-bold text-3xl plan-price" data-monthly={tier.price_monthly} data-annual={tier.price_annual}>
+                  €{tier.price_monthly}
+                </span>
+                <span class="text-th-faint text-sm">{tier.period}</span>
+              </div>
+
+              <p class="text-th-muted text-xs mb-4">{tier.desc}</p>
+
+              <div class="text-th-faint text-[11px] mb-5 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                {tier.best_for}
+              </div>
+
+              <ul class="space-y-2 mb-6 flex-grow">
+                {tier.includes?.map((item: string) => (
+                  <li class="flex items-start gap-2 text-th-body text-xs">
+                    <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class:list={['w-full text-center text-sm', tier.popular ? 'btn-whatsapp' : 'btn-primary']}
+                data-event={`plans_${tier.id}`}
+              >
+                {p.cta_whatsapp}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-14">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-10">{p.how_title}</h2>
+        <div class="space-y-8">
+          {p.how_steps?.map((step: any) => (
+            <div class="flex gap-5">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center">
+                <span class="text-brand-accent font-display font-bold text-sm">{step.step}</span>
+              </div>
+              <div>
+                <h3 class="text-th-heading font-semibold text-sm mb-1">{step.title}</h3>
+                <p class="text-th-muted text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-14 bg-th-surface/5">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-8">{p.faq_title}</h2>
+        <div class="space-y-4">
+          {p.faq_items?.map((item: any) => (
+            <details class="card p-5 group">
+              <summary class="flex items-center justify-between cursor-pointer list-none">
+                <span class="text-th-heading font-semibold text-sm pr-4">{item.question}</span>
+                <svg class="w-5 h-5 text-th-faint flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="text-th-muted text-sm mt-3 leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="section-title mb-3">{p.cta_section_title}</h2>
+        <p class="text-th-muted text-sm mb-8">{p.cta_section_subtitle}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="plans_cta_wa">
+            {p.cta_whatsapp}
+          </a>
+          <a href={`mailto:hola@restorelab.io?subject=Care%20Plans%20Inquiry`} class="btn-secondary" data-event="plans_cta_email">
+            {p.cta_email}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <LeadForm t={t} lang={lang} />
+  </div>
+
+  <!-- Billing Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('billing-toggle');
+      if (!toggle) return;
+
+      const buttons = toggle.querySelectorAll('button');
+      const prices = document.querySelectorAll('.plan-price');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const billing = btn.getAttribute('data-billing');
+
+          buttons.forEach(b => {
+            if (b.getAttribute('data-billing') === billing) {
+              b.classList.add('text-white', 'bg-brand-accent');
+              b.classList.remove('text-th-muted');
+            } else {
+              b.classList.remove('text-white', 'bg-brand-accent');
+              b.classList.add('text-th-muted');
+            }
+          });
+
+          prices.forEach(el => {
+            const monthly = el.getAttribute('data-monthly');
+            const annual = el.getAttribute('data-annual');
+            el.textContent = billing === 'annual' ? `€${annual}` : `€${monthly}`;
+          });
+        });
+      });
+    });
+  </script>
+</BaseLayout>

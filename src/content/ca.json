@@ -1,0 +1,2277 @@
+{
+  "lang": "ca",
+  "meta": {
+    "home": {
+      "title": "restoreLab — Restauració Mòbil de Superfícies a Sant Cugat i Barcelona",
+      "description": "Correcció de pintura, eliminació de ratllades en vidre i restauració d'acrílic. Servei mòbil a Sant Cugat i Barcelona. Sense repintura.",
+      "og_image": "/images/og-home.jpg"
+    },
+    "services": {
+      "title": "Serveis — Restauració Auto, Vidre i Acrílic | restoreLab",
+      "description": "Correcció de pintura d'automòbil, polit de vidre i restauració d'acrílic. Servei mòbil a Sant Cugat i Barcelona."
+    },
+    "car_paint": {
+      "title": "Correcció de Pintura Automòbil Sant Cugat | restoreLab",
+      "description": "Correcció de pintura mòbil a Sant Cugat i Barcelona. Elimineu swirl marks, ratllades i restaureu la brillantor. Preparació ceràmica. Sense repintura."
+    },
+    "glass": {
+      "title": "Eliminació de Ratllades en Vidre Barcelona | restoreLab",
+      "description": "Elimineu ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a Sant Cugat, Barcelona i Terrassa. Sense substitució."
+    },
+    "acrylic": {
+      "title": "Restauració d'Acrílic i Policarbonat Espanya | restoreLab",
+      "description": "Restauració de panells transparents, finestres i escotilles. Eliminació d'oxidació UV. Alternativa econòmica a la substitució."
+    },
+    "pricing": {
+      "title": "Preus — Polit Auto i Restauració de Superfícies | restoreLab",
+      "description": "6 paquets de correcció de pintura i ceràmic des de 149€ fins a PPF. Preus base sedan amb multiplicadors per mida. Pressupost gratuït per WhatsApp."
+    },
+    "cases": {
+      "title": "Abans i Després — restoreLab",
+      "description": "Resultats reals del nostre treball de restauració mòbil. Correcció de pintura, polit de vidre i restauració d'acrílic a Espanya."
+    },
+    "contact": {
+      "title": "Contacte restoreLab — Pressupost Gratuït",
+      "description": "Contacteu restoreLab per a un pressupost gratuït. Envieu fotos per WhatsApp i rebreu resposta en hores. Servei mòbil a Sant Cugat, Barcelona i Terrassa."
+    },
+    "about": {
+      "title": "Sobre restoreLab — La Nostra Història i Missió | restoreLab",
+      "description": "Coneix l'equip de restoreLab. Correcció de pintura mòbil i ceràmic a Sant Cugat i Barcelona. Certificats, assegurats, apassionats."
+    },
+    "business": {
+      "title": "Detailing Mòbil B2B per a Concessionaris i Flotes | restoreLab",
+      "description": "Detailing pre-venda mòbil per a concessionaris de Barcelona i flotes corporatives. Lliurament ≤24h, informes fotogràfics, facturació NET-30."
+    },
+    "ev": {
+      "title": "Protecció de Pintura Tesla i Vehicles Elèctrics Barcelona | restoreLab",
+      "description": "Ceràmic i PPF especialitzat per a vehicles elèctrics: Tesla, Polestar, Taycan. Aplicació segura per a sensors. Protecció UV mediterrània."
+    },
+    "commercial_glass": {
+      "title": "Restauració de Vidre Comercial Barcelona | restoreLab",
+      "description": "Eliminació de ratlles en vidre comercial fora d'horari. Aparadors, oficines i hotels. Estalvia 70-80% vs substitució."
+    },
+    "plans": {
+      "title": "Plans de Cura — Protecció de Pintura per Subscripció | restoreLab",
+      "description": "Plans mensuals de cura per a protecció contínua. Manteniment programat, recàrregues ceràmiques, reserva prioritària. Des de 39€/mes."
+    },
+    "privacy": {
+      "title": "Política de Privadesa | restoreLab",
+      "description": "Política de privadesa de restoreLab — com recopilem i utilitzem les vostres dades personals."
+    },
+    "terms": {
+      "title": "Termes i Condicions | restoreLab",
+      "description": "Termes i condicions del servei de restoreLab."
+    },
+    "academy": {
+      "title": "Acadèmia: Excel·lència en Enginyeria | restoreLab",
+      "description": "Ciència i tècnica de la restauració professional de superfícies. Protocols d'equips, física de descontaminació i mecànica de correcció."
+    },
+    "academy_equipment": {
+      "title": "Protocols de Selecció d'Equips — Rotativa vs Doble Acció | restoreLab Acadèmia",
+      "description": "Per què el 99% del resultat depèn de la selecció d'eines. Rotativa vs doble acció — anàlisi, taula comparativa i recomanacions."
+    },
+    "headlight": {
+      "title": "Restauració de Fars Sant Cugat i Barcelona | restoreLab",
+      "description": "Restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
+    },
+    "interior_leather": {
+      "title": "Neteja de Cuir Interior i Ceràmic | restoreLab",
+      "description": "Neteja profunda de cuir, eliminació de taques i ceràmic opcional. Seients, quadre de comandaments i panells. Des de 189€. Servei mòbil."
+    },
+    "pre_sale": {
+      "title": "Pack Pre-Venda — Maximitza el Valor de Revenda | restoreLab",
+      "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe."
+    }
+  },
+  "nav": {
+    "services": "Serveis",
+    "pricing": "Preus",
+    "cases": "Portfolio",
+    "contact": "Contacte",
+    "academy": "Acadèmia",
+    "cta": "Pressupost"
+  },
+  "hero": {
+    "headline": "Acabat de fàbrica. Al teu garatge.",
+    "subheadline": "Correcció de pintura i ceràmic premium a Sant Cugat, Barcelona i Vallès Occidental — anem a tu.",
+    "cta_primary": "Pressupost Gratuït",
+    "cta_secondary": "Veure Abans i Després",
+    "reply_time": "Resposta mitjana: ~30 minuts",
+    "trust_pills": ["★ 5.0 Google", "47+ Ressenyes", "500+ Treballs", "Assegurança 500K€"],
+    "cta_car": "Restauració Auto",
+    "sticky_cta": "Pressupost via WhatsApp",
+    "badge": "★ Valorat 5.0 • 500+ Treballs"
+  },
+  "trust": {
+    "brands": [
+      { "name": "Gyeon", "status": "authorized" },
+      { "name": "Gtechniq", "status": "authorized" },
+      { "name": "Rupes", "status": "equipment" },
+      { "name": "Koch Chemie", "status": "equipment" },
+      { "name": "XPEL", "status": "ppf" },
+      { "name": "CarPro", "status": "products" }
+    ],
+    "certifications": [
+      { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
+      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" },
+      { "name": "Membre IDA", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
+      { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
+    ],
+    "insurance": {
+      "label": "Assegurança de Responsabilitat Civil 500K€",
+      "detail": "La pòlissa cobreix tot el treball in situ, incloent-hi danys a vehicles de tercers."
+    },
+    "founder": {
+      "text": "Fundat a Sant Cugat. Servei mòbil des del primer dia.",
+      "link_label": "Sobre nosaltres",
+      "link_url": "/about"
+    }
+  },
+  "social_proof": {
+    "rating": "5.0",
+    "reviews_count": "47+ ressenyes",
+    "platform": "Google Reviews",
+    "areas": [
+      "Sant Cugat",
+      "Barcelona",
+      "Terrassa",
+      "Sabadell"
+    ],
+    "areas_label": "Àrees de servei",
+    "testimonials": [
+      {
+        "name": "David M.",
+        "location": "Sant Cugat",
+        "text": "Resultat increïble al meu BMW. Les ratllades profundes van desaparèixer completament, la pintura sembla nova. Van venir al meu aparcament, sense complicacions. Molt recomanat.",
+        "rating": 5,
+        "service": "Correcció de Pintura"
+      },
+      {
+        "name": "Sofia R.",
+        "location": "Barcelona",
+        "text": "El meu parabrisa tenia ratllades profundes del neteja-parabrises després de 3 anys. restoreLab les va eliminar completament — em vaig estalviar €400 en una substitució. Feina fantàstica!",
+        "rating": 5,
+        "service": "Polit de Vidre"
+      },
+      {
+        "name": "Anna K.",
+        "location": "Terrassa",
+        "text": "Les finestres d'acrílic del meu projecte estaven completament grogues. Ara estan cristal·lines. Transformació increïble — no puc creure la diferència.",
+        "rating": 5,
+        "service": "Restauració d'Acrílic"
+      }
+    ]
+  },
+  "services": {
+    "section_title": "Què Restaurem",
+    "section_subtitle": "Restauració mòbil professional per a superfícies que la majoria substitueix massa aviat.",
+    "items": [
+      {
+        "id": "car-paint-correction",
+        "title": "Correcció de Pintura Auto",
+        "subtitle": "Eliminació de swirl marks, ratllades i restauració de la brillantor",
+        "icon": "car",
+        "starting_price": "Des de 149€",
+        "features": [
+          "Eliminació de remolins i ratllades",
+          "Estalvia vs pintura de 800€+",
+          "Servei mòbil a la teva ubicació"
+        ],
+        "cta_label": "Pressupost Auto",
+        "tag": "Més popular"
+      },
+      {
+        "id": "glass-polishing",
+        "title": "Eliminació de Ratllades en Vidre",
+        "subtitle": "Finestres, parabrises i vidre arquitectònic",
+        "icon": "glass",
+        "starting_price": "Des de 89€",
+        "features": [
+          "Restaura la claredat del vidre",
+          "Estalvia vs substitució de 400€",
+          "Taques i ratllades del neteja-parabrises"
+        ],
+        "cta_label": "Pressupost Vidre",
+        "tag": null
+      },
+      {
+        "id": "acrylic-restoration",
+        "title": "Acrílic i Policarbonat",
+        "subtitle": "Finestres, escotilles i panells transparents",
+        "icon": "acrylic",
+        "features": [
+          "Eliminació d'oxidació UV",
+          "Transparència completament restaurada",
+          "Econòmic vs substitució"
+        ],
+        "cta_label": "Pressupost Acrílic",
+        "tag": null
+      },
+      {
+        "id": "headlight-restoration",
+        "title": "Restauració de Fars",
+        "subtitle": "Fars groguencs o opacs restaurats a claredat cristal·lina",
+        "icon": "headlight",
+        "starting_price": "Des de 79€",
+        "features": [
+          "Eliminació d'oxidació UV i grogor",
+          "Llijat humit i polit a màquina",
+          "Segellant UV opcional (2+ anys)"
+        ],
+        "cta_label": "Pressupost Fars",
+        "tag": null
+      },
+      {
+        "id": "trim-restoration",
+        "title": "Restauració de Plàstics",
+        "subtitle": "Para-xocs, retrovisors i motllures exteriors revifades",
+        "icon": "trim",
+        "starting_price": "Des de 69€",
+        "features": [
+          "Negre profund restaurat en plàstics",
+          "Protecció UV aplicada",
+          "Vehicle complet des de 189€"
+        ],
+        "cta_label": "Pressupost Plàstics",
+        "tag": null
+      },
+      {
+        "id": "wheel-ceramic",
+        "title": "Ceràmic en Llantes",
+        "subtitle": "Coating repel·lent de pols de fre per a les 4 llantes",
+        "icon": "wheel",
+        "starting_price": "189€",
+        "features": [
+          "4 llantes netejades i descontaminades",
+          "Ceràmic (12+ mesos de durabilitat)",
+          "La pols de fre rellisca sense esforç"
+        ],
+        "cta_label": "Pressupost Llantes",
+        "tag": null
+      },
+      {
+        "id": "engine-bay",
+        "title": "Detailing del Motor",
+        "subtitle": "Sota el capó — net, tractat i protegit",
+        "icon": "engine",
+        "starting_price": "119€",
+        "features": [
+          "Desgreixatge complet i neteja a vapor",
+          "Tractament de plàstics i gomes",
+          "Procés segur per a components elèctrics"
+        ],
+        "cta_label": "Pressupost Motor",
+        "tag": null
+      },
+      {
+        "id": "interior-leather",
+        "title": "Neteja de Cuir Interior",
+        "subtitle": "Seients, quadre de comandaments i panells netejats i protegits",
+        "icon": "interior",
+        "starting_price": "Des de 189€",
+        "features": [
+          "Neteja profunda i condicionament del cuir",
+          "Eliminació de taques i transferència de tint",
+          "Ceràmic opcional (289€)"
+        ],
+        "cta_label": "Pressupost Interior",
+        "tag": null
+      },
+      {
+        "id": "pre-sale-pack",
+        "title": "Pack Pre-Venda",
+        "subtitle": "Maximitza el valor de revenda abans de vendre o lliurar",
+        "icon": "sale",
+        "starting_price": "249€",
+        "features": [
+          "Correcció de pintura single-stage",
+          "Neteja profunda de l'interior",
+          "Detailing del motor inclòs"
+        ],
+        "cta_label": "Pressupost Pre-Venda",
+        "tag": "Pack estalvi"
+      }
+    ],
+    "learn_more": "Saber-ne més",
+    "get_quote": "Pressupost"
+  },
+  "how_it_works": {
+    "section_title": "Com Funciona",
+    "section_subtitle": "Procés senzill, sense complicacions. Anem a vostè",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Envieu Fotos",
+        "description": "Envieu-nos fotos dels danys per WhatsApp. Avaluarem les condicions i la viabilitat."
+      },
+      {
+        "number": "02",
+        "title": "Rebeu Pressupost",
+        "description": "Resposta normalment en 30 min. Preu transparent, sense costos ocults."
+      },
+      {
+        "number": "03",
+        "title": "Anem a Vostè",
+        "description": "Arribem a casa teva, oficina o aparcament amb tot l'equip professional."
+      },
+      {
+        "number": "04",
+        "title": "Restauració i Protecció",
+        "description": "Acabat de qualitat de fàbrica. No estàs satisfet? Ho refem gratis."
+      }
+    ],
+    "cta_banner": "Prova-ho ara — envia'ns una foto i rep el teu pressupost",
+    "cta_banner_btn": "Enviar foto per WhatsApp"
+  },
+  "pricing": {
+    "section_title": "Preus Transparents",
+    "section_subtitle": "Sense sorpreses. Pressupost exacte després de revisió de fotos",
+    "cta_custom": "Necessiteu un pressupost personalitzat?",
+    "cta_whatsapp": "Preguntar per WhatsApp",
+    "ui": {
+      "most_popular": "Més Popular",
+      "best_for": "Ideal per a:",
+      "get_quote": "Demanar Pressupost",
+      "size_title": "Multiplicadors per Mida de Vehicle",
+      "size_subtitle": "Els preus indicats són per a vehicles tipus sedan. Ajusteu segons el vostre vehicle:",
+      "sensitive_paint": "Recàrrec pintura sensible",
+      "sensitive_paint_note": "Negre atzabeja, Audi Brilliant Black, Porsche Carrara White, etc.",
+      "size_categories": [
+        { "name": "Compacte", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
+        { "name": "Sedan", "examples": "Serie 3, Classe C, A4", "modifier": "Base" },
+        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
+        { "name": "SUV gran / 7 places", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
+        { "name": "Esportiu / Superesportiu", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+      ],
+      "sensitive_paint_surcharge": "+60–100 €"
+    },
+    "categories": [
+      {
+        "id": "car",
+        "title": "Correcció de Pintura i Ceràmic",
+        "packages": [
+          {
+            "name": "Express Refresh",
+            "slug": "express-refresh",
+            "price": "149€",
+            "duration": "~2 hores",
+            "description": "Rentat descontaminant ràpid i polit a mà per a contaminació lleu. Manteniment ideal entre correccions completes.",
+            "includes": [
+              "Rentat descontaminant",
+              "Tractament amb clay bar",
+              "Polit suau a mà",
+              "Protecció amb segellant esprai (1–2 mesos)"
+            ],
+            "best_for": "Vehicles nous o ben mantinguts que necessiten un repàs",
+            "highlight": false
+          },
+          {
+            "name": "Correcció Single-Stage",
+            "slug": "single-stage",
+            "price": "289€",
+            "duration": "3–4 hores",
+            "description": "Correcció mecànica en un pas que elimina fins al 70% de swirl marks i ratllades lleus.",
+            "includes": [
+              "Rentat descontaminant complet + clay bar",
+              "Polit mecànic d'un pas",
+              "Eliminació de swirl marks i ratllades lleus",
+              "Protecció amb segellant de 6 mesos"
+            ],
+            "best_for": "Vehicles d'ús diari amb swirl marks moderats",
+            "highlight": false
+          },
+          {
+            "name": "Correcció Two-Stage",
+            "slug": "two-stage",
+            "price": "549€",
+            "duration": "5–7 hores",
+            "description": "Correcció completa en dos passos (compound + polit). Elimina el 90%+ de defectes sense ceràmic — ideal si ja teniu coating.",
+            "includes": [
+              "Descontaminació completa + clay bar",
+              "Correcció en dos passos (compound + polit)",
+              "Mesurament del gruix de pintura",
+              "Neteja IPA panell a panell",
+              "Acabat amb segellant temporal"
+            ],
+            "best_for": "Vehicles molt danyats o preparació pre-coating",
+            "highlight": false
+          },
+          {
+            "name": "Ceràmic 2 Anys",
+            "slug": "ceramic-2y",
+            "price": "649€",
+            "duration": "6–8 hores",
+            "description": "Correcció two-stage més recobriment ceràmic certificat de 2 anys (Gyeon / Gtechniq).",
+            "includes": [
+              "Correcció completa two-stage",
+              "Mesurament del gruix de pintura",
+              "Neteja IPA i preparació de superfície",
+              "Ceràmic de 2 anys (Gyeon / Gtechniq)",
+              "Tractament de pneumàtics i plàstics"
+            ],
+            "best_for": "Qui busca protecció duradora amb acabat d'exposició",
+            "highlight": true
+          },
+          {
+            "name": "Ceràmic Premium 5 Anys",
+            "slug": "premium-5y",
+            "price": "1 049€",
+            "duration": "8–10 hores",
+            "description": "Correcció multifase amb ceràmic grafè de 5 anys. Inclou parabrisa i llantes.",
+            "includes": [
+              "Correcció de pintura multifase",
+              "Ceràmic grafè de 5 anys",
+              "Coating hidrofòbic en parabrisa",
+              "Ceràmic en llantes",
+              "Restauració de plàstics i pneumàtics",
+              "Garantia de 2 anys sobre el coating"
+            ],
+            "best_for": "Vehicles de luxe i esportius, màxima protecció a llarg termini",
+            "highlight": false
+          },
+          {
+            "name": "Flagship PPF + Ceràmic",
+            "slug": "flagship-ppf",
+            "price": "des de 2 290€",
+            "duration": "1,5–2 dies",
+            "description": "Film de protecció de pintura en zones d'impacte més ceràmic de 5 anys a tot el vehicle. La defensa definitiva.",
+            "includes": [
+              "Correcció multifase completa",
+              "PPF en capó, para-xocs, retrovisors i vores de porta",
+              "Ceràmic de 5 anys (carrosseria completa)",
+              "Ceràmic en parabrisa i llantes",
+              "Restauració completa de plàstics",
+              "Inspecció anual inclosa"
+            ],
+            "best_for": "Vehicles nous o d'alt valor que mereixen protecció total",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "glass",
+        "title": "Vidre i Acrílic",
+        "packages": [
+          {
+            "name": "Polit de Parabrisa",
+            "slug": "windshield-polish",
+            "price": "119€",
+            "duration": "1–2 hores",
+            "description": "Elimina ratllades del neteja-parabrises, taques d'aigua i opacitat lleu.",
+            "includes": [
+              "Avaluació de la superfície",
+              "Polit mecànic del parabrisa",
+              "Eliminació de ratllades i taques"
+            ],
+            "best_for": "Parabrises amb marques del neteja-parabrises o dipòsits minerals",
+            "highlight": false
+          },
+          {
+            "name": "Parabrisa + Hidrofòbic",
+            "slug": "windshield-hydrophobic",
+            "price": "179€",
+            "duration": "1,5–2,5 hores",
+            "description": "Polit de parabrisa més coating hidrofòbic repel·lent de pluja per a millor visibilitat.",
+            "includes": [
+              "Polit complet del parabrisa",
+              "Eliminació de ratllades i taques",
+              "Aplicació de coating hidrofòbic",
+              "La pluja rellisca a partir de 60 km/h"
+            ],
+            "best_for": "Conductors que volen millor visibilitat amb pluja",
+            "highlight": true
+          },
+          {
+            "name": "Set Complet de Vidres",
+            "slug": "full-glass-set",
+            "price": "289€",
+            "duration": "3–4 hores",
+            "description": "Tots els vidres polits i tractats — parabrisa, laterals i luneta posterior.",
+            "includes": [
+              "Totes les superfícies de vidre polides",
+              "Eliminació de ratllades i taques",
+              "Coating hidrofòbic en tots els vidres",
+              "Luneta posterior inclosa"
+            ],
+            "best_for": "Restauració completa de vidres del vehicle",
+            "highlight": false
+          },
+          {
+            "name": "Només Coating Hidrofòbic",
+            "slug": "hydrophobic-standalone",
+            "price": "des de 89€",
+            "duration": "30 min – 1 hora",
+            "description": "Coating repel·lent de pluja sobre vidre net. Parabrisa 89€, set complet 159€.",
+            "includes": [
+              "Preparació i descontaminació de superfície",
+              "Coating hidrofòbic professional",
+              "Parabrisa o set complet de vidres"
+            ],
+            "best_for": "Vidres ja nets que necessiten repel·lència a l'aigua",
+            "highlight": false
+          },
+          {
+            "name": "Restauració d'Acrílic",
+            "price": "Pressupost personalitzat",
+            "duration": "1–4 hores",
+            "description": "Preu basat en la mida de la superfície i la gravetat dels danys. Panells acrílics i policarbonat.",
+            "includes": [
+              "Avaluació de la superfície",
+              "Polit mecànic de panells acrílics",
+              "Eliminació d'oxidació UV",
+              "Recobriment hidrofòbic (opcional)"
+            ],
+            "best_for": "Finestres acríliques, escotilles, panells de vaixell",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "id": "extras",
+        "title": "Serveis Addicionals",
+        "packages": [
+          {
+            "name": "Restauració de Fars",
+            "slug": "headlight-restoration",
+            "price": "79€ / parell",
+            "duration": "45 min – 1 hora",
+            "description": "Restaura fars groguencs o opacs a claredat cristal·lina. Segellant UV opcional per 119€.",
+            "includes": [
+              "Llijat humit i polit a màquina (ambdós fars)",
+              "Eliminació d'oxidació i grogor",
+              "Vernís o segellant UV (opcional +40€)"
+            ],
+            "best_for": "Fars opacs, groguencs o entelats",
+            "highlight": false
+          },
+          {
+            "name": "Ceràmic en Llantes",
+            "slug": "wheel-ceramic",
+            "price": "189€",
+            "duration": "2–3 hores",
+            "description": "4 llantes descontaminades i tractades amb ceràmic repel·lent de pols de fre.",
+            "includes": [
+              "Descontaminació de ferro (4 llantes)",
+              "Neteja de barril i cara",
+              "Aplicació de ceràmic",
+              "12+ mesos de durabilitat"
+            ],
+            "best_for": "Qui està cansat de fregar pols de fre",
+            "highlight": false
+          },
+          {
+            "name": "Detailing del Motor",
+            "slug": "engine-bay",
+            "price": "119€",
+            "duration": "1–1,5 hores",
+            "description": "Desgreixatge complet, neteja a vapor i tractament — segur per a components elèctrics.",
+            "includes": [
+              "Desgreixatge complet i neteja a vapor",
+              "Tractament de plàstics i gomes",
+              "Procés segur per a components elèctrics"
+            ],
+            "best_for": "Preparació pre-venda o manteniment anual",
+            "highlight": false
+          },
+          {
+            "name": "Pack Pre-Venda",
+            "slug": "pre-sale-pack",
+            "price": "249€",
+            "duration": "4–5 hores",
+            "description": "Correcció de pintura + neteja interior + motor — tot el que inspecciona un comprador.",
+            "includes": [
+              "Correcció de pintura single-stage",
+              "Aspirat i neteja completa de l'interior",
+              "Detailing del motor",
+              "Tractament de pneumàtics i plàstics"
+            ],
+            "best_for": "Vendre o lliurar el teu vehicle",
+            "highlight": true
+          }
+        ]
+      }
+    ],
+    "anchor_text": "Correcció de pintura i ceràmic premium per detailers certificats. Preus per a sedan — consulteu els multiplicadors per mida."
+  },
+  "estimator": {
+    "title": "Obtén el teu Pressupost Instantani",
+    "subtitle": "Respon 4 preguntes ràpides i rep un rang de preu en segons.",
+    "step1_title": "Mida del vehicle",
+    "size_small": "Petit",
+    "size_small_desc": "Compacte, sedan",
+    "size_medium": "Mitjà",
+    "size_medium_desc": "Familiar, coupé, SUV petit",
+    "size_large": "Gran",
+    "size_large_desc": "SUV gran, furgoneta, camió",
+    "step2_title": "Estat de la pintura",
+    "cond_light": "Lleu",
+    "cond_light_desc": "Marques circulars lleus, taques d'aigua",
+    "cond_medium": "Mitjà",
+    "cond_medium_desc": "Ratlles visibles, acabat opac",
+    "cond_heavy": "Sever",
+    "cond_heavy_desc": "Ratlles profundes, oxidació",
+    "step3_title": "Color de la pintura",
+    "color_standard": "Estàndard",
+    "color_standard_desc": "Vermell, blau, verd…",
+    "color_metallic": "Metal·litzat",
+    "color_metallic_desc": "Plata, gris metal·litzat",
+    "color_black": "Negre",
+    "color_black_desc": "Negre sòlid o metal·litzat",
+    "color_white": "Blanc",
+    "color_white_desc": "Blanc sòlid o perlat",
+    "step4_title": "Què necessites?",
+    "step4_hint": "Selecciona un o més objectius",
+    "goal_gloss": "Restaurar brillantor i eliminar ratlles",
+    "goal_ceramic": "Aplicar recobriment ceràmic",
+    "goal_presale": "Preparar per a la venda",
+    "goal_protection": "Protecció de pintura a llarg termini",
+    "goal_glass": "Eliminació de ratlles al vidre",
+    "submit": "Veure el Meu Pressupost",
+    "result_title": "Les Teves Opcions Recomanades",
+    "addons_title": "Complements suggerits",
+    "cta_whatsapp": "Enviar per WhatsApp",
+    "cta_restart": "Tornar a Començar",
+    "back": "Enrere",
+    "recommended_tag": "Recomanat",
+    "note_black": "La pintura negra mostra cada imperfecció. Es recomana correcció en dues fases com a mínim.",
+    "note_heavy": "Els defectes severs poden requerir mesurament de gruix de pintura. Avaluació gratuïta in situ inclosa.",
+    "note_large": "Els vehicles grans requereixen temps addicional. Els temps mostrats són aproximats.",
+    "wa_message": "Hola restoreLab! He usat l'estimador:\n• Vehicle: {vehicleSize}\n• Estat: {paintCondition}\n• Color: {colorSensitivity}\n• Objectius: {goals}\n• Recomanat: {tierName} (€{min}–{max})\n\nM'agradaria rebre un pressupost."
+  },
+  "faq": {
+    "section_title": "Abans de Contactar-nos",
+    "section_subtitle": "Respostes pràctiques sobre el nostre servei mòbil — perquè sàpigues exactament què esperar",
+    "cta_title": "Tens més preguntes?",
+    "cta_subtitle": "Responem en menys de 30 minuts de mitjana.",
+    "cta_btn": "Preguntar per WhatsApp",
+    "items": [
+      {
+        "icon": "money",
+        "question": "Quant costa la correcció de pintura a Barcelona?",
+        "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 1 049 € (Ceràmic Premium 5 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció two-stage completa més coating certificat de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte — responem en menys de 30 minuts. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+      },
+      {
+        "icon": "swap",
+        "question": "Quina és la diferència entre polir i repintar un cotxe?",
+        "answer": "La <a href='/ca/services/car-paint-correction' class='text-brand-accent hover:underline'>correcció de pintura</a> elimina defectes del vernís original (swirl marks, ratllades, oxidació) sense afegir pintura nova. Costa significativament menys que repintar (des de 149 € vs 800-2.000+ €), es completa en hores en comptes de dies i conserva la pintura de fàbrica. Repintar només és necessari quan la pintura s'ha perdut físicament o està danyada més enllà del vernís. Consulteu els nostres <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."
+      },
+      {
+        "icon": "glass",
+        "question": "Es poden treure ratllades del parabrisa sense canviar-lo?",
+        "answer": "Sí — el <a href='/ca/services/glass-polishing' class='text-brand-accent hover:underline'>polit professional de vidre</a> elimina la majoria de ratllades del neteja-parabrises, taques d'aigua i opacitat. Estalvia 300-500 € respecte a un parabrisa nou. Les ratllades profundes que es noten amb l'ungla o danys a la capa laminada sí que requereixen substitució — t'ho diem sincerament abans de començar. Més detalls a la nostra <a href='/ca/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>guia de reparació de ratllades</a>."
+      },
+      {
+        "icon": "clock",
+        "question": "Quant de temps dura el servei i el resultat?",
+        "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys, el Premium 5 Anys dura 5+ anys; el segellant de l'Express Refresh dura 1-2 mesos. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+      },
+      {
+        "icon": "car",
+        "question": "El polit a màquina danya la pintura del cotxe?",
+        "answer": "No, quan ho fa un professional. Cada passada de correcció profunda retira una mitjana de 5,5 micres de vernís. Un vernís de fàbrica té 40-60 micres de gruix, cosa que permet més de 10 correccions profundes al llarg de la vida del cotxe. A restoreLab mesurem el gruix amb un mesurador digital abans de cada treball per garantir límits segurs. Més sobre el procés al nostre <a href='/ca/academy/mechanical-correction' class='text-brand-accent hover:underline'>article sobre correcció mecànica</a>."
+      },
+      {
+        "icon": "map",
+        "question": "Quines zones prop de Barcelona cobriu?",
+        "answer": "Cobrim tota l'àrea metropolitana de Barcelona des de 3 bases: <a href='/ca/areas/sant-cugat' class='text-brand-accent hover:underline'>Sant Cugat del Vallès</a> (Rubí, Cerdanyola, Bellaterra), <a href='/ca/areas/barcelona' class='text-brand-accent hover:underline'>Barcelona ciutat</a> (Badalona, L'Hospitalet, Esplugues) i <a href='/ca/areas/terrassa' class='text-brand-accent hover:underline'>Terrassa</a> (Sabadell, Mollet, Castellar). Per a projectes grans o flotes fora d'aquestes zones, ens desplacem — pregunteu-nos."
+      },
+      {
+        "icon": "bolt",
+        "question": "Com funciona el vostre servei mòbil?",
+        "answer": "Som 100% autosuficients — portem generador, màquines polidores professionals i subministrament d'aigua. Només necessiteu una plaça d'aparcament estàndard (1 metre lliure a cada costat). Anem a casa vostra, oficina o garatge a Sant Cugat, Barcelona i voltants. Així estalvieu temps sense haver de portar el cotxe a cap taller."
+      },
+      {
+        "icon": "rain",
+        "question": "Què passa si plou o les condicions meteorològiques són dolentes?",
+        "answer": "Els treballs de <a href='/ca/services/glass-polishing' class='text-brand-accent hover:underline'>vidre</a> i <a href='/ca/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrílic</a> es poden fer amb pluja lleugera. La <a href='/ca/services/car-paint-correction' class='text-brand-accent hover:underline'>correcció de pintura</a> i el recobriment ceràmic requereixen condicions seques. Comprovem la previsió amb antelació — si les condicions no són adequades, reprogramem sense cost a Sant Cugat, Barcelona i tota la zona metropolitana."
+      },
+      {
+        "icon": "user",
+        "question": "Necessito ser-hi present durant tot el servei?",
+        "answer": "De cap manera. La majoria dels clients deixen el cotxe i segueixen amb el seu dia — ja sigui correcció de pintura, polit de vidre o <a href='/ca/services/acrylic-restoration' class='text-brand-accent hover:underline'>restauració d'acrílic</a>. Només deixeu-nos accés al vehicle i un número de contacte. Us enviem un informe fotogràfic quan el treball estigui acabat."
+      },
+      {
+        "icon": "shield",
+        "question": "Quina és la vostra garantia de satisfacció?",
+        "answer": "Si no estàs satisfet amb el resultat, tornem i ho refem sense cost addicional. Els paquets ceràmics premium inclouen 12 mesos de garantia de protecció del recobriment. El preu que aproves és sempre el preu que pagues — sense sorpreses. Consulteu els nostres <a href='/ca/pricing' class='text-brand-accent hover:underline'>preus</a> i <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."
+      }
+    ]
+  },
+  "area": {
+    "section_title": "Cobrim l'Àrea Metropolitana de Barcelona",
+    "section_subtitle": "3 bases operatives — anem a on siguis",
+    "cta_prefix": "Pressupost a",
+    "travel_note": "Projecte gran o flota fora d'aquestes àrees? Ens desplacem — només pregunteu.",
+    "hubs": [
+      {
+        "city": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "coverage": "Radi de 20 km",
+        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
+      },
+      {
+        "city": "Barcelona",
+        "region": "Àrea Metropolitana de Barcelona",
+        "coverage": "Radi de 30 km",
+        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
+      },
+      {
+        "city": "Vallès",
+        "region": "Vallès Interior",
+        "coverage": "Radi de 30 km",
+        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
+      }
+    ]
+  },
+  "wa_messages": {
+    "header": "Hola restoreLab! M'agradaria obtenir un pressupost gratuït. [Des de la capçalera del lloc]",
+    "hero": "Hola restoreLab! M'agradaria obtenir un pressupost gratuït. [Des de la pàgina principal]",
+    "pricing_plan": "Hola restoreLab! M'interessa el pla \"{plan}\" ({category}). M'agradaria obtenir un pressupost.",
+    "pricing_custom": "Hola restoreLab! M'agradaria sol·licitar un pressupost personalitzat per a {category}. [Des de la pàgina de preus]",
+    "pricing_custom_general": "Hola restoreLab! M'agradaria sol·licitar un pressupost personalitzat. [Des de la pàgina de preus]",
+    "sticky_cta": "Hola restoreLab! M'agradaria obtenir un pressupost. [Des del botó mòbil]",
+    "prefooter_cta": "Hola restoreLab! M'agradaria obtenir un pressupost. [Des del peu de pàgina]",
+    "footer": "Hola restoreLab! Tinc una pregunta. [Des del peu de pàgina]",
+    "contact": "Hola restoreLab! M'agradaria posar-me en contacte. [Des de la pàgina de contacte]"
+  },
+  "lead_form": {
+    "section_title": "Obtén el teu Pressupost Gratuït en 30 Minuts",
+    "section_subtitle": "Envia'ns fotos del dany. Et respondrem amb un preu honest — sense obligacions, sense costos ocults.",
+    "fields": {
+      "name": "El Vostre Nom",
+      "name_placeholder": "Joan Garcia",
+      "phone": "Telèfon / WhatsApp",
+      "phone_placeholder": "+34 6XX XXX XXX",
+      "service": "Servei Requerit",
+      "service_options": [
+        "Correcció de Pintura Auto",
+        "Eliminació de Ratllades en Vidre",
+        "Restauració d'Acrílic / Policarbonat",
+        "Altre / No n'estic segur"
+      ],
+      "location": "La Vostra Ubicació",
+      "location_placeholder": "p. ex.: Sant Cugat, Barcelona...",
+      "message": "Detalls Addicionals",
+      "message_placeholder": "Descriviu els danys o el problema. Com més detall, millor el pressupost.",
+      "photo_note": "També podeu enviar fotos directament per WhatsApp després d'enviar el formulari.",
+      "submit": "Enviar via WhatsApp"
+    },
+    "whatsapp_template": "Hola restoreLab! El meu nom és {name}. Estic interessat en: {service}. Ubicació: {location}. Info addicional: {message}. El meu contacte: {phone}."
+  },
+  "footer": {
+    "tagline": "Restauració premium mòbil de superfícies",
+    "services_title": "Serveis",
+    "contact_title": "Contacte",
+    "legal_title": "Legal",
+    "privacy": "Política de Privadesa",
+    "terms": "Termes i Condicions",
+    "cookies": "Política de Cookies",
+    "copyright": "© 2026 restoreLab. Tots els drets reservats.",
+    "made_in": "Fet a Espanya.",
+    "trust": "Amb la confiança de més de 500 clients a Sant Cugat i Barcelona",
+    "gbp_url": "https://g.page/restorelab-santcugat",
+    "gbp_label": "Google Reviews",
+    "business_link": "Per a Empreses",
+    "ev_link": "Protecció EV",
+    "commercial_glass_link": "Vidre Comercial",
+    "plans_link": "Plans de Cura",
+    "legal_entity": "restoreLab S.L.",
+    "legal_nif": "B-XXXXXXXX",
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "legal_provisional": "(Provisional — pendent de registre)",
+    "legal_insurance": "Assegurança de responsabilitat professional — cobertura de €500.000"
+  },
+  "guarantee": {
+    "section_title": "Zero Risc. Garantit.",
+    "items": [
+      {
+        "icon": "assessment",
+        "title": "Avaluació Honesta",
+        "description": "Et diem per endavant què és possible. Sense vendes addicionals."
+      },
+      {
+        "icon": "satisfaction",
+        "title": "Promesa de Satisfacció",
+        "description": "No estàs content amb el resultat? Ho refem sense cost addicional."
+      },
+      {
+        "icon": "warranty",
+        "title": "Garantia de Protecció",
+        "description": "Fins a 12 mesos de garantia de protecció del recobriment."
+      },
+      {
+        "icon": "price",
+        "title": "Preu Fix",
+        "description": "El pressupost que aproves és el preu que pagues. Sense sorpreses."
+      }
+    ]
+  },
+  "cases_section": {
+    "section_title": "Abans i Després",
+    "section_subtitle": "Resultats reals del nostre servei mòbil de restauració a Sant Cugat i Barcelona",
+    "view_all": "Veure Tots els Casos"
+  },
+  "pre_footer_cta": {
+    "title": "Preparat per restaurar?",
+    "subtitle": "Envia'ns una foto i rep un pressupost honest en menys de 30 minuts. Sense compromís ni costos ocults.",
+    "cta": "Enviar fotos per WhatsApp",
+    "trust_pill": "5.0 · 500+ treballs a Sant Cugat i Barcelona",
+    "reply_note": "Resposta mitjana: 28 min · Servei mòbil, anem a on siguis"
+  },
+  "about": {
+    "hero_title": "Nascuts a Sant Cugat. Impulsats per l'artesania.",
+    "hero_subtitle": "restoreLab és un estudi mòbil de restauració de superfícies que serveix l'àrea metropolitana de Barcelona. Portem correcció i protecció professional directament a la teva ubicació.",
+    "founder_name": "[Nom del Fundador]",
+    "founder_role": "Fundador i Tècnic Principal",
+    "founder_photo_note": "⚠ Placeholder — afegir foto real del fundador a /images/team/founder.jpg",
+    "origin_title": "Per què existeix restoreLab",
+    "origin_text": "restoreLab va néixer d'una observació simple: la majoria de danys en pintura no necessiten repintat, i la majoria d'aranyades en vidre no requereixen substitució. La indústria opta per l'opció més cara. Nosaltres vam triar un altre camí — restaurar superfícies al seu estat de fàbrica amb equipament de precisió i els millors productes disponibles.",
+    "philosophy_title": "Restaurar, no reemplaçar",
+    "philosophy_text": "Cada restauració allarga la vida dels materials existents. Sense residus de pintura, sense vidre a l'abocador, sense peces de recanvi innecessàries. És millor per a la teva butxaca i millor per al medi ambient. Creiem que la reparació més sostenible és la que no genera nous residus.",
+    "equipment_title": "Equipament professional",
+    "equipment_text": "Treballem exclusivament amb polidores Rupes, ceràmics Gyeon i Gtechniq, compostos Koch Chemie, i film de protecció XPEL. Cada producte se selecciona pel seu rendiment, no pel màrqueting — i cada tècnic està format per utilitzar-los correctament.",
+    "local_title": "Compromís local",
+    "local_text": "Amb base a Sant Cugat del Vallès, servim tota l'àrea metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. La nostra unitat mòbil va a casa teva, oficina o plaça d'aparcament. Sense necessitat de deixar el teu cotxe en un taller.",
+    "certifications_title": "Certificacions i Formació",
+    "stats": [
+      { "value": "500+", "label": "Vehicles restaurats" },
+      { "value": "5.0", "label": "Valoració Google" },
+      { "value": "€500K", "label": "Cobertura d'assegurança" },
+      { "value": "0", "label": "Repintats necessaris" }
+    ]
+  },
+  "academy": {
+    "headline": "restoreLab Acadèmia: Excel·lència en Enginyeria",
+    "intro": "Cada restauració que realitzem es basa en la ciència de materials, no en suposicions. Aquesta secció és on compartim els principis d'enginyeria darrere del nostre treball — perquè entenguis exactament per què els nostres resultats són diferents.",
+    "what_awaits": "El que t'espera dins:",
+    "bullets": [
+      "Lògica de selecció d'equips — per què fem servir màquines, coixinets i compostos específics per a cada tipus de superfície",
+      "La física darrere de la descontaminació de pintura — partícules de ferro, quitrà i dipòsits minerals adherits",
+      "Mecànica de correcció — com les partícules abrasives interactuen amb la capa transparent a nivell microscòpic",
+      "Desglossament de casos reals — documentació pas a pas de restauracions complexes"
+    ],
+    "closing": "Els articles es publiquen a mesura que s'escriuen. Sense subscripció — només desa aquesta pàgina i torna a visitar-la.",
+    "articles_title": "Articles",
+    "coming_soon": "Properament",
+    "read_article": "Llegir Article",
+    "back_label": "Tornar a l'Acadèmia",
+    "articles": [
+      {
+        "number": "01",
+        "title": "Protocols de Selecció d'Equips",
+        "excerpt": "Per què triem polidores rotatives i DA específiques, plats de suport i compostos de coixinets per a cada treball — i com l'elecció incorrecta pot danyar una superfície permanentment.",
+        "slug": "equipment-selection",
+        "date": "2025-01-15",
+        "status": "published"
+      },
+      {
+        "number": "02",
+        "title": "Protocols d'Emmascarat: Protegir la Vora",
+        "excerpt": "Per què la capa més fina de vernís es troba a les vores? Aprèn la \"regla dels 2 mm\" i entén per què emmascarat les \"zones vermelles\" és l'únic segur real contra un repintat costós.",
+        "slug": "masking-protocols",
+        "date": "2025-02-05",
+        "status": "published"
+      },
+      {
+        "number": "03",
+        "title": "Protocols de Correcció Mecànica: L'Art del Tall",
+        "excerpt": "Domina la física del \"patró serp\" i el control de temperatura. Aprèn com 20 kg de pressió i un coixinet de llana tallen defectes profunds preservant el vernís.",
+        "slug": "mechanical-correction",
+        "date": "2025-02-19",
+        "status": "published"
+      },
+      {
+        "number": "04",
+        "title": "Protocols de Refinat i Estabilització: L'Acabat Mirall",
+        "excerpt": "La transició de la correcció profunda a la claredat absoluta del vernís. Aprèn a eliminar la boira de treball deixada per la llana i estabilitzar la superfície sense hologrames.",
+        "slug": "refining-stabilization",
+        "date": "2025-03-12",
+        "status": "published"
+      },
+      {
+        "number": "05",
+        "title": "Protocols de Protecció i Preservació: L'Escut Molecular",
+        "excerpt": "L'etapa final d'estabilització de la superfície. Aprèn a segellar el resultat amb protecció de grafè i a preservar un acabat mirall durant anys.",
+        "slug": "protection-preservation",
+        "date": "2025-03-26",
+        "status": "published"
+      },
+      {
+        "number": "06",
+        "title": "Detailing Especialitzat: Protocols per a Motos",
+        "excerpt": "Treball de precisió en geometries complexes. Per què les motos requereixen un enfocament exclusivament suau i l'art de netejar metall i cuir.",
+        "slug": "motorcycle-detailing",
+        "date": "2025-04-16",
+        "status": "published"
+      },
+      {
+        "number": "07",
+        "title": "Com Eliminar Marques Circulars de la Pintura",
+        "excerpt": "Entén què causa aquestes ratllades circulars a la teva pintura i el procés professional pas a pas per eliminar-les permanentment.",
+        "slug": "remove-swirl-marks",
+        "date": "2025-05-07",
+        "status": "published"
+      },
+      {
+        "number": "08",
+        "title": "Reparació de Ratllades al Parabrisa: DIY vs Professional",
+        "excerpt": "Quan pots arreglar les ratllades del parabrisa tu mateix i quan has de trucar a un professional? Comparació honesta de mètodes, costos i resultats.",
+        "slug": "windshield-scratch-repair",
+        "date": "2025-05-28",
+        "status": "published"
+      },
+      {
+        "number": "09",
+        "title": "Guia de Preus Correcció de Pintura Barcelona 2025",
+        "excerpt": "Quant costa realment la correcció professional de pintura a Barcelona? Desglossament transparent de factors de preu, nivells de paquets i què afecta el pressupost final.",
+        "slug": "paint-correction-cost-barcelona",
+        "date": "2025-06-11",
+        "status": "published"
+      },
+      {
+        "number": "10",
+        "title": "Dany UV en Finestres Acríliques: Prevenció i Restauració",
+        "excerpt": "Com la radiació UV degrada les superfícies acríliques i de policarbonat amb el temps, i el procés professional de restauració que els retorna la transparència total.",
+        "slug": "uv-damage-acrylic-restoration",
+        "date": "2025-07-02",
+        "status": "published"
+      },
+      {
+        "number": "11",
+        "title": "Polir o Repintar: Quan Té Sentit la Restauració de Pintura a Barcelona",
+        "excerpt": "Comparació basada en dades entre correcció de pintura i repintat per a vehicles de l'àrea de Barcelona. Quan el polit t'estalvia milers — i els casos excepcionals on el repintat és l'única opció.",
+        "slug": "polish-vs-repaint-barcelona",
+        "date": "2025-07-23",
+        "status": "published"
+      },
+      {
+        "number": "12",
+        "title": "Cura de Pintura per a Tesla i Vehicles Elèctrics al Mediterrani",
+        "excerpt": "Per què la pintura dels vehicles elèctrics — especialment el notòriament tou vernís de Tesla — exigeix una estratègia de protecció diferent al clima d'alta radiació UV i costa de Barcelona.",
+        "slug": "tesla-ev-paint-care-mediterranean",
+        "date": "2025-08-13",
+        "status": "published"
+      },
+      {
+        "number": "13",
+        "title": "Guia de Restauració de Fars: Guia 2026 per a Conductors de Barcelona",
+        "excerpt": "Tot el que necessites saber sobre la restauració de fars a Espanya — des dels requisits de la ITV fins a la ciència de la degradació UV i les tècniques professionals de restauració.",
+        "slug": "headlight-restoration-guide-barcelona",
+        "date": "2025-09-03",
+        "status": "published"
+      },
+      {
+        "number": "14",
+        "title": "Checklist de Detailing Pre-Venda: Què Busquen els Compradors a Catalunya",
+        "excerpt": "Maximitza el valor de revenda del teu cotxe amb un detailing professional pre-venda. Què inspeccionen els compradors catalans, quins defectes costen més i el ROI de la correcció abans d'anunciar.",
+        "slug": "pre-sale-detailing-checklist-catalonia",
+        "date": "2025-09-24",
+        "status": "published"
+      },
+      {
+        "number": "15",
+        "title": "Clima Mediterrani i la Pintura del teu Cotxe: Guia de Protecció",
+        "excerpt": "Sol, sal, pol·len, pols del Sàhara — per què els cotxes de l'àrea de Barcelona enfronten un còctel únic d'amenaces per a la pintura, i els protocols de protecció que mantenen el teu acabat intacte tot l'any.",
+        "slug": "mediterranean-climate-car-paint-protection",
+        "date": "2025-10-15",
+        "status": "published"
+      }
+    ]
+  },
+  "academy_articles": {
+    "equipment_selection": {
+      "seo_title": "Protocols de Selecció d'Equips — Rotativa vs Doble Acció | restoreLab Acadèmia",
+      "seo_description": "Per què el 99% del resultat depèn de la selecció d'eines. Polidores rotatives vs doble acció — anàlisi d'enginyeria, taula comparativa i recomanacions.",
+      "title": "Tria la Teva Arma: Rotativa vs. Doble Acció",
+      "description": "Física del Procés: Per Què el 99% del Resultat Depèn de la Selecció d'Eines. Aprèn a distingir el maneig d'un \"kart\" del comportament d'un \"camió\", i comprèn per què un centre de gravetat baix és la base de la correcció professional de pintura.",
+      "intro": "Al nostre laboratori seguim un protocol clar: la primera passada — la que elimina el 99% de totes les ratllades — es realitza de forma més eficaç amb una polidora rotativa. La màquina de doble acció, en canvi, és una eina per a l'estabilització final de la superfície.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Polidora Rotativa: Potència i Control",
+          "paragraphs": [
+            "La rotativa és la base de la correcció profunda. En seleccionar una màquina, ens centrem en tres paràmetres crítics:"
+          ],
+          "key_params": [
+            "Estabilitat sota càrrega — sense \"caiguda\" (pèrdua de RPM) sota pressió a velocitats baixes.",
+            "Centre de gravetat baix — com més curt sigui l'eix, més a prop queda l'eina de la superfície i més gran és el control del procés.",
+            "Modulació de potència — la capacitat de controlar amb precisió les RPM per a una operació segura en corbes i línies de la carrosseria."
+          ],
+          "analogy": {
+            "title": "Analogia d'enginyeria restoreLab",
+            "text": "Treballar amb una eina que té un centre de gravetat alt o desplaçat és com conduir un camió alt — gira, però mai tindrà la precisió d'un kart. Una polidora rotativa professional (per exemple, la Makita 9237CB) és un kart: baixa, previsible i extremadament eficient."
+          },
+          "table": {
+            "caption": "Anàlisi comparativa de sistemes rotatius",
+            "headers": ["Model", "Caiguda de RPM sota pressió", "Centre de gravetat baix", "Control de RPM", "Alta fiabilitat"],
+            "rows": [
+              ["Makita 9237CB", "No", "Sí", "Sí", "Sí"],
+              ["DeWALT DWP849X", "Sí", "No", "Sí", "Sí"],
+              ["FLEX PE 14-2 150", "No", "Sí", "Sí", "Sí"]
+            ]
+          },
+          "conclusion": "L'elecció del nostre laboratori és la Makita 9237CB. Ofereix un maneig ideal gràcies al seu centre de gravetat baix i estabilitat en ajustos de velocitat baixa."
+        },
+        {
+          "number": "2",
+          "title": "Doble Acció: El Bisturí de l'Acabat",
+          "paragraphs": [
+            "Un cop els defectes principals s'han eliminat amb la rotativa, comença la fase d'acabat. El plat de suport d'una polidora de doble acció realitza dos tipus de moviment simultàniament: rotacional i oscil·lant. Això permet aconseguir una superfície perfectament neta sense hologrames."
+          ],
+          "tools_title": "Equipament professional de doble acció de restoreLab",
+          "tools": [
+            {
+              "label": "Per a panells grans",
+              "text": "FLEX XFE 7-15 o Rupes LHR15 Mark II amb plat de suport de 125/150 mm."
+            },
+            {
+              "label": "Per a àrees localitzades",
+              "text": "Mini polidora Rupes LHR75E (75 mm) per treballar seccions complexes."
+            },
+            {
+              "label": "Segment premium",
+              "text": "Solucions sense fil FLEX (XCE 8 125 i PXE 80) per a màxima mobilitat en treballar en àrees petites."
+            }
+          ]
+        }
+      ]
+    },
+    "masking_protocols": {
+      "seo_title": "Protocols d'Emmascarat: Protegir la Vora | restoreLab Acadèmia",
+      "seo_description": "Per què la capa més fina de vernís és a les vores. La regla dels 2 mm, cintes de contorn i tècniques de re-emmascarat per prevenir cremades.",
+      "title": "Protocols d'Emmascarat: Protegir la Vora",
+      "description": "Per què la capa més fina de vernís es troba a les vores? Aprèn la \"regla dels 2 mm\" i entén per què emmascarat les \"zones vermelles\" és l'únic segur real contra un repintat costós.",
+      "intro": "L'emmascarat és el pas més ignorat pels principiants — i la causa més comuna de cremada del vernís. A restoreLab no confiem en la sort; confiem en la cinta d'emmascarat.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Zona de Risc: La Física del Vernís a les Vores",
+          "paragraphs": [
+            "A les vores i línies agudes de la carrosseria, el vernís sempre és significativament més fi que a les superfícies planes. Sense emmascarat, la primera passada amb un coixinet de llana pot ser fatal per al panell."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Mètode d'Emmascarat restoreLab",
+          "paragraphs": [],
+          "tools": [
+            {
+              "label": "Regla del perímetre",
+              "text": "Emmascarem les vores superposant la cinta 2 mm sobre el propi panell. Això protegeix la vora mentre treballes la secció plana principal."
+            },
+            {
+              "label": "Panells repintats",
+              "text": "Si el panell ha estat repintat, el risc de delaminació del vernís en retirar la cinta augmenta."
+            },
+            {
+              "label": "Consell professional",
+              "text": "Per reduir aquest risc, primer rebaixem l'adhesió de la cinta enganxant-la diverses vegades en uns texans abans d'aplicar-la al panell."
+            },
+            {
+              "label": "Cintes de contorn",
+              "text": "Per a corbes complexes i línies estampades, fem servir cinta de vinil estreta (6 mm), que ens permet seguir amb precisió les línies de la carrosseria."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Re-Emmascarat per a Passades d'Acabat",
+          "paragraphs": [
+            "L'emmascarat no és estàtic. Després de la primera passada (agressiva) amb un coixinet de llana, la cinta es reposiciona \"sota la vora\". Això permet que les segona i tercera etapes (amb coixinets d'escuma) refinin les pròpies vores, perquè no destaquin de la brillantor general de la superfície plana polida."
+          ]
+        }
+      ]
+    },
+    "mechanical_correction": {
+      "seo_title": "Protocols de Correcció Mecànica: L'Art del Tall | restoreLab Acadèmia",
+      "seo_description": "La tècnica del patró serp, protocol de 20 kg de pressió i física del coixinet de llana. Com tallar defectes profunds preservant el vernís.",
+      "title": "Protocols de Correcció Mecànica: L'Art del Tall",
+      "description": "Domina la física del \"patró serp\" i el control de temperatura. Aprèn com 20 kg de pressió i un coixinet de llana poden tallar defectes profunds preservant la integritat estructural del vernís.",
+      "intro": "La primera passada és l'etapa on es decideix el destí del 99,9% de les ratllades. A restoreLab fem servir la combinació Rotativa + Llana perquè és la forma més eficient d'arribar al fons d'una ratllada sense perdre temps.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "El Protocol \"40×40\" i la Tècnica del \"Patró Serp\"",
+          "paragraphs": [
+            "Polir un panell sencer d'una vegada és el camí més ràpid al sobreescalfament i resultats desiguals."
+          ],
+          "tools": [
+            {
+              "label": "Àrea de treball",
+              "text": "Sempre dividim el panell en seccions de 40×40 cm."
+            },
+            {
+              "label": "Patró de moviment",
+              "text": "La màquina es mou en un patró serp horitzontal — de vora a vora, sense pauses ni aturades."
+            },
+            {
+              "label": "Control de nivell",
+              "text": "La mà dreta manté constantment un pla anivellat, mentre la cua de la màquina es sosté a 45 graus respecte al cos per a màxim control."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Gestió de Pressió i Temperatura",
+          "paragraphs": [
+            "L'eficiència de tall depèn directament de quanta força apliquis."
+          ],
+          "tools": [
+            {
+              "label": "Pressió",
+              "text": "En superfícies horitzontals grans, fem servir fins a 20 kg de pressió. Això permet que el compost treballi a plena capacitat."
+            },
+            {
+              "label": "Control de calor",
+              "text": "Cada 20 segons de treball, parem i comprovem la temperatura del vernís amb el palmell de la mà. Si la superfície és calenta, ens movem a una secció veïna i deixem que la primera es refredi."
+            },
+            {
+              "label": "Correcció localitzada",
+              "text": "En eliminar ratllades profundes amb una rotativa petita, la pressió es redueix a 8–12 kg a causa de l'àrea de contacte menor i la major agressivitat."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "La Física del Coixinet de Llana",
+          "paragraphs": [
+            "La llana és l'eina de tall més agressiva del nostre arsenal."
+          ],
+          "tools": [
+            {
+              "label": "Centre d'eficiència",
+              "text": "Tingues en compte que la màxima potència de tall es produeix més a prop del centre del coixinet. Per treballar correctament les vores d'un panell, el centre del coixinet ha d'estendre's més enllà del perímetre."
+            },
+            {
+              "label": "Risc d'angle",
+              "text": "No recomanem augmentar l'angle del coixinet més de 5 graus. Inclinar la màquina augmenta l'agressivitat, però també multiplica el risc de cremar el vernís."
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Higiene d'Eines: Neteja del Coixinet de Llana",
+          "paragraphs": [
+            "Un coixinet de llana obstruït amb compost gastat deixa de tallar i comença a \"saltar\" pel panell."
+          ],
+          "tools": [
+            {
+              "label": "Rutina",
+              "text": "Netegem el coixinet cada dues passades (una passada = aproximadament 60 segons de treball)."
+            },
+            {
+              "label": "Tècnica",
+              "text": "Fes servir un esperó dedicat per a coixinets o un raspall de neteja de llana per pentinar les fibres, després gira el coixinet a velocitat per expulsar la pols de polit restant."
+            }
+          ],
+          "analogy": {
+            "title": "Analogia d'enginyeria restoreLab",
+            "text": "Per què caminar quan pots volar? La combinació Rotativa + Llana és el teu avió. Et porta a l'objectiu dramàticament més ràpid i amb molt menys esforç que intentar tallar una ratllada profunda amb escuma o una polidora de doble acció."
+          }
+        }
+      ]
+    },
+    "refining_stabilization": {
+      "seo_title": "Protocols de Refinat i Estabilització: L'Acabat Mirall | restoreLab Acadèmia",
+      "seo_description": "Estabilització en dues etapes després de la correcció profunda. Elimina la boira de la llana, els hologrames i aconsegueix una claredat de vernís de grau espacial.",
+      "title": "Protocols de Refinat i Estabilització: L'Acabat Mirall",
+      "description": "La transició de la correcció profunda a la claredat absoluta del vernís. Aprèn a eliminar completament la boira de treball deixada per la llana i estabilitzar la superfície per eliminar hologrames sota qualsevol font de llum.",
+      "intro": "Després de la passada inicial amb rotativa + llana, la superfície està lliure de ratllades profundes, però queda amb una boira microscòpica o marques de tall. A restoreLab tractem això com una condició intermèdia que requereix un procés d'estabilització en dues etapes.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Segona Passada: Suavitzar el Patró de Tall",
+          "paragraphs": [
+            "L'objectiu d'aquesta etapa és reduir les marques de treball deixades per la llana, preparant el vernís per a la brillantor final. Això redueix dràsticament el temps que la polidora de doble acció (DA) necessita en el següent pas."
+          ],
+          "tools": [
+            { "label": "Equip", "text": "Polidora rotativa (Makita 9237CB) + coixinet d'escuma groc (per exemple, Rupes 130 mm)." },
+            { "label": "Compost", "text": "Compost de polit de tall mitjà." }
+          ],
+          "key_params": [
+            "Velocitat: 1,7–1,9",
+            "Pressió: Al voltant de 12 kg",
+            "Temps: 30–50 segons per secció de 40×40 cm fent servir un \"patró serp\" horitzontal",
+            "Important: Tracta les peces de plàstic afegides (motllures, cobertes) amb cura, sense pressió excessiva, ja que la capa de vernís allà és mínima."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Tercera Passada: Estabilització Final (El Bisturí)",
+          "paragraphs": [
+            "Aquí fem servir una polidora de doble acció (DA) per portar el vernís a un acabat de \"grau espacial\" — perfectament clar, amb zero hologrames."
+          ],
+          "tools": [
+            { "label": "Equip", "text": "Polidora de doble acció (DA) gran (per exemple, FLEX XFE 7-15) + coixinet d'escuma suau groc o blanc." },
+            { "label": "Compost", "text": "Polish d'acabat." }
+          ],
+          "key_params": [
+            "Pressió: 0–1 kg (la màquina treballa sota el seu propi pes)",
+            "Velocitat: Màxima (6), sempre que el coixinet quedi pla contra el panell",
+            "Àrea de cobertura: Una DA permet treballar seccions més grans d'una vegada (fins a 80×80 cm)",
+            "Patró de moviment: 2–3 repeticions de \"patrons serp\" horitzontals i verticals durant 60–90 segons"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Protocol de Treball per a Pintura Negra Sòlida i Acrílic",
+          "paragraphs": [
+            "La pintura negra sòlida no metal·litzada i els acabats acrílics són els materials més exigents del nostre laboratori."
+          ],
+          "tools": [
+            { "label": "Acrílic", "text": "Durant el polit, els coixinets prendran el color del vehicle perquè el pigment està barrejat en el recobriment. Això és normal — només neteja els coixinets més freqüentment amb sabó domèstic." },
+            { "label": "Negre sòlid", "text": "Si la combinació estàndard segueix deixant hologrames, el protocol canvia: reemplaça el coixinet d'acabat cada 2–3 panells, redueix la velocitat de la DA a 2–3 i escurça el cicle de treball a 15–20 segons. En casos extrems, fes servir un polish d'imprimació (CarPro Essence) i coixinets blancs ultrasuaus." }
+          ],
+          "analogy": {
+            "title": "Manament d'enginyeria restoreLab",
+            "text": "Els hologrames són les empremtes d'un aficionat. La veritable brillantor apareix només quan el vernís es torna òpticament anivellat i completament estabilitzat."
+          }
+        }
+      ]
+    },
+    "protection_preservation": {
+      "seo_title": "Protocols de Protecció i Preservació: L'Escut Molecular | restoreLab Acadèmia",
+      "seo_description": "Aplicació de recobriment ceràmic, el protocol de tres criteris i dades sobre longevitat del vernís. Com segellar un acabat mirall durant anys.",
+      "title": "Protocols de Protecció i Preservació: L'Escut Molecular",
+      "description": "L'etapa final d'estabilització de la superfície. Aprèn a segellar el resultat amb protecció de grafè, per què la cera és una elecció d'entusiastes i no de professionals, i com preservar un acabat mirall durant anys.",
+      "intro": "Després del polit profund, el vernís està al seu punt màxim d'adhesió i preparat per absorbir qualsevol contaminació. A restoreLab sempre completem el cicle aplicant un recobriment protector, perquè les propietats hidrofòbiques treballin a favor de mantenir el vehicle net.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Triar Protecció: El Protocol de \"Tres Criteris\"",
+          "paragraphs": [
+            "Després de provar desenes de productes, el nostre laboratori va definir tres paràmetres obligatoris per a un recobriment ceràmic eficaç:"
+          ],
+          "key_params": [
+            "Accessibilitat i preu: El producte no hauria de costar tant com repintar mig cotxe.",
+            "Facilitat d'aplicació: Ha de ser possible anivellar i polir sense pressió, minimitzant el risc d'introduir noves ratllades durant la neteja final.",
+            "Rendiment hidrofòbic: Un fort efecte repel·lent a l'aigua és l'indicador clau de valor per al client."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocol Tècnic d'Aplicació",
+          "paragraphs": [
+            "Abans de l'aplicació, la carrosseria ha d'estar completament desgreixada."
+          ],
+          "tools": [
+            { "label": "Dosificació", "text": "El consum mitjà és de 10 ml per capa." },
+            { "label": "Àrea de cobertura", "text": "Gràcies al llarg temps d'evaporació, pots recobrir fins a un terç del vehicle d'una vegada, i després procedir tranquil·lament a l'anivellament i polit." },
+            { "label": "Eines", "text": "Fes servir un joc de 6 tovalloles de microfibra per anivellar i polir (4 tovalloles de pèl curt per a la passada inicial i 2 tovalloles de pèl llarg per a l'acabat final)." },
+            { "label": "Capes", "text": "Es recomana una aplicació de dues capes, amb un interval d'una hora entre capes." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Estabilització i Cura Posterior",
+          "paragraphs": [
+            "Un recobriment ceràmic necessita temps per completar el seu procés de curat químic:"
+          ],
+          "tools": [
+            { "label": "Curat natural", "text": "12 hores en un espai sec (l'assecat per infrarojos és opcional, no obligatori)." },
+            { "label": "Protocol de rentat", "text": "El primer rentat amb productes químics no s'ha de fer abans de 7 dies després de l'aplicació." },
+            { "label": "Manteniment", "text": "Fins i tot el millor recobriment ceràmic no proporciona 100% de protecció contra ratllades. Al nostre laboratori recomanem renovar la protecció un cop l'any després d'un polit lleuger amb doble acció." }
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Economia i Mites: Quant Dura el Vernís?",
+          "paragraphs": [
+            "Moltes persones temen el polit perquè creuen que \"consumeix\" el vernís per sempre. Aquí teniu les dades de restoreLab:"
+          ],
+          "key_params": [
+            "La correcció profunda amb llana elimina una mitjana de 5,5 micres.",
+            "El llindar segur de polit és el gruix del vernís mesurat al marc de la porta.",
+            "Amb l'enfocament correcte, el polit profund professional pot fer-se fins a 10 vegades, i el polit lleuger fins a 25 vegades durant la vida del vehicle."
+          ],
+          "analogy": {
+            "title": "Conclusió d'enginyeria restoreLab",
+            "text": "El professionalisme no és només la capacitat de tallar una ratllada fins a zero, sinó també saber quan parar per preservar aquestes valuoses micres de vernís per al futur."
+          }
+        }
+      ]
+    },
+    "motorcycle_detailing": {
+      "seo_title": "Detailing Especialitzat: Protocols per a Motos | restoreLab Acadèmia",
+      "seo_description": "Polit de precisió en geometries complexes. Correcció de toc lleuger, treball en panells plàstics, neteja de metall i cura del cuir per a motos.",
+      "title": "Detailing Especialitzat: Protocols per a Motos",
+      "description": "Treball de precisió en geometries complexes. Per què les motos requereixen un enfocament exclusivament de toc lleuger, com treballar en plàstic quan no es pot mesurar el gruix del vernís, i l'art de netejar metall.",
+      "intro": "Una moto no és \"un cotxe petit\". És un objecte d'enginyeria complex, on el 70% de les peces pintades són de plàstic i l'accés a elles és limitat.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Protocol de Seguretat: Sense Tall Agressiu",
+          "paragraphs": [
+            "A diferència d'un cotxe, una moto no té \"àrees de referència\" com els marcs de les portes on pots determinar un llindar de risc segur per a l'eliminació del vernís. La majoria de les motos han estat repintades en algun moment, i el gruix exacte del vernís sempre és desconegut."
+          ],
+          "tools": [
+            { "label": "Regla principal", "text": "Les motos es poleixen fent servir només correcció lleugera. Sense tall profund agressiu \"a zero\" — només millora de la brillantor." },
+            { "label": "Test de profunditat", "text": "Per determinar si una ratllada es pot eliminar de forma segura, la ruixem amb desgreixant. Si desapareix sota la pel·lícula líquida, és al vernís i es pot corregir de forma segura." }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Protocol Tècnic de Correcció",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Eines", "text": "Fem servir una mini polidora rotativa (per exemple, la Krauss R3-SET) a la primera velocitat amb un coixinet groc Rupes i compost Sonax NP 03-06." },
+            { "label": "Seccions planes", "text": "A causa de les formes complexes de dipòsits i carenat, dividim la peça en seccions estretes, treballant cadascuna durant 10–15 segons amb 3–5 kg de pressió." },
+            { "label": "Àrees de difícil accés", "text": "Les àrees on ni tan sols un plat de suport de 30 mm pot accedir es corregeixen a mà fent servir moviments intensius i 10–12 kg de pressió." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Neteja de Metall i Cura del Cuir",
+          "paragraphs": [],
+          "tools": [
+            { "label": "Metall", "text": "Per a tubs d'escapament i crom, fem servir puliments metàl·lics especialitzats (Autosol) que eliminen l'oxidació i restauren un acabat mirall." },
+            { "label": "Cuir", "text": "El protocol restoreLab inclou neteja amb un raspall suau i un netejador escumós, eliminació de residus amb una tovallola de microfibra humida, i preservació obligatòria amb una crema acondicionadora protectora." }
+          ]
+        }
+      ]
+    },
+    "remove_swirl_marks": {
+      "seo_title": "Com Eliminar Marques Circulars de la Pintura | restoreLab Acadèmia",
+      "seo_description": "Què causa les marques circulars i com les eliminen els professionals. Procés de correcció pas a pas, eines i consells de prevenció.",
+      "title": "Com Eliminar Marques Circulars de la Pintura",
+      "description": "Entén què causa aquestes ratllades circulars visibles sota llum directa — i el procés professional exacte per eliminar-les permanentment sense danyar el vernís.",
+      "intro": "Les marques circulars (swirl marks) són el defecte de pintura més comú que trobem. Apareixen com ratllades circulars o en forma de teranyina visibles sota la llum solar directa o il·luminació artificial. A restoreLab, les veiem en 9 de cada 10 vehicles que passen pel nostre servei.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Què Causa les Marques Circulars?",
+          "paragraphs": [
+            "Les marques circulars són micro-ratllades al vernís causades per tècniques inadequades de rentat i assecat. Els culpables més comuns són:"
+          ],
+          "key_params": [
+            "Rentats automàtics amb raspalls giratoris que arrosseguen brutícia sobre la pintura",
+            "Fer servir el mètode d'un sol cubell sense reixeta anti-brutícia",
+            "Assecar el cotxe amb una tovallola seca o bruta",
+            "Aplicar cera o puliment amb un aplicador contaminat"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Procés Professional d'Eliminació",
+          "paragraphs": [
+            "Eliminar les marques circulars requereix polit mecànic — no existeix una drecera química. El procés implica abrasió controlada del vernís per anivellar la superfície per sota de la profunditat de les ratllades."
+          ],
+          "tools": [
+            { "label": "Pas 1", "text": "Rentat exhaustiu i descontaminació amb clay bar per eliminar tots els contaminants adherits." },
+            { "label": "Pas 2", "text": "Mesurament del gruix de la pintura per determinar els límits segurs de polit." },
+            { "label": "Pas 3", "text": "Polit mecànic amb polidora de doble acció, compost de tall mitjà i coixinet d'escuma." },
+            { "label": "Pas 4", "text": "Passada d'acabat amb polish fi per aconseguir la màxima claredat." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Prevenció: Mantenir els Swirls Lluny",
+          "paragraphs": [
+            "Després de la correcció, protegir el resultat és essencial. Aquests són els hàbits clau per evitar que les marques circulars tornin:"
+          ],
+          "key_params": [
+            "Fes servir el mètode de dos cubells amb reixeta anti-brutícia a cada cubell",
+            "Mai facis servir rentats automàtics — només rentat a mà",
+            "Fes servir tovalloles de microfibra d'alta qualitat i reemplaça-les regularment",
+            "Aplica un recobriment ceràmic o segellant per a protecció a llarg termini"
+          ]
+        }
+      ]
+    },
+    "windshield_scratch_repair": {
+      "seo_title": "Reparació de Ratllades al Parabrisa: DIY vs Professional | restoreLab Acadèmia",
+      "seo_description": "Quan arreglar ratllades del parabrisa tu mateix i quan trucar a un professional. Comparació honesta de kits DIY vs polit professional.",
+      "title": "Reparació de Ratllades al Parabrisa: DIY vs Professional",
+      "description": "Una comparació honesta entre kits de reparació casolans i el polit professional de vidre. Desglossem costos, riscos i quan té sentit cada opció.",
+      "intro": "Les ratllades al parabrisa causades per neteja-parabrises desgastats són un dels problemes més comuns. La pregunta sempre és la mateixa: puc arreglar-ho jo mateix o necessito un professional? Aquesta és la nostra resposta honesta.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Kits DIY: Què Poden i Què No Poden Fer",
+          "paragraphs": [
+            "Els kits d'eliminació de ratllades de vidre solen incloure pols d'òxid de ceri i una roda de polit de feltre. Poden funcionar per a ratllades superficials molt lleus, però tenen limitacions significatives."
+          ],
+          "key_params": [
+            "Efectius només en ratllades que no es noten amb l'ungla",
+            "Risc de crear distorsió òptica si s'apliquen de forma desigual",
+            "Requereixen típicament 2-4 hores de treball manual per zona petita",
+            "Cost: 20-50€ per kit, però els resultats solen ser inconsistents"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Polit Professional de Vidre",
+          "paragraphs": [
+            "El polit professional de vidre utilitza equipament especialitzat i compostos que treballen a un nivell diferent que els kits DIY. La diferència clau és precisió i consistència."
+          ],
+          "tools": [
+            { "label": "Equip", "text": "Polidora rotativa professional amb coixinets específics per a vidre i suspensió d'òxid de ceri." },
+            { "label": "Procés", "text": "Passades controlades i mesurades que eliminen material uniformement sense crear distorsió." },
+            { "label": "Resultat", "text": "Eliminació completa de ratllades amb claredat òptica mantinguda. Estalvia 300-500€ vs substitució del parabrisa." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Quan Triar Cada Opció",
+          "paragraphs": [],
+          "tools": [
+            { "label": "DIY", "text": "Ratllades superficials fines en finestres laterals on la perfecció òptica és menys crítica." },
+            { "label": "Professional", "text": "Ratllades del neteja-parabrises, ratllades profundes que es noten al tacte, o qualsevol ratllada en la línia de visió del conductor." },
+            { "label": "Substituir", "text": "Esquerdes, impactes que s'han estès, o danys a la capa laminada del parabrisa." }
+          ]
+        }
+      ]
+    },
+    "paint_correction_cost_barcelona": {
+      "seo_title": "Guia de Preus Correcció de Pintura Barcelona 2025 | restoreLab",
+      "seo_description": "Quant costa la correcció de pintura a Barcelona? 6 paquets des de 149€ Express Refresh fins a 2 290€ PPF + Ceràmic. Multiplicadors per mida.",
+      "title": "Guia de Preus Correcció de Pintura Barcelona 2025",
+      "description": "Un desglossament transparent del que costa la correcció professional de pintura a l'àrea metropolitana de Barcelona. Nivells de paquets, factors de preu i com obtenir el millor valor per al teu vehicle.",
+      "intro": "Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2025.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Què Afecta el Preu?",
+          "paragraphs": [
+            "Diversos factors determinen el cost final d'un treball de correcció de pintura. Entendre'ls t'ajuda a saber què esperar."
+          ],
+          "key_params": [
+            "Mida del vehicle: un cotxe compacte requereix menys temps que un SUV o furgoneta",
+            "Estat de la pintura: swirls lleus requereixen una fase, ratllades profundes requereixen dues o tres",
+            "Tipus de pintura: els colors sòlids són directes; els metal·litzats i perlats necessiten més cura",
+            "Nivell de protecció: afegir recobriment ceràmic augmenta el preu però aporta valor a llarg termini"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Els Nostres Nivells de Paquets",
+          "paragraphs": [
+            "A restoreLab oferim sis paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +20%, SUV gran +35%."
+          ],
+          "tools": [
+            { "label": "Express Refresh", "text": "149€. Rentat descontaminant, clay bar, polit suau i segellant esprai. ~2 hores." },
+            { "label": "Correcció Single-Stage", "text": "289€. Polit mecànic d'un pas que elimina fins al 70% de swirls. 3-4 hores." },
+            { "label": "Correcció Two-Stage", "text": "549€. Compound + polit complet, 90%+ eliminació de defectes. 5-7 hores." },
+            { "label": "Ceràmic 2 Anys", "text": "649€. Correcció two-stage + ceràmic certificat de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular." },
+            { "label": "Ceràmic Premium 5 Anys", "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores." },
+            { "label": "Flagship PPF + Ceràmic", "text": "Des de 2 290€. PPF en zones d'impacte + ceràmic 5 anys complet. 1,5-2 dies." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Com Obtenir un Pressupost",
+          "paragraphs": [
+            "La forma més ràpida d'obtenir un pressupost exacte és enviar-nos fotos del teu vehicle per WhatsApp. Avaluarem l'estat de la pintura i recomanarem el paquet adequat — sense obligacions, sense pressió."
+          ],
+          "key_params": [
+            "Envia 4-6 fotos a la llum directa del sol mostrant la pintura des de diferents angles",
+            "Inclou primers plans de les zones més afectades",
+            "Esmenta la marca, model i any del teu vehicle",
+            "Responem en una mitjana de 30 minuts amb una avaluació honesta i preu"
+          ]
+        }
+      ]
+    },
+    "uv_damage_acrylic_restoration": {
+      "seo_title": "Dany UV en Finestres Acríliques: Prevenció i Restauració | restoreLab Acadèmia",
+      "seo_description": "Com la radiació UV degrada les finestres acríliques i el procés professional de restauració. Consells de prevenció i alternatives econòmiques.",
+      "title": "Dany UV en Finestres Acríliques: Prevenció i Restauració",
+      "description": "Com la radiació ultravioleta degrada progressivament les superfícies acríliques i de policarbonat, tornant-les grogues i opaques — i el procés professional de restauració que els retorna la transparència total.",
+      "intro": "Les finestres acríliques i de policarbonat són lleugeres, resistents a impactes i àmpliament utilitzades en vaixells, caravanes, claraboies i instal·lacions arquitectòniques. Però tenen una debilitat: la radiació UV. Amb el temps, els raigs UV trenquen les cadenes de polímers, causant grogor, opacitat i fragilitat.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Com l'UV Danya l'Acrílic",
+          "paragraphs": [
+            "La llum ultravioleta causa foto-oxidació en superfícies d'acrílic (PMMA) i policarbonat. Aquest procés químic degrada la capa superficial, resultant en canvis visibles."
+          ],
+          "key_params": [
+            "Grogor: el senyal més visible, causat per la formació de cromòfors al polímers",
+            "Opacitat: el micro-esquerdat a la superfície dispersa la llum, reduint la transparència",
+            "Fragilitat: l'exposició prolongada debilita el material, fent-lo propens a esquerdes",
+            "Cronologia: la degradació notable comença típicament després de 3-5 anys d'exposició solar directa"
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Procés Professional de Restauració",
+          "paragraphs": [
+            "A diferència del vidre, l'acrílic pot restaurar-se mitjançant polit perquè el material és més tou i uniforme. El procés implica abrasius progressivament més fins per eliminar la capa superficial danyada."
+          ],
+          "tools": [
+            { "label": "Avaluació", "text": "Avaluar la profunditat del dany UV i comprovar la integritat estructural." },
+            { "label": "Llijat humit", "text": "Començant amb gra P800-P1200 per eliminar la capa oxidada. L'acrílic s'ha de mantenir humit per prevenir acumulació de calor." },
+            { "label": "Polit mecànic", "text": "Etapes progressives amb compostos dedicats per a acrílic, des de tall mitjà fins a acabat ultrafí." },
+            { "label": "Protecció UV", "text": "Aplicació de recobriment amb estabilitzador UV per alentir la degradació futura." }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Consells de Prevenció",
+          "paragraphs": [
+            "Protegir l'acrílic del dany UV és més efectiu que restaurar-lo després. Aquestes són les recomanacions professionals:"
+          ],
+          "key_params": [
+            "Aplica recobriment protector UV anualment a totes les superfícies acríliques exposades",
+            "Fes servir fundes quan la superfície no estigui en ús actiu (fundes de vaixell, tendals de caravana)",
+            "Neteja només amb netejadors de pH neutre — evita productes a base d'amoníac",
+            "Mai assequis l'acrílic en sec — sempre fes servir una tovallola de microfibra humida per prevenir ratllades"
+          ]
+        }
+      ]
+    },
+    "polish_vs_repaint_barcelona": {
+      "seo_title": "Polir o Repintar? Guia de Restauració de Pintura Barcelona | restoreLab",
+      "seo_description": "Quan la correcció de pintura supera el repintat a Barcelona? Comparació de costos, criteris de decisió i què significa el clima mediterrani per a la teva pintura.",
+      "title": "Polir o Repintar: Quan Té Sentit la Restauració de Pintura a Barcelona",
+      "description": "Una guia pràctica basada en dades per triar entre correcció de pintura i repintat — amb anàlisi de costos específic per a l'àrea metropolitana de Barcelona.",
+      "intro": "Cada setmana rebem fotos de propietaris de vehicles a Sant Cugat, Barcelona i el Vallès Occidental fent la mateixa pregunta: hauria de polir o repintar? La resposta depèn de la profunditat i el tipus de dany — però en aproximadament el 85% dels casos, la correcció professional de pintura ofereix un resultat superior a una fracció del cost. Aquesta guia explica com prendre aquesta decisió amb confiança.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Entenent el Dany: Vernís vs Capa Base",
+          "paragraphs": [
+            "Abans de decidir entre correcció i repintat, necessites entendre on se situa el dany en el sistema de pintura. La pintura automobilística moderna consta de quatre capes: la capa e-coat (imprimació per electrodeposició), la imprimació-aparell, la capa base (color) i el vernís a sobre. El vernís té típicament 40-60 micres de gruix en un acabat de fàbrica i actua com la capa de protecció sacrificial.",
+            "Les marques circulars (swirl marks), ratllades lleus, oxidació, taques d'aigua i marques d'excrements d'aus se situen dins d'aquesta capa de vernís. Una correcció professional de pintura — usant polidores com la Rupes LHR15 Mark III o Makita 9237CB — funciona anivellant el vernís a una profunditat uniforme, eliminant els defectes sense tocar el color subjacent. A restoreLab, mesurem la profunditat de pintura amb un mesurador digital (Elcometer 456) abans de cada treball, assegurant que mai comprometem la integritat estructural de l'acabat.",
+            "El repintat, per contra, només és necessari quan el dany s'estén a través del vernís fins a la capa base — parlem de ratllades profundes de clau on es veu la imprimació o el metall nu, grans descrostaments que s'han oxidat, o panells on el vernís s'ha deslaminat completament. Al clima mediterrani de Barcelona, on els índexs UV assoleixen regularment 9-10 a l'estiu i les temperatures superen els 35 graus Celsius, la fallada del vernís en vehicles mal mantinguts és més comuna que al nord d'Europa."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Comparació de Costos: Correcció vs Repintat a Barcelona",
+          "paragraphs": [
+            "L'economia afavoreix clarament la correcció en la majoria dels casos. Una correcció de pintura completa en dues fases a restoreLab comença en 549 euros per a un sedan, mentre que un repintat professional d'un sol panell en un taller de xapa de Barcelona oscil·la entre 300 i 600 euros — i un repintat complet del vehicle costa entre 2.000 i 5.000 euros segons la qualitat. El nostre paquet més popular, el Ceràmic 2Y a 649 euros, inclou una correcció completa en dues fases més un recobriment ceràmic certificat de 2 anys amb Gyeon o Gtechniq — oferint tant restauració com protecció a llarg termini.",
+            "Més enllà del cost directe, hi ha despeses ocultes del repintat: el cost del cotxe de lloguer durant els 3-7 dies que el cotxe és al taller, la depreciació per una pintura no original (que queda registrada a l'historial del vehicle i és visible sota inspecció), i el risc de desajust de color, especialment en acabats metal·litzats i perlats. Els nostres clients a Sant Cugat i Barcelona comproven sistemàticament que la correcció preserva tant la integritat original de fàbrica com el valor de revenda. Consulteu el nostre desglossament complet de preus a la pàgina de preus.",
+            "També hi ha el factor temps. Una correcció de pintura mòbil dura 5-7 hores a la teva ubicació — el teu garatge a Sant Cugat, el teu aparcament d'oficina a Barcelona o la teva entrada a Terrassa. Sense deixar el cotxe, sense lloguer, sense interrupcions. Portem tot el necessari: generador, polidores Rupes, compostos Koch Chemie, subministrament d'aigua i llums d'inspecció LED."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "El Marc de Decisió: Polir, Repintar o Protegir",
+          "paragraphs": [
+            "A restoreLab, utilitzem un marc senzill per a cada avaluació. Primer, mesurem el gruix de pintura a cada panell amb un mesurador digital. Si el vernís marca per sobre de 80 micres a la majoria de zones, hi ha material suficient per a una correcció completa en múltiples fases. Si les lectures són inferiors a 60 micres en certs panells, això indica repintat previ o correcció intensiva — i ajustem el nostre enfocament en conseqüència.",
+            "Segon, realitzem la 'prova de l'ungla' a les ratllades més profundes. Si la teva ungla s'enganxa fermament en una ratllada, probablement s'estén a través del vernís, i aquesta ratllada específica pot no ser completament eliminable. No obstant això, normalment podem reduir-ne la visibilitat en un 70-80% i fer-la imperceptible en condicions normals de visió. Només quan les ratllades han exposat el metall nu o la imprimació, el repintat es converteix en la recomanació correcta.",
+            "Tercer, avaluem l'estat general en relació amb el valor del vehicle i els objectius del propietari. Un cotxe d'ús diari de 15 anys amb marques circulars moderades es beneficia enormement d'una correcció en una fase a 289 euros — el retorn en termes d'aparença és excepcional. Un nou BMW M4 a Sant Cugat mereix el Ceràmic Premium 5Y a 1.049 euros per a màxima protecció a llarg termini. I un vehicle destinat a la revenda hauria de considerar el nostre Pack Pre-Venda a 249 euros per al millor retorn d'inversió. Podeu veure resultats reals de tots aquests escenaris a la nostra galeria d'abans i després."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Factors Específics de Barcelona: Clima i Entorn",
+          "paragraphs": [
+            "L'àrea metropolitana de Barcelona presenta desafiaments específics que afecten aquesta decisió. L'índex UV a l'estiu assoleix 9-10 (extrem), cosa que accelera l'oxidació del vernís — particularment en vehicles aparcats a l'exterior a Sant Cugat o les zones costaneres de Castelldefels i Gavà. L'aire salí mediterrani transporta partícules de clorur terra endins, especialment durant els vents de Garbí, contribuint a la micro-corrosió en zones de descrostaments.",
+            "Els episodis de pols sahariana (calima) dipositen partícules abrasives fines que causen marques circulars durant el rentat si no es gestionen correctament. La resina de pi dels arbres que voregen molts carrers de Sant Cugat, Bellaterra i Matadepera grava el vernís en 48 hores si no s'elimina. Tots aquests factors fan que la protecció regular de pintura — no el repintat — sigui la inversió lògica per als vehicles de l'àrea de Barcelona.",
+            "La nostra recomanació per a la majoria de vehicles a l'àrea de Barcelona: una correcció professional en dues fases seguida d'un recobriment ceràmic (des de 649 euros) proporciona 2-5 anys de protecció activa contra aquestes amenaces ambientals. Això és molt més rendible que esperar que el dany s'acumuli i llavors enfrontar-se a un repintat complet. La prevenció sempre és més barata que la reparació — especialment en aquest clima. Per a preus específics i detalls de paquets, visiteu la nostra pàgina de preus o envieu fotos per WhatsApp per a una avaluació gratuïta."
+          ]
+        }
+      ]
+    },
+    "tesla_ev_paint_care_mediterranean": {
+      "seo_title": "Cura de Pintura Tesla i VE Clima Mediterrani | restoreLab",
+      "seo_description": "Per què els vernissos de Tesla i vehicles elèctrics necessiten cura especial al clima de Barcelona. Solucions per a pintura tova, ceràmic i protocols.",
+      "title": "Cura de Pintura per a Tesla i Vehicles Elèctrics al Mediterrani",
+      "description": "Per què la pintura dels vehicles elèctrics — especialment el notòriament tou vernís de Tesla — exigeix una estratègia diferent de correcció i protecció a l'entorn d'alta radiació UV i brisa marina de Barcelona.",
+      "intro": "Els vehicles elèctrics són a tot arreu a Barcelona. Els Tesla Model 3 i Model Y dominen els carrers de Sant Cugat, la Diagonal i els aparcaments de Pedralbes. Però els propietaris de VE descobreixen ràpidament una realitat frustrant: la pintura de molts vehicles elèctrics — Tesla en particular — és significativament més tova i fina que la de fabricants tradicionals. Combinat amb la intensa radiació UV de Barcelona, l'aire salí i la pols sahariana, això crea una tempesta perfecta de degradació de pintura que exigeix un enfocament especialitzat.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Per Què la Pintura dels VE És Diferent",
+          "paragraphs": [
+            "La pintura de fàbrica de Tesla ha estat un punt feble conegut des de l'era del Model S. Les mesures independents de profunditat de pintura mostren consistentment un gruix de vernís de 25-35 micres en vehicles Tesla — comparat amb 45-60 micres en fabricants alemanys comparables com BMW, Mercedes i Audi. Aquest vernís més fi significa menys marge d'error durant la correcció i una degradació més ràpida per l'exposició UV.",
+            "El problema no és exclusiu de Tesla. Molts fabricants de VE utilitzen sistemes de pintura a l'aigua amb menors emissions de VOC, cosa positiva per al medi ambient però que resulta en vernissos més tous. Polestar, BYD i fins i tot alguns acabats del Porsche Taycan mostren característiques similars. La pintura és més susceptible a marques circulars de rentats automàtics, marques d'assecat incorrecte i gravat per excrements d'aus o resina d'arbres — tot això s'accelera amb les més de 2.500 hores anuals de sol de Barcelona.",
+            "A restoreLab, hem corregit més de 80 vehicles Tesla a l'àrea de Sant Cugat i Barcelona. Hem desenvolupat protocols específics per a aquests sistemes de pintura tova que difereixen substancialment dels nostres procediments estàndard de correcció automobilística. El principi clau: menys tall agressiu, acabat més refinat i protecció ceràmica obligatòria després."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Protocol de Correcció per a VE de restoreLab",
+          "paragraphs": [
+            "El nostre protocol de correcció per a Tesla i VE comença amb una mesura precisa de la profunditat de pintura a cada panell usant un mesurador Elcometer 456. En un Tesla Model 3 típic amb 28-32 micres de vernís, sabem immediatament que la correcció rotativa agressiva queda descartada. En el seu lloc, usem una polidora de doble acció Rupes LHR15 Mark III amb un pad d'escuma de tall mitjà (Rupes groc) i compost Koch Chemie F6.01 Fine Cut — una combinació que elimina el 60-70% de les marques circulars eliminant només 1-2 micres de vernís.",
+            "Per a defectes més profunds en pintura Tesla, usem una micro-rotativa (Rupes LHR75E amb plat de suport de 75 mm) per a correcció puntual dirigida a pressió reduïda — màxim 5-8 kg enfront dels 15-20 kg que usem en pintura alemanya amb vernissos gruixuts. El pas d'acabat utilitza Sonax Perfect Finish 04-06 amb un pad Rupes blau (ultrafí) per aconseguir una claredat sense hologrames.",
+            "La gestió de la temperatura és crítica en condicions mediterrànies. Les temperatures superficials a l'estiu a Barcelona poden assolir els 60-65 graus Celsius en panells de color fosc aparcats al sol. Sempre treballem a l'ombra o en aparcament cobert, i monitoritzem la temperatura del vernís durant la correcció. En el Tesla Midnight Silver Metallic i Solid Black — els dos acabats més desafiadors — reduïm el temps de passada a intervals de 15 segons i netegem el pad després de cada secció del panell."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Protecció Ceràmica: Imprescindible per a VE",
+          "paragraphs": [
+            "Per a qualsevol Tesla o VE a l'àrea de Barcelona, considerem el recobriment ceràmic una necessitat, no una opció. El vernís fi simplement no pot suportar cicles repetits d'exposició UV, aire salí, resina de pi i pols sahariana sense degradar-se ràpidament. Un recobriment ceràmic de qualitat actua com un escut sacrificial, absorbint el dany ambiental que d'altra manera atacaria directament el vernís.",
+            "El nostre mínim recomanat per a propietaris de Tesla és el paquet Ceràmic 2Y a 649 euros — que inclou una acurada correcció en dues fases seguida d'una aplicació certificada de Gyeon MOHS o Gtechniq Crystal Serum Light. Per a propietaris de Tesla que vulguin màxima protecció, el nostre Ceràmic Premium 5Y a 1.049 euros afegeix una capa superior infusionada amb grafè, tractament hidrofòbic del parabrisa i ceràmic a les llantes — creant una barrera integral contra les amenaces ambientals de Barcelona.",
+            "Els números avalen aquesta inversió. Un repintat complet de Tesla Model 3 a Barcelona costa entre 3.500 i 5.000 euros. Una correcció i protecció ceràmica a 649-1.049 euros, renovada cada 2-5 anys, manté la pintura original de fàbrica intacta durant tota la vida del vehicle. El recobriment ceràmic també facilita dràsticament el manteniment setmanal — un simple esbandida elimina la majoria de la contaminació, reduint el risc de marques circulars per rentat. Per a més detalls sobre la tecnologia de recobriment ceràmic, consulteu el nostre article sobre protocols de protecció i preservació a l'Acadèmia."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Protocol de Manteniment per a VE Protegits",
+          "paragraphs": [
+            "Després de l'aplicació del recobriment ceràmic, el protocol de manteniment determina quant dura la protecció. Per a propietaris de Tesla i VE a Barcelona, recomanem el següent calendari: un rentat a mà amb pH neutre cada dues setmanes usant el mètode de dos cubells amb xampú CarPro Reset (formulat per a vehicles amb recobriment). Mai facis servir un rentat automàtic — els raspalls destruiran el tou vernís sota el ceràmic.",
+            "Cada tres mesos, descontamina la pintura amb CarPro Iron X per eliminar les partícules de ferro incrustades del trànsit intens de Barcelona i la pols de frens. Cada sis mesos, aplica un booster ceràmic (Gyeon Cure o spray de manteniment Gtechniq Crystal Serum Light) per refrescar la capa hidrofòbica. Aquest protocol estén la vida efectiva d'un recobriment de 2 anys a més de 3 anys, i un de 5 anys a 6-7 anys en condicions mediterrànies.",
+            "Els excrements d'aus i la resina de pi — ambdós extremadament comuns a Sant Cugat, Bellaterra i Matadepera — s'han d'eliminar en un termini de 24-48 hores fins i tot en vehicles amb recobriment. L'acidesa grava a través dels recobriments ceràmics si es deixen massa temps, assolint el tou vernís a sota. Mantingues un spray de detailer ràpid (Koch Chemie Quick and Shine) i una tovallola de microfibra al cotxe per a l'eliminació immediata de contaminants — especialment si aparques sota arbres a la zona de Sant Cugat. Per a preus dels nostres paquets de manteniment o per reservar la teva correcció de Tesla, visita la nostra pàgina de preus o envia'ns un missatge per WhatsApp."
+          ]
+        }
+      ]
+    },
+    "headlight_restoration_guide_barcelona": {
+      "seo_title": "Guia Restauració de Fars Barcelona 2026 | restoreLab",
+      "seo_description": "Guia completa de restauració de fars per a conductors de Barcelona. ITV, ciència de degradació UV, DIY vs professional i preus des de 79 euros.",
+      "title": "Guia de Restauració de Fars: Guia 2026 per a Conductors de Barcelona",
+      "description": "Tot el que els conductors de l'àrea de Barcelona necessiten saber sobre la restauració de fars — des dels requisits de la ITV fins a la ciència de la degradació UV i les tècniques professionals que restauren la claredat total.",
+      "intro": "Els fars groguencs i opacs no són només un problema estètic — són un perill de seguretat i un possible punt de fallada a la ITV. Al clima de Barcelona, amb més de 2.500 hores de sol a l'any i índexs UV que assoleixen 9-10 a l'estiu, les òptiques dels fars es degraden més ràpid que a la majoria de ciutats europees. Aquesta guia cobreix la ciència darrere la degradació, quan la restauració professional té sentit, i el que els conductors de Barcelona necessiten saber sobre el compliment de la ITV el 2026.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Per Què Grogenegen els Fars: La Ciència de l'UV",
+          "paragraphs": [
+            "Les òptiques modernes dels fars estan fabricades amb policarbonat — un plàstic lleuger i resistent a impactes que va substituir el vidre a finals dels anys 90. El policarbonat és un excel·lent material òptic, però té una vulnerabilitat significativa: la radiació ultraviolada trenca les cadenes de polímers a la superfície, causant foto-oxidació. Això es manifesta com grogor, opacitat i eventualment micro-esquerdat que dispersa la llum i redueix l'emissió.",
+            "Els fars de fàbrica vénen amb un recobriment dur resistent als UV aplicat durant la fabricació. Aquest recobriment dura típicament 3-5 anys en condicions normals — però al clima mediterrani de Barcelona, la degradació comença abans. La combinació de més de 2.500 hores anuals de sol, altes temperatures ambientals (mitjanes d'estiu de 28-30 graus Celsius amb temperatures superficials que superen els 60 graus) i la radiació UV reflectida pels edificis de colors clars típics del Mediterrani accelera el procés. Regularment veiem un grogor significatiu en vehicles de tot just 3 anys a la zona de Sant Cugat i Barcelona.",
+            "Un cop falla el recobriment UV de fàbrica, la degradació s'accelera exponencialment. En 12-18 mesos, el policarbonat desenvolupa una opacitat groguenca uniforme que redueix l'emissió de llum un 30-50%. En aquesta fase, els fars encara poden passar la ITV — però el conductor circula amb una visibilitat nocturna significativament compromesa, particularment perillosa en carreteres sense il·luminació com les de Collserola, Vallvidrera o l'aproximació per l'AP-7 a Terrassa."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Compliment de la ITV: El Que Necessites Saber el 2026",
+          "paragraphs": [
+            "La ITV (Inspecció Tècnica de Vehicles) comprova el rendiment dels fars com a part de la inspecció del sistema d'il·luminació. La prova mesura la intensitat de l'emissió de llum i el patró del feix. Les òptiques groguenques o opaques redueixen els lux mesurats al punt de prova, i els fars greument degradats poden causar un suspens a la ITV — classificat com a 'defecte greu' que s'ha de corregir abans que el vehicle passi.",
+            "A la pràctica, el llindar depèn de l'estació ITV específica i de l'inspector. Òptiques lleugerament groguenques en vehicles més nous amb potents bombetes LED o xenó poden seguir produint prou emissió per aprovar. Però els vehicles més antics equipats amb halògenes i òptiques degradades freqüentment suspenen. El cost de la repetició en una estació ITV de Barcelona (típicament 20-30 euros per repetició) s'acumula si suspens diverses inspeccions.",
+            "La restauració professional de fars és la solució més rendible. A restoreLab, el nostre servei de restauració de fars comença en 79 euros per parell — comparat amb 300-800 euros per òptiques OEM de recanvi, o 150-400 euros per unitats de qualitat del mercat d'accessoris. El nostre procés restaura l'òptica a una claredat gairebé original i aplica un segellador UV que protegeix el policarbonat durant més de 2 anys. Per a vehicles que s'apropen a la seva data d'ITV, recomanem programar la restauració almenys dues setmanes abans de la inspecció per assegurar la màxima emissió de llum. Visiteu la nostra pàgina del servei de restauració de fars per a tots els detalls."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "El Procés Professional de Restauració",
+          "paragraphs": [
+            "El nostre protocol de restauració de fars a restoreLab segueix un procés de quatre fases dissenyat per aconseguir la màxima claredat òptica aplicant protecció UV duradora. Tot el procés dura de 45 minuts a 1 hora per a un parell de fars i es realitza in situ a la teva ubicació en qualsevol punt de l'àrea metropolitana de Barcelona.",
+            "Fase u: emmascarat i preparació. Protegim amb cinta tota la pintura, motllures i juntes de goma circumdants amb cinta d'emmascarat automobilística 3M per prevenir qualsevol dany per contacte. Fase dos: llijat humit. Usant una progressió de discos 3M Trizact — començant per P1000 per a oxidació severa o P1500 per a grogor moderat — eliminem la capa superficial degradada. L'òptica ha de romandre humida durant tot el procés per evitar l'acumulació de calor al policarbonat. Normalment progressem a través de grans P1000, P1500, P2000 i P3000.",
+            "Fase tres: polit mecànic. Usant una polidora mini Rupes LHR75E amb un pad d'escuma de 75 mm i un compost dedicat per a plàstic/policarbonat, refinem la superfície llijada fins a aconseguir claredat òptica. El moviment de doble acció prevé la concentració de calor i aconsegueix una claredat uniforme a tota l'òptica. Fase quatre: aplicació de segellador UV. Apliquem una capa transparent estabilitzada contra UV (ja sigui un segellador dedicat per a fars o Gtechniq C4 Permanent Trim Restorer) que recrea la barrera UV de fàbrica. Aquest és el pas crític que prevé el re-grogor — sense ell, l'òptica restaurada es degradaria de nou en 3-6 mesos. Per a detalls de preus, consulteu la nostra pàgina completa de preus."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "DIY vs Professional: Una Avaluació Honesta",
+          "paragraphs": [
+            "Els kits de restauració de fars DIY estan àmpliament disponibles a Norauto, Feu Vert i botigues online per 15-40 euros. Típicament inclouen fulls de paper de vidre, un compost de polit i de vegades una toalleta UV. Poden funcionar? Sí, per a una opacitat lleu a la superfície d'un vehicle al qual no li donis gaire importància. Però els resultats rarament igualen la restauració professional, i aquí expliquem per què.",
+            "La major limitació dels kits DIY és l'absència de polit mecànic — el polit a mà no pot aconseguir la mateixa uniformitat i claredat. El segon problema és la protecció UV: la majoria de segelladors de kits duren 3-6 mesos abans que torni el grogor, comparat amb més de 2 anys amb recobriments UV professionals. Tercer, hi ha un risc real d'empitjorar les coses — el llijat manual desigual crea distorsió òptica que afecta el patró del feix, potencialment creant una situació més perillosa que el grogor original.",
+            "La nostra recomanació honesta: si tens un vehicle de 15 anys amb fars lleugerament opacs i un pressupost ajustat, un kit DIY és un primer intent raonable. Per a qualsevol cosa més enllà d'una lleugera opacitat superficial, per a qualsevol vehicle que planejis conservar o vendre, o per a vehicles que s'apropen a la ITV — la restauració professional a 79 euros ofereix resultats dràsticament millors, dura més i no comporta risc de distorsió òptica. Molts dels nostres clients a Barcelona i Sant Cugat combinen la restauració de fars amb un altre servei per obtenir el millor valor. Consulteu les nostres fotos d'abans i després per a exemples reals."
+          ]
+        }
+      ]
+    },
+    "pre_sale_detailing_checklist_catalonia": {
+      "seo_title": "Checklist Detailing Pre-Venda Catalunya | restoreLab",
+      "seo_description": "Maximitza el valor de revenda del teu cotxe a Catalunya. Què inspeccionen els compradors, quins defectes costen més i el ROI del detailing professional pre-venda.",
+      "title": "Checklist de Detailing Pre-Venda: Què Busquen els Compradors a Catalunya",
+      "description": "Una guia professional per maximitzar el valor de revenda del teu vehicle mitjançant un detailing dirigit — basada en el que els compradors catalans realment inspeccionen i el que influeix en la seva oferta.",
+      "intro": "Vendre un cotxe a Catalunya és un negoci competitiu. Entre Wallapop, Milanuncios i les xarxes de concessionaris establertes, els compradors tenen opcions infinites — i s'han tornat cada vegada més informats sobre l'estat del vehicle. A restoreLab, preparem dotzenes de vehicles per a la venda cada mes a Sant Cugat, Barcelona, Terrassa i l'àrea metropolitana. Aquesta guia comparteix els passos de detailing específics que ofereixen el major retorn d'inversió en vendre al mercat català.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Què Inspeccionen Realment els Compradors Catalans",
+          "paragraphs": [
+            "Basant-nos en la nostra experiència preparant vehicles pre-venda a Barcelona i parlant directament amb els nostres clients sobre el que van notar els compradors, hi ha una jerarquia clara de punts d'inspecció. El primer que fa tot comprador és donar una volta al vehicle a la llum del dia, examinant la pintura des de múltiples angles. Les marques circulars, ratllades, oxidació i zones opaques senyalitzen immediatament 'mal mantingut' — fins i tot si l'estat mecànic és perfecte. Sota la intensa llum solar de Barcelona, aquests defectes són impossibles d'amagar.",
+            "Segon, els compradors obren les portes i inspeccionen l'interior amb notable atenció. Seients de cuir tacats, panells de porta fregats, sostre interior brut i volant desgastat suggereixen alt quilometratge o negligència. Tercer, revisen el compartiment del motor — no necessàriament entenent el que veuen, però un motor net i tractat comunica cura i disciplina de manteniment. Quart, comproven els fars i tots els vidres buscant opacitat, ratllades i danys.",
+            "La clau és que els compradors prenen una decisió emocional en els primers 60 segons en veure el vehicle. Un cotxe que llueix impecable aconsegueix una oferta més alta — sovint 1.000-3.000 euros més que un vehicle idèntic en estat cosmètic mitjà. El detailing professional pre-venda no consisteix a enganyar; es tracta de presentar el vehicle en el seu millor estat real, eliminant danys reversibles que d'altra manera rebaixarien el valor percebut."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "El Protocol de Detailing Pre-Venda",
+          "paragraphs": [
+            "A restoreLab, el nostre Pack Pre-Venda està específicament dissenyat per abordar els punts d'inspecció llistats anteriorment en una sola sessió a la teva ubicació. El paquet a 249 euros per a un sedan inclou: correcció de pintura en una fase per eliminar el 60-70% de les marques circulars i ratllades lleus, neteja profunda de l'interior complet (aspirat, neteja de cuir o tela, tractament de quadre de comandaments i motllures), i detailing del compartiment del motor (desengreixat, neteja a vapor, tractament de plàstics).",
+            "Per a vehicles amb danys de pintura més significatius o aquells del segment premium on els compradors són encara més exigents, recomanem actualitzar a la Correcció en Dues Fases a 549 euros o al Ceràmic 2Y a 649 euros. El ceràmic afegeix una brillantor visible d'aspecte mullat que fotografia excepcionalment bé per als anuncis online — i l'efecte hidrofòbic impressiona durant les proves de conducció. Un vehicle amb recobriment ceràmic recent es veu i es sent notablement diferent d'un amb només un rentat i cera.",
+            "Els números afavoreixen el venedor. El cotxe mitjà en el rang de 10.000-30.000 euros a Barcelona perd 500-1.500 euros en descompte negociat a causa de defectes visibles de pintura. Un detailing pre-venda de 249 euros elimina això completament, mentre que una correcció més ceràmic de 649 euros pot augmentar el preu de venda en 1.000-2.500 euros. Això és un retorn d'inversió de 2x a 5x — sense comptar el temps de venda més ràpid que ve amb un vehicle que es presenta bé en fotos. Consulteu la nostra pàgina de preus per a detalls complets dels paquets."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Consells de Fotografia per a Màxim Impacte Online",
+          "paragraphs": [
+            "Després del detailing professional, la qualitat de les fotos del teu anunci determina quantes consultes reps. Barcelona ofereix excel·lents condicions de llum natural per a la fotografia de vehicles, però el moment importa. Fotografia a l'hora daurada — la primera hora després de l'alba o l'última hora abans de la posta de sol — quan la llum és càlida i suau. Evita el sol del migdia, que crea ombres dures i ressalta cada imperfecció restant.",
+            "Fotografia el vehicle amb la pintura recentment corregida i tractada lleugerament humida després d'una aplicació final de detailer ràpid — els reflexos creen un efecte de sala d'exposició que destaca als anuncis online. Inclou almenys 15-20 fotos: exterior des de les quatre cantonades, un perfil lateral complet, primers plans de les llantes, l'interior des d'ambdues portes davanteres, el quadre de comandaments, els seients posteriors, el maleter, el compartiment del motor i una foto del comptaquilòmetres digital. A Wallapop i Milanuncios, els anuncis amb més de 15 fotos de qualitat professional reben 3-4 vegades més consultes.",
+            "Inclou una menció del detailing professional a la descripció del teu anunci. 'Recentment detallat per restoreLab — correcció de pintura i recobriment ceràmic aplicat' senyalitza als compradors que aquest vehicle s'ha mantingut amb un alt estàndard. Diferencia el teu anunci dels centenars de vehicles similars que simplement han passat per un túnel de rentat. Podeu veure el tipus de transformació que ofereix el nostre treball a la nostra galeria d'abans i després."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Timing i ROI: Quan Fer el Detailing Abans de Vendre",
+          "paragraphs": [
+            "El moment ideal per al detailing pre-venda és 1-2 setmanes abans de publicar el vehicle online. Això dona temps al recobriment ceràmic per curar completament (12-24 hores) i et permet fotografiar el vehicle en condicions òptimes. No facis el detailing mesos abans de vendre — el benefici de la protecció és màxim quan és recent, i l'impacte visual disminueix amb el temps amb l'ús normal.",
+            "Per a consideracions estacionals a Barcelona: la primavera (març-maig) i l'inici de la tardor (setembre-octubre) són les temporades pic de compra de cotxes usats a Catalunya. Si planegis vendre durant aquestes finestres, reserva el teu detailing pre-venda amb 2-3 setmanes d'antelació per assegurar disponibilitat. L'estiu és més lent per a les vendes privades (molts compradors potencials són de vacances), mentre que el gener veu un repunt en la demanda quan la gent comença l'any nou buscant un nou vehicle.",
+            "La conclusió: el detailing professional pre-venda és la inversió amb major ROI que pots fer en vendre un vehicle a Catalunya. El nostre Pack Pre-Venda a 249 euros típicament es paga sol 2-5 vegades en menor negociació del comprador. Per a vehicles premium, la Correcció en Dues Fases a 549 euros o el Ceràmic 2Y a 649 euros ofereix retorns encara majors. Envia'ns fotos del teu vehicle per WhatsApp per a una avaluació honesta de quin paquet maximitzaria el teu valor de revenda específic."
+          ]
+        }
+      ]
+    },
+    "mediterranean_climate_car_paint_protection": {
+      "seo_title": "Protecció de Pintura Clima Mediterrani Barcelona | restoreLab",
+      "seo_description": "Com el sol, sal, pol·len i pols sahariana de Barcelona ataquen la pintura. Estratègies de protecció, ceràmic i protocols de manteniment.",
+      "title": "Clima Mediterrani i la Pintura del teu Cotxe: Guia de Protecció",
+      "description": "Una guia completa per entendre i combatre les amenaces úniques que el clima mediterrani de Barcelona presenta per a la pintura — des de la degradació UV fins a l'aire salí, el pol·len i els episodis de pols sahariana.",
+      "intro": "Barcelona gaudeix d'un dels climes més desitjats d'Europa — 2.524 hores de sol a l'any, hiverns suaus i estius càlids. Però aquest mateix entorn mediterrani és hostil per a la pintura automobilística. La radiació UV, la sal de l'aire, la resina de pi, la pols de calima i les partícules industrials creen un còctel d'amenaces que accelera la degradació de la pintura molt per sobre del que pateixen els vehicles al nord d'Europa. A restoreLab, veiem l'evidència diàriament: els vehicles aparcats a l'exterior a Sant Cugat, Castelldefels i la costa de Barcelona es degraden 2-3 vegades més ràpid que els cotxes guardats en garatge a la mateixa zona. Aquesta guia explica cada amenança i les estratègies professionals de protecció que les contrarresten.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Radiació UV: El Destructor Silenciós",
+          "paragraphs": [
+            "Barcelona rep un índex UV anual mitjà que se situa entre els més alts de l'Europa continental. De maig a setembre, l'índex UV assoleix regularment 9-10 (classificat com a 'molt alt' a 'extrem' per l'OMS), amb temperatures superficials màximes en vehicles de color fosc que superen els 65 graus Celsius. Aquesta intensa exposició UV impulsa la foto-oxidació del vernís — el mateix procés químic que grogeja els fars, però actuant més lentament sobre els vernissos automobilístics.",
+            "Els efectes visibles de l'exposició crònica als UV inclouen pèrdua progressiva de brillantor, polvorització (un residu polsós blanc a la superfície), decoloració del color en acabats no metal·litzats i eventual fallada del vernís. En un vehicle aparcat a l'exterior permanentment a Sant Cugat o Barcelona, l'oxidació notable apareix típicament en 3-4 anys sense protecció — comparat amb 6-8 anys en un clima com el nord d'Alemanya o el Regne Unit.",
+            "Els recobriments ceràmics professionals proporcionen la barrera UV més efectiva disponible. Productes com Gyeon MOHS i Gtechniq Crystal Serum Light contenen compostos absorbents d'UV que redueixen l'energia que arriba al vernís fins a un 90%. El nostre paquet Ceràmic 2Y a 649 euros i el Ceràmic Premium 5Y a 1.049 euros inclouen ambdós aquests recobriments protectors UV. Per a vehicles aparcats a l'exterior en condicions mediterrànies, considerem el recobriment ceràmic la inversió més important per a la longevitat de la pintura. Per a detalls sobre com funcionen aquests recobriments, consulteu el nostre article sobre protocols de protecció i preservació."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Aire Salí, Exposició Costanera i Corrosió per Clorurs",
+          "paragraphs": [
+            "Viure a menys de 30 quilòmetres de la costa mediterrània significa exposició constant a partícules de sal a l'aire. El Garbí (brisa marina del sud-oest) transporta cristalls microscòpics de sal marina terra endins — arribant a Sant Cugat, Bellaterra i fins i tot Terrassa durant els mesos d'estiu. Aquestes partícules de clorur aterren sobre la superfície de la pintura, es dissolen en la rosada matinal o la humitat, i creen punts àcids localitzats que graven el vernís.",
+            "L'efecte és més pronunciat en zones de descrostaments on el metall nu està exposat. La sal accelera l'oxidació de la imprimació i el metall exposats a 3-5 vegades la velocitat dels entorns no costaners. Un petit descrostament que romandria cosmètic durant anys en una ubicació interior pot desenvolupar anells d'òxid visibles en 6-12 mesos a Castelldefels o la costa del Maresme. Per això sempre recomanem tractar els descrostaments puntualment i protegir la pintura circumdant.",
+            "Per a vehicles costaners a Castelldefels, Gavà, Sitges i la zona del Maresme, la nostra recomanació és el paquet Ceràmic Premium 5Y a 1.049 euros, que inclou recobriment ceràmic de grafè per a tota la carrosseria, tractament hidrofòbic del parabrisa i ceràmic de llantes. L'efecte hidrofòbic fa que la humitat carregada de sal formi gotes i escorri en lloc de romandre sobre la superfície gravant-la. Per a vehicles a la zona de major risc (dins de 5 km de la costa), suggerim afegir Film de Protecció de Pintura (PPF) en capó, para-xocs i retrovisors a través del nostre paquet Flagship PPF + Ceràmic des de 2.290 euros."
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Pol·len, Resina de Pi i Contaminants Orgànics",
+          "paragraphs": [
+            "L'extens arbrat urbà de Barcelona — particularment els pins i plàtans que voregen els carrers de Sant Cugat, Sarrià, Pedralbes i gran part del Vallès Occidental — produeix quantitats significatives de pol·len, saba i resina que cauen sobre els vehicles aparcats. La resina de pi és particularment danyosa: s'adhereix al vernís en qüestió d'hores després del contacte i comença a gravar químicament en 24-48 hores, deixant marques permanents si no s'elimina a temps.",
+            "La saba dels plàtans és menys agressiva immediatament però s'acumula com una pel·lícula enganxosa que atrau la pols i crea una capa de contaminació composta. Els excrements d'aus — cortesia dels coloms, gavines i estornells de Barcelona — són àcids (pH 3-4,5) i graven a través del vernís en tan sols 4-8 hores durant la calor de l'estiu. Veiem danys per gravat d'excrements d'aus en vehicles de clients a Sant Cugat pràcticament cada setmana durant els mesos més càlids.",
+            "El recobriment ceràmic proporciona una protecció significativa contra aquests contaminants orgànics. La superfície hidrofòbica impedeix que la resina i la saba s'adhereixin directament al vernís, donant-te una finestra més àmplia per a l'eliminació abans que es produeixi dany. Amb un recobriment ceràmic de qualitat, la resina de pi que gravaria permanentment la pintura sense protegir pot eliminar-se amb seguretat fins a 72 hores després del contacte usant una toalleta amb alcohol isopropílic. Recomanem portar un pot de Koch Chemie Quick and Shine i tovalloles de microfibra al vehicle per a l'eliminació immediata de contaminants — especialment si aparques sota arbres a la zona de Sant Cugat."
+          ]
+        },
+        {
+          "number": "4",
+          "title": "Pols Sahariana (Calima) i Partícules Industrials",
+          "paragraphs": [
+            "Barcelona experimenta de 5 a 15 episodis significatius de pols sahariana per any, amb una freqüència en augment a causa dels canvis en els patrons atmosfèrics. Aquests episodis de calima dipositen partícules minerals fines — principalment òxids de ferro i silicats — que s'assenten sobre tota superfície a l'exterior. Les partícules són abrasives (duresa Mohs 5-7) i causen marques circulars quan s'arrosseguen per la pintura durant un rentat incorrecte. Després d'una calima forta, el pitjor que pots fer és passar el cotxe per un túnel de rentat automàtic o netejar-lo amb un drap sec.",
+            "El protocol correcte post-calima és: primer, esbandir tot el vehicle a fons amb una hidrolimpiadora o mànega per eliminar les partícules soltes sense tocar la superfície. Segon, realitzar un prerentat amb escuma activa usant un canó d'escuma amb un xampú de pH neutre (usem Koch Chemie Green Star) per encapsular les partícules restants. Tercer, procedir amb un rentat de contacte usant el mètode de dos cubells amb una manopla de microfibra de felpa. Mai facis servir una esponja — la superfície plana atrapa les partícules i les arrossega per la pintura.",
+            "Les partícules industrials són una altra amenança persistent a l'àrea metropolitana de Barcelona. Les zones industrials prop de Zona Franca, Martorell (corredor de la fàbrica de SEAT) i el port de Barcelona alliberen partícules metàl·liques que s'incrusten al vernís com punts taronges o marrons — sovint confosos amb òxid. Aquestes requereixen descontaminació química amb un eliminador de ferro (usem CarPro Iron X) abans de qualsevol polit. El nostre paquet Express Refresh a 149 euros inclou un rentat de descontaminació complet, tractament amb clay bar i segellador protector — el servei de manteniment ideal entre correccions majors. Consulteu la nostra pàgina de preus per a detalls complets de tots els paquets."
+          ]
+        }
+      ]
+    }
+  },
+  "area_pages": {
+    "meta_title_tpl": "Restauració Mòbil de Superfícies a {city} | restoreLab",
+    "meta_desc_tpl": "Correcció de pintura, polit de vidre i restauració d'acrílic a {city}. Anem a la teva ubicació. Pressupost gratuït per WhatsApp.",
+    "h1_tpl": "Restauració de Superfícies a {city}",
+    "intro_tpl": "restoreLab ofereix serveis premium de restauració mòbil a {city} i voltants. El nostre equip es desplaça directament a la teva ubicació amb tot l'equipament professional — sense necessitat d'anar a un taller.",
+    "services_heading": "Els Nostres Serveis a {city}",
+    "cta_tpl": "Pressupost Gratuït a {city}",
+    "areas_heading": "Àrees que cobrim des de {city}",
+    "cities": [
+      {
+        "slug": "sant-cugat",
+        "name": "Sant Cugat del Vallès",
+        "short": "Sant Cugat",
+        "region": "Vallès Occidental",
+        "lat": 41.4736,
+        "lng": 2.0868,
+        "description": "Amb base al cor de Sant Cugat, cobrim tota la comarca del Vallès Occidental. Des de comunitats residencials fins a parcs empresarials, la nostra unitat mòbil arriba en menys de 30 minuts.",
+        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+      },
+      {
+        "slug": "barcelona",
+        "name": "Barcelona",
+        "short": "Barcelona",
+        "region": "Àrea Metropolitana de Barcelona",
+        "lat": 41.3851,
+        "lng": 2.1734,
+        "description": "Servim tots els districtes de Barcelona i municipis propers. Ja siguis a l'Eixample, Sarrià-Sant Gervasi o Badalona — anem a la teva plaça d'aparcament amb tot l'equip professional.",
+        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+      },
+      {
+        "slug": "terrassa",
+        "name": "Terrassa",
+        "short": "Terrassa",
+        "region": "Vallès Interior",
+        "lat": 41.5630,
+        "lng": 2.0089,
+        "description": "El nostre hub del Vallès cobreix Terrassa, Sabadell i pobles propers. Polígons industrials, zones residencials i aparcaments subterranis — ens adaptem a qualsevol ubicació.",
+        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+      },
+      {
+        "slug": "matadepera",
+        "name": "Matadepera",
+        "short": "Matadepera",
+        "region": "Vallès Occidental",
+        "lat": 41.5960,
+        "lng": 2.0253,
+        "description": "Al peu de Sant Llorenç del Munt, Matadepera acull algunes de les finques privades més exclusives de Catalunya. La nostra unitat mòbil és perfecta per a urbanitzacions tancades i xalets amb aparcament privat — servei discret sense moure el teu cotxe. A només 15 minuts de la nostra base a Sant Cugat.",
+        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+      },
+      {
+        "slug": "sant-just-desvern",
+        "name": "Sant Just Desvern",
+        "short": "Sant Just Desvern",
+        "region": "Baix Llobregat",
+        "lat": 41.3808,
+        "lng": 2.0750,
+        "description": "Un dels municipis amb més renda per càpita de Catalunya, Sant Just Desvern combina zones residencials executives amb fàcil accés a Barcelona. Atenem garatges privats i aparcaments subterranis a Walden, Can Candeler i les viles del vessant.",
+        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+      },
+      {
+        "slug": "sant-quirze-del-valles",
+        "name": "Sant Quirze del Vallès",
+        "short": "Sant Quirze",
+        "region": "Vallès Occidental",
+        "lat": 41.5330,
+        "lng": 2.0830,
+        "description": "Un tranquil municipi residencial entre Sant Cugat i Sabadell, Sant Quirze del Vallès destaca per les seves urbanitzacions familiars i cases unifamiliars modernes. Arribem a qualsevol punt de Sant Quirze en menys de 10 minuts des de la nostra base.",
+        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+      },
+      {
+        "slug": "bellaterra",
+        "name": "Bellaterra",
+        "short": "Bellaterra",
+        "region": "Vallès Occidental",
+        "lat": 41.5020,
+        "lng": 2.1050,
+        "description": "Seu del campus de la UAB i envoltat de nuclis residencials executius, Bellaterra combina prestigi acadèmic amb habitatges d'alt nivell. Atenem vehicles a residències privades i aparcaments del campus — a només 5 minuts del nostre centre d'operacions a Sant Cugat.",
+        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+      },
+      {
+        "slug": "pedralbes",
+        "name": "Pedralbes",
+        "short": "Pedralbes",
+        "region": "Barcelona",
+        "lat": 41.3900,
+        "lng": 2.1150,
+        "description": "El barri residencial més exclusiu de Barcelona, Pedralbes compta amb mansions privades, residències diplomàtiques i blocs d'apartaments premium. Realitzem correcció de pintura i tractament ceràmic en vehicles d'alta gamma en garatges subterranis i entrades privades de tota la Zona Alta.",
+        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+      },
+      {
+        "slug": "sant-gervasi",
+        "name": "Sant Gervasi – Tres Torres",
+        "short": "Sant Gervasi",
+        "region": "Barcelona",
+        "lat": 41.4000,
+        "lng": 2.1380,
+        "description": "La zona de Tres Torres i Bonanova se situa al cor de la Zona Alta de Barcelona — un dels districtes residencials més cotitzats. Amb els seus carrers arborats i instal·lacions d'aparcament premium, és territori ideal per al nostre servei de detailing mòbil. Treballem en garatges comunitaris i entrades privades.",
+        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+      },
+      {
+        "slug": "castelldefels",
+        "name": "Castelldefels",
+        "short": "Castelldefels",
+        "region": "Baix Llobregat",
+        "lat": 41.2800,
+        "lng": 1.9780,
+        "description": "Municipi costaner premium al sud de Barcelona, Castelldefels atrau tant residents com propietaris de segona residència amb les seves viles davant del mar i finques a la muntanya. La brisa marina i l'exposició UV fan essencial la protecció regular de pintura. Ens desplacem des de la nostra base amb cita programada.",
+        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+      },
+      {
+        "slug": "alella-tiana-teia",
+        "name": "Alella · Tiana · Teià",
+        "short": "Maresme Premium",
+        "region": "Maresme",
+        "lat": 41.4950,
+        "lng": 2.2950,
+        "description": "La costa del Maresme al nord de Barcelona — Alella, Tiana i Teià formen un nucli residencial premium amb finques entre vinyes i viles amb vistes al mar. El clima mediterrani implica intensa exposició UV i salina. Oferim servei mòbil programat en aquesta zona, amb correcció de pintura i tractament ceràmic complet in situ.",
+        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
+      }
+    ]
+  },
+  "business": {
+    "hero_title": "Detailing Mòbil Pre-Venda per a Concessionaris de Barcelona",
+    "hero_subtitle": "Anem al teu concessionari. Correcció de pintura professional, ceràmic i detailing interior — servei in situ amb lliurament en ≤24h.",
+    "hero_cta": "Reservar Trucada de 15 min",
+    "hero_cta_secondary": "Descarregar Tarifa",
+    "value_props_title": "Dissenyat per a Operacions de Concessionari",
+    "value_props": [
+      {
+        "icon": "clock",
+        "title": "Lliurament ≤24h",
+        "desc": "Servei el mateix dia o l'endemà per a la majoria de vehicles. Opció Express 4h per a preparacions urgents."
+      },
+      {
+        "icon": "camera",
+        "title": "Informe Fotogràfic per Vehicle",
+        "desc": "Documentació fotogràfica abans/després per a cada feina. Utilitza'l en anuncis, comparteix amb compradors, guarda per als teus registres."
+      },
+      {
+        "icon": "invoice",
+        "title": "Facturació NET-30",
+        "desc": "Factura mensual única. Sense pagaments per feina individual. Descomptes per volum des de 5+ vehicles per setmana."
+      },
+      {
+        "icon": "shield",
+        "title": "Assegurança RC €500K",
+        "desc": "Cobertura total de responsabilitat civil. Els teus vehicles estan protegits mentre estan sota la nostra cura."
+      }
+    ],
+    "pricing_title": "Preus Concessionari (sense IVA)",
+    "pricing_subtitle": "Preu base sedan. Descomptes per volum s'apliquen automàticament a la factura mensual.",
+    "pricing_tiers": [
+      {
+        "name": "Lot-Ready Estàndard",
+        "price": "169",
+        "desc": "Rentat descontaminant + polit en una fase + aspirat interior + condicionat pneumàtics. Ideal per a estoc fins a 30.000€.",
+        "includes": ["Rentat descontaminant + clay bar", "Polit mecànic en una fase", "Aspirat i neteja interior", "Condicionat de pneumàtics i motllures", "Informe fotogràfic"]
+      },
+      {
+        "name": "Lot-Ready SUV",
+        "price": "229",
+        "desc": "Igual que Estàndard per a SUV, crossovers i familiars. Panells més grans, més temps.",
+        "includes": ["Tot el d'Estàndard", "Cobertura mida SUV/familiar", "Maleter i zona de càrrega", "Informe fotogràfic ampliat"]
+      },
+      {
+        "name": "Showroom Sports",
+        "price": "299",
+        "desc": "Correcció en dues fases per a vehicles premium i esportius. Dissenyat per a cotxes de més de 40.000€.",
+        "includes": ["Correcció de pintura en dues fases", "Detailing interior complet", "Polit de vidres i compartiment motor", "Detall de llandes + ceràmica motllures", "Informe de 30 fotos"]
+      }
+    ],
+    "volume_title": "Descomptes per Volum",
+    "volume_tiers": [
+      { "label": "5+ per setmana", "discount": "−10%" },
+      { "label": "10+ per setmana", "discount": "−15%" },
+      { "label": "20+ per setmana", "discount": "Pressupost personalitzat" }
+    ],
+    "faq_title": "FAQ Concessionaris",
+    "faq_items": [
+      {
+        "question": "Hi ha una comanda mínima?",
+        "answer": "No. Tanmateix, els preus per volum comencen a partir de 5+ vehicles per setmana. La majoria de concessionaris comencen amb una prova de 3 vehicles."
+      },
+      {
+        "question": "Treballeu in situ al concessionari?",
+        "answer": "Sí. Arribem amb el nostre propi subministrament d'aigua, electricitat i equipament. Només necessitem un espai cobert o amb ombra i accés als vehicles."
+      },
+      {
+        "question": "Com funciona la facturació?",
+        "answer": "Facturació mensual NET-30 per email. Cada factura inclou detall per vehicle amb matrícula, servei realitzat i enllaç a l'informe fotogràfic."
+      },
+      {
+        "question": "Què passa amb l'assegurança?",
+        "answer": "Disposem d'assegurança de responsabilitat civil de €500K que cobreix tots els vehicles sota la nostra cura. Detalls de la pòlissa disponibles sota petició."
+      },
+      {
+        "question": "Podeu preparar tot l'estoc per a un esdeveniment o jornada de portes obertes?",
+        "answer": "Sí. Amb 48h d'avís podem mobilitzar tècnics addicionals per preparar tot l'estoc. Hem preparat més de 15 vehicles en un sol cap de setmana."
+      },
+      {
+        "question": "Quines zones cobriu?",
+        "answer": "Tots els concessionaris de l'àrea metropolitana de Barcelona: Sant Cugat, Terrassa, Sabadell, Rubí, Cerdanyola, Castelldefels i Barcelona ciutat. Cobertura ampliada disponible per a contractes de major volum."
+      }
+    ],
+    "cta_section_title": "Preparat per optimitzar la preparació del teu estoc?",
+    "cta_section_subtitle": "Reserva una trucada de 15 minuts per parlar de volum i calendari.",
+    "cta_whatsapp": "Escriu-nos per WhatsApp",
+    "cta_email": "Envia'ns un Email"
+  },
+  "ev": {
+    "hero_title": "Protecció de Pintura Especialitzada per a Vehicles Elèctrics",
+    "hero_subtitle": "Ceràmic i PPF segurs per a sensors. Per a Tesla, Polestar, Taycan i cada vehicle elèctric a les carreteres de Barcelona.",
+    "hero_cta": "Sol·licitar Pressupost EV",
+    "pain_points_title": "Per Què la Pintura del teu EV Necessita una Cura Especial",
+    "pain_points": [
+      {
+        "title": "Vernís Més Tou",
+        "desc": "Tesla, Polestar i molts EVs utilitzen pintura a l'aigua amb un vernís notòriament fi i tou. Els mètodes de rentat estàndard causen marques circulars en pocs mesos."
+      },
+      {
+        "title": "Procés Segur per a Sensors",
+        "desc": "Sensors ultrasònics, càmeres i LiDAR requereixen emmascarat acurat i zero contaminació de compost. Els nostres tècnics estan formats en cada layout de sensors EV."
+      },
+      {
+        "title": "Intensitat UV Mediterrània",
+        "desc": "Les més de 2.500 hores de sol anuals de Barcelona acceleren la degradació del vernís en EVs no protegits 2-3× més ràpid que al nord d'Europa."
+      },
+      {
+        "title": "Compatible amb Rentat Sense Contacte",
+        "desc": "El ceràmic permet rentat de manteniment sense contacte, preservant la correcció i reduint l'acumulació de micro-ratlles entre serveis."
+      }
+    ],
+    "packages_title": "Paquets de Protecció EV",
+    "packages_subtitle": "Preu base sedan — multiplicadors per mida apliquen per a Model X, EQS, e-tron SUV.",
+    "packages": [
+      {
+        "id": "ev-new-car",
+        "name": "Protecció EV Cotxe Nou",
+        "price": "749",
+        "desc": "Per a EVs acabats de sortir de fàbrica. Polit suau per eliminar marques de transport + ceràmic 2 anys.",
+        "includes": ["Descontaminació de pintura", "Polit en una fase (marques de transport)", "Ceràmic Gyeon MOHS 2 anys", "Hidrofòbic parabrisa", "Ceràmic de llandes"],
+        "popular": false
+      },
+      {
+        "id": "ev-premium",
+        "name": "Escut Premium EV",
+        "price": "1290",
+        "desc": "Correcció completa per a EVs d'ús diari + ceràmic grafè 5 anys. Màxima protecció UV i química.",
+        "includes": ["Correcció de pintura en dues fases", "Gtechniq Crystal Serum Ultra 5Y", "Set complet hidrofòbic vidres", "Ceràmic llandes + pinces", "Restauració motllures plàstiques", "Condicionat cuir interior"],
+        "popular": true
+      },
+      {
+        "id": "ev-ppf",
+        "name": "PPF Frontal Tesla / EV",
+        "price_from": "1690",
+        "desc": "PPF en capó, para-xocs, aletes, retrovisors + ceràmic a la resta. Protecció màxima en zones d'alt impacte.",
+        "includes": ["XPEL Ultimate Plus PPF (frontal)", "Correcció en dues fases resta de carrosseria", "Ceràmic 5 anys a la resta", "Ajust de precisió zona sensors", "Garantia PPF 10 anys"],
+        "popular": false
+      }
+    ],
+    "compatibility_title": "Compatibilitat per Marca",
+    "compatibility": [
+      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escut Premium EV o PPF Frontal" },
+      { "brand": "Polestar 2 / 3 / 4", "recommended": "Escut Premium EV" },
+      { "brand": "Porsche Taycan", "recommended": "Escut Premium EV o PPF Frontal" },
+      { "brand": "BMW iX / i4 / i5", "recommended": "Protecció Cotxe Nou o Escut Premium" },
+      { "brand": "Mercedes EQS / EQE", "recommended": "Escut Premium EV" },
+      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "Escut Premium EV" },
+      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "Protecció EV Cotxe Nou" },
+      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "Protecció EV Cotxe Nou" }
+    ],
+    "faq_title": "FAQ Específic Vehicles Elèctrics",
+    "faq_items": [
+      {
+        "question": "El ceràmic afectarà els meus sensors o càmeres?",
+        "answer": "No. Emmascarem totes les carcasses de sensors, càmeres i unitats LiDAR abans de polir i aplicar el ceràmic. El ceràmic només s'aplica en panells pintats, mai sobre superfícies de sensors."
+      },
+      {
+        "question": "És segur el procés per a les càmeres d'Autopilot / FSD de Tesla?",
+        "answer": "Sí. Seguim protocols d'emmascarat específics per a Tesla. Les càmeres de pilars, para-xocs i sensors ultrasònics estan completament protegits durant tot el procés."
+      },
+      {
+        "question": "Com funciona el ceràmic amb els rentats sense contacte?",
+        "answer": "Perfectament. El ceràmic crea una superfície hidrofòbica que repel·leix la brutícia, fent els rentats sense contacte molt efectius. És el mètode de manteniment ideal per a EVs amb ceràmic."
+      },
+      {
+        "question": "El meu Tesla té marques circulars als 6 mesos. És normal?",
+        "answer": "Malauradament sí. La pintura a l'aigua de Tesla és més tova que la pintura automotriu tradicional. La correcció professional elimina les marques existents, i el ceràmic redueix significativament l'acumulació futura."
+      },
+      {
+        "question": "Necessiteu carregar el vehicle durant el servei?",
+        "answer": "Demanem que el vehicle arribi amb almenys un 20% de càrrega per poder reposicionar-lo segons calgui. No necessitem accés a punt de càrrega a la ubicació del servei."
+      }
+    ],
+    "cta_section_title": "Protegeix la teva inversió en mobilitat elèctrica",
+    "cta_section_subtitle": "Envia'ns les dades del teu vehicle per WhatsApp per a un pressupost personalitzat."
+  },
+  "commercial_glass": {
+    "hero_title": "Restauració Mòbil de Vidre Fora d'Horari",
+    "hero_subtitle": "Eliminació de ratllades en aparadors, façanes d'oficines, finestres de restaurants i vestíbuls d'hotels — sense interrompre el teu negoci.",
+    "hero_cta": "Sol·licita una Visita Tècnica",
+    "use_cases_title": "Restaurem Vidre Per A",
+    "use_cases": [
+      {
+        "icon": "storefront",
+        "title": "Aparadors Comercials",
+        "desc": "Eliminació de ratllades en vidres del Passeig de Gràcia, Portal de l'Àngel, Diagonal i centres comercials de tota Barcelona."
+      },
+      {
+        "icon": "office",
+        "title": "Façanes d'Oficines",
+        "desc": "Torres del districte 22@, parcs empresarials de Sant Cugat i oficines corporatives. Treballem fora d'horari o caps de setmana — sense molestar els teus inquilins."
+      },
+      {
+        "icon": "restaurant",
+        "title": "Finestres de Restaurants",
+        "desc": "Ratllades de grafiti, gravats i desgast en tancaments de terrasses. Restaurem la claredat sense substituir el panell."
+      },
+      {
+        "icon": "hotel",
+        "title": "Vestíbuls i Zones Comunes d'Hotels",
+        "desc": "Mampares de vidre, baranes i panells d'entrada. Ideal per a la posada a punt de temporada al sector hoteler de Barcelona."
+      }
+    ],
+    "roi_title": "Restauració vs Substitució",
+    "roi_subtitle": "Per què restaurar si pots substituir? Perquè costa un 70-80% menys.",
+    "roi_items": [
+      { "label": "Substitució d'aparador (estàndard)", "cost": "€1.500–3.000", "type": "replace" },
+      { "label": "Restauració de ratllades d'aparador", "cost": "€280–600", "type": "restore" },
+      { "label": "Substitució de panell d'oficina (per m²)", "cost": "€180–350", "type": "replace" },
+      { "label": "Restauració de panell d'oficina (per m²)", "cost": "€45–90", "type": "restore" },
+      { "label": "Temps d'inactivitat (substitució)", "cost": "1–3 dies", "type": "replace" },
+      { "label": "Temps d'inactivitat (restauració)", "cost": "0 — es fa fora d'horari", "type": "restore" }
+    ],
+    "pricing_title": "Preus de Vidre Comercial",
+    "pricing_subtitle": "Tots els preus sense IVA. Avaluació in situ inclosa sense càrrec.",
+    "pricing_tiers": [
+      {
+        "name": "Per Incidència",
+        "price_from": "280",
+        "desc": "Un sol panell o finestra amb ratllades visibles. Ideal per a reparacions puntuals.",
+        "includes": ["Avaluació in situ", "Polit a màquina", "Segellant hidrofòbic", "Informe fotogràfic"]
+      },
+      {
+        "name": "Tarifa per m²",
+        "price_from": "45",
+        "desc": "Per a superfícies grans — façanes d'oficines, aparadors complets, mampares de vidre.",
+        "includes": ["Preu per volum", "Servei fora d'horari", "Múltiples panells en una visita", "Opció de pla de manteniment"]
+      },
+      {
+        "name": "Pla de Manteniment",
+        "price_from": "Personalitzat",
+        "desc": "Contracte mensual o trimestral per a empreses de facility management amb múltiples propietats.",
+        "includes": ["Programació prioritària", "Gestor de compte dedicat", "Tarifa mensual fixa", "Intervencions il·limitades (ús raonable)"]
+      }
+    ],
+    "faq_title": "Preguntes Freqüents sobre Vidre Comercial",
+    "faq_items": [
+      {
+        "question": "Podeu treballar fora de l'horari comercial?",
+        "answer": "Sí. Programem els treballs de vidre comercial per les tardes, nits o caps de setmana. Zero interrupcions per al teu negoci, clients o inquilins."
+      },
+      {
+        "question": "Quins tipus de danys en vidre podeu restaurar?",
+        "answer": "Ratllades superficials, gravats de grafiti, danys per pols d'obra, taques de calç i desgast general. Les esquerdes o escrostonaments profunds que comprometen la integritat estructural requereixen substitució — t'ho direm amb honestedat durant l'avaluació."
+      },
+      {
+        "question": "Quant es tarda a restaurar un aparador?",
+        "answer": "Un panell d'aparador normalment requereix 1–2 hores segons la profunditat de les ratllades. Podem fer diversos panells en una sola visita."
+      },
+      {
+        "question": "Treballeu a tota Barcelona?",
+        "answer": "Sí. Cobrim Barcelona ciutat, Sant Cugat, Terrassa, Sabadell, Hospitalet, Badalona i tota l'àrea metropolitana. Per a múltiples ubicacions, oferim programació optimitzada per rutes."
+      },
+      {
+        "question": "Podeu gestionar una cartera de múltiples propietats?",
+        "answer": "Per descomptat. Els nostres plans de manteniment estan dissenyats per a facility managers amb múltiples propietats. Una sola factura, un únic interlocutor, manteniment programat a totes les teves ubicacions."
+      }
+    ],
+    "cta_section_title": "Restaura el teu vidre. Cuida el teu pressupost.",
+    "cta_section_subtitle": "Envia fotos del dany per WhatsApp per a una avaluació remota gratuïta.",
+    "cta_whatsapp": "Avaluació per WhatsApp",
+    "cta_email": "Email a l'Equip d'Instal·lacions"
+  },
+  "plans": {
+    "hero_tag": "Plans de Cura",
+    "hero_title": "El teu cotxe, sempre com de saló d'exposició",
+    "hero_subtitle": "Plans de manteniment per subscripció que mantenen la pintura, el vidre i el recobriment ceràmic del teu cotxe en condicions òptimes — durant tot l'any.",
+    "hero_cta": "Tria el Teu Pla",
+
+    "why_title": "Per què un pla de cura?",
+    "why_items": [
+      {
+        "icon": "calendar",
+        "title": "Manteniment Programat",
+        "desc": "Venim a tu amb un calendari fix — no cal que recordis ni que tornis a reservar. El teu cotxe es manté protegit automàticament."
+      },
+      {
+        "icon": "shield",
+        "title": "Protegeix la Teva Inversió",
+        "desc": "La descontaminació regular i els retocs ceràmics allarguen la vida del recobriment 2–3× en comparació amb la negligència."
+      },
+      {
+        "icon": "percent",
+        "title": "Estalvi vs. Sessions Individuals",
+        "desc": "Els membres del pla de cura estalvien un 20–35% en comparació amb reservar sessions individuals a preu complet."
+      },
+      {
+        "icon": "star",
+        "title": "Reserva Prioritària",
+        "desc": "Els membres del pla de cura tenen programació prioritària i disponibilitat dins la mateixa setmana — fins i tot en temporada alta."
+      }
+    ],
+
+    "plans_title": "Tria el Teu Pla",
+    "plans_subtitle": "Tots els plans inclouen servei mòbil — venim a casa teva o a l'oficina.",
+    "plans_toggle_monthly": "Mensual",
+    "plans_toggle_annual": "Anual (estalvia un 15%)",
+    "tiers": [
+      {
+        "id": "essential",
+        "name": "Essential",
+        "price_monthly": 39,
+        "price_annual": 33,
+        "period": "/mes",
+        "desc": "Mantingues un vehicle net i protegit entre correccions completes.",
+        "includes": [
+          "Rentat exterior mensual i descontaminació",
+          "Aplicació trimestral de reforç ceràmic",
+          "Renovació d'hidrofugant per al vidre",
+          "Informe d'inspecció de ratllades i marques",
+          "Reserva prioritària per WhatsApp"
+        ],
+        "best_for": "Cotxes d'ús diari i vehicles de lísing"
+      },
+      {
+        "id": "plus",
+        "name": "Plus",
+        "popular": true,
+        "price_monthly": 69,
+        "price_annual": 59,
+        "period": "/mes",
+        "desc": "Programa de protecció complet per a entusiastes que volen el seu cotxe perfecte.",
+        "includes": [
+          "Tot l'inclòs a Essential",
+          "Descontaminació bimensual de pintura (ferro + quitrà)",
+          "Retoc trimestral de polit d'una sola fase",
+          "Retoc ceràmic cada 4 mesos",
+          "Neteja profunda d'interior (trimestral)",
+          "Mesurament anual del gruix de pintura",
+          "10% de descompte en qualsevol servei addicional"
+        ],
+        "best_for": "Cotxes premium i entusiastes"
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price_monthly": 119,
+        "price_annual": 101,
+        "period": "/mes",
+        "desc": "El programa de cura definitiu per a col·leccionistes, cotxes exòtics i vehicles que han d'estar impecables.",
+        "includes": [
+          "Tot l'inclòs a Plus",
+          "Retoc mensual amb polidora de màquina",
+          "Retoc ceràmic mensual",
+          "Renovació del recobriment de rodes (trimestral)",
+          "Inspecció i segellat de vores del PPF",
+          "Detall del compartiment del motor (semestral)",
+          "Programació prioritària el mateix dia",
+          "20% de descompte en qualsevol servei addicional"
+        ],
+        "best_for": "Vehicles exòtics i de col·leccionista"
+      }
+    ],
+
+    "how_title": "Com Funciona",
+    "how_steps": [
+      {
+        "step": "1",
+        "title": "Tria un pla",
+        "desc": "Selecciona el nivell que s'adapti al teu cotxe i a les teves expectatives."
+      },
+      {
+        "step": "2",
+        "title": "Avaluació inicial",
+        "desc": "Inspeccionem el teu vehicle i establim una línia base de manteniment — gruix de pintura, estat del recobriment, zones problemàtiques."
+      },
+      {
+        "step": "3",
+        "title": "Visites programades",
+        "desc": "Venim a la teva ubicació amb un calendari fix. Reps un recordatori per WhatsApp 24h abans de cada visita."
+      },
+      {
+        "step": "4",
+        "title": "Informes d'estat",
+        "desc": "Després de cada visita, reps fotos i un informe digital documentant el treball realitzat i l'estat de la pintura."
+      }
+    ],
+
+    "faq_title": "Preguntes Freqüents sobre Plans de Cura",
+    "faq_items": [
+      {
+        "question": "Hi ha un compromís mínim?",
+        "answer": "Els plans mensuals tenen un mínim de 3 mesos. Els plans anuals es facturen anualment i es poden cancel·lar en qualsevol data de renovació amb 30 dies d'antelació."
+      },
+      {
+        "question": "Què passa si el meu cotxe necessita una correcció completa?",
+        "answer": "Els plans de cura cobreixen el manteniment — no les correccions majors. Si detectem un problema que requereix una correcció completa, te la pressupostem per separat amb el descompte del teu pla aplicat."
+      },
+      {
+        "question": "Puc canviar de pla a un de superior o inferior?",
+        "answer": "Sí, en qualsevol data de renovació mensual. Els canvis tenen efecte en el proper cicle de facturació."
+      },
+      {
+        "question": "On realitzeu el servei?",
+        "answer": "A casa teva, a l'oficina o allà on tinguis el cotxe aparcat. Som totalment mòbils — només necessitem un lloc d'aparcament i accés a aigua."
+      },
+      {
+        "question": "Què passa si he de saltar-me un mes?",
+        "answer": "Els plans anuals inclouen una pausa gratuïta per any (fins a 4 setmanes). Els plans mensuals es poden pausar amb 7 dies d'antelació — no se't cobra pels mesos pausats."
+      }
+    ],
+
+    "cta_section_title": "Comença a protegir la teva inversió",
+    "cta_section_subtitle": "Envia'ns un missatge per WhatsApp per parlar sobre quin pla s'adapta al teu cotxe — o reserva una avaluació inicial gratuïta.",
+    "cta_whatsapp": "Tria el Meu Pla",
+    "cta_email": "Envia'ns un Email"
+  }
+}

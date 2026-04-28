@@ -1,0 +1,219 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LeadForm from '@/components/LeadForm.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+import { SITE_URL, WHATSAPP_NUMBER } from '@/lib/constants';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const cg = t.commercial_glass || {};
+const wa = WHATSAPP_NUMBER;
+const waMsg = lang === 'es'
+  ? 'Hola restoreLab! Necesito restauración de cristal comercial. Adjunto fotos.'
+  : lang === 'ca'
+  ? 'Hola restoreLab! Necessito restauració de vidre comercial. Adjunto fotos.'
+  : 'Hello restoreLab! I need commercial glass restoration. Photos attached.';
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
+---
+
+<BaseLayout
+  title={t.meta.commercial_glass?.title || 'Commercial Glass Restoration | restoreLab'}
+  description={t.meta.commercial_glass?.description || ''}
+  lang={lang}
+  t={t}
+  currentPath="/commercial-glass"
+>
+  <div class="pt-20">
+    <!-- Hero -->
+    <section class="relative py-16 sm:py-20 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="inline-block px-3 py-1 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-xs font-medium mb-6">
+            B2B
+          </span>
+
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-6 leading-tight">
+            {cg.hero_title}
+          </h1>
+          <p class="text-xl text-th-muted mb-10">{cg.hero_subtitle}</p>
+
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="comglass_hero_wa">
+            {cg.hero_cta}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": "Commercial Glass" }
+      ]
+    })} />
+
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Commercial Glass Scratch Restoration",
+      "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "restoreLab"
+      },
+      "areaServed": ["Barcelona", "Sant Cugat del Vallès", "Hospitalet de Llobregat", "Badalona", "Terrassa", "Sabadell"],
+      "description": t.meta.commercial_glass?.description,
+      "offers": [
+        { "@type": "Offer", "name": "Per-Incident Restoration", "price": "280", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "Per m² Rate", "price": "45", "priceCurrency": "EUR" }
+      ]
+    })} />
+
+    <!-- Use Cases -->
+    <section class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-10">{cg.use_cases_title}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {cg.use_cases?.map((uc: any) => (
+            <div class="card p-6 text-center">
+              <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-accent/10 flex items-center justify-center">
+                {uc.icon === 'storefront' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                )}
+                {uc.icon === 'office' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+                )}
+                {uc.icon === 'restaurant' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                )}
+                {uc.icon === 'hotel' && (
+                  <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                )}
+              </div>
+              <h3 class="text-th-heading font-semibold text-sm mb-2">{uc.title}</h3>
+              <p class="text-th-muted text-xs leading-relaxed">{uc.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Comparison -->
+    <section class="py-14 bg-th-surface/5">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="section-title mb-2">{cg.roi_title}</h2>
+          <p class="text-th-muted text-sm">{cg.roi_subtitle}</p>
+        </div>
+        <div class="card overflow-hidden">
+          <table class="w-full text-sm">
+            <tbody>
+              {cg.roi_items?.map((item: any) => (
+                <tr class:list={['border-b border-th-border/5', item.type === 'restore' && 'bg-brand-accent/5']}>
+                  <td class="p-4 text-th-heading text-xs">
+                    {item.type === 'restore' && (
+                      <svg class="w-4 h-4 text-brand-accent inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                    {item.label}
+                  </td>
+                  <td class:list={['p-4 text-right font-display font-bold text-sm', item.type === 'restore' ? 'text-brand-accent' : 'text-th-faint']}>
+                    {item.cost}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="section-title mb-2">{cg.pricing_title}</h2>
+          <p class="text-th-muted text-sm">{cg.pricing_subtitle}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cg.pricing_tiers?.map((tier: any) => (
+            <div class="card p-6">
+              <h3 class="text-th-heading font-display font-bold text-lg mb-1">{tier.name}</h3>
+              <div class="text-brand-accent font-display font-bold text-3xl mb-3">
+                {tier.price_from === 'Custom'
+                  ? (lang === 'es' ? 'Personalizado' : lang === 'ca' ? 'Personalitzat' : 'Custom')
+                  : `${lang === 'es' || lang === 'ca' ? 'desde' : 'from'} €${tier.price_from}`}
+              </div>
+              <p class="text-th-muted text-xs mb-5">{tier.desc}</p>
+              <ul class="space-y-2">
+                {tier.includes?.map((item: string) => (
+                  <li class="flex items-start gap-2 text-th-body text-xs">
+                    <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-14 bg-th-surface/5">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-center mb-8">{cg.faq_title}</h2>
+        <div class="space-y-4">
+          {cg.faq_items?.map((item: any) => (
+            <details class="card p-5 group">
+              <summary class="flex items-center justify-between cursor-pointer list-none">
+                <span class="text-th-heading font-semibold text-sm pr-4">{item.question}</span>
+                <svg class="w-5 h-5 text-th-faint flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="text-th-muted text-sm mt-3 leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="section-title mb-3">{cg.cta_section_title}</h2>
+        <p class="text-th-muted text-sm mb-8">{cg.cta_section_subtitle}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="comglass_cta_wa">
+            {cg.cta_whatsapp}
+          </a>
+          <a href={`mailto:hola@restorelab.io?subject=Commercial%20Glass%20Inquiry`} class="btn-secondary" data-event="comglass_cta_email">
+            {cg.cta_email}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <LeadForm t={t} lang={lang} />
+  </div>
+</BaseLayout>

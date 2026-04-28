@@ -97,7 +97,7 @@ function isActive(segment: string): boolean {
             role="menu"
             class="hidden absolute right-0 top-full mt-1 w-28 bg-brand-dark border border-th-border/10 rounded-xl shadow-2xl overflow-hidden z-50"
           >
-            {['en', 'es'].map((l) => (
+            {['en', 'es', 'ca'].map((l) => (
               <a
                 href={`/${l}${currentPath}`}
                 role="menuitem"
@@ -109,7 +109,7 @@ function isActive(segment: string): boolean {
                     : 'text-th-muted hover:text-th-heading hover:bg-th-surface/5'
                 ]}
               >
-                {l === 'en' ? '🇬🇧' : '🇪🇸'}
+                {l === 'en' ? '🇬🇧' : l === 'ca' ? '🏳️' : '🇪🇸'}
                 {l.toUpperCase()}
                 {lang === l && (
                   <svg class="w-3 h-3 ml-auto" fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ function isActive(segment: string): boolean {
       <div class="flex items-center gap-2 pt-3 mt-1 border-t border-th-border/10">
         <span class="text-th-faint text-xs uppercase tracking-wider">Language</span>
         <div class="flex items-center gap-1.5 ml-auto">
-          {['en', 'es'].map((l) => (
+          {['en', 'es', 'ca'].map((l) => (
             <a
               href={`/${l}${currentPath}`}
               data-lang-switch={l}
@@ -209,7 +209,7 @@ function isActive(segment: string): boolean {
                   : 'text-th-muted border-th-border/10 hover:text-th-heading hover:border-th-border/20'
               ]}
             >
-              {l === 'en' ? '🇬🇧' : '🇪🇸'}
+              {l === 'en' ? '🇬🇧' : l === 'ca' ? '🏳️' : '🇪🇸'}
               {l.toUpperCase()}
             </a>
           ))}

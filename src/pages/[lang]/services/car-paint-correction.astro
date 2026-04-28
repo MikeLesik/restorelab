@@ -6,12 +6,14 @@ import FAQ from '@/components/FAQ.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
+import ca from '@/content/ca.json';
 import { SITE_URL } from '@/lib/constants';
 
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' }, props: { t: en } },
     { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
   ];
 }
 

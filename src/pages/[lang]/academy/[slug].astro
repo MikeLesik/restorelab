@@ -3,12 +3,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
+import ca from '@/content/ca.json';
 import { SITE_URL } from '@/lib/constants';
 
 export function getStaticPaths() {
   const langs = [
     { lang: 'en', t: en },
     { lang: 'es', t: es },
+    { lang: 'ca', t: ca },
   ];
 
   return langs.flatMap(({ lang, t }) =>

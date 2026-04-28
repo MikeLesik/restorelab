@@ -1,0 +1,41 @@
+---
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+const certs = t.trust?.certifications || [
+  { name: 'Gyeon Certified', status: 'active', icon: 'shield' },
+  { name: 'Gtechniq Accredited', status: 'active', icon: 'shield' },
+  { name: 'IDA Member', status: 'pending', eta: 'Q3 2026', icon: 'badge' },
+  { name: 'Ceramic Pro', status: 'pending', eta: 'Q4 2026', icon: 'badge' },
+];
+---
+
+<section class="py-8">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {certs.map((cert: any) => (
+        <div class:list={[
+          'flex flex-col items-center text-center p-4 rounded-xl border transition-all duration-200',
+          cert.status === 'active'
+            ? 'border-brand-accent/20 bg-brand-accent/5'
+            : 'border-th-border/10 bg-th-surface/3 opacity-60'
+        ]}>
+          <div class:list={[
+            'w-10 h-10 rounded-full flex items-center justify-center mb-3',
+            cert.status === 'active' ? 'bg-brand-accent/15' : 'bg-th-surface/10'
+          ]}>
+            <svg class:list={['w-5 h-5', cert.status === 'active' ? 'text-brand-accent' : 'text-th-faint']} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <span class="text-xs font-semibold text-th-heading mb-1">{cert.name}</span>
+          {cert.status === 'pending' && cert.eta && (
+            <span class="text-[10px] text-th-faint">{cert.eta}</span>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

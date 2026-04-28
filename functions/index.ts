@@ -3,12 +3,15 @@
  *
  * Priority:
  *  1. Cookie "preferred_lang" (set when user manually switches language)
- *  2. CF-IPCountry header (Cloudflare geo-detection, no external API)
- *  3. Fallback → /es (Spain is default market)
+ *  2. Accept-Language header with Catalan detection
+ *  3. CF-IPCountry header (Cloudflare geo-detection, no external API)
+ *  4. Fallback → /es (Spain is default market)
  *
  * Only runs for GET requests to "/".
- * All existing /en/…, /es/… routes are untouched.
+ * All existing /en/…, /es/…, /ca/… routes are untouched.
  */
+
+const VALID_LANGS = new Set(['en', 'es', 'ca']);
 
 const ES_COUNTRIES = new Set([
   'ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC',
@@ -16,8 +19,34 @@ const ES_COUNTRIES = new Set([
   'NI', 'DO', 'CU', 'PR',
 ]);
 
-function detectLang(country: string): 'en' | 'es' {
+function parseAcceptLanguage(header: string): string[] {
+  return header
+    .split(',')
+    .map((part) => {
+      const [lang, q] = part.trim().split(';q=');
+      return { lang: lang.trim().toLowerCase(), q: q ? parseFloat(q) : 1 };
+    })
+    .sort((a, b) => b.q - a.q)
+    .map((item) => item.lang);
+}
+
+function detectLang(request: Request): 'en' | 'es' | 'ca' {
+  const country = (request.headers.get('CF-IPCountry') ?? 'XX').toUpperCase();
+  const acceptLang = request.headers.get('Accept-Language') ?? '';
+
+  // Check Accept-Language for Catalan preference
+  if (acceptLang) {
+    const preferred = parseAcceptLanguage(acceptLang);
+    for (const lang of preferred) {
+      if (lang === 'ca' || lang.startsWith('ca-')) return 'ca';
+      if (lang === 'en' || lang.startsWith('en-')) return 'en';
+      if (lang === 'es' || lang.startsWith('es-')) return 'es';
+    }
+  }
+
+  // Visitors from Spain default to Spanish (Catalan speakers will have ca in Accept-Language)
   if (ES_COUNTRIES.has(country)) return 'es';
+
   return 'en';
 }
 
@@ -38,13 +67,12 @@ export async function onRequestGet({
 
   // 1. Respect manual language choice saved as cookie by the lang switcher
   const preferred = getCookie(cookieHeader, 'preferred_lang');
-  if (preferred && ['en', 'es'].includes(preferred)) {
+  if (preferred && VALID_LANGS.has(preferred)) {
     return Response.redirect(`${url.origin}/${preferred}`, 302);
   }
 
-  // 2. Use Cloudflare's built-in IP-to-country (no external API call)
-  const country = (request.headers.get('CF-IPCountry') ?? 'XX').toUpperCase();
-  const lang = detectLang(country);
+  // 2. Smart detection: Accept-Language + geo
+  const lang = detectLang(request);
 
   return Response.redirect(`${url.origin}/${lang}`, 302);
 }

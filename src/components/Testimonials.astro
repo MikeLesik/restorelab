@@ -70,12 +70,23 @@ const avatarColors = [
       <div class="card flex-none w-[320px] sm:w-[380px] snap-start hover:border-th-border/20 transition-colors">
         <div class="flex items-start justify-between mb-4">
           <div class="flex items-center gap-3">
-            <div class:list={[
-              'w-10 h-10 rounded-full border flex items-center justify-center text-sm font-bold flex-shrink-0',
-              avatarColors[i % avatarColors.length]
-            ]}>
-              {review.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()}
-            </div>
+            {review.photoUrl ? (
+              <img
+                src={review.photoUrl}
+                alt={review.name}
+                class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            ) : (
+              <div class:list={[
+                'w-10 h-10 rounded-full border flex items-center justify-center text-sm font-bold flex-shrink-0',
+                avatarColors[i % avatarColors.length]
+              ]}>
+                {review.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()}
+              </div>
+            )}
             <div>
               <div class="flex items-center gap-2 flex-wrap">
                 <span class="font-semibold text-th-heading text-sm">{review.name}</span>
@@ -143,7 +154,7 @@ const avatarColors = [
 <!-- Review Schema (SEO) -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "AutomotiveBusiness",
   "name": "restoreLab",
   "aggregateRating": {
     "@type": "AggregateRating",

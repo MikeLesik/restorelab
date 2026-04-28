@@ -28,7 +28,7 @@ const {
 
 const siteUrl = SITE_URL;
 const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
-const langs = ['en', 'es'];
+const langs = ['en', 'es', 'ca'];
 
 const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
@@ -101,6 +101,11 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     ))}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${currentPath}`} />
 
+    <!-- Preload OG image for LCP on homepage -->
+    {currentPath === '' && (
+      <link rel="preload" as="image" href="/images/og-home.webp" type="image/webp" />
+    )}
+
     <!-- Preconnect hints for external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -128,18 +133,20 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- LocalBusiness Schema -->
+    <!-- AutomotiveBusiness Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "AutomotiveBusiness",
       "name": "restoreLab",
-      "description": "Premium mobile surface restoration — car paint correction, glass polishing and acrylic restoration.",
+      "description": "Premium mobile surface restoration — car paint correction, ceramic coating, glass polishing and acrylic restoration in Barcelona metro area.",
       "url": siteUrl,
+      "image": `${siteUrl}/images/og-home.jpg`,
       "telephone": `+${WHATSAPP_NUMBER}`,
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Sant Cugat del Vallès",
-        "addressRegion": "Barcelona",
+        "addressRegion": "Catalonia",
+        "postalCode": "08172",
         "addressCountry": "ES"
       },
       "geo": {
@@ -147,14 +154,33 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
         "latitude": 41.4736,
         "longitude": 2.0868
       },
-      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell", "Rubí"],
+      "areaServed": [
+        "Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell",
+        "Rubí", "Cerdanyola del Vallès", "Matadepera", "Sant Just Desvern", "Castelldefels"
+      ],
       "sameAs": ["https://g.page/restorelab-santcugat"],
       "openingHours": "Mo-Sa 08:00-19:00",
-      "priceRange": "€€",
+      "priceRange": "€€€",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "47"
+      }
+    })} />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "restoreLab",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.svg`,
+      "sameAs": ["https://g.page/restorelab-santcugat"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": `+${WHATSAPP_NUMBER}`,
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish", "English", "Catalan"]
       }
     })} />
   </head>
@@ -253,29 +279,47 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
       }
 
       // ── Conversion event delegation ──────────────────────────────────────────
+      // Unified pushEvent: GTM dataLayer + Clarity custom event + Meta Pixel
+      // See src/lib/analytics.ts for TypeScript types
+
+      window.__rl_push = function(payload) {
+        // Check CookieConsent — only push if analytics consent granted
+        var cc = window.CookieConsent;
+        if (cc && typeof cc.acceptedCategory === 'function' && !cc.acceptedCategory('analytics')) return;
+
+        // GTM dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(payload);
+
+        // Microsoft Clarity custom event
+        if (typeof window.clarity === 'function') {
+          window.clarity('event', payload.event);
+        }
+
+        // Meta Pixel — map to standard events
+        if (typeof window.fbq === 'function') {
+          var ev = payload.event;
+          if (ev === 'wa_click' || ev === 'phone_click') fbq('track', 'Contact');
+          else if (ev === 'estimate_submit' || ev === 'lead_submitted' || ev === 'b2b_inquiry' || ev === 'ev_inquiry' || ev === 'commercial_glass_inquiry') fbq('track', 'Lead');
+          else if (ev === 'estimator_completed') fbq('track', 'ViewContent', { content_name: payload.tier, currency: 'EUR' });
+          else if (ev === 'pricing_tier_clicked') fbq('track', 'ViewContent', { content_name: payload.tier });
+        }
+      };
 
       document.addEventListener('click', function(e) {
         var el = e.target.closest('[data-event]');
         if (!el) return;
         var ev = el.getAttribute('data-event');
-        // Push to dataLayer (GTM picks up via custom event trigger)
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        window.__rl_push({
           event: ev,
           click_url: el.href || '',
-          click_text: (el.innerText || '').trim().substring(0,100)
+          click_text: (el.innerText || '').trim().substring(0, 100)
         });
-        // Meta Pixel: Contact on WhatsApp / phone clicks
-        if (typeof window.fbq === 'function') {
-          if (ev === 'wa_click' || ev === 'phone_click') fbq('track','Contact');
-        }
       });
 
       document.addEventListener('submit', function(e) {
         if (!e.target.closest('[data-form="estimate"]')) return;
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'estimate_submit' });
-        if (typeof window.fbq === 'function') fbq('track','Lead');
+        window.__rl_push({ event: 'estimate_submit' });
       });
 
       // Auto-tag any wa.me / tel: links that don't already have data-event

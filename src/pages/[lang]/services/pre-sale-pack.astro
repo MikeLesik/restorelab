@@ -1,0 +1,122 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PricingCards from '@/components/PricingCards.astro';
+import LeadForm from '@/components/LeadForm.astro';
+import FAQ from '@/components/FAQ.astro';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+import { SITE_URL } from '@/lib/constants';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const service = t.services.items.find((s: any) => s.id === 'pre-sale-pack');
+const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '34680265190';
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(lang === 'es' ? 'Hola restoreLab! Me interesa el Pack Pre-Venta.' : 'Hello restoreLab! I\'m interested in the Pre-Sale Detail Pack.')}`;
+---
+
+<BaseLayout
+  title={t.meta.pre_sale.title}
+  description={t.meta.pre_sale.description}
+  lang={lang}
+  t={t}
+  currentPath="/services/pre-sale-pack"
+>
+  <div class="pt-24">
+    <!-- Hero -->
+    <section class="relative py-14 sm:py-16 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <a href={`/${lang}/services`} class="inline-flex items-center gap-2 text-sm text-th-faint hover:text-th-heading mb-8 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            {t.nav.services}
+          </a>
+
+          <span class="inline-block px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-xs font-medium mb-6">
+            {service?.tag || 'Value pack'}
+          </span>
+
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-6 leading-tight">
+            {service?.title}
+          </h1>
+          <p class="text-xl text-th-muted mb-8">{service?.subtitle}</p>
+
+          <ul class="space-y-3 mb-10">
+            {service?.features.map((f: string) => (
+              <li class="flex items-center gap-3 text-th-body">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex gap-4">
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+              {t.services.get_quote}
+            </a>
+            <a href={`/${lang}/pricing`} class="btn-secondary">
+              {t.nav.pricing}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+        { "@type": "ListItem", "position": 2, "name": t.nav.services, "item": `${SITE_URL}/${lang}/services` },
+        { "@type": "ListItem", "position": 3, "name": service?.title }
+      ]
+    })} />
+
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Pre-Sale Detail Pack",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "restoreLab"
+      },
+      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"],
+      "description": t.meta.pre_sale.description,
+      "offers": {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "EUR"
+      }
+    })} />
+
+    <PricingCards t={t} lang={lang} categoryId="extras" />
+
+    <!-- See our work CTA -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
+      <a href={`/${lang}/cases`} class="inline-flex items-center gap-2 text-brand-accent hover:text-blue-400 text-sm font-medium transition-colors">
+        {lang === 'es' ? 'Ver nuestro trabajo — antes y después' : 'See our work — before & after results'}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <FAQ t={t} />
+    <LeadForm t={t} lang={lang} />
+  </div>
+</BaseLayout>

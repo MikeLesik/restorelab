@@ -1,0 +1,391 @@
+---
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+}
+
+const { t, lang } = Astro.props;
+const wa = WHATSAPP_NUMBER;
+const ui = t.estimator || {};
+---
+
+<section id="estimator" class="py-14">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10">
+      <h2 class="section-title mb-2">{ui.title || 'Get Your Instant Estimate'}</h2>
+      <p class="text-th-muted text-sm">{ui.subtitle || 'Answer 4 quick questions and get a price range in seconds.'}</p>
+    </div>
+
+    <!-- Step indicators -->
+    <div class="flex items-center justify-center gap-2 mb-8" id="est-steps">
+      {[1,2,3,4].map((n) => (
+        <div
+          data-step-dot={n}
+          class:list={[
+            'w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300',
+            n === 1
+              ? 'bg-brand-accent text-white'
+              : 'bg-th-surface/10 text-th-faint'
+          ]}
+        >
+          {n}
+        </div>
+      ))}
+    </div>
+
+    <!-- Step 1: Vehicle Size -->
+    <div data-est-panel="1" class="est-panel">
+      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step1_title || 'Vehicle size'}</h3>
+      <div class="grid grid-cols-3 gap-3">
+        {[
+          { value: 'small', label: ui.size_small || 'Small', desc: ui.size_small_desc || 'Hatchback, sedan' },
+          { value: 'medium', label: ui.size_medium || 'Medium', desc: ui.size_medium_desc || 'Estate, coupe, small SUV' },
+          { value: 'large', label: ui.size_large || 'Large', desc: ui.size_large_desc || 'Large SUV, van, truck' },
+        ].map((opt) => (
+          <button
+            data-est-choice="vehicleSize"
+            data-value={opt.value}
+            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          >
+            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
+            <div class="text-xs text-th-faint">{opt.desc}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Step 2: Paint Condition -->
+    <div data-est-panel="2" class="est-panel hidden">
+      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step2_title || 'Paint condition'}</h3>
+      <div class="grid grid-cols-3 gap-3">
+        {[
+          { value: 'light', label: ui.cond_light || 'Light', desc: ui.cond_light_desc || 'Minor swirls, water spots' },
+          { value: 'medium', label: ui.cond_medium || 'Medium', desc: ui.cond_medium_desc || 'Visible scratches, dull finish' },
+          { value: 'heavy', label: ui.cond_heavy || 'Heavy', desc: ui.cond_heavy_desc || 'Deep scratches, oxidation' },
+        ].map((opt) => (
+          <button
+            data-est-choice="paintCondition"
+            data-value={opt.value}
+            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          >
+            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
+            <div class="text-xs text-th-faint">{opt.desc}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Step 3: Color Sensitivity -->
+    <div data-est-panel="3" class="est-panel hidden">
+      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step3_title || 'Paint color'}</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[
+          { value: 'standard', label: ui.color_standard || 'Standard', desc: ui.color_standard_desc || 'Red, blue, green…' },
+          { value: 'metallic', label: ui.color_metallic || 'Metallic', desc: ui.color_metallic_desc || 'Silver, grey metallic' },
+          { value: 'black', label: ui.color_black || 'Black', desc: ui.color_black_desc || 'Solid or metallic black' },
+          { value: 'white', label: ui.color_white || 'White', desc: ui.color_white_desc || 'Solid or pearl white' },
+        ].map((opt) => (
+          <button
+            data-est-choice="colorSensitivity"
+            data-value={opt.value}
+            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          >
+            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
+            <div class="text-xs text-th-faint">{opt.desc}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Step 4: Service Goal -->
+    <div data-est-panel="4" class="est-panel hidden">
+      <h3 class="text-th-heading font-semibold text-lg mb-2">{ui.step4_title || 'What do you need?'}</h3>
+      <p class="text-th-faint text-xs mb-4">{ui.step4_hint || 'Select one or more goals'}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          { value: 'restore_gloss', label: ui.goal_gloss || 'Restore gloss & remove scratches' },
+          { value: 'add_ceramic', label: ui.goal_ceramic || 'Add ceramic coating' },
+          { value: 'pre_sale', label: ui.goal_presale || 'Prepare for sale' },
+          { value: 'long_term_protection', label: ui.goal_protection || 'Long-term paint protection' },
+          { value: 'glass_clarity', label: ui.goal_glass || 'Glass scratch removal' },
+        ].map((opt) => (
+          <button
+            data-est-goal
+            data-value={opt.value}
+            class="est-goal-btn card p-3 text-left hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded border-2 border-th-border/30 flex items-center justify-center flex-shrink-0 est-goal-check">
+              </div>
+              <span class="text-sm text-th-heading">{opt.label}</span>
+            </div>
+          </button>
+        ))}
+      </div>
+      <button
+        id="est-submit"
+        class="btn-primary w-full mt-6"
+      >
+        {ui.submit || 'See My Estimate'}
+      </button>
+    </div>
+
+    <!-- Results -->
+    <div data-est-panel="result" class="est-panel hidden">
+      <h3 class="text-th-heading font-semibold text-lg mb-6">{ui.result_title || 'Your Recommended Options'}</h3>
+
+      <div id="est-tiers" class="space-y-4 mb-6">
+        <!-- Filled dynamically -->
+      </div>
+
+      <div id="est-notes" class="space-y-2 mb-6">
+        <!-- Filled dynamically -->
+      </div>
+
+      <div id="est-addons" class="mb-6 hidden">
+        <h4 class="text-th-heading font-semibold text-sm mb-3">{ui.addons_title || 'Suggested add-ons'}</h4>
+        <div id="est-addons-list" class="space-y-2">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          id="est-wa-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event="estimator_wa"
+          class="btn-whatsapp flex-1 text-center"
+        >
+          <svg class="w-4 h-4 inline mr-1.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          {ui.cta_whatsapp || 'Send to WhatsApp'}
+        </a>
+        <button
+          id="est-restart"
+          class="btn-secondary flex-1"
+        >
+          {ui.cta_restart || 'Start Over'}
+        </button>
+      </div>
+    </div>
+
+    <!-- Back button (shown on steps 2-4) -->
+    <button
+      id="est-back"
+      class="hidden mt-4 text-sm text-th-muted hover:text-th-heading transition-colors"
+    >
+      ← {ui.back || 'Back'}
+    </button>
+
+  </div>
+</section>
+
+<script define:vars={{ wa }}>
+  // ── Estimator client-side logic ─────────────────────────────────────────────
+  const SIZE_MULTIPLIER = { small: 1.0, medium: 1.2, large: 1.5 };
+  const COLOR_SURCHARGE = { standard: 0, metallic: 0, black: 50, white: 0 };
+
+  const TIERS = [
+    { id: 'express', name: 'Express Refresh', base: 149, eta: '2–3h',
+      conditions: ['light'], goals: ['restore_gloss', 'pre_sale'],
+      desc: 'Single-stage machine polish. Removes light swirls and water spots.' },
+    { id: 'single_stage', name: 'Single-Stage Correction', base: 289, eta: '4–5h',
+      conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'],
+      desc: 'One-step correction with medium-cut compound. ~70% defect removal.' },
+    { id: 'two_stage', name: 'Two-Stage Correction', base: 549, eta: '6–8h',
+      conditions: ['medium', 'heavy'], goals: ['restore_gloss'],
+      desc: 'Full cut + refine. Removes 85–95% of defects including deep swirls.' },
+    { id: 'ceramic_2y', name: 'Ceramic Coating 2Y', base: 649, eta: '1 day',
+      conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'],
+      desc: 'Single-stage + Gyeon MOHS 2-year ceramic coating.' },
+    { id: 'ceramic_5y', name: 'Ceramic Premium 5Y', base: 1049, eta: '1–2 days',
+      conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'],
+      desc: 'Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic.' },
+    { id: 'flagship', name: 'Flagship PPF + Ceramic', base: 2290, eta: '2–3 days',
+      conditions: ['light', 'medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'],
+      desc: 'Full correction + XPEL PPF on high-impact zones + ceramic topcoat.' },
+  ];
+
+  const state = { step: 1, vehicleSize: '', paintCondition: '', colorSensitivity: '', goals: [] };
+
+  function showStep(n) {
+    document.querySelectorAll('.est-panel').forEach(p => p.classList.add('hidden'));
+    const panel = n === 'result'
+      ? document.querySelector('[data-est-panel="result"]')
+      : document.querySelector(`[data-est-panel="${n}"]`);
+    if (panel) panel.classList.remove('hidden');
+
+    // Update dots
+    document.querySelectorAll('[data-step-dot]').forEach(dot => {
+      const dotN = parseInt(dot.getAttribute('data-step-dot'));
+      const current = typeof n === 'number' ? n : 5;
+      dot.classList.toggle('bg-brand-accent', dotN <= current);
+      dot.classList.toggle('text-white', dotN <= current);
+      dot.classList.toggle('bg-th-surface/10', dotN > current);
+      dot.classList.toggle('text-th-faint', dotN > current);
+    });
+
+    // Back button
+    const back = document.getElementById('est-back');
+    if (back) back.classList.toggle('hidden', n === 1 || n === 'result');
+
+    state.step = n;
+  }
+
+  // Choice handlers (steps 1-3: auto-advance on click)
+  document.querySelectorAll('[data-est-choice]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const field = btn.getAttribute('data-est-choice');
+      const value = btn.getAttribute('data-value');
+      state[field] = value;
+
+      // Fire estimator_started on first interaction
+      if (field === 'vehicleSize' && typeof window.__rl_push === 'function') {
+        window.__rl_push({ event: 'estimator_started' });
+      }
+
+      // Highlight selected
+      btn.closest('.est-panel').querySelectorAll('[data-est-choice]').forEach(b => {
+        b.classList.toggle('border-brand-accent', b === btn);
+        b.classList.toggle('bg-brand-accent/5', b === btn);
+      });
+
+      // Auto advance after brief delay
+      setTimeout(() => showStep(state.step + 1), 200);
+    });
+  });
+
+  // Goal multi-select (step 4)
+  document.querySelectorAll('[data-est-goal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-value');
+      const idx = state.goals.indexOf(value);
+      if (idx >= 0) {
+        state.goals.splice(idx, 1);
+        btn.classList.remove('border-brand-accent', 'bg-brand-accent/5');
+        btn.querySelector('.est-goal-check').innerHTML = '';
+      } else {
+        state.goals.push(value);
+        btn.classList.add('border-brand-accent', 'bg-brand-accent/5');
+        btn.querySelector('.est-goal-check').innerHTML = '<svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
+      }
+    });
+  });
+
+  // Submit
+  document.getElementById('est-submit')?.addEventListener('click', () => {
+    if (state.goals.length === 0) state.goals = ['restore_gloss'];
+    showResults();
+  });
+
+  // Back button
+  document.getElementById('est-back')?.addEventListener('click', () => {
+    if (state.step > 1) showStep(state.step - 1);
+  });
+
+  // Restart
+  document.getElementById('est-restart')?.addEventListener('click', () => {
+    state.vehicleSize = '';
+    state.paintCondition = '';
+    state.colorSensitivity = '';
+    state.goals = [];
+    // Clear selections
+    document.querySelectorAll('.est-option, .est-goal-btn').forEach(b => {
+      b.classList.remove('border-brand-accent', 'bg-brand-accent/5');
+    });
+    document.querySelectorAll('.est-goal-check').forEach(c => { c.innerHTML = ''; });
+    showStep(1);
+  });
+
+  function showResults() {
+    // Score tiers
+    const scored = TIERS.map(tier => {
+      let score = 0;
+      if (tier.conditions.includes(state.paintCondition)) score += 3;
+      const goalMatches = state.goals.filter(g => tier.goals.includes(g)).length;
+      score += goalMatches * 2;
+      if (state.goals.includes('add_ceramic') && tier.id.startsWith('ceramic')) score += 3;
+      if (state.goals.includes('long_term_protection') && tier.id === 'flagship') score += 2;
+      if (state.goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
+      if (state.paintCondition === 'heavy' && tier.id === 'express') score -= 5;
+
+      const sm = SIZE_MULTIPLIER[state.vehicleSize] || 1;
+      const cs = COLOR_SURCHARGE[state.colorSensitivity] || 0;
+      const priceBase = tier.base * sm + cs;
+      const min = Math.round(priceBase * 0.95 / 10) * 10;
+      const max = Math.round(priceBase * 1.10 / 10) * 10;
+
+      return { ...tier, score, min, max };
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    const top = scored.filter(s => s.score > 0).slice(0, 3);
+    if (top.length === 0) top.push(scored[0]);
+
+    const recommended = top[0];
+
+    // Render tiers
+    const tiersEl = document.getElementById('est-tiers');
+    if (tiersEl) {
+      tiersEl.innerHTML = top.map(t => `
+        <div class="card p-5 ${t.id === recommended.id ? 'border-brand-accent/40 bg-brand-accent/5' : ''}">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-semibold text-th-heading text-sm">${t.name}</span>
+                ${t.id === recommended.id ? '<span class="tag text-[10px]">Recommended</span>' : ''}
+              </div>
+              <p class="text-th-faint text-xs mt-1">${t.desc}</p>
+            </div>
+            <div class="text-right flex-shrink-0 ml-4">
+              <div class="text-brand-accent font-display font-bold">€${t.min}–${t.max}</div>
+              <div class="text-[10px] text-th-faint">${t.eta}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Notes
+    const notesEl = document.getElementById('est-notes');
+    const notes = [];
+    if (state.colorSensitivity === 'black') notes.push('Black paint shows every imperfection. Two-stage correction minimum recommended.');
+    if (state.paintCondition === 'heavy') notes.push('Heavy defects may require paint depth measurement. Free on-site assessment included.');
+    if (state.vehicleSize === 'large') notes.push('Large vehicles require additional time. ETAs shown are approximate.');
+
+    if (notesEl) {
+      notesEl.innerHTML = notes.length ? notes.map(n => `
+        <div class="flex items-start gap-2 text-xs text-th-muted">
+          <svg class="w-3.5 h-3.5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          <span>${n}</span>
+        </div>
+      `).join('') : '';
+    }
+
+    // WhatsApp link with context
+    const waLink = document.getElementById('est-wa-link');
+    if (waLink) {
+      const msg = `Hello restoreLab! I used the estimator:\n• Vehicle: ${state.vehicleSize}\n• Condition: ${state.paintCondition}\n• Color: ${state.colorSensitivity}\n• Goals: ${state.goals.join(', ')}\n• Recommended: ${recommended.name} (€${recommended.min}–${recommended.max})\n\nI'd like to proceed with a quote.`;
+      waLink.setAttribute('href', `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
+    }
+
+    // Fire estimator_completed event
+    if (typeof window.__rl_push === 'function') {
+      window.__rl_push({
+        event: 'estimator_completed',
+        tier: recommended.id,
+        priceBand: `€${recommended.min}–${recommended.max}`
+      });
+    }
+
+    showStep('result');
+  }
+</script>
