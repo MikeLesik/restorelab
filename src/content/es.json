@@ -93,7 +93,8 @@
     "cases": "Portfolio",
     "contact": "Contacto",
     "academy": "Academia",
-    "cta": "Presupuesto"
+    "cta": "Presupuesto",
+    "book": "Reservar"
   },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
@@ -335,6 +336,7 @@
       "most_popular": "Más Popular",
       "best_for": "Ideal para:",
       "get_quote": "Pedir Presupuesto",
+      "book_visit": "Reservar Visita",
       "size_title": "Multiplicadores por Tamaño de Vehículo",
       "size_subtitle": "Los precios indicados son para vehículos tipo sedán. Ajusta según tu vehículo:",
       "sensitive_paint": "Recargo pintura sensible",
@@ -616,6 +618,7 @@
     "result_title": "Tus Opciones Recomendadas",
     "addons_title": "Complementos sugeridos",
     "cta_whatsapp": "Enviar por WhatsApp",
+    "cta_booking": "Reservar Visita",
     "cta_restart": "Empezar de Nuevo",
     "back": "Atrás",
     "recommended_tag": "Recomendado",

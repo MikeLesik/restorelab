@@ -93,7 +93,8 @@
     "cases": "Portfolio",
     "contact": "Contacte",
     "academy": "Acadèmia",
-    "cta": "Pressupost"
+    "cta": "Pressupost",
+    "book": "Reservar"
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
@@ -335,6 +336,7 @@
       "most_popular": "Més Popular",
       "best_for": "Ideal per a:",
       "get_quote": "Demanar Pressupost",
+      "book_visit": "Reservar Visita",
       "size_title": "Multiplicadors per Mida de Vehicle",
       "size_subtitle": "Els preus indicats són per a vehicles tipus sedan. Ajusteu segons el vostre vehicle:",
       "sensitive_paint": "Recàrrec pintura sensible",
@@ -616,6 +618,7 @@
     "result_title": "Les Teves Opcions Recomanades",
     "addons_title": "Complements suggerits",
     "cta_whatsapp": "Enviar per WhatsApp",
+    "cta_booking": "Reservar Visita",
     "cta_restart": "Tornar a Començar",
     "back": "Enrere",
     "recommended_tag": "Recomanat",

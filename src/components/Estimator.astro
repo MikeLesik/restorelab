@@ -166,13 +166,24 @@ const ui = t.estimator || {};
           </svg>
           {ui.cta_whatsapp || 'Send to WhatsApp'}
         </a>
-        <button
-          id="est-restart"
-          class="btn-secondary flex-1"
+        <a
+          id="est-booking-link"
+          href={`/${lang}/booking`}
+          data-event="estimator_book"
+          class="btn-primary flex-1 text-center"
         >
-          {ui.cta_restart || 'Start Over'}
-        </button>
+          <svg class="w-4 h-4 inline mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {ui.cta_booking || 'Book Estimate Visit'}
+        </a>
       </div>
+      <button
+        id="est-restart"
+        class="btn-secondary w-full mt-2"
+      >
+        {ui.cta_restart || 'Start Over'}
+      </button>
     </div>
 
     <!-- Back button (shown on steps 2-4) -->

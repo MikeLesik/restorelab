@@ -93,7 +93,8 @@
     "cases": "Cases",
     "contact": "Contact",
     "academy": "Academy",
-    "cta": "Get Estimate"
+    "cta": "Get Estimate",
+    "book": "Book Online"
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
@@ -336,6 +337,7 @@
       "most_popular": "Most Popular",
       "best_for": "Best for:",
       "get_quote": "Get Quote",
+      "book_visit": "Book Visit",
       "size_title": "Vehicle Size Multipliers",
       "size_subtitle": "Prices above are for sedan-size vehicles. Adjust based on your vehicle:",
       "sensitive_paint": "Sensitive paint surcharge",
@@ -616,6 +618,7 @@
     "result_title": "Your Recommended Options",
     "addons_title": "Suggested add-ons",
     "cta_whatsapp": "Send to WhatsApp",
+    "cta_booking": "Book Estimate Visit",
     "cta_restart": "Start Over",
     "back": "Back",
     "recommended_tag": "Recommended",
