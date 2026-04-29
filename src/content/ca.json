@@ -102,7 +102,7 @@
     "cta_primary": "Pressupost Gratuït",
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
-    "trust_pills": ["★ 5.0 Google", "47+ Ressenyes", "500+ Treballs", "Assegurança 500K€"],
+    "trust_pills": ["★ 5.0 Google", "47+ Ressenyes", "500+ Treballs"],
     "cta_car": "Restauració Auto",
     "sticky_cta": "Pressupost via WhatsApp",
     "badge": "★ Valorat 5.0 • 500+ Treballs"
@@ -121,10 +121,6 @@
       { "name": "Membre IDA", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
       { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
     ],
-    "insurance": {
-      "label": "Assegurança de Responsabilitat Civil 500K€",
-      "detail": "La pòlissa cobreix tot el treball in situ, incloent-hi danys a vehicles de tercers."
-    },
     "founder": {
       "text": "Fundat a Sant Cugat. Servei mòbil des del primer dia.",
       "link_label": "Sobre nosaltres",
@@ -769,8 +765,7 @@
     "legal_entity": "restoreLab S.L.",
     "legal_nif": "B-XXXXXXXX",
     "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
-    "legal_provisional": "(Provisional — pendent de registre)",
-    "legal_insurance": "Assegurança de responsabilitat professional — cobertura de €500.000"
+    "legal_provisional": "(Provisional — pendent de registre)"
   },
   "guarantee": {
     "section_title": "Zero Risc. Garantit.",
@@ -829,7 +824,6 @@
     "stats": [
       { "value": "500+", "label": "Vehicles restaurats" },
       { "value": "5.0", "label": "Valoració Google" },
-      { "value": "€500K", "label": "Cobertura d'assegurança" },
       { "value": "0", "label": "Repintats necessaris" }
     ]
   },
@@ -1880,11 +1874,6 @@
         "icon": "invoice",
         "title": "Facturació NET-30",
         "desc": "Factura mensual única. Sense pagaments per feina individual. Descomptes per volum des de 5+ vehicles per setmana."
-      },
-      {
-        "icon": "shield",
-        "title": "Assegurança RC €500K",
-        "desc": "Cobertura total de responsabilitat civil. Els teus vehicles estan protegits mentre estan sota la nostra cura."
       }
     ],
     "pricing_title": "Preus Concessionari (sense IVA)",
@@ -1928,10 +1917,6 @@
       {
         "question": "Com funciona la facturació?",
         "answer": "Facturació mensual NET-30 per correu electrònic. Cada factura inclou detall per vehicle amb matrícula, servei realitzat i enllaç a l'informe fotogràfic."
-      },
-      {
-        "question": "Què passa amb l'assegurança?",
-        "answer": "Disposem d'assegurança de responsabilitat civil de €500K que cobreix tots els vehicles sota la nostra cura. Detalls de la pòlissa disponibles sota petició."
       },
       {
         "question": "Podeu preparar tot l'estoc per a un esdeveniment o jornada de portes obertes?",
