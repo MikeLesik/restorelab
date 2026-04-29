@@ -80,12 +80,6 @@
   .card {
     @apply rounded-2xl p-6;
   }
-  .card-dark {
-    @apply bg-th-surface/5 border border-th-border/10 backdrop-blur-sm;
-  }
-  .card-light {
-    @apply bg-brand-dark border border-th-border/10 shadow-lg;
-  }
   .tag {
     @apply inline-block text-xs font-semibold px-3 py-1 rounded-full;
   }

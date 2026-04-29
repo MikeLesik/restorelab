@@ -2,7 +2,7 @@
   "lang": "es",
   "meta": {
     "home": {
-      "title": "restoreLab — Restauración Móvil de Superficies en Sant Cugat y Barcelona",
+      "title": "restoreLab — Restauración de Superficies en Sant Cugat",
       "description": "Corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio móvil en Sant Cugat y Barcelona. Sin repintura.",
       "og_image": "/images/og-home.jpg"
     },
@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Precios — Pulido Auto y Restauración de Superficies | restoreLab",
-      "description": "5 paquetes de corrección de pintura y cerámico desde 149€ hasta 1 049€. Precios base sedán con multiplicadores por tamaño. Presupuesto gratis por WhatsApp."
+      "description": "5 paquetes de corrección de pintura y cerámico desde 149€ hasta 1 049€. Precios base sedán con multiplicador por tamaño. Presupuesto gratis por WhatsApp."
     },
     "cases": {
       "title": "Antes y Después — restoreLab",
@@ -32,18 +32,18 @@
     },
     "contact": {
       "title": "Contacto restoreLab — Presupuesto Gratuito",
-      "description": "Contacte restoreLab para un presupuesto gratuito. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Sant Cugat, Barcelona y Terrassa."
+      "description": "Contacte restoreLab para un presupuesto gratis. Envíe fotos por WhatsApp y reciba respuesta en horas. Servicio móvil en Sant Cugat, Barcelona y Terrassa."
     },
     "about": {
       "title": "Sobre restoreLab — Nuestra Historia y Misión | restoreLab",
       "description": "Conoce al equipo de restoreLab. Corrección de pintura móvil y cerámico en Sant Cugat y Barcelona. Certificados, asegurados, apasionados."
     },
     "business": {
-      "title": "Detailing Móvil B2B para Concesionarios y Flotas | restoreLab",
+      "title": "Detailing B2B Concesionarios y Flotas | restoreLab",
       "description": "Detailing pre-venta móvil para concesionarios de Barcelona y flotas corporativas. Entrega ≤24h, informes fotográficos, facturación NET-30."
     },
     "ev": {
-      "title": "Protección de Pintura Tesla y Vehículos Eléctricos Barcelona | restoreLab",
+      "title": "Pintura Tesla y Eléctricos Barcelona | restoreLab",
       "description": "Cerámico especializado para vehículos eléctricos: Tesla, Polestar, Taycan. Aplicación segura para sensores. Protección UV mediterránea."
     },
     "commercial_glass": {
@@ -51,7 +51,7 @@
       "description": "Eliminación de arañazos en cristal comercial fuera de horario. Escaparates, oficinas y hoteles. Ahorra 70-80% vs sustitución."
     },
     "plans": {
-      "title": "Planes de Cuidado — Protección de Pintura por Suscripción | restoreLab",
+      "title": "Planes de Cuidado — Protección de Pintura | restoreLab",
       "description": "Planes mensuales de cuidado para protección continua. Mantenimiento programado, recargas cerámicas, reserva prioritaria. Desde 39€/mes."
     },
     "booking": {
@@ -71,7 +71,7 @@
       "description": "Ciencia y técnica de la restauración profesional de superficies. Protocolos de equipos, física de descontaminación y mecánica de corrección."
     },
     "academy_equipment": {
-      "title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
+      "title": "Rotativa vs Doble Acción — Selección | restoreLab Academia",
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
     },
     "headlight": {
@@ -141,6 +141,7 @@
       "Terrassa",
       "Sabadell"
     ],
+    "section_title": "Resultados de Clientes",
     "areas_label": "Áreas de servicio",
     "testimonials": [
       {
@@ -799,7 +800,9 @@
   "cases_section": {
     "section_title": "Antes y Después",
     "section_subtitle": "Resultados reales de nuestro servicio móvil de restauración en Sant Cugat y Barcelona",
-    "view_all": "Ver Todos los Casos"
+    "view_all": "Ver Todos los Casos",
+    "cta_subtitle": "¿Quieres resultados así?",
+    "cta_button": "Pide Tu Presupuesto Gratis"
   },
   "pre_footer_cta": {
     "title": "¿Listo para restaurar?",
@@ -970,7 +973,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Protocolos de Selección de Equipos — Rotativa vs Doble Acción | restoreLab Academia",
+      "seo_title": "Rotativa vs Doble Acción — Selección | restoreLab Academia",
       "seo_description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones.",
       "title": "Elige Tu Arma: Rotativa vs. Doble Acción",
       "description": "Física del Proceso: Por Qué el 99% del Resultado Depende de la Selección de Herramientas. Aprende a distinguir el manejo de un \"kart\" del comportamiento de un \"camión\", y comprende por qué un centro de gravedad bajo es la base de la corrección profesional de pintura.",

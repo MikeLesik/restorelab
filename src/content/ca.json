@@ -2,7 +2,7 @@
   "lang": "ca",
   "meta": {
     "home": {
-      "title": "restoreLab — Restauració Mòbil de Superfícies a Sant Cugat i Barcelona",
+      "title": "restoreLab — Restauració de Superfícies a Sant Cugat",
       "description": "Correcció de pintura, eliminació de ratllades en vidre i restauració d'acrílic. Servei mòbil a Sant Cugat i Barcelona. Sense repintura.",
       "og_image": "/images/og-home.jpg"
     },
@@ -39,11 +39,11 @@
       "description": "Coneix l'equip de restoreLab. Correcció de pintura mòbil i ceràmic a Sant Cugat i Barcelona. Certificats, assegurats, apassionats."
     },
     "business": {
-      "title": "Detailing Mòbil B2B per a Concessionaris i Flotes | restoreLab",
+      "title": "Detailing B2B Concessionaris i Flotes | restoreLab",
       "description": "Detailing pre-venda mòbil per a concessionaris de Barcelona i flotes corporatives. Lliurament ≤24h, informes fotogràfics, facturació NET-30."
     },
     "ev": {
-      "title": "Protecció de Pintura Tesla i Vehicles Elèctrics Barcelona | restoreLab",
+      "title": "Pintura Tesla i Elèctrics Barcelona | restoreLab",
       "description": "Ceràmic especialitzat per a vehicles elèctrics: Tesla, Polestar, Taycan. Aplicació segura per a sensors. Protecció UV mediterrània."
     },
     "commercial_glass": {
@@ -51,7 +51,7 @@
       "description": "Eliminació de ratlles en vidre comercial fora d'horari. Aparadors, oficines i hotels. Estalvia 70-80% vs substitució."
     },
     "plans": {
-      "title": "Plans de Cura — Protecció de Pintura per Subscripció | restoreLab",
+      "title": "Plans de Cura — Protecció de Pintura | restoreLab",
       "description": "Plans mensuals de cura per a protecció contínua. Manteniment programat, recàrregues ceràmiques, reserva prioritària. Des de 39€/mes."
     },
     "booking": {
@@ -71,7 +71,7 @@
       "description": "Ciència i tècnica de la restauració professional de superfícies. Protocols d'equips, física de descontaminació i mecànica de correcció."
     },
     "academy_equipment": {
-      "title": "Protocols de Selecció d'Equips — Rotativa vs Doble Acció | restoreLab Acadèmia",
+      "title": "Rotativa vs Doble Acció — Selecció | restoreLab Acadèmia",
       "description": "Per què el 99% del resultat depèn de la selecció d'eines. Rotativa vs doble acció — anàlisi, taula comparativa i recomanacions."
     },
     "headlight": {
@@ -141,6 +141,7 @@
       "Terrassa",
       "Sabadell"
     ],
+    "section_title": "Resultats de Clients",
     "areas_label": "Àrees de servei",
     "testimonials": [
       {
@@ -799,7 +800,9 @@
   "cases_section": {
     "section_title": "Abans i Després",
     "section_subtitle": "Resultats reals del nostre servei mòbil de restauració a Sant Cugat i Barcelona",
-    "view_all": "Veure Tots els Casos"
+    "view_all": "Veure Tots els Casos",
+    "cta_subtitle": "Vols resultats com aquests?",
+    "cta_button": "Demana el Teu Pressupost Gratuït"
   },
   "pre_footer_cta": {
     "title": "Preparat per restaurar?",
@@ -970,7 +973,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Protocols de Selecció d'Equips — Rotativa vs Doble Acció | restoreLab Acadèmia",
+      "seo_title": "Rotativa vs Doble Acció — Selecció | restoreLab Acadèmia",
       "seo_description": "Per què el 99% del resultat depèn de la selecció d'eines. Polidores rotatives vs doble acció — anàlisi d'enginyeria, taula comparativa i recomanacions.",
       "title": "Tria la Teva Arma: Rotativa vs. Doble Acció",
       "description": "Física del Procés: Per Què el 99% del Resultat Depèn de la Selecció d'Eines. Aprèn a distingir el maneig d'un \"kart\" del comportament d'un \"camió\", i comprèn per què un centre de gravetat baix és la base de la correcció professional de pintura.",

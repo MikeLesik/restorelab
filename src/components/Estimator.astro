@@ -9,6 +9,13 @@ export interface Props {
 const { t, lang } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.estimator || {};
+const estI18n = {
+  recommended: ui.recommended_tag || 'Recommended',
+  noteBlack: ui.note_black || 'Black paint shows every imperfection. Two-stage correction minimum recommended.',
+  noteHeavy: ui.note_heavy || 'Heavy defects may require paint depth measurement. Free on-site assessment included.',
+  noteLarge: ui.note_large || 'Large vehicles require additional time. ETAs shown are approximate.',
+  waMessage: ui.wa_message || 'Hello restoreLab! I used the estimator:\n• Vehicle: {vehicleSize}\n• Condition: {paintCondition}\n• Colour: {colorSensitivity}\n• Goals: {goals}\n• Recommended: {tierName} (€{min}–{max})\n\nI\'d like to proceed with a quote.',
+};
 ---
 
 <section id="estimator" class="py-14">
@@ -197,7 +204,7 @@ const ui = t.estimator || {};
   </div>
 </section>
 
-<script define:vars={{ wa }}>
+<script define:vars={{ wa, estI18n }}>
   // ── Estimator client-side logic ─────────────────────────────────────────────
   const SIZE_MULTIPLIER = { small: 1.0, medium: 1.2, large: 1.5 };
   const COLOR_SURCHARGE = { standard: 0, metallic: 0, black: 50, white: 0 };
@@ -347,7 +354,7 @@ const ui = t.estimator || {};
             <div>
               <div class="flex items-center gap-2">
                 <span class="font-semibold text-th-heading text-sm">${t.name}</span>
-                ${t.id === recommended.id ? '<span class="tag text-[10px]">Recommended</span>' : ''}
+                ${t.id === recommended.id ? `<span class="tag text-[10px]">${estI18n.recommended}</span>` : ''}
               </div>
               <p class="text-th-faint text-xs mt-1">${t.desc}</p>
             </div>
@@ -363,9 +370,9 @@ const ui = t.estimator || {};
     // Notes
     const notesEl = document.getElementById('est-notes');
     const notes = [];
-    if (state.colorSensitivity === 'black') notes.push('Black paint shows every imperfection. Two-stage correction minimum recommended.');
-    if (state.paintCondition === 'heavy') notes.push('Heavy defects may require paint depth measurement. Free on-site assessment included.');
-    if (state.vehicleSize === 'large') notes.push('Large vehicles require additional time. ETAs shown are approximate.');
+    if (state.colorSensitivity === 'black') notes.push(estI18n.noteBlack);
+    if (state.paintCondition === 'heavy') notes.push(estI18n.noteHeavy);
+    if (state.vehicleSize === 'large') notes.push(estI18n.noteLarge);
 
     if (notesEl) {
       notesEl.innerHTML = notes.length ? notes.map(n => `
@@ -381,7 +388,14 @@ const ui = t.estimator || {};
     // WhatsApp link with context
     const waLink = document.getElementById('est-wa-link');
     if (waLink) {
-      const msg = `Hello restoreLab! I used the estimator:\n• Vehicle: ${state.vehicleSize}\n• Condition: ${state.paintCondition}\n• Color: ${state.colorSensitivity}\n• Goals: ${state.goals.join(', ')}\n• Recommended: ${recommended.name} (€${recommended.min}–${recommended.max})\n\nI'd like to proceed with a quote.`;
+      const msg = estI18n.waMessage
+        .replace('{vehicleSize}', state.vehicleSize)
+        .replace('{paintCondition}', state.paintCondition)
+        .replace('{colorSensitivity}', state.colorSensitivity)
+        .replace('{goals}', state.goals.join(', '))
+        .replace('{tierName}', recommended.name)
+        .replace('{min}', recommended.min)
+        .replace('{max}', recommended.max);
       waLink.setAttribute('href', `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
     }
 

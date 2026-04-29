@@ -83,7 +83,8 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : lang === 'ca' ? 'ca_ES' : 'es_ES'} />
+    <meta property="og:site_name" content="restoreLab" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -402,6 +403,27 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
                     { title: 'Estrictamente necesarias', description: 'Necesarias para el funcionamiento del sitio. No pueden desactivarse.', linkedCategory: 'necessary' },
                     { title: 'Analíticas', description: 'Nos ayudan a entender cómo interactúan los visitantes con el sitio (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
                     { title: 'Marketing', description: 'Se usan para mostrarte anuncios personalizados según tus intereses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+              ca: {
+                consentModal: {
+                  title: 'Utilitzem galetes',
+                  description: 'Utilitzem galetes per millorar la teva experiència, analitzar el trànsit i mostrar-te anuncis rellevants.',
+                  acceptAllBtn: 'Acceptar tot',
+                  acceptNecessaryBtn: 'Només necessàries',
+                  showPreferencesBtn: 'Gestionar preferències'
+                },
+                preferencesModal: {
+                  title: 'Preferències de galetes',
+                  acceptAllBtn: 'Acceptar tot',
+                  acceptNecessaryBtn: 'Només necessàries',
+                  savePreferencesBtn: 'Desar preferències',
+                  closeIconLabel: 'Tancar',
+                  sections: [
+                    { title: 'Estrictament necessàries', description: 'Necessàries per al funcionament del lloc. No es poden desactivar.', linkedCategory: 'necessary' },
+                    { title: 'Analítiques', description: 'Ens ajuden a entendre com interactuen els visitants amb el lloc (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Màrqueting', description: "S'utilitzen per mostrar-te anuncis personalitzats segons els teus interessos (Meta Pixel / Facebook).", linkedCategory: 'marketing' }
                   ]
                 }
               },

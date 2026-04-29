@@ -6,7 +6,6 @@ import HowItWorks from '@/components/HowItWorks.astro';
 import Testimonials from '@/components/Testimonials.astro';
 import PricingCards from '@/components/PricingCards.astro';
 import FAQ from '@/components/FAQ.astro';
-import AreaServedSection from '@/components/AreaServedSection.astro';
 import LeadForm from '@/components/LeadForm.astro';
 import BeforeAfterCarousel from '@/components/BeforeAfterCarousel.astro';
 import GuaranteeBlock from '@/components/GuaranteeBlock.astro';
@@ -47,7 +46,6 @@ const { t } = Astro.props;
   <BeforeAfterCarousel t={t} lang={lang} />
   <Estimator t={t} lang={lang} />
   <PricingCards t={t} lang={lang} categoryId="car" />
-  <!-- <AreaServedSection t={t} /> -->
   <CertificationsRow t={t} />
   <GuaranteeBlock t={t} />
   <FAQ t={t} />

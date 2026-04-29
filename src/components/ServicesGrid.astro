@@ -91,7 +91,7 @@ const colsClass = getColsClass(services.length);
     <div class:list={['grid gap-6', colsClass]}>
       {services.map((service: any) => {
         const cfg = serviceConfig[service.id] ?? serviceConfig['car-paint-correction'];
-        const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Mais popular';
+        const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Més popular';
         const ctaLabel = service.cta_label ?? t.services.get_quote;
         const waText = encodeURIComponent(`Hello restoreLab! I'd like a quote for: ${service.title}`);
 

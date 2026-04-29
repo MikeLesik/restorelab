@@ -105,7 +105,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.
         <h2 class="section-title text-center mb-10">{fill(ap.services_heading)}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.services.items.map((s: any) => (
+          {t.services.items.filter((s: any) => !['trim-restoration', 'wheel-ceramic', 'engine-bay'].includes(s.id)).map((s: any) => (
             <a href={`/${lang}/services/${s.id}`} class="card hover:border-th-border/20 transition-colors group">
               <h3 class="font-display font-semibold text-th-heading text-lg mb-2 group-hover:text-brand-accent transition-colors">{s.title}</h3>
               <p class="text-th-muted text-sm mb-4">{s.subtitle}</p>

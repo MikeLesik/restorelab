@@ -2,12 +2,12 @@
   "lang": "en",
   "meta": {
     "home": {
-      "title": "restoreLab — Mobile Surface Restoration in Sant Cugat & Barcelona",
+      "title": "restoreLab — Surface Restoration Sant Cugat & Barcelona",
       "description": "Premium mobile paint correction, glass scratch removal & acrylic restoration in Sant Cugat & Barcelona. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Our Services — Car, Glass & Acrylic Restoration | restoreLab",
+      "title": "Car, Glass & Acrylic Restoration | restoreLab",
       "description": "Car paint correction, glass polishing and acrylic restoration. Mobile service across Sant Cugat & Barcelona."
     },
     "car_paint": {
@@ -71,8 +71,8 @@
       "description": "Deep-dive into the science and craft behind professional surface restoration. Equipment protocols, decontamination physics, and correction mechanics."
     },
     "academy_equipment": {
-      "title": "Equipment Selection Protocols — Rotary vs Dual Action | restoreLab Academy",
-      "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations."
+      "title": "Rotary vs Dual Action Polishers | restoreLab Academy",
+      "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations."
     },
     "headlight": {
       "title": "Headlight Restoration Sant Cugat & Barcelona | restoreLab",
@@ -141,6 +141,7 @@
       "Terrassa",
       "Sabadell"
     ],
+    "section_title": "Client Results",
     "areas_label": "Areas served",
     "testimonials": [
       {
@@ -740,7 +741,9 @@
   "cases_section": {
     "section_title": "Before & After",
     "section_subtitle": "Real results from our mobile restoration work across Sant Cugat & Barcelona",
-    "view_all": "View All Cases"
+    "view_all": "View All Cases",
+    "cta_subtitle": "Want results like these?",
+    "cta_button": "Get Your Free Estimate"
   },
   "wa_messages": {
     "header": "Hello restoreLab! I'd like to get a free estimate. [From website header]",
@@ -970,8 +973,8 @@
   },
   "academy_articles": {
     "equipment_selection": {
-      "seo_title": "Equipment Selection Protocols — Rotary vs Dual Action | restoreLab Academy",
-      "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — engineering analysis, comparison table, and professional recommendations.",
+      "seo_title": "Rotary vs Dual Action Polishers | restoreLab Academy",
+      "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations.",
       "title": "Choosing Your Weapon: Rotary vs. Dual Action",
       "description": "Process Physics: Why 99% of the Result Depends on Tool Selection. Learn to distinguish the handling of a \"go-kart\" from the behavior of a \"semi-truck,\" and understand why a low center of gravity is the foundation of professional paint correction.",
       "intro": "In our lab, we follow a clear protocol: the first pass — the one that removes 99% of all scratches — is most effectively done with a rotary polisher. The dual action machine, by contrast, is a tool for final surface stabilization.",

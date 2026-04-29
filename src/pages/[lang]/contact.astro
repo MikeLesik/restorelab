@@ -7,6 +7,7 @@ import AreaServedSection from '@/components/AreaServedSection.astro';
 import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
+import { WHATSAPP_NUMBER } from '@/lib/constants';
 
 export function getStaticPaths() {
   return [
@@ -18,7 +19,7 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const { t } = Astro.props;
-const wa = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '34680265190';
+const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.contact)}`;
 ---
 
