@@ -12,7 +12,7 @@
     },
     "car_paint": {
       "title": "Corrección de Pintura Automóvil Sant Cugat | restoreLab",
-      "description": "Corrección de pintura móvil en Sant Cugat y Barcelona. Elimine swirl marks, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
+      "description": "Corrección de pintura móvil en Sant Cugat y Barcelona. Elimine marcas circulares, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
     },
     "glass": {
       "title": "Eliminación de Arañazos en Vidrio Barcelona | restoreLab",
@@ -116,8 +116,8 @@
       { "name": "CarPro", "status": "products" }
     ],
     "certifications": [
-      { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" },
+      { "name": "Gyeon Certificado", "status": "active", "icon": "shield" },
+      { "name": "Gtechniq Acreditado", "status": "active", "icon": "shield" },
       { "name": "Miembro IDA", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
       { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
     ],
@@ -173,7 +173,7 @@
       {
         "id": "car-paint-correction",
         "title": "Corrección de Pintura Auto",
-        "subtitle": "Eliminación de swirl marks, arañazos y restauración del brillo",
+        "subtitle": "Eliminación de marcas circulares, arañazos y restauración del brillo",
         "icon": "car",
         "starting_price": "Desde 149€",
         "features": [
@@ -242,7 +242,7 @@
       {
         "id": "wheel-ceramic",
         "title": "Cerámico en Llantas",
-        "subtitle": "Coating repelente de polvo de freno para las 4 llantas",
+        "subtitle": "Recubrimiento repelente de polvo de freno para las 4 llantas",
         "icon": "wheel",
         "starting_price": "189€",
         "features": [
@@ -288,7 +288,7 @@
         "icon": "sale",
         "starting_price": "249€",
         "features": [
-          "Corrección de pintura single-stage",
+          "Corrección de pintura de una fase",
           "Limpieza profunda del interior",
           "Detailing del motor incluido"
         ],
@@ -301,7 +301,7 @@
   },
   "how_it_works": {
     "section_title": "Cómo Funciona",
-    "section_subtitle": "Proceso simple, sin complicaciones. Vamos a usted",
+    "section_subtitle": "Proceso simple, sin complicaciones. Vamos a ti",
     "steps": [
       {
         "number": "01",
@@ -371,34 +371,34 @@
             "highlight": false
           },
           {
-            "name": "Corrección Single-Stage",
+            "name": "Corrección de Una Fase",
             "slug": "single-stage",
             "price": "289€",
             "duration": "3–4 horas",
-            "description": "Corrección mecánica en un paso que elimina hasta el 70% de swirl marks y arañazos leves.",
+            "description": "Corrección mecánica en un paso que elimina hasta el 70% de marcas circulares y arañazos leves.",
             "includes": [
               "Lavado descontaminante completo + clay bar",
               "Pulido mecánico de un paso",
-              "Eliminación de swirl marks y arañazos leves",
+              "Eliminación de marcas circulares y arañazos leves",
               "Protección con sellante de 6 meses"
             ],
-            "best_for": "Vehículos de uso diario con swirl marks moderados",
+            "best_for": "Vehículos de uso diario con marcas circulares moderadas",
             "highlight": false
           },
           {
-            "name": "Corrección Two-Stage",
+            "name": "Corrección de Dos Fases",
             "slug": "two-stage",
             "price": "549€",
             "duration": "5–7 horas",
-            "description": "Corrección completa en dos pasos (compound + pulido). Elimina el 90%+ de defectos sin cerámico — ideal si ya tienes coating.",
+            "description": "Corrección completa en dos pasos (compuesto de corte + pulido). Elimina el 90%+ de defectos sin cerámico — ideal si ya tienes recubrimiento.",
             "includes": [
               "Descontaminación completa + clay bar",
-              "Corrección en dos pasos (compound + pulido)",
+              "Corrección en dos pasos (compuesto de corte + pulido)",
               "Medición del grosor de pintura",
               "Limpieza IPA panel a panel",
               "Acabado con sellante temporal"
             ],
-            "best_for": "Vehículos muy dañados o preparación pre-coating",
+            "best_for": "Vehículos muy dañados o preparación pre-cerámico",
             "highlight": false
           },
           {
@@ -406,9 +406,9 @@
             "slug": "ceramic-2y",
             "price": "649€",
             "duration": "6–8 horas",
-            "description": "Corrección two-stage más recubrimiento cerámico certificado de 2 años (Gyeon / Gtechniq).",
+            "description": "Corrección de dos fases más recubrimiento cerámico certificado de 2 años (Gyeon / Gtechniq).",
             "includes": [
-              "Corrección completa two-stage",
+              "Corrección completa de dos fases",
               "Medición del grosor de pintura",
               "Limpieza IPA y preparación de superficie",
               "Cerámico de 2 años (Gyeon / Gtechniq)",
@@ -426,10 +426,10 @@
             "includes": [
               "Corrección de pintura multifase",
               "Cerámico grafeno de 5 años",
-              "Coating hidrofóbico en parabrisas",
+              "Recubrimiento hidrofóbico en parabrisas",
               "Cerámico en llantas",
               "Restauración de plásticos y neumáticos",
-              "Garantía de 2 años sobre el coating"
+              "Garantía de 2 años sobre el recubrimiento"
             ],
             "best_for": "Vehículos de lujo y deportivos, máxima protección a largo plazo",
             "highlight": false
@@ -459,11 +459,11 @@
             "slug": "windshield-hydrophobic",
             "price": "179€",
             "duration": "1,5–2,5 horas",
-            "description": "Pulido de parabrisas más coating hidrofóbico repelente de lluvia para mejor visibilidad.",
+            "description": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad.",
             "includes": [
               "Pulido completo del parabrisas",
               "Eliminación de arañazos y manchas",
-              "Aplicación de coating hidrofóbico",
+              "Aplicación de recubrimiento hidrofóbico",
               "La lluvia se desliza a partir de 60 km/h"
             ],
             "best_for": "Conductores que quieren mejor visibilidad en lluvia",
@@ -478,21 +478,21 @@
             "includes": [
               "Todas las superficies de vidrio pulidas",
               "Eliminación de arañazos y manchas",
-              "Coating hidrofóbico en todos los vidrios",
+              "Recubrimiento hidrofóbico en todos los vidrios",
               "Luneta trasera incluida"
             ],
             "best_for": "Restauración completa de vidrios del vehículo",
             "highlight": false
           },
           {
-            "name": "Solo Coating Hidrofóbico",
+            "name": "Solo Recubrimiento Hidrofóbico",
             "slug": "hydrophobic-standalone",
             "price": "desde 89€",
             "duration": "30 min – 1 hora",
-            "description": "Coating repelente de lluvia sobre vidrio limpio. Parabrisas 89€, set completo 159€.",
+            "description": "Recubrimiento repelente de lluvia sobre vidrio limpio. Parabrisas 89€, set completo 159€.",
             "includes": [
               "Preparación y descontaminación de superficie",
-              "Coating hidrofóbico profesional",
+              "Recubrimiento hidrofóbico profesional",
               "Parabrisas o set completo de vidrios"
             ],
             "best_for": "Vidrios ya limpios que necesitan repelencia al agua",
@@ -568,7 +568,7 @@
             "duration": "4–5 horas",
             "description": "Corrección de pintura + limpieza interior + motor — todo lo que inspecciona un comprador.",
             "includes": [
-              "Corrección de pintura single-stage",
+              "Corrección de pintura de una fase",
               "Aspirado y limpieza completa del interior",
               "Detailing del motor",
               "Tratamiento de neumáticos y plásticos"
@@ -637,12 +637,12 @@
       {
         "icon": "money",
         "question": "¿Cuánto cuesta la corrección de pintura en Barcelona?",
-        "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección two-stage completa más coating certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto — respondemos en menos de 30 minutos. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
+        "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección de dos fases completa más recubrimiento certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto — respondemos en menos de 30 minutos. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
         "icon": "swap",
         "question": "¿Cuál es la diferencia entre pulir y repintar un coche?",
-        "answer": "La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> elimina defectos del barniz original (swirl marks, arañazos, oxidación) sin añadir pintura nueva. Cuesta significativamente menos que repintar (desde 149 € vs 800-2.000+ €), se completa en horas en vez de días y conserva la pintura de fábrica. Repintar solo es necesario cuando la pintura está físicamente perdida o dañada más allá del barniz. Consulta nuestros <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
+        "answer": "La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> elimina defectos del barniz original (marcas circulares, arañazos, oxidación) sin añadir pintura nueva. Cuesta significativamente menos que repintar (desde 149 € vs 800-2.000+ €), se completa en horas en vez de días y conserva la pintura de fábrica. Repintar solo es necesario cuando la pintura está físicamente perdida o dañada más allá del barniz. Consulta nuestros <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
       },
       {
         "icon": "glass",
@@ -727,7 +727,7 @@
     "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",
     "section_subtitle": "Envíanos fotos del daño. Te responderemos con un precio honesto — sin obligaciones, sin costes ocultos.",
     "fields": {
-      "name": "Su Nombre",
+      "name": "Tu Nombre",
       "name_placeholder": "Juan García",
       "phone": "Teléfono / WhatsApp",
       "phone_placeholder": "+34 6XX XXX XXX",
@@ -1325,7 +1325,7 @@
       "seo_description": "Qué causa las marcas circulares y cómo las eliminan los profesionales. Proceso de corrección paso a paso, herramientas y consejos de prevención.",
       "title": "Cómo Eliminar Marcas Circulares de la Pintura",
       "description": "Entiende qué causa esos arañazos circulares visibles bajo luz directa — y el proceso profesional exacto para eliminarlos permanentemente sin dañar el barniz.",
-      "intro": "Las marcas circulares (swirl marks) son el defecto de pintura más común que encontramos. Aparecen como arañazos circulares o en forma de telaraña visibles bajo la luz solar directa o iluminación artificial. En restoreLab, las vemos en 9 de cada 10 vehículos que pasan por nuestro servicio.",
+      "intro": "Las marcas circulares son el defecto de pintura más común que encontramos. Aparecen como arañazos circulares o en forma de telaraña visibles bajo la luz solar directa o iluminación artificial. En restoreLab, las vemos en 9 de cada 10 vehículos que pasan por nuestro servicio.",
       "sections": [
         {
           "number": "1",
@@ -1355,7 +1355,7 @@
         },
         {
           "number": "3",
-          "title": "Prevención: Mantener los Swirls Lejos",
+          "title": "Prevención: Mantener las Marcas Circulares Lejos",
           "paragraphs": [
             "Después de la corrección, proteger el resultado es esencial. Estos son los hábitos clave para evitar que las marcas circulares vuelvan:"
           ],
@@ -1427,7 +1427,7 @@
           ],
           "key_params": [
             "Tamaño del vehículo: un coche compacto requiere menos tiempo que un SUV o furgoneta",
-            "Estado de la pintura: swirls leves requieren una fase, arañazos profundos requieren dos o tres",
+            "Estado de la pintura: marcas circulares leves requieren una fase, arañazos profundos requieren dos o tres",
             "Tipo de pintura: los colores sólidos son directos; los metalizados y perlados necesitan más cuidado",
             "Nivel de protección: añadir recubrimiento cerámico aumenta el precio pero aporta valor a largo plazo"
           ]
@@ -1440,9 +1440,9 @@
           ],
           "tools": [
             { "label": "Express Refresh", "text": "149€. Lavado descontaminante, clay bar, pulido suave y sellante spray. ~2 horas." },
-            { "label": "Corrección Single-Stage", "text": "289€. Pulido mecánico de un paso que elimina hasta el 70% de swirls. 3-4 horas." },
-            { "label": "Corrección Two-Stage", "text": "549€. Compound + pulido completo, 90%+ eliminación de defectos. 5-7 horas." },
-            { "label": "Cerámico 2 Años", "text": "649€. Corrección two-stage + cerámico certificado de 2 años (Gyeon/Gtechniq). 6-8 horas. Más popular." },
+            { "label": "Corrección de Una Fase", "text": "289€. Pulido mecánico de un paso que elimina hasta el 70% de marcas circulares. 3-4 horas." },
+            { "label": "Corrección de Dos Fases", "text": "549€. Compuesto de corte + pulido completo, 90%+ eliminación de defectos. 5-7 horas." },
+            { "label": "Cerámico 2 Años", "text": "649€. Corrección de dos fases + cerámico certificado de 2 años (Gyeon/Gtechniq). 6-8 horas. Más popular." },
             { "label": "Cerámico Premium 5 Años", "text": "1 049€. Corrección multifase + cerámico grafeno 5 años + parabrisas + llantas. 8-10 horas." }
           ]
         },
@@ -1521,7 +1521,7 @@
           "title": "Entendiendo el Daño: Barniz vs Capa Base",
           "paragraphs": [
             "Antes de decidir entre corrección y repintado, necesitas entender dónde se sitúa el daño en el sistema de pintura. La pintura automotriz moderna consta de cuatro capas: la capa e-coat (imprimación por electrodeposición), la imprimación-aparejo, la capa base (color) y el barniz encima. El barniz tiene típicamente 40-60 micras de grosor en un acabado de fábrica y actúa como la capa de protección sacrificial.",
-            "Las marcas circulares (swirl marks), arañazos leves, oxidación, manchas de agua y marcas de excrementos de aves se sitúan dentro de esta capa de barniz. Una corrección profesional de pintura — usando pulidoras como la Rupes LHR15 Mark III o Makita 9237CB — funciona nivelando el barniz a una profundidad uniforme, eliminando los defectos sin tocar el color subyacente. En restoreLab, medimos la profundidad de pintura con un medidor digital (Elcometer 456) antes de cada trabajo, asegurando que nunca comprometemos la integridad estructural del acabado.",
+            "Las marcas circulares, arañazos leves, oxidación, manchas de agua y marcas de excrementos de aves se sitúan dentro de esta capa de barniz. Una corrección profesional de pintura — usando pulidoras como la Rupes LHR15 Mark III o Makita 9237CB — funciona nivelando el barniz a una profundidad uniforme, eliminando los defectos sin tocar el color subyacente. En restoreLab, medimos la profundidad de pintura con un medidor digital (Elcometer 456) antes de cada trabajo, asegurando que nunca comprometemos la integridad estructural del acabado.",
             "El repintado, por el contrario, solo es necesario cuando el daño se extiende a través del barniz hasta la capa base — hablamos de arañazos profundos de llave donde se ve la imprimación o el metal desnudo, grandes desconchones que se han oxidado, o paneles donde el barniz se ha delaminado por completo. En el clima mediterráneo de Barcelona, donde los índices UV alcanzan regularmente 9-10 en verano y las temperaturas superan los 35 grados Celsius, el fallo del barniz en vehículos mal mantenidos es más común que en el norte de Europa."
           ]
         },
@@ -1888,19 +1888,19 @@
     "pricing_subtitle": "Precio base sedán. Descuentos por volumen se aplican automáticamente en factura mensual.",
     "pricing_tiers": [
       {
-        "name": "Lot-Ready Estándar",
+        "name": "Preparación Estándar",
         "price": "169",
         "desc": "Lavado descontaminante + pulido en una fase + aspirado interior + acondicionado neumáticos. Ideal para stock hasta 30.000€.",
         "includes": ["Lavado descontaminante + clay bar", "Pulido mecánico en una fase", "Aspirado y limpieza interior", "Acondicionado de neumáticos y molduras", "Informe fotográfico"]
       },
       {
-        "name": "Lot-Ready SUV",
+        "name": "Preparación SUV",
         "price": "229",
         "desc": "Igual que Estándar para SUV, crossovers y familiares. Paneles más grandes, más tiempo.",
         "includes": ["Todo lo de Estándar", "Cobertura tamaño SUV/familiar", "Maletero y zona de carga", "Informe fotográfico ampliado"]
       },
       {
-        "name": "Showroom Sports",
+        "name": "Exposición Deportivos",
         "price": "299",
         "desc": "Corrección en dos fases para vehículos premium y deportivos. Diseñado para coches de más de 40.000€.",
         "includes": ["Corrección de pintura en dos fases", "Detailing interior completo", "Pulido de cristales y vano motor", "Detalle de llantas + cerámica molduras", "Informe de 30 fotos"]
@@ -2193,7 +2193,7 @@
           "Retoque de pulido a máquina mensual",
           "Refuerzo cerámico mensual",
           "Renovación del revestimiento de llantas (trimestral)",
-          "Inspección y retoque de bordes del coating",
+          "Inspección y retoque de bordes del recubrimiento",
           "Detallado del vano motor (semestral)",
           "Programación prioritaria en el mismo día",
           "20% de descuento en cualquier servicio adicional"
