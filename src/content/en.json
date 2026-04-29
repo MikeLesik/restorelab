@@ -98,7 +98,7 @@
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
-    "subheadline": "Premium paint correction & ceramic coating in Sant Cugat, Barcelona and Vallès Occidental — we come to your garage.",
+    "subheadline": "Paint correction, glass polishing, headlight & interior restoration — premium mobile service in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
     "cta_primary": "Get a Free Estimate",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
@@ -117,15 +117,17 @@
     ],
     "certifications": [
       { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" },
-      { "name": "IDA Member", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
-      { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
+      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" }
     ],
     "founder": {
       "text": "Founded in Sant Cugat. Mobile-first since day one.",
       "link_label": "About us",
       "link_url": "/about"
-    }
+    },
+    "micro_service": "★ 5.0 · 500+ jobs · Mobile service",
+    "micro_pricing": "Certified detailers · Satisfaction guarantee",
+    "micro_prefooter": "Avg reply 28 min · We come to you",
+    "booking_urgency": "Currently booking 2 weeks ahead"
   },
   "social_proof": {
     "rating": "5.0",
@@ -823,9 +825,7 @@
     "plans_link": "Care Plans",
     "booking_link": "Book Online",
     "legal_entity": "restoreLab S.L.",
-    "legal_nif": "B-XXXXXXXX",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
-    "legal_provisional": "(Provisional — pending registration)"
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona"
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",

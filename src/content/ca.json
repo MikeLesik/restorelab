@@ -98,7 +98,7 @@
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
-    "subheadline": "Correcció de pintura i ceràmic premium a Sant Cugat, Barcelona i Vallès Occidental — anem a tu.",
+    "subheadline": "Correcció de pintura, polit de vidres, fars i interior — servei mòbil premium a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
     "cta_primary": "Pressupost Gratuït",
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
@@ -117,15 +117,17 @@
     ],
     "certifications": [
       { "name": "Gyeon Certificat", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Acreditat", "status": "active", "icon": "shield" },
-      { "name": "Membre IDA", "status": "pending", "eta": "Q3 2026", "icon": "badge" },
-      { "name": "Ceramic Pro", "status": "pending", "eta": "Q4 2026", "icon": "badge" }
+      { "name": "Gtechniq Acreditat", "status": "active", "icon": "shield" }
     ],
     "founder": {
       "text": "Fundat a Sant Cugat. Servei mòbil des del primer dia.",
       "link_label": "Sobre nosaltres",
       "link_url": "/about"
-    }
+    },
+    "micro_service": "★ 5.0 · 500+ treballs · Servei mòbil",
+    "micro_pricing": "Tècnics certificats · Garantia de satisfacció",
+    "micro_prefooter": "Resposta mitjana 28 min · Anem a tu",
+    "booking_urgency": "Reservant amb 2 setmanes d'antelació"
   },
   "social_proof": {
     "rating": "5.0",
@@ -763,9 +765,7 @@
     "plans_link": "Plans de Cura",
     "booking_link": "Reservar en Línia",
     "legal_entity": "restoreLab S.L.",
-    "legal_nif": "B-XXXXXXXX",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
-    "legal_provisional": "(Provisional — pendent de registre)"
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona"
   },
   "guarantee": {
     "section_title": "Zero Risc. Garantit.",
