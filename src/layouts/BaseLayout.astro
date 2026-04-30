@@ -175,7 +175,10 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
       "@type": "Organization",
       "name": "restoreLab",
       "url": siteUrl,
-      "logo": `${siteUrl}/favicon.svg`,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/favicon.svg`
+      },
       "sameAs": ["https://g.page/restorelab-santcugat"],
       "contactPoint": {
         "@type": "ContactPoint",
