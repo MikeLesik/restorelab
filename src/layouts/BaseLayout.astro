@@ -310,6 +310,42 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
         }
       };
 
+      // ── AI Referral detection ────────────────────────────────────
+      // On page load, check document.referrer against known AI search
+      // referrers and push an `ai_referral` event to the unified pipeline.
+      (function detectAIReferral() {
+        try {
+          var ref = document.referrer || '';
+          if (!ref) return;
+          var aiHosts = [
+            { host: 'chat.openai.com', source: 'chatgpt' },
+            { host: 'chatgpt.com', source: 'chatgpt' },
+            { host: 'perplexity.ai', source: 'perplexity' },
+            { host: 'www.perplexity.ai', source: 'perplexity' },
+            { host: 'claude.ai', source: 'claude' },
+            { host: 'copilot.microsoft.com', source: 'bing_copilot' },
+            { host: 'bing.com', source: 'bing' },
+            { host: 'gemini.google.com', source: 'gemini' },
+          ];
+          var url = new URL(ref);
+          var match = aiHosts.find(function(item) {
+            return url.hostname === item.host || url.hostname.endsWith('.' + item.host);
+          });
+          if (!match) return;
+          if (typeof window.__rl_push === 'function') {
+            window.__rl_push({
+              event: 'ai_referral',
+              ai_source: match.source,
+              ai_referrer_url: ref,
+              landing_path: location.pathname,
+              page_lang: pageLang,
+            });
+          }
+        } catch (e) {
+          // referrer parse failure — silent fail
+        }
+      })();
+
       document.addEventListener('click', function(e) {
         var el = e.target.closest('[data-event]');
         if (!el) return;
