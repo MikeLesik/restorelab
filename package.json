@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "new:case": "node scripts/new-case.mjs",
-    "new:post": "node scripts/new-post.mjs"
+    "new:post": "node scripts/new-post.mjs",
+    "gen:llms": "node scripts/generate-llms-txt.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
