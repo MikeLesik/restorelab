@@ -5,6 +5,9 @@ import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
 import { SITE_URL } from '@/lib/constants';
+import RelatedGuides from '@/components/RelatedGuides.astro';
+import ServiceCTA from '@/components/ServiceCTA.astro';
+import { findClusterForSpoke } from '@/lib/clusterMap';
 
 export function getStaticPaths() {
   const langs = [
@@ -28,6 +31,12 @@ const { t, card } = Astro.props;
 const contentKey = (slug as string).replace(/-/g, '_');
 const content = (t.academy_articles as Record<string, any>)[contentKey];
 const sections = content.sections as Array<Record<string, any>>;
+
+// Determine the article's cluster hub for breadcrumb schema enrichment.
+const clusterFound = findClusterForSpoke(slug as string);
+const hubLabelKey = clusterFound?.cluster.hubLabelKey;
+const hubLabel = hubLabelKey ? ((t.cluster_ui?.hubs as Record<string, string> | undefined)?.[hubLabelKey]) : undefined;
+const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : undefined;
 ---
 
 <BaseLayout
@@ -64,7 +73,8 @@ const sections = content.sections as Array<Record<string, any>>;
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
       { "@type": "ListItem", "position": 2, "name": t.academy.articles_title, "item": `${SITE_URL}/${lang}/academy` },
-      { "@type": "ListItem", "position": 3, "name": content.title, "item": `${SITE_URL}/${lang}/academy/${slug}` }
+      ...(hubLabel && hubUrl ? [{ "@type": "ListItem", "position": 3, "name": hubLabel, "item": `${SITE_URL}/${lang}${hubUrl}` }] : []),
+      { "@type": "ListItem", "position": hubLabel && hubUrl ? 4 : 3, "name": content.title, "item": `${SITE_URL}/${lang}/academy/${slug}` }
     ]
   })} />
 
@@ -214,28 +224,8 @@ const sections = content.sections as Array<Record<string, any>>;
       </div>
     </article>
 
-    <!-- Related articles -->
-    {(() => {
-      const otherArticles = t.academy.articles.filter((a: any) => a.slug !== slug && a.status === 'published').slice(0, 3);
-      return otherArticles.length > 0 ? (
-        <section class="pb-14">
-          <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-lg font-display font-semibold text-th-heading mb-6">{lang === 'es' ? 'Más artículos' : 'More articles'}</h3>
-            <div class="grid gap-4">
-              {otherArticles.map((a: any) => (
-                <a href={`/${lang}/academy/${a.slug}`} class="flex items-center gap-4 p-4 rounded-xl border border-th-border/10 hover:border-th-border/20 hover:bg-th-surface/3 transition-colors group">
-                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-display font-bold text-xs">{a.number}</span>
-                  <div class="flex-1 min-w-0">
-                    <span class="text-sm font-medium text-th-heading group-hover:text-brand-accent transition-colors">{a.title}</span>
-                  </div>
-                  <svg class="w-4 h-4 text-th-faint group-hover:text-brand-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null;
-    })()}
+    <ServiceCTA slug={slug as string} t={t} lang={lang as string} />
+    <RelatedGuides slug={slug as string} t={t} lang={lang as string} />
 
   </div>
 </BaseLayout>
