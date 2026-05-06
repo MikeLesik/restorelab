@@ -2259,5 +2259,33 @@
       "Portem tot — generador, subministrament d'aigua, tot l'equip",
       "Rebràs una confirmació per WhatsApp amb l'hora exacta d'arribada"
     ]
+  },
+  "cluster_ui": {
+    "hub_spokes_title": "Guies per a aquest servei",
+    "hub_spokes_subtitle": "Llegeix els detalls abans de demanar pressupost — o salta directament a la cita.",
+    "related_guides_title": "Guies relacionades",
+    "service_cta_title": "Necessites aquest servei?",
+    "service_cta_button": "Demana pressupost",
+    "back_to_hub_label": "Tornar a {hub}",
+    "hubs": {
+      "car_paint_correction": "Correcció de Pintura",
+      "glass_polishing": "Poliment de Vidres",
+      "acrylic_restoration": "Restauració d'Acrílic",
+      "headlight_restoration": "Restauració de Fars",
+      "interior_leather": "Interior i Cuir",
+      "pre_sale_pack": "Pack Pre-Venda",
+      "trim_restoration": "Restauració de Plàstics",
+      "wheel_ceramic": "Ceràmic per a Llantes",
+      "engine_bay": "Neteja de Motor",
+      "ev": "Especialistes EV",
+      "business": "B2B i Flotes",
+      "plans": "Plans de Cura",
+      "commercial_glass": "Vidre Comercial"
+    },
+    "sub_clusters": {
+      "process_technique": "Procés i tècnica"
+    },
+    "areas_dense_links_title": "Serveis que oferim a {city}",
+    "areas_dense_links_subtitle": "Detailing mòbil — anem al teu garatge."
   }
 }

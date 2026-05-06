@@ -2259,5 +2259,33 @@
       "We bring everything — generator, water supply, all equipment",
       "You'll receive a WhatsApp confirmation with exact arrival time"
     ]
+  },
+  "cluster_ui": {
+    "hub_spokes_title": "Guides for this service",
+    "hub_spokes_subtitle": "Read up before booking — or skip ahead to a quote.",
+    "related_guides_title": "Related guides",
+    "service_cta_title": "Need this service?",
+    "service_cta_button": "Get a quote",
+    "back_to_hub_label": "Back to {hub}",
+    "hubs": {
+      "car_paint_correction": "Car Paint Correction",
+      "glass_polishing": "Glass Polishing",
+      "acrylic_restoration": "Acrylic Restoration",
+      "headlight_restoration": "Headlight Restoration",
+      "interior_leather": "Interior & Leather",
+      "pre_sale_pack": "Pre-Sale Detailing",
+      "trim_restoration": "Trim Restoration",
+      "wheel_ceramic": "Wheel Ceramic Coating",
+      "engine_bay": "Engine Bay Detailing",
+      "ev": "EV Specialists",
+      "business": "B2B & Fleet",
+      "plans": "Care Plans",
+      "commercial_glass": "Commercial Glass"
+    },
+    "sub_clusters": {
+      "process_technique": "Process & technique"
+    },
+    "areas_dense_links_title": "Services we offer in {city}",
+    "areas_dense_links_subtitle": "Mobile detailing — we come to your garage."
   }
 }

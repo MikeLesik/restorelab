@@ -2259,5 +2259,33 @@
       "Traemos todo — generador, suministro de agua, todo el equipo",
       "Recibirás una confirmación por WhatsApp con la hora exacta de llegada"
     ]
+  },
+  "cluster_ui": {
+    "hub_spokes_title": "Guías para este servicio",
+    "hub_spokes_subtitle": "Léete los detalles antes de pedir presupuesto — o salta directamente a la cita.",
+    "related_guides_title": "Guías relacionadas",
+    "service_cta_title": "¿Necesitas este servicio?",
+    "service_cta_button": "Pide tu presupuesto",
+    "back_to_hub_label": "Volver a {hub}",
+    "hubs": {
+      "car_paint_correction": "Corrección de Pintura",
+      "glass_polishing": "Pulido de Cristales",
+      "acrylic_restoration": "Restauración de Acrílico",
+      "headlight_restoration": "Restauración de Faros",
+      "interior_leather": "Interior y Cuero",
+      "pre_sale_pack": "Pack Pre-Venta",
+      "trim_restoration": "Restauración de Plásticos",
+      "wheel_ceramic": "Cerámico para Llantas",
+      "engine_bay": "Limpieza de Motor",
+      "ev": "Especialistas EV",
+      "business": "B2B y Flotas",
+      "plans": "Planes de Cuidado",
+      "commercial_glass": "Cristal Comercial"
+    },
+    "sub_clusters": {
+      "process_technique": "Proceso y técnica"
+    },
+    "areas_dense_links_title": "Servicios que ofrecemos en {city}",
+    "areas_dense_links_subtitle": "Detailing móvil — vamos a tu garaje."
   }
 }
