@@ -967,6 +967,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
+      "howto": true,
       "seo_title": "Rotary vs Dual Action Polishers | restoreLab Academy",
       "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations.",
       "title": "Choosing Your Weapon: Rotary vs. Dual Action",
@@ -1070,6 +1071,7 @@
       ]
     },
     "mechanical_correction": {
+      "howto": true,
       "seo_title": "Mechanical Correction Protocols: The Art of the Cut | restoreLab Academy",
       "seo_description": "The snake pattern technique, 20 kg pressure protocol, and wool pad physics. How to cut deep defects while preserving clear coat structural integrity.",
       "title": "Mechanical Correction Protocols: The Art of the Cut",
@@ -1318,6 +1320,7 @@
       ]
     },
     "remove_swirl_marks": {
+      "howto": true,
       "seo_title": "How to Remove Swirl Marks from Car Paint | restoreLab Academy",
       "seo_description": "What causes swirl marks and how professionals remove them. Step-by-step correction process, tools used, and prevention tips.",
       "title": "How to Remove Swirl Marks from Car Paint",
@@ -1597,6 +1600,7 @@
       ]
     },
     "headlight_restoration_guide_barcelona": {
+      "howto": true,
       "seo_title": "Headlight Restoration Guide Barcelona 2026 | restoreLab",
       "seo_description": "Complete headlight restoration guide for Barcelona drivers. ITV compliance, UV degradation science, DIY vs professional, and pricing from 79 euros.",
       "title": "Headlight Restoration Guide: 2026 Guide for Barcelona Drivers",
@@ -1642,6 +1646,7 @@
       ]
     },
     "pre_sale_detailing_checklist_catalonia": {
+      "howto": true,
       "seo_title": "Pre-Sale Detailing Checklist Catalonia | restoreLab",
       "seo_description": "Maximise your car's resale value in Catalonia. What buyers inspect, which defects cost the most, and the ROI of professional pre-sale detailing.",
       "title": "Pre-Sale Detailing Checklist: What Buyers in Catalonia Look For",

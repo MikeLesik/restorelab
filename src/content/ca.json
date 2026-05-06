@@ -967,6 +967,7 @@
   },
   "academy_articles": {
     "equipment_selection": {
+      "howto": true,
       "seo_title": "Rotativa vs Doble Acció — Selecció | restoreLab Acadèmia",
       "seo_description": "Per què el 99% del resultat depèn de la selecció d'eines. Polidores rotatives vs doble acció — anàlisi d'enginyeria, taula comparativa i recomanacions.",
       "title": "Tria la Teva Arma: Rotativa vs. Doble Acció",
@@ -1070,6 +1071,7 @@
       ]
     },
     "mechanical_correction": {
+      "howto": true,
       "seo_title": "Protocols de Correcció Mecànica: L'Art del Tall | restoreLab Acadèmia",
       "seo_description": "La tècnica del patró serp, protocol de 20 kg de pressió i física del coixinet de llana. Com tallar defectes profunds preservant el vernís.",
       "title": "Protocols de Correcció Mecànica: L'Art del Tall",
@@ -1318,6 +1320,7 @@
       ]
     },
     "remove_swirl_marks": {
+      "howto": true,
       "seo_title": "Com Eliminar Marques Circulars de la Pintura | restoreLab Acadèmia",
       "seo_description": "Què causa les marques circulars i com les eliminen els professionals. Procés de correcció pas a pas, eines i consells de prevenció.",
       "title": "Com Eliminar Marques Circulars de la Pintura",
@@ -1597,6 +1600,7 @@
       ]
     },
     "headlight_restoration_guide_barcelona": {
+      "howto": true,
       "seo_title": "Guia Restauració de Fars Barcelona 2026 | restoreLab",
       "seo_description": "Guia completa de restauració de fars per a conductors de Barcelona. ITV, ciència de degradació UV, DIY vs professional i preus des de 79 euros.",
       "title": "Guia de Restauració de Fars: Guia 2026 per a Conductors de Barcelona",
@@ -1642,6 +1646,7 @@
       ]
     },
     "pre_sale_detailing_checklist_catalonia": {
+      "howto": true,
       "seo_title": "Checklist Detailing Pre-Venda Catalunya | restoreLab",
       "seo_description": "Maximitza el valor de revenda del teu cotxe a Catalunya. Què inspeccionen els compradors, quins defectes costen més i el ROI del detailing professional pre-venda.",
       "title": "Checklist de Detailing Pre-Venda: Què Busquen els Compradors a Catalunya",

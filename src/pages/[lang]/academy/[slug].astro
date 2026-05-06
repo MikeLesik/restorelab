@@ -8,6 +8,7 @@ import { SITE_URL } from '@/lib/constants';
 import RelatedGuides from '@/components/RelatedGuides.astro';
 import ServiceCTA from '@/components/ServiceCTA.astro';
 import { findClusterForSpoke } from '@/lib/clusterMap';
+import ArticleSchema from '@/components/ArticleSchema.astro';
 
 export function getStaticPaths() {
   const langs = [
@@ -77,6 +78,8 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
       { "@type": "ListItem", "position": hubLabel && hubUrl ? 4 : 3, "name": content.title, "item": `${SITE_URL}/${lang}/academy/${slug}` }
     ]
   })} />
+
+  <ArticleSchema slug={slug as string} t={t} lang={lang as string} />
 
   <div class="pt-24">
 
