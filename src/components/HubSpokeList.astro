@@ -1,0 +1,102 @@
+---
+import { clusterMap, type ClusterDef } from '@/lib/clusterMap';
+
+export interface Props {
+  /** Cluster ID — matches a key in clusterMap (e.g. 'car-paint-correction') */
+  hub: string;
+  /** Translations object passed down from page */
+  t: Record<string, any>;
+  /** Language code */
+  lang: string;
+}
+
+const { hub, t, lang } = Astro.props;
+const cluster: ClusterDef | undefined = clusterMap[hub];
+
+// Resolve a spoke slug to its academy article entry from content JSON.
+// Returns undefined if the article doesn't exist or is hidden.
+function resolveSpoke(slug: string) {
+  const article = (t.academy?.articles || []).find(
+    (a: any) => a.slug === slug && a.status === 'published'
+  );
+  return article;
+}
+
+const primarySpokes = (cluster?.primarySpokes || [])
+  .map(resolveSpoke)
+  .filter(Boolean);
+
+const subClusterSpokes = (cluster?.subClusterSpokes || [])
+  .map(resolveSpoke)
+  .filter(Boolean);
+
+const subClusterLabel =
+  cluster?.subClusterLabelKey
+    ? t.cluster_ui?.sub_clusters?.[cluster.subClusterLabelKey] || ''
+    : '';
+
+const ui = t.cluster_ui || {};
+---
+
+{(primarySpokes.length > 0 || subClusterSpokes.length > 0) && (
+  <section class="py-12 sm:py-14">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="section-title">{ui.hub_spokes_title}</h2>
+        {ui.hub_spokes_subtitle && (
+          <p class="section-subtitle mx-auto mt-3">{ui.hub_spokes_subtitle}</p>
+        )}
+      </div>
+
+      {primarySpokes.length > 0 && (
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {primarySpokes.map((article: any) => (
+            <a
+              href={`/${lang}/academy/${article.slug}`}
+              class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/3 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
+              data-event="hub_spoke_click"
+              data-spoke={article.slug}
+            >
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent/80 mb-2 inline-block">{article.number}</span>
+              <h3 class="text-base font-display font-semibold text-th-heading group-hover:text-brand-accent transition-colors leading-snug mb-2">
+                {article.title}
+              </h3>
+              {article.description && (
+                <p class="text-sm text-th-muted leading-relaxed line-clamp-3">{article.description}</p>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
+
+      {subClusterSpokes.length > 0 && (
+        <details class="group mt-8 rounded-2xl border border-th-border/10 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer select-none hover:bg-th-surface/3 transition-colors [&::-webkit-details-marker]:hidden list-none">
+            <span class="text-sm font-semibold text-th-heading">{subClusterLabel}</span>
+            <svg
+              class="w-4 h-4 text-th-faint transition-transform duration-200 group-open:rotate-180"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 pt-1 grid gap-3 sm:grid-cols-2">
+            {subClusterSpokes.map((article: any) => (
+              <a
+                href={`/${lang}/academy/${article.slug}`}
+                class="group/card block p-4 rounded-xl border border-th-border/8 hover:border-brand-accent/30 transition-colors"
+                data-event="hub_spoke_click"
+                data-spoke={article.slug}
+                data-sub-cluster="true"
+              >
+                <h4 class="text-sm font-medium text-th-body group-hover/card:text-brand-accent transition-colors">
+                  {article.title}
+                </h4>
+              </a>
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
+  </section>
+)}
