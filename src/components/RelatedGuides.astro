@@ -1,0 +1,52 @@
+---
+import { getSiblingSpokes } from '@/lib/clusterMap';
+
+export interface Props {
+  /** Slug of the current academy article */
+  slug: string;
+  /** Translations object passed from page */
+  t: Record<string, any>;
+  /** Language code */
+  lang: string;
+  /** Max siblings to show (default 3) */
+  limit?: number;
+}
+
+const { slug, t, lang, limit = 3 } = Astro.props;
+
+const siblingSlugs = getSiblingSpokes(slug, limit);
+
+function resolveArticle(siblingSlug: string) {
+  return (t.academy?.articles || []).find(
+    (a: any) => a.slug === siblingSlug && a.status === 'published'
+  );
+}
+
+const siblings = siblingSlugs.map(resolveArticle).filter(Boolean);
+const ui = t.cluster_ui || {};
+---
+
+{siblings.length > 0 && (
+  <section class="pb-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-lg font-display font-semibold text-th-heading mb-6">{ui.related_guides_title}</h3>
+      <div class="grid gap-4">
+        {siblings.map((a: any) => (
+          <a
+            href={`/${lang}/academy/${a.slug}`}
+            class="flex items-center gap-4 p-4 rounded-xl border border-th-border/10 hover:border-th-border/20 hover:bg-th-surface/3 transition-colors group"
+            data-event="related_spoke_click"
+            data-from={slug}
+            data-to={a.slug}
+          >
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-display font-bold text-xs">{a.number}</span>
+            <div class="flex-1 min-w-0">
+              <span class="text-sm font-medium text-th-heading group-hover:text-brand-accent transition-colors">{a.title}</span>
+            </div>
+            <svg class="w-4 h-4 text-th-faint group-hover:text-brand-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
