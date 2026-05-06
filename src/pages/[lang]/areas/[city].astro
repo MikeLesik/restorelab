@@ -6,6 +6,8 @@ import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
+import { clusterMap, getActiveClusterIds } from '@/lib/clusterMap';
+import { serviceProfiles } from '@/lib/serviceProfiles';
 
 export function getStaticPaths() {
   const langs = [
@@ -29,6 +31,16 @@ const wa = WHATSAPP_NUMBER;
 
 const fill = (tpl: string) => tpl.replace(/\{city\}/g, city.name);
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.replace('[From homepage]', `[From ${city.short} area page]`))}`;
+
+// Find clusters whose relatedAreas include this city's slug.
+// Take up to 3 (prioritize order they appear in clusterMap — primary services first).
+const cityRelatedClusters = getActiveClusterIds()
+  .map((id) => ({ id, def: clusterMap[id] }))
+  .filter(({ def }) => def.relatedAreas.includes(city.slug))
+  .slice(0, 3);
+
+// Hub labels lookup (typed as any to allow string indexing in template)
+const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
 ---
 
 <BaseLayout
@@ -135,5 +147,41 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.
     </section>
 
     <FAQ t={t} />
+
+    {cityRelatedClusters.length > 0 && (
+      <section class="py-12 sm:py-14">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-10">
+            <h2 class="section-title">{(t.cluster_ui?.areas_dense_links_title || '').replace('{city}', city.name)}</h2>
+            {t.cluster_ui?.areas_dense_links_subtitle && (
+              <p class="section-subtitle mx-auto mt-3">{t.cluster_ui.areas_dense_links_subtitle}</p>
+            )}
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            {cityRelatedClusters.map(({ id, def }) => {
+              const label = clusterHubLabels[def.hubLabelKey] || serviceProfiles[id]?.englishLabel || id;
+              return (
+                <a
+                  href={`/${lang}${def.hub}`}
+                  class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/3 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  data-event="area_service_click"
+                  data-area={city.slug}
+                  data-service={id}
+                >
+                  <h3 class="text-base font-display font-semibold text-th-heading group-hover:text-brand-accent transition-colors leading-snug">
+                    {label}
+                  </h3>
+                  {serviceProfiles[id]?.startingPriceEur && (
+                    <p class="text-sm text-th-muted mt-2">
+                      {lang === 'en' ? 'From' : lang === 'es' ? 'Desde' : 'Des de'} €{serviceProfiles[id]!.startingPriceEur}
+                    </p>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )}
   </div>
 </BaseLayout>
