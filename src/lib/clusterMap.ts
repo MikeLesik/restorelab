@@ -48,7 +48,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     ],
     subClusterLabelKey: 'process_technique',
     relatedHubs: ['ev', 'business'],
-    relatedAreas: ['sant-cugat-del-valles', 'barcelona', 'pedralbes'],
+    relatedAreas: ['sant-cugat', 'barcelona', 'pedralbes'],
   },
 
   'glass-polishing': {
@@ -57,7 +57,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: ['windshield-scratch-repair'],
     relatedHubs: ['commercial-glass'],
-    relatedAreas: ['sant-cugat-del-valles', 'barcelona', 'terrassa'],
+    relatedAreas: ['sant-cugat', 'barcelona', 'terrassa'],
   },
 
   'acrylic-restoration': {
@@ -75,7 +75,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: ['headlight-restoration-guide-barcelona'],
     relatedHubs: [],
-    relatedAreas: ['sant-cugat-del-valles', 'barcelona', 'terrassa'],
+    relatedAreas: ['sant-cugat', 'barcelona', 'terrassa'],
   },
 
   'interior-leather': {
@@ -84,7 +84,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: [],
     relatedHubs: ['business'],
-    relatedAreas: ['pedralbes', 'sant-gervasi-tres-torres', 'sant-cugat-del-valles'],
+    relatedAreas: ['pedralbes', 'sant-gervasi', 'sant-cugat'],
   },
 
   'pre-sale-pack': {
@@ -93,7 +93,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: ['pre-sale-detailing-checklist-catalonia'],
     relatedHubs: ['business'],
-    relatedAreas: ['barcelona', 'sant-cugat-del-valles', 'terrassa'],
+    relatedAreas: ['barcelona', 'sant-cugat', 'terrassa'],
   },
 
   // Hidden services — registered for forward compatibility.
@@ -133,7 +133,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: ['tesla-ev-paint-care-mediterranean'],
     relatedHubs: ['car-paint-correction', 'glass-polishing'],
-    relatedAreas: ['pedralbes', 'sant-gervasi-tres-torres', 'sant-cugat-del-valles'],
+    relatedAreas: ['pedralbes', 'sant-gervasi', 'sant-cugat'],
   },
 
   'business': {
@@ -142,7 +142,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: [],
     relatedHubs: ['plans', 'car-paint-correction', 'pre-sale-pack'],
-    relatedAreas: ['barcelona', 'sant-cugat-del-valles', 'terrassa'],
+    relatedAreas: ['barcelona', 'sant-cugat', 'terrassa'],
   },
 
   'plans': {
@@ -151,7 +151,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: [],
     relatedHubs: ['car-paint-correction', 'glass-polishing', 'headlight-restoration', 'interior-leather'],
-    relatedAreas: ['sant-cugat-del-valles', 'barcelona'],
+    relatedAreas: ['sant-cugat', 'barcelona'],
   },
 
   'commercial-glass': {
@@ -160,7 +160,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubActive: true,
     primarySpokes: [],
     relatedHubs: ['glass-polishing'], // weak cross-link per spec section 5
-    relatedAreas: ['barcelona', 'sant-cugat-del-valles'],
+    relatedAreas: ['barcelona', 'sant-cugat'],
   },
 };
 
