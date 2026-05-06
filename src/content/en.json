@@ -2248,6 +2248,48 @@
     "cta_whatsapp": "Choose My Plan",
     "cta_email": "Email Us"
   },
+  "area_service_pages": {
+    "title_template": "{service} in {area} — Mobile Service",
+    "meta_description_template": "Professional {service} at your doorstep in {area}. Premium mobile detailing — we come to your garage. Starting from €{price}.",
+    "h1_template": "{service} in {area}",
+    "subtitle_template": "Mobile {service} at your doorstep — we come to you in {area}.",
+    "intro_label": "What we do",
+    "pricing_label": "Pricing",
+    "pricing_starting_from": "Starting from €{price}",
+    "pricing_travel_fee_included": "Travel to {area} is included.",
+    "pricing_travel_fee_charged": "Travel fee for {area}: €{fee}.",
+    "trust_label": "Trusted in {area}",
+    "trust_case_count_template": "{count} jobs completed in {area}.",
+    "trust_generic": "Trusted by customers across the Barcelona metropolitan area.",
+    "faq_label": "Frequently asked",
+    "faq_templates": [
+      {
+        "question": "How long does {service} take in {area}?",
+        "answer_template": "Most {service} jobs in {area} take {duration_hours} hours. We arrive at your scheduled time and work in your garage. {parking_note}"
+      },
+      {
+        "question": "Do you serve {area}? What's the travel fee?",
+        "answer_template": "Yes — we cover {area} from our base in Sant Cugat del Vallès. {fee_clause}"
+      },
+      {
+        "question": "Can you do {service} in a private garage in {area}?",
+        "answer_template": "Yes. {parking_context_clause} We bring everything needed: water, power (or battery tools), lighting, and protection sheets."
+      }
+    ],
+    "duration_hours_by_service": {
+      "car-paint-correction": "4 to 8",
+      "glass-polishing": "1 to 3",
+      "headlight-restoration": "1 to 2",
+      "acrylic-restoration": "2 to 4",
+      "interior-leather": "2 to 5",
+      "pre-sale-pack": "4 to 8"
+    },
+    "cta_title": "Book {service} in {area}",
+    "cta_subtitle": "Get a free quote on WhatsApp — average reply 28 minutes.",
+    "cta_whatsapp_template": "Hello restoreLab! I'd like a quote for {service} in {area}.",
+    "back_to_area": "Back to {area}",
+    "back_to_service": "See all {service} packages"
+  },
   "booking": {
     "hero_title": "Book your appointment",
     "hero_subtitle": "Choose a free estimate visit or schedule your detailing session. We come to you — Sant Cugat, Barcelona and surrounding areas.",

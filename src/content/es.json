@@ -2248,6 +2248,48 @@
     "cta_whatsapp": "Elegir Mi Plan",
     "cta_email": "Envíanos un Email"
   },
+  "area_service_pages": {
+    "title_template": "{service} en {area} — Servicio Móvil",
+    "meta_description_template": "{service} profesional a domicilio en {area}. Detailing móvil premium — vamos a tu garaje. Desde €{price}.",
+    "h1_template": "{service} en {area}",
+    "subtitle_template": "{service} móvil a domicilio — venimos a tu garaje en {area}.",
+    "intro_label": "Qué hacemos",
+    "pricing_label": "Precio",
+    "pricing_starting_from": "Desde €{price}",
+    "pricing_travel_fee_included": "Desplazamiento a {area} incluido.",
+    "pricing_travel_fee_charged": "Suplemento de desplazamiento a {area}: €{fee}.",
+    "trust_label": "Confianza en {area}",
+    "trust_case_count_template": "{count} trabajos completados en {area}.",
+    "trust_generic": "Clientes habituales en toda el área metropolitana de Barcelona.",
+    "faq_label": "Preguntas frecuentes",
+    "faq_templates": [
+      {
+        "question": "¿Cuánto tarda {service} en {area}?",
+        "answer_template": "La mayoría de trabajos de {service} en {area} tardan {duration_hours} horas. Llegamos a la hora pactada y trabajamos en tu garaje. {parking_note}"
+      },
+      {
+        "question": "¿Trabajáis en {area}? ¿Cuál es el suplemento por desplazamiento?",
+        "answer_template": "Sí — cubrimos {area} desde nuestra base en Sant Cugat del Vallès. {fee_clause}"
+      },
+      {
+        "question": "¿Podéis hacer {service} en un garaje privado en {area}?",
+        "answer_template": "Sí. {parking_context_clause} Llevamos todo lo necesario: agua, electricidad (o herramientas a batería), iluminación y cobertores de protección."
+      }
+    ],
+    "duration_hours_by_service": {
+      "car-paint-correction": "4 a 8",
+      "glass-polishing": "1 a 3",
+      "headlight-restoration": "1 a 2",
+      "acrylic-restoration": "2 a 4",
+      "interior-leather": "2 a 5",
+      "pre-sale-pack": "4 a 8"
+    },
+    "cta_title": "Reserva {service} en {area}",
+    "cta_subtitle": "Pide tu presupuesto gratis por WhatsApp — respuesta media en 28 minutos.",
+    "cta_whatsapp_template": "¡Hola restoreLab! Me gustaría un presupuesto para {service} en {area}.",
+    "back_to_area": "Volver a {area}",
+    "back_to_service": "Ver todos los paquetes de {service}"
+  },
   "booking": {
     "hero_title": "Reserva tu cita",
     "hero_subtitle": "Elige una visita de valoración gratuita o programa tu sesión de detailing. Vamos a ti — Sant Cugat, Barcelona y alrededores.",
