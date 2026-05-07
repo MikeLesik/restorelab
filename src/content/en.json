@@ -1054,6 +1054,14 @@
         "slug": "yellow-vs-cloudy-headlights-causes-lifespan",
         "date": "2026-05-07",
         "status": "draft"
+      },
+      {
+        "number": "19",
+        "title": "UV Damage on Motorcycle Visors and Yacht Acrylic",
+        "excerpt": "Polycarbonate visors and PMMA portholes degrade differently — Maresme coastal triple-stress, restoration thresholds per material, and when replacement is unavoidable.",
+        "slug": "uv-damage-motorcycle-yacht-acrylic",
+        "date": "2026-05-07",
+        "status": "draft"
       }
     ]
   },
@@ -2267,6 +2275,118 @@
             "How can I tell if my headlights have internal moisture damage without taking them apart? The most reliable visual indicator is fogging that appears after rain or temperature changes and clears within an hour or two as the headlight warms up — this indicates the moisture is entering and evaporating cyclically, which is early-stage seal failure. More advanced internal damage shows as a permanent haze concentrated on the lower inner surface of the lens (where condensation pools), visible when you look into the headlight from the front at an angle. Under direct sunlight, delaminating reflector coating appears as dark or dull patches inside the housing rather than the uniform mirror finish of a healthy reflector. If you are uncertain, photograph your headlights in direct sunlight and send the images via WhatsApp — we can identify internal damage from quality photographs in most cases.",
             "Does headlight restoration require any curing time before I can drive the car? No — for standard sealant application. The polishing work is complete immediately, and the sealant we apply can be driven on within 10–15 minutes of application. Ceramic coating requires a slightly longer cure before the vehicle should be washed or exposed to heavy rain — typically 2–4 hours — but does not prevent driving. Since we work at your location in Sant Cugat, Barcelona, or Castelldefels, the typical workflow is: we arrive, complete the restoration in 30–90 minutes per pair, allow 15 minutes for sealant tack-off, and the vehicle is ready for normal use. There is no need to leave the vehicle or arrange alternative transport.",
             "Is it worth paying more for ceramic sealant versus standard sealant on my headlights? The maths favour ceramic for any vehicle you intend to keep for more than 2–3 years. Standard sealant at the €79 base price adds 2–3 years of protection before the lens begins to yellow again. Ceramic sealant at €109–€149 adds 4–6 years. In the Barcelona area, where UV intensity and Saharan dust events accelerate degradation, standard sealant may need reapplication in as little as 18 months on a vehicle parked outdoors year-round. The difference in cost between the two options is €30–€70 one time, compared to a saving of at least one full restoration cycle — plus the ceramic coating's hydrophobic properties improve wet-weather beam clarity and make the lens significantly easier to clean without micro-scratching. For vehicles less than 5 years old where early intervention means the restoration is a light polish rather than a full wet-sand, adding ceramic at that point is the most cost-effective protection investment available."
+          ]
+        }
+      ]
+    },
+    "uv_damage_motorcycle_yacht_acrylic": {
+      "seo_title": "UV Damage on Motorcycle Visors and Yacht Acrylic | restoreLab Academy",
+      "seo_description": "Polycarbonate visors and PMMA yacht portholes degrade by different chemistry. Maresme coastal triple-stress, restoration costs from €99, and honest guidance on when replacement is the only option.",
+      "title": "UV Damage on Motorcycle Visors and Yacht Acrylic",
+      "description": "A material-science guide to the two distinct UV degradation pathways — polycarbonate helmet visors and PMMA yacht portholes — with Maresme coastal exposure data, per-surface restoration techniques, a cost framework from €99, and clear criteria for when professional restoration cannot save the surface.",
+      "intro": "Motorcycle visors and yacht porthole glazing look similar from a distance — both are clear plastic panels that progressively fog, yellow, and haze in Mediterranean sun. But the materials are fundamentally different, and that difference determines everything: how they fail, how they can be restored, and which DIY mistakes destroy them permanently. Polycarbonate (PC) dominates motorcycle visor and windshield construction; cast acrylic (PMMA) is the standard for yacht portholes, instrument panel glazing, and hatch covers. On the Maresme coast — from Castelldefels marina through Alella, Tiana, and Teià to the marinas of the Costa del Maresme — both materials face the same triple-stress environment: Mediterranean UV intensity, salt spray, and extreme thermal cycling. The result is accelerated degradation that coastal owners consistently underestimate until a visor or porthole fails inspection, fails optically, or simply shatters when it should flex.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Two Different Materials, Two Different Failures",
+          "paragraphs": [
+            "Polycarbonate (PC) and poly(methyl methacrylate) — PMMA, commonly called acrylic or Plexiglas — share a surface appearance but have almost nothing else in common as engineering materials. Understanding the difference is the starting point for any restoration conversation.",
+            "Polycarbonate is a tough thermoplastic with an impact resistance roughly 250 times that of glass and 30 times that of acrylic. These properties make it the dominant material for motorcycle helmet visors, sport windshields, and visor shields where impact resistance is a safety requirement. Its Achilles heel is UV resistance: untreated polycarbonate yellows aggressively under UV exposure because the bisphenol-A carbonate groups in its backbone absorb UV radiation at 290–320 nm and undergo Fries rearrangement, generating yellow chromophores. Manufacturers apply a thin UV-hardcoat — typically 5–10 microns of UV-absorbing organosilane — to mitigate this. When the hardcoat fails, yellowing accelerates sharply. Critically, polycarbonate also has a surface hardness of only 3 Mohs — softer than fingernail — which means it scratches extremely easily and must be polished with dedicated, very fine compounds that stay well above the thermal softening threshold.",
+            "Cast acrylic (PMMA) behaves very differently. It is harder than polycarbonate (surface hardness approximately 3.5 Mohs), stiffer and more brittle, with significantly better inherent UV resistance — the PMMA polymer chain absorbs less UV energy than PC and does not undergo the same chromophore-forming reactions as readily. Acrylic degradation in marine environments is therefore more often a surface oxidation and micro-crazing story than a yellowing story: the surface oxidises slowly, becomes microscopically rough, and scatters light. The other major failure mode for yacht acrylic is solvent stress-cracking: petroleum-based cleaning products, polyurethane sealants, and some antifouling paints contain solvents that penetrate acrylic at stress-concentration points and produce fine radial cracks around fastener holes and frame edges. These cracks are invisible at first and then widen under thermal cycling.",
+            "The third material worth understanding — because it appears in both contexts — is polycarbonate with hard-coat, which behaves like a hybrid. Motorcycle windshields, scooter screens, and some yacht instrument covers use hard-coated PC. When the hard coat is intact, the surface polishes well. When the hard coat has failed and been abraded through, the underlying soft PC is exposed — and this is where irreversible damage begins, because aggressive polishing compounds on exposed soft PC cause thermal softening and optical distortion that no further polishing can correct.",
+            "The practical implication for restoration: acrylic (PMMA) surfaces on yacht portholes tolerate wet-sanding from relatively coarse grits (P800 and finer) and respond well to machine polishing with standard acrylic compounds. Polycarbonate visor surfaces require much finer starting grits (P1500 minimum for light damage, P1200 only for severe cases) and dedicated soft-plastic compounds with very low cut. Using automotive clear-coat compounds on a motorcycle visor is one of the most common DIY mistakes — the cut rating of a standard cutting compound is high enough to thermally stress polycarbonate and permanently cloud the surface."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Why the Maresme Coast Accelerates Damage",
+          "paragraphs": [
+            "Material science data establishes that UV degradation of both PC and PMMA is roughly linear with UV dose over time, modified by temperature and chemical exposure. In the laboratory, both materials are tested at reference UV intensities with controlled humidity and temperature. In the real world — specifically on the Maresme coast from Castelldefels up through Alella, Tiana, and Teià — the exposure conditions are substantially harsher than northern European or even inland Spanish baselines.",
+            "The Mediterranean UV index in this coastal band averages 8–9 in June, July, and August, with peak daily doses 40–50% higher than northern France and 20–30% higher than central Spain (Madrid plateau). UV dose alone accelerates clear-coat and hard-coat degradation proportionally — but the Maresme adds two compounding stressors. The first is salt spray. Sodium chloride in solution is a known accelerant of UV-induced polymer degradation: chloride ions catalyse hydrolysis of ester and carbonate bonds in polymer chains, effectively doubling the rate of chromophore formation in PC at equivalent UV doses compared to inland environments. Salt also acts as an abrasive micro-particulate — salt crystals deposited on surfaces and then wiped dry with a cloth before rinsing cut fine scratches into both PC and PMMA surfaces, every time. For yacht owners in Alella or Teià with vessels moored at Premià de Mar or Arenys de Mar marinas, this daily salt deposition is unavoidable.",
+            "The second compounding stressor is thermal cycling. Polycarbonate expands and contracts significantly with temperature — a coefficient of thermal expansion of approximately 65 × 10⁻⁶ /°C, versus 8 × 10⁻⁶ /°C for glass. A motorcycle helmet visor or windshield parked in direct sun in a Barcelona street car park in August can reach surface temperatures of 70–80 °C. The thermal expansion induced at this temperature generates micro-stress in the hardcoat, which is more rigid than the PC substrate, causing micro-cracking and delamination of the hardcoat — the same failure mechanism that happens slowly over years is accelerated dramatically by repeated large-temperature excursions. PMMA has a similar thermal expansion issue (approximately 70 × 10⁻⁶ /°C) and is additionally susceptible to thermal stress-cracking if the panel is not properly isolated from rigid metal frames that cannot flex at the same rate.",
+            "Material science data on accelerated weathering tests comparing coastal Mediterranean versus inland European conditions consistently shows degradation rates 30–40% faster for both PC and PMMA in coastal environments at equivalent UV exposure levels, once salt and thermal cycling are included in the composite stress factor. For practical purposes this means a motorcycle helmet visor that would last 5–7 years without significant optical degradation in northern Germany may need restoration after 3–4 years in coastal Barcelona. A yacht porthole that the manufacturer rates for 10 years of service in northern European waters may show significant oxidation and crazing at 6–7 years on a vessel moored at Castelldefels marina.",
+            "There is a specific local factor worth noting for motorcycle owners: Barcelona's urban motorcycle parking culture. Motorcycles in Barcelona — including the high density in Eixample, Gràcia, and Poblenou — are predominantly parked outdoors year-round on pavements, often in direct south-facing sun exposure with no cover. A visor stored on the helmet mounted to the motorcycle in full afternoon sun for eight months per year accumulates UV and thermal stress at approximately the maximum possible rate for the latitude. Covered garages in Sant Cugat residential developments and underground motorcycle storage in Pedralbes significantly extend visor life. Street-parked motorcycles in Barcelona's sunny districts represent the fastest-degrading scenario."
+          ],
+          "key_params": [
+            "Maresme coast degradation acceleration: 30–40% faster than inland European baselines",
+            "Mediterranean UV index peak: 8–9 (June–August), vs 4–5 in northern Europe",
+            "PC thermal expansion: 65 × 10⁻⁶ /°C — hard-coat micro-cracking under summer heat cycles",
+            "Salt spray catalyst: doubles effective chromophore formation rate in polycarbonate",
+            "Barcelona outdoor motorcycle parking: maximum UV + thermal stress accumulation rate"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Restoration Techniques and Cost Per Surface",
+          "paragraphs": [
+            "The restoration approach for each surface type follows directly from the material properties described in section 1. There is no universal protocol: what works well on PMMA can permanently ruin polycarbonate, and vice versa.",
+            "For motorcycle visor and windshield polycarbonate: the first step is a careful assessment of hardcoat condition using a UV torch and a scratch test on an inconspicuous edge. If the hardcoat is intact but yellowed, a very fine compound (dedicated PC polish, typically 1–3 micron abrasive) on a foam pad with a dual-action polisher at low speed resolves light cases in 20–30 minutes. If the hardcoat has failed and the underlying PC is exposed, the minimum safe starting point is P1500 wet-sanding on a soft backing block — P1200 only for severe hazing, and only in trained hands, because aggressive sanding on exposed PC generates heat that thermally softens the substrate. The wet-sand sequence progresses through P1500, P2000, P2500 before machine polish with dedicated PC compound. The total process time for a motorcycle visor in this condition is 30–60 minutes. After polishing, a UV-stabilised anti-scratch coating rated for polycarbonate (not automotive clear-coat, which is not chemically compatible) is applied to restore UV protection.",
+            "For PMMA yacht portholes and instrument panel glazing: acrylic tolerates a more aggressive approach than polycarbonate because it is harder and does not thermally soften as readily. Wet-sanding from P800 (severe oxidation) or P1000 (moderate hazing) through P1500, P2000, P2500 followed by machine polishing with acrylic compound restores most porthole surfaces. Heat management is still critical — acrylic polishes at lower temperature than PC but still requires wet sanding and low-speed machine work to avoid creating heat cracks. The process time per yacht porthole is 1–2 hours depending on size and damage severity. Large instrument cluster glazing panels — the type found on helm stations and chart table covers on sailing yachts and motor launches — require 3–6 hours for a full multi-panel cluster depending on configuration and access.",
+            "Two absolute prohibitions apply regardless of surface type. First: do not use ammonia-based or solvent-based cleaners on either PC or PMMA before, during, or after restoration. Ammonia attacks PC hardcoat and base material; common glass cleaners like Windex contain ammonia and will immediately cloud a freshly polished visor. Second: do not dry-wipe either surface, ever — dry wiping deposits micro-scratches with every contact. Always pre-rinse with clean water to float off surface particles before touching the surface with any cloth or applicator.",
+            "The cost table below gives a framework for the main surface categories and damage stages encountered in the Barcelona and Maresme coast area."
+          ],
+          "table": {
+            "caption": "Restoration cost framework by surface type and damage stage — Barcelona and Maresme coast area (2026)",
+            "headers": [
+              "Surface",
+              "Damage stage",
+              "Restoration cost EUR",
+              "Replacement alternative cost EUR"
+            ],
+            "rows": [
+              [
+                "Motorcycle visor (polycarbonate, hardcoat intact)",
+                "Light haze, yellowing, minor scratches",
+                "99 per visor",
+                "80–250 (OEM or aftermarket visor)"
+              ],
+              [
+                "Motorcycle visor or windshield (hardcoat partially failed)",
+                "Advanced yellowing, surface hazing, coating delamination",
+                "99–149 per visor",
+                "80–350 (OEM visor or windshield replacement)"
+              ],
+              [
+                "Yacht porthole — single PMMA panel (up to 400 × 300 mm)",
+                "Surface oxidation, mild crazing, light hazing",
+                "200–300 per porthole",
+                "350–800 per porthole (laminated marine PMMA fitted)"
+              ],
+              [
+                "Yacht porthole — large or irregular PMMA panel",
+                "Moderate to advanced oxidation, crazing, UV yellowing",
+                "300–450 per porthole",
+                "600–1 200 per porthole (custom cut and fitted)"
+              ],
+              [
+                "Yacht instrument cluster or helm glazing (full panel set)",
+                "Advanced hazing across multiple panels, crazing visible",
+                "600–1 500 for full cluster",
+                "1 500–4 000+ (bespoke replacement set custom-cut)"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "4",
+          "title": "When Replacement Is the Only Option",
+          "paragraphs": [
+            "Professional restoration can recover most UV-degraded polycarbonate visors and PMMA yacht surfaces — but not all. There are four conditions where we decline to attempt restoration and recommend direct replacement.",
+            "The first is deep structural cracking in either material. Cracks — whether stress cracks in acrylic from solvent exposure, thermal cracks from years of extreme cycling, or impact cracks from stone chips or contact damage — disqualify a surface from machine polishing. A machine polisher applies vibration and heat to the surface; crack tips are stress concentrators, and applying mechanical work to a cracked panel causes the crack to propagate. A porthole or visor that survives the polishing session will often crack catastrophically within weeks under subsequent thermal cycling. We inspect every surface for cracks under UV torch before any work, and we have turned away jobs that appeared clean under ambient light but showed fine radiating cracks around fastener holes under UV inspection.",
+            "The second condition is internal delamination or delaminated hardcoat that has progressed beyond the point where polishing reaches undamaged substrate. On polycarbonate surfaces, when the hardcoat has not just failed but has partially peeled — creating edges where the hardcoat meets bare PC — polishing cannot blend these transitions. The visual result is worse than the pre-treatment surface: you can see the delamination boundary clearly after polishing. Some visors present with this condition after DIY attempts with coarse automotive compounds.",
+            "The third is severe optical distortion from material loss. PMMA that has been aggressively sanded — typically by a DIY owner using automotive sandpaper starting at P400 or coarser — may have had so much material removed from the curved porthole or visor surface that the optical geometry is permanently distorted. Light passes through a non-uniform thickness panel and creates prism effects, making the surface appear wavy or double-image. No amount of further polishing corrects this because the underlying geometry is wrong. We have seen this most often on portholes where an owner used body filler sandpaper (P120–P280) thinking that coarser grit would remove hazing faster.",
+            "The fourth condition specific to yacht acrylic is solvent stress-cracking that has penetrated deeply. Fine radial cracks around porthole mounting holes and frame gasket lines — caused by silicone or polyurethane sealants with incompatible solvents — often extend inward from the edge by 20–50 mm. Polishing removes surface hazing but does not close stress cracks, and a porthole with penetrating stress cracks around its mounting perimeter is a structural failure waiting to happen: wave loading and thermal cycling will continue to propagate those cracks toward the open panel area. We advise owners honestly when we see this pattern and provide written documentation for their records.",
+            "For Maresme coast yacht owners specifically: if your vessel is more than 8–10 years old and the portholes have never been treated or replaced, please photograph the frame and fastener areas in close-up under good light and send the images before booking. Stress cracks in this position are common at that age on Mediterranean-moored vessels and require assessment before committing to restoration work."
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Frequently Asked Questions",
+          "paragraphs": [
+            "Can I use a household scratch-removal kit on my motorcycle visor? No — and this is the most damaging DIY mistake we regularly see. Household scratch-removal products designed for automotive clear-coat, glass, or general plastics typically contain cut compounds rated for hard surfaces. Polycarbonate visor hardcoat is only 5–10 microns thick and the base PC is very soft. An automotive cutting compound — marketed as suitable for 'plastics' — will cut through the hardcoat in seconds and begin thermally abrading the soft PC beneath. The result is a permanent milky haze across the visor that no subsequent polishing can reverse, because the optical damage is now in the bulk PC rather than on the removable surface layer. The same applies to abrasive household cleaners, toothpaste (grit size uncontrolled), or metal polishes like Autosol. If you have already attempted this, photograph the result and send it — in some cases where the base PC is not too deeply affected we can still achieve a partial recovery, but the treatment window narrows significantly after aggressive DIY contact.",
+            "My yacht's portholes are acrylic and the surface looks white and cloudy rather than yellow — is this still UV damage? Yes — this is the classic pattern of surface oxidation in PMMA, which is distinct from the yellow chromophore formation seen in polycarbonate. Acrylic does not yellow as dramatically as PC under UV, but the surface oxidises to produce a white or grey haze that reduces transparency and makes the panel look dull or milky. This is a surface phenomenon caused by the breakdown of the outer PMMA layer under UV and ozone exposure, combined with salt micro-abrasion from the marine environment. It is the predominant failure mode for yacht portholes on the Maresme coast, where UV intensity, salt spray, and salt-abrasion cycles all contribute. The good news is that PMMA surface oxidation responds very well to professional wet-sanding and polishing: the white haze is typically 0.1–0.3 mm deep, well within the material removal budget for a porthole of standard 6–10 mm thickness. Post-restoration UV protective coating significantly slows re-oxidation.",
+            "How long does a professional motorcycle visor restoration take at my location, and do I need to be present? A standard visor restoration — light to moderate haze, hardcoat assessable as intact — takes 30–60 minutes on-site. If the hardcoat is failing and the job requires the full wet-sand sequence, allow 60–90 minutes. You do not need to be present throughout: the technician needs access to the visor at the start and a signature at the end. For motorcycle owners in Barcelona who prefer, we can work while the motorcycle is parked in your usual street space during morning or lunch hours — we bring our own lighting, water, and equipment and leave the space exactly as found. For owners in Sant Cugat, covered parking bays are ideal but not required. Yacht porthole work requires the vessel to be accessible at its berth: Castelldefels, Premià de Mar, Arenys de Mar, and El Balís (Sant Andreu de Llavaneres) marinas are all within our service area.",
+            "Is restored acrylic or polycarbonate as optically clear as new material after professional restoration? For polycarbonate visors with intact hardcoat: yes — after professional polishing with dedicated PC compound, optical clarity is indistinguishable from new to the naked eye. For polycarbonate where the hardcoat has partially failed: clarity is very significantly improved but the long-term protection window is shorter, because without intact hardcoat, UV degradation resumes more rapidly. A post-restoration UV-rated coating partially compensates for this. For PMMA yacht portholes with surface oxidation: yes — the restored surface achieves full optical transparency equivalent to new PMMA. The limitation is that deeply crazed acrylic — where micro-cracks penetrate 0.5–1 mm into the material — requires heavier material removal that may slightly reduce panel thickness, which in practice is not a structural concern for panels of standard marine thickness (6–10 mm) but is worth noting. We assess and communicate this before work begins, and we include a written thickness assessment for all yacht porthole restorations in our service documentation."
           ]
         }
       ]
