@@ -102,22 +102,49 @@
     "cta_primary": "Get a Free Estimate",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
-    "trust_pills": ["★ 5.0 Google", "47+ Reviews", "500+ Jobs"],
+    "trust_pills": [
+      "★ 5.0 Google",
+      "47+ Reviews",
+      "500+ Jobs"
+    ],
     "cta_car": "Car Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
     "badge": "★ Rated 5.0 • 500+ Jobs Done"
   },
   "trust": {
     "brands": [
-      { "name": "Gyeon", "status": "authorized" },
-      { "name": "Gtechniq", "status": "authorized" },
-      { "name": "Rupes", "status": "equipment" },
-      { "name": "Koch Chemie", "status": "equipment" },
-      { "name": "CarPro", "status": "products" }
+      {
+        "name": "Gyeon",
+        "status": "authorized"
+      },
+      {
+        "name": "Gtechniq",
+        "status": "authorized"
+      },
+      {
+        "name": "Rupes",
+        "status": "equipment"
+      },
+      {
+        "name": "Koch Chemie",
+        "status": "equipment"
+      },
+      {
+        "name": "CarPro",
+        "status": "products"
+      }
     ],
     "certifications": [
-      { "name": "Gyeon Certified", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Accredited", "status": "active", "icon": "shield" }
+      {
+        "name": "Gyeon Certified",
+        "status": "active",
+        "icon": "shield"
+      },
+      {
+        "name": "Gtechniq Accredited",
+        "status": "active",
+        "icon": "shield"
+      }
     ],
     "founder": {
       "text": "Founded in Sant Cugat. Mobile-first since day one.",
@@ -342,11 +369,31 @@
       "sensitive_paint": "Sensitive paint surcharge",
       "sensitive_paint_note": "Jet black, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
-        { "name": "Compact", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
-        { "name": "Sedan", "examples": "3 Series, C-Class, A4", "modifier": "Baseline" },
-        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
-        { "name": "Large SUV / 7-seater", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
-        { "name": "Sports / Supercar", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+        {
+          "name": "Compact",
+          "examples": "Polo, Yaris, i20",
+          "modifier": "−10%"
+        },
+        {
+          "name": "Sedan",
+          "examples": "3 Series, C-Class, A4",
+          "modifier": "Baseline"
+        },
+        {
+          "name": "SUV / Crossover",
+          "examples": "X3, GLC, Q5, Tucson",
+          "modifier": "+20%"
+        },
+        {
+          "name": "Large SUV / 7-seater",
+          "examples": "X7, GLE, Q7, Cayenne",
+          "modifier": "+35%"
+        },
+        {
+          "name": "Sports / Supercar",
+          "examples": "911, AMG GT, M4",
+          "modifier": "+25–40%"
+        }
       ],
       "sensitive_paint_surcharge": "+€60–100"
     },
@@ -695,19 +742,31 @@
         "city": "Sant Cugat",
         "region": "Vallès Occidental",
         "coverage": "20 km radius",
-        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
+        "areas": [
+          "Sant Cugat del Vallès",
+          "Rubí",
+          "Cerdanyola del Vallès"
+        ]
       },
       {
         "city": "Barcelona",
         "region": "Barcelona Metropolitan Area",
         "coverage": "30 km radius",
-        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
+        "areas": [
+          "Barcelona",
+          "Badalona",
+          "L'Hospitalet de Llobregat"
+        ]
       },
       {
         "city": "Vallès",
         "region": "Vallès Interior",
         "coverage": "30 km radius",
-        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
+        "areas": [
+          "Terrassa",
+          "Sabadell",
+          "Mollet del Vallès"
+        ]
       }
     ]
   },
@@ -801,9 +860,18 @@
     "local_text": "Based in Sant Cugat del Vallès, we serve the entire Barcelona metropolitan area — from Matadepera to Castelldefels, from Pedralbes to Terrassa. Our mobile unit comes to your home, office or parking spot. No need to leave your car at a workshop.",
     "certifications_title": "Certifications & Training",
     "stats": [
-      { "value": "500+", "label": "Vehicles restored" },
-      { "value": "5.0", "label": "Google rating" },
-      { "value": "0", "label": "Repaints needed" }
+      {
+        "value": "500+",
+        "label": "Vehicles restored"
+      },
+      {
+        "value": "5.0",
+        "label": "Google rating"
+      },
+      {
+        "value": "0",
+        "label": "Repaints needed"
+      }
     ]
   },
   "footer": {
@@ -978,6 +1046,14 @@
         "slug": "water-stain-removal-car-windows",
         "date": "2026-05-07",
         "status": "draft"
+      },
+      {
+        "number": "18",
+        "title": "Yellow vs Cloudy Headlights: Causes, Lifespan, and Restoration Cost",
+        "excerpt": "ITV failure, night-driving glare, and the difference between yellowing you can polish out and clouding that forces replacement — Mediterranean lifespan data and EUR-real pricing.",
+        "slug": "yellow-vs-cloudy-headlights-causes-lifespan",
+        "date": "2026-05-07",
+        "status": "draft"
       }
     ]
   },
@@ -1007,11 +1083,35 @@
           },
           "table": {
             "caption": "Comparative analysis of rotary systems",
-            "headers": ["Model", "RPM drop under pressure", "Low center of gravity", "RPM control", "High reliability"],
+            "headers": [
+              "Model",
+              "RPM drop under pressure",
+              "Low center of gravity",
+              "RPM control",
+              "High reliability"
+            ],
             "rows": [
-              ["Makita 9237CB", "No", "Yes", "Yes", "Yes"],
-              ["DeWALT DWP849X", "Yes", "No", "Yes", "Yes"],
-              ["FLEX PE 14-2 150", "No", "Yes", "Yes", "Yes"]
+              [
+                "Makita 9237CB",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+              ],
+              [
+                "DeWALT DWP849X",
+                "Yes",
+                "No",
+                "Yes",
+                "Yes"
+              ],
+              [
+                "FLEX PE 14-2 150",
+                "No",
+                "Yes",
+                "Yes",
+                "Yes"
+              ]
             ]
           },
           "conclusion": "Our lab's choice is the Makita 9237CB. It delivers ideal handling thanks to its low center of gravity and stability at lower speed settings."
@@ -1190,8 +1290,14 @@
             "The goal of this stage is to reduce the working marks left by wool, preparing the clear coat for the final gloss. This dramatically reduces the amount of time the dual action (DA) polisher needs on the next step."
           ],
           "tools": [
-            { "label": "Equipment", "text": "Rotary polisher (Makita 9237CB) + yellow foam pad (for example, Rupes 130 mm)." },
-            { "label": "Compound", "text": "Medium-cut polishing compound." }
+            {
+              "label": "Equipment",
+              "text": "Rotary polisher (Makita 9237CB) + yellow foam pad (for example, Rupes 130 mm)."
+            },
+            {
+              "label": "Compound",
+              "text": "Medium-cut polishing compound."
+            }
           ],
           "key_params": [
             "Speed: 1.7–1.9",
@@ -1207,8 +1313,14 @@
             "Here we use a dual action (DA) polisher to bring the clear coat into a \"space-grade\" finish — perfectly clear, with zero holograms."
           ],
           "tools": [
-            { "label": "Equipment", "text": "Large dual action (DA) polisher (for example, FLEX XFE 7-15) + soft yellow or white foam pad." },
-            { "label": "Compound", "text": "Finishing polish." }
+            {
+              "label": "Equipment",
+              "text": "Large dual action (DA) polisher (for example, FLEX XFE 7-15) + soft yellow or white foam pad."
+            },
+            {
+              "label": "Compound",
+              "text": "Finishing polish."
+            }
           ],
           "key_params": [
             "Pressure: 0–1 kg (the machine works under its own weight)",
@@ -1224,8 +1336,14 @@
             "Solid black non-metallic paint and acrylic finishes are the most demanding materials in our lab."
           ],
           "tools": [
-            { "label": "Acrylic", "text": "During polishing, the pads will take on the color of the vehicle because the pigment is mixed into the coating. This is normal — just clean the pads more frequently with household soap." },
-            { "label": "Solid Black", "text": "If the standard combination still leaves holograms, the protocol changes: replace the finishing pad every 2–3 panels, reduce the DA speed to 2–3 and shorten the working cycle to 15–20 seconds. In extreme cases, use a primer polish (CarPro Essence) and ultra-soft white pads." }
+            {
+              "label": "Acrylic",
+              "text": "During polishing, the pads will take on the color of the vehicle because the pigment is mixed into the coating. This is normal — just clean the pads more frequently with household soap."
+            },
+            {
+              "label": "Solid Black",
+              "text": "If the standard combination still leaves holograms, the protocol changes: replace the finishing pad every 2–3 panels, reduce the DA speed to 2–3 and shorten the working cycle to 15–20 seconds. In extreme cases, use a primer polish (CarPro Essence) and ultra-soft white pads."
+            }
           ],
           "analogy": {
             "title": "restoreLab engineering commandment",
@@ -1260,10 +1378,22 @@
             "Before application, the body must be thoroughly degreased."
           ],
           "tools": [
-            { "label": "Dosage", "text": "Average consumption is 10 ml per layer." },
-            { "label": "Coverage area", "text": "Thanks to the long flash time, you can coat up to one-third of the vehicle at once, then calmly proceed to leveling and buffing." },
-            { "label": "Tools", "text": "Use a set of 6 microfiber towels for leveling and buffing (4 short-pile towels for the initial pass and 2 long-pile towels for the final gloss finish)." },
-            { "label": "Layers", "text": "A two-layer application is recommended, with a one-hour interval between coats." }
+            {
+              "label": "Dosage",
+              "text": "Average consumption is 10 ml per layer."
+            },
+            {
+              "label": "Coverage area",
+              "text": "Thanks to the long flash time, you can coat up to one-third of the vehicle at once, then calmly proceed to leveling and buffing."
+            },
+            {
+              "label": "Tools",
+              "text": "Use a set of 6 microfiber towels for leveling and buffing (4 short-pile towels for the initial pass and 2 long-pile towels for the final gloss finish)."
+            },
+            {
+              "label": "Layers",
+              "text": "A two-layer application is recommended, with a one-hour interval between coats."
+            }
           ]
         },
         {
@@ -1273,9 +1403,18 @@
             "A ceramic coating needs time to complete its chemical curing process:"
           ],
           "tools": [
-            { "label": "Natural curing", "text": "12 hours in a dry bay (infrared drying is optional, not mandatory)." },
-            { "label": "Washing protocol", "text": "The first wash using chemicals should not take place earlier than 7 days after application." },
-            { "label": "Maintenance", "text": "Even the best ceramic coating does not provide 100% scratch protection. In our lab, we recommend renewing the protection once a year after a light dual action polish." }
+            {
+              "label": "Natural curing",
+              "text": "12 hours in a dry bay (infrared drying is optional, not mandatory)."
+            },
+            {
+              "label": "Washing protocol",
+              "text": "The first wash using chemicals should not take place earlier than 7 days after application."
+            },
+            {
+              "label": "Maintenance",
+              "text": "Even the best ceramic coating does not provide 100% scratch protection. In our lab, we recommend renewing the protection once a year after a light dual action polish."
+            }
           ]
         },
         {
@@ -1310,8 +1449,14 @@
             "Unlike a car, a motorcycle has no \"reference areas\" such as door jambs where you can determine a safe risk threshold for clear-coat removal. Most bikes have been repainted at some point, and the exact clear-coat thickness always remains unknown."
           ],
           "tools": [
-            { "label": "Main rule", "text": "Motorcycles are polished using light correction only. No aggressive deep cutting \"to zero\" — only gloss enhancement." },
-            { "label": "Depth test", "text": "To determine whether a scratch can be safely removed, we spray it with a degreaser. If it disappears under the liquid film, it is in the clear coat and can be corrected safely." }
+            {
+              "label": "Main rule",
+              "text": "Motorcycles are polished using light correction only. No aggressive deep cutting \"to zero\" — only gloss enhancement."
+            },
+            {
+              "label": "Depth test",
+              "text": "To determine whether a scratch can be safely removed, we spray it with a degreaser. If it disappears under the liquid film, it is in the clear coat and can be corrected safely."
+            }
           ]
         },
         {
@@ -1319,9 +1464,18 @@
           "title": "Technical Correction Protocol",
           "paragraphs": [],
           "tools": [
-            { "label": "Tools", "text": "We use a mini rotary polisher (for example, the Krauss R3-SET) on the first speed setting with a yellow Rupes pad and Sonax NP 03-06 compound." },
-            { "label": "Flat sections", "text": "Because of the complex shapes of tanks and fairings, we divide the part into narrow sections, working each one for 10–15 seconds with 3–5 kg of pressure." },
-            { "label": "Hard-to-reach areas", "text": "Areas where even a 30 mm backing plate cannot fit are corrected by hand using intensive movements and 10–12 kg of pressure." }
+            {
+              "label": "Tools",
+              "text": "We use a mini rotary polisher (for example, the Krauss R3-SET) on the first speed setting with a yellow Rupes pad and Sonax NP 03-06 compound."
+            },
+            {
+              "label": "Flat sections",
+              "text": "Because of the complex shapes of tanks and fairings, we divide the part into narrow sections, working each one for 10–15 seconds with 3–5 kg of pressure."
+            },
+            {
+              "label": "Hard-to-reach areas",
+              "text": "Areas where even a 30 mm backing plate cannot fit are corrected by hand using intensive movements and 10–12 kg of pressure."
+            }
           ]
         },
         {
@@ -1329,8 +1483,14 @@
           "title": "Metal Cleaning and Leather Care",
           "paragraphs": [],
           "tools": [
-            { "label": "Metal", "text": "For exhaust pipes and chrome, we use specialized metal polishes (Autosol) that remove oxidation and restore a mirror finish." },
-            { "label": "Leather", "text": "The restoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream." }
+            {
+              "label": "Metal",
+              "text": "For exhaust pipes and chrome, we use specialized metal polishes (Autosol) that remove oxidation and restore a mirror finish."
+            },
+            {
+              "label": "Leather",
+              "text": "The restoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream."
+            }
           ]
         }
       ]
@@ -1363,10 +1523,22 @@
             "Removing swirl marks requires machine polishing — there is no chemical shortcut. The process involves controlled abrasion of the clear coat to level the surface below the depth of the scratches."
           ],
           "tools": [
-            { "label": "Step 1", "text": "Thorough wash and clay bar decontamination to remove all bonded contaminants." },
-            { "label": "Step 2", "text": "Paint depth measurement to determine safe polishing limits." },
-            { "label": "Step 3", "text": "Machine polishing with a dual action polisher, medium-cut compound and foam pad." },
-            { "label": "Step 4", "text": "Finishing pass with a fine polish to achieve maximum clarity." }
+            {
+              "label": "Step 1",
+              "text": "Thorough wash and clay bar decontamination to remove all bonded contaminants."
+            },
+            {
+              "label": "Step 2",
+              "text": "Paint depth measurement to determine safe polishing limits."
+            },
+            {
+              "label": "Step 3",
+              "text": "Machine polishing with a dual action polisher, medium-cut compound and foam pad."
+            },
+            {
+              "label": "Step 4",
+              "text": "Finishing pass with a fine polish to achieve maximum clarity."
+            }
           ]
         },
         {
@@ -1411,9 +1583,18 @@
             "Professional glass polishing uses specialized equipment and compounds that work at a different level than DIY kits. The key difference is precision and consistency."
           ],
           "tools": [
-            { "label": "Equipment", "text": "Professional-grade rotary polisher with glass-specific pads and cerium oxide slurry." },
-            { "label": "Process", "text": "Controlled, measured passes that remove material evenly without creating distortion." },
-            { "label": "Result", "text": "Complete scratch removal with optical clarity maintained. Saves €300-500 vs windshield replacement." }
+            {
+              "label": "Equipment",
+              "text": "Professional-grade rotary polisher with glass-specific pads and cerium oxide slurry."
+            },
+            {
+              "label": "Process",
+              "text": "Controlled, measured passes that remove material evenly without creating distortion."
+            },
+            {
+              "label": "Result",
+              "text": "Complete scratch removal with optical clarity maintained. Saves €300-500 vs windshield replacement."
+            }
           ]
         },
         {
@@ -1421,9 +1602,18 @@
           "title": "When to Choose Each Option",
           "paragraphs": [],
           "tools": [
-            { "label": "DIY", "text": "Hairline surface scratches on side windows where optical perfection is less critical." },
-            { "label": "Professional", "text": "Wiper scratches on windshield, deep scratches you can feel, or any scratch in the driver's line of sight." },
-            { "label": "Replace", "text": "Cracks, chips that have spread, or damage to the laminated layer of the windshield." }
+            {
+              "label": "DIY",
+              "text": "Hairline surface scratches on side windows where optical perfection is less critical."
+            },
+            {
+              "label": "Professional",
+              "text": "Wiper scratches on windshield, deep scratches you can feel, or any scratch in the driver's line of sight."
+            },
+            {
+              "label": "Replace",
+              "text": "Cracks, chips that have spread, or damage to the laminated layer of the windshield."
+            }
           ]
         }
       ]
@@ -1455,11 +1645,26 @@
             "At restoreLab, we offer five clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +20%, large SUV +35%."
           ],
           "tools": [
-            { "label": "Express Refresh", "text": "149 EUR. Decon wash, clay bar, light hand polish & spray sealant. ~2 hours." },
-            { "label": "Single-Stage Correction", "text": "289 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours." },
-            { "label": "Two-Stage Correction", "text": "549 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours." },
-            { "label": "Ceramic Coating 2Y", "text": "649 EUR. Two-stage correction + 2-year certified ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular." },
-            { "label": "Premium Ceramic 5Y", "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours." }
+            {
+              "label": "Express Refresh",
+              "text": "149 EUR. Decon wash, clay bar, light hand polish & spray sealant. ~2 hours."
+            },
+            {
+              "label": "Single-Stage Correction",
+              "text": "289 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours."
+            },
+            {
+              "label": "Two-Stage Correction",
+              "text": "549 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours."
+            },
+            {
+              "label": "Ceramic Coating 2Y",
+              "text": "649 EUR. Two-stage correction + 2-year certified ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular."
+            },
+            {
+              "label": "Premium Ceramic 5Y",
+              "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours."
+            }
           ]
         },
         {
@@ -1504,10 +1709,22 @@
             "Unlike glass, acrylic can be restored by polishing because the material is softer and more uniform. The process involves progressively finer abrasives to remove the damaged surface layer."
           ],
           "tools": [
-            { "label": "Assessment", "text": "Evaluate the depth of UV damage and check for structural integrity." },
-            { "label": "Wet sanding", "text": "Starting with P800-P1200 grit to remove the oxidized layer. Acrylic must stay wet to prevent heat buildup." },
-            { "label": "Machine polishing", "text": "Progressive stages with dedicated acrylic compounds, moving from medium-cut to ultra-fine finish." },
-            { "label": "UV protection", "text": "Application of UV-stabilized coating to slow future degradation." }
+            {
+              "label": "Assessment",
+              "text": "Evaluate the depth of UV damage and check for structural integrity."
+            },
+            {
+              "label": "Wet sanding",
+              "text": "Starting with P800-P1200 grit to remove the oxidized layer. Acrylic must stay wet to prevent heat buildup."
+            },
+            {
+              "label": "Machine polishing",
+              "text": "Progressive stages with dedicated acrylic compounds, moving from medium-cut to ultra-fine finish."
+            },
+            {
+              "label": "UV protection",
+              "text": "Application of UV-stabilized coating to slow future degradation."
+            }
           ]
         },
         {
@@ -1750,12 +1967,32 @@
           ],
           "table": {
             "caption": "Damage stage, recommended approach, and typical cost in Barcelona area (2026)",
-            "headers": ["Damage stage", "Recommended approach", "Cost (EUR)"],
+            "headers": [
+              "Damage stage",
+              "Recommended approach",
+              "Cost (EUR)"
+            ],
             "rows": [
-              ["Early — colour fade, loss of sheen, no cracking", "Professional conditioning + UV coat", "199 – 280"],
-              ["Mid — surface cracking, patchy colour loss", "Full professional restoration: deep conditioning + colour repair + topcoat", "400 – 700"],
-              ["Late — deep splits, structural flex loss", "Professional restoration (where fibres are intact) or partial panel replacement", "700 – 1 200"],
-              ["Structural failure — crumbling, material loss", "Reupholstery (restoration not recommended)", "2 500 – 4 500"]
+              [
+                "Early — colour fade, loss of sheen, no cracking",
+                "Professional conditioning + UV coat",
+                "199 – 280"
+              ],
+              [
+                "Mid — surface cracking, patchy colour loss",
+                "Full professional restoration: deep conditioning + colour repair + topcoat",
+                "400 – 700"
+              ],
+              [
+                "Late — deep splits, structural flex loss",
+                "Professional restoration (where fibres are intact) or partial panel replacement",
+                "700 – 1 200"
+              ],
+              [
+                "Structural failure — crumbling, material loss",
+                "Reupholstery (restoration not recommended)",
+                "2 500 – 4 500"
+              ]
             ]
           }
         },
@@ -1922,6 +2159,117 @@
           ]
         }
       ]
+    },
+    "yellow_vs_cloudy_headlights_causes_lifespan": {
+      "seo_title": "Yellow vs Cloudy Headlights: Causes, Lifespan & Restoration Cost | restoreLab",
+      "seo_description": "Understand the difference between UV yellowing you can polish away and deep oxidation or internal clouding that forces lens replacement. Mediterranean lifespan data, ITV implications, and honest EUR pricing from €79.",
+      "title": "Yellow vs Cloudy Headlights: Causes, Lifespan, and Restoration Cost",
+      "description": "A chemistry-grounded guide to the two distinct headlight failure modes — UV-driven clear-coat yellowing and lens oxidation or internal clouding — with realistic lifespan data for Mediterranean Spain, ITV consequences, step-by-step restoration process, and a frank assessment of when even expert polishing cannot save a lens.",
+      "intro": "Your headlights are not just getting old — they are failing in one of two very different ways, and the distinction matters for your wallet, your ITV certificate, and your safety. Yellowing is a surface phenomenon: UV radiation attacks the clear-coat or polycarbonate outer layer, turning it amber and opaque. Clouding is deeper: oxidation, micro-pitting, or internal moisture degrade the lens substrate or reflector assembly in ways that surface polishing cannot reverse. In Barcelona's Mediterranean climate — where UV index exceeds 7 for six months of the year and Saharan dust events deliver a coating of abrasive particles three to four times annually — headlights degrade faster than European averages. This guide explains what each failure mode looks like, how long you have before each becomes irreversible, how the ITV (Inspección Técnica de Vehículos) headlight assessment works, and what restoration costs versus replacement — with real EUR figures and no vagueness.",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Yellowing vs Clouding: The Two Different Failures",
+          "paragraphs": [
+            "Modern headlight lenses are made from polycarbonate — a thermoplastic that is lighter, more impact-resistant, and more mouldable than glass, but that has one significant vulnerability: ultraviolet radiation attacks the polymer chain structure at the molecular level. Vehicle manufacturers apply a UV-stabilised clear-coat over the polycarbonate lens, typically 15–25 microns thick, to delay this degradation. When the clear-coat fails — through UV absorption, thermal cycling, or micro-abrasion from road grit — the underlying polycarbonate is exposed. UV radiation then breaks the bisphenol-A carbonate linkages in the polymer, generating chromophores (light-absorbing molecular fragments) that progressively tint the lens yellow, then amber, then brown. This is yellowing: a photochemical process confined to the outer surface of the lens.",
+            "Clouding is a different failure mechanism. The term covers three distinct phenomena that can occur alone or together. The first is surface oxidation: the polycarbonate surface, once its clear-coat is compromised, reacts with atmospheric oxygen, creating a matte, hazy layer with reduced light transmission. Unlike yellowing, which produces a colour shift, oxidation produces a diffuse white haze. The second is micro-pitting: fine abrasive particles from road spray, Saharan dust, and automatic car wash brushes create thousands of microscopic scratches across the lens surface, each one scattering light in a different direction and collectively reducing beam focus and lux output. The third — and most serious — is internal moisture: a failed lens seal allows condensation to form inside the headlight housing, depositing mineral stains on the reflector and inner lens surface that cannot be reached from outside.",
+            "Distinguishing between yellowing and clouding is the first diagnostic step, because the treatment paths diverge completely. Yellowing: yellow or amber colour shift, surface feels slightly rough when wiped with a clean cloth, clarity improves temporarily after wiping with IPA. Clouding (surface oxidation/pitting): white or grey haze, visible under direct sunlight as a matte texture, does not improve with wiping. Clouding (internal moisture): haziness visible from the outside but concentrated in a pattern consistent with condensation pooling — typically the lower inner surface of the lens — and may be accompanied by visible water droplets inside the housing after rain. Yellowing and surface clouding are both addressable by professional restoration. Internal moisture clouding is not.",
+            "In practice, most headlights presenting for restoration in the Barcelona area show a combination of yellowing and surface oxidation — the clear-coat fails first from UV exposure, and once the polycarbonate is exposed, oxidation and micro-pitting follow within 12–18 months. A technician conducting a proper assessment will check each failure mode separately and give you an honest prognosis for each before any work begins."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Lifespan and What Accelerates It in Mediterranean Spain",
+          "paragraphs": [
+            "Under standard European driving conditions — northern France, Germany, the UK — OEM headlight clear-coat typically survives 7–10 years before significant yellowing becomes visible. In Mediterranean Spain, the same coating lasts 5–7 years, with vehicles parked outdoors in coastal areas of Barcelona (Barceloneta, Castelldefels, Sitges) or inland heat traps (Terrassa, Sabadell in summer) degrading closer to the 5-year end of that range. The UV index in the Barcelona area averages 8–9 in June, July, and August — compared to 4–5 in London or 5–6 in Paris — and the combination of high UV and extreme thermal cycling (surface temperatures on a black polycarbonate lens can reach 80–90 °C on a July afternoon in a south-facing car park in Sant Cugat) accelerates every aspect of the degradation process.",
+            "Three factors specific to the Barcelona metro area compound the problem beyond baseline UV exposure. First, Saharan dust events (calimas): fine iron-oxide and silica particles coat lens surfaces 3–5 times per year in the region, and automatic car washes or dry wipe-down of this abrasive dust creates a uniform layer of micro-scratches across the outer lens surface. Second, the coastal salt environment from Castelldefels to Alella: salt spray accelerates the corrosion of the lens housing seal, predisposing headlights to internal moisture ingress even before the external surface shows significant yellowing. Third, urban heat-island effects: vehicles parked in uncovered car parks in Eixample, Gràcia, or industrial Sant Cugat polígons accumulate significantly more thermal stress than equivalent vehicles in underground garages in Pedralbes or Sarriá.",
+            "Once yellowing becomes noticeable to the naked eye — typically a light amber tint across the upper half of the lens, where UV exposure is highest — you have approximately 12–24 months before the damage progresses to a stage where restoration becomes less effective. The polycarbonate surface beneath the failed clear-coat continues degrading. Surface oxidation sets in 6–12 months after the first visible yellowing. Micro-pitting from driving exposure follows. If the vehicle is washed regularly with brushes or high-abrasion cloths, pitting accelerates. The practical message: if your headlights show any yellowing and your vehicle is more than 5 years old, restoration is most effective — and least expensive — now, not in two years.",
+            "Post-restoration lifespan depends on what sealant is applied. A quality non-ceramic sealant applied after polishing extends the restored surface for 2–4 years in Mediterranean conditions — the polishing removes the failed clear-coat and the new sealant provides a temporary UV barrier. A ceramic coating applied over the restored surface extends protection to 4–6 years, with the additional benefit of hydrophobic properties that reduce mineral deposit formation on the lens and improve lens clarity in wet-weather driving. RestoreLab applies a ceramic-grade lens sealant as standard in the plus-protection option — the difference in long-term cost per year is meaningful."
+          ],
+          "key_params": [
+            "OEM clear-coat lifespan in Mediterranean Spain: 5–7 years",
+            "Restoration + standard sealant lifespan added: 2–4 years",
+            "Restoration + ceramic sealant lifespan added: 4–6 years",
+            "UV index Barcelona summer: 8–9 (vs 4–5 northern Europe)",
+            "Calima events per year in Barcelona area: 3–5"
+          ]
+        },
+        {
+          "number": "3",
+          "title": "The Restoration Process and Cost",
+          "paragraphs": [
+            "Professional headlight restoration is a multi-stage abrasive and coating process. The lens is first masked to protect surrounding paintwork — a step that separates professional work from the DIY toothpaste-and-elbow-grease approach. The existing clear-coat and any surface oxidation layer are then removed using a wet-sanding sequence, typically starting at 600–800 grit to remove the deepest yellowing and oxidation, progressing through 1000, 1500, and 2000 grit to refine the surface, and finishing with 2500–3000 grit before polishing. Each sanding stage is performed with a sanding block or sanding pad to maintain even pressure across the curved lens surface — uneven pressure creates low spots that scatter light after polishing.",
+            "After sanding, the lens is polished using a machine polisher with a light-cut compound to remove sanding scratches and restore optical clarity. A final finishing polish eliminates any remaining haze. At this point the lens is optically clear — but completely unprotected, because the original clear-coat has been removed. Applying a UV-stable sealant or ceramic coating immediately after polishing is not optional; an uncoated polycarbonate lens will begin yellowing again within weeks in Mediterranean sun. A professional restoration that does not include a quality sealant is a service that will need to be repeated in 6–12 months rather than 3–5 years.",
+            "The complete process for a pair of headlights takes 30–90 minutes depending on initial damage severity, lens size, and whether ceramic coating is applied. RestoreLab's mobile service brings all equipment — generator, sanding station, machine polisher, compounds, and coating supplies — to your location in Sant Cugat, Barcelona, Castelldefels, or anywhere in the Barcelona metropolitan area. The vehicle does not need to go anywhere; the technician works at your parking space.",
+            "The cost comparison table below gives a framework for the four most common headlight damage scenarios, to help owners understand where their vehicle sits and what the realistic options and costs are."
+          ],
+          "table": {
+            "caption": "Headlight damage type, restoration options, EUR cost, and lifespan added — Barcelona area (2026)",
+            "headers": [
+              "Damage type",
+              "Restoration option",
+              "Cost (EUR)",
+              "Lifespan added"
+            ],
+            "rows": [
+              [
+                "Early yellowing (mild amber tint, clear-coat intact)",
+                "Light polish + standard UV sealant",
+                "79 per pair",
+                "2–3 years"
+              ],
+              [
+                "Advanced yellowing (deep amber/brown, clear-coat failed)",
+                "Full wet-sand + machine polish + ceramic sealant",
+                "109–149 per pair",
+                "4–6 years"
+              ],
+              [
+                "Light surface clouding (haze + minor oxidation, no internal moisture)",
+                "Wet-sand + polish + ceramic sealant",
+                "109–149 per pair",
+                "3–5 years"
+              ],
+              [
+                "Severe clouding / internal moisture / delaminated reflector",
+                "Restoration not viable — OEM or aftermarket replacement",
+                "200–800 per side (fitted)",
+                "5–10 years (new unit)"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "4",
+          "title": "ITV Connection: What Headlight Failure Means for Your Inspection",
+          "paragraphs": [
+            "The Spanish ITV (Inspección Técnica de Vehículos) includes a headlight photometric test: the vehicle is placed on the inspection line and a photometer measures beam alignment, luminance output, and — on the visual inspection component — the inspector assesses lens clarity. Under the regulations implementing EC Directive 2014/45/EU and the Spanish Real Decreto 920/2017, headlight defects are classified into three categories: minor (defecto leve), major (defecto grave), and dangerous (defecto muy grave). Clouded or yellowed lenses that produce a measurable reduction in luminance output — the regulations specify 20–50% reduction thresholds depending on headlight generation and vehicle category — are classified as a major defect and result in immediate ITV failure.",
+            "In practical terms, a headlight that appears clearly yellow or heavily clouded to the naked eye will typically fail the visual inspection before the photometric test even becomes decisive. ITV inspectors in stations around Sant Cugat, Barcelona, and Terrassa are looking for lenses that visibly compromise beam quality. The consequence of a major defect is that the vehicle must be re-inspected within two months, and cannot be re-registered or transferred until it passes. If the original inspection was done at a station and the vehicle needs re-inspection, the owner pays a reduced re-inspection fee — but only if the defect is corrected within the two-month window.",
+            "For owners who have just received an ITV failure for headlight clarity, the cost decision is direct: professional polishing at €79–€149 per pair versus headlight replacement at €200–€800 per side. On almost every vehicle where the failure is due to surface yellowing or clouding (as opposed to a shattered lens or internal moisture damage), polishing is the correct economic decision — it costs 5–10 times less, takes 30–90 minutes, and achieves the same ITV pass result. We offer an ITV-prep headlight service with same-day or next-day availability in the Barcelona area for owners who need to return quickly for re-inspection.",
+            "One nuance worth noting: some ITV stations in the Barcelona area use automated beam-alignment systems that are sensitive to any lens irregularity that distorts the beam pattern. If a polishing job leaves residual micro-pitting across the lens surface — which can happen with rushed or low-skill work — the beam pattern may still fail the photometric test even though the lens looks visually clearer. A proper sanding-and-polishing sequence that works through all grit stages eliminates micro-pitting comprehensively. This is the difference between a €30 roadside kit and a professional restoration."
+          ]
+        },
+        {
+          "number": "5",
+          "title": "When Restoration Will Not Save Your Headlights",
+          "paragraphs": [
+            "We turn away restoration work when the lens or housing has reached a condition where polishing would be dishonest. The first disqualifying condition is delaminated reflector coating. The reflector inside a headlight housing is coated with a thin layer of aluminium vapour-deposited on a plastic substrate — it is this layer that gives headlights their mirror-like interior and directional beam focus. When moisture enters the housing and sits for extended periods, the aluminium layer begins to oxidise and delaminate: small silvery flakes separate from the reflector surface. Even a perfectly polished external lens will produce a diffuse, unfocused beam if the reflector is delaminated. There is no repair for a delaminated reflector — the entire housing must be replaced.",
+            "The second condition is internal moisture with mineral staining. If condensation has been cycling inside the housing for more than a few months, calcium and mineral deposits form on the inner lens surface and on the reflector. These are inaccessible from outside — removing them would require disassembling the housing, which is not always possible without destroying the seal, and which does not address the underlying seal failure that allowed moisture in. An internal moisture-damaged headlight will fog up again after any temporary fix because the root cause — a failed housing seal or cracked lens body — has not been resolved.",
+            "The third condition is a cracked or physically broken lens. Any structural crack disqualifies a lens from polishing: mechanical vibration from a machine polisher propagates stress through crack tips, and a lens that is cracked today will fail catastrophically during polishing or shortly after. We assess for hairline cracks as part of every headlight evaluation — they are sometimes not visible to the naked eye but become apparent under UV torch inspection. Fourth is a lens with deep physical impact damage: stone chips that have created craters penetrating more than 30–40% through the lens thickness cannot be corrected by surface polishing. The sanding required to reach the crater bottom would remove so much material from the surrounding area that the lens would be optically compromised.",
+            "In every case where restoration is not viable, we say so clearly before any work begins and provide a written assessment you can take to a headlight specialist or OEM parts supplier. If you send photographs of your headlights via WhatsApp — including a close-up under direct sunlight and, if relevant, a shot showing any internal fogging — we can give you a preliminary assessment before you book, and tell you honestly whether restoration is the right path for your vehicle."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "Frequently Asked Questions",
+          "paragraphs": [
+            "Can yellowed headlights actually affect ITV results? Yes — and more commonly than owners expect. A headlight lens that appears visibly amber or cloudy to a trained inspector will typically be flagged as a major defect (defecto grave) under Spanish ITV regulations, which reference EC Directive 2014/45/EU luminance and clarity standards. The photometric test measures actual beam output, and a heavily yellowed lens can reduce effective lux output by 30–60% compared to a new lens, which directly affects the measured values. In our experience with vehicles brought to us after ITV failures in Sant Cugat, Barcelona, and Terrassa, surface yellowing and clouding account for the majority of headlight-related failures that we see — and virtually all of these are correctable by professional polishing at €79–€149, far cheaper than the replacement cost of €200–€800 per side.",
+            "How can I tell if my headlights have internal moisture damage without taking them apart? The most reliable visual indicator is fogging that appears after rain or temperature changes and clears within an hour or two as the headlight warms up — this indicates the moisture is entering and evaporating cyclically, which is early-stage seal failure. More advanced internal damage shows as a permanent haze concentrated on the lower inner surface of the lens (where condensation pools), visible when you look into the headlight from the front at an angle. Under direct sunlight, delaminating reflector coating appears as dark or dull patches inside the housing rather than the uniform mirror finish of a healthy reflector. If you are uncertain, photograph your headlights in direct sunlight and send the images via WhatsApp — we can identify internal damage from quality photographs in most cases.",
+            "Does headlight restoration require any curing time before I can drive the car? No — for standard sealant application. The polishing work is complete immediately, and the sealant we apply can be driven on within 10–15 minutes of application. Ceramic coating requires a slightly longer cure before the vehicle should be washed or exposed to heavy rain — typically 2–4 hours — but does not prevent driving. Since we work at your location in Sant Cugat, Barcelona, or Castelldefels, the typical workflow is: we arrive, complete the restoration in 30–90 minutes per pair, allow 15 minutes for sealant tack-off, and the vehicle is ready for normal use. There is no need to leave the vehicle or arrange alternative transport.",
+            "Is it worth paying more for ceramic sealant versus standard sealant on my headlights? The maths favour ceramic for any vehicle you intend to keep for more than 2–3 years. Standard sealant at the €79 base price adds 2–3 years of protection before the lens begins to yellow again. Ceramic sealant at €109–€149 adds 4–6 years. In the Barcelona area, where UV intensity and Saharan dust events accelerate degradation, standard sealant may need reapplication in as little as 18 months on a vehicle parked outdoors year-round. The difference in cost between the two options is €30–€70 one time, compared to a saving of at least one full restoration cycle — plus the ceramic coating's hydrophobic properties improve wet-weather beam clarity and make the lens significantly easier to clean without micro-scratching. For vehicles less than 5 years old where early intervention means the restoration is a light polish rather than a full wet-sand, adding ceramic at that point is the most cost-effective protection investment available."
+          ]
+        }
+      ]
     }
   },
   "area_pages": {
@@ -1941,7 +2289,12 @@
         "lat": 41.4736,
         "lng": 2.0868,
         "description": "Based in the heart of Sant Cugat, we serve the entire Vallès Occidental region. From residential communities to commercial parks, our mobile unit reaches you within 30 minutes.",
-        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+        "nearby": [
+          "Rubí",
+          "Cerdanyola del Vallès",
+          "Bellaterra",
+          "Valldoreix"
+        ]
       },
       {
         "slug": "barcelona",
@@ -1951,27 +2304,42 @@
         "lat": 41.3851,
         "lng": 2.1734,
         "description": "Serving all Barcelona districts and surrounding municipalities. Whether you're in Eixample, Sarrià-Sant Gervasi or Badalona — we come to your parking spot with full professional equipment.",
-        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+        "nearby": [
+          "Badalona",
+          "L'Hospitalet de Llobregat",
+          "Sant Adrià de Besòs",
+          "Esplugues de Llobregat"
+        ]
       },
       {
         "slug": "terrassa",
         "name": "Terrassa",
         "short": "Terrassa",
         "region": "Vallès Interior",
-        "lat": 41.5630,
+        "lat": 41.563,
         "lng": 2.0089,
         "description": "Our Vallès hub covers Terrassa, Sabadell and surrounding towns. Industrial estates, residential areas and underground parkings — we adapt to any location.",
-        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+        "nearby": [
+          "Sabadell",
+          "Mollet del Vallès",
+          "Castellar del Vallès",
+          "Viladecavalls"
+        ]
       },
       {
         "slug": "matadepera",
         "name": "Matadepera",
         "short": "Matadepera",
         "region": "Vallès Occidental",
-        "lat": 41.5960,
+        "lat": 41.596,
         "lng": 2.0253,
         "description": "Nestled at the foot of Sant Llorenç del Munt, Matadepera is home to some of Catalonia's finest private estates. Our mobile unit is perfectly suited for gated communities and large villa driveways — discreet service without moving your car. Just 15 minutes from our Sant Cugat base.",
-        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+        "nearby": [
+          "Terrassa",
+          "Vacarisses",
+          "Sant Llorenç Savall",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "sant-just-desvern",
@@ -1979,69 +2347,104 @@
         "short": "Sant Just Desvern",
         "region": "Baix Llobregat",
         "lat": 41.3808,
-        "lng": 2.0750,
+        "lng": 2.075,
         "description": "One of the highest per-capita income municipalities in Catalonia, Sant Just Desvern combines executive residential zones with easy access to Barcelona. We service the private garages and underground parkings across Walden, Can Candeler and the hillside villas regularly.",
-        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+        "nearby": [
+          "Esplugues de Llobregat",
+          "Sant Feliu de Llobregat",
+          "Cornellà de Llobregat",
+          "Barcelona"
+        ]
       },
       {
         "slug": "sant-quirze-del-valles",
         "name": "Sant Quirze del Vallès",
         "short": "Sant Quirze",
         "region": "Vallès Occidental",
-        "lat": 41.5330,
-        "lng": 2.0830,
+        "lat": 41.533,
+        "lng": 2.083,
         "description": "A quiet residential town between Sant Cugat and Sabadell, Sant Quirze del Vallès is known for its family-friendly neighborhoods and modern detached houses. We reach any location in Sant Quirze within 10 minutes from our base.",
-        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+        "nearby": [
+          "Sabadell",
+          "Terrassa",
+          "Sant Cugat del Vallès",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "bellaterra",
         "name": "Bellaterra",
         "short": "Bellaterra",
         "region": "Vallès Occidental",
-        "lat": 41.5020,
-        "lng": 2.1050,
+        "lat": 41.502,
+        "lng": 2.105,
         "description": "Home to the UAB campus and surrounded by executive residential clusters, Bellaterra combines academic prestige with upscale living. We frequently service vehicles at private residences and the campus parking facilities — just 5 minutes from our Sant Cugat operations center.",
-        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+        "nearby": [
+          "Cerdanyola del Vallès",
+          "Sant Cugat del Vallès",
+          "Badia del Vallès",
+          "Barberà del Vallès"
+        ]
       },
       {
         "slug": "pedralbes",
         "name": "Pedralbes",
         "short": "Pedralbes",
         "region": "Barcelona",
-        "lat": 41.3900,
-        "lng": 2.1150,
+        "lat": 41.39,
+        "lng": 2.115,
         "description": "Barcelona's most exclusive residential neighborhood, Pedralbes features private mansions, diplomatic residences and premium apartment blocks. We handle paint correction and ceramic coating on prestige vehicles in underground garages and private driveways throughout the Zona Alta.",
-        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+        "nearby": [
+          "Sarrià-Sant Gervasi",
+          "Les Corts",
+          "Esplugues de Llobregat",
+          "Sant Just Desvern"
+        ]
       },
       {
         "slug": "sant-gervasi",
         "name": "Sant Gervasi – Tres Torres",
         "short": "Sant Gervasi",
         "region": "Barcelona",
-        "lat": 41.4000,
-        "lng": 2.1380,
+        "lat": 41.4,
+        "lng": 2.138,
         "description": "The Tres Torres and Bonanova area sits at the heart of Barcelona's Zona Alta — one of the city's most sought-after residential districts. With its tree-lined streets and premium parking facilities, it's ideal territory for our mobile detailing service. We work in communal garages and private driveways alike.",
-        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+        "nearby": [
+          "Pedralbes",
+          "Sarrià",
+          "Gràcia",
+          "Eixample"
+        ]
       },
       {
         "slug": "castelldefels",
         "name": "Castelldefels",
         "short": "Castelldefels",
         "region": "Baix Llobregat",
-        "lat": 41.2800,
-        "lng": 1.9780,
+        "lat": 41.28,
+        "lng": 1.978,
         "description": "A coastal premium town south of Barcelona, Castelldefels attracts both residents and vacation homeowners with its beachfront villas and hillside estates. Salt air and UV exposure make regular paint protection essential here. We travel from our base for scheduled appointments throughout the week.",
-        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+        "nearby": [
+          "Gavà",
+          "Sitges",
+          "Viladecans",
+          "Sant Boi de Llobregat"
+        ]
       },
       {
         "slug": "alella-tiana-teia",
         "name": "Alella · Tiana · Teià",
         "short": "Maresme Premium",
         "region": "Maresme",
-        "lat": 41.4950,
-        "lng": 2.2950,
+        "lat": 41.495,
+        "lng": 2.295,
         "description": "The Maresme coast north of Barcelona — Alella, Tiana and Teià form a premium residential cluster with vineyard estates and sea-view villas. Mediterranean climate means intense UV and salt exposure. We provide scheduled mobile service for clients in this area, with full paint correction and ceramic coating capabilities on-site.",
-        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
+        "nearby": [
+          "Badalona",
+          "Montgat",
+          "Masnou",
+          "Premià de Dalt"
+        ]
       }
     ]
   },
@@ -2075,26 +2478,52 @@
         "name": "Lot-Ready Standard",
         "price": "169",
         "desc": "Decon wash + single-stage polish + interior vacuum + tyre dress. Perfect for stock cars under €30K.",
-        "includes": ["Decon wash & clay bar", "Single-stage machine polish", "Interior vacuum & wipe", "Tyre & trim dressing", "Photo report"]
+        "includes": [
+          "Decon wash & clay bar",
+          "Single-stage machine polish",
+          "Interior vacuum & wipe",
+          "Tyre & trim dressing",
+          "Photo report"
+        ]
       },
       {
         "name": "Lot-Ready SUV",
         "price": "229",
         "desc": "Same as Standard for SUVs, crossovers and estates. Larger panels, more time.",
-        "includes": ["Everything in Standard", "SUV/estate size coverage", "Boot & cargo area", "Extended photo report"]
+        "includes": [
+          "Everything in Standard",
+          "SUV/estate size coverage",
+          "Boot & cargo area",
+          "Extended photo report"
+        ]
       },
       {
         "name": "Showroom Sports",
         "price": "299",
         "desc": "Two-stage correction for premium and sports vehicles. Designed for cars listed above €40K.",
-        "includes": ["Two-stage paint correction", "Full interior detail", "Glass polish & engine bay", "Wheel detail + ceramic trim", "30-photo report"]
+        "includes": [
+          "Two-stage paint correction",
+          "Full interior detail",
+          "Glass polish & engine bay",
+          "Wheel detail + ceramic trim",
+          "30-photo report"
+        ]
       }
     ],
     "volume_title": "Volume Discounts",
     "volume_tiers": [
-      { "label": "5+ per week", "discount": "−10%" },
-      { "label": "10+ per week", "discount": "−15%" },
-      { "label": "20+ per week", "discount": "Custom quote" }
+      {
+        "label": "5+ per week",
+        "discount": "−10%"
+      },
+      {
+        "label": "10+ per week",
+        "discount": "−15%"
+      },
+      {
+        "label": "20+ per week",
+        "discount": "Custom quote"
+      }
     ],
     "faq_title": "Dealer FAQ",
     "faq_items": [
@@ -2155,7 +2584,13 @@
         "name": "EV New-Car Protection",
         "price": "749",
         "desc": "For factory-fresh EVs. Light single-stage polish to remove transport marks + 2-year ceramic coating.",
-        "includes": ["Paint decontamination", "Single-stage polish (transport marks)", "Gyeon MOHS 2-year ceramic", "Windshield hydrophobic", "Wheel ceramic coating"],
+        "includes": [
+          "Paint decontamination",
+          "Single-stage polish (transport marks)",
+          "Gyeon MOHS 2-year ceramic",
+          "Windshield hydrophobic",
+          "Wheel ceramic coating"
+        ],
         "popular": false
       },
       {
@@ -2163,20 +2598,51 @@
         "name": "EV Premium Shield",
         "price": "1290",
         "desc": "Full correction for daily-driven EVs + 5-year graphene ceramic. Maximum UV and chemical protection.",
-        "includes": ["Two-stage paint correction", "Gtechniq Crystal Serum Ultra 5Y", "Full glass hydrophobic set", "Wheel + caliper ceramic", "Plastic trim restoration", "Interior leather conditioning"],
+        "includes": [
+          "Two-stage paint correction",
+          "Gtechniq Crystal Serum Ultra 5Y",
+          "Full glass hydrophobic set",
+          "Wheel + caliper ceramic",
+          "Plastic trim restoration",
+          "Interior leather conditioning"
+        ],
         "popular": true
       }
     ],
     "compatibility_title": "Brand Compatibility",
     "compatibility": [
-      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "EV Premium Shield" },
-      { "brand": "Polestar 2 / 3 / 4", "recommended": "EV Premium Shield" },
-      { "brand": "Porsche Taycan", "recommended": "EV Premium Shield" },
-      { "brand": "BMW iX / i4 / i5", "recommended": "EV New-Car Protection or Premium Shield" },
-      { "brand": "Mercedes EQS / EQE", "recommended": "EV Premium Shield" },
-      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "EV Premium Shield" },
-      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "EV New-Car Protection" },
-      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "EV New-Car Protection" }
+      {
+        "brand": "Tesla (Model 3/Y/S/X)",
+        "recommended": "EV Premium Shield"
+      },
+      {
+        "brand": "Polestar 2 / 3 / 4",
+        "recommended": "EV Premium Shield"
+      },
+      {
+        "brand": "Porsche Taycan",
+        "recommended": "EV Premium Shield"
+      },
+      {
+        "brand": "BMW iX / i4 / i5",
+        "recommended": "EV New-Car Protection or Premium Shield"
+      },
+      {
+        "brand": "Mercedes EQS / EQE",
+        "recommended": "EV Premium Shield"
+      },
+      {
+        "brand": "Audi e-tron / Q8 e-tron",
+        "recommended": "EV Premium Shield"
+      },
+      {
+        "brand": "Hyundai IONIQ 5/6 / Kia EV6",
+        "recommended": "EV New-Car Protection"
+      },
+      {
+        "brand": "Volkswagen ID.4 / ID.7",
+        "recommended": "EV New-Car Protection"
+      }
     ],
     "faq_title": "EV-Specific FAQ",
     "faq_items": [
@@ -2234,12 +2700,36 @@
     "roi_title": "Restoration vs Replacement",
     "roi_subtitle": "Why restore when you can replace? Because it costs 70-80% less.",
     "roi_items": [
-      { "label": "Storefront replacement (standard)", "cost": "€1,500–3,000", "type": "replace" },
-      { "label": "Storefront scratch restoration", "cost": "€280–600", "type": "restore" },
-      { "label": "Office panel replacement (per m²)", "cost": "€180–350", "type": "replace" },
-      { "label": "Office panel restoration (per m²)", "cost": "€45–90", "type": "restore" },
-      { "label": "Downtime (replacement)", "cost": "1–3 days", "type": "replace" },
-      { "label": "Downtime (restoration)", "cost": "0 — done after hours", "type": "restore" }
+      {
+        "label": "Storefront replacement (standard)",
+        "cost": "€1,500–3,000",
+        "type": "replace"
+      },
+      {
+        "label": "Storefront scratch restoration",
+        "cost": "€280–600",
+        "type": "restore"
+      },
+      {
+        "label": "Office panel replacement (per m²)",
+        "cost": "€180–350",
+        "type": "replace"
+      },
+      {
+        "label": "Office panel restoration (per m²)",
+        "cost": "€45–90",
+        "type": "restore"
+      },
+      {
+        "label": "Downtime (replacement)",
+        "cost": "1–3 days",
+        "type": "replace"
+      },
+      {
+        "label": "Downtime (restoration)",
+        "cost": "0 — done after hours",
+        "type": "restore"
+      }
     ],
     "pricing_title": "Commercial Glass Pricing",
     "pricing_subtitle": "All prices ex. VAT. On-site assessment included free of charge.",
@@ -2248,19 +2738,34 @@
         "name": "Per-Incident",
         "price_from": "280",
         "desc": "Single panel or window with visible scratches. Ideal for one-off repairs.",
-        "includes": ["On-site assessment", "Machine polishing", "Hydrophobic sealant", "Photo report"]
+        "includes": [
+          "On-site assessment",
+          "Machine polishing",
+          "Hydrophobic sealant",
+          "Photo report"
+        ]
       },
       {
         "name": "Per m² Rate",
         "price_from": "45",
         "desc": "For larger surfaces — office facades, full storefronts, glass partitions.",
-        "includes": ["Volume pricing", "After-hours service", "Multiple panels same visit", "Maintenance plan option"]
+        "includes": [
+          "Volume pricing",
+          "After-hours service",
+          "Multiple panels same visit",
+          "Maintenance plan option"
+        ]
       },
       {
         "name": "Retainer Plan",
         "price_from": "Custom",
         "desc": "Monthly or quarterly retainer for facility management companies with multiple properties.",
-        "includes": ["Priority scheduling", "Dedicated account manager", "Fixed monthly rate", "Unlimited call-outs (fair use)"]
+        "includes": [
+          "Priority scheduling",
+          "Dedicated account manager",
+          "Fixed monthly rate",
+          "Unlimited call-outs (fair use)"
+        ]
       }
     ],
     "faq_title": "Commercial Glass FAQ",
@@ -2296,7 +2801,6 @@
     "hero_title": "Your car, always showroom-ready",
     "hero_subtitle": "Subscription-based maintenance plans that keep your paint, glass and ceramic coating in peak condition — year-round.",
     "hero_cta": "Choose Your Plan",
-
     "why_title": "Why a care plan?",
     "why_items": [
       {
@@ -2320,7 +2824,6 @@
         "desc": "Care plan members get priority scheduling and same-week availability — even during peak season."
       }
     ],
-
     "plans_title": "Choose Your Plan",
     "plans_subtitle": "All plans include mobile service — we come to your home or office.",
     "plans_toggle_monthly": "Monthly",
@@ -2381,7 +2884,6 @@
         "best_for": "Exotic & collector vehicles"
       }
     ],
-
     "how_title": "How It Works",
     "how_steps": [
       {
@@ -2405,7 +2907,6 @@
         "desc": "After each visit, you receive photos and a digital report documenting work done and paint condition."
       }
     ],
-
     "faq_title": "Care Plans FAQ",
     "faq_items": [
       {
@@ -2429,7 +2930,6 @@
         "answer": "Annual plans include one free pause per year (up to 4 weeks). Monthly plans can be paused with 7 days notice — you're not charged for paused months."
       }
     ],
-
     "cta_section_title": "Start protecting your investment",
     "cta_section_subtitle": "Message us on WhatsApp to discuss which plan fits your car — or book a free initial assessment.",
     "cta_whatsapp": "Choose My Plan",
