@@ -2,6 +2,8 @@
 
 Per-article tracking of the 8-pt QA checklist from `docs/CONTENT_QA_CHECKLIST.md`. Update before promoting any article from `status: "draft"` to `status: "published"`.
 
+> **Note (2026-05-07):** All 5 Wave 1 articles promoted to `status: "published"` without owner pre-promotion review. Owner explicitly accepted HCU risk. Monitor GSC daily for traffic regression in next 4 weeks.
+
 ## Status legend
 
 - `📝 Drafted` — AI draft committed to JSON, awaiting owner review
@@ -12,11 +14,11 @@ Per-article tracking of the 8-pt QA checklist from `docs/CONTENT_QA_CHECKLIST.md
 
 | # | Slug | Hub | Lang | Status | QA1 angle | QA2 photos | QA3 local | QA4 numbers | QA5 expert | QA6 byline | QA7 date | QA8 FAQ | Promoted date |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | leather-seats-mediterranean-restoration | interior-leather | EN | 📝 Drafted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — |
-| 2 | water-stain-removal-car-windows | glass-polishing | EN | 📝 Drafted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — |
-| 3 | yellow-vs-cloudy-headlights-causes-lifespan | headlight-restoration | EN | 📝 Drafted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — |
-| 4 | uv-damage-motorcycle-yacht-acrylic | acrylic-restoration | EN | 📝 Drafted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — |
-| 5 | detailing-used-car-sale-price-catalonia | pre-sale-pack | EN | 📝 Drafted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — |
+| 1 | leather-seats-mediterranean-restoration | interior-leather | EN | ✅ Promoted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | 2026-05-07 |
+| 2 | water-stain-removal-car-windows | glass-polishing | EN | ✅ Promoted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | 2026-05-07 |
+| 3 | yellow-vs-cloudy-headlights-causes-lifespan | headlight-restoration | EN | ✅ Promoted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | 2026-05-07 |
+| 4 | uv-damage-motorcycle-yacht-acrylic | acrylic-restoration | EN | ✅ Promoted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | 2026-05-07 |
+| 5 | detailing-used-car-sale-price-catalonia | pre-sale-pack | EN | ✅ Promoted | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | 2026-05-07 |
 
 ## Future waves
 
