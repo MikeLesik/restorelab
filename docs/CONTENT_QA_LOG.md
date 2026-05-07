@@ -25,7 +25,7 @@ Add rows below as new waves are drafted.
 ## Per-article notes (optional, for owner review)
 
 ### leather-seats-mediterranean-restoration
-- Date drafted: YYYY-MM-DD
+- Date drafted: 2026-05-07
 - Owner notes: _______
 - Insight added during expert review: _______
 
