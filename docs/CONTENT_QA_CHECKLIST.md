@@ -46,3 +46,56 @@ Languages drafted: [ ] EN  [ ] ES  [ ] CA
 - Owner reviewed: ☐
 - Date approved: _________
 - Languages published: [ ] EN  [ ] ES  [ ] CA
+
+---
+
+## Draft → Published Promotion Workflow
+
+AI-drafted articles are committed with `status: "draft"` to `src/content/en.json` (and later `es.json` / `ca.json` after translation). They render NOWHERE on the live site — `getStaticPaths` filters them out, so no public URL exists.
+
+To promote a single article from draft to published:
+
+1. **Review the draft** — open `src/content/en.json`, find the article entry by slug under `academy.articles[]`, read the full content under `academy_articles[content_key]` (slug with hyphens → underscores).
+
+2. **Run the 8-pt QA checklist above** — fill in your responses inline in `docs/CONTENT_QA_LOG.md` (the per-article tracking table).
+
+3. **Insert your expert insight** — minimum 15-20 minutes editing the prose. Add at least one of:
+   - A typical client mistake you've observed in real Sant Cugat / Barcelona work
+   - A frequent question received via WhatsApp
+   - An unexpected case or counterintuitive finding from your case database
+
+4. **Verify or replace the photos** — the AI draft has no embedded images. Article entries don't currently surface images in the rendering template (only sections, paragraphs, FAQ). If you want hero photos, that's a separate template extension. For Wave 1 we're text-only — but you can edit the JSON to add image references in section objects if you choose.
+
+5. **Verify pricing/factual claims** — the AI draft has placeholder numbers based on serviceProfiles.ts. Replace any pricing or duration figure that doesn't match your actual practice.
+
+6. **Flip the status flag**:
+   ```json
+   "status": "published"
+   ```
+
+7. **Set the `dateModified`** in the corresponding `card.date` field to today's date.
+
+8. **Build and verify**:
+   ```bash
+   npm run build
+   ```
+   The article should now render at `/en/academy/{slug}`.
+
+9. **Commit**:
+   ```bash
+   git add src/content/en.json docs/CONTENT_QA_LOG.md
+   git commit -m "Promote academy article {slug} to published after owner QA review"
+   ```
+
+10. **(Optional)** Translate to ES and CA following the same workflow — add entries to `es.json` and `ca.json`, mark each `status: "draft"` until quality-checked.
+
+### When NOT to promote
+
+- Don't promote without all 8 QA items checked
+- Don't promote with unverified pricing
+- Don't promote with stock or AI-generated images
+- Don't promote with anonymous "restoreLab Team" byline if a 3-month milestone (per spec) has been reached and named author is now possible
+
+### Bulk promotion warning
+
+Tempting as it is to promote multiple drafts in one commit: **don't**. Promoting > 2 articles per week creates the "scaled content" pattern Google's HCU is tuned to detect. Spread promotions over time (target: 1-2 per week per language).
