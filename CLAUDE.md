@@ -7,8 +7,8 @@ Barcelona, Terrassa, Sabadell, Rubí and nearby towns.
 Primary conversion channel: WhatsApp. Secondary: lead form / booking.
 
 ## Tech Stack
-- **Framework**: Astro 4.16 (SSG, `output: 'static'`, `trailingSlash: 'never'`)
-- **Integrations**: `@astrojs/tailwind` 5, `@astrojs/sitemap` 3, `astro-critters` 2 (critical-CSS inlining)
+- **Framework**: Astro 5.18 (SSG, `output: 'static'`, `trailingSlash: 'never'`)
+- **Integrations**: `@astrojs/tailwind` 6 (Tailwind 3), `@astrojs/sitemap` 3; CSS inlining via built-in `build.inlineStylesheets: 'auto'` (astro-critters removed in the Astro 5 migration)
 - **Styling**: TailwindCSS 3 + custom design system in `src/styles/global.css`, `darkMode: 'class'`
 - **TypeScript**: strict mode, path alias `@/*` → `src/*`
 - **Fonts**: DM Sans (body, `font-sans`) + Space Grotesk (headings, `font-display`) via `@fontsource-variable`
@@ -145,7 +145,7 @@ Reusable CSS classes in `global.css`: `.btn-primary`, `.btn-secondary`, `.btn-wh
 ```bash
 npm run dev        # dev server
 npm run check      # TypeScript / Astro check
-npm run build      # astro check && astro build (163 pages → dist/)
+npm run build      # astro check && astro build (164 pages → dist/)
 npm run preview    # preview built site
 npm run new:case   # scaffold a new before/after case
 npm run new:post   # scaffold a new academy article
@@ -153,7 +153,7 @@ npm run gen:llms   # regenerate public/llms.txt
 ```
 
 ## Build Output
-- **163 static pages** (3 langs × routes + 20 academy articles/lang + 11 area pages/lang + verticals + plans/booking + 12 ES-only area×service canary pages)
+- **164 static pages** (3 langs × routes + 20 academy articles/lang + 11 area pages/lang + verticals + plans/booking + 12 ES-only area×service canary pages + a static 404)
 - Sitemap: `dist/sitemap-index.xml` (+ `dist/sitemap-0.xml`)
 - Build must pass with **0 errors and 0 warnings**
 
