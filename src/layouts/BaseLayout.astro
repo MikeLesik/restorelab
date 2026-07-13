@@ -35,6 +35,75 @@ const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
 const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
 const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
+
+// CookieConsent copy per language. Lives in frontmatter (server-only) so only the
+// active language is inlined into the page via define:vars — not all three.
+const ccI18n = {
+              en: {
+                consentModal: {
+                  title: 'We use cookies',
+                  description: 'We use cookies to improve your experience, analyse traffic and show relevant ads. Choose which categories to allow.',
+                  acceptAllBtn: 'Accept all',
+                  acceptNecessaryBtn: 'Necessary only',
+                  showPreferencesBtn: 'Manage preferences'
+                },
+                preferencesModal: {
+                  title: 'Cookie preferences',
+                  acceptAllBtn: 'Accept all',
+                  acceptNecessaryBtn: 'Necessary only',
+                  savePreferencesBtn: 'Save preferences',
+                  closeIconLabel: 'Close',
+                  sections: [
+                    { title: 'Strictly necessary', description: 'Required for the website to function correctly. Cannot be disabled.', linkedCategory: 'necessary' },
+                    { title: 'Analytics', description: 'Help us understand how visitors interact with the site (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Marketing', description: 'Used to show you personalised ads based on your interests (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+              es: {
+                consentModal: {
+                  title: 'Usamos cookies',
+                  description: 'Usamos cookies para mejorar tu experiencia, analizar el tráfico y mostrarte anuncios relevantes.',
+                  acceptAllBtn: 'Aceptar todo',
+                  acceptNecessaryBtn: 'Solo necesarias',
+                  showPreferencesBtn: 'Gestionar preferencias'
+                },
+                preferencesModal: {
+                  title: 'Preferencias de cookies',
+                  acceptAllBtn: 'Aceptar todo',
+                  acceptNecessaryBtn: 'Solo necesarias',
+                  savePreferencesBtn: 'Guardar preferencias',
+                  closeIconLabel: 'Cerrar',
+                  sections: [
+                    { title: 'Estrictamente necesarias', description: 'Necesarias para el funcionamiento del sitio. No pueden desactivarse.', linkedCategory: 'necessary' },
+                    { title: 'Analíticas', description: 'Nos ayudan a entender cómo interactúan los visitantes con el sitio (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Marketing', description: 'Se usan para mostrarte anuncios personalizados según tus intereses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+              ca: {
+                consentModal: {
+                  title: 'Utilitzem galetes',
+                  description: 'Utilitzem galetes per millorar la teva experiència, analitzar el trànsit i mostrar-te anuncis rellevants.',
+                  acceptAllBtn: 'Acceptar tot',
+                  acceptNecessaryBtn: 'Només necessàries',
+                  showPreferencesBtn: 'Gestionar preferències'
+                },
+                preferencesModal: {
+                  title: 'Preferències de galetes',
+                  acceptAllBtn: 'Acceptar tot',
+                  acceptNecessaryBtn: 'Només necessàries',
+                  savePreferencesBtn: 'Desar preferències',
+                  closeIconLabel: 'Tancar',
+                  sections: [
+                    { title: 'Estrictament necessàries', description: 'Necessàries per al funcionament del lloc. No es poden desactivar.', linkedCategory: 'necessary' },
+                    { title: 'Analítiques', description: 'Ens ajuden a entendre com interactuen els visitants amb el lloc (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
+                    { title: 'Màrqueting', description: "S'utilitzen per mostrar-te anuncis personalitzats segons els teus interessos (Meta Pixel / Facebook).", linkedCategory: 'marketing' }
+                  ]
+                }
+              },
+};
+const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
 ---
 
 <!doctype html>
@@ -43,6 +112,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0A0A0A" />
 
     <!-- Theme init: prevent FOUC by applying stored preference before render -->
     <script is:inline>
@@ -127,7 +197,6 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0A0A0A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
@@ -181,6 +250,8 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     })} />
   </head>
   <body class="bg-brand-dark">
+    <!-- Shared WhatsApp glyph — referenced via <use href="#icon-whatsapp"> -->
+    <svg width="0" height="0" class="hidden" aria-hidden="true"><symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol></svg>
     <Header t={t} lang={lang} currentPath={currentPath} availableLangs={availableLangs} />
     <main class="pb-24 md:pb-0">
       <slot />
@@ -223,7 +294,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     </script>
 
     <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
-    <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId }}>
+    <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId, ccTranslation }}>
       // ── Loaders (called after consent) ──────────────────────────────────────
 
       function loadGTM() {
@@ -394,69 +465,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
           language: {
             default: pageLang,
             translations: {
-              en: {
-                consentModal: {
-                  title: 'We use cookies',
-                  description: 'We use cookies to improve your experience, analyse traffic and show relevant ads. Choose which categories to allow.',
-                  acceptAllBtn: 'Accept all',
-                  acceptNecessaryBtn: 'Necessary only',
-                  showPreferencesBtn: 'Manage preferences'
-                },
-                preferencesModal: {
-                  title: 'Cookie preferences',
-                  acceptAllBtn: 'Accept all',
-                  acceptNecessaryBtn: 'Necessary only',
-                  savePreferencesBtn: 'Save preferences',
-                  closeIconLabel: 'Close',
-                  sections: [
-                    { title: 'Strictly necessary', description: 'Required for the website to function correctly. Cannot be disabled.', linkedCategory: 'necessary' },
-                    { title: 'Analytics', description: 'Help us understand how visitors interact with the site (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
-                    { title: 'Marketing', description: 'Used to show you personalised ads based on your interests (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
-                  ]
-                }
-              },
-              es: {
-                consentModal: {
-                  title: 'Usamos cookies',
-                  description: 'Usamos cookies para mejorar tu experiencia, analizar el tráfico y mostrarte anuncios relevantes.',
-                  acceptAllBtn: 'Aceptar todo',
-                  acceptNecessaryBtn: 'Solo necesarias',
-                  showPreferencesBtn: 'Gestionar preferencias'
-                },
-                preferencesModal: {
-                  title: 'Preferencias de cookies',
-                  acceptAllBtn: 'Aceptar todo',
-                  acceptNecessaryBtn: 'Solo necesarias',
-                  savePreferencesBtn: 'Guardar preferencias',
-                  closeIconLabel: 'Cerrar',
-                  sections: [
-                    { title: 'Estrictamente necesarias', description: 'Necesarias para el funcionamiento del sitio. No pueden desactivarse.', linkedCategory: 'necessary' },
-                    { title: 'Analíticas', description: 'Nos ayudan a entender cómo interactúan los visitantes con el sitio (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
-                    { title: 'Marketing', description: 'Se usan para mostrarte anuncios personalizados según tus intereses (Meta Pixel / Facebook).', linkedCategory: 'marketing' }
-                  ]
-                }
-              },
-              ca: {
-                consentModal: {
-                  title: 'Utilitzem galetes',
-                  description: 'Utilitzem galetes per millorar la teva experiència, analitzar el trànsit i mostrar-te anuncis rellevants.',
-                  acceptAllBtn: 'Acceptar tot',
-                  acceptNecessaryBtn: 'Només necessàries',
-                  showPreferencesBtn: 'Gestionar preferències'
-                },
-                preferencesModal: {
-                  title: 'Preferències de galetes',
-                  acceptAllBtn: 'Acceptar tot',
-                  acceptNecessaryBtn: 'Només necessàries',
-                  savePreferencesBtn: 'Desar preferències',
-                  closeIconLabel: 'Tancar',
-                  sections: [
-                    { title: 'Estrictament necessàries', description: 'Necessàries per al funcionament del lloc. No es poden desactivar.', linkedCategory: 'necessary' },
-                    { title: 'Analítiques', description: 'Ens ajuden a entendre com interactuen els visitants amb el lloc (Google Tag Manager, Microsoft Clarity).', linkedCategory: 'analytics' },
-                    { title: 'Màrqueting', description: "S'utilitzen per mostrar-te anuncis personalitzats segons els teus interessos (Meta Pixel / Facebook).", linkedCategory: 'marketing' }
-                  ]
-                }
-              },
+              [pageLang]: ccTranslation
             }
           }
         });

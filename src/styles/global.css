@@ -124,3 +124,26 @@ details[open] .faq-answer-body {
   animation: faq-open 0.18s ease-out forwards;
 }
 
+/* Respect users who prefer reduced motion — disable smooth scroll, pulses,
+   theme transitions and other non-essential animation. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-pulse {
+    animation: none !important;
+  }
+  .theme-transitioning,
+  .theme-transitioning * {
+    transition: none !important;
+  }
+}
+
