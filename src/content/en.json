@@ -266,34 +266,6 @@
         "tag": null
       },
       {
-        "id": "wheel-ceramic",
-        "title": "Wheel Ceramic Coating",
-        "subtitle": "Brake dust repellent coating for all 4 wheels",
-        "icon": "wheel",
-        "starting_price": "€189",
-        "features": [
-          "All 4 wheels cleaned & decontaminated",
-          "Ceramic coating (12+ month durability)",
-          "Brake dust slides off effortlessly"
-        ],
-        "cta_label": "Get Wheel Estimate",
-        "tag": null
-      },
-      {
-        "id": "engine-bay",
-        "title": "Engine Bay Detailing",
-        "subtitle": "Under the bonnet — cleaned, dressed & protected",
-        "icon": "engine",
-        "starting_price": "€119",
-        "features": [
-          "Full degrease & steam clean",
-          "Plastic & rubber dressing",
-          "Electrical-safe process"
-        ],
-        "cta_label": "Get Engine Bay Estimate",
-        "tag": null
-      },
-      {
         "id": "interior-leather",
         "title": "Interior Leather Refresh",
         "subtitle": "Seats, dashboard & door cards cleaned and protected",
@@ -577,35 +549,6 @@
               "Clear coat or UV sealant (optional +€40)"
             ],
             "best_for": "Hazy, yellowed or cloudy headlight lenses",
-            "highlight": false
-          },
-          {
-            "name": "Wheel Ceramic Coating",
-            "slug": "wheel-ceramic",
-            "price": "189€",
-            "duration": "2–3 hours",
-            "description": "All 4 wheels decontaminated and coated with brake-dust-repellent ceramic.",
-            "includes": [
-              "Iron decontamination (all 4 wheels)",
-              "Barrel & face cleaning",
-              "Ceramic coating application",
-              "12+ month durability"
-            ],
-            "best_for": "Anyone tired of scrubbing brake dust",
-            "highlight": false
-          },
-          {
-            "name": "Engine Bay Detailing",
-            "slug": "engine-bay",
-            "price": "119€",
-            "duration": "1–1.5 hours",
-            "description": "Full degrease, steam clean and dress — safe for all electrical components.",
-            "includes": [
-              "Full degrease & steam clean",
-              "Plastic & rubber dressing",
-              "Electrical-safe process"
-            ],
-            "best_for": "Pre-sale prep or annual maintenance",
             "highlight": false
           },
           {
@@ -3237,8 +3180,6 @@
       "interior_leather": "Interior & Leather",
       "pre_sale_pack": "Pre-Sale Detailing",
       "trim_restoration": "Trim Restoration",
-      "wheel_ceramic": "Wheel Ceramic Coating",
-      "engine_bay": "Engine Bay Detailing",
       "ev": "EV Specialists",
       "business": "B2B & Fleet",
       "plans": "Care Plans",

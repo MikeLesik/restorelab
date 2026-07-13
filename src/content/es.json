@@ -239,34 +239,6 @@
         "tag": null
       },
       {
-        "id": "wheel-ceramic",
-        "title": "Cerámico en Llantas",
-        "subtitle": "Recubrimiento repelente de polvo de freno para las 4 llantas",
-        "icon": "wheel",
-        "starting_price": "189€",
-        "features": [
-          "4 llantas limpiadas y descontaminadas",
-          "Cerámico (12+ meses de durabilidad)",
-          "El polvo de freno se desliza sin esfuerzo"
-        ],
-        "cta_label": "Presupuesto Llantas",
-        "tag": null
-      },
-      {
-        "id": "engine-bay",
-        "title": "Detailing del Motor",
-        "subtitle": "Bajo el capó — limpio, vestido y protegido",
-        "icon": "engine",
-        "starting_price": "119€",
-        "features": [
-          "Desengrase completo y limpieza a vapor",
-          "Tratamiento de plásticos y gomas",
-          "Proceso seguro para componentes eléctricos"
-        ],
-        "cta_label": "Presupuesto Motor",
-        "tag": null
-      },
-      {
         "id": "interior-leather",
         "title": "Limpieza de Cuero Interior",
         "subtitle": "Asientos, salpicadero y paneles limpiados y protegidos",
@@ -529,35 +501,6 @@
               "Barniz o sellante UV (opcional +40€)"
             ],
             "best_for": "Faros opacos, amarillentos o nublados",
-            "highlight": false
-          },
-          {
-            "name": "Cerámico en Llantas",
-            "slug": "wheel-ceramic",
-            "price": "189€",
-            "duration": "2–3 horas",
-            "description": "4 llantas descontaminadas y tratadas con cerámico repelente de polvo de freno.",
-            "includes": [
-              "Descontaminación de hierro (4 llantas)",
-              "Limpieza de barril y cara",
-              "Aplicación de cerámico",
-              "12+ meses de durabilidad"
-            ],
-            "best_for": "Quien está cansado de fregar polvo de freno",
-            "highlight": false
-          },
-          {
-            "name": "Detailing del Motor",
-            "slug": "engine-bay",
-            "price": "119€",
-            "duration": "1–1,5 horas",
-            "description": "Desengrase completo, limpieza a vapor y tratamiento — seguro para componentes eléctricos.",
-            "includes": [
-              "Desengrase completo y limpieza a vapor",
-              "Tratamiento de plásticos y gomas",
-              "Proceso seguro para componentes eléctricos"
-            ],
-            "best_for": "Preparación pre-venta o mantenimiento anual",
             "highlight": false
           },
           {
@@ -2876,8 +2819,6 @@
       "interior_leather": "Interior y Cuero",
       "pre_sale_pack": "Pack Pre-Venta",
       "trim_restoration": "Restauración de Plásticos",
-      "wheel_ceramic": "Cerámico para Llantas",
-      "engine_bay": "Limpieza de Motor",
       "ev": "Especialistas EV",
       "business": "B2B y Flotas",
       "plans": "Planes de Cuidado",

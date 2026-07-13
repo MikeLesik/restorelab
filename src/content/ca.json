@@ -239,34 +239,6 @@
         "tag": null
       },
       {
-        "id": "wheel-ceramic",
-        "title": "Ceràmic en Llantes",
-        "subtitle": "Recobriment repel·lent de pols de fre per a les 4 llantes",
-        "icon": "wheel",
-        "starting_price": "189€",
-        "features": [
-          "4 llantes netejades i descontaminades",
-          "Ceràmic (12+ mesos de durabilitat)",
-          "La pols de fre rellisca sense esforç"
-        ],
-        "cta_label": "Pressupost Llantes",
-        "tag": null
-      },
-      {
-        "id": "engine-bay",
-        "title": "Detailing del Motor",
-        "subtitle": "Sota el capó — net, tractat i protegit",
-        "icon": "engine",
-        "starting_price": "119€",
-        "features": [
-          "Desgreixatge complet i neteja a vapor",
-          "Tractament de plàstics i gomes",
-          "Procés segur per a components elèctrics"
-        ],
-        "cta_label": "Pressupost Motor",
-        "tag": null
-      },
-      {
         "id": "interior-leather",
         "title": "Neteja de Cuir Interior",
         "subtitle": "Seients, quadre de comandaments i panells netejats i protegits",
@@ -529,35 +501,6 @@
               "Vernís o segellant UV (opcional +40€)"
             ],
             "best_for": "Fars opacs, groguencs o entelats",
-            "highlight": false
-          },
-          {
-            "name": "Ceràmic en Llantes",
-            "slug": "wheel-ceramic",
-            "price": "189€",
-            "duration": "2–3 hores",
-            "description": "4 llantes descontaminades i tractades amb ceràmic repel·lent de pols de fre.",
-            "includes": [
-              "Descontaminació de ferro (4 llantes)",
-              "Neteja de barril i cara",
-              "Aplicació de ceràmic",
-              "12+ mesos de durabilitat"
-            ],
-            "best_for": "Qui està cansat de fregar pols de fre",
-            "highlight": false
-          },
-          {
-            "name": "Detailing del Motor",
-            "slug": "engine-bay",
-            "price": "119€",
-            "duration": "1–1,5 hores",
-            "description": "Desgreixatge complet, neteja a vapor i tractament — segur per a components elèctrics.",
-            "includes": [
-              "Desgreixatge complet i neteja a vapor",
-              "Tractament de plàstics i gomes",
-              "Procés segur per a components elèctrics"
-            ],
-            "best_for": "Preparació pre-venda o manteniment anual",
             "highlight": false
           },
           {
@@ -2876,8 +2819,6 @@
       "interior_leather": "Interior i Cuir",
       "pre_sale_pack": "Pack Pre-Venda",
       "trim_restoration": "Restauració de Plàstics",
-      "wheel_ceramic": "Ceràmic per a Llantes",
-      "engine_bay": "Neteja de Motor",
       "ev": "Especialistes EV",
       "business": "B2B i Flotes",
       "plans": "Plans de Cura",

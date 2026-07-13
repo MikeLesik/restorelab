@@ -51,7 +51,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
       <div>
         <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.services_title}</h3>
         <ul class="space-y-2">
-          {t.services.items.filter((s: any) => !['trim-restoration', 'wheel-ceramic', 'engine-bay'].includes(s.id)).map((s: any) => (
+          {t.services.items.filter((s: any) => !['trim-restoration'].includes(s.id)).map((s: any) => (
             <li>
               <a href={`/${lang}/services/${s.id}`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
                 {s.title}

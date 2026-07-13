@@ -107,24 +107,6 @@ export const clusterMap: Record<string, ClusterDef> = {
     relatedAreas: [],
   },
 
-  'wheel-ceramic': {
-    hub: '/services/wheel-ceramic',
-    hubLabelKey: 'wheel_ceramic',
-    hubActive: false,
-    primarySpokes: [],
-    relatedHubs: ['car-paint-correction'],
-    relatedAreas: [],
-  },
-
-  'engine-bay': {
-    hub: '/services/engine-bay',
-    hubLabelKey: 'engine_bay',
-    hubActive: false,
-    primarySpokes: [],
-    relatedHubs: ['pre-sale-pack'],
-    relatedAreas: [],
-  },
-
   // ── Vertical Hubs ───────────────────────────────────────────
 
   'ev': {

@@ -67,20 +67,6 @@ export const serviceProfiles: Record<string, ServiceProfile> = {
     startingPriceEur: null,
     englishBrief: 'Faded plastic trim restoration for window surrounds, bumpers, and door cladding.',
   },
-  'wheel-ceramic': {
-    id: 'wheel-ceramic',
-    active: false,
-    englishLabel: 'Wheel Ceramic Coating',
-    startingPriceEur: null,
-    englishBrief: 'Brake-dust-resistant ceramic coating for wheels.',
-  },
-  'engine-bay': {
-    id: 'engine-bay',
-    active: false,
-    englishLabel: 'Engine Bay Detailing',
-    startingPriceEur: null,
-    englishBrief: 'Concours-level engine bay cleaning and dressing.',
-  },
 };
 
 export function getActiveServices(): ServiceProfile[] {
