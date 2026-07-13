@@ -145,7 +145,7 @@ const wa = WHATSAPP_NUMBER;
   </div>
 </section>
 
-<script define:vars={{ waNumber: wa, template: t.lead_form.whatsapp_template }}>
+<script define:vars={{ waNumber: wa, template: t.lead_form.whatsapp_template, notSpecified: t.lead_form.not_specified, noInfo: t.lead_form.no_info }}>
   document.getElementById('lead-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = e.target;
@@ -153,9 +153,9 @@ const wa = WHATSAPP_NUMBER;
 
     const name     = (data.get('name')     || '').toString().slice(0, 100);
     const phone    = (data.get('phone')    || '').toString().slice(0, 20);
-    const service  = (data.get('service')  || 'Not specified').toString().slice(0, 100);
-    const location = (data.get('location') || 'Not specified').toString().slice(0, 100);
-    const message  = (data.get('message')  || 'No additional info').toString().slice(0, 1000);
+    const service  = (data.get('service')  || notSpecified).toString().slice(0, 100);
+    const location = (data.get('location') || notSpecified).toString().slice(0, 100);
+    const message  = (data.get('message')  || noInfo).toString().slice(0, 1000);
 
     const text = template
       .replace('{name}',     name)

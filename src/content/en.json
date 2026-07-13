@@ -96,6 +96,13 @@
     "cta": "Get Estimate",
     "book": "Book Online"
   },
+  "ui": {
+    "language": "Language",
+    "scroll": "Scroll",
+    "verified": "Verified",
+    "fastest_response": "Fastest response — same day",
+    "see_all_google": "See all {count} on Google"
+  },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
     "subheadline": "Paint correction, glass polishing, headlight & interior restoration — premium mobile service in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
@@ -855,7 +862,9 @@
       "photo_note": "You can also send photos directly via WhatsApp after submitting.",
       "submit": "Send via WhatsApp"
     },
-    "whatsapp_template": "Hello restoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}."
+    "whatsapp_template": "Hello restoreLab! My name is {name}. I'm interested in: {service}. Location: {location}. Additional info: {message}. Please contact me at {phone}.",
+    "not_specified": "Not specified",
+    "no_info": "No additional info"
   },
   "pre_footer_cta": {
     "title": "Ready to restore?",

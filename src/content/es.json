@@ -96,6 +96,13 @@
     "cta": "Presupuesto",
     "book": "Reservar"
   },
+  "ui": {
+    "language": "Idioma",
+    "scroll": "Desplázate",
+    "verified": "Verificado",
+    "fastest_response": "Respuesta más rápida — el mismo día",
+    "see_all_google": "Ver las {count} en Google"
+  },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
     "subheadline": "Corrección de pintura, pulido de cristales, faros e interior — servicio móvil premium en Sant Cugat, Barcelona y Vallès Occidental. Vamos a tu garaje.",
@@ -710,7 +717,9 @@
       "photo_note": "También puede enviar fotos directamente por WhatsApp después de enviar el formulario.",
       "submit": "Enviar via WhatsApp"
     },
-    "whatsapp_template": "¡Hola restoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}."
+    "whatsapp_template": "¡Hola restoreLab! Mi nombre es {name}. Estoy interesado en: {service}. Ubicación: {location}. Info adicional: {message}. Mi contacto: {phone}.",
+    "not_specified": "No especificado",
+    "no_info": "Sin información adicional"
   },
   "footer": {
     "tagline": "Restauración premium móvil de superficies",

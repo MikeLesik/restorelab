@@ -96,6 +96,13 @@
     "cta": "Pressupost",
     "book": "Reservar"
   },
+  "ui": {
+    "language": "Idioma",
+    "scroll": "Desplaça't",
+    "verified": "Verificat",
+    "fastest_response": "Resposta més ràpida — el mateix dia",
+    "see_all_google": "Veure les {count} a Google"
+  },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
     "subheadline": "Correcció de pintura, polit de vidres, fars i interior — servei mòbil premium a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
@@ -710,7 +717,9 @@
       "photo_note": "També podeu enviar fotos directament per WhatsApp després d'enviar el formulari.",
       "submit": "Enviar via WhatsApp"
     },
-    "whatsapp_template": "Hola restoreLab! El meu nom és {name}. Estic interessat en: {service}. Ubicació: {location}. Info addicional: {message}. El meu contacte: {phone}."
+    "whatsapp_template": "Hola restoreLab! El meu nom és {name}. Estic interessat en: {service}. Ubicació: {location}. Info addicional: {message}. El meu contacte: {phone}.",
+    "not_specified": "No especificat",
+    "no_info": "Sense informació addicional"
   },
   "footer": {
     "tagline": "Restauració premium mòbil de superfícies",
