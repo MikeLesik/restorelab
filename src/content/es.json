@@ -524,6 +524,16 @@
     "anchor_text": "Corrección de pintura y cerámico premium por detailers certificados. Precios para sedán — consulta los multiplicadores por tamaño."
   },
   "estimator": {
+    "tiers": {
+      "express": { "name": "Renovación Exprés", "desc": "Pulido a máquina de una etapa. Elimina remolinos leves y manchas de agua." },
+      "single_stage": { "name": "Corrección de Una Etapa", "desc": "Corrección en un paso con compuesto de corte medio. ~70% de defectos eliminados." },
+      "two_stage": { "name": "Corrección en Dos Etapas", "desc": "Corte + refinado completo. Elimina 85–95% de los defectos, incluidos remolinos profundos." },
+      "ceramic_2y": { "name": "Recubrimiento Cerámico 2 Años", "desc": "Una etapa + recubrimiento cerámico Gyeon MOHS de 2 años." },
+      "ceramic_5y": { "name": "Cerámico Premium 5 Años", "desc": "Dos etapas + cerámico Gtechniq Crystal Serum Ultra de 5 años." },
+      "windshield_polish": { "name": "Pulido de Parabrisas", "desc": "Elimina arañazos de limpiaparabrisas, manchas de agua y velo del parabrisas." },
+      "windshield_hydrophobic": { "name": "Parabrisas + Hidrofóbico", "desc": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad." },
+      "full_glass_set": { "name": "Set Completo de Cristales", "desc": "Todos los cristales pulidos y tratados: parabrisas, ventanillas y luneta." }
+    },
     "title": "Obtén tu Presupuesto Instantáneo",
     "subtitle": "Responde 4 preguntas rápidas y recibe un rango de precio en segundos.",
     "step1_title": "Tamaño del vehículo",

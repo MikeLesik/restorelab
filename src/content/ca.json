@@ -524,6 +524,16 @@
     "anchor_text": "Correcció de pintura i ceràmic premium per detailers certificats. Preus per a sedan — consulteu els multiplicadors per mida."
   },
   "estimator": {
+    "tiers": {
+      "express": { "name": "Renovació Exprés", "desc": "Poliment a màquina d'una etapa. Elimina remolins lleus i taques d'aigua." },
+      "single_stage": { "name": "Correcció d'Una Etapa", "desc": "Correcció en un pas amb compost de tall mitjà. ~70% de defectes eliminats." },
+      "two_stage": { "name": "Correcció en Dues Etapes", "desc": "Tall + refinat complet. Elimina 85–95% dels defectes, inclosos remolins profunds." },
+      "ceramic_2y": { "name": "Recobriment Ceràmic 2 Anys", "desc": "Una etapa + recobriment ceràmic Gyeon MOHS de 2 anys." },
+      "ceramic_5y": { "name": "Ceràmic Premium 5 Anys", "desc": "Dues etapes + ceràmic Gtechniq Crystal Serum Ultra de 5 anys." },
+      "windshield_polish": { "name": "Poliment de Parabrisa", "desc": "Elimina ratllades de l'eixugaparabrises, taques d'aigua i vel del parabrisa." },
+      "windshield_hydrophobic": { "name": "Parabrisa + Hidrofòbic", "desc": "Poliment de parabrisa més recobriment hidrofòbic repel·lent de pluja per a millor visibilitat." },
+      "full_glass_set": { "name": "Joc Complet de Vidres", "desc": "Tots els vidres polits i tractats: parabrisa, finestretes i lluna." }
+    },
     "title": "Obtén el teu Pressupost Instantani",
     "subtitle": "Respon 4 preguntes ràpides i rep un rang de preu en segons.",
     "step1_title": "Mida del vehicle",

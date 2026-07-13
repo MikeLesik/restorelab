@@ -16,6 +16,23 @@ const estI18n = {
   noteLarge: ui.note_large || 'Large vehicles require additional time. ETAs shown are approximate.',
   waMessage: ui.wa_message || 'Hello restoreLab! I used the estimator:\n• Vehicle: {vehicleSize}\n• Condition: {paintCondition}\n• Colour: {colorSensitivity}\n• Goals: {goals}\n• Recommended: {tierName} (€{min}–{max})\n\nI\'d like to proceed with a quote.',
 };
+
+// Translated tier name/desc, keyed by tier id — source of truth for copy.
+const tiersI18n = ui.tiers || {};
+
+// Human-readable labels for the WhatsApp summary (avoid raw tokens like "small").
+const estLabels = {
+  size: { small: ui.size_small || 'Small', medium: ui.size_medium || 'Medium', large: ui.size_large || 'Large' },
+  condition: { light: ui.cond_light || 'Light', medium: ui.cond_medium || 'Medium', heavy: ui.cond_heavy || 'Heavy' },
+  color: { standard: ui.color_standard || 'Standard', metallic: ui.color_metallic || 'Metallic', black: ui.color_black || 'Black', white: ui.color_white || 'White' },
+  goal: {
+    restore_gloss: ui.goal_gloss || 'Restore gloss & remove scratches',
+    add_ceramic: ui.goal_ceramic || 'Add ceramic coating',
+    pre_sale: ui.goal_presale || 'Prepare for sale',
+    long_term_protection: ui.goal_protection || 'Long-term paint protection',
+    glass_clarity: ui.goal_glass || 'Glass scratch removal',
+  },
+};
 ---
 
 <section id="estimator" class="py-14">
@@ -204,28 +221,33 @@ const estI18n = {
   </div>
 </section>
 
-<script define:vars={{ wa, estI18n }}>
+<script define:vars={{ wa, estI18n, tiersI18n, estLabels }}>
   // ── Estimator client-side logic ─────────────────────────────────────────────
   const SIZE_MULTIPLIER = { small: 1.0, medium: 1.2, large: 1.5 };
   const COLOR_SURCHARGE = { standard: 0, metallic: 0, black: 50, white: 0 };
 
-  const TIERS = [
-    { id: 'express', name: 'Express Refresh', base: 149, eta: '2–3h',
-      conditions: ['light'], goals: ['restore_gloss', 'pre_sale'],
-      desc: 'Single-stage machine polish. Removes light swirls and water spots.' },
-    { id: 'single_stage', name: 'Single-Stage Correction', base: 289, eta: '4–5h',
-      conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'],
-      desc: 'One-step correction with medium-cut compound. ~70% defect removal.' },
-    { id: 'two_stage', name: 'Two-Stage Correction', base: 549, eta: '6–8h',
-      conditions: ['medium', 'heavy'], goals: ['restore_gloss'],
-      desc: 'Full cut + refine. Removes 85–95% of defects including deep swirls.' },
-    { id: 'ceramic_2y', name: 'Ceramic Coating 2Y', base: 649, eta: '1 day',
-      conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'],
-      desc: 'Single-stage + Gyeon MOHS 2-year ceramic coating.' },
-    { id: 'ceramic_5y', name: 'Ceramic Premium 5Y', base: 1049, eta: '1–2 days',
-      conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'],
-      desc: 'Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic.' },
+  // Structural tier definitions. PRICES ARE THE SOURCE OF TRUTH IN t.pricing
+  // (car + glass categories in the content JSON) — keep `base` in sync with it:
+  //   car:   express 149, single_stage 289, two_stage 549, ceramic_2y 649, ceramic_5y 1049
+  //   glass: windshield_polish 119, windshield_hydrophobic 179, full_glass_set 289
+  // name/desc come from t.estimator.tiers (translated) and are merged in below.
+  const TIER_DEFS = [
+    { id: 'express', base: 149, eta: '2–3h', category: 'car', conditions: ['light'], goals: ['restore_gloss', 'pre_sale'] },
+    { id: 'single_stage', base: 289, eta: '4–5h', category: 'car', conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'] },
+    { id: 'two_stage', base: 549, eta: '6–8h', category: 'car', conditions: ['medium', 'heavy'], goals: ['restore_gloss'] },
+    { id: 'ceramic_2y', base: 649, eta: '1 day', category: 'car', conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'] },
+    { id: 'ceramic_5y', base: 1049, eta: '1–2 days', category: 'car', conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'] },
+    // Glass tiers — surfaced when the user selects the glass_clarity goal.
+    { id: 'windshield_polish', base: 119, eta: '1–2h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
+    { id: 'windshield_hydrophobic', base: 179, eta: '2h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
+    { id: 'full_glass_set', base: 289, eta: '3–4h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
   ];
+
+  const TIERS = TIER_DEFS.map(d => ({
+    ...d,
+    name: (tiersI18n[d.id] && tiersI18n[d.id].name) || d.id,
+    desc: (tiersI18n[d.id] && tiersI18n[d.id].desc) || '',
+  }));
 
   const state = { step: 1, vehicleSize: '', paintCondition: '', colorSensitivity: '', goals: [] };
 
@@ -319,19 +341,31 @@ const estI18n = {
   });
 
   function showResults() {
+    // Tier pool: if glass scratch removal is the ONLY goal, recommend glass
+    // packages (not body-paint tiers). Otherwise show body tiers, plus glass
+    // tiers only when glass_clarity is also selected.
+    const goals = state.goals;
+    const onlyGlass = goals.length > 0 && goals.every(g => g === 'glass_clarity');
+    const wantsGlass = goals.includes('glass_clarity');
+    const pool = onlyGlass
+      ? TIERS.filter(tier => tier.category === 'glass')
+      : TIERS.filter(tier => tier.category !== 'glass' || wantsGlass);
+
     // Score tiers
-    const scored = TIERS.map(tier => {
+    const scored = pool.map(tier => {
       let score = 0;
       if (tier.conditions.includes(state.paintCondition)) score += 3;
-      const goalMatches = state.goals.filter(g => tier.goals.includes(g)).length;
+      const goalMatches = goals.filter(g => tier.goals.includes(g)).length;
       score += goalMatches * 2;
-      if (state.goals.includes('add_ceramic') && tier.id.startsWith('ceramic')) score += 3;
-      if (state.goals.includes('long_term_protection') && tier.id === 'flagship') score += 2;
-      if (state.goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
+      if (goals.includes('add_ceramic') && tier.id.startsWith('ceramic')) score += 3;
+      if (goals.includes('long_term_protection') && tier.id === 'ceramic_5y') score += 2;
+      if (goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
       if (state.paintCondition === 'heavy' && tier.id === 'express') score -= 5;
 
-      const sm = SIZE_MULTIPLIER[state.vehicleSize] || 1;
-      const cs = COLOR_SURCHARGE[state.colorSensitivity] || 0;
+      // Glass packages are flat-priced — no vehicle-size / paint-colour surcharge.
+      const isGlass = tier.category === 'glass';
+      const sm = isGlass ? 1 : (SIZE_MULTIPLIER[state.vehicleSize] || 1);
+      const cs = isGlass ? 0 : (COLOR_SURCHARGE[state.colorSensitivity] || 0);
       const priceBase = tier.base * sm + cs;
       const min = Math.round(priceBase * 0.95 / 10) * 10;
       const max = Math.round(priceBase * 1.10 / 10) * 10;
@@ -389,10 +423,10 @@ const estI18n = {
     const waLink = document.getElementById('est-wa-link');
     if (waLink) {
       const msg = estI18n.waMessage
-        .replace('{vehicleSize}', state.vehicleSize)
-        .replace('{paintCondition}', state.paintCondition)
-        .replace('{colorSensitivity}', state.colorSensitivity)
-        .replace('{goals}', state.goals.join(', '))
+        .replace('{vehicleSize}', estLabels.size[state.vehicleSize] || state.vehicleSize)
+        .replace('{paintCondition}', estLabels.condition[state.paintCondition] || state.paintCondition)
+        .replace('{colorSensitivity}', estLabels.color[state.colorSensitivity] || state.colorSensitivity)
+        .replace('{goals}', state.goals.map(g => estLabels.goal[g] || g).join(', '))
         .replace('{tierName}', recommended.name)
         .replace('{min}', recommended.min)
         .replace('{max}', recommended.max);

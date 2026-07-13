@@ -571,6 +571,16 @@
     ]
   },
   "estimator": {
+    "tiers": {
+      "express": { "name": "Express Refresh", "desc": "Single-stage machine polish. Removes light swirls and water spots." },
+      "single_stage": { "name": "Single-Stage Correction", "desc": "One-step correction with medium-cut compound. ~70% defect removal." },
+      "two_stage": { "name": "Two-Stage Correction", "desc": "Full cut + refine. Removes 85–95% of defects including deep swirls." },
+      "ceramic_2y": { "name": "Ceramic Coating 2Y", "desc": "Single-stage + Gyeon MOHS 2-year ceramic coating." },
+      "ceramic_5y": { "name": "Ceramic Premium 5Y", "desc": "Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic." },
+      "windshield_polish": { "name": "Windshield Polish", "desc": "Remove wiper scratches, water spots and light haze from your windshield." },
+      "windshield_hydrophobic": { "name": "Windshield + Hydrophobic", "desc": "Windshield polish plus rain-repellent hydrophobic coating for better visibility." },
+      "full_glass_set": { "name": "Full Glass Set", "desc": "All windows polished and treated — windshield, side and rear glass." }
+    },
     "title": "Get Your Instant Estimate",
     "subtitle": "Answer 4 quick questions and get a price range in seconds.",
     "step1_title": "Vehicle size",
