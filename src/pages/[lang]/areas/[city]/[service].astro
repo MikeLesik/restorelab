@@ -93,6 +93,7 @@ const breadcrumbSchema = {
   lang={lang}
   t={t}
   currentPath={`/areas/${citySlug}/${serviceId}`}
+  availableLangs={['es']}
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

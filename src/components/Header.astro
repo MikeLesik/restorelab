@@ -5,10 +5,17 @@ export interface Props {
   t: Record<string, any>;
   lang: string;
   currentPath?: string;
+  availableLangs?: string[];
 }
 
-const { t, lang, currentPath = '' } = Astro.props;
+const { t, lang, currentPath = '', availableLangs = ['en', 'es', 'ca'] } = Astro.props;
 const wa = WHATSAPP_NUMBER;
+
+// For languages where the current page doesn't exist, link to that language's
+// home (/{l}) instead of /{l}{currentPath} — the latter would be a broken URL.
+function langHref(l: string): string {
+  return availableLangs.includes(l) ? `/${l}${currentPath}` : `/${l}`;
+}
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.header)}`;
 
 function isActive(segment: string): boolean {
@@ -99,7 +106,7 @@ function isActive(segment: string): boolean {
           >
             {['en', 'es', 'ca'].map((l) => (
               <a
-                href={`/${l}${currentPath}`}
+                href={langHref(l)}
                 role="menuitem"
                 data-lang-switch={l}
                 class:list={[
@@ -200,7 +207,7 @@ function isActive(segment: string): boolean {
         <div class="flex items-center gap-1.5 ml-auto">
           {['en', 'es', 'ca'].map((l) => (
             <a
-              href={`/${l}${currentPath}`}
+              href={langHref(l)}
               data-lang-switch={l}
               class:list={[
                 'flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-colors',

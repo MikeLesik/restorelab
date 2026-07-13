@@ -14,6 +14,8 @@ export interface Props {
   canonicalURL?: string;
   t: Record<string, any>;
   currentPath?: string;
+  /** Languages this page actually exists in — controls hreflang + language switcher. */
+  availableLangs?: string[];
 }
 
 const {
@@ -24,11 +26,11 @@ const {
   canonicalURL,
   t,
   currentPath = '',
+  availableLangs = ['en', 'es', 'ca'],
 } = Astro.props;
 
 const siteUrl = SITE_URL;
 const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
-const langs = ['en', 'es', 'ca'];
 
 const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
@@ -92,15 +94,17 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
 
-    <!-- hreflang -->
-    {langs.map((l) => (
+    <!-- hreflang — only for languages this page actually exists in -->
+    {availableLangs.map((l) => (
       <link
         rel="alternate"
         hreflang={l}
         href={`${siteUrl}/${l}${currentPath}`}
       />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${currentPath}`} />
+    {availableLangs.includes('es') && (
+      <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${currentPath}`} />
+    )}
 
     <!-- Preconnect hints for external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -184,7 +188,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     })} />
   </head>
   <body class="bg-brand-dark">
-    <Header t={t} lang={lang} currentPath={currentPath} />
+    <Header t={t} lang={lang} currentPath={currentPath} availableLangs={availableLangs} />
     <main class="pb-24 md:pb-0">
       <slot />
     </main>
