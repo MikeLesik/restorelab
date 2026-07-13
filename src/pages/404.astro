@@ -1,0 +1,126 @@
+---
+// Static, self-contained 404 page (no BaseLayout / no `t` dependency).
+// Astro emits dist/404.html, which Cloudflare Pages serves for unknown URLs —
+// this replaces the previous behaviour where any missing path returned 200
+// with the root redirect page. Trilingual (ES / EN / CA), dark theme, noindex.
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <title>404 — RestoreLab</title>
+    <style>
+      :root {
+        --dark: #0A0A0A;
+        --navy: #0D1B2A;
+        --blue: #1B3A5C;
+        --accent: #2A7FFF;
+        --gold: #D4A537;
+        --white: #FFFFFF;
+        --light: #F5F5F5;
+        --muted: #9BA7B4;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0A0A0A 0%, #0D1B2A 55%, #1B3A5C 100%);
+        color: var(--light);
+        font-family: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+        text-align: center;
+        padding: 2rem 1.25rem;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 40rem; width: 100%; }
+      .code {
+        font-size: clamp(5rem, 22vw, 10rem);
+        line-height: 0.9;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin: 0 0 0.5rem;
+        background: linear-gradient(135deg, var(--accent), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .titles { margin: 0 0 0.5rem; }
+      .titles .t {
+        margin: 0;
+        color: var(--white);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .titles .t.primary { font-size: clamp(1.35rem, 5vw, 1.9rem); }
+      .titles .t.secondary { font-size: 1rem; color: var(--muted); font-weight: 500; margin-top: 0.35rem; }
+      .lead { color: var(--muted); font-size: 1rem; margin: 0.75rem auto 2rem; max-width: 32rem; }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.7rem 1.4rem;
+        border-radius: 0.6rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      }
+      .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary { background: var(--accent); color: #fff; }
+      .btn-primary:hover { background: #1f6fe6; }
+      .btn-ghost {
+        background: transparent;
+        color: var(--light);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .btn-ghost:hover { border-color: var(--accent); color: #fff; }
+      .langs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        justify-content: center;
+        font-size: 0.9rem;
+      }
+      .langs a { color: var(--muted); text-decoration: none; }
+      .langs a:hover { color: var(--white); text-decoration: underline; }
+      .langs a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 0.25rem; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="code">404</p>
+      <div class="titles">
+        <h1 class="t primary">Página no encontrada</h1>
+        <p class="t secondary">Page not found · Pàgina no trobada</p>
+      </div>
+      <p class="lead">
+        La página que buscas no existe o se ha movido. ·
+        The page you’re looking for doesn’t exist. ·
+        La pàgina que busques no existeix.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="/es">Ir al inicio</a>
+        <a class="btn btn-ghost" href="/es/services">Ver servicios</a>
+      </div>
+
+      <nav class="langs" aria-label="Idioma / Language / Idioma">
+        <a href="/es" hreflang="es">Español</a>
+        <a href="/en" hreflang="en">English</a>
+        <a href="/ca" hreflang="ca">Català</a>
+      </nav>
+    </main>
+  </body>
+</html>

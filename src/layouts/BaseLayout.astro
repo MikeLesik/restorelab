@@ -102,11 +102,6 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     ))}
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${currentPath}`} />
 
-    <!-- Preload OG image for LCP on homepage -->
-    {currentPath === '' && (
-      <link rel="preload" as="image" href="/images/og-home.webp" type="image/webp" />
-    )}
-
     <!-- Preconnect hints for external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
