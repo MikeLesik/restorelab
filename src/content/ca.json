@@ -742,6 +742,60 @@
     "cta_subtitle": "Vols resultats com aquests?",
     "cta_button": "Demana el Teu Pressupost Gratuït"
   },
+  "cases_gallery": {
+    "items": [
+      {
+        "id": 1,
+        "title": "BMW Sèrie 3 — Correcció de Pintura",
+        "category": "car",
+        "before": "/images/cases/car1-before.jpg",
+        "after": "/images/cases/car1-after.jpg",
+        "result": "Remolins eliminats, brillantor profunda restaurada",
+        "metric": "95% de claredat",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 2,
+        "title": "Porsche Cayenne — Recobriment Ceràmic",
+        "category": "car",
+        "before": "/images/cases/car2-before.jpg",
+        "after": "/images/cases/car2-after.jpg",
+        "result": "Correcció completa en dues etapes + recobriment ceràmic",
+        "metric": "Estalvi de 900 €",
+        "location": "Barcelona"
+      },
+      {
+        "id": 3,
+        "title": "Parabrisa — Ratllades d'Eixugaparabrises",
+        "category": "glass",
+        "before": "/images/cases/glass1-before.jpg",
+        "after": "/images/cases/glass1-after.jpg",
+        "result": "Marques profundes de l'eixugaparabrises eliminades",
+        "metric": "Estalvi de 380 €",
+        "location": "Terrassa"
+      },
+      {
+        "id": 4,
+        "title": "Finestres Acríliques — Restauració UV",
+        "category": "acrylic",
+        "before": "/images/cases/car5-before.jpg",
+        "after": "/images/cases/car5-after.jpg",
+        "result": "Groguenc per UV revertit, claredat restaurada",
+        "metric": "100% de claredat",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 5,
+        "title": "Mercedes GLE — Eliminació de Ratllades",
+        "category": "car",
+        "before": "/images/cases/car3-before.jpg",
+        "after": "/images/cases/car3-after.jpg",
+        "result": "Ratllada profunda corregida — sense repintar",
+        "metric": "Estalvi de 1.100 €",
+        "location": "Barcelona"
+      }
+    ]
+  },
   "pre_footer_cta": {
     "title": "Preparat per restaurar?",
     "subtitle": "Envia'ns una foto i rep un pressupost honest en menys de 30 minuts. Sense compromís ni costos ocults.",

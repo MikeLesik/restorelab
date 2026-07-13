@@ -742,6 +742,60 @@
     "cta_subtitle": "¿Quieres resultados así?",
     "cta_button": "Pide Tu Presupuesto Gratis"
   },
+  "cases_gallery": {
+    "items": [
+      {
+        "id": 1,
+        "title": "BMW Serie 3 — Corrección de Pintura",
+        "category": "car",
+        "before": "/images/cases/car1-before.jpg",
+        "after": "/images/cases/car1-after.jpg",
+        "result": "Remolinos eliminados, brillo profundo restaurado",
+        "metric": "95% de claridad",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 2,
+        "title": "Porsche Cayenne — Recubrimiento Cerámico",
+        "category": "car",
+        "before": "/images/cases/car2-before.jpg",
+        "after": "/images/cases/car2-after.jpg",
+        "result": "Corrección completa en dos etapas + recubrimiento cerámico",
+        "metric": "Ahorro de 900 €",
+        "location": "Barcelona"
+      },
+      {
+        "id": 3,
+        "title": "Parabrisas — Arañazos de Limpiaparabrisas",
+        "category": "glass",
+        "before": "/images/cases/glass1-before.jpg",
+        "after": "/images/cases/glass1-after.jpg",
+        "result": "Marcas profundas de limpiaparabrisas eliminadas",
+        "metric": "Ahorro de 380 €",
+        "location": "Terrassa"
+      },
+      {
+        "id": 4,
+        "title": "Ventanas Acrílicas — Restauración UV",
+        "category": "acrylic",
+        "before": "/images/cases/car5-before.jpg",
+        "after": "/images/cases/car5-after.jpg",
+        "result": "Amarilleo por UV revertido, claridad restaurada",
+        "metric": "100% de claridad",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 5,
+        "title": "Mercedes GLE — Eliminación de Arañazos",
+        "category": "car",
+        "before": "/images/cases/car3-before.jpg",
+        "after": "/images/cases/car3-after.jpg",
+        "result": "Arañazo profundo corregido — sin repintar",
+        "metric": "Ahorro de 1.100 €",
+        "location": "Barcelona"
+      }
+    ]
+  },
   "pre_footer_cta": {
     "title": "¿Listo para restaurar?",
     "subtitle": "Envíanos una foto y recibe un presupuesto honesto en menos de 30 minutos. Sin compromiso ni costes ocultos.",

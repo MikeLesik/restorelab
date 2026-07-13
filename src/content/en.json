@@ -745,6 +745,60 @@
     "cta_subtitle": "Want results like these?",
     "cta_button": "Get Your Free Estimate"
   },
+  "cases_gallery": {
+    "items": [
+      {
+        "id": 1,
+        "title": "BMW 3 Series — Paint Correction",
+        "category": "car",
+        "before": "/images/cases/car1-before.jpg",
+        "after": "/images/cases/car1-after.jpg",
+        "result": "Swirl marks eliminated, deep gloss restored",
+        "metric": "95% clarity",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 2,
+        "title": "Porsche Cayenne — Ceramic Coating",
+        "category": "car",
+        "before": "/images/cases/car2-before.jpg",
+        "after": "/images/cases/car2-after.jpg",
+        "result": "Full two-stage correction + ceramic coating",
+        "metric": "Saved €900",
+        "location": "Barcelona"
+      },
+      {
+        "id": 3,
+        "title": "Windshield — Wiper Scratches",
+        "category": "glass",
+        "before": "/images/cases/glass1-before.jpg",
+        "after": "/images/cases/glass1-after.jpg",
+        "result": "Deep wiper marks removed",
+        "metric": "Saved €380",
+        "location": "Terrassa"
+      },
+      {
+        "id": 4,
+        "title": "Acrylic Windows — UV Restore",
+        "category": "acrylic",
+        "before": "/images/cases/car5-before.jpg",
+        "after": "/images/cases/car5-after.jpg",
+        "result": "UV yellowing reversed, clarity restored",
+        "metric": "100% clarity",
+        "location": "Sant Cugat"
+      },
+      {
+        "id": 5,
+        "title": "Mercedes GLE — Scratch Removal",
+        "category": "car",
+        "before": "/images/cases/car3-before.jpg",
+        "after": "/images/cases/car3-after.jpg",
+        "result": "Deep scratch corrected — no repainting",
+        "metric": "Saved €1,100",
+        "location": "Barcelona"
+      }
+    ]
+  },
   "wa_messages": {
     "header": "Hello restoreLab! I'd like to get a free estimate. [From website header]",
     "hero": "Hello restoreLab! I'd like to get a free estimate. [From homepage]",
