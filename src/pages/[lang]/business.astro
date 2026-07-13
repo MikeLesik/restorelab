@@ -22,11 +22,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const b = t.business || {};
 const wa = WHATSAPP_NUMBER;
-const waMsg = lang === 'es'
-  ? 'Hola restoreLab! Soy gestor de concesionario y me interesa el servicio de detailing B2B.'
-  : lang === 'ca'
-  ? 'Hola restoreLab! Sóc gestor de concessionari i m\'interessa el servei de detailing B2B.'
-  : 'Hello restoreLab! I\'m a dealership manager and I\'m interested in your B2B detailing service.';
+const waMsg = t.wa_messages.business;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
 ---
 

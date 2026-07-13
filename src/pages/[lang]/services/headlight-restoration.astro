@@ -22,7 +22,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'headlight-restoration');
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(lang === 'es' ? 'Hola restoreLab! Me interesa la restauración de faros.' : 'Hello restoreLab! I\'m interested in headlight restoration.')}`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.service_headlight)}`;
 ---
 
 <BaseLayout

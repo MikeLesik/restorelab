@@ -22,7 +22,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'glass-polishing');
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I'm+interested+in+Glass+Polishing.`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.service_glass_polishing)}`;
 ---
 
 <BaseLayout

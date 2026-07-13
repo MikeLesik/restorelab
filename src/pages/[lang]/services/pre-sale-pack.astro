@@ -22,7 +22,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'pre-sale-pack');
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(lang === 'es' ? 'Hola restoreLab! Me interesa el Pack Pre-Venta.' : 'Hello restoreLab! I\'m interested in the Pre-Sale Detail Pack.')}`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.service_presale)}`;
 ---
 
 <BaseLayout

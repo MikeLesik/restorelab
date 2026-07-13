@@ -673,7 +673,20 @@
     "sticky_cta": "Hola restoreLab! M'agradaria obtenir un pressupost. [Des del botó mòbil]",
     "prefooter_cta": "Hola restoreLab! M'agradaria obtenir un pressupost. [Des del peu de pàgina]",
     "footer": "Hola restoreLab! Tinc una pregunta. [Des del peu de pàgina]",
-    "contact": "Hola restoreLab! M'agradaria posar-me en contacte. [Des de la pàgina de contacte]"
+    "contact": "Hola restoreLab! M'agradaria posar-me en contacte. [Des de la pàgina de contacte]",
+    "services_grid_quote": "Hola restoreLab! M'agradaria un pressupost per a: {service}",
+    "area_quote": "Hola restoreLab! Sóc a {city} i m'agradaria demanar un pressupost.",
+    "how_it_works": "Hola restoreLab! M'agradaria demanar un pressupost.",
+    "plans": "Hola restoreLab! M'interessen els plans de cura per al meu cotxe.",
+    "ev": "Hola restoreLab! Tinc un vehicle elèctric i m'interessa la protecció de pintura.",
+    "business": "Hola restoreLab! Sóc gestor de concessionari i m'interessa el servei de detailing B2B.",
+    "commercial_glass": "Hola restoreLab! Necessito restauració de vidre comercial. Adjunto fotos.",
+    "service_acrylic": "Hola restoreLab! M'interessa la restauració d'acrílic.",
+    "service_car_paint": "Hola restoreLab! M'interessa la correcció de pintura.",
+    "service_glass_polishing": "Hola restoreLab! M'interessa el poliment de vidres.",
+    "service_headlight": "Hola restoreLab! M'interessa la restauració de fars.",
+    "service_interior_leather": "Hola restoreLab! M'interessa la neteja de cuir interior.",
+    "service_presale": "Hola restoreLab! M'interessa el Pack Pre-Venda."
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït en 30 Minuts",

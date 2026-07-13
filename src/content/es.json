@@ -673,7 +673,20 @@
     "sticky_cta": "¡Hola restoreLab! Me gustaría obtener un presupuesto. [Desde el botón móvil]",
     "prefooter_cta": "¡Hola restoreLab! Me gustaría obtener un presupuesto. [Desde el pie de página]",
     "footer": "¡Hola restoreLab! Tengo una pregunta. [Desde el pie de página]",
-    "contact": "¡Hola restoreLab! Me gustaría ponerme en contacto. [Desde la página de contacto]"
+    "contact": "¡Hola restoreLab! Me gustaría ponerme en contacto. [Desde la página de contacto]",
+    "services_grid_quote": "¡Hola restoreLab! Me gustaría un presupuesto para: {service}",
+    "area_quote": "¡Hola restoreLab! Estoy en {city} y me gustaría pedir un presupuesto.",
+    "how_it_works": "¡Hola restoreLab! Me gustaría pedir un presupuesto.",
+    "plans": "¡Hola restoreLab! Me interesan los planes de cuidado para mi coche.",
+    "ev": "¡Hola restoreLab! Tengo un vehículo eléctrico y me interesa la protección de pintura.",
+    "business": "¡Hola restoreLab! Soy gestor de concesionario y me interesa el servicio de detailing B2B.",
+    "commercial_glass": "¡Hola restoreLab! Necesito restauración de cristal comercial. Adjunto fotos.",
+    "service_acrylic": "¡Hola restoreLab! Me interesa la restauración de acrílico.",
+    "service_car_paint": "¡Hola restoreLab! Me interesa la corrección de pintura.",
+    "service_glass_polishing": "¡Hola restoreLab! Me interesa el pulido de cristales.",
+    "service_headlight": "¡Hola restoreLab! Me interesa la restauración de faros.",
+    "service_interior_leather": "¡Hola restoreLab! Me interesa la limpieza de cuero interior.",
+    "service_presale": "¡Hola restoreLab! Me interesa el Pack Pre-Venta."
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",

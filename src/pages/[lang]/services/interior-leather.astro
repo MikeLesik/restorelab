@@ -22,7 +22,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const service = t.services.items.find((s: any) => s.id === 'interior-leather');
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(lang === 'es' ? 'Hola restoreLab! Me interesa la limpieza de cuero interior.' : 'Hello restoreLab! I\'m interested in interior leather cleaning.')}`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.service_interior_leather)}`;
 ---
 
 <BaseLayout

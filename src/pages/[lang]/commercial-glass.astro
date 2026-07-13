@@ -19,11 +19,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const cg = t.commercial_glass || {};
 const wa = WHATSAPP_NUMBER;
-const waMsg = lang === 'es'
-  ? 'Hola restoreLab! Necesito restauración de cristal comercial. Adjunto fotos.'
-  : lang === 'ca'
-  ? 'Hola restoreLab! Necessito restauració de vidre comercial. Adjunto fotos.'
-  : 'Hello restoreLab! I need commercial glass restoration. Photos attached.';
+const waMsg = t.wa_messages.commercial_glass;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
 ---
 

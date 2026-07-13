@@ -20,11 +20,7 @@ const { lang } = Astro.params;
 const { t } = Astro.props;
 const ev = t.ev || {};
 const wa = WHATSAPP_NUMBER;
-const waMsg = lang === 'es'
-  ? 'Hola restoreLab! Tengo un vehículo eléctrico y me interesa la protección de pintura.'
-  : lang === 'ca'
-  ? 'Hola restoreLab! Tinc un vehicle elèctric i m\'interessa la protecció de pintura.'
-  : 'Hello restoreLab! I have an electric vehicle and I\'m interested in paint protection.';
+const waMsg = t.wa_messages.ev;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
 ---
 

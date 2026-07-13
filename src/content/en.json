@@ -818,7 +818,20 @@
     "sticky_cta": "Hello restoreLab! I'd like to get a quote. [From mobile button]",
     "prefooter_cta": "Hello restoreLab! I'd like to get a quote. [From page footer CTA]",
     "footer": "Hello restoreLab! I have a question. [From footer]",
-    "contact": "Hello restoreLab! I'd like to get in touch. [From contact page]"
+    "contact": "Hello restoreLab! I'd like to get in touch. [From contact page]",
+    "services_grid_quote": "Hello restoreLab! I'd like a quote for: {service}",
+    "area_quote": "Hello restoreLab! I'm in {city} and I'd like to get a quote.",
+    "how_it_works": "Hello restoreLab! I'd like to get a quote.",
+    "plans": "Hello restoreLab! I'm interested in your care plans for my car.",
+    "ev": "Hello restoreLab! I have an electric vehicle and I'm interested in paint protection.",
+    "business": "Hello restoreLab! I'm a dealership manager and I'm interested in your B2B detailing service.",
+    "commercial_glass": "Hello restoreLab! I need commercial glass restoration. Photos attached.",
+    "service_acrylic": "Hello restoreLab! I'm interested in Acrylic Restoration.",
+    "service_car_paint": "Hello restoreLab! I'm interested in Car Paint Correction.",
+    "service_glass_polishing": "Hello restoreLab! I'm interested in Glass Polishing.",
+    "service_headlight": "Hello restoreLab! I'm interested in headlight restoration.",
+    "service_interior_leather": "Hello restoreLab! I'm interested in interior leather cleaning.",
+    "service_presale": "Hello restoreLab! I'm interested in the Pre-Sale Detail Pack."
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate in 30 Minutes",

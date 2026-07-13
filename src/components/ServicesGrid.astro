@@ -81,7 +81,7 @@ const colsClass = getColsClass(services.length);
         const cfg = serviceConfig[service.id] ?? serviceConfig['car-paint-correction'];
         const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Més popular';
         const ctaLabel = service.cta_label ?? t.services.get_quote;
-        const waText = encodeURIComponent(`Hello restoreLab! I'd like a quote for: ${service.title}`);
+        const waText = encodeURIComponent(t.wa_messages.services_grid_quote.replace('{service}', service.title));
 
         return (
           <div class:list={[

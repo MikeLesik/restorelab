@@ -15,7 +15,7 @@ export interface Props {
 
 const { t, items, title, subtitle, showCta = true } = Astro.props;
 const wa = WHATSAPP_NUMBER;
-const waUrl = `https://wa.me/${wa}?text=Hello+restoreLab!+I+have+a+question.`;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.footer)}`;
 
 const resolvedItems = items ?? t.faq?.items ?? [];
 const resolvedTitle = title ?? t.faq?.section_title ?? '';
