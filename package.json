@@ -19,7 +19,8 @@
     "@fontsource-variable/space-grotesk": "^5.2.10",
     "astro": "^4.16.18",
     "astro-critters": "^2.2.1",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "vanilla-cookieconsent": "^3.0.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

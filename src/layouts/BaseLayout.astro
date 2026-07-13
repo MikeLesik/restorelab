@@ -107,16 +107,14 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
     )}
 
     <!-- Preconnect hints for external domains -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
 
-    <!-- CookieConsent v3 CSS (non-render-blocking) -->
+    <!-- CookieConsent v3 CSS — self-hosted (non-render-blocking) -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css"
-      crossorigin="anonymous"
+      href="/vendor/cookieconsent.css"
       media="print"
       onload="this.media='all'"
     />
@@ -374,8 +372,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
       }
 
       var ccScript = document.createElement('script');
-      ccScript.src = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js';
-      ccScript.crossOrigin = 'anonymous';
+      ccScript.src = '/vendor/cookieconsent.umd.js';
       ccScript.onload = function() {
         CookieConsent.run({
           guiOptions: {

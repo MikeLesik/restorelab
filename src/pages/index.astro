@@ -5,26 +5,15 @@
 <script>
 (function () {
   const VALID = ['en', 'es', 'ca'];
-  const ES = ['ES','MX','AR','CO','CL','PE','VE','EC','BO','PY','UY','CR','PA','GT','HN','SV','NI','DO','CU','PR'];
 
-  // 1. Respect user's stored preference
+  // Respect a stored language preference; otherwise default to ES.
+  // Smart IP / Accept-Language routing is handled at the edge (functions/index.ts).
   const stored = localStorage.getItem('preferred_lang');
   if (stored && VALID.includes(stored)) {
     window.location.replace('/' + stored);
     return;
   }
-
-  // 2. Try IP detection via ipapi.co (free, no key)
-  fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(2500) })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      const cc = (data.country_code || 'XX').toUpperCase();
-      const lang = ES.includes(cc) ? 'es' : 'en';
-      window.location.replace('/' + lang);
-    })
-    .catch(function () {
-      window.location.replace('/es');
-    });
+  window.location.replace('/es');
 })();
 </script>
 <noscript>
