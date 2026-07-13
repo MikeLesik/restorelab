@@ -151,24 +151,6 @@ const avatarColors = [
   </div>
 </section>
 
-<!-- Review Schema (SEO) -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
-  "name": "restoreLab",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": t.social_proof.rating,
-    "reviewCount": "47"
-  },
-  "review": t.social_proof.testimonials.map((r: any) => ({
-    "@type": "Review",
-    "author": { "@type": "Person", "name": r.name },
-    "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 },
-    "reviewBody": r.text
-  }))
-})} />
-
 <script>
   const track = document.getElementById('t-track') as HTMLElement;
   const prevBtn = document.getElementById('t-prev');

@@ -70,14 +70,15 @@ const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
     "telephone": `+${wa}`,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": city.name,
+      "addressLocality": "Sant Cugat del Vallès",
       "addressRegion": "Catalonia",
+      "postalCode": "08172",
       "addressCountry": "ES"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": city.lat,
-      "longitude": city.lng
+      "latitude": 41.4736,
+      "longitude": 2.0868
     },
     "priceRange": "€€€",
     "areaServed": [city.name, ...city.nearby]

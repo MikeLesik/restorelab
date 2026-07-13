@@ -5,6 +5,7 @@ import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
 import { SITE_URL } from '@/lib/constants';
+import { defaultAuthor } from '@/lib/authorBio';
 import RelatedGuides from '@/components/RelatedGuides.astro';
 import ServiceCTA from '@/components/ServiceCTA.astro';
 import { findClusterForSpoke } from '@/lib/clusterMap';
@@ -53,7 +54,11 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
     "@type": "BlogPosting",
     "headline": content.title,
     "description": content.seo_description,
-    "author": { "@type": "Organization", "name": "restoreLab" },
+    "author": {
+      "@type": "Person",
+      "name": defaultAuthor.name,
+      "url": `${SITE_URL}/${lang}${defaultAuthor.url}`
+    },
     "publisher": {
       "@type": "Organization",
       "name": "restoreLab",
