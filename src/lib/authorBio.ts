@@ -1,5 +1,5 @@
 // Author bio data for academy articles.
-// Used by: ServiceCTA, RelatedGuides, ArticleSchema (BlogPosting).
+// Used by: ServiceCTA, RelatedGuides, BlogPosting schema in academy/[slug].astro.
 
 export interface AuthorBio {
   name: string;

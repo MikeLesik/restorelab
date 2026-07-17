@@ -60,30 +60,6 @@ const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
     ]
   })} />
 
-  <!-- AutomotiveBusiness Schema with geo -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
-    "name": "restoreLab",
-    "url": SITE_URL,
-    "image": `${SITE_URL}/images/og-home.jpg`,
-    "telephone": `+${wa}`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sant Cugat del Vallès",
-      "addressRegion": "Catalonia",
-      "postalCode": "08172",
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.4736,
-      "longitude": 2.0868
-    },
-    "priceRange": "€€€",
-    "areaServed": [city.name, ...city.nearby]
-  })} />
-
   <div class="pt-24">
     <!-- Hero -->
     <section class="relative py-14 sm:py-16 overflow-hidden bg-gradient-hero">
