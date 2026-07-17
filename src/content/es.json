@@ -15,8 +15,8 @@
       "description": "Corrección de pintura móvil en Sant Cugat y Barcelona. Elimine marcas circulares, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
     },
     "glass": {
-      "title": "Eliminación de Arañazos en Vidrio Barcelona | restoreLab",
-      "description": "Elimine arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Sant Cugat, Barcelona y Terrassa. Sin sustitución."
+      "title": "Pulir Cristales del Coche Rayados en Barcelona | restoreLab",
+      "description": "Pulido de cristales: elimina arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Barcelona y Sant Cugat. Sin sustitución."
     },
     "acrylic": {
       "title": "Restauración de Acrílico y Policarbonato España | restoreLab",
@@ -75,8 +75,8 @@
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
     },
     "headlight": {
-      "title": "Restauración de Faros Sant Cugat y Barcelona | restoreLab",
-      "description": "Restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
+      "title": "Pulido de Faros en Barcelona y Sant Cugat | restoreLab",
+      "description": "Pulido y restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
     },
     "interior_leather": {
       "title": "Limpieza de Cuero Interior y Cerámico | restoreLab",
@@ -109,22 +109,49 @@
     "cta_primary": "Presupuesto Gratuito",
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
-    "trust_pills": ["★ 5.0 Google", "47+ Reseñas", "500+ Trabajos"],
+    "trust_pills": [
+      "★ 5.0 Google",
+      "47+ Reseñas",
+      "500+ Trabajos"
+    ],
     "cta_car": "Restauración Auto",
     "sticky_cta": "Presupuesto via WhatsApp",
     "badge": "★ Valorado 5.0 • 500+ Trabajos"
   },
   "trust": {
     "brands": [
-      { "name": "Gyeon", "status": "authorized" },
-      { "name": "Gtechniq", "status": "authorized" },
-      { "name": "Rupes", "status": "equipment" },
-      { "name": "Koch Chemie", "status": "equipment" },
-      { "name": "CarPro", "status": "products" }
+      {
+        "name": "Gyeon",
+        "status": "authorized"
+      },
+      {
+        "name": "Gtechniq",
+        "status": "authorized"
+      },
+      {
+        "name": "Rupes",
+        "status": "equipment"
+      },
+      {
+        "name": "Koch Chemie",
+        "status": "equipment"
+      },
+      {
+        "name": "CarPro",
+        "status": "products"
+      }
     ],
     "certifications": [
-      { "name": "Gyeon Certificado", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Acreditado", "status": "active", "icon": "shield" }
+      {
+        "name": "Gyeon Certificado",
+        "status": "active",
+        "icon": "shield"
+      },
+      {
+        "name": "Gtechniq Acreditado",
+        "status": "active",
+        "icon": "shield"
+      }
     ],
     "founder": {
       "text": "Fundado en Sant Cugat. Servicio móvil desde el primer día.",
@@ -192,7 +219,7 @@
       },
       {
         "id": "glass-polishing",
-        "title": "Eliminación de Arañazos en Vidrio",
+        "title": "Pulido de Cristales y Eliminación de Arañazos",
         "subtitle": "Ventanas, parabrisas y vidrio arquitectónico",
         "icon": "glass",
         "starting_price": "Desde 89€",
@@ -202,7 +229,8 @@
           "Manchas y arañazos de limpiaparabrisas"
         ],
         "cta_label": "Presupuesto Vidrio",
-        "tag": null
+        "tag": null,
+        "h1": "Pulido de Cristales Rayados en Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -219,7 +247,7 @@
       },
       {
         "id": "headlight-restoration",
-        "title": "Restauración de Faros",
+        "title": "Pulido y Restauración de Faros",
         "subtitle": "Faros amarillentos u opacos restaurados a claridad cristalina",
         "icon": "headlight",
         "starting_price": "Desde 79€",
@@ -229,7 +257,8 @@
           "Sellante UV opcional (2+ años)"
         ],
         "cta_label": "Presupuesto Faros",
-        "tag": null
+        "tag": null,
+        "h1": "Pulido y Restauración de Faros en Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -320,11 +349,31 @@
       "sensitive_paint": "Recargo pintura sensible",
       "sensitive_paint_note": "Negro azabache, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
-        { "name": "Compacto", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
-        { "name": "Sedán", "examples": "Serie 3, Clase C, A4", "modifier": "Base" },
-        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
-        { "name": "SUV grande / 7 plazas", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
-        { "name": "Deportivo / Superdeportivo", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+        {
+          "name": "Compacto",
+          "examples": "Polo, Yaris, i20",
+          "modifier": "−10%"
+        },
+        {
+          "name": "Sedán",
+          "examples": "Serie 3, Clase C, A4",
+          "modifier": "Base"
+        },
+        {
+          "name": "SUV / Crossover",
+          "examples": "X3, GLC, Q5, Tucson",
+          "modifier": "+20%"
+        },
+        {
+          "name": "SUV grande / 7 plazas",
+          "examples": "X7, GLE, Q7, Cayenne",
+          "modifier": "+35%"
+        },
+        {
+          "name": "Deportivo / Superdeportivo",
+          "examples": "911, AMG GT, M4",
+          "modifier": "+25–40%"
+        }
       ],
       "sensitive_paint_surcharge": "+60–100 €"
     },
@@ -528,18 +577,50 @@
         ]
       }
     ],
-    "anchor_text": "Corrección de pintura y cerámico premium por detailers certificados. Precios para sedán — consulta los multiplicadores por tamaño."
+    "anchor_text": "Corrección de pintura y cerámico premium por detailers certificados. Precios para sedán — consulta los multiplicadores por tamaño.",
+    "ceramic_answer": {
+      "id": "tratamiento-ceramico",
+      "title": "¿Cuánto cuesta el tratamiento cerámico para coche?",
+      "paragraphs": [
+        "El tratamiento cerámico en restoreLab cuesta 649 € (protección de 2 años) o 1 049 € (protección premium de 5 años) para un sedán, corrección de pintura completa incluida. A diferencia de muchos talleres, el precio incluye la preparación de la pintura — un cerámico aplicado sobre defectos solo los sella para siempre.",
+        "Los precios son para sedán; aplica el multiplicador por tamaño (compacto −10%, SUV +10-20%). El servicio es 100% móvil: aplicamos el cerámico en tu garaje en Sant Cugat, Barcelona, Terrassa y alrededores. Pide presupuesto exacto por WhatsApp con fotos de tu coche."
+      ]
+    }
   },
   "estimator": {
     "tiers": {
-      "express": { "name": "Renovación Exprés", "desc": "Pulido a máquina de una etapa. Elimina remolinos leves y manchas de agua." },
-      "single_stage": { "name": "Corrección de Una Etapa", "desc": "Corrección en un paso con compuesto de corte medio. ~70% de defectos eliminados." },
-      "two_stage": { "name": "Corrección en Dos Etapas", "desc": "Corte + refinado completo. Elimina 85–95% de los defectos, incluidos remolinos profundos." },
-      "ceramic_2y": { "name": "Recubrimiento Cerámico 2 Años", "desc": "Una etapa + recubrimiento cerámico Gyeon MOHS de 2 años." },
-      "ceramic_5y": { "name": "Cerámico Premium 5 Años", "desc": "Dos etapas + cerámico Gtechniq Crystal Serum Ultra de 5 años." },
-      "windshield_polish": { "name": "Pulido de Parabrisas", "desc": "Elimina arañazos de limpiaparabrisas, manchas de agua y velo del parabrisas." },
-      "windshield_hydrophobic": { "name": "Parabrisas + Hidrofóbico", "desc": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad." },
-      "full_glass_set": { "name": "Set Completo de Cristales", "desc": "Todos los cristales pulidos y tratados: parabrisas, ventanillas y luneta." }
+      "express": {
+        "name": "Renovación Exprés",
+        "desc": "Pulido a máquina de una etapa. Elimina remolinos leves y manchas de agua."
+      },
+      "single_stage": {
+        "name": "Corrección de Una Etapa",
+        "desc": "Corrección en un paso con compuesto de corte medio. ~70% de defectos eliminados."
+      },
+      "two_stage": {
+        "name": "Corrección en Dos Etapas",
+        "desc": "Corte + refinado completo. Elimina 85–95% de los defectos, incluidos remolinos profundos."
+      },
+      "ceramic_2y": {
+        "name": "Recubrimiento Cerámico 2 Años",
+        "desc": "Una etapa + recubrimiento cerámico Gyeon MOHS de 2 años."
+      },
+      "ceramic_5y": {
+        "name": "Cerámico Premium 5 Años",
+        "desc": "Dos etapas + cerámico Gtechniq Crystal Serum Ultra de 5 años."
+      },
+      "windshield_polish": {
+        "name": "Pulido de Parabrisas",
+        "desc": "Elimina arañazos de limpiaparabrisas, manchas de agua y velo del parabrisas."
+      },
+      "windshield_hydrophobic": {
+        "name": "Parabrisas + Hidrofóbico",
+        "desc": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad."
+      },
+      "full_glass_set": {
+        "name": "Set Completo de Cristales",
+        "desc": "Todos los cristales pulidos y tratados: parabrisas, ventanillas y luneta."
+      }
     },
     "title": "Obtén tu Presupuesto Instantáneo",
     "subtitle": "Responde 4 preguntas rápidas y recibe un rango de precio en segundos.",
@@ -655,19 +736,31 @@
         "city": "Sant Cugat",
         "region": "Vallès Occidental",
         "coverage": "Radio de 20 km",
-        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
+        "areas": [
+          "Sant Cugat del Vallès",
+          "Rubí",
+          "Cerdanyola del Vallès"
+        ]
       },
       {
         "city": "Barcelona",
         "region": "Área Metropolitana de Barcelona",
         "coverage": "Radio de 30 km",
-        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
+        "areas": [
+          "Barcelona",
+          "Badalona",
+          "L'Hospitalet de Llobregat"
+        ]
       },
       {
         "city": "Vallès",
         "region": "Vallès Interior",
         "coverage": "Radio de 30 km",
-        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
+        "areas": [
+          "Terrassa",
+          "Sabadell",
+          "Mollet del Vallès"
+        ]
       }
     ]
   },
@@ -851,9 +944,18 @@
     "local_text": "Con base en Sant Cugat del Vallès, servimos toda el área metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. Nuestra unidad móvil va a tu casa, oficina o plaza de aparcamiento. Sin necesidad de dejar tu coche en un taller.",
     "certifications_title": "Certificaciones y Formación",
     "stats": [
-      { "value": "500+", "label": "Vehículos restaurados" },
-      { "value": "5.0", "label": "Valoración Google" },
-      { "value": "0", "label": "Repintados necesarios" }
+      {
+        "value": "500+",
+        "label": "Vehículos restaurados"
+      },
+      {
+        "value": "5.0",
+        "label": "Valoración Google"
+      },
+      {
+        "value": "0",
+        "label": "Repintados necesarios"
+      }
     ]
   },
   "academy": {
@@ -992,46 +1094,46 @@
         "date": "2025-10-15",
         "status": "published"
       },
-    {
-      "number": "16",
-      "title": "Tapicería de Cuero Dañada por el Sol: Restauración en Clima Mediterráneo",
-      "excerpt": "Por qué el sol y el calor seco mediterráneo envejecen el cuero más rápido que los climas húmedos — señales de alerta tempranas, coste de restauración vs tapizado y cuándo los asientos realmente no tienen solución.",
-      "slug": "leather-seats-mediterranean-restoration",
-      "date": "2026-05-07",
-      "status": "published"
-    },
-    {
-      "number": "17",
-      "title": "Eliminación de Manchas de Agua en Cristales: ¿Pulir o Sustituir?",
-      "excerpt": "El agua dura graba el cristal del coche — y cuando el grabado supera cierto umbral, ningún pulido puede revertirlo. Las cuatro fases, qué hacen realmente los remedios caseros y cuándo el pulido profesional (desde €89) supera a la sustitución.",
-      "slug": "water-stain-removal-car-windows",
-      "date": "2026-05-07",
-      "status": "published"
-    },
-    {
-      "number": "18",
-      "title": "Faros Amarillos vs Opacos: Causas, Vida Útil y Coste de Restauración",
-      "excerpt": "Suspenso en la ITV, deslumbramiento nocturno y la diferencia entre el amarillamiento que se puede pulir y la opacidad que obliga a la sustitución — datos de vida útil mediterránea y precios reales en euros.",
-      "slug": "yellow-vs-cloudy-headlights-causes-lifespan",
-      "date": "2026-05-07",
-      "status": "published"
-    },
-    {
-      "number": "19",
-      "title": "Daño UV en Viseras de Moto y Acrílico de Embarcación",
-      "excerpt": "Las viseras de policarbonato y los ojos de buey de PMMA se degradan de forma diferente — triple estrés costero en el Maresme, umbrales de restauración por material y cuándo la sustitución es inevitable.",
-      "slug": "uv-damage-motorcycle-yacht-acrylic",
-      "date": "2026-05-07",
-      "status": "published"
-    },
-    {
-      "number": "20",
-      "title": "Cómo el Detailing Aumenta el Precio de Venta del Coche de Segunda Mano en Cataluña",
-      "excerpt": "Incremento de hasta el 5–15% con el detailing profesional en anuncios de 8–25k EUR — la estrategia fotográfica, el cálculo de coste vs. ROI y los casos en que el detailing no ayuda.",
-      "slug": "detailing-used-car-sale-price-catalonia",
-      "date": "2026-05-07",
-      "status": "published"
-    }
+      {
+        "number": "16",
+        "title": "Tapicería de Cuero Dañada por el Sol: Restauración en Clima Mediterráneo",
+        "excerpt": "Por qué el sol y el calor seco mediterráneo envejecen el cuero más rápido que los climas húmedos — señales de alerta tempranas, coste de restauración vs tapizado y cuándo los asientos realmente no tienen solución.",
+        "slug": "leather-seats-mediterranean-restoration",
+        "date": "2026-05-07",
+        "status": "published"
+      },
+      {
+        "number": "17",
+        "title": "Eliminación de Manchas de Agua en Cristales: ¿Pulir o Sustituir?",
+        "excerpt": "El agua dura graba el cristal del coche — y cuando el grabado supera cierto umbral, ningún pulido puede revertirlo. Las cuatro fases, qué hacen realmente los remedios caseros y cuándo el pulido profesional (desde €89) supera a la sustitución.",
+        "slug": "water-stain-removal-car-windows",
+        "date": "2026-05-07",
+        "status": "published"
+      },
+      {
+        "number": "18",
+        "title": "Faros Amarillos vs Opacos: Causas, Vida Útil y Coste de Restauración",
+        "excerpt": "Suspenso en la ITV, deslumbramiento nocturno y la diferencia entre el amarillamiento que se puede pulir y la opacidad que obliga a la sustitución — datos de vida útil mediterránea y precios reales en euros.",
+        "slug": "yellow-vs-cloudy-headlights-causes-lifespan",
+        "date": "2026-05-07",
+        "status": "published"
+      },
+      {
+        "number": "19",
+        "title": "Daño UV en Viseras de Moto y Acrílico de Embarcación",
+        "excerpt": "Las viseras de policarbonato y los ojos de buey de PMMA se degradan de forma diferente — triple estrés costero en el Maresme, umbrales de restauración por material y cuándo la sustitución es inevitable.",
+        "slug": "uv-damage-motorcycle-yacht-acrylic",
+        "date": "2026-05-07",
+        "status": "published"
+      },
+      {
+        "number": "20",
+        "title": "Cómo el Detailing Aumenta el Precio de Venta del Coche de Segunda Mano en Cataluña",
+        "excerpt": "Incremento de hasta el 5–15% con el detailing profesional en anuncios de 8–25k EUR — la estrategia fotográfica, el cálculo de coste vs. ROI y los casos en que el detailing no ayuda.",
+        "slug": "detailing-used-car-sale-price-catalonia",
+        "date": "2026-05-07",
+        "status": "published"
+      }
     ]
   },
   "academy_articles": {
@@ -1060,11 +1162,35 @@
           },
           "table": {
             "caption": "Análisis comparativo de sistemas rotativos",
-            "headers": ["Modelo", "Caída de RPM bajo presión", "Centro de gravedad bajo", "Control de RPM", "Alta fiabilidad"],
+            "headers": [
+              "Modelo",
+              "Caída de RPM bajo presión",
+              "Centro de gravedad bajo",
+              "Control de RPM",
+              "Alta fiabilidad"
+            ],
             "rows": [
-              ["Makita 9237CB", "No", "Sí", "Sí", "Sí"],
-              ["DeWALT DWP849X", "Sí", "No", "Sí", "Sí"],
-              ["FLEX PE 14-2 150", "No", "Sí", "Sí", "Sí"]
+              [
+                "Makita 9237CB",
+                "No",
+                "Sí",
+                "Sí",
+                "Sí"
+              ],
+              [
+                "DeWALT DWP849X",
+                "Sí",
+                "No",
+                "Sí",
+                "Sí"
+              ],
+              [
+                "FLEX PE 14-2 150",
+                "No",
+                "Sí",
+                "Sí",
+                "Sí"
+              ]
             ]
           },
           "conclusion": "La elección de nuestro laboratorio es la Makita 9237CB. Ofrece un manejo ideal gracias a su centro de gravedad bajo y estabilidad en ajustes de velocidad baja."
@@ -1243,8 +1369,14 @@
             "El objetivo de esta etapa es reducir las marcas de trabajo dejadas por la lana, preparando el barniz para el brillo final. Esto reduce drásticamente el tiempo que la pulidora de doble acción (DA) necesita en el siguiente paso."
           ],
           "tools": [
-            { "label": "Equipo", "text": "Pulidora rotativa (Makita 9237CB) + almohadilla de espuma amarilla (por ejemplo, Rupes 130 mm)." },
-            { "label": "Compuesto", "text": "Compuesto de pulido de corte medio." }
+            {
+              "label": "Equipo",
+              "text": "Pulidora rotativa (Makita 9237CB) + almohadilla de espuma amarilla (por ejemplo, Rupes 130 mm)."
+            },
+            {
+              "label": "Compuesto",
+              "text": "Compuesto de pulido de corte medio."
+            }
           ],
           "key_params": [
             "Velocidad: 1,7–1,9",
@@ -1260,8 +1392,14 @@
             "Aquí usamos una pulidora de doble acción (DA) para llevar el barniz a un acabado de \"grado espacial\" — perfectamente claro, con cero hologramas."
           ],
           "tools": [
-            { "label": "Equipo", "text": "Pulidora de doble acción (DA) grande (por ejemplo, FLEX XFE 7-15) + almohadilla de espuma suave amarilla o blanca." },
-            { "label": "Compuesto", "text": "Polish de acabado." }
+            {
+              "label": "Equipo",
+              "text": "Pulidora de doble acción (DA) grande (por ejemplo, FLEX XFE 7-15) + almohadilla de espuma suave amarilla o blanca."
+            },
+            {
+              "label": "Compuesto",
+              "text": "Polish de acabado."
+            }
           ],
           "key_params": [
             "Presión: 0–1 kg (la máquina trabaja bajo su propio peso)",
@@ -1277,8 +1415,14 @@
             "La pintura negra sólida no metálica y los acabados acrílicos son los materiales más exigentes de nuestro laboratorio."
           ],
           "tools": [
-            { "label": "Acrílico", "text": "Durante el pulido, las almohadillas tomarán el color del vehículo porque el pigmento está mezclado en el recubrimiento. Esto es normal — solo limpia las almohadillas más frecuentemente con jabón doméstico." },
-            { "label": "Negro sólido", "text": "Si la combinación estándar sigue dejando hologramas, el protocolo cambia: reemplaza la almohadilla de acabado cada 2–3 paneles, reduce la velocidad de la DA a 2–3 y acorta el ciclo de trabajo a 15–20 segundos. En casos extremos, usa un polish de imprimación (CarPro Essence) y almohadillas blancas ultrasuaves." }
+            {
+              "label": "Acrílico",
+              "text": "Durante el pulido, las almohadillas tomarán el color del vehículo porque el pigmento está mezclado en el recubrimiento. Esto es normal — solo limpia las almohadillas más frecuentemente con jabón doméstico."
+            },
+            {
+              "label": "Negro sólido",
+              "text": "Si la combinación estándar sigue dejando hologramas, el protocolo cambia: reemplaza la almohadilla de acabado cada 2–3 paneles, reduce la velocidad de la DA a 2–3 y acorta el ciclo de trabajo a 15–20 segundos. En casos extremos, usa un polish de imprimación (CarPro Essence) y almohadillas blancas ultrasuaves."
+            }
           ],
           "analogy": {
             "title": "Mandamiento de ingeniería restoreLab",
@@ -1313,10 +1457,22 @@
             "Antes de la aplicación, la carrocería debe estar completamente desengrasada."
           ],
           "tools": [
-            { "label": "Dosificación", "text": "El consumo medio es de 10 ml por capa." },
-            { "label": "Área de cobertura", "text": "Gracias al largo tiempo de evaporación, puedes recubrir hasta un tercio del vehículo de una vez, y luego proceder tranquilamente al nivelado y pulido." },
-            { "label": "Herramientas", "text": "Usa un juego de 6 toallas de microfibra para nivelar y pulir (4 toallas de pelo corto para la pasada inicial y 2 toallas de pelo largo para el acabado final)." },
-            { "label": "Capas", "text": "Se recomienda una aplicación de dos capas, con un intervalo de una hora entre capas." }
+            {
+              "label": "Dosificación",
+              "text": "El consumo medio es de 10 ml por capa."
+            },
+            {
+              "label": "Área de cobertura",
+              "text": "Gracias al largo tiempo de evaporación, puedes recubrir hasta un tercio del vehículo de una vez, y luego proceder tranquilamente al nivelado y pulido."
+            },
+            {
+              "label": "Herramientas",
+              "text": "Usa un juego de 6 toallas de microfibra para nivelar y pulir (4 toallas de pelo corto para la pasada inicial y 2 toallas de pelo largo para el acabado final)."
+            },
+            {
+              "label": "Capas",
+              "text": "Se recomienda una aplicación de dos capas, con un intervalo de una hora entre capas."
+            }
           ]
         },
         {
@@ -1326,9 +1482,18 @@
             "Un recubrimiento cerámico necesita tiempo para completar su proceso de curado químico:"
           ],
           "tools": [
-            { "label": "Curado natural", "text": "12 horas en un espacio seco (el secado por infrarrojos es opcional, no obligatorio)." },
-            { "label": "Protocolo de lavado", "text": "El primer lavado con productos químicos no debe realizarse antes de 7 días después de la aplicación." },
-            { "label": "Mantenimiento", "text": "Incluso el mejor recubrimiento cerámico no proporciona 100% de protección contra arañazos. En nuestro laboratorio recomendamos renovar la protección una vez al año después de un pulido ligero con doble acción." }
+            {
+              "label": "Curado natural",
+              "text": "12 horas en un espacio seco (el secado por infrarrojos es opcional, no obligatorio)."
+            },
+            {
+              "label": "Protocolo de lavado",
+              "text": "El primer lavado con productos químicos no debe realizarse antes de 7 días después de la aplicación."
+            },
+            {
+              "label": "Mantenimiento",
+              "text": "Incluso el mejor recubrimiento cerámico no proporciona 100% de protección contra arañazos. En nuestro laboratorio recomendamos renovar la protección una vez al año después de un pulido ligero con doble acción."
+            }
           ]
         },
         {
@@ -1363,8 +1528,14 @@
             "A diferencia de un coche, una moto no tiene \"áreas de referencia\" como los marcos de las puertas donde puedes determinar un umbral de riesgo seguro para la eliminación del barniz. La mayoría de las motos han sido repintadas en algún momento, y el grosor exacto del barniz siempre es desconocido."
           ],
           "tools": [
-            { "label": "Regla principal", "text": "Las motos se pulen usando solo corrección ligera. Sin corte profundo agresivo \"a cero\" — solo mejora del brillo." },
-            { "label": "Test de profundidad", "text": "Para determinar si un arañazo se puede eliminar de forma segura, lo rociamos con desengrasante. Si desaparece bajo la película líquida, está en el barniz y se puede corregir de forma segura." }
+            {
+              "label": "Regla principal",
+              "text": "Las motos se pulen usando solo corrección ligera. Sin corte profundo agresivo \"a cero\" — solo mejora del brillo."
+            },
+            {
+              "label": "Test de profundidad",
+              "text": "Para determinar si un arañazo se puede eliminar de forma segura, lo rociamos con desengrasante. Si desaparece bajo la película líquida, está en el barniz y se puede corregir de forma segura."
+            }
           ]
         },
         {
@@ -1372,9 +1543,18 @@
           "title": "Protocolo Técnico de Corrección",
           "paragraphs": [],
           "tools": [
-            { "label": "Herramientas", "text": "Usamos una mini pulidora rotativa (por ejemplo, la Krauss R3-SET) en la primera velocidad con una almohadilla amarilla Rupes y compuesto Sonax NP 03-06." },
-            { "label": "Secciones planas", "text": "Debido a las formas complejas de depósitos y carenados, dividimos la pieza en secciones estrechas, trabajando cada una durante 10–15 segundos con 3–5 kg de presión." },
-            { "label": "Áreas de difícil acceso", "text": "Las áreas donde ni siquiera un plato de soporte de 30 mm puede acceder se corrigen a mano usando movimientos intensivos y 10–12 kg de presión." }
+            {
+              "label": "Herramientas",
+              "text": "Usamos una mini pulidora rotativa (por ejemplo, la Krauss R3-SET) en la primera velocidad con una almohadilla amarilla Rupes y compuesto Sonax NP 03-06."
+            },
+            {
+              "label": "Secciones planas",
+              "text": "Debido a las formas complejas de depósitos y carenados, dividimos la pieza en secciones estrechas, trabajando cada una durante 10–15 segundos con 3–5 kg de presión."
+            },
+            {
+              "label": "Áreas de difícil acceso",
+              "text": "Las áreas donde ni siquiera un plato de soporte de 30 mm puede acceder se corrigen a mano usando movimientos intensivos y 10–12 kg de presión."
+            }
           ]
         },
         {
@@ -1382,8 +1562,14 @@
           "title": "Limpieza de Metal y Cuidado del Cuero",
           "paragraphs": [],
           "tools": [
-            { "label": "Metal", "text": "Para tubos de escape y cromo, usamos pulimentos metálicos especializados (Autosol) que eliminan la oxidación y restauran un acabado espejo." },
-            { "label": "Cuero", "text": "El protocolo restoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora." }
+            {
+              "label": "Metal",
+              "text": "Para tubos de escape y cromo, usamos pulimentos metálicos especializados (Autosol) que eliminan la oxidación y restauran un acabado espejo."
+            },
+            {
+              "label": "Cuero",
+              "text": "El protocolo restoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora."
+            }
           ]
         }
       ]
@@ -1416,10 +1602,22 @@
             "Eliminar las marcas circulares requiere pulido mecánico — no existe un atajo químico. El proceso implica abrasión controlada del barniz para nivelar la superficie por debajo de la profundidad de los arañazos."
           ],
           "tools": [
-            { "label": "Paso 1", "text": "Lavado exhaustivo y descontaminación con clay bar para eliminar todos los contaminantes adheridos." },
-            { "label": "Paso 2", "text": "Medición del grosor de la pintura para determinar los límites seguros de pulido." },
-            { "label": "Paso 3", "text": "Pulido mecánico con pulidora de doble acción, compuesto de corte medio y almohadilla de espuma." },
-            { "label": "Paso 4", "text": "Pasada de acabado con polish fino para lograr la máxima claridad." }
+            {
+              "label": "Paso 1",
+              "text": "Lavado exhaustivo y descontaminación con clay bar para eliminar todos los contaminantes adheridos."
+            },
+            {
+              "label": "Paso 2",
+              "text": "Medición del grosor de la pintura para determinar los límites seguros de pulido."
+            },
+            {
+              "label": "Paso 3",
+              "text": "Pulido mecánico con pulidora de doble acción, compuesto de corte medio y almohadilla de espuma."
+            },
+            {
+              "label": "Paso 4",
+              "text": "Pasada de acabado con polish fino para lograr la máxima claridad."
+            }
           ]
         },
         {
@@ -1464,9 +1662,18 @@
             "El pulido profesional de vidrio utiliza equipamiento especializado y compuestos que trabajan a un nivel diferente que los kits DIY. La diferencia clave es precisión y consistencia."
           ],
           "tools": [
-            { "label": "Equipo", "text": "Pulidora rotativa profesional con almohadillas específicas para vidrio y suspensión de óxido de cerio." },
-            { "label": "Proceso", "text": "Pasadas controladas y medidas que eliminan material uniformemente sin crear distorsión." },
-            { "label": "Resultado", "text": "Eliminación completa de arañazos con claridad óptica mantenida. Ahorra 300-500€ vs sustitución del parabrisas." }
+            {
+              "label": "Equipo",
+              "text": "Pulidora rotativa profesional con almohadillas específicas para vidrio y suspensión de óxido de cerio."
+            },
+            {
+              "label": "Proceso",
+              "text": "Pasadas controladas y medidas que eliminan material uniformemente sin crear distorsión."
+            },
+            {
+              "label": "Resultado",
+              "text": "Eliminación completa de arañazos con claridad óptica mantenida. Ahorra 300-500€ vs sustitución del parabrisas."
+            }
           ]
         },
         {
@@ -1474,9 +1681,18 @@
           "title": "Cuándo Elegir Cada Opción",
           "paragraphs": [],
           "tools": [
-            { "label": "DIY", "text": "Arañazos superficiales finos en ventanas laterales donde la perfección óptica es menos crítica." },
-            { "label": "Profesional", "text": "Arañazos de limpiaparabrisas, arañazos profundos que se sienten al tacto, o cualquier arañazo en la línea de visión del conductor." },
-            { "label": "Sustituir", "text": "Grietas, impactos que se han extendido, o daños en la capa laminada del parabrisas." }
+            {
+              "label": "DIY",
+              "text": "Arañazos superficiales finos en ventanas laterales donde la perfección óptica es menos crítica."
+            },
+            {
+              "label": "Profesional",
+              "text": "Arañazos de limpiaparabrisas, arañazos profundos que se sienten al tacto, o cualquier arañazo en la línea de visión del conductor."
+            },
+            {
+              "label": "Sustituir",
+              "text": "Grietas, impactos que se han extendido, o daños en la capa laminada del parabrisas."
+            }
           ]
         }
       ]
@@ -1508,11 +1724,26 @@
             "En restoreLab ofrecemos cinco paquetes claramente definidos (precio base sedán) para que no haya sorpresas. Se aplican multiplicadores por tamaño: compacto −10%, SUV +20%, SUV grande +35%."
           ],
           "tools": [
-            { "label": "Express Refresh", "text": "149€. Lavado descontaminante, clay bar, pulido suave y sellante spray. ~2 horas." },
-            { "label": "Corrección de Una Fase", "text": "289€. Pulido mecánico de un paso que elimina hasta el 70% de marcas circulares. 3-4 horas." },
-            { "label": "Corrección de Dos Fases", "text": "549€. Compuesto de corte + pulido completo, 90%+ eliminación de defectos. 5-7 horas." },
-            { "label": "Cerámico 2 Años", "text": "649€. Corrección de dos fases + cerámico certificado de 2 años (Gyeon/Gtechniq). 6-8 horas. Más popular." },
-            { "label": "Cerámico Premium 5 Años", "text": "1 049€. Corrección multifase + cerámico grafeno 5 años + parabrisas + llantas. 8-10 horas." }
+            {
+              "label": "Express Refresh",
+              "text": "149€. Lavado descontaminante, clay bar, pulido suave y sellante spray. ~2 horas."
+            },
+            {
+              "label": "Corrección de Una Fase",
+              "text": "289€. Pulido mecánico de un paso que elimina hasta el 70% de marcas circulares. 3-4 horas."
+            },
+            {
+              "label": "Corrección de Dos Fases",
+              "text": "549€. Compuesto de corte + pulido completo, 90%+ eliminación de defectos. 5-7 horas."
+            },
+            {
+              "label": "Cerámico 2 Años",
+              "text": "649€. Corrección de dos fases + cerámico certificado de 2 años (Gyeon/Gtechniq). 6-8 horas. Más popular."
+            },
+            {
+              "label": "Cerámico Premium 5 Años",
+              "text": "1 049€. Corrección multifase + cerámico grafeno 5 años + parabrisas + llantas. 8-10 horas."
+            }
           ]
         },
         {
@@ -1557,10 +1788,22 @@
             "A diferencia del vidrio, el acrílico puede restaurarse mediante pulido porque el material es más blando y uniforme. El proceso implica abrasivos progresivamente más finos para eliminar la capa superficial dañada."
           ],
           "tools": [
-            { "label": "Evaluación", "text": "Evaluar la profundidad del daño UV y comprobar la integridad estructural." },
-            { "label": "Lijado húmedo", "text": "Comenzando con grano P800-P1200 para eliminar la capa oxidada. El acrílico debe mantenerse húmedo para prevenir acumulación de calor." },
-            { "label": "Pulido mecánico", "text": "Etapas progresivas con compuestos dedicados para acrílico, desde corte medio hasta acabado ultrafino." },
-            { "label": "Protección UV", "text": "Aplicación de recubrimiento con estabilizador UV para ralentizar la degradación futura." }
+            {
+              "label": "Evaluación",
+              "text": "Evaluar la profundidad del daño UV y comprobar la integridad estructural."
+            },
+            {
+              "label": "Lijado húmedo",
+              "text": "Comenzando con grano P800-P1200 para eliminar la capa oxidada. El acrílico debe mantenerse húmedo para prevenir acumulación de calor."
+            },
+            {
+              "label": "Pulido mecánico",
+              "text": "Etapas progresivas con compuestos dedicados para acrílico, desde corte medio hasta acabado ultrafino."
+            },
+            {
+              "label": "Protección UV",
+              "text": "Aplicación de recubrimiento con estabilizador UV para ralentizar la degradación futura."
+            }
           ]
         },
         {
@@ -2338,7 +2581,12 @@
         "lat": 41.4736,
         "lng": 2.0868,
         "description": "Con base en el corazón de Sant Cugat, cubrimos toda la comarca del Vallès Occidental. Desde comunidades residenciales hasta parques empresariales, nuestra unidad móvil llega en menos de 30 minutos.",
-        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+        "nearby": [
+          "Rubí",
+          "Cerdanyola del Vallès",
+          "Bellaterra",
+          "Valldoreix"
+        ]
       },
       {
         "slug": "barcelona",
@@ -2348,27 +2596,42 @@
         "lat": 41.3851,
         "lng": 2.1734,
         "description": "Servimos todos los distritos de Barcelona y municipios cercanos. Ya estés en el Eixample, Sarrià-Sant Gervasi o Badalona — vamos a tu plaza de aparcamiento con todo el equipo profesional.",
-        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+        "nearby": [
+          "Badalona",
+          "L'Hospitalet de Llobregat",
+          "Sant Adrià de Besòs",
+          "Esplugues de Llobregat"
+        ]
       },
       {
         "slug": "terrassa",
         "name": "Terrassa",
         "short": "Terrassa",
         "region": "Vallès Interior",
-        "lat": 41.5630,
+        "lat": 41.563,
         "lng": 2.0089,
         "description": "Nuestro hub del Vallès cubre Terrassa, Sabadell y pueblos cercanos. Polígonos industriales, zonas residenciales y aparcamientos subterráneos — nos adaptamos a cualquier ubicación.",
-        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+        "nearby": [
+          "Sabadell",
+          "Mollet del Vallès",
+          "Castellar del Vallès",
+          "Viladecavalls"
+        ]
       },
       {
         "slug": "matadepera",
         "name": "Matadepera",
         "short": "Matadepera",
         "region": "Vallès Occidental",
-        "lat": 41.5960,
+        "lat": 41.596,
         "lng": 2.0253,
         "description": "Al pie de Sant Llorenç del Munt, Matadepera alberga algunas de las fincas privadas más exclusivas de Cataluña. Nuestra unidad móvil es perfecta para urbanizaciones cerradas y villas con aparcamiento privado — servicio discreto sin mover tu coche. A solo 15 minutos de nuestra base en Sant Cugat.",
-        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+        "nearby": [
+          "Terrassa",
+          "Vacarisses",
+          "Sant Llorenç Savall",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "sant-just-desvern",
@@ -2376,69 +2639,104 @@
         "short": "Sant Just Desvern",
         "region": "Baix Llobregat",
         "lat": 41.3808,
-        "lng": 2.0750,
+        "lng": 2.075,
         "description": "Uno de los municipios con mayor renta per cápita de Cataluña, Sant Just Desvern combina zonas residenciales ejecutivas con fácil acceso a Barcelona. Atendemos garajes privados y aparcamientos subterráneos en Walden, Can Candeler y las villas de la ladera.",
-        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+        "nearby": [
+          "Esplugues de Llobregat",
+          "Sant Feliu de Llobregat",
+          "Cornellà de Llobregat",
+          "Barcelona"
+        ]
       },
       {
         "slug": "sant-quirze-del-valles",
         "name": "Sant Quirze del Vallès",
         "short": "Sant Quirze",
         "region": "Vallès Occidental",
-        "lat": 41.5330,
-        "lng": 2.0830,
+        "lat": 41.533,
+        "lng": 2.083,
         "description": "Un tranquilo municipio residencial entre Sant Cugat y Sabadell, Sant Quirze del Vallès destaca por sus urbanizaciones familiares y casas unifamiliares modernas. Llegamos a cualquier punto de Sant Quirze en menos de 10 minutos desde nuestra base.",
-        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+        "nearby": [
+          "Sabadell",
+          "Terrassa",
+          "Sant Cugat del Vallès",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "bellaterra",
         "name": "Bellaterra",
         "short": "Bellaterra",
         "region": "Vallès Occidental",
-        "lat": 41.5020,
-        "lng": 2.1050,
+        "lat": 41.502,
+        "lng": 2.105,
         "description": "Sede del campus de la UAB y rodeado de núcleos residenciales ejecutivos, Bellaterra combina prestigio académico con viviendas de alto nivel. Atendemos vehículos en residencias privadas y aparcamientos del campus — a solo 5 minutos de nuestro centro de operaciones en Sant Cugat.",
-        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+        "nearby": [
+          "Cerdanyola del Vallès",
+          "Sant Cugat del Vallès",
+          "Badia del Vallès",
+          "Barberà del Vallès"
+        ]
       },
       {
         "slug": "pedralbes",
         "name": "Pedralbes",
         "short": "Pedralbes",
         "region": "Barcelona",
-        "lat": 41.3900,
-        "lng": 2.1150,
+        "lat": 41.39,
+        "lng": 2.115,
         "description": "El barrio residencial más exclusivo de Barcelona, Pedralbes cuenta con mansiones privadas, residencias diplomáticas y bloques de apartamentos premium. Realizamos corrección de pintura y tratamiento cerámico en vehículos de alta gama en garajes subterráneos y entradas privadas de toda la Zona Alta.",
-        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+        "nearby": [
+          "Sarrià-Sant Gervasi",
+          "Les Corts",
+          "Esplugues de Llobregat",
+          "Sant Just Desvern"
+        ]
       },
       {
         "slug": "sant-gervasi",
         "name": "Sant Gervasi – Tres Torres",
         "short": "Sant Gervasi",
         "region": "Barcelona",
-        "lat": 41.4000,
-        "lng": 2.1380,
+        "lat": 41.4,
+        "lng": 2.138,
         "description": "La zona de Tres Torres y Bonanova se sitúa en el corazón de la Zona Alta de Barcelona — uno de los distritos residenciales más cotizados. Con sus calles arboladas e instalaciones de aparcamiento premium, es territorio ideal para nuestro servicio de detailing móvil. Trabajamos en garajes comunitarios y entradas privadas.",
-        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+        "nearby": [
+          "Pedralbes",
+          "Sarrià",
+          "Gràcia",
+          "Eixample"
+        ]
       },
       {
         "slug": "castelldefels",
         "name": "Castelldefels",
         "short": "Castelldefels",
         "region": "Baix Llobregat",
-        "lat": 41.2800,
-        "lng": 1.9780,
+        "lat": 41.28,
+        "lng": 1.978,
         "description": "Municipio costero premium al sur de Barcelona, Castelldefels atrae tanto a residentes como a propietarios de segunda residencia con sus villas frente al mar y fincas en la montaña. La brisa marina y la exposición UV hacen esencial la protección regular de pintura. Nos desplazamos desde nuestra base con cita programada.",
-        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+        "nearby": [
+          "Gavà",
+          "Sitges",
+          "Viladecans",
+          "Sant Boi de Llobregat"
+        ]
       },
       {
         "slug": "alella-tiana-teia",
         "name": "Alella · Tiana · Teià",
         "short": "Maresme Premium",
         "region": "Maresme",
-        "lat": 41.4950,
-        "lng": 2.2950,
+        "lat": 41.495,
+        "lng": 2.295,
         "description": "La costa del Maresme al norte de Barcelona — Alella, Tiana y Teià forman un núcleo residencial premium con fincas entre viñedos y villas con vistas al mar. El clima mediterráneo implica intensa exposición UV y salina. Ofrecemos servicio móvil programado en esta zona, con corrección de pintura y tratamiento cerámico completo in situ.",
-        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
+        "nearby": [
+          "Badalona",
+          "Montgat",
+          "Masnou",
+          "Premià de Dalt"
+        ]
       }
     ]
   },
@@ -2472,26 +2770,52 @@
         "name": "Preparación Estándar",
         "price": "169",
         "desc": "Lavado descontaminante + pulido en una fase + aspirado interior + acondicionado neumáticos. Ideal para stock hasta 30.000€.",
-        "includes": ["Lavado descontaminante + clay bar", "Pulido mecánico en una fase", "Aspirado y limpieza interior", "Acondicionado de neumáticos y molduras", "Informe fotográfico"]
+        "includes": [
+          "Lavado descontaminante + clay bar",
+          "Pulido mecánico en una fase",
+          "Aspirado y limpieza interior",
+          "Acondicionado de neumáticos y molduras",
+          "Informe fotográfico"
+        ]
       },
       {
         "name": "Preparación SUV",
         "price": "229",
         "desc": "Igual que Estándar para SUV, crossovers y familiares. Paneles más grandes, más tiempo.",
-        "includes": ["Todo lo de Estándar", "Cobertura tamaño SUV/familiar", "Maletero y zona de carga", "Informe fotográfico ampliado"]
+        "includes": [
+          "Todo lo de Estándar",
+          "Cobertura tamaño SUV/familiar",
+          "Maletero y zona de carga",
+          "Informe fotográfico ampliado"
+        ]
       },
       {
         "name": "Exposición Deportivos",
         "price": "299",
         "desc": "Corrección en dos fases para vehículos premium y deportivos. Diseñado para coches de más de 40.000€.",
-        "includes": ["Corrección de pintura en dos fases", "Detailing interior completo", "Pulido de cristales y vano motor", "Detalle de llantas + cerámica molduras", "Informe de 30 fotos"]
+        "includes": [
+          "Corrección de pintura en dos fases",
+          "Detailing interior completo",
+          "Pulido de cristales y vano motor",
+          "Detalle de llantas + cerámica molduras",
+          "Informe de 30 fotos"
+        ]
       }
     ],
     "volume_title": "Descuentos por Volumen",
     "volume_tiers": [
-      { "label": "5+ por semana", "discount": "−10%" },
-      { "label": "10+ por semana", "discount": "−15%" },
-      { "label": "20+ por semana", "discount": "Presupuesto personalizado" }
+      {
+        "label": "5+ por semana",
+        "discount": "−10%"
+      },
+      {
+        "label": "10+ por semana",
+        "discount": "−15%"
+      },
+      {
+        "label": "20+ por semana",
+        "discount": "Presupuesto personalizado"
+      }
     ],
     "faq_title": "FAQ Concesionarios",
     "faq_items": [
@@ -2552,7 +2876,13 @@
         "name": "Protección EV Coche Nuevo",
         "price": "749",
         "desc": "Para EVs recién salidos de fábrica. Pulido suave para eliminar marcas de transporte + cerámico 2 años.",
-        "includes": ["Descontaminación de pintura", "Pulido en una fase (marcas de transporte)", "Cerámico Gyeon MOHS 2 años", "Hidrofóbico parabrisas", "Cerámico de llantas"],
+        "includes": [
+          "Descontaminación de pintura",
+          "Pulido en una fase (marcas de transporte)",
+          "Cerámico Gyeon MOHS 2 años",
+          "Hidrofóbico parabrisas",
+          "Cerámico de llantas"
+        ],
         "popular": false
       },
       {
@@ -2560,20 +2890,51 @@
         "name": "Escudo Premium EV",
         "price": "1290",
         "desc": "Corrección completa para EVs de uso diario + cerámico grafeno 5 años. Máxima protección UV y química.",
-        "includes": ["Corrección de pintura en dos fases", "Gtechniq Crystal Serum Ultra 5Y", "Set completo hidrofóbico cristales", "Cerámico llantas + pinzas", "Restauración molduras plásticas", "Acondicionado cuero interior"],
+        "includes": [
+          "Corrección de pintura en dos fases",
+          "Gtechniq Crystal Serum Ultra 5Y",
+          "Set completo hidrofóbico cristales",
+          "Cerámico llantas + pinzas",
+          "Restauración molduras plásticas",
+          "Acondicionado cuero interior"
+        ],
         "popular": true
       }
     ],
     "compatibility_title": "Compatibilidad por Marca",
     "compatibility": [
-      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escudo Premium EV" },
-      { "brand": "Polestar 2 / 3 / 4", "recommended": "Escudo Premium EV" },
-      { "brand": "Porsche Taycan", "recommended": "Escudo Premium EV" },
-      { "brand": "BMW iX / i4 / i5", "recommended": "Protección Coche Nuevo o Escudo Premium" },
-      { "brand": "Mercedes EQS / EQE", "recommended": "Escudo Premium EV" },
-      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "Escudo Premium EV" },
-      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "Protección EV Coche Nuevo" },
-      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "Protección EV Coche Nuevo" }
+      {
+        "brand": "Tesla (Model 3/Y/S/X)",
+        "recommended": "Escudo Premium EV"
+      },
+      {
+        "brand": "Polestar 2 / 3 / 4",
+        "recommended": "Escudo Premium EV"
+      },
+      {
+        "brand": "Porsche Taycan",
+        "recommended": "Escudo Premium EV"
+      },
+      {
+        "brand": "BMW iX / i4 / i5",
+        "recommended": "Protección Coche Nuevo o Escudo Premium"
+      },
+      {
+        "brand": "Mercedes EQS / EQE",
+        "recommended": "Escudo Premium EV"
+      },
+      {
+        "brand": "Audi e-tron / Q8 e-tron",
+        "recommended": "Escudo Premium EV"
+      },
+      {
+        "brand": "Hyundai IONIQ 5/6 / Kia EV6",
+        "recommended": "Protección EV Coche Nuevo"
+      },
+      {
+        "brand": "Volkswagen ID.4 / ID.7",
+        "recommended": "Protección EV Coche Nuevo"
+      }
     ],
     "faq_title": "FAQ Específico Vehículos Eléctricos",
     "faq_items": [
@@ -2631,12 +2992,36 @@
     "roi_title": "Restauración vs Sustitución",
     "roi_subtitle": "¿Por qué restaurar pudiendo sustituir? Porque cuesta un 70-80% menos.",
     "roi_items": [
-      { "label": "Sustitución de escaparate (estándar)", "cost": "€1.500–3.000", "type": "replace" },
-      { "label": "Restauración de arañazos en escaparate", "cost": "€280–600", "type": "restore" },
-      { "label": "Sustitución de panel de oficina (por m²)", "cost": "€180–350", "type": "replace" },
-      { "label": "Restauración de panel de oficina (por m²)", "cost": "€45–90", "type": "restore" },
-      { "label": "Tiempo de inactividad (sustitución)", "cost": "1–3 días", "type": "replace" },
-      { "label": "Tiempo de inactividad (restauración)", "cost": "0 — se realiza fuera de horario", "type": "restore" }
+      {
+        "label": "Sustitución de escaparate (estándar)",
+        "cost": "€1.500–3.000",
+        "type": "replace"
+      },
+      {
+        "label": "Restauración de arañazos en escaparate",
+        "cost": "€280–600",
+        "type": "restore"
+      },
+      {
+        "label": "Sustitución de panel de oficina (por m²)",
+        "cost": "€180–350",
+        "type": "replace"
+      },
+      {
+        "label": "Restauración de panel de oficina (por m²)",
+        "cost": "€45–90",
+        "type": "restore"
+      },
+      {
+        "label": "Tiempo de inactividad (sustitución)",
+        "cost": "1–3 días",
+        "type": "replace"
+      },
+      {
+        "label": "Tiempo de inactividad (restauración)",
+        "cost": "0 — se realiza fuera de horario",
+        "type": "restore"
+      }
     ],
     "pricing_title": "Precios de Cristal Comercial",
     "pricing_subtitle": "Todos los precios sin IVA. Evaluación in situ incluida sin cargo.",
@@ -2645,19 +3030,34 @@
         "name": "Por Incidencia",
         "price_from": "280",
         "desc": "Un solo panel o ventana con arañazos visibles. Ideal para reparaciones puntuales.",
-        "includes": ["Evaluación in situ", "Pulido a máquina", "Sellador hidrofóbico", "Informe fotográfico"]
+        "includes": [
+          "Evaluación in situ",
+          "Pulido a máquina",
+          "Sellador hidrofóbico",
+          "Informe fotográfico"
+        ]
       },
       {
         "name": "Tarifa por m²",
         "price_from": "45",
         "desc": "Para superficies grandes — fachadas de oficinas, escaparates completos, mamparas de cristal.",
-        "includes": ["Precio por volumen", "Servicio fuera de horario", "Múltiples paneles en una visita", "Opción de plan de mantenimiento"]
+        "includes": [
+          "Precio por volumen",
+          "Servicio fuera de horario",
+          "Múltiples paneles en una visita",
+          "Opción de plan de mantenimiento"
+        ]
       },
       {
         "name": "Plan de Mantenimiento",
         "price_from": "Personalizado",
         "desc": "Contrato mensual o trimestral para empresas de facility management con múltiples propiedades.",
-        "includes": ["Programación prioritaria", "Gestor de cuenta dedicado", "Tarifa mensual fija", "Intervenciones ilimitadas (uso razonable)"]
+        "includes": [
+          "Programación prioritaria",
+          "Gestor de cuenta dedicado",
+          "Tarifa mensual fija",
+          "Intervenciones ilimitadas (uso razonable)"
+        ]
       }
     ],
     "faq_title": "Preguntas Frecuentes sobre Cristal Comercial",
@@ -2693,7 +3093,6 @@
     "hero_title": "Tu coche, siempre como de exposición",
     "hero_subtitle": "Planes de mantenimiento por suscripción que mantienen tu pintura, cristales y revestimiento cerámico en perfecto estado — todo el año.",
     "hero_cta": "Elige Tu Plan",
-
     "why_title": "¿Por qué un plan de cuidado?",
     "why_items": [
       {
@@ -2717,7 +3116,6 @@
         "desc": "Los miembros del plan de cuidado tienen prioridad en la programación y disponibilidad en la misma semana — incluso en temporada alta."
       }
     ],
-
     "plans_title": "Elige Tu Plan",
     "plans_subtitle": "Todos los planes incluyen servicio a domicilio — vamos a tu casa u oficina.",
     "plans_toggle_monthly": "Mensual",
@@ -2778,7 +3176,6 @@
         "best_for": "Vehículos exóticos y de colección"
       }
     ],
-
     "how_title": "Cómo Funciona",
     "how_steps": [
       {
@@ -2802,7 +3199,6 @@
         "desc": "Después de cada visita, recibes fotos y un informe digital documentando el trabajo realizado y el estado de la pintura."
       }
     ],
-
     "faq_title": "FAQ de Planes de Cuidado",
     "faq_items": [
       {
@@ -2826,7 +3222,6 @@
         "answer": "Los planes anuales incluyen una pausa gratuita al año (hasta 4 semanas). Los planes mensuales se pueden pausar con 7 días de preaviso — no se te cobra por los meses pausados."
       }
     ],
-
     "cta_section_title": "Empieza a proteger tu inversión",
     "cta_section_subtitle": "Escríbenos por WhatsApp para hablar de qué plan se adapta a tu coche — o reserva una evaluación inicial gratuita.",
     "cta_whatsapp": "Elegir Mi Plan",

@@ -47,7 +47,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
             </a>
 
             <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-6 leading-tight">
-              {service?.title}
+              {service?.h1 || service?.title}
             </h1>
             <p class="text-xl text-th-muted mb-8">{service?.subtitle}</p>
 

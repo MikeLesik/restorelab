@@ -15,8 +15,8 @@
       "description": "Correcció de pintura mòbil a Sant Cugat i Barcelona. Elimineu marques circulars, ratllades i restaureu la brillantor. Preparació ceràmica. Sense repintura."
     },
     "glass": {
-      "title": "Eliminació de Ratllades en Vidre Barcelona | restoreLab",
-      "description": "Elimineu ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a Sant Cugat, Barcelona i Terrassa. Sense substitució."
+      "title": "Polir Vidres del Cotxe Ratllats a Barcelona | restoreLab",
+      "description": "Polit de vidres: elimina ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a Barcelona i Sant Cugat. Sense substitució."
     },
     "acrylic": {
       "title": "Restauració d'Acrílic i Policarbonat Espanya | restoreLab",
@@ -75,8 +75,8 @@
       "description": "Per què el 99% del resultat depèn de la selecció d'eines. Rotativa vs doble acció — anàlisi, taula comparativa i recomanacions."
     },
     "headlight": {
-      "title": "Restauració de Fars Sant Cugat i Barcelona | restoreLab",
-      "description": "Restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
+      "title": "Polit de Fars a Barcelona i Sant Cugat | restoreLab",
+      "description": "Polit i restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
     },
     "interior_leather": {
       "title": "Neteja de Cuir Interior i Ceràmic | restoreLab",
@@ -109,22 +109,49 @@
     "cta_primary": "Pressupost Gratuït",
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
-    "trust_pills": ["★ 5.0 Google", "47+ Ressenyes", "500+ Treballs"],
+    "trust_pills": [
+      "★ 5.0 Google",
+      "47+ Ressenyes",
+      "500+ Treballs"
+    ],
     "cta_car": "Restauració Auto",
     "sticky_cta": "Pressupost via WhatsApp",
     "badge": "★ Valorat 5.0 • 500+ Treballs"
   },
   "trust": {
     "brands": [
-      { "name": "Gyeon", "status": "authorized" },
-      { "name": "Gtechniq", "status": "authorized" },
-      { "name": "Rupes", "status": "equipment" },
-      { "name": "Koch Chemie", "status": "equipment" },
-      { "name": "CarPro", "status": "products" }
+      {
+        "name": "Gyeon",
+        "status": "authorized"
+      },
+      {
+        "name": "Gtechniq",
+        "status": "authorized"
+      },
+      {
+        "name": "Rupes",
+        "status": "equipment"
+      },
+      {
+        "name": "Koch Chemie",
+        "status": "equipment"
+      },
+      {
+        "name": "CarPro",
+        "status": "products"
+      }
     ],
     "certifications": [
-      { "name": "Gyeon Certificat", "status": "active", "icon": "shield" },
-      { "name": "Gtechniq Acreditat", "status": "active", "icon": "shield" }
+      {
+        "name": "Gyeon Certificat",
+        "status": "active",
+        "icon": "shield"
+      },
+      {
+        "name": "Gtechniq Acreditat",
+        "status": "active",
+        "icon": "shield"
+      }
     ],
     "founder": {
       "text": "Fundat a Sant Cugat. Servei mòbil des del primer dia.",
@@ -192,7 +219,7 @@
       },
       {
         "id": "glass-polishing",
-        "title": "Eliminació de Ratllades en Vidre",
+        "title": "Polit de Vidres i Eliminació de Ratllades",
         "subtitle": "Finestres, parabrises i vidre arquitectònic",
         "icon": "glass",
         "starting_price": "Des de 89€",
@@ -202,7 +229,8 @@
           "Taques i ratllades del neteja-parabrises"
         ],
         "cta_label": "Pressupost Vidre",
-        "tag": null
+        "tag": null,
+        "h1": "Polit de Vidres Ratllats a Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -219,7 +247,7 @@
       },
       {
         "id": "headlight-restoration",
-        "title": "Restauració de Fars",
+        "title": "Polit i Restauració de Fars",
         "subtitle": "Fars groguencs o opacs restaurats a claredat cristal·lina",
         "icon": "headlight",
         "starting_price": "Des de 79€",
@@ -229,7 +257,8 @@
           "Segellant UV opcional (2+ anys)"
         ],
         "cta_label": "Pressupost Fars",
-        "tag": null
+        "tag": null,
+        "h1": "Polit i Restauració de Fars a Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -320,11 +349,31 @@
       "sensitive_paint": "Recàrrec pintura sensible",
       "sensitive_paint_note": "Negre atzabeja, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
-        { "name": "Compacte", "examples": "Polo, Yaris, i20", "modifier": "−10%" },
-        { "name": "Sedan", "examples": "Serie 3, Classe C, A4", "modifier": "Base" },
-        { "name": "SUV / Crossover", "examples": "X3, GLC, Q5, Tucson", "modifier": "+20%" },
-        { "name": "SUV gran / 7 places", "examples": "X7, GLE, Q7, Cayenne", "modifier": "+35%" },
-        { "name": "Esportiu / Superesportiu", "examples": "911, AMG GT, M4", "modifier": "+25–40%" }
+        {
+          "name": "Compacte",
+          "examples": "Polo, Yaris, i20",
+          "modifier": "−10%"
+        },
+        {
+          "name": "Sedan",
+          "examples": "Serie 3, Classe C, A4",
+          "modifier": "Base"
+        },
+        {
+          "name": "SUV / Crossover",
+          "examples": "X3, GLC, Q5, Tucson",
+          "modifier": "+20%"
+        },
+        {
+          "name": "SUV gran / 7 places",
+          "examples": "X7, GLE, Q7, Cayenne",
+          "modifier": "+35%"
+        },
+        {
+          "name": "Esportiu / Superesportiu",
+          "examples": "911, AMG GT, M4",
+          "modifier": "+25–40%"
+        }
       ],
       "sensitive_paint_surcharge": "+60–100 €"
     },
@@ -528,18 +577,50 @@
         ]
       }
     ],
-    "anchor_text": "Correcció de pintura i ceràmic premium per detailers certificats. Preus per a sedan — consulteu els multiplicadors per mida."
+    "anchor_text": "Correcció de pintura i ceràmic premium per detailers certificats. Preus per a sedan — consulteu els multiplicadors per mida.",
+    "ceramic_answer": {
+      "id": "tratamiento-ceramico",
+      "title": "Quant costa el tractament ceràmic per al cotxe?",
+      "paragraphs": [
+        "El tractament ceràmic a restoreLab costa 649 € (protecció de 2 anys) o 1.049 € (protecció premium de 5 anys) per a un sedan, amb correcció de pintura completa inclosa. A diferència de molts tallers, el preu inclou la preparació de la pintura — un ceràmic aplicat sobre defectes només els segella per sempre.",
+        "Els preus són per a sedan; s'aplica el multiplicador per mida (compacte −10%, SUV +10-20%). El servei és 100% mòbil: apliquem el ceràmic al teu garatge a Sant Cugat, Barcelona, Terrassa i rodalies. Demana pressupost exacte per WhatsApp amb fotos del teu cotxe."
+      ]
+    }
   },
   "estimator": {
     "tiers": {
-      "express": { "name": "Renovació Exprés", "desc": "Poliment a màquina d'una etapa. Elimina remolins lleus i taques d'aigua." },
-      "single_stage": { "name": "Correcció d'Una Etapa", "desc": "Correcció en un pas amb compost de tall mitjà. ~70% de defectes eliminats." },
-      "two_stage": { "name": "Correcció en Dues Etapes", "desc": "Tall + refinat complet. Elimina 85–95% dels defectes, inclosos remolins profunds." },
-      "ceramic_2y": { "name": "Recobriment Ceràmic 2 Anys", "desc": "Una etapa + recobriment ceràmic Gyeon MOHS de 2 anys." },
-      "ceramic_5y": { "name": "Ceràmic Premium 5 Anys", "desc": "Dues etapes + ceràmic Gtechniq Crystal Serum Ultra de 5 anys." },
-      "windshield_polish": { "name": "Poliment de Parabrisa", "desc": "Elimina ratllades de l'eixugaparabrises, taques d'aigua i vel del parabrisa." },
-      "windshield_hydrophobic": { "name": "Parabrisa + Hidrofòbic", "desc": "Poliment de parabrisa més recobriment hidrofòbic repel·lent de pluja per a millor visibilitat." },
-      "full_glass_set": { "name": "Joc Complet de Vidres", "desc": "Tots els vidres polits i tractats: parabrisa, finestretes i lluna." }
+      "express": {
+        "name": "Renovació Exprés",
+        "desc": "Poliment a màquina d'una etapa. Elimina remolins lleus i taques d'aigua."
+      },
+      "single_stage": {
+        "name": "Correcció d'Una Etapa",
+        "desc": "Correcció en un pas amb compost de tall mitjà. ~70% de defectes eliminats."
+      },
+      "two_stage": {
+        "name": "Correcció en Dues Etapes",
+        "desc": "Tall + refinat complet. Elimina 85–95% dels defectes, inclosos remolins profunds."
+      },
+      "ceramic_2y": {
+        "name": "Recobriment Ceràmic 2 Anys",
+        "desc": "Una etapa + recobriment ceràmic Gyeon MOHS de 2 anys."
+      },
+      "ceramic_5y": {
+        "name": "Ceràmic Premium 5 Anys",
+        "desc": "Dues etapes + ceràmic Gtechniq Crystal Serum Ultra de 5 anys."
+      },
+      "windshield_polish": {
+        "name": "Poliment de Parabrisa",
+        "desc": "Elimina ratllades de l'eixugaparabrises, taques d'aigua i vel del parabrisa."
+      },
+      "windshield_hydrophobic": {
+        "name": "Parabrisa + Hidrofòbic",
+        "desc": "Poliment de parabrisa més recobriment hidrofòbic repel·lent de pluja per a millor visibilitat."
+      },
+      "full_glass_set": {
+        "name": "Joc Complet de Vidres",
+        "desc": "Tots els vidres polits i tractats: parabrisa, finestretes i lluna."
+      }
     },
     "title": "Obtén el teu Pressupost Instantani",
     "subtitle": "Respon 4 preguntes ràpides i rep un rang de preu en segons.",
@@ -655,19 +736,31 @@
         "city": "Sant Cugat",
         "region": "Vallès Occidental",
         "coverage": "Radi de 20 km",
-        "areas": ["Sant Cugat del Vallès", "Rubí", "Cerdanyola del Vallès"]
+        "areas": [
+          "Sant Cugat del Vallès",
+          "Rubí",
+          "Cerdanyola del Vallès"
+        ]
       },
       {
         "city": "Barcelona",
         "region": "Àrea Metropolitana de Barcelona",
         "coverage": "Radi de 30 km",
-        "areas": ["Barcelona", "Badalona", "L'Hospitalet de Llobregat"]
+        "areas": [
+          "Barcelona",
+          "Badalona",
+          "L'Hospitalet de Llobregat"
+        ]
       },
       {
         "city": "Vallès",
         "region": "Vallès Interior",
         "coverage": "Radi de 30 km",
-        "areas": ["Terrassa", "Sabadell", "Mollet del Vallès"]
+        "areas": [
+          "Terrassa",
+          "Sabadell",
+          "Mollet del Vallès"
+        ]
       }
     ]
   },
@@ -851,9 +944,18 @@
     "local_text": "Amb base a Sant Cugat del Vallès, servim tota l'àrea metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. La nostra unitat mòbil va a casa teva, oficina o plaça d'aparcament. Sense necessitat de deixar el teu cotxe en un taller.",
     "certifications_title": "Certificacions i Formació",
     "stats": [
-      { "value": "500+", "label": "Vehicles restaurats" },
-      { "value": "5.0", "label": "Valoració Google" },
-      { "value": "0", "label": "Repintats necessaris" }
+      {
+        "value": "500+",
+        "label": "Vehicles restaurats"
+      },
+      {
+        "value": "5.0",
+        "label": "Valoració Google"
+      },
+      {
+        "value": "0",
+        "label": "Repintats necessaris"
+      }
     ]
   },
   "academy": {
@@ -1060,11 +1162,35 @@
           },
           "table": {
             "caption": "Anàlisi comparativa de sistemes rotatius",
-            "headers": ["Model", "Caiguda de RPM sota pressió", "Centre de gravetat baix", "Control de RPM", "Alta fiabilitat"],
+            "headers": [
+              "Model",
+              "Caiguda de RPM sota pressió",
+              "Centre de gravetat baix",
+              "Control de RPM",
+              "Alta fiabilitat"
+            ],
             "rows": [
-              ["Makita 9237CB", "No", "Sí", "Sí", "Sí"],
-              ["DeWALT DWP849X", "Sí", "No", "Sí", "Sí"],
-              ["FLEX PE 14-2 150", "No", "Sí", "Sí", "Sí"]
+              [
+                "Makita 9237CB",
+                "No",
+                "Sí",
+                "Sí",
+                "Sí"
+              ],
+              [
+                "DeWALT DWP849X",
+                "Sí",
+                "No",
+                "Sí",
+                "Sí"
+              ],
+              [
+                "FLEX PE 14-2 150",
+                "No",
+                "Sí",
+                "Sí",
+                "Sí"
+              ]
             ]
           },
           "conclusion": "L'elecció del nostre laboratori és la Makita 9237CB. Ofereix un maneig ideal gràcies al seu centre de gravetat baix i estabilitat en ajustos de velocitat baixa."
@@ -1243,8 +1369,14 @@
             "L'objectiu d'aquesta etapa és reduir les marques de treball deixades per la llana, preparant el vernís per a la brillantor final. Això redueix dràsticament el temps que la polidora de doble acció (DA) necessita en el següent pas."
           ],
           "tools": [
-            { "label": "Equip", "text": "Polidora rotativa (Makita 9237CB) + coixinet d'escuma groc (per exemple, Rupes 130 mm)." },
-            { "label": "Compost", "text": "Compost de polit de tall mitjà." }
+            {
+              "label": "Equip",
+              "text": "Polidora rotativa (Makita 9237CB) + coixinet d'escuma groc (per exemple, Rupes 130 mm)."
+            },
+            {
+              "label": "Compost",
+              "text": "Compost de polit de tall mitjà."
+            }
           ],
           "key_params": [
             "Velocitat: 1,7–1,9",
@@ -1260,8 +1392,14 @@
             "Aquí fem servir una polidora de doble acció (DA) per portar el vernís a un acabat de \"grau espacial\" — perfectament clar, amb zero hologrames."
           ],
           "tools": [
-            { "label": "Equip", "text": "Polidora de doble acció (DA) gran (per exemple, FLEX XFE 7-15) + coixinet d'escuma suau groc o blanc." },
-            { "label": "Compost", "text": "Polish d'acabat." }
+            {
+              "label": "Equip",
+              "text": "Polidora de doble acció (DA) gran (per exemple, FLEX XFE 7-15) + coixinet d'escuma suau groc o blanc."
+            },
+            {
+              "label": "Compost",
+              "text": "Polish d'acabat."
+            }
           ],
           "key_params": [
             "Pressió: 0–1 kg (la màquina treballa sota el seu propi pes)",
@@ -1277,8 +1415,14 @@
             "La pintura negra sòlida no metal·litzada i els acabats acrílics són els materials més exigents del nostre laboratori."
           ],
           "tools": [
-            { "label": "Acrílic", "text": "Durant el polit, els coixinets prendran el color del vehicle perquè el pigment està barrejat en el recobriment. Això és normal — només neteja els coixinets més freqüentment amb sabó domèstic." },
-            { "label": "Negre sòlid", "text": "Si la combinació estàndard segueix deixant hologrames, el protocol canvia: reemplaça el coixinet d'acabat cada 2–3 panells, redueix la velocitat de la DA a 2–3 i escurça el cicle de treball a 15–20 segons. En casos extrems, fes servir un polish d'imprimació (CarPro Essence) i coixinets blancs ultrasuaus." }
+            {
+              "label": "Acrílic",
+              "text": "Durant el polit, els coixinets prendran el color del vehicle perquè el pigment està barrejat en el recobriment. Això és normal — només neteja els coixinets més freqüentment amb sabó domèstic."
+            },
+            {
+              "label": "Negre sòlid",
+              "text": "Si la combinació estàndard segueix deixant hologrames, el protocol canvia: reemplaça el coixinet d'acabat cada 2–3 panells, redueix la velocitat de la DA a 2–3 i escurça el cicle de treball a 15–20 segons. En casos extrems, fes servir un polish d'imprimació (CarPro Essence) i coixinets blancs ultrasuaus."
+            }
           ],
           "analogy": {
             "title": "Manament d'enginyeria restoreLab",
@@ -1313,10 +1457,22 @@
             "Abans de l'aplicació, la carrosseria ha d'estar completament desgreixada."
           ],
           "tools": [
-            { "label": "Dosificació", "text": "El consum mitjà és de 10 ml per capa." },
-            { "label": "Àrea de cobertura", "text": "Gràcies al llarg temps d'evaporació, pots recobrir fins a un terç del vehicle d'una vegada, i després procedir tranquil·lament a l'anivellament i polit." },
-            { "label": "Eines", "text": "Fes servir un joc de 6 tovalloles de microfibra per anivellar i polir (4 tovalloles de pèl curt per a la passada inicial i 2 tovalloles de pèl llarg per a l'acabat final)." },
-            { "label": "Capes", "text": "Es recomana una aplicació de dues capes, amb un interval d'una hora entre capes." }
+            {
+              "label": "Dosificació",
+              "text": "El consum mitjà és de 10 ml per capa."
+            },
+            {
+              "label": "Àrea de cobertura",
+              "text": "Gràcies al llarg temps d'evaporació, pots recobrir fins a un terç del vehicle d'una vegada, i després procedir tranquil·lament a l'anivellament i polit."
+            },
+            {
+              "label": "Eines",
+              "text": "Fes servir un joc de 6 tovalloles de microfibra per anivellar i polir (4 tovalloles de pèl curt per a la passada inicial i 2 tovalloles de pèl llarg per a l'acabat final)."
+            },
+            {
+              "label": "Capes",
+              "text": "Es recomana una aplicació de dues capes, amb un interval d'una hora entre capes."
+            }
           ]
         },
         {
@@ -1326,9 +1482,18 @@
             "Un recobriment ceràmic necessita temps per completar el seu procés de curat químic:"
           ],
           "tools": [
-            { "label": "Curat natural", "text": "12 hores en un espai sec (l'assecat per infrarojos és opcional, no obligatori)." },
-            { "label": "Protocol de rentat", "text": "El primer rentat amb productes químics no s'ha de fer abans de 7 dies després de l'aplicació." },
-            { "label": "Manteniment", "text": "Fins i tot el millor recobriment ceràmic no proporciona 100% de protecció contra ratllades. Al nostre laboratori recomanem renovar la protecció un cop l'any després d'un polit lleuger amb doble acció." }
+            {
+              "label": "Curat natural",
+              "text": "12 hores en un espai sec (l'assecat per infrarojos és opcional, no obligatori)."
+            },
+            {
+              "label": "Protocol de rentat",
+              "text": "El primer rentat amb productes químics no s'ha de fer abans de 7 dies després de l'aplicació."
+            },
+            {
+              "label": "Manteniment",
+              "text": "Fins i tot el millor recobriment ceràmic no proporciona 100% de protecció contra ratllades. Al nostre laboratori recomanem renovar la protecció un cop l'any després d'un polit lleuger amb doble acció."
+            }
           ]
         },
         {
@@ -1363,8 +1528,14 @@
             "A diferència d'un cotxe, una moto no té \"àrees de referència\" com els marcs de les portes on pots determinar un llindar de risc segur per a l'eliminació del vernís. La majoria de les motos han estat repintades en algun moment, i el gruix exacte del vernís sempre és desconegut."
           ],
           "tools": [
-            { "label": "Regla principal", "text": "Les motos es poleixen fent servir només correcció lleugera. Sense tall profund agressiu \"a zero\" — només millora de la brillantor." },
-            { "label": "Test de profunditat", "text": "Per determinar si una ratllada es pot eliminar de forma segura, la ruixem amb desgreixant. Si desapareix sota la pel·lícula líquida, és al vernís i es pot corregir de forma segura." }
+            {
+              "label": "Regla principal",
+              "text": "Les motos es poleixen fent servir només correcció lleugera. Sense tall profund agressiu \"a zero\" — només millora de la brillantor."
+            },
+            {
+              "label": "Test de profunditat",
+              "text": "Per determinar si una ratllada es pot eliminar de forma segura, la ruixem amb desgreixant. Si desapareix sota la pel·lícula líquida, és al vernís i es pot corregir de forma segura."
+            }
           ]
         },
         {
@@ -1372,9 +1543,18 @@
           "title": "Protocol Tècnic de Correcció",
           "paragraphs": [],
           "tools": [
-            { "label": "Eines", "text": "Fem servir una mini polidora rotativa (per exemple, la Krauss R3-SET) a la primera velocitat amb un coixinet groc Rupes i compost Sonax NP 03-06." },
-            { "label": "Seccions planes", "text": "A causa de les formes complexes de dipòsits i carenat, dividim la peça en seccions estretes, treballant cadascuna durant 10–15 segons amb 3–5 kg de pressió." },
-            { "label": "Àrees de difícil accés", "text": "Les àrees on ni tan sols un plat de suport de 30 mm pot accedir es corregeixen a mà fent servir moviments intensius i 10–12 kg de pressió." }
+            {
+              "label": "Eines",
+              "text": "Fem servir una mini polidora rotativa (per exemple, la Krauss R3-SET) a la primera velocitat amb un coixinet groc Rupes i compost Sonax NP 03-06."
+            },
+            {
+              "label": "Seccions planes",
+              "text": "A causa de les formes complexes de dipòsits i carenat, dividim la peça en seccions estretes, treballant cadascuna durant 10–15 segons amb 3–5 kg de pressió."
+            },
+            {
+              "label": "Àrees de difícil accés",
+              "text": "Les àrees on ni tan sols un plat de suport de 30 mm pot accedir es corregeixen a mà fent servir moviments intensius i 10–12 kg de pressió."
+            }
           ]
         },
         {
@@ -1382,8 +1562,14 @@
           "title": "Neteja de Metall i Cura del Cuir",
           "paragraphs": [],
           "tools": [
-            { "label": "Metall", "text": "Per a tubs d'escapament i crom, fem servir puliments metàl·lics especialitzats (Autosol) que eliminen l'oxidació i restauren un acabat mirall." },
-            { "label": "Cuir", "text": "El protocol restoreLab inclou neteja amb un raspall suau i un netejador escumós, eliminació de residus amb una tovallola de microfibra humida, i preservació obligatòria amb una crema acondicionadora protectora." }
+            {
+              "label": "Metall",
+              "text": "Per a tubs d'escapament i crom, fem servir puliments metàl·lics especialitzats (Autosol) que eliminen l'oxidació i restauren un acabat mirall."
+            },
+            {
+              "label": "Cuir",
+              "text": "El protocol restoreLab inclou neteja amb un raspall suau i un netejador escumós, eliminació de residus amb una tovallola de microfibra humida, i preservació obligatòria amb una crema acondicionadora protectora."
+            }
           ]
         }
       ]
@@ -1416,10 +1602,22 @@
             "Eliminar les marques circulars requereix polit mecànic — no existeix una drecera química. El procés implica abrasió controlada del vernís per anivellar la superfície per sota de la profunditat de les ratllades."
           ],
           "tools": [
-            { "label": "Pas 1", "text": "Rentat exhaustiu i descontaminació amb clay bar per eliminar tots els contaminants adherits." },
-            { "label": "Pas 2", "text": "Mesurament del gruix de la pintura per determinar els límits segurs de polit." },
-            { "label": "Pas 3", "text": "Polit mecànic amb polidora de doble acció, compost de tall mitjà i coixinet d'escuma." },
-            { "label": "Pas 4", "text": "Passada d'acabat amb polish fi per aconseguir la màxima claredat." }
+            {
+              "label": "Pas 1",
+              "text": "Rentat exhaustiu i descontaminació amb clay bar per eliminar tots els contaminants adherits."
+            },
+            {
+              "label": "Pas 2",
+              "text": "Mesurament del gruix de la pintura per determinar els límits segurs de polit."
+            },
+            {
+              "label": "Pas 3",
+              "text": "Polit mecànic amb polidora de doble acció, compost de tall mitjà i coixinet d'escuma."
+            },
+            {
+              "label": "Pas 4",
+              "text": "Passada d'acabat amb polish fi per aconseguir la màxima claredat."
+            }
           ]
         },
         {
@@ -1464,9 +1662,18 @@
             "El polit professional de vidre utilitza equipament especialitzat i compostos que treballen a un nivell diferent que els kits DIY. La diferència clau és precisió i consistència."
           ],
           "tools": [
-            { "label": "Equip", "text": "Polidora rotativa professional amb coixinets específics per a vidre i suspensió d'òxid de ceri." },
-            { "label": "Procés", "text": "Passades controlades i mesurades que eliminen material uniformement sense crear distorsió." },
-            { "label": "Resultat", "text": "Eliminació completa de ratllades amb claredat òptica mantinguda. Estalvia 300-500€ vs substitució del parabrisa." }
+            {
+              "label": "Equip",
+              "text": "Polidora rotativa professional amb coixinets específics per a vidre i suspensió d'òxid de ceri."
+            },
+            {
+              "label": "Procés",
+              "text": "Passades controlades i mesurades que eliminen material uniformement sense crear distorsió."
+            },
+            {
+              "label": "Resultat",
+              "text": "Eliminació completa de ratllades amb claredat òptica mantinguda. Estalvia 300-500€ vs substitució del parabrisa."
+            }
           ]
         },
         {
@@ -1474,9 +1681,18 @@
           "title": "Quan Triar Cada Opció",
           "paragraphs": [],
           "tools": [
-            { "label": "DIY", "text": "Ratllades superficials fines en finestres laterals on la perfecció òptica és menys crítica." },
-            { "label": "Professional", "text": "Ratllades del neteja-parabrises, ratllades profundes que es noten al tacte, o qualsevol ratllada en la línia de visió del conductor." },
-            { "label": "Substituir", "text": "Esquerdes, impactes que s'han estès, o danys a la capa laminada del parabrisa." }
+            {
+              "label": "DIY",
+              "text": "Ratllades superficials fines en finestres laterals on la perfecció òptica és menys crítica."
+            },
+            {
+              "label": "Professional",
+              "text": "Ratllades del neteja-parabrises, ratllades profundes que es noten al tacte, o qualsevol ratllada en la línia de visió del conductor."
+            },
+            {
+              "label": "Substituir",
+              "text": "Esquerdes, impactes que s'han estès, o danys a la capa laminada del parabrisa."
+            }
           ]
         }
       ]
@@ -1508,11 +1724,26 @@
             "A restoreLab oferim cinc paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +20%, SUV gran +35%."
           ],
           "tools": [
-            { "label": "Express Refresh", "text": "149€. Rentat descontaminant, clay bar, polit suau i segellant esprai. ~2 hores." },
-            { "label": "Correcció d'Una Fase", "text": "289€. Polit mecànic d'un pas que elimina fins al 70% de marques circulars. 3-4 hores." },
-            { "label": "Correcció de Dues Fases", "text": "549€. Compost de tall + polit complet, 90%+ eliminació de defectes. 5-7 hores." },
-            { "label": "Ceràmic 2 Anys", "text": "649€. Correcció de dues fases + ceràmic certificat de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular." },
-            { "label": "Ceràmic Premium 5 Anys", "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores." }
+            {
+              "label": "Express Refresh",
+              "text": "149€. Rentat descontaminant, clay bar, polit suau i segellant esprai. ~2 hores."
+            },
+            {
+              "label": "Correcció d'Una Fase",
+              "text": "289€. Polit mecànic d'un pas que elimina fins al 70% de marques circulars. 3-4 hores."
+            },
+            {
+              "label": "Correcció de Dues Fases",
+              "text": "549€. Compost de tall + polit complet, 90%+ eliminació de defectes. 5-7 hores."
+            },
+            {
+              "label": "Ceràmic 2 Anys",
+              "text": "649€. Correcció de dues fases + ceràmic certificat de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular."
+            },
+            {
+              "label": "Ceràmic Premium 5 Anys",
+              "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores."
+            }
           ]
         },
         {
@@ -1557,10 +1788,22 @@
             "A diferència del vidre, l'acrílic pot restaurar-se mitjançant polit perquè el material és més tou i uniforme. El procés implica abrasius progressivament més fins per eliminar la capa superficial danyada."
           ],
           "tools": [
-            { "label": "Avaluació", "text": "Avaluar la profunditat del dany UV i comprovar la integritat estructural." },
-            { "label": "Llijat humit", "text": "Començant amb gra P800-P1200 per eliminar la capa oxidada. L'acrílic s'ha de mantenir humit per prevenir acumulació de calor." },
-            { "label": "Polit mecànic", "text": "Etapes progressives amb compostos dedicats per a acrílic, des de tall mitjà fins a acabat ultrafí." },
-            { "label": "Protecció UV", "text": "Aplicació de recobriment amb estabilitzador UV per alentir la degradació futura." }
+            {
+              "label": "Avaluació",
+              "text": "Avaluar la profunditat del dany UV i comprovar la integritat estructural."
+            },
+            {
+              "label": "Llijat humit",
+              "text": "Començant amb gra P800-P1200 per eliminar la capa oxidada. L'acrílic s'ha de mantenir humit per prevenir acumulació de calor."
+            },
+            {
+              "label": "Polit mecànic",
+              "text": "Etapes progressives amb compostos dedicats per a acrílic, des de tall mitjà fins a acabat ultrafí."
+            },
+            {
+              "label": "Protecció UV",
+              "text": "Aplicació de recobriment amb estabilitzador UV per alentir la degradació futura."
+            }
           ]
         },
         {
@@ -2338,7 +2581,12 @@
         "lat": 41.4736,
         "lng": 2.0868,
         "description": "Amb base al cor de Sant Cugat, cobrim tota la comarca del Vallès Occidental. Des de comunitats residencials fins a parcs empresarials, la nostra unitat mòbil arriba en menys de 30 minuts.",
-        "nearby": ["Rubí", "Cerdanyola del Vallès", "Bellaterra", "Valldoreix"]
+        "nearby": [
+          "Rubí",
+          "Cerdanyola del Vallès",
+          "Bellaterra",
+          "Valldoreix"
+        ]
       },
       {
         "slug": "barcelona",
@@ -2348,27 +2596,42 @@
         "lat": 41.3851,
         "lng": 2.1734,
         "description": "Servim tots els districtes de Barcelona i municipis propers. Ja siguis a l'Eixample, Sarrià-Sant Gervasi o Badalona — anem a la teva plaça d'aparcament amb tot l'equip professional.",
-        "nearby": ["Badalona", "L'Hospitalet de Llobregat", "Sant Adrià de Besòs", "Esplugues de Llobregat"]
+        "nearby": [
+          "Badalona",
+          "L'Hospitalet de Llobregat",
+          "Sant Adrià de Besòs",
+          "Esplugues de Llobregat"
+        ]
       },
       {
         "slug": "terrassa",
         "name": "Terrassa",
         "short": "Terrassa",
         "region": "Vallès Interior",
-        "lat": 41.5630,
+        "lat": 41.563,
         "lng": 2.0089,
         "description": "El nostre hub del Vallès cobreix Terrassa, Sabadell i pobles propers. Polígons industrials, zones residencials i aparcaments subterranis — ens adaptem a qualsevol ubicació.",
-        "nearby": ["Sabadell", "Mollet del Vallès", "Castellar del Vallès", "Viladecavalls"]
+        "nearby": [
+          "Sabadell",
+          "Mollet del Vallès",
+          "Castellar del Vallès",
+          "Viladecavalls"
+        ]
       },
       {
         "slug": "matadepera",
         "name": "Matadepera",
         "short": "Matadepera",
         "region": "Vallès Occidental",
-        "lat": 41.5960,
+        "lat": 41.596,
         "lng": 2.0253,
         "description": "Al peu de Sant Llorenç del Munt, Matadepera acull algunes de les finques privades més exclusives de Catalunya. La nostra unitat mòbil és perfecta per a urbanitzacions tancades i xalets amb aparcament privat — servei discret sense moure el teu cotxe. A només 15 minuts de la nostra base a Sant Cugat.",
-        "nearby": ["Terrassa", "Vacarisses", "Sant Llorenç Savall", "Castellar del Vallès"]
+        "nearby": [
+          "Terrassa",
+          "Vacarisses",
+          "Sant Llorenç Savall",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "sant-just-desvern",
@@ -2376,69 +2639,104 @@
         "short": "Sant Just Desvern",
         "region": "Baix Llobregat",
         "lat": 41.3808,
-        "lng": 2.0750,
+        "lng": 2.075,
         "description": "Un dels municipis amb més renda per càpita de Catalunya, Sant Just Desvern combina zones residencials executives amb fàcil accés a Barcelona. Atenem garatges privats i aparcaments subterranis a Walden, Can Candeler i les viles del vessant.",
-        "nearby": ["Esplugues de Llobregat", "Sant Feliu de Llobregat", "Cornellà de Llobregat", "Barcelona"]
+        "nearby": [
+          "Esplugues de Llobregat",
+          "Sant Feliu de Llobregat",
+          "Cornellà de Llobregat",
+          "Barcelona"
+        ]
       },
       {
         "slug": "sant-quirze-del-valles",
         "name": "Sant Quirze del Vallès",
         "short": "Sant Quirze",
         "region": "Vallès Occidental",
-        "lat": 41.5330,
-        "lng": 2.0830,
+        "lat": 41.533,
+        "lng": 2.083,
         "description": "Un tranquil municipi residencial entre Sant Cugat i Sabadell, Sant Quirze del Vallès destaca per les seves urbanitzacions familiars i cases unifamiliars modernes. Arribem a qualsevol punt de Sant Quirze en menys de 10 minuts des de la nostra base.",
-        "nearby": ["Sabadell", "Terrassa", "Sant Cugat del Vallès", "Castellar del Vallès"]
+        "nearby": [
+          "Sabadell",
+          "Terrassa",
+          "Sant Cugat del Vallès",
+          "Castellar del Vallès"
+        ]
       },
       {
         "slug": "bellaterra",
         "name": "Bellaterra",
         "short": "Bellaterra",
         "region": "Vallès Occidental",
-        "lat": 41.5020,
-        "lng": 2.1050,
+        "lat": 41.502,
+        "lng": 2.105,
         "description": "Seu del campus de la UAB i envoltat de nuclis residencials executius, Bellaterra combina prestigi acadèmic amb habitatges d'alt nivell. Atenem vehicles a residències privades i aparcaments del campus — a només 5 minuts del nostre centre d'operacions a Sant Cugat.",
-        "nearby": ["Cerdanyola del Vallès", "Sant Cugat del Vallès", "Badia del Vallès", "Barberà del Vallès"]
+        "nearby": [
+          "Cerdanyola del Vallès",
+          "Sant Cugat del Vallès",
+          "Badia del Vallès",
+          "Barberà del Vallès"
+        ]
       },
       {
         "slug": "pedralbes",
         "name": "Pedralbes",
         "short": "Pedralbes",
         "region": "Barcelona",
-        "lat": 41.3900,
-        "lng": 2.1150,
+        "lat": 41.39,
+        "lng": 2.115,
         "description": "El barri residencial més exclusiu de Barcelona, Pedralbes compta amb mansions privades, residències diplomàtiques i blocs d'apartaments premium. Realitzem correcció de pintura i tractament ceràmic en vehicles d'alta gamma en garatges subterranis i entrades privades de tota la Zona Alta.",
-        "nearby": ["Sarrià-Sant Gervasi", "Les Corts", "Esplugues de Llobregat", "Sant Just Desvern"]
+        "nearby": [
+          "Sarrià-Sant Gervasi",
+          "Les Corts",
+          "Esplugues de Llobregat",
+          "Sant Just Desvern"
+        ]
       },
       {
         "slug": "sant-gervasi",
         "name": "Sant Gervasi – Tres Torres",
         "short": "Sant Gervasi",
         "region": "Barcelona",
-        "lat": 41.4000,
-        "lng": 2.1380,
+        "lat": 41.4,
+        "lng": 2.138,
         "description": "La zona de Tres Torres i Bonanova se situa al cor de la Zona Alta de Barcelona — un dels districtes residencials més cotitzats. Amb els seus carrers arborats i instal·lacions d'aparcament premium, és territori ideal per al nostre servei de detailing mòbil. Treballem en garatges comunitaris i entrades privades.",
-        "nearby": ["Pedralbes", "Sarrià", "Gràcia", "Eixample"]
+        "nearby": [
+          "Pedralbes",
+          "Sarrià",
+          "Gràcia",
+          "Eixample"
+        ]
       },
       {
         "slug": "castelldefels",
         "name": "Castelldefels",
         "short": "Castelldefels",
         "region": "Baix Llobregat",
-        "lat": 41.2800,
-        "lng": 1.9780,
+        "lat": 41.28,
+        "lng": 1.978,
         "description": "Municipi costaner premium al sud de Barcelona, Castelldefels atrau tant residents com propietaris de segona residència amb les seves viles davant del mar i finques a la muntanya. La brisa marina i l'exposició UV fan essencial la protecció regular de pintura. Ens desplacem des de la nostra base amb cita programada.",
-        "nearby": ["Gavà", "Sitges", "Viladecans", "Sant Boi de Llobregat"]
+        "nearby": [
+          "Gavà",
+          "Sitges",
+          "Viladecans",
+          "Sant Boi de Llobregat"
+        ]
       },
       {
         "slug": "alella-tiana-teia",
         "name": "Alella · Tiana · Teià",
         "short": "Maresme Premium",
         "region": "Maresme",
-        "lat": 41.4950,
-        "lng": 2.2950,
+        "lat": 41.495,
+        "lng": 2.295,
         "description": "La costa del Maresme al nord de Barcelona — Alella, Tiana i Teià formen un nucli residencial premium amb finques entre vinyes i viles amb vistes al mar. El clima mediterrani implica intensa exposició UV i salina. Oferim servei mòbil programat en aquesta zona, amb correcció de pintura i tractament ceràmic complet in situ.",
-        "nearby": ["Badalona", "Montgat", "Masnou", "Premià de Dalt"]
+        "nearby": [
+          "Badalona",
+          "Montgat",
+          "Masnou",
+          "Premià de Dalt"
+        ]
       }
     ]
   },
@@ -2472,26 +2770,52 @@
         "name": "Lot-Ready Estàndard",
         "price": "169",
         "desc": "Rentat descontaminant + polit en una fase + aspirat interior + condicionat pneumàtics. Ideal per a estoc fins a 30.000€.",
-        "includes": ["Rentat descontaminant + clay bar", "Polit mecànic en una fase", "Aspirat i neteja interior", "Condicionat de pneumàtics i motllures", "Informe fotogràfic"]
+        "includes": [
+          "Rentat descontaminant + clay bar",
+          "Polit mecànic en una fase",
+          "Aspirat i neteja interior",
+          "Condicionat de pneumàtics i motllures",
+          "Informe fotogràfic"
+        ]
       },
       {
         "name": "Lot-Ready SUV",
         "price": "229",
         "desc": "Igual que Estàndard per a SUV, crossovers i familiars. Panells més grans, més temps.",
-        "includes": ["Tot el d'Estàndard", "Cobertura mida SUV/familiar", "Maleter i zona de càrrega", "Informe fotogràfic ampliat"]
+        "includes": [
+          "Tot el d'Estàndard",
+          "Cobertura mida SUV/familiar",
+          "Maleter i zona de càrrega",
+          "Informe fotogràfic ampliat"
+        ]
       },
       {
         "name": "Showroom Sports",
         "price": "299",
         "desc": "Correcció en dues fases per a vehicles premium i esportius. Dissenyat per a cotxes de més de 40.000€.",
-        "includes": ["Correcció de pintura en dues fases", "Detailing interior complet", "Polit de vidres i compartiment motor", "Detall de llandes + ceràmica motllures", "Informe de 30 fotos"]
+        "includes": [
+          "Correcció de pintura en dues fases",
+          "Detailing interior complet",
+          "Polit de vidres i compartiment motor",
+          "Detall de llandes + ceràmica motllures",
+          "Informe de 30 fotos"
+        ]
       }
     ],
     "volume_title": "Descomptes per Volum",
     "volume_tiers": [
-      { "label": "5+ per setmana", "discount": "−10%" },
-      { "label": "10+ per setmana", "discount": "−15%" },
-      { "label": "20+ per setmana", "discount": "Pressupost personalitzat" }
+      {
+        "label": "5+ per setmana",
+        "discount": "−10%"
+      },
+      {
+        "label": "10+ per setmana",
+        "discount": "−15%"
+      },
+      {
+        "label": "20+ per setmana",
+        "discount": "Pressupost personalitzat"
+      }
     ],
     "faq_title": "FAQ Concessionaris",
     "faq_items": [
@@ -2552,7 +2876,13 @@
         "name": "Protecció VE Cotxe Nou",
         "price": "749",
         "desc": "Per a VEs acabats de sortir de fàbrica. Polit suau per eliminar marques de transport + ceràmic 2 anys.",
-        "includes": ["Descontaminació de pintura", "Polit en una fase (marques de transport)", "Ceràmic Gyeon MOHS 2 anys", "Hidrofòbic parabrisa", "Ceràmic de llandes"],
+        "includes": [
+          "Descontaminació de pintura",
+          "Polit en una fase (marques de transport)",
+          "Ceràmic Gyeon MOHS 2 anys",
+          "Hidrofòbic parabrisa",
+          "Ceràmic de llandes"
+        ],
         "popular": false
       },
       {
@@ -2560,20 +2890,51 @@
         "name": "Escut Premium VE",
         "price": "1290",
         "desc": "Correcció completa per a VEs d'ús diari + ceràmic grafè 5 anys. Màxima protecció UV i química.",
-        "includes": ["Correcció de pintura en dues fases", "Gtechniq Crystal Serum Ultra 5Y", "Set complet hidrofòbic vidres", "Ceràmic llandes + pinces", "Restauració motllures plàstiques", "Condicionat cuir interior"],
+        "includes": [
+          "Correcció de pintura en dues fases",
+          "Gtechniq Crystal Serum Ultra 5Y",
+          "Set complet hidrofòbic vidres",
+          "Ceràmic llandes + pinces",
+          "Restauració motllures plàstiques",
+          "Condicionat cuir interior"
+        ],
         "popular": true
       }
     ],
     "compatibility_title": "Compatibilitat per Marca",
     "compatibility": [
-      { "brand": "Tesla (Model 3/Y/S/X)", "recommended": "Escut Premium VE" },
-      { "brand": "Polestar 2 / 3 / 4", "recommended": "Escut Premium VE" },
-      { "brand": "Porsche Taycan", "recommended": "Escut Premium VE" },
-      { "brand": "BMW iX / i4 / i5", "recommended": "Protecció Cotxe Nou o Escut Premium" },
-      { "brand": "Mercedes EQS / EQE", "recommended": "Escut Premium VE" },
-      { "brand": "Audi e-tron / Q8 e-tron", "recommended": "Escut Premium VE" },
-      { "brand": "Hyundai IONIQ 5/6 / Kia EV6", "recommended": "Protecció VE Cotxe Nou" },
-      { "brand": "Volkswagen ID.4 / ID.7", "recommended": "Protecció VE Cotxe Nou" }
+      {
+        "brand": "Tesla (Model 3/Y/S/X)",
+        "recommended": "Escut Premium VE"
+      },
+      {
+        "brand": "Polestar 2 / 3 / 4",
+        "recommended": "Escut Premium VE"
+      },
+      {
+        "brand": "Porsche Taycan",
+        "recommended": "Escut Premium VE"
+      },
+      {
+        "brand": "BMW iX / i4 / i5",
+        "recommended": "Protecció Cotxe Nou o Escut Premium"
+      },
+      {
+        "brand": "Mercedes EQS / EQE",
+        "recommended": "Escut Premium VE"
+      },
+      {
+        "brand": "Audi e-tron / Q8 e-tron",
+        "recommended": "Escut Premium VE"
+      },
+      {
+        "brand": "Hyundai IONIQ 5/6 / Kia EV6",
+        "recommended": "Protecció VE Cotxe Nou"
+      },
+      {
+        "brand": "Volkswagen ID.4 / ID.7",
+        "recommended": "Protecció VE Cotxe Nou"
+      }
     ],
     "faq_title": "FAQ Específic Vehicles Elèctrics",
     "faq_items": [
@@ -2631,12 +2992,36 @@
     "roi_title": "Restauració vs Substitució",
     "roi_subtitle": "Per què restaurar si pots substituir? Perquè costa un 70-80% menys.",
     "roi_items": [
-      { "label": "Substitució d'aparador (estàndard)", "cost": "€1.500–3.000", "type": "replace" },
-      { "label": "Restauració de ratllades d'aparador", "cost": "€280–600", "type": "restore" },
-      { "label": "Substitució de panell d'oficina (per m²)", "cost": "€180–350", "type": "replace" },
-      { "label": "Restauració de panell d'oficina (per m²)", "cost": "€45–90", "type": "restore" },
-      { "label": "Temps d'inactivitat (substitució)", "cost": "1–3 dies", "type": "replace" },
-      { "label": "Temps d'inactivitat (restauració)", "cost": "0 — es fa fora d'horari", "type": "restore" }
+      {
+        "label": "Substitució d'aparador (estàndard)",
+        "cost": "€1.500–3.000",
+        "type": "replace"
+      },
+      {
+        "label": "Restauració de ratllades d'aparador",
+        "cost": "€280–600",
+        "type": "restore"
+      },
+      {
+        "label": "Substitució de panell d'oficina (per m²)",
+        "cost": "€180–350",
+        "type": "replace"
+      },
+      {
+        "label": "Restauració de panell d'oficina (per m²)",
+        "cost": "€45–90",
+        "type": "restore"
+      },
+      {
+        "label": "Temps d'inactivitat (substitució)",
+        "cost": "1–3 dies",
+        "type": "replace"
+      },
+      {
+        "label": "Temps d'inactivitat (restauració)",
+        "cost": "0 — es fa fora d'horari",
+        "type": "restore"
+      }
     ],
     "pricing_title": "Preus de Vidre Comercial",
     "pricing_subtitle": "Tots els preus sense IVA. Avaluació in situ inclosa sense càrrec.",
@@ -2645,19 +3030,34 @@
         "name": "Per Incidència",
         "price_from": "280",
         "desc": "Un sol panell o finestra amb ratllades visibles. Ideal per a reparacions puntuals.",
-        "includes": ["Avaluació in situ", "Polit a màquina", "Segellant hidrofòbic", "Informe fotogràfic"]
+        "includes": [
+          "Avaluació in situ",
+          "Polit a màquina",
+          "Segellant hidrofòbic",
+          "Informe fotogràfic"
+        ]
       },
       {
         "name": "Tarifa per m²",
         "price_from": "45",
         "desc": "Per a superfícies grans — façanes d'oficines, aparadors complets, mampares de vidre.",
-        "includes": ["Preu per volum", "Servei fora d'horari", "Múltiples panells en una visita", "Opció de pla de manteniment"]
+        "includes": [
+          "Preu per volum",
+          "Servei fora d'horari",
+          "Múltiples panells en una visita",
+          "Opció de pla de manteniment"
+        ]
       },
       {
         "name": "Pla de Manteniment",
         "price_from": "Personalitzat",
         "desc": "Contracte mensual o trimestral per a empreses de gestió d'instal·lacions amb múltiples propietats.",
-        "includes": ["Programació prioritària", "Gestor de compte dedicat", "Tarifa mensual fixa", "Intervencions il·limitades (ús raonable)"]
+        "includes": [
+          "Programació prioritària",
+          "Gestor de compte dedicat",
+          "Tarifa mensual fixa",
+          "Intervencions il·limitades (ús raonable)"
+        ]
       }
     ],
     "faq_title": "Preguntes Freqüents sobre Vidre Comercial",
@@ -2693,7 +3093,6 @@
     "hero_title": "El teu cotxe, sempre com de saló d'exposició",
     "hero_subtitle": "Plans de manteniment per subscripció que mantenen la pintura, el vidre i el recobriment ceràmic del teu cotxe en condicions òptimes — durant tot l'any.",
     "hero_cta": "Tria el Teu Pla",
-
     "why_title": "Per què un pla de cura?",
     "why_items": [
       {
@@ -2717,7 +3116,6 @@
         "desc": "Els membres del pla de cura tenen programació prioritària i disponibilitat dins la mateixa setmana — fins i tot en temporada alta."
       }
     ],
-
     "plans_title": "Tria el Teu Pla",
     "plans_subtitle": "Tots els plans inclouen servei mòbil — venim a casa teva o a l'oficina.",
     "plans_toggle_monthly": "Mensual",
@@ -2778,7 +3176,6 @@
         "best_for": "Vehicles exòtics i de col·leccionista"
       }
     ],
-
     "how_title": "Com Funciona",
     "how_steps": [
       {
@@ -2802,7 +3199,6 @@
         "desc": "Després de cada visita, reps fotos i un informe digital documentant el treball realitzat i l'estat de la pintura."
       }
     ],
-
     "faq_title": "Preguntes Freqüents sobre Plans de Cura",
     "faq_items": [
       {
@@ -2826,7 +3222,6 @@
         "answer": "Els plans anuals inclouen una pausa gratuïta per any (fins a 4 setmanes). Els plans mensuals es poden pausar amb 7 dies d'antelació — no se't cobra pels mesos pausats."
       }
     ],
-
     "cta_section_title": "Comença a protegir la teva inversió",
     "cta_section_subtitle": "Envia'ns un missatge per WhatsApp per parlar sobre quin pla s'adapta al teu cotxe — o reserva una avaluació inicial gratuïta.",
     "cta_whatsapp": "Tria el Meu Pla",

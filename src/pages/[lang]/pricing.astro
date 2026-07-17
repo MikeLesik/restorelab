@@ -36,6 +36,23 @@ const { t } = Astro.props;
 
     <Estimator t={t} lang={lang} />
     <PricingCards t={t} lang={lang} />
+
+    <!-- Direct answer for "precio tratamiento cerámico coche" queries -->
+    {t.pricing.ceramic_answer && (
+      <section id={t.pricing.ceramic_answer.id} class="pb-10">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="card p-6 sm:p-8">
+            <h2 class="text-2xl font-display font-bold text-th-heading mb-4">
+              {t.pricing.ceramic_answer.title}
+            </h2>
+            {t.pricing.ceramic_answer.paragraphs.map((p: string) => (
+              <p class="text-th-body/80 leading-relaxed mb-4 last:mb-0">{p}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <FAQ t={t} />
     <LeadForm t={t} lang={lang} />
   </div>

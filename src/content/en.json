@@ -15,8 +15,8 @@
       "description": "Mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches & restore deep gloss. Ceramic prep available. No repaint."
     },
     "glass": {
-      "title": "Glass Scratch Removal & Polishing Barcelona | restoreLab",
-      "description": "Remove windshield scratches, water spots and wiper marks. Mobile glass polishing service in Sant Cugat, Barcelona and Terrassa. No replacement needed."
+      "title": "Polish Scratched Car Glass in Barcelona | restoreLab",
+      "description": "Glass polishing: remove windshield scratches, water spots and wiper marks. Mobile service in Barcelona and Sant Cugat. No replacement needed."
     },
     "acrylic": {
       "title": "Acrylic & Polycarbonate Restoration Spain | restoreLab",
@@ -75,8 +75,8 @@
       "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations."
     },
     "headlight": {
-      "title": "Headlight Restoration Sant Cugat & Barcelona | restoreLab",
-      "description": "Professional headlight restoration — remove yellowing, haze and UV oxidation. From €79/pair. Mobile service in Sant Cugat & Barcelona."
+      "title": "Headlight Polishing & Restoration Barcelona | restoreLab",
+      "description": "Professional headlight polishing and restoration — remove yellowing, haze and UV oxidation. From €79/pair. Mobile service in Sant Cugat & Barcelona."
     },
     "interior_leather": {
       "title": "Interior Leather Cleaning & Ceramic Coating | restoreLab",
@@ -219,7 +219,7 @@
       },
       {
         "id": "glass-polishing",
-        "title": "Glass Scratch Removal",
+        "title": "Glass Polishing & Scratch Removal",
         "subtitle": "Windows, windshields & architectural glass",
         "icon": "glass",
         "starting_price": "From €89",
@@ -229,7 +229,8 @@
           "Water spot & wiper marks removed"
         ],
         "cta_label": "Get Glass Estimate",
-        "tag": null
+        "tag": null,
+        "h1": "Polishing Scratched Car Glass in Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -246,7 +247,7 @@
       },
       {
         "id": "headlight-restoration",
-        "title": "Headlight Restoration",
+        "title": "Headlight Polishing & Restoration",
         "subtitle": "Yellowed or hazy lenses restored to crystal clarity",
         "icon": "headlight",
         "starting_price": "From €79",
@@ -256,7 +257,8 @@
           "Optional UV sealant (2+ years)"
         ],
         "cta_label": "Get Headlight Estimate",
-        "tag": null
+        "tag": null,
+        "h1": "Headlight Polishing & Restoration in Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -575,18 +577,50 @@
           }
         ]
       }
-    ]
+    ],
+    "ceramic_answer": {
+      "id": "tratamiento-ceramico",
+      "title": "How much does ceramic coating for a car cost?",
+      "paragraphs": [
+        "Ceramic coating at restoreLab costs €649 (2-year protection) or €1,049 (premium 5-year protection) for a sedan, full paint correction included. Unlike many shops, the price includes paint preparation — ceramic applied over defects only seals them in permanently.",
+        "Prices are sedan-based; size multipliers apply (compact −10%, SUV +10-20%). The service is fully mobile: we apply the coating in your garage across Sant Cugat, Barcelona, Terrassa and nearby. Ask for an exact quote on WhatsApp with photos of your car."
+      ]
+    }
   },
   "estimator": {
     "tiers": {
-      "express": { "name": "Express Refresh", "desc": "Single-stage machine polish. Removes light swirls and water spots." },
-      "single_stage": { "name": "Single-Stage Correction", "desc": "One-step correction with medium-cut compound. ~70% defect removal." },
-      "two_stage": { "name": "Two-Stage Correction", "desc": "Full cut + refine. Removes 85–95% of defects including deep swirls." },
-      "ceramic_2y": { "name": "Ceramic Coating 2Y", "desc": "Single-stage + Gyeon MOHS 2-year ceramic coating." },
-      "ceramic_5y": { "name": "Ceramic Premium 5Y", "desc": "Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic." },
-      "windshield_polish": { "name": "Windshield Polish", "desc": "Remove wiper scratches, water spots and light haze from your windshield." },
-      "windshield_hydrophobic": { "name": "Windshield + Hydrophobic", "desc": "Windshield polish plus rain-repellent hydrophobic coating for better visibility." },
-      "full_glass_set": { "name": "Full Glass Set", "desc": "All windows polished and treated — windshield, side and rear glass." }
+      "express": {
+        "name": "Express Refresh",
+        "desc": "Single-stage machine polish. Removes light swirls and water spots."
+      },
+      "single_stage": {
+        "name": "Single-Stage Correction",
+        "desc": "One-step correction with medium-cut compound. ~70% defect removal."
+      },
+      "two_stage": {
+        "name": "Two-Stage Correction",
+        "desc": "Full cut + refine. Removes 85–95% of defects including deep swirls."
+      },
+      "ceramic_2y": {
+        "name": "Ceramic Coating 2Y",
+        "desc": "Single-stage + Gyeon MOHS 2-year ceramic coating."
+      },
+      "ceramic_5y": {
+        "name": "Ceramic Premium 5Y",
+        "desc": "Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic."
+      },
+      "windshield_polish": {
+        "name": "Windshield Polish",
+        "desc": "Remove wiper scratches, water spots and light haze from your windshield."
+      },
+      "windshield_hydrophobic": {
+        "name": "Windshield + Hydrophobic",
+        "desc": "Windshield polish plus rain-repellent hydrophobic coating for better visibility."
+      },
+      "full_glass_set": {
+        "name": "Full Glass Set",
+        "desc": "All windows polished and treated — windshield, side and rear glass."
+      }
     },
     "title": "Get Your Instant Estimate",
     "subtitle": "Answer 4 quick questions and get a price range in seconds.",
