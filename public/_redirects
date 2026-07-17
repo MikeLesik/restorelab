@@ -1,2 +1,11 @@
 # Redirect root to Spanish version (default market)
 /  /es  302
+
+# Portugal-era URLs (business relocated Lisbon/Cascais -> Sant Cugat/Barcelona).
+# Specific rules must precede the /pt/* wildcard — first match wins.
+/pt/services/yacht-gelcoat  /es/services/acrylic-restoration  301
+/en/services/yacht-gelcoat  /en/services/acrylic-restoration  301
+/es/services/yacht-gelcoat  /es/services/acrylic-restoration  301
+/ca/services/yacht-gelcoat  /ca/services/acrylic-restoration  301
+/pt  /es  301
+/pt/*  /es/:splat  301
