@@ -89,25 +89,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       ]
     })} />
 
-    <!-- Service Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Pre-Sale Detail Pack",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "restoreLab"
-      },
-      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"],
-      "description": t.meta.pre_sale.description,
-      "offers": {
-        "@type": "Offer",
-        "price": "249",
-        "priceCurrency": "EUR"
-      }
-    })} />
 
-    <PricingCards t={t} lang={lang} categoryId="extras" />
+    <PricingCards
+      t={t}
+      lang={lang}
+      categoryId="extras"
+      serviceType="Pre-Sale Detail Pack"
+      serviceDescription={t.meta.pre_sale.description}
+      serviceAreaServed={["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"]}
+    />
 
     <!-- See our work CTA -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">

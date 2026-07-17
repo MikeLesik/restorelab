@@ -226,8 +226,32 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         "Rubí", "Cerdanyola del Vallès", "Matadepera", "Sant Just Desvern", "Castelldefels"
       ],
       "sameAs": ["https://g.page/restorelab-santcugat"],
-      "openingHours": "Mo-Sa 08:00-19:00",
-      "priceRange": "€€€"
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      "priceRange": "€€€",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "restoreLab Services",
+        "itemListElement": (t.pricing?.categories || []).map((category: any) => ({
+          "@type": "OfferCatalog",
+          "name": category.title,
+          "itemListElement": category.packages
+            .map((pkg: any) => {
+              const priceMatch = String(pkg.price || '').replace(/\s/g, '').match(/(\d+)/);
+              return priceMatch ? {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": pkg.name },
+                "price": priceMatch[1],
+                "priceCurrency": "EUR"
+              } : null;
+            })
+            .filter(Boolean)
+        }))
+      }
     })} />
 
     <!-- Organization Schema -->
@@ -238,7 +262,9 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       "url": siteUrl,
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/favicon.svg`
+        "url": `${siteUrl}/icon-512.png`,
+        "width": 512,
+        "height": 512
       },
       "sameAs": ["https://g.page/restorelab-santcugat"],
       "contactPoint": {

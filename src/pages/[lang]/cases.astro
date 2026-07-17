@@ -6,6 +6,7 @@ import LeadForm from '@/components/LeadForm.astro';
 import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
+import { SITE_URL } from '@/lib/constants';
 
 export function getStaticPaths() {
   return [
@@ -26,6 +27,28 @@ const { t } = Astro.props;
   t={t}
   currentPath="/cases"
 >
+  <!-- CollectionPage + ImageObject schema for the before/after gallery -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": t.cases_section.section_title,
+    "url": `${SITE_URL}/${lang}/cases`,
+    "mainEntity": (t.cases_gallery?.items || []).flatMap((item: any) => [
+      {
+        "@type": "ImageObject",
+        "contentUrl": `${SITE_URL}${item.before}`,
+        "name": `${item.title} — before`,
+        "caption": item.title
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": `${SITE_URL}${item.after}`,
+        "name": `${item.title} — after`,
+        "caption": `${item.title} · ${item.result}`
+      }
+    ])
+  })} />
+
   <div class="pt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0 text-center">
       <h1 class="section-title text-5xl mb-4">{t.cases_section.section_title}</h1>

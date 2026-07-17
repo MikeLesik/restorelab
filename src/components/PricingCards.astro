@@ -3,11 +3,16 @@ export interface Props {
   t: Record<string, any>;
   lang: string;
   categoryId?: string;
+  /** Service enrichment passed by /services/* pages so a single merged
+   *  Service node is emitted here instead of a second page-level block. */
+  serviceType?: string;
+  serviceDescription?: string;
+  serviceAreaServed?: string[];
 }
 
-import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
-const { t, lang, categoryId } = Astro.props;
+const { t, lang, categoryId, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.pricing.ui || {};
 
@@ -41,7 +46,7 @@ function getGridClass(count: number): string {
 
           <div class:list={['grid gap-5', getGridClass(category.packages.length)]}>
             {category.packages.map((pkg: any) => (
-              <div class:list={[
+              <div id={pkg.slug} class:list={[
                 'card relative flex flex-col transition-all duration-300',
                 pkg.highlight
                   ? 'border-brand-accent/50 bg-brand-accent/5 hover:border-brand-accent'
@@ -163,7 +168,9 @@ function getGridClass(count: number): string {
             "@type": "Offer",
             "name": pkg.name,
             "price": priceMatch[1],
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "url": `${SITE_URL}/${lang}/pricing#${pkg.slug}`,
+            "availability": "https://schema.org/InStock"
           } : null;
         })
         .filter(Boolean);
@@ -171,8 +178,11 @@ function getGridClass(count: number): string {
         <script type="application/ld+json" set:html={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": category.title,
-          "provider": { "@type": "LocalBusiness", "name": "restoreLab" },
+          "name": serviceType || category.title,
+          ...(serviceType ? { "serviceType": serviceType } : {}),
+          ...(serviceDescription ? { "description": serviceDescription } : {}),
+          ...(serviceAreaServed ? { "areaServed": serviceAreaServed } : {}),
+          "provider": { "@type": "AutomotiveBusiness", "name": "restoreLab", "url": SITE_URL },
           "offers": offers
         })} />
       ) : null;

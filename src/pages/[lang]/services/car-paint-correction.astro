@@ -108,20 +108,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       ]
     })} />
 
-    <!-- Service Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Car Paint Correction",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "restoreLab"
-      },
-      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"],
-      "description": t.meta.car_paint.description
-    })} />
 
-    <PricingCards t={t} lang={lang} categoryId="car" />
+    <PricingCards
+      t={t}
+      lang={lang}
+      categoryId="car"
+      serviceType="Car Paint Correction"
+      serviceDescription={t.meta.car_paint.description}
+      serviceAreaServed={["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"]}
+    />
 
     <!-- See our work CTA -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">

@@ -58,12 +58,15 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
       "name": defaultAuthor.name,
       "url": `${SITE_URL}/${lang}${defaultAuthor.url}`
     },
+    "image": [`${SITE_URL}/images/og-home.jpg`],
     "publisher": {
       "@type": "Organization",
       "name": "restoreLab",
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/favicon.svg`
+        "url": `${SITE_URL}/icon-512.png`,
+        "width": 512,
+        "height": 512
       }
     },
     "datePublished": card.date || "2025-01-15",

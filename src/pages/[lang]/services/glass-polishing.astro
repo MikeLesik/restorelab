@@ -98,16 +98,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       ]
     })} />
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Glass Scratch Removal",
-      "provider": { "@type": "LocalBusiness", "name": "restoreLab" },
-      "areaServed": ["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"],
-      "description": t.meta.glass.description
-    })} />
 
-    <PricingCards t={t} lang={lang} categoryId="glass" />
+    <PricingCards
+      t={t}
+      lang={lang}
+      categoryId="glass"
+      serviceType="Glass Scratch Removal"
+      serviceDescription={t.meta.glass.description}
+      serviceAreaServed={["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"]}
+    />
 
     <!-- See our work CTA -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
