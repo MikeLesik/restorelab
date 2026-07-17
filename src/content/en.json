@@ -984,7 +984,8 @@
         "excerpt": "Why we choose specific rotary and DA polishers, backing plates, and pad compounds for each job — and how the wrong choice can damage a surface permanently.",
         "slug": "equipment-selection",
         "date": "2025-01-15",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "02",
@@ -992,7 +993,8 @@
         "excerpt": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
         "slug": "masking-protocols",
         "date": "2025-02-05",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "03",
@@ -1000,7 +1002,8 @@
         "excerpt": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the clear coat.",
         "slug": "mechanical-correction",
         "date": "2025-02-19",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "04",
@@ -1008,7 +1011,8 @@
         "excerpt": "The transition from deep correction to absolute clear-coat clarity. Learn how to remove the working haze left by wool and stabilize the surface to eliminate holograms.",
         "slug": "refining-stabilization",
         "date": "2025-03-12",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "05",
@@ -1016,7 +1020,8 @@
         "excerpt": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection and how to preserve a mirror finish for years.",
         "slug": "protection-preservation",
         "date": "2025-03-26",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "06",
@@ -1024,7 +1029,8 @@
         "excerpt": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach and the art of cleaning metal and leather.",
         "slug": "motorcycle-detailing",
         "date": "2025-04-16",
-        "status": "hidden"
+        "status": "hidden",
+        "updated": "2026-07-17"
       },
       {
         "number": "07",
@@ -1032,7 +1038,8 @@
         "excerpt": "Understanding what causes those circular scratches in your paint and the step-by-step professional process to eliminate them permanently.",
         "slug": "remove-swirl-marks",
         "date": "2025-05-07",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "08",
@@ -1040,7 +1047,8 @@
         "excerpt": "When can you fix windshield scratches yourself and when should you call a professional? An honest comparison of methods, costs and results.",
         "slug": "windshield-scratch-repair",
         "date": "2025-05-28",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "09",
@@ -1048,7 +1056,8 @@
         "excerpt": "What does professional paint correction actually cost in the Barcelona area? A transparent breakdown of pricing factors, package tiers and what affects the final quote.",
         "slug": "paint-correction-cost-barcelona",
         "date": "2025-06-11",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "10",
@@ -1056,7 +1065,8 @@
         "excerpt": "How UV radiation degrades acrylic and polycarbonate surfaces over time, and the professional restoration process that brings them back to full transparency.",
         "slug": "uv-damage-acrylic-restoration",
         "date": "2025-07-02",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "11",
@@ -1147,12 +1157,14 @@
       "seo_description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations.",
       "title": "Choosing Your Weapon: Rotary vs. Dual Action",
       "description": "Process Physics: Why 99% of the Result Depends on Tool Selection. Learn to distinguish the handling of a \"go-kart\" from the behavior of a \"semi-truck,\" and understand why a low center of gravity is the foundation of professional paint correction.",
-      "intro": "In our lab, we follow a clear protocol: the first pass — the one that removes 99% of all scratches — is most effectively done with a rotary polisher. The dual action machine, by contrast, is a tool for final surface stabilization.",
+      "intro": "In our lab, we follow a clear protocol: the first pass — the one that removes 99% of all scratches — is most effectively done with a rotary polisher. The dual action machine, by contrast, is a tool for final surface stabilization. In this guide we break both architectures down from an engineering standpoint: how they transmit power, how much heat they generate, which pads they demand, and how we combine them in a real mobile service across Barcelona and the Vallès.",
       "sections": [
         {
           "number": "1",
           "title": "Rotary Polisher: Power and Control",
           "paragraphs": [
+            "A rotary is direct drive: the backing plate spins locked to the motor shaft, typically between 600 and 3,000 RPM, and every point of the pad works at constant speed. That architecture gives it the highest cutting power on the market — and also its one real risk: all of the energy turns into friction and heat at the contact zone, and it is the operator who must manage it with constant movement and pressure.",
+            "Our real working range sits between 900 and 1,800 RPM. Above 2,000 RPM, the clear coat of a modern car (35–50 microns) heats up faster than the hand can react; below 900, the cut drops off and the time per panel balloons with no gain in safety.",
             "The rotary is the foundation of deep correction. When selecting a machine, we focus on three critical parameters:"
           ],
           "key_params": [
@@ -1201,9 +1213,20 @@
         },
         {
           "number": "2",
+          "title": "Why is heat the real enemy of the clear coat?",
+          "paragraphs": [
+            "Automotive clear coat begins to soften at around 60–70 °C and can burn irreversibly above 100 °C. A rotary with a wool pad at 1,500 RPM reaches those temperatures on an edge within seconds — which is why masking and thermal control are inseparable from using this machine.",
+            "We work with an infrared thermometer at hand and a simple backup rule: if the back of your hand cannot rest on the panel, the machine stops. In a Mediterranean summer the margin is even smaller — a black bonnet in the sun already starts at 50–60 °C before the first pass — so correction is always done in the shade and in short sections.",
+            "A dual action machine spreads the same energy across an orbital pattern and loses speed under excessive pressure: burning a clear coat with it is far harder, though not impossible. That tolerance for error is why it is the machine we recommend to anyone starting out."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Dual Action: The Finishing Scalpel",
           "paragraphs": [
-            "Once the major defects have been removed with the rotary, the finishing stage begins. The backing plate of a dual action polisher performs two types of motion at once: rotational and oscillating. This makes it possible to achieve a perfectly clean surface without holograms."
+            "Once the major defects have been removed with the rotary, the finishing stage begins. The backing plate of a dual action polisher performs two types of motion at once: rotational and oscillating. This makes it possible to achieve a perfectly clean surface without holograms.",
+            "The key figure of a dual action polisher is its orbit (throw): the diameter of the circle the spindle describes. 8 mm orbits are versatile and controllable; 15 mm orbits speed up work on large panels; 21 mm orbits cover surface at maximum rate but become jumpy on curves and tight areas. Our finishing standard is a 15 mm orbit with a 125 mm backing plate.",
+            "We also distinguish between free-spinning and forced-rotation (gear-driven) dual action machines. On the former, the plate stops rotating if you press too hard — the best safety fuse there is. The latter combines orbit with forced rotation and approaches the cutting power of a rotary while keeping the orbital pattern."
           ],
           "tools_title": "restoreLab's professional dual action lineup",
           "tools": [
@@ -1220,6 +1243,79 @@
               "text": "Cordless FLEX solutions (XCE 8 125 and PXE 80) for maximum mobility when working on smaller areas."
             }
           ]
+        },
+        {
+          "number": "4",
+          "title": "Which pad belongs on which machine?",
+          "paragraphs": [
+            "The machine is only half the system; the other half is the pad. The wrong combination cancels out the advantages of any tool, however expensive:"
+          ],
+          "table": {
+            "caption": "Pad–machine combinations we use at restoreLab",
+            "headers": [
+              "Pad",
+              "Machine",
+              "Stage",
+              "Note"
+            ],
+            "rows": [
+              [
+                "Wool / hybrid",
+                "Rotary",
+                "Heavy cut",
+                "Maximum cutting power; demands strict edge masking"
+              ],
+              [
+                "Microfiber",
+                "Dual action",
+                "Medium cut",
+                "Cuts almost like wool while generating far less heat"
+              ],
+              [
+                "Firm cutting foam",
+                "Both",
+                "Medium cut",
+                "Predictable on large flat surfaces"
+              ],
+              [
+                "Polishing foam",
+                "Dual action",
+                "Refining",
+                "Removes the traces left by the cutting stage"
+              ],
+              [
+                "Soft finishing foam",
+                "Dual action",
+                "Finishing",
+                "Final hologram-free gloss, ready for ceramic"
+              ]
+            ]
+          },
+          "conclusion": "Compatibility rule: the pad diameter always 10–25 mm larger than the backing plate, and never a soft finishing foam on a rotary above 1,200 RPM — heat ruins the foam within minutes."
+        },
+        {
+          "number": "5",
+          "title": "How do we combine both machines on a real job?",
+          "paragraphs": [
+            "A typical restoreLab two-stage correction service always follows the same sequence:"
+          ],
+          "key_params": [
+            "Measurement — a clear coat thickness map, panel by panel, with a coating gauge.",
+            "Masking — edges, rubber and plastics following our 2 mm protocol.",
+            "Cutting — Makita 9237CB rotary at 1,200–1,500 RPM with wool: removes the vast majority of defects.",
+            "Refining — 15 mm orbit dual action with polishing foam: erases the wool traces.",
+            "Finishing — final pass with soft foam and fine abrasive: surface ready for ceramic or PPF."
+          ],
+          "conclusion": "As a mobile service, autonomy matters: FLEX cordless dual action machines let us complete finishing work and small areas without depending on the client's power outlet — key when working in a shared garage in Sant Cugat or at the kerb in Barcelona."
+        },
+        {
+          "number": "6",
+          "title": "What if you can only buy one machine?",
+          "paragraphs": [
+            "For an enthusiast correcting their own car once or twice a year, the answer is unambiguous: a free-spinning dual action with an 8–15 mm orbit. It forgives mistakes, covers everything from clear coat cleaning to finishing and, with a microfiber pad, handles the majority of defects on a daily-driven car.",
+            "The rotary remains irreplaceable in professional hands: where a dual action needs six passes, a rotary with wool needs two. In a trade where time per panel defines profitability, that difference more than pays for the learning curve — but that curve is climbed on scrapyard panels, never on a client's car."
+          ],
+          "conclusion": "The correct hierarchy is not \"rotary or dual action,\" but \"rotary for the cut, dual action for the finish.\" Each one does the other's job worse."
         }
       ]
     },
@@ -1228,19 +1324,25 @@
       "seo_description": "Why the thinnest clear coat is on edges. The 2 mm rule, contour tapes, and re-masking techniques that prevent burn-through during paint correction.",
       "title": "Masking Protocols: Protecting the Edge",
       "description": "Why is the thinnest layer of clear coat found on edges? Learn the \"2 mm rule\" and understand why masking off \"red zones\" is the only real insurance against an expensive repaint.",
-      "intro": "Masking is the most overlooked step among beginners — and the most common cause of clear coat burn-through. At restoreLab, we do not rely on luck; we rely on masking tape.",
+      "intro": "Masking is the most overlooked step among beginners — and the most common cause of clear coat burn-through. A burn on an edge cannot be polished out or touched up: it forces a full panel respray, at a cost of several hundred euros per part and the loss of the original factory paint. At restoreLab, we do not rely on luck; we rely on masking tape. In this guide we explain why the clear coat is thinnest exactly where the pad hits hardest, which zones we always mark as untouchable, and how masking evolves across the three stages of a professional paint correction.",
       "sections": [
         {
           "number": "1",
-          "title": "Risk Zone: The Physics of Clear Coat on Edges",
+          "title": "Why is the clear coat thinner on edges?",
           "paragraphs": [
-            "On edges and sharp body lines, the clear coat is always significantly thinner than on flat surfaces. Without masking, the very first pass with a wool pad can be fatal for the panel."
+            "On edges and sharp body lines, the clear coat is always significantly thinner than on flat surfaces. Without masking, the very first pass with a wool pad can be fatal for the panel.",
+            "The reason is fluid physics: paint and clear coat are applied in a liquid state, and surface tension pulls material away from sharp edges and lets it settle on flat areas while it cures. On a flat surface we typically measure 35 to 50 microns of factory clear coat; on a stamped body line that figure can drop to 15–20 microns — less than half the working margin.",
+            "The edge also works against us twice during polishing: it concentrates all of the pad's pressure into a strip a few millimetres wide, and it dissipates heat poorly. With a rotary at 1,500 RPM and a wool pad, the temperature on an edge can exceed the clear coat's softening threshold — around 60–70 °C — within seconds.",
+            "That is why, before touching any panel, at restoreLab we measure film thickness with a coating gauge and treat every edge as an exclusion zone. The rule is simple: whatever cannot be measured and controlled gets masked."
           ]
         },
         {
           "number": "2",
-          "title": "The restoreLab Masking Method",
-          "paragraphs": [],
+          "title": "The 2 mm Rule: the restoreLab Masking Method",
+          "paragraphs": [
+            "Our core rule fits in one sentence: the tape must overlap 2 mm onto the panel itself, not merely cover the neighbouring trim. Those 2 mm stay uncorrected during the aggressive pass — and that is exactly the point: the pad never gets to bite into the edge where the clear coat is thinnest.",
+            "Tape choice matters as much as tape position. We work with automotive-grade masking tape with a low-transfer adhesive and heat resistance of 80–110 °C. Household painter's tape shreds under pad friction and leaves baked-on adhesive on the clear coat."
+          ],
           "tools": [
             {
               "label": "Perimeter rule",
@@ -1257,31 +1359,94 @@
             {
               "label": "Contour tapes",
               "text": "For complex curves and stamped lines, we use narrow vinyl tape (6 mm), which allows us to precisely follow the body lines."
+            },
+            {
+              "label": "Rubber and seals",
+              "text": "Door and window rubber seals are always covered: polish embedded in the rubber turns chalky white in the sun and is nearly impossible to clean out afterwards."
+            },
+            {
+              "label": "Textured plastics",
+              "text": "Rough-textured plastic trim traps polishing compound in its grain. We cover it with wide 24–36 mm tape before the first pass."
             }
           ]
         },
         {
           "number": "3",
-          "title": "Re-Masking for Finishing Passes",
+          "title": "Which zones do we always mark as \"red zones\"?",
           "paragraphs": [
-            "Masking is not static. After the first (aggressive) pass with a wool pad, the tape is repositioned \"under the edge.\" This allows the second and third stages (with foam pads) to refine the edges themselves, so they do not stand out from the overall gloss of the polished flat surface."
+            "Before switching the machine on, we walk around the car with a thickness gauge and mark the zones where correction is forbidden or restricted. On an average passenger car, the list is longer than most people expect:"
+          ],
+          "key_params": [
+            "Edges and character lines — clear coat 30–50% thinner than on flat surfaces.",
+            "Bonnet, door and tailgate edges — they accumulate the wear of previous owners' earlier polishing.",
+            "Emblems, lettering and chrome trim — dried compound trapped underneath is nearly impossible to extract.",
+            "Parking sensors and cameras — polish residue can coat their surface and interfere with how they work.",
+            "Panel gaps — polishing dust collects inside and reappears with the first wash.",
+            "Matte plastics and vinyl — a single touch of the pad leaves them irreversibly glossy."
+          ],
+          "conclusion": "If the thickness gauge gives anomalous readings — spikes above 200 microns that betray body filler, or very low values after a previous polish — the zone gets fully masked and documented with the client before we continue."
+        },
+        {
+          "number": "4",
+          "title": "Re-Masking: the Tape Moves with Every Stage",
+          "paragraphs": [
+            "Masking is not static. After the first (aggressive) pass with a wool pad, the tape is repositioned \"under the edge.\" This allows the second and third stages (with foam pads) to refine the edges themselves, so they do not stand out from the overall gloss of the polished flat surface.",
+            "In practice this means three tape positions within a single job: 2 mm onto the panel for the wool cutting stage, flush with the edge for the medium polishing stage, and removed almost entirely — reduced to the absolute red zones — for the final finishing pass with a soft foam pad and fine abrasive. Finishing passes generate far less heat, so the edge itself can safely take two or three gentle passes.",
+            "Repositioning the tape takes about ten minutes per stage. Compared with the hours and cost of a respray — and the loss of the original paint, which on a premium car directly affects resale value — it is the cheapest insurance policy in the entire process."
           ]
+        },
+        {
+          "number": "5",
+          "title": "How does the Mediterranean climate affect masking?",
+          "paragraphs": [
+            "We work on-site across Sant Cugat, Barcelona and the Vallès, and that means sun. With the panel at 40–50 °C — routine from May to September — the tape's adhesive bakes onto the clear coat: after 30–40 minutes in direct sunlight it can leave residue or, on a repainted panel, pull the clear coat off when removed.",
+            "Our summer protocol: work in the shade or create it with a canopy, mask section by section instead of the whole car at once, remove the tape by pulling it back over itself at a 45-degree angle, and never leave the car masked \"until tomorrow.\" Morning humidity counts too: tape will not grip a panel covered in dew, so the surface is dried and degreased before a single centimetre goes on."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "Masking Mistakes We See Every Week",
+          "paragraphs": [
+            "These are the failures we most often have to \"rescue\" on cars arriving from previous polishing jobs:"
+          ],
+          "tools": [
+            {
+              "label": "The wrong tape",
+              "text": "Packing tape or duct tape: adhesive far too aggressive, zero heat resistance, and guaranteed residue on a hot clear coat."
+            },
+            {
+              "label": "Mask and forget",
+              "text": "Leaving the same tape in place through all three stages makes edge refinement impossible and leaves a dull \"frame\" around every panel."
+            },
+            {
+              "label": "Covering only the trim",
+              "text": "Protecting the neighbouring part while leaving the edge exposed: the trim survives, the panel edge does not."
+            },
+            {
+              "label": "Removing late and badly",
+              "text": "Tape comes off at the end of each stage, at a 45-degree angle. Removing it the next day, with the adhesive heat-cured, multiplies the risk of delamination."
+            }
+          ],
+          "conclusion": "Masking adds no gloss, never appears in the before-and-after photos, and the client rarely notices it. But it is the difference between a professional paint correction and a game of Russian roulette with your car's clear coat."
         }
       ]
     },
     "mechanical_correction": {
       "howto": true,
-      "seo_title": "Mechanical Correction Protocols: The Art of the Cut | restoreLab Academy",
+      "seo_title": "Mechanical Correction: Art of the Cut | restoreLab Academy",
       "seo_description": "The snake pattern technique, 20 kg pressure protocol, and wool pad physics. How to cut deep defects while preserving clear coat structural integrity.",
       "title": "Mechanical Correction Protocols: The Art of the Cut",
       "description": "Master the physics of the \"snake pattern\" and temperature control. Learn how 20 kg of pressure and a wool pad can cut through deep defects while preserving the structural integrity of the clear coat.",
-      "intro": "The first pass is the stage where the fate of 99.9% of scratches is decided. At restoreLab, we use the Rotary + Wool combination because it is the most efficient way to reach the bottom of a scratch without wasting time.",
+      "intro": "The first pass is the stage where the fate of 99.9% of scratches is decided. At restoreLab, we use the Rotary + Wool combination because it is the most efficient way to reach the bottom of a scratch without wasting time. Before we touch the machine, we measure; and before we measure, we plan. In this guide we share the exact protocol we apply daily across Sant Cugat and the Barcelona area: pressures, RPM ranges, temperatures and the criteria that separate a controlled cut from a burnt clear coat.",
       "sections": [
         {
           "number": "1",
           "title": "The \"40×40\" Protocol and the \"Snake Pattern\" Technique",
           "paragraphs": [
-            "Polishing an entire panel at once is the fastest route to overheating and uneven results."
+            "Polishing an entire panel at once is the fastest route to overheating and uneven results.",
+            "Why exactly 40×40 cm? Because it is the largest area over which the cutting compound keeps its working viscosity before drying out, and the smallest in which the rotary can develop a uniform movement pattern without chaotic overlaps. A standard bonnet yields six to eight sections; a door, two or three.",
+            "The overlap between snake-pattern lines is 50%: each pass covers half of the previous one. This guarantees that every point of the panel receives the same amount of mechanical work and prevents the uneven cutting stripes that Mediterranean sunlight exposes within seconds.",
+            "As for speed, we run wool between 1,200 and 1,500 RPM for general cutting, stepping up to 1,800 RPM only over isolated defects. Beyond that threshold, clear coat temperature climbs faster than the hand can detect."
           ],
           "tools": [
             {
@@ -1302,7 +1467,9 @@
           "number": "2",
           "title": "Pressure and Temperature Management",
           "paragraphs": [
-            "Cutting efficiency directly depends on how much force you apply."
+            "Cutting efficiency directly depends on how much force you apply.",
+            "Factory clear coat begins to soften at around 60 °C and suffers structural damage from 80 °C upwards. Our operating limit is 50–55 °C measured with an infrared thermometer; the palm check is the quick backup between readings: if you cannot hold your hand on the panel for three seconds, the section needs to rest.",
+            "In the Barcelona summer this is critical: a dark bonnet parked in the sun reaches 70–80 °C before the machine is even switched on. That is why we always work in the shade or under a canopy and, in July and August, schedule corrections for early morning, when the panel starts out at 25–30 °C."
           ],
           "tools": [
             {
@@ -1323,7 +1490,9 @@
           "number": "3",
           "title": "The Physics of the Wool Pad",
           "paragraphs": [
-            "Wool is the most aggressive cutting tool in our arsenal."
+            "Wool is the most aggressive cutting tool in our arsenal.",
+            "A 180 mm wool pad spinning at 1,500 RPM reaches a peripheral speed of about 14 m/s at the edge, but the real work is done by the ring 30–60 mm from the center, where pressure and speed balance out. That is why the outer edge tends to sling compound around instead of cutting with it.",
+            "And not all wool cuts alike: long twisted fiber is the most aggressive and leaves the deepest pattern; short-fiber hybrid wool cuts 20–30% less, but delivers a finish the second pass will thank you for. We choose the fiber by clear coat hardness: hard German ceramic clears call for twisted wool, while softer Japanese clears are happy with hybrid."
           ],
           "tools": [
             {
@@ -1340,7 +1509,8 @@
           "number": "4",
           "title": "Tool Hygiene: Cleaning the Wool Pad",
           "paragraphs": [
-            "A wool pad clogged with spent compound stops cutting and starts \"skipping\" across the panel."
+            "A wool pad clogged with spent compound stops cutting and starts \"skipping\" across the panel.",
+            "Spent compound mixed with cut clear coat forms an uncontrolled abrasive paste: it is the number one cause of the \"new\" scratches that mysteriously appear halfway through a correction."
           ],
           "tools": [
             {
@@ -1356,21 +1526,65 @@
             "title": "restoreLab engineering analogy",
             "text": "Why walk when you can fly? The Rotary + Wool combination is your airplane. It gets you to the target dramatically faster and with far less effort than trying to cut out a deep scratch with foam or a dual action polisher."
           }
+        },
+        {
+          "number": "5",
+          "title": "How Much Clear Coat Can We Sacrifice? The Micron Budget",
+          "paragraphs": [
+            "Factory clear coat measures between 35 and 55 microns, over a total paint thickness of 100 to 160 microns. A deep correction with wool realistically removes between 3 and 8 microns. It sounds like little, but the UV protection of the color coat is only guaranteed while at least 25–30 microns of clear coat remain above it.",
+            "That is why, before the first pass, we map the vehicle with a paint thickness gauge at 30–40 points. If a panel has been resprayed or aggressively polished in the past, the cutting budget shrinks and the strategy changes: less pressure, a milder compound or, in borderline cases, accepting 80% defect removal instead of 100%. A softened scratch is always better than an exhausted clear coat."
+          ],
+          "table": {
+            "caption": "Indicative clear coat budget by type of operation",
+            "headers": [
+              "Operation",
+              "Microns removed",
+              "Repeatable?"
+            ],
+            "rows": [
+              [
+                "Maintenance polish (1 stage)",
+                "1–2 µm",
+                "Yes, several times"
+              ],
+              [
+                "Two-stage correction",
+                "3–5 µm",
+                "2–3 times in the car's life"
+              ],
+              [
+                "Deep cut with wool",
+                "5–8 µm",
+                "Once, with mandatory prior measurement"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "When Do We Stop? The Exit Criterion for the Cutting Stage",
+          "paragraphs": [
+            "The goal of the cut is not gloss but geometry: a uniform optical plane where the original defect is gone and only the fine, homogeneous wool pattern remains. Chasing gloss with a cutting pad is the classic amateur mistake: every extra pass burns microns without adding anything the refining stage will not do better.",
+            "Before signing off a section, we wipe it with diluted isopropyl alcohol to strip the compound oils that fill and mask defects. We inspect with a 5000–6500 K LED lamp at a low angle: if the original scratch no longer casts a shadow and the wool haze is uniform, the section is ready for refining."
+          ],
+          "conclusion": "The cut decides whether the defect disappears; refining decides whether the result looks factory-fresh. In the next Academy article we break down exactly that transition: the refining and stabilization protocols that turn wool haze into a mirror."
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Refining & Stabilization Protocols: The Mirror Finish | restoreLab Academy",
+      "seo_title": "Refining & Stabilization Protocols | restoreLab Academy",
       "seo_description": "Two-stage stabilization after deep correction. Remove wool haze, eliminate holograms, and achieve space-grade clear coat clarity.",
       "title": "Refining & Stabilization Protocols: The Mirror Finish",
       "description": "The transition from deep correction to absolute clear-coat clarity. Learn how to completely remove the working haze left by wool and stabilize the surface to eliminate holograms under any light source.",
-      "intro": "After the initial rotary + wool pass, the surface is free of deep scratches, but it is left with microscopic haze or cutting marks. At restoreLab, we treat this as an intermediate condition that requires a two-stage stabilization process.",
+      "intro": "After the initial rotary + wool pass, the surface is free of deep scratches, but it is left with microscopic haze or cutting marks. At restoreLab, we treat this as an intermediate condition that requires a two-stage stabilization process. In this guide we detail the exact parameters of each pass — machines, pads, speeds and pressures — along with the inspection protocols and the adjustments for the least forgiving finishes: solid black and acrylic.",
       "sections": [
         {
           "number": "1",
           "title": "Second Pass: Smoothing the Cut Pattern",
           "paragraphs": [
-            "The goal of this stage is to reduce the working marks left by wool, preparing the clear coat for the final gloss. This dramatically reduces the amount of time the dual action (DA) polisher needs on the next step."
+            "The goal of this stage is to reduce the working marks left by wool, preparing the clear coat for the final gloss. This dramatically reduces the amount of time the dual action (DA) polisher needs on the next step.",
+            "What exactly is that haze? Under magnification it is micro-scratches 1 to 3 microns deep left by the wool fibers. Individually they are invisible, but together they scatter light and steal saturation from the color: a black car that has been corrected but not refined looks grey under the midday sun.",
+            "Medium-cut foam works differently from wool: instead of tearing material away with fibers, it levels it with its open-cell structure. Our rule is never to jump more than one aggressiveness level between stages: medium foam can erase the wool pattern; a finishing pad cannot."
           ],
           "tools": [
             {
@@ -1393,7 +1607,9 @@
           "number": "2",
           "title": "Third Pass: Final Stabilization (The Scalpel)",
           "paragraphs": [
-            "Here we use a dual action (DA) polisher to bring the clear coat into a \"space-grade\" finish — perfectly clear, with zero holograms."
+            "Here we use a dual action (DA) polisher to bring the clear coat into a \"space-grade\" finish — perfectly clear, with zero holograms.",
+            "The DA owes its hologram-free finish to its eccentric orbit: the spindle traces a 12–21 mm circle while the pad rotates freely, so no point on the surface ever receives the same trajectory twice. It is random geometry versus the rotary's fixed circular path — which is why the rotary leaves holograms and the DA erases them.",
+            "The DA's weak point is pad stall on curves and edges: the pad stops rotating and merely vibrates, polishing at half efficiency. We mark the backing plate with a marker line to monitor rotation out of the corner of the eye; if the line freezes, we correct the contact angle."
           ],
           "tools": [
             {
@@ -1416,7 +1632,8 @@
           "number": "3",
           "title": "Working Protocol for Solid Black Paint and Acrylic",
           "paragraphs": [
-            "Solid black non-metallic paint and acrylic finishes are the most demanding materials in our lab."
+            "Solid black non-metallic paint and acrylic finishes are the most demanding materials in our lab.",
+            "Solid black is unforgiving because it has no metallic flake to scatter light and distract the eye: every micro-mark stands exposed. A finish that would pass as perfect on silver grey shows holograms from three meters away on black under a harsh August sun."
           ],
           "tools": [
             {
@@ -1432,11 +1649,73 @@
             "title": "restoreLab engineering commandment",
             "text": "Holograms are the fingerprints of an amateur. True gloss appears only when the clear coat becomes optically level and fully stabilized."
           }
+        },
+        {
+          "number": "4",
+          "title": "How Do We Verify the Result? The Inspection Protocol",
+          "paragraphs": [
+            "Finishing polishes contain oils that fill micro-defects and lend a temporary gloss that vanishes with the first wash. That is why no section is signed off without a panel wipe: isopropyl alcohol diluted to 10–15%, applied with a clean microfiber, which strips the clear coat bare and shows its true state.",
+            "Inspection is done under three light sources, because each reveals different defects: the 5000–6500 K handheld LED pulls out holograms, diffuse workshop light shows gloss uniformity, and direct sunlight — the ultimate judge in our climate — reveals absolutely everything. A truly stabilized clear coat withstands the midday sun without a single cobweb."
+          ],
+          "key_params": [
+            "Panel wipe: 10–15% IPA in demineralized water, 350–400 g/m² microfiber",
+            "Inspection light: 5000–6500 K LED at a 30–45 degree angle to the panel",
+            "Final verdict: direct sunlight with the panel at ambient temperature"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Why Does Panel Temperature Change the Protocol?",
+          "paragraphs": [
+            "Finishing polishes are formulated to work with the panel between 20 and 45 °C. Below that, the abrasive does not break down and the cycle drags on; above it, the solvents flash off early, the polish dries out within 20 seconds and leaves marks instead of removing them.",
+            "As a mobile service across Sant Cugat and the Barcelona area, we manage this daily: in summer we work under a canopy or in a garage, let each panel cool between stages and shrink the section size if the polish starts drying mid-cycle. Stabilizing on a hot panel is the perfect recipe for manufacturing fresh holograms."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "What Comes After Stabilization?",
+          "paragraphs": [
+            "Freshly stabilized clear coat is at its most receptive: optically flat and chemically clean after the panel wipe. This is the ideal window — hours, not days — to apply protection: a sealant, a ceramic coating or PPF. Every hour that bare clear coat spends outdoors accumulates contamination that would have to be removed all over again."
+          ],
+          "table": {
+            "caption": "Summary of the complete three-pass restoreLab protocol",
+            "headers": [
+              "Pass",
+              "Machine",
+              "Pad",
+              "Pressure",
+              "Goal"
+            ],
+            "rows": [
+              [
+                "1 — Cut",
+                "Rotary",
+                "Wool",
+                "Up to 20 kg",
+                "Remove the defect"
+              ],
+              [
+                "2 — Refining",
+                "Rotary",
+                "Medium foam",
+                "≈12 kg",
+                "Erase the wool pattern"
+              ],
+              [
+                "3 — Stabilization",
+                "DA",
+                "Finishing foam",
+                "0–1 kg",
+                "Total optical clarity"
+              ]
+            ]
+          },
+          "conclusion": "Correction erases the clear coat's past, stabilization defines its present and protection secures its future. Master these three passes and the result no longer depends on luck or the angle of the light: it holds up under any sun, including ours."
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protection & Preservation Protocols: The Molecular Shield | restoreLab Academy",
+      "seo_title": "Ceramic Protection & Preservation | restoreLab Academy",
       "seo_description": "Ceramic coating application, the three criteria protocol, and clear coat longevity facts. How to lock in a mirror finish for years.",
       "title": "Protection & Preservation Protocols: The Molecular Shield",
       "description": "The final stage of surface stabilization. Learn how to lock in the result with graphene protection, why wax is a choice for enthusiasts rather than professionals, and how to preserve a mirror finish for years.",
@@ -1444,9 +1723,62 @@
       "sections": [
         {
           "number": "1",
+          "title": "What Is a Ceramic Coating, Chemically Speaking?",
+          "paragraphs": [
+            "A ceramic coating is a liquid polymer based on silicon dioxide (SiO2) or polysilazanes that, as it cures, forms a covalent bond with the factory clear coat. Unlike a wax, which simply sits on top of the paint, ceramic becomes a chemical extension of the surface itself, with a final thickness of 1 to 2 microns.",
+            "That covalent bond explains its durability. A wax breaks down under detergents, heat and UV radiation within weeks; a cured ceramic coating can only be removed by mechanical abrasion — in other words, by polishing. Graphene formulations add reduced graphene oxide to the SiO2 matrix, which improves the layer's thermal conductivity and reduces water spotting by promoting more even evaporation.",
+            "The indicator we measure in practice is the contact angle: on bare, degraded clear coat, a water droplet spreads at 50–70 degrees; on a quality ceramic it exceeds 100–110 degrees. That is the beading effect that carries dirt away as the droplets roll off and keeps the vehicle cleaner for longer."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Wax, Sealant or Ceramic? The Decision Table",
+          "paragraphs": [
+            "We respect carnauba wax: no synthetic product matches its visual warmth on dark colors. But it is a choice for enthusiasts, not professionals: in the Mediterranean climate, with intense UV radiation and frequent washing, a quality carnauba survives 6 to 8 weeks. A synthetic polymer sealant lasts 4 to 6 months. A properly applied ceramic coating protects for 2 to 5 years."
+          ],
+          "table": {
+            "caption": "Protection technology comparison",
+            "headers": [
+              "Technology",
+              "Chemical base",
+              "Real-world durability",
+              "Use profile"
+            ],
+            "rows": [
+              [
+                "Carnauba wax",
+                "Natural wax + solvents",
+                "6–8 weeks",
+                "Enthusiast: visual warmth, constant renewal"
+              ],
+              [
+                "Polymer sealant",
+                "Synthetic polymers",
+                "4–6 months",
+                "Intermediate: good gloss, easy application"
+              ],
+              [
+                "SiO2 ceramic",
+                "Silicon dioxide / polysilazanes",
+                "2–5 years",
+                "Professional: covalent bond with the clear coat"
+              ],
+              [
+                "Graphene ceramic",
+                "SiO2 + graphene oxide",
+                "3–5 years",
+                "Professional: fewer water spots, better heat management"
+              ]
+            ]
+          },
+          "conclusion": "Our rule: wax is a hobby, a sealant is a compromise, and ceramic is an engineering decision. On freshly corrected clear coat, only ceramic justifies the hours of polishing invested."
+        },
+        {
+          "number": "3",
           "title": "Choosing Protection: The \"Three Criteria\" Protocol",
           "paragraphs": [
-            "After testing dozens of products, our lab defined three mandatory parameters for an effective ceramic coating:"
+            "After testing dozens of products, our lab defined three mandatory parameters for an effective ceramic coating:",
+            "We work as a mobile service, so we add a fourth, operational criterion: the product must tolerate application outside a controlled booth, with a predictable flash time across a wide range of temperature and humidity. A coating that only behaves at exactly 20 degrees and 50% humidity is a laboratory product, not a street product."
           ],
           "key_params": [
             "Accessibility and price: The product should not cost as much as repainting half the car.",
@@ -1455,10 +1787,12 @@
           ]
         },
         {
-          "number": "2",
+          "number": "4",
           "title": "Technical Application Protocol",
           "paragraphs": [
-            "Before application, the body must be thoroughly degreased."
+            "Before application, the body must be thoroughly degreased.",
+            "Our order is strict: alkaline wash, chemical decontamination (iron remover and tar dissolver), mechanical decontamination with a clay bar, paint correction and, as the final step, a panel wipe with an isopropyl alcohol solution. Any residue of polishing oils blocks the covalent bond, and the coating will fail through adhesion — not through product quality.",
+            "Conditions matter too: the surface cool to the touch, in the shade, ideally between 15 and 25 degrees. We apply in a crosshatch pattern — overlapping horizontal and vertical passes — and wait for the flash: the moment the product forms an iridescent haze indicating it is ready to be leveled."
           ],
           "tools": [
             {
@@ -1480,10 +1814,11 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Stabilization and Aftercare",
           "paragraphs": [
-            "A ceramic coating needs time to complete its chemical curing process:"
+            "A ceramic coating needs time to complete its chemical curing process:",
+            "Over the life of the coating, the washing protocol decides its real longevity: pH-neutral shampoo (6.5–7.5), the two-bucket method with a microfiber mitt, and never brush-type tunnel washes, which chew into the ceramic layer with the accumulated grit of hundreds of cars. Every 3–4 months, an SiO2 booster recharges the hydrophobic performance without reapplying the full system."
           ],
           "tools": [
             {
@@ -1501,10 +1836,20 @@
           ]
         },
         {
-          "number": "4",
+          "number": "6",
+          "title": "Why Is the Mediterranean Climate So Hard on Clear Coat?",
+          "paragraphs": [
+            "In the Barcelona area the UV index reaches 8–9 throughout the summer. Ultraviolet radiation breaks down the polymers in the clear coat (photodegradation), which translates into loss of gloss, oxidation and, in advanced cases, the clear coat failure that can no longer be polished — only repainted. A ceramic coating acts as a sacrificial UV filter over that chemistry.",
+            "Add to this the sea-salt aerosol, which in coastal towns settles on the bodywork daily and accelerates electrochemical corrosion on edges and underbody. And the calima: Saharan dust that arrives with mud rain and leaves an abrasive mineral film, turning every wiper pass or careless drying session into micro-scratches.",
+            "Tap water in the area is also very hard, rich in calcium carbonates: every droplet that dries in the sun leaves a mineral ring (water spot) that can etch permanently into unprotected clear coat. And anyone who parks under the pines of Collserola knows resin and sap, which fuse with the surface within hours on 40-degree panels. On a ceramic layer, all these contaminants stay in the sacrificial layer and come off with a gentle wash."
+          ]
+        },
+        {
+          "number": "7",
           "title": "Economics and Myths: How Long Does Clear Coat Last?",
           "paragraphs": [
-            "Many people fear polishing because they believe it \"eats away\" the clear coat forever. Here are the restoreLab facts:"
+            "Many people fear polishing because they believe it \"eats away\" the clear coat forever. Here are the restoreLab facts:",
+            "Protection is also pure economics: the ceramic layer absorbs the wash-induced micro-scratches that would otherwise force you to polish the clear coat itself. Every correction cycle you avoid is microns the car keeps."
           ],
           "key_params": [
             "Deep correction with wool removes an average of 5.5 microns.",
@@ -1519,17 +1864,18 @@
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Specialty Detailing: Motorcycle Protocols | restoreLab Academy",
+      "seo_title": "Motorcycle Detailing Protocols | restoreLab Academy",
       "seo_description": "Precision polishing on complex geometries. Light-touch correction, plastic panel work, metal cleaning, and leather care for motorcycles.",
       "title": "Specialty Detailing: Motorcycle Protocols",
       "description": "Precision work on complex geometries. Why motorcycles require an exclusively light-touch approach, how to work on plastic when clear-coat thickness cannot be measured, and the art of cleaning metal.",
-      "intro": "A motorcycle is not \"a small car.\" It is a complex engineering object, where 70% of the painted parts are made of plastic and access to them is limited.",
+      "intro": "A motorcycle is not \"a small car.\" It is a complex engineering object, where 70% of the painted parts are made of plastic and access to them is limited. Tanks with graphics under the lacquer, fairings that flex under pressure, matte finishes that tolerate no abrasion, and a chain area that concentrates the most aggressive contamination: every motorcycle demands its own protocol, not a scaled-down version of the car protocol.",
       "sections": [
         {
           "number": "1",
           "title": "Safety Protocol: No Heavy Cutting",
           "paragraphs": [
-            "Unlike a car, a motorcycle has no \"reference areas\" such as door jambs where you can determine a safe risk threshold for clear-coat removal. Most bikes have been repainted at some point, and the exact clear-coat thickness always remains unknown."
+            "Unlike a car, a motorcycle has no \"reference areas\" such as door jambs where you can determine a safe risk threshold for clear-coat removal. Most bikes have been repainted at some point, and the exact clear-coat thickness always remains unknown.",
+            "Add to this that many tanks carry their graphics printed directly under the lacquer: on some Japanese models, the clear coat over the logo is only a few dozen microns thick. An aggressive cut in that zone does not leave a hologram — it leaves a damaged graphic and a part headed for the painter. That is why our approach is conservative by design."
           ],
           "tools": [
             {
@@ -1544,8 +1890,19 @@
         },
         {
           "number": "2",
+          "title": "Why Does Painted Plastic Demand a Different Approach than Metal?",
+          "paragraphs": [
+            "Conventional paint thickness gauges work by magnetic induction or eddy currents and need a steel or aluminum substrate. On the ABS or polypropylene of a fairing they give no reading: we work literally blind, which forces us to always choose the least aggressive process that solves the defect.",
+            "Plastic also handles heat poorly: its low thermal conductivity keeps the heat generated by the pad concentrated in the work zone. ABS starts to deform at around 100 degrees Celsius, a threshold a rotary polisher reaches in seconds if you linger. That is why we work in short passes, check the surface by hand between sections and never dwell on an edge.",
+            "And a fairing is not rigid: it flexes under machine pressure, which changes the pad's angle of attack and multiplies the risk of holograms and of burning through the clear coat on edges. Edges, fasteners and seams are always taped off before the polisher is switched on."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Technical Correction Protocol",
-          "paragraphs": [],
+          "paragraphs": [
+            "The goal on a motorcycle is not 100% correction but maximum gloss with minimum abrasion. Before each section we tape off graphics and edges; after each pass we remove the residue with isopropyl alcohol and inspect under a spot light to decide whether to go again or stop."
+          ],
           "tools": [
             {
               "label": "Tools",
@@ -1562,9 +1919,29 @@
           ]
         },
         {
-          "number": "3",
+          "number": "4",
+          "title": "Matte Finishes: Why Do We Never Polish Here?",
+          "paragraphs": [
+            "A matte clear coat owes its look to a calculated micro-roughness of the surface that scatters light instead of reflecting it. Polishing that surface, even with the finest compound, smooths the texture and creates a localized gloss that cannot be repaired: the part is permanently blotched.",
+            "That is why the rule on matte is absolute: zero abrasives, zero filler waxes, zero standard quick detailers. Only pH-neutral shampoo, cleaners formulated for matte finishes and, for protection, matte-specific sealants that do not fill in the micro-texture.",
+            "Grease marks and water spots on matte are treated with dedicated chemical cleaners and patience, never with friction. If a client brings us a matte tank with a deep scratch, the honest answer is the one we give: that is a painter's job, not a polisher's."
+          ]
+        },
+        {
+          "number": "5",
+          "title": "The Chain Area: The Most Aggressive Contamination",
+          "paragraphs": [
+            "A chain lubricates by fling: with every kilometer, lubricant is thrown off and deposits on the swingarm, rear wheel and tail section, mixed with metal particles from the chain's own wear and with brake dust. The result is a greasy, abrasive film that a normal shampoo will not touch.",
+            "Our protocol: a dedicated degreaser applied cold, medium-stiffness detailing brushes and targeted rinsing, always protecting the seals. On the chain itself we only use cleaners compatible with O-ring and X-ring seals: an aggressive solvent strips the internal grease and drastically shortens the component's life.",
+            "The rear wheel deserves its own mention: the mix of baked-on chain lube and brake dust is among the hardest things to clean on a motorcycle. A ceramic coating applied to the wheels turns that twenty-minute brush job into a two-minute rinse."
+          ]
+        },
+        {
+          "number": "6",
           "title": "Metal Cleaning and Leather Care",
-          "paragraphs": [],
+          "paragraphs": [
+            "Two workshop warnings: we never use metal polish on anodized parts — the anodic layer is a microns-thick surface treatment that comes off and cannot be restored — and the heat bluing on titanium exhausts is, for many owners, part of the bike's character: we only polish it if the client explicitly asks."
+          ],
           "tools": [
             {
               "label": "Metal",
@@ -1575,35 +1952,60 @@
               "text": "The restoreLab protocol includes cleaning with a soft brush and a foaming cleaner, removing residue with a damp microfiber towel, and mandatory preservation with a protective conditioning cream."
             }
           ]
+        },
+        {
+          "number": "7",
+          "title": "Final Protection: Sealing the Bike for the Mediterranean Climate",
+          "paragraphs": [
+            "A motorcycle lives a harder life than a car: it usually sleeps on the street, takes the Mediterranean UV with no shade and, in coastal towns, the sea-salt aerosol attacks fasteners, welds and bare aluminum daily. That is why the cycle always ends with protection.",
+            "On the tank and fairings we apply a ceramic coating after the light correction: the bond with the clear coat provides a UV filter, hydrophobic behavior and a surface that insects and chain grease stick to far less. On matte finishes, a matte-specific sealant; on unpainted textured plastics, a water-based reconditioner that leaves no artificial shine.",
+            "And one safety rule we do not negotiate: conditioners and dressings never touch the seat, grips, footpegs, tires or brake discs. On a vehicle you ride with your body, a slippery surface is not a cosmetic flaw — it is a real risk."
+          ]
         }
       ]
     },
     "remove_swirl_marks": {
       "howto": true,
-      "seo_title": "How to Remove Swirl Marks from Car Paint | restoreLab Academy",
+      "seo_title": "How to Remove Swirl Marks from Car Paint | restoreLab",
       "seo_description": "What causes swirl marks and how professionals remove them. Step-by-step correction process, tools used, and prevention tips.",
       "title": "How to Remove Swirl Marks from Car Paint",
       "description": "Understanding what causes those circular scratches visible under direct light — and the exact professional process to eliminate them permanently without damaging the clear coat.",
-      "intro": "Swirl marks are the most common paint defect we encounter. They appear as circular or spider-web-like scratches visible under direct sunlight or artificial lighting. At restoreLab, we see them on 9 out of 10 vehicles that come through our service.",
+      "intro": "Swirl marks are the most common paint defect we encounter. They appear as circular or spider-web-like scratches visible under direct sunlight or artificial lighting. At restoreLab, we see them on 9 out of 10 vehicles that come through our service. In this guide we explain what they actually are, why 'filler' products never truly remove them, and what the professional correction process looks like step by step — including the safety limits we measure before a polisher ever touches the bodywork.",
       "sections": [
         {
           "number": "1",
           "title": "What Causes Swirl Marks?",
           "paragraphs": [
-            "Swirl marks are micro-scratches in the clear coat caused by improper washing and drying techniques. The most common culprits are:"
+            "To understand why they appear, it helps to grasp the scale of the problem. Factory clear coat measures between 35 and 50 microns — thinner than a human hair. A typical swirl mark penetrates only 0.5 to 2 microns, yet that is enough to scatter light: when a point source like the sun hits thousands of micro-scratches oriented in every direction, the eye perceives that characteristic circular halo around the reflection.",
+            "The mechanism is almost always the same: a particle of dirt — silica, brake dust, grit — gets trapped between the paint and whatever touches it, and acts as a miniature piece of sandpaper. Swirl marks are micro-scratches in the clear coat caused by improper washing and drying techniques. The most common culprits are:"
           ],
           "key_params": [
             "Automatic car washes with spinning brushes that drag dirt across the paint",
             "Using a single bucket wash method without a grit guard",
             "Wiping the car with a dry or dirty towel",
             "Applying wax or polish with a contaminated applicator"
-          ]
+          ],
+          "analogy": {
+            "title": "The watch glass analogy",
+            "text": "Think of the clear coat as the glass of a watch you wear every day: each brush against a sleeve leaves an invisible micro-scratch, but after hundreds of them the glass loses its brilliance and sharpness. Paint works the same way — it is not one scratch that kills the gloss, it is thousands."
+          }
         },
         {
           "number": "2",
+          "title": "Do 'Scratch Remover' Filler Products Actually Work?",
+          "paragraphs": [
+            "Before we talk about the real solution, let us clear up the false one: supermarket 'scratch-filling' waxes and glazes do not remove swirl marks — they hide them. They contain oils, silicones and polymers that temporarily fill the scratch groove and reduce light scattering. The effect is real, but it lasts two to four washes: as soon as the filler degrades, the defect reappears untouched.",
+            "All-in-one polishes with a mild abrasive do remove some material and can noticeably improve very fine swirls, but they lack the cutting power needed to level medium marring. Applied by hand, without a machine, their effect on a modern hardened clear coat is practically cosmetic."
+          ],
+          "conclusion": "Simple rule: if the defect disappears when you wet the panel with water and reappears as it dries, it needs genuine machine polishing — not filler."
+        },
+        {
+          "number": "3",
           "title": "The Professional Removal Process",
           "paragraphs": [
-            "Removing swirl marks requires machine polishing — there is no chemical shortcut. The process involves controlled abrasion of the clear coat to level the surface below the depth of the scratches."
+            "Removing swirl marks requires machine polishing — there is no chemical shortcut. The process involves controlled abrasion of the clear coat to level the surface below the depth of the scratches.",
+            "The key word is 'controlled'. Before polishing we measure paint thickness with a digital gauge at several points on each panel: resprayed bonnets and roofs, edges and previously corrected areas have less margin. A well-executed correction removes between 2 and 5 microns of clear coat; a factory finish tolerates a limited number of corrections over its lifetime, and that budget should not be wasted.",
+            "We also always work up a 50×50 cm test spot where we validate the combination of compound, pad and machine before committing the whole vehicle. Every paint cures differently: the ceramic clear coat of a modern German car does not respond like the soft clear coat of a Japanese one."
           ],
           "tools": [
             {
@@ -1622,12 +2024,39 @@
               "label": "Step 4",
               "text": "Finishing pass with a fine polish to achieve maximum clarity."
             }
-          ]
+          ],
+          "table": {
+            "caption": "Which method matches each defect level",
+            "headers": [
+              "Defect",
+              "Approx. depth",
+              "Method"
+            ],
+            "rows": [
+              [
+                "Fine swirl marks",
+                "0.5–1 micron",
+                "Single-stage finishing polish"
+              ],
+              [
+                "Medium swirls and holograms",
+                "1–2 microns",
+                "Two-stage correction (cut + finish)"
+              ],
+              [
+                "Scratches that catch a fingernail",
+                "over 5 microns",
+                "Localised polishing, touch-up or respray"
+              ]
+            ]
+          }
         },
         {
-          "number": "3",
+          "number": "4",
           "title": "Prevention: Keeping Swirls Away",
           "paragraphs": [
+            "The vast majority of new swirls are created during washing and drying. Changing your technique costs nothing and is more effective than any product: a snow-foam pre-wash to soften dirt before anything touches the paint, a microfiber wash mitt instead of a sponge, and drying by contact with a plush high-GSM microfiber towel or with filtered air.",
+            "A ceramic coating does not make paint 'scratch-proof', but it helps in two ways: its surface hardness and low friction let dirt slide instead of dragging, and its hydrophobic behaviour reduces how often — and how aggressively — the car needs to be washed.",
             "After correction, protecting the result is essential. Here are the key habits that prevent swirl marks from returning:"
           ],
           "key_params": [
@@ -1636,34 +2065,70 @@
             "Use high-quality microfiber towels and replace them regularly",
             "Apply a ceramic coating or sealant for long-term protection"
           ]
+        },
+        {
+          "number": "5",
+          "title": "Can I Polish Out Swirl Marks Myself?",
+          "paragraphs": [
+            "With an entry-level dual action polisher, a one-step compound and a few hours of practice, an enthusiast can visibly improve fine swirls. The risks: burning the clear coat on edges and plastics, leaving holograms — machine-induced micro-marring visible in the sun — and, above all, polishing without knowing how much paint is left, the one mistake with no way back.",
+            "Our honest recommendation: if the car is your hobby project and you accept an imperfect result, DIY polishing is a great pastime. If you want a uniform finish across the whole vehicle, certainty about how much clear coat was removed and properly applied protection afterwards, professional correction earns back every euro — especially before a sale or before installing a ceramic coating."
+          ],
+          "conclusion": "Swirl marks are not inevitable: they are the result of hundreds of small, avoidable contacts. Correct them once with proper judgement, protect the clear coat and change your wash routine — and the paint can stay flawless for years."
         }
       ]
     },
     "windshield_scratch_repair": {
-      "seo_title": "Windshield Scratch Repair: DIY vs Professional | restoreLab Academy",
-      "seo_description": "When to fix windshield scratches yourself and when to call a pro. Honest comparison of DIY kits vs professional glass polishing results.",
-      "title": "Windshield Scratch Repair: DIY vs Professional",
-      "description": "An honest comparison of do-it-yourself windshield repair kits versus professional glass polishing. We break down costs, risks, and when each approach makes sense.",
-      "intro": "Windshield scratches from worn wiper blades are one of the most common issues drivers face. The question is always the same: can I fix this myself, or do I need a professional? Here is our honest answer.",
+      "seo_title": "Polishing Scratched Car Glass: DIY or Professional?",
+      "seo_description": "How to remove car glass scratches: the fingernail test, what cerium oxide kits can do, and when polishing saves €300-500 over windscreen replacement.",
+      "title": "Polishing Scratched Car Glass: DIY or Professional?",
+      "description": "An honest comparison of do-it-yourself repair kits versus professional glass polishing. We break down the fingernail test, costs, risks, ITV considerations and when each approach makes sense.",
+      "intro": "Can scratched car glass be polished? Yes — as long as the scratch is superficial. The quick rule: run a fingernail across the scratch; if it does not catch, the mark can be removed by polishing with cerium oxide; if it catches, no amount of polishing will make it disappear without deforming the glass. Scratches from worn wiper blades are the most common issue we see, and the question is always the same: can I fix this myself, or do I need a professional? Here is our honest answer, with no sales pitch in either direction.",
       "sections": [
         {
           "number": "1",
-          "title": "DIY Kits: What They Can and Cannot Do",
+          "title": "The Fingernail Test: Superficial or Deep?",
           "paragraphs": [
-            "DIY glass scratch removal kits typically include cerium oxide powder and a felt polishing wheel. They can work for very light surface scratches, but they have significant limitations."
+            "Every diagnosis of scratched glass starts the same way: clean the area and slowly run a fingernail across the scratch, perpendicular to it. If the nail glides over without catching, the damage affects only the top few microns of the glass and is a candidate for polishing. If the nail digs in, the groove is too deep and polishing stops being viable.",
+            "Why does that boundary exist? Glass cannot be 'filled': the only way to remove a scratch is to level all the surrounding material down to the bottom of the groove. On a deep scratch that means removing so much glass that you create a depression with a lens effect — an optical distortion that, on a windscreen, is more dangerous than the scratch itself.",
+            "There is a frequent third case that is not a scratch at all: water-spot etching. Hard-water or sprinkler droplets that dry in the sun leave mineral deposits which, over time, chemically attack the glass surface. You cannot feel them with a fingernail, but they cause glare at night from oncoming headlights. The good news: cerium oxide polishing removes them completely."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Why Do Windscreens Get Scratched?",
+          "paragraphs": [
+            "The number one cause is the wiper blades. The rubber itself does not scratch glass; the problem is the grit and dust trapped under a worn or perished blade, which on every sweep act like sandpaper dragged across the entire vision arc. Running the wipers dry over a dusty windscreen multiplies the damage. The causes we see most often:"
+          ],
+          "key_params": [
+            "Wiper blades older than a year or with cracked rubber",
+            "Running the wipers without fluid over dust or dried mud",
+            "Scraping ice with damaged scrapers or improvised cards",
+            "Rings, watches or belt buckles when cleaning the glass by hand",
+            "Hard water dried in the sun: mineral etching rather than a scratch"
+          ],
+          "conclusion": "A preventive tip we repeat constantly: fresh wiper blades every season and never run the wipers dry. It is the difference between polishing your windscreen once every many years or every two."
+        },
+        {
+          "number": "3",
+          "title": "DIY Cerium Oxide Kits: What They Can and Cannot Do",
+          "paragraphs": [
+            "DIY glass scratch removal kits typically include cerium oxide powder and a felt polishing wheel. They can work for very light surface scratches, but they have significant limitations.",
+            "Cerium oxide is the right abrasive — it is the same compound professionals use. The difference lies in everything else: the kits mount on a household drill that does not hold a constant speed, the felt wheel is small and concentrates heat, and the water-and-powder slurry must be kept at an exact consistency so it cuts without drying out. Glass overheated in one spot can crack from thermal stress."
           ],
           "key_params": [
             "Effective only on scratches you cannot feel with your fingernail",
             "Risk of creating optical distortion if applied unevenly",
             "Typically require 2-4 hours of manual work per small area",
             "Cost: €20-50 for a kit, but results are often inconsistent"
-          ]
+          ],
+          "conclusion": "In short: a well-used DIY kit can soften fine wiper marks in a small area. What it cannot do is leave an entire windscreen uniform and distortion-free — that takes a professional machine, a method and experience."
         },
         {
-          "number": "2",
-          "title": "Professional Glass Polishing",
+          "number": "4",
+          "title": "How Does a Professional Polish Glass?",
           "paragraphs": [
-            "Professional glass polishing uses specialized equipment and compounds that work at a different level than DIY kits. The key difference is precision and consistency."
+            "Professional glass polishing uses specialized equipment and compounds that work at a different level than DIY kits. The key difference is precision and consistency.",
+            "The process starts with diagnosis: we mark the scratches from the inside of the glass, check their depth with a fingernail and a loupe, and rule out damage affecting the laminate. We then work in sections with overlapping passes, controlling glass temperature with pauses — hot glass polishes poorly and risks thermal stress. At the end we verify optical clarity by looking through the glass at an angle, which is how the eye works when driving."
           ],
           "tools": [
             {
@@ -1681,7 +2146,54 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
+          "title": "Polish or Replace the Windscreen?",
+          "paragraphs": [
+            "The economics are clear. Replacing a modern windscreen typically costs between €400 and €900, and if the car has an ADAS camera behind the glass you must add recalibration, an extra €150-300. Against that, polishing wiper scratches costs a fraction and keeps the original factory glass with its seal intact — which is why we say polishing saves €300-500 whenever the damage allows it.",
+            "But there are cases where replacement is the only responsible option:"
+          ],
+          "key_params": [
+            "Cracks or fissures of any size: polishing cannot repair them and vibration spreads them",
+            "Stone chips with damage to the inner laminated (PVB) layer",
+            "Deep scratches that catch a fingernail inside the driver's wiper sweep area",
+            "Widespread sandblasting pitting that would require removing too much glass"
+          ],
+          "table": {
+            "caption": "Comparing your options for scratched glass",
+            "headers": [
+              "Option",
+              "Indicative cost",
+              "What it is for"
+            ],
+            "rows": [
+              [
+                "DIY cerium oxide kit",
+                "€20-50",
+                "Fine, small marks outside the direct line of sight"
+              ],
+              [
+                "Professional polishing",
+                "A fraction of replacement",
+                "Wiper marks and water-spot etching without deep damage"
+              ],
+              [
+                "Windscreen replacement",
+                "€400-900 (+ ADAS recalibration)",
+                "Cracks, chips and laminate damage"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "What About the ITV? The Driver's Line of Sight",
+          "paragraphs": [
+            "In Spain, the ITV inspection manual pays special attention to the driver's field of vision: the area of the windscreen swept by the wiper in front of the steering wheel. Cracks, chips or any defect that impairs vision in that zone can be classed as a serious fault and therefore result in a failed inspection.",
+            "That has two practical implications. First: wiper scratches that cause glare at night are worth fixing before the inspection, not after. Second, less obvious: a badly executed polish that leaves optical distortion in the line of sight is just as real a defect as the original scratch — one more reason not to experiment with a drill precisely in the zone you look through while driving."
+          ]
+        },
+        {
+          "number": "7",
           "title": "When to Choose Each Option",
           "paragraphs": [],
           "tools": [
@@ -1697,22 +2209,26 @@
               "label": "Replace",
               "text": "Cracks, chips that have spread, or damage to the laminated layer of the windshield."
             }
-          ]
+          ],
+          "conclusion": "The decision fits in three questions: does a fingernail catch? Is the damage in the driver's line of sight? Are there cracks or chips? If every answer is 'no' and the area is small, try DIY if you feel like it. Everything else deserves a professional diagnosis — asking for an assessment costs nothing and avoids turning a scratch into permanent distortion."
         }
       ]
     },
     "paint_correction_cost_barcelona": {
-      "seo_title": "Car Paint Correction Cost Guide Barcelona 2025 | restoreLab",
-      "seo_description": "What does paint correction cost in Barcelona? 5-tier pricing from €149 Express Refresh to €1 049 Premium Ceramic 5Y. Size multipliers and quote guide.",
-      "title": "Car Paint Correction Cost Guide Barcelona 2025",
-      "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, and how to get the best value for your vehicle.",
-      "intro": "One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2025.",
+      "seo_title": "Paint Correction Cost Guide Barcelona 2026 | restoreLab",
+      "seo_description": "What does paint correction cost in Barcelona in 2026? Real prices from €149, a tier comparison table and what the €50 polish offers actually hide.",
+      "title": "Car Paint Correction Cost Guide Barcelona 2026",
+      "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, what cheap offers actually hide, and how to get the best value for your vehicle.",
+      "intro": "One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2026, expanded with what the €50 polish offers really hide, how to compare quotes across Barcelona-area workshops, and the questions that separate a professional from an amateur with a polisher.",
       "sections": [
         {
           "number": "1",
           "title": "What Affects the Price?",
           "paragraphs": [
-            "Several factors determine the final cost of a paint correction job. Understanding them helps you know what to expect."
+            "Several factors determine the final cost of a paint correction job. Understanding them helps you know what to expect.",
+            "Size is the most mechanical factor: every extra panel means more square metres of clear coat to measure, correct and refine. A compact like a Golf has roughly 8-9 m² of painted surface; a large SUV easily exceeds 12 m². That is why we quote from a sedan baseline and apply an adjustment of −10% for compacts and +10 to +20% for SUVs, based on the actual surface area.",
+            "Paint condition matters even more than size. Light wash-induced swirls disappear with one pass of a fine polish; holograms left by a previous botched polish, scratches that catch a fingernail, or an oxidised clear coat demand cutting compounds, extra passes and constant paint-thickness monitoring. Between a well-kept car and a neglected one, the labour can easily double.",
+            "Colour plays a bigger role than most people expect. Black and dark tones show every defect and demand a flawless final refinement, because any hologram is visible in direct sunlight. Metallic and pearl finishes scatter light and mask defects, but force us to inspect under dedicated lamps so nothing is left half-done. Solid whites are more forgiving, yet they hide defects that resurface the moment a ceramic coating goes on."
           ],
           "key_params": [
             "Vehicle size: a compact car takes less time than an SUV or van",
@@ -1723,9 +2239,9 @@
         },
         {
           "number": "2",
-          "title": "Our Package Tiers",
+          "title": "Our Package Tiers for 2026",
           "paragraphs": [
-            "At restoreLab, we offer five clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +20%, large SUV +35%."
+            "At restoreLab, we offer five clearly defined packages (sedan baseline) so there are no surprises. Vehicle size multipliers apply: compact −10%, SUV +10-20% depending on the actual body surface area."
           ],
           "tools": [
             {
@@ -1748,13 +2264,100 @@
               "label": "Premium Ceramic 5Y",
               "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours."
             }
-          ]
+          ],
+          "table": {
+            "caption": "2026 tier comparison (sedan baseline)",
+            "headers": [
+              "Package",
+              "Price",
+              "Duration",
+              "Best for"
+            ],
+            "rows": [
+              [
+                "Express Refresh",
+                "€149",
+                "~2 h",
+                "Maintenance and quick presentation prep"
+              ],
+              [
+                "Single-Stage Correction",
+                "€289",
+                "3-4 h",
+                "Light swirls, daily drivers"
+              ],
+              [
+                "Two-Stage Correction",
+                "€549",
+                "5-7 h",
+                "Marked defects, neglected paint"
+              ],
+              [
+                "Ceramic Coating 2Y",
+                "€649",
+                "6-8 h",
+                "Correction plus lasting protection"
+              ],
+              [
+                "Premium Ceramic 5Y",
+                "€1 049",
+                "8-10 h",
+                "Premium and collector vehicles"
+              ]
+            ]
+          },
+          "conclusion": "If you are torn between two tiers, the practical rule is simple: correction removes defects, ceramic preserves the result. Correcting without protecting leaves the job half-finished."
         },
         {
           "number": "3",
+          "title": "Price vs Value: What Are You Actually Buying?",
+          "paragraphs": [
+            "The Barcelona market offers everything: from €50-80 polishes at wash centres to studio-grade corrections that exceed €1,500 on collector vehicles. That spread is not arbitrary — it reflects real labour hours, product quality, inspection lighting, paint-thickness measurement and, above all, the judgement of the person holding the polisher.",
+            "Our way of looking at it is simple: paint correction is not a cleaning expense, it is an intervention on the factory clear coat — a finite resource of roughly 35-50 microns that does not regenerate. Every ill-planned aggressive polish consumes material that never comes back. Paying for professional judgement means paying to preserve that margin for the car's future.",
+            "In value terms, the maths usually favours work done properly: a car with corrected, protected paint photographs better, sells faster and leaves less room for haggling over the scratches. On vehicles worth €20,000 or more, the difference in perception at sale time far outweighs the cost of a two-stage correction."
+          ],
+          "analogy": {
+            "title": "The tailored suit analogy",
+            "text": "Comparing a professional correction with an express polish is like comparing a tailored suit with a market-stall alteration: from a distance both look fine, but one is built to last and the other to get by until the first wash."
+          }
+        },
+        {
+          "number": "4",
+          "title": "The €50 Polish: What You Are Really Paying For",
+          "paragraphs": [
+            "The full-polish-for-€50 offers circulating around Barcelona rarely include any real correction. At that rate there is simply no time to decontaminate, correct and refine: what gets applied in most cases is a glaze — a filler-based gloss enhancer — often with a rotary machine in a single quick pass.",
+            "A glaze works by temporarily filling micro-scratches with oils and waxes: the paint looks corrected under the shop lights, but the defect is still there. After 2-4 washes the fillers rinse away and the swirl marks reappear exactly as before — or worse, because a rushed rotary pass tends to leave fresh holograms.",
+            "Glaze is not a bad product: it is a legitimate short-term cosmetic preparation. The problem is selling it as permanent correction. And if a ceramic coating is then applied over paint that was never corrected or decontaminated, the coating seals the defects in and makes them harder to remove later. These are the most common warning signs:"
+          ],
+          "key_params": [
+            "A price far below market rate: real correction takes 3 to 10 hours of labour",
+            "Nobody inspects the paint under a lamp or measures clear-coat thickness before quoting",
+            "They promise to remove all scratches without having seen the car",
+            "The car is handed back wet or freshly waxed: water and waxes hide holograms",
+            "They cannot explain which compound, pad and machine they will use on your paint"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Questions You Should Ask Any Detailer",
+          "paragraphs": [
+            "Before leaving your car at any workshop — ours included — ask these questions. A professional will answer them in detail and without taking offence; vague answers are information in themselves."
+          ],
+          "key_params": [
+            "Do you measure paint thickness before polishing, and with what instrument?",
+            "What percentage of correction do you expect in my specific case, and which defects will not come out?",
+            "Do you use filler products in the final stage? Does the result survive an isopropyl alcohol wipe-down?",
+            "Which brand of compounds and ceramic coating do you apply, and with what written warranty?",
+            "Can I see before-and-after photos under inspection lighting of jobs similar to mine?"
+          ],
+          "conclusion": "These five questions filter out the vast majority of problematic offers before you spend a single euro — and any serious professional will be glad you asked them."
+        },
+        {
+          "number": "6",
           "title": "How to Get a Quote",
           "paragraphs": [
-            "The fastest way to get an accurate quote is to send us photos of your vehicle via WhatsApp. We will assess the paint condition and recommend the right package — no obligations, no pressure."
+            "The fastest way to get an accurate quote is to send us photos of your vehicle via WhatsApp. We will assess the paint condition and recommend the right package — no obligations, no pressure.",
+            "Remember that the prices in this guide are the 2026 sedan baseline: with your photos we can confirm the exact adjustment for your body type and whether your paint needs one or two correction stages."
           ],
           "key_params": [
             "Send 4-6 photos in direct sunlight showing the paint from different angles",
@@ -1766,17 +2369,20 @@
       ]
     },
     "uv_damage_acrylic_restoration": {
-      "seo_title": "UV Damage on Acrylic Windows: Prevention & Restoration | restoreLab Academy",
-      "seo_description": "How UV radiation degrades acrylic windows and the professional restoration process. Prevention tips and cost-effective alternatives to replacement.",
+      "seo_title": "UV Damage on Acrylic & Polycarbonate: Guide | restoreLab",
+      "seo_description": "How Mediterranean sun degrades acrylic and polycarbonate: headlights, motorcycle screens and boat windows. Professional restoration, step by step.",
       "title": "UV Damage on Acrylic Windows: Prevention & Restoration",
-      "description": "How ultraviolet radiation progressively degrades acrylic and polycarbonate surfaces, turning them yellow and hazy — and the professional restoration process that brings them back to full transparency.",
-      "intro": "Acrylic and polycarbonate windows are lightweight, impact-resistant, and widely used in boats, caravans, skylights, and architectural installations. But they have one weakness: UV radiation. Over time, UV breaks down the polymer chains, causing yellowing, hazing, and brittleness.",
+      "description": "How ultraviolet radiation progressively degrades acrylic and polycarbonate surfaces, turning them yellow and hazy — the differences between PMMA and polycarbonate, and the professional restoration process that brings them back to full transparency.",
+      "intro": "Acrylic and polycarbonate windows are lightweight, impact-resistant, and widely used in boats, caravans, skylights, and architectural installations. But they have one weakness: UV radiation. Over time, UV breaks down the polymer chains, causing yellowing, hazing, and brittleness. Along the Mediterranean arc the problem accelerates: between Barcelona and Sant Cugat the UV index sits above 8 for much of the summer, and the plastic surfaces of cars, motorcycles and boats age visibly faster than in northern Europe. This expanded guide covers the chemistry of the damage, the differences between PMMA and polycarbonate, and how far professional restoration can — and cannot — go.",
       "sections": [
         {
           "number": "1",
-          "title": "How UV Damages Acrylic",
+          "title": "How Does UV Damage Acrylic?",
           "paragraphs": [
-            "Ultraviolet light causes photo-oxidation in acrylic (PMMA) and polycarbonate surfaces. This chemical process degrades the surface layer, resulting in visible changes."
+            "Ultraviolet light causes photo-oxidation in acrylic (PMMA) and polycarbonate surfaces. This chemical process degrades the surface layer, resulting in visible changes.",
+            "In PMMA — polymethyl methacrylate, the classic acrylic or plexiglass — degradation is relatively uniform: the material yellows and loses gloss gradually, but it accepts deep polishing because it is homogeneous through its full thickness. Boat windows, caravan skylights and screens are usually cast PMMA, the most rewarding case to restore.",
+            "Polycarbonate is a different story. It is far more impact-resistant — which is why it is used for headlight lenses and motorcycle screens — but it is chemically more vulnerable to UV, so it leaves the factory with a protective anti-UV clear coat only a few microns thick. Once that clear coat wears through, bare polycarbonate yellows at high speed: this is the typical yellow haze on headlights older than 6-8 years.",
+            "The practical consequence: on PMMA we polish the material itself; on polycarbonate we remove the remains of the degraded clear coat and must reapply UV protection at the end, because a polished, unsealed headlight yellows again within 6-12 months under the Mediterranean sun."
           ],
           "key_params": [
             "Yellowing: the most visible sign, caused by chromophore formation in the polymer",
@@ -1787,9 +2393,54 @@
         },
         {
           "number": "2",
+          "title": "PMMA or Polycarbonate? Identify Your Surface",
+          "paragraphs": [
+            "Before touching any plastic surface you need to know which material it is, because the process and the expectations change completely. These are the applications we see most often around Barcelona:"
+          ],
+          "table": {
+            "caption": "PMMA vs polycarbonate: where each one lives",
+            "headers": [
+              "Surface",
+              "Typical material",
+              "Key consideration"
+            ],
+            "rows": [
+              [
+                "Headlight lenses",
+                "Polycarbonate with UV clear coat",
+                "Restorable; UV resealing afterwards is mandatory"
+              ],
+              [
+                "Motorcycle screens",
+                "Polycarbonate (sometimes PMMA)",
+                "Delicate polishing: scratches and overheats easily"
+              ],
+              [
+                "Boat windows",
+                "Cast PMMA",
+                "The best candidate: accepts deep sanding and polishing"
+              ],
+              [
+                "Caravan skylights",
+                "PMMA or polycarbonate",
+                "Check for cracks before polishing; hail causes micro-fissures"
+              ],
+              [
+                "Screens and canopies",
+                "Extruded PMMA",
+                "Restorable; softer and more scratch-prone than cast"
+              ]
+            ]
+          },
+          "conclusion": "A workshop trick: PMMA sounds more crystalline when tapped gently with a fingernail and gives off a fruity smell when sanded; polycarbonate sounds duller and flexes more. When in doubt, we treat the piece as polycarbonate — the more delicate material of the two."
+        },
+        {
+          "number": "3",
           "title": "The Professional Restoration Process",
           "paragraphs": [
-            "Unlike glass, acrylic can be restored by polishing because the material is softer and more uniform. The process involves progressively finer abrasives to remove the damaged surface layer."
+            "Unlike glass, acrylic can be restored by polishing because the material is softer and more uniform. The process involves progressively finer abrasives to remove the damaged surface layer.",
+            "The grit progression is the key to the result. In a typical case of severe yellowing we start wet sanding at P800-P1200 to remove the oxidised layer, step up to P1500-P2000 to erase the scratches from the previous stage, and finish with P3000 before moving to the polisher. Skipping a grit to save time leaves deep scratches the polish cannot remove — they reappear as haze against backlight.",
+            "Temperature control is what separates a correct polish from a ruined part. Both PMMA and polycarbonate are thermoplastics: if friction overheats the surface, it softens and the pad smears it, creating permanent optical distortions. That is why we work at low machine speeds, with dedicated pads and cooling pauses, especially on thin-walled motorcycle screens."
           ],
           "tools": [
             {
@@ -1808,20 +2459,40 @@
               "label": "UV protection",
               "text": "Application of UV-stabilized coating to slow future degradation."
             }
+          ],
+          "analogy": {
+            "title": "The sunburn analogy",
+            "text": "The UV-degraded layer works like a sunburn: the damage lives in the outer layers and must be removed completely until sound material is reached. Polishing over the damage without removing it just masks the problem — the yellowing returns within weeks."
+          }
+        },
+        {
+          "number": "4",
+          "title": "When Can It Be Restored, and When Is Replacement Due?",
+          "paragraphs": [
+            "Restoration has physical limits, and it pays to know them before investing in it. The general rule: if the damage is superficial — yellowing, haze, micro-scratches — polishing solves it; if the damage is structural, no amount of polishing reverses it.",
+            "On motorcycle screens and boat windows there is another factor: remaining thickness. Every restoration removes material, and a part that has been polished too many times ends up too thin for its structural role. That is why we document the condition before starting and are upfront when replacement is the honest option."
+          ],
+          "key_params": [
+            "Restorable: surface yellowing and haze, oxidised UV clear coat, scratches that do not catch a fingernail",
+            "Restorable with reservations: shallow surface micro-crazing on PMMA of generous thickness",
+            "Not restorable: through-cracks, internal delamination, or bulk yellowing of aged polycarbonate",
+            "Not restorable: condensation inside a sealed headlight — the problem is the gasket, not the lens"
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Prevention Tips",
           "paragraphs": [
-            "Protecting acrylic from UV damage is more effective than restoring it after the fact. Here are professional recommendations:"
+            "Protecting acrylic from UV damage is more effective than restoring it after the fact. In the Mediterranean climate, prevention makes an enormous difference: a motorcycle screen parked in the sun every day can age in a couple of summers what a covered one takes years to accumulate. Here are the professional recommendations:"
           ],
           "key_params": [
             "Apply UV-protective coating annually to all exposed acrylic surfaces",
             "Use covers when the surface is not in active use (boat covers, caravan shades)",
             "Clean with pH-neutral cleaners only — avoid ammonia-based products",
-            "Never dry-wipe acrylic — always use a damp microfiber towel to prevent scratching"
-          ]
+            "Never dry-wipe acrylic — always use a damp microfiber towel to prevent scratching",
+            "Inspect surfaces every spring: early yellowing corrects with a light polish; advanced yellowing demands full sanding"
+          ],
+          "conclusion": "Restoring costs a fraction of replacing, but preventing costs even less: a cover and an annual UV seal are the most profitable investment any boat, motorcycle or caravan owner on the Mediterranean coast can make."
         }
       ]
     },

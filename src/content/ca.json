@@ -984,7 +984,8 @@
         "excerpt": "Per què triem polidores rotatives i DA específiques, plats de suport i compostos de coixinets per a cada treball — i com l'elecció incorrecta pot danyar una superfície permanentment.",
         "slug": "equipment-selection",
         "date": "2025-01-15",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "02",
@@ -992,7 +993,8 @@
         "excerpt": "Per què la capa més fina de vernís es troba a les vores? Aprèn la \"regla dels 2 mm\" i entén per què emmascarat les \"zones vermelles\" és l'únic segur real contra un repintat costós.",
         "slug": "masking-protocols",
         "date": "2025-02-05",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "03",
@@ -1000,7 +1002,8 @@
         "excerpt": "Domina la física del \"patró serp\" i el control de temperatura. Aprèn com 20 kg de pressió i un coixinet de llana tallen defectes profunds preservant el vernís.",
         "slug": "mechanical-correction",
         "date": "2025-02-19",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "04",
@@ -1008,7 +1011,8 @@
         "excerpt": "La transició de la correcció profunda a la claredat absoluta del vernís. Aprèn a eliminar la boira de treball deixada per la llana i estabilitzar la superfície sense hologrames.",
         "slug": "refining-stabilization",
         "date": "2025-03-12",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "05",
@@ -1016,7 +1020,8 @@
         "excerpt": "L'etapa final d'estabilització de la superfície. Aprèn a segellar el resultat amb protecció de grafè i a preservar un acabat mirall durant anys.",
         "slug": "protection-preservation",
         "date": "2025-03-26",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "06",
@@ -1024,7 +1029,8 @@
         "excerpt": "Treball de precisió en geometries complexes. Per què les motos requereixen un enfocament exclusivament suau i l'art de netejar metall i cuir.",
         "slug": "motorcycle-detailing",
         "date": "2025-04-16",
-        "status": "hidden"
+        "status": "hidden",
+        "updated": "2026-07-17"
       },
       {
         "number": "07",
@@ -1032,7 +1038,8 @@
         "excerpt": "Entén què causa aquestes ratllades circulars a la teva pintura i el procés professional pas a pas per eliminar-les permanentment.",
         "slug": "remove-swirl-marks",
         "date": "2025-05-07",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "08",
@@ -1040,7 +1047,8 @@
         "excerpt": "Quan pots arreglar les ratllades del parabrisa tu mateix i quan has de trucar a un professional? Comparació honesta de mètodes, costos i resultats.",
         "slug": "windshield-scratch-repair",
         "date": "2025-05-28",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "09",
@@ -1048,7 +1056,8 @@
         "excerpt": "Quant costa realment la correcció professional de pintura a Barcelona? Desglossament transparent de factors de preu, nivells de paquets i què afecta el pressupost final.",
         "slug": "paint-correction-cost-barcelona",
         "date": "2025-06-11",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "10",
@@ -1056,7 +1065,8 @@
         "excerpt": "Com la radiació UV degrada les superfícies acríliques i de policarbonat amb el temps, i el procés professional de restauració que els retorna la transparència total.",
         "slug": "uv-damage-acrylic-restoration",
         "date": "2025-07-02",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "11",
@@ -1147,12 +1157,14 @@
       "seo_description": "Per què el 99% del resultat depèn de la selecció d'eines. Polidores rotatives vs doble acció — anàlisi d'enginyeria, taula comparativa i recomanacions.",
       "title": "Tria la Teva Arma: Rotativa vs. Doble Acció",
       "description": "Física del Procés: Per Què el 99% del Resultat Depèn de la Selecció d'Eines. Aprèn a distingir el maneig d'un \"kart\" del comportament d'un \"camió\", i comprèn per què un centre de gravetat baix és la base de la correcció professional de pintura.",
-      "intro": "Al nostre laboratori seguim un protocol clar: la primera passada — la que elimina el 99% de totes les ratllades — es realitza de forma més eficaç amb una polidora rotativa. La màquina de doble acció, en canvi, és una eina per a l'estabilització final de la superfície.",
+      "intro": "Al nostre laboratori seguim un protocol clar: la primera passada — la que elimina el 99% de totes les ratllades — es realitza de forma més eficaç amb una polidora rotativa. La màquina de doble acció, en canvi, és una eina per a l'estabilització final de la superfície. En aquesta guia desmuntem totes dues arquitectures des de l'enginyeria: com transmeten la potència, quanta calor generen, quins coixinets demanen i com les combinem en un servei mòbil real a Barcelona i el Vallès.",
       "sections": [
         {
           "number": "1",
           "title": "Polidora Rotativa: Potència i Control",
           "paragraphs": [
+            "Una rotativa és transmissió directa: el plat gira solidari a l'eix del motor, normalment entre 600 i 3.000 RPM, i cada punt del coixinet treballa a velocitat constant. Aquesta arquitectura li dona la màxima capacitat de tall del mercat — i també el seu únic risc real: tota l'energia es converteix en fricció i calor sobre la zona de contacte, i és l'operari qui l'ha de gestionar amb moviment i pressió constants.",
+            "El nostre rang de treball real està entre 900 i 1.800 RPM. Per sobre de 2.000 RPM, el vernís d'un cotxe modern (35–50 micres) s'escalfa més ràpid del que la mà pot reaccionar; per sota de 900, el tall cau i el temps per panell es dispara sense cap guany de seguretat.",
             "La rotativa és la base de la correcció profunda. En seleccionar una màquina, ens centrem en tres paràmetres crítics:"
           ],
           "key_params": [
@@ -1201,9 +1213,20 @@
         },
         {
           "number": "2",
+          "title": "Per què la calor és el veritable enemic del vernís?",
+          "paragraphs": [
+            "El vernís d'automoció comença a reblanir-se al voltant dels 60–70 °C i es pot cremar de forma irreversible en superar els 100 °C. Una rotativa amb coixinet de llana a 1.500 RPM arriba a aquestes temperatures sobre una aresta en qüestió de segons: per això l'emmascarat i el control tèrmic són inseparables de l'ús d'aquesta màquina.",
+            "Treballem amb un termòmetre infraroig a mà i una regla simple de suport: si el dors de la mà no aguanta sobre el panell, la màquina s'atura. A l'estiu mediterrani el marge és encara menor — un capó negre al sol ja parteix de 50–60 °C abans de la primera passada — així que la correcció es fa sempre a l'ombra i per seccions curtes.",
+            "La doble acció reparteix la mateixa energia en un patró orbital i perd velocitat sota pressió excessiva: cremar un vernís amb ella és molt més difícil, tot i que no impossible. Aquesta tolerància a l'error és la raó per la qual és la màquina que recomanem a qualsevol que comenci."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Doble Acció: El Bisturí de l'Acabat",
           "paragraphs": [
-            "Un cop els defectes principals s'han eliminat amb la rotativa, comença la fase d'acabat. El plat de suport d'una polidora de doble acció realitza dos tipus de moviment simultàniament: rotacional i oscil·lant. Això permet aconseguir una superfície perfectament neta sense hologrames."
+            "Un cop els defectes principals s'han eliminat amb la rotativa, comença la fase d'acabat. El plat de suport d'una polidora de doble acció realitza dos tipus de moviment simultàniament: rotacional i oscil·lant. Això permet aconseguir una superfície perfectament neta sense hologrames.",
+            "La xifra clau d'una doble acció és la seva òrbita (throw): el diàmetre del cercle que descriu l'eix. Les òrbites de 8 mm són versàtils i controlables; les de 15 mm acceleren la feina en panells grans; les de 21 mm cobreixen superfície a màxima velocitat, però es tornen nervioses en corbes i zones estretes. El nostre estàndard per a l'acabat és una òrbita de 15 mm amb plat de 125 mm.",
+            "També distingim entre doble acció de gir lliure i d'engranatge forçat. En la primera, el plat deixa de girar si es prem en excés — el millor \"fusible\" de seguretat que existeix. La segona combina òrbita i rotació forçada, i s'acosta a la capacitat de tall d'una rotativa mantenint el patró orbital."
           ],
           "tools_title": "Equipament professional de doble acció de restoreLab",
           "tools": [
@@ -1220,27 +1243,106 @@
               "text": "Solucions sense fil FLEX (XCE 8 125 i PXE 80) per a màxima mobilitat en treballar en àrees petites."
             }
           ]
+        },
+        {
+          "number": "4",
+          "title": "Quin coixinet correspon a cada màquina?",
+          "paragraphs": [
+            "La màquina és només la meitat del sistema; l'altra meitat és el coixinet. Una combinació incorrecta anul·la els avantatges de qualsevol eina, per cara que sigui:"
+          ],
+          "table": {
+            "caption": "Combinacions coixinet–màquina que fem servir a restoreLab",
+            "headers": [
+              "Coixinet",
+              "Màquina",
+              "Fase",
+              "Nota"
+            ],
+            "rows": [
+              [
+                "Llana / híbrid",
+                "Rotativa",
+                "Tall pesat",
+                "Màxima capacitat de tall; exigeix emmascarat estricte d'arestes"
+              ],
+              [
+                "Microfibra",
+                "Doble acció",
+                "Tall mitjà",
+                "Talla gairebé com la llana generant molta menys calor"
+              ],
+              [
+                "Escuma ferma de tall",
+                "Totes dues",
+                "Tall mitjà",
+                "Previsible en superfícies planes grans"
+              ],
+              [
+                "Escuma de polit",
+                "Doble acció",
+                "Refinat",
+                "Elimina les traces de l'etapa de tall"
+              ],
+              [
+                "Escuma tova d'acabat",
+                "Doble acció",
+                "Acabat",
+                "Brillantor final sense hologrames, llesta per a ceràmica"
+              ]
+            ]
+          },
+          "conclusion": "Regla de compatibilitat: el diàmetre del coixinet sempre 10–25 mm més gran que el plat, i mai una escuma tova d'acabat sobre una rotativa a més de 1.200 RPM — la calor arruïna l'escuma en minuts."
+        },
+        {
+          "number": "5",
+          "title": "Com combinem totes dues màquines en una feina real?",
+          "paragraphs": [
+            "Un servei de correcció en dues etapes típic de restoreLab segueix sempre la mateixa seqüència:"
+          ],
+          "key_params": [
+            "Mesura — mapa de gruixos del vernís, panell a panell, amb mesurador de capes.",
+            "Emmascarat — arestes, gomes i plàstics segons el nostre protocol dels 2 mm.",
+            "Tall — rotativa Makita 9237CB a 1.200–1.500 RPM amb llana: elimina la gran majoria dels defectes.",
+            "Refinat — doble acció d'òrbita de 15 mm amb escuma de polit: esborra les traces de la llana.",
+            "Acabat — passada final amb escuma tova i abrasiu fi: superfície llesta per a ceràmica o PPF."
+          ],
+          "conclusion": "En ser un servei mòbil, l'autonomia importa: les doble acció sense fil de FLEX ens permeten completar acabats i zones petites sense dependre de l'endoll del client — clau quan treballem en un garatge comunitari de Sant Cugat o a peu de carrer a Barcelona."
+        },
+        {
+          "number": "6",
+          "title": "I si només pots comprar una màquina?",
+          "paragraphs": [
+            "Per a un aficionat que corregeix el seu propi cotxe un o dos cops l'any, la resposta és inequívoca: una doble acció de gir lliure amb òrbita de 8–15 mm. Perdona els errors, cobreix des de la neteja del vernís fins a l'acabat i, amb un coixinet de microfibra, resol la major part dels defectes d'un cotxe d'ús diari.",
+            "La rotativa continua sent insubstituïble en mans professionals: on una doble acció necessita sis passades, una rotativa amb llana en necessita dues. En un ofici on el temps per panell defineix la rendibilitat, aquesta diferència paga amb escreix la corba d'aprenentatge — però aquesta corba es recorre sobre panells de desballestament, mai sobre el cotxe d'un client."
+          ],
+          "conclusion": "La jerarquia correcta no és \"rotativa o doble acció\", sinó \"rotativa per al tall, doble acció per a l'acabat\". Cada una fa pitjor la feina de l'altra."
         }
       ]
     },
     "masking_protocols": {
-      "seo_title": "Protocols d'Emmascarat: Protegir la Vora | restoreLab Acadèmia",
+      "seo_title": "Emmascarat: Protegir la Vora | restoreLab Acadèmia",
       "seo_description": "Per què la capa més fina de vernís és a les vores. La regla dels 2 mm, cintes de contorn i tècniques de re-emmascarat per prevenir cremades.",
       "title": "Protocols d'Emmascarat: Protegir la Vora",
-      "description": "Per què la capa més fina de vernís es troba a les vores? Aprèn la \"regla dels 2 mm\" i entén per què emmascarat les \"zones vermelles\" és l'únic segur real contra un repintat costós.",
-      "intro": "L'emmascarat és el pas més ignorat pels principiants — i la causa més comuna de cremada del vernís. A restoreLab no confiem en la sort; confiem en la cinta d'emmascarat.",
+      "description": "Per què la capa més fina de vernís es troba a les vores? Aprèn la \"regla dels 2 mm\" i entén per què emmascarar les \"zones vermelles\" és l'única assegurança real contra un repintat costós.",
+      "intro": "L'emmascarat és el pas més ignorat pels principiants — i la causa més comuna de cremada del vernís. Una cremada en una vora no es poleix ni es retoca: obliga a repintar el panell sencer, amb un cost de diversos centenars d'euros per peça i la pèrdua de la pintura original. A restoreLab no confiem en la sort; confiem en la cinta d'emmascarar. En aquesta guia expliquem per què el vernís és més fi justament allà on el coixinet castiga més, quines zones marquem sempre com a intocables i com l'emmascarat evoluciona al llarg de les tres etapes d'una correcció professional.",
       "sections": [
         {
           "number": "1",
-          "title": "Zona de Risc: La Física del Vernís a les Vores",
+          "title": "Per què el vernís és més fi a les vores?",
           "paragraphs": [
-            "A les vores i línies agudes de la carrosseria, el vernís sempre és significativament més fi que a les superfícies planes. Sense emmascarat, la primera passada amb un coixinet de llana pot ser fatal per al panell."
+            "A les vores i línies agudes de la carrosseria, el vernís sempre és significativament més fi que a les superfícies planes. Sense emmascarat, la primera passada amb un coixinet de llana pot ser fatal per al panell.",
+            "La raó és física de fluids: la pintura i el vernís s'apliquen en estat líquid, i la tensió superficial retira el material de les arestes i l'acumula a les zones planes mentre cura. En una superfície plana mesurem habitualment entre 35 i 50 micres de vernís de fàbrica; sobre una aresta estampada aquesta xifra pot caure a 15–20 micres — menys de la meitat del marge de treball.",
+            "La vora, a més, juga en contra nostra dues vegades durant el polit: concentra tota la pressió del coixinet en una franja de pocs mil·límetres i dissipa pitjor la calor. Amb una rotativa a 1.500 RPM i coixinet de llana, la temperatura sobre una aresta pot superar el llindar de reblaniment del vernís — al voltant dels 60–70 °C — en qüestió de segons.",
+            "Per això, abans de tocar cap panell, a restoreLab mesurem el gruix amb un mesurador de capes i tractem cada aresta com a zona d'exclusió. La regla és simple: allò que no es pot mesurar ni controlar, s'emmascara."
           ]
         },
         {
           "number": "2",
-          "title": "El Mètode d'Emmascarat restoreLab",
-          "paragraphs": [],
+          "title": "La regla dels 2 mm: el mètode d'emmascarat restoreLab",
+          "paragraphs": [
+            "La nostra regla bàsica cap en una frase: la cinta ha d'envair 2 mm del mateix panell, no limitar-se a cobrir la motllura veïna. Aquests 2 mm queden sense corregir durant la passada agressiva — i és exactament el que busquem: el coixinet no arriba mai a mossegar l'aresta on el vernís és més fi.",
+            "L'elecció de la cinta importa tant com la seva posició. Treballem amb cinta d'emmascarar específica d'automoció, amb adhesiu de baixa transferència i resistència tèrmica de 80–110 °C. El paper de pintor domèstic es desfà amb la fricció del coixinet i deixa adhesiu recuit sobre el vernís."
+          ],
           "tools": [
             {
               "label": "Regla del perímetre",
@@ -1257,31 +1359,94 @@
             {
               "label": "Cintes de contorn",
               "text": "Per a corbes complexes i línies estampades, fem servir cinta de vinil estreta (6 mm), que ens permet seguir amb precisió les línies de la carrosseria."
+            },
+            {
+              "label": "Gomes i juntes",
+              "text": "Els perfils de goma de portes i finestres es cobreixen sempre: el poliment incrustat a la goma s'emblanqueix amb el sol i és gairebé impossible de netejar després."
+            },
+            {
+              "label": "Plàstics texturitzats",
+              "text": "Les motllures de plàstic rugós atrapen el poliment a la seva textura. Les cobrim amb cinta ampla de 24–36 mm abans de la primera passada."
             }
           ]
         },
         {
           "number": "3",
-          "title": "Re-Emmascarat per a Passades d'Acabat",
+          "title": "Quines zones marquem sempre com a \"zones vermelles\"?",
           "paragraphs": [
-            "L'emmascarat no és estàtic. Després de la primera passada (agressiva) amb un coixinet de llana, la cinta es reposiciona \"sota la vora\". Això permet que les segona i tercera etapes (amb coixinets d'escuma) refinin les pròpies vores, perquè no destaquin de la brillantor general de la superfície plana polida."
+            "Abans d'engegar la màquina, recorrem el cotxe amb el mesurador de gruixos i marquem les zones on la correcció està prohibida o limitada. En un turisme mitjà, la llista és més llarga del que la majoria espera:"
+          ],
+          "key_params": [
+            "Arestes i línies de caràcter — vernís un 30–50% més fi que a les superfícies planes.",
+            "Vores de capó, portes i portó — acumulen el desgast de polits anteriors d'altres propietaris.",
+            "Emblemes, lletres i motllures cromades — el poliment sec atrapat a sota és gairebé impossible d'extreure.",
+            "Sensors d'aparcament i càmeres — el residu de poliment pot cobrir-ne la superfície i alterar-ne el funcionament.",
+            "Juntes entre panells — la pols de polit s'hi acumula dins i reapareix amb el primer rentat.",
+            "Plàstics mats i vinils — un sol toc de coixinet els deixa brillants de forma irreversible."
+          ],
+          "conclusion": "Si el mesurador de gruixos dona lectures anòmales — pics de més de 200 micres que delaten massilla, o valors molt baixos després d'un polit anterior — la zona s'emmascara del tot i es documenta amb el client abans de continuar."
+        },
+        {
+          "number": "4",
+          "title": "Re-emmascarat: la cinta es mou amb cada etapa",
+          "paragraphs": [
+            "L'emmascarat no és estàtic. Després de la primera passada (agressiva) amb un coixinet de llana, la cinta es reposiciona \"sota la vora\". Això permet que les segona i tercera etapes (amb coixinets d'escuma) refinin les pròpies vores, perquè no destaquin de la brillantor general de la superfície plana polida.",
+            "A la pràctica això significa tres posicions de cinta en una mateixa feina: 2 mm sobre el panell per al tall amb llana, arran de la vora per a l'etapa de polit mitjà, i retirada gairebé del tot — reduïda a les zones vermelles absolutes — per a l'acabat final amb escuma tova i abrasiu fi. Les passades d'acabat generen molta menys calor, així que la mateixa aresta pot rebre dues o tres passades suaus sense risc.",
+            "Canviar la cinta porta uns deu minuts per etapa. Comparat amb les hores i el cost d'un repintat — i amb la pèrdua de la pintura original, que en un cotxe premium afecta directament el valor de revenda — és la pòlissa d'assegurança més barata de tot el procés."
           ]
+        },
+        {
+          "number": "5",
+          "title": "Com afecta el clima mediterrani l'emmascarat?",
+          "paragraphs": [
+            "Treballem a domicili a Sant Cugat, Barcelona i el Vallès, i això vol dir sol. Amb el panell a 40–50 °C — habitual de maig a setembre — l'adhesiu de la cinta es cou sobre el vernís: a partir de 30–40 minuts al sol directe pot deixar residu o, en un panell repintat, arrossegar el vernís en retirar-la.",
+            "El nostre protocol d'estiu: treballar a l'ombra o crear-la amb una carpa, emmascarar per seccions en lloc de tot el cotxe alhora, retirar la cinta estirant-la en un angle de 45 graus sobre si mateixa, i no deixar mai el cotxe emmascarat \"per demà\". La humitat del matí també compta: la cinta no s'aferra sobre un panell amb rosada, així que la superfície s'asseca i es desgreixa abans d'enganxar ni un sol centímetre."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "Errors d'emmascarat que veiem cada setmana",
+          "paragraphs": [
+            "Aquests són els errors que més vegades hem hagut de \"rescatar\" en cotxes que arriben de polits anteriors:"
+          ],
+          "tools": [
+            {
+              "label": "La cinta equivocada",
+              "text": "Cinta d'embalar o cinta americana: adhesiu massa agressiu, zero resistència tèrmica i residu garantit sobre el vernís calent."
+            },
+            {
+              "label": "Emmascarar i oblidar",
+              "text": "Deixar la mateixa cinta durant les tres etapes anul·la la possibilitat de refinar les arestes i deixa un \"marc\" mat al voltant de cada panell."
+            },
+            {
+              "label": "Cobrir només la motllura",
+              "text": "Protegir la peça veïna però deixar l'aresta descoberta: la motllura sobreviu, la vora del panell no."
+            },
+            {
+              "label": "Retirar tard i malament",
+              "text": "La cinta es retira en acabar cada etapa, en angle de 45 graus. Treure-la l'endemà, amb l'adhesiu curat per la calor, multiplica el risc de delaminació."
+            }
+          ],
+          "conclusion": "L'emmascarat no afegeix brillantor, no surt a les fotos de l'abans i el després i el client rarament el nota. Però és la diferència entre una correcció de pintura professional i una ruleta russa amb el vernís del teu cotxe."
         }
       ]
     },
     "mechanical_correction": {
       "howto": true,
-      "seo_title": "Protocols de Correcció Mecànica: L'Art del Tall | restoreLab Acadèmia",
+      "seo_title": "Correcció Mecànica: L'Art del Tall | restoreLab Acadèmia",
       "seo_description": "La tècnica del patró serp, protocol de 20 kg de pressió i física del coixinet de llana. Com tallar defectes profunds preservant el vernís.",
       "title": "Protocols de Correcció Mecànica: L'Art del Tall",
       "description": "Domina la física del \"patró serp\" i el control de temperatura. Aprèn com 20 kg de pressió i un coixinet de llana poden tallar defectes profunds preservant la integritat estructural del vernís.",
-      "intro": "La primera passada és l'etapa on es decideix el destí del 99,9% de les ratllades. A restoreLab fem servir la combinació Rotativa + Llana perquè és la forma més eficient d'arribar al fons d'una ratllada sense perdre temps.",
+      "intro": "La primera passada és l'etapa on es decideix el destí del 99,9% de les ratllades. A restoreLab fem servir la combinació Rotativa + Llana perquè és la forma més eficient d'arribar al fons d'una ratllada sense perdre temps. Abans de tocar la màquina, mesurem; i abans de mesurar, planifiquem. En aquesta guia compartim el protocol exacte que apliquem cada dia a Sant Cugat i l'àrea de Barcelona: pressions, revolucions, temperatures i els criteris que separen un tall controlat d'un vernís cremat.",
       "sections": [
         {
           "number": "1",
           "title": "El Protocol \"40×40\" i la Tècnica del \"Patró Serp\"",
           "paragraphs": [
-            "Polir un panell sencer d'una vegada és el camí més ràpid al sobreescalfament i resultats desiguals."
+            "Polir un panell sencer d'una vegada és el camí més ràpid al sobreescalfament i resultats desiguals.",
+            "Per què exactament 40×40 cm? Perquè és l'àrea màxima en què el compost de tall manté la viscositat de treball abans d'assecar-se, i la mínima en què la rotativa pot desenvolupar un patró de moviment uniforme sense solapaments caòtics. En un capó estàndard surten entre sis i vuit seccions; en una porta, dues o tres.",
+            "El solapament entre línies del patró serp és del 50%: cada passada cobreix la meitat de l'anterior. Així garantim que cada punt del panell rep la mateixa quantitat de treball mecànic i evitem les franges de tall desigual que el sol mediterrani delata en qüestió de segons.",
+            "Pel que fa a revolucions, treballem la llana entre 1.200 i 1.500 RPM per al tall general, i pugem puntualment a 1.800 RPM només sobre defectes aïllats. Per sobre d'aquest llindar, la temperatura del vernís es dispara més ràpid del que la mà arriba a detectar."
           ],
           "tools": [
             {
@@ -1302,7 +1467,9 @@
           "number": "2",
           "title": "Gestió de Pressió i Temperatura",
           "paragraphs": [
-            "L'eficiència de tall depèn directament de quanta força apliquis."
+            "L'eficiència de tall depèn directament de quanta força apliquis.",
+            "El vernís de fàbrica comença a estovar-se al voltant dels 60 °C i pateix dany estructural a partir dels 80 °C. El nostre límit operatiu és de 50–55 °C mesurats amb termòmetre infraroig; la comprovació amb el palmell és el suport ràpid entre mesuraments: si no pots mantenir la mà recolzada tres segons, la secció necessita descansar.",
+            "A l'estiu barceloní això és crític: un capó fosc aparcat al sol arriba a 70–80 °C abans i tot d'engegar la màquina. Per això treballem sempre a l'ombra o sota carpa i, al juliol i l'agost, planifiquem les correccions a primera hora del matí, quan el panell parteix de 25–30 °C."
           ],
           "tools": [
             {
@@ -1323,7 +1490,9 @@
           "number": "3",
           "title": "La Física del Coixinet de Llana",
           "paragraphs": [
-            "La llana és l'eina de tall més agressiva del nostre arsenal."
+            "La llana és l'eina de tall més agressiva del nostre arsenal.",
+            "Un coixinet de llana de 180 mm girant a 1.500 RPM assoleix una velocitat perifèrica d'uns 14 m/s a la vora, però el treball real el fa la corona situada a 30–60 mm del centre, on pressió i velocitat s'equilibren. Per això la vora exterior tendeix a escampar el compost en lloc de tallar-hi.",
+            "I no tota la llana talla igual: la fibra trenada llarga és la més agressiva i deixa el patró més marcat; la llana híbrida de fibra curta talla un 20–30% menys, però lliura un acabat que la segona passada agraeix. Triem la fibra segons la duresa del vernís: els vernissos ceràmics alemanys, durs, demanen trenada; els japonesos, més tous, en tenen prou amb la híbrida."
           ],
           "tools": [
             {
@@ -1340,7 +1509,8 @@
           "number": "4",
           "title": "Higiene d'Eines: Neteja del Coixinet de Llana",
           "paragraphs": [
-            "Un coixinet de llana obstruït amb compost gastat deixa de tallar i comença a \"saltar\" pel panell."
+            "Un coixinet de llana obstruït amb compost gastat deixa de tallar i comença a \"saltar\" pel panell.",
+            "El compost gastat barrejat amb vernís tallat forma una pasta abrasiva descontrolada: és la causa número u de les ratllades \"noves\" que apareixen misteriosament a mitja correcció."
           ],
           "tools": [
             {
@@ -1356,21 +1526,65 @@
             "title": "Analogia d'enginyeria restoreLab",
             "text": "Per què caminar quan pots volar? La combinació Rotativa + Llana és el teu avió. Et porta a l'objectiu dramàticament més ràpid i amb molt menys esforç que intentar tallar una ratllada profunda amb escuma o una polidora de doble acció."
           }
+        },
+        {
+          "number": "5",
+          "title": "Quant Vernís Podem Sacrificar? El Pressupost de Micres",
+          "paragraphs": [
+            "El vernís de fàbrica mesura entre 35 i 55 micres, sobre un gruix total de pintura de 100 a 160 micres. Una correcció profunda amb llana elimina de manera realista entre 3 i 8 micres. Sembla poc, però la protecció UV de la capa de color només està garantida mentre quedin com a mínim 25–30 micres de vernís al damunt.",
+            "Per això, abans de la primera passada, mapegem el vehicle amb un mesurador de gruixos en 30–40 punts. Si un panell ha estat repintat o polit agressivament en el passat, el pressupost de tall es redueix i l'estratègia canvia: menys pressió, un compost menys agressiu o, en casos límit, acceptar eliminar el defecte al 80% en lloc del 100%. Una ratllada atenuada sempre és millor que un vernís esgotat."
+          ],
+          "table": {
+            "caption": "Pressupost orientatiu de vernís per tipus d'operació",
+            "headers": [
+              "Operació",
+              "Micres eliminades",
+              "És repetible?"
+            ],
+            "rows": [
+              [
+                "Polit de manteniment (1 etapa)",
+                "1–2 µm",
+                "Sí, diverses vegades"
+              ],
+              [
+                "Correcció en dues etapes",
+                "3–5 µm",
+                "2–3 vegades en la vida del cotxe"
+              ],
+              [
+                "Tall profund amb llana",
+                "5–8 µm",
+                "Una vegada, amb mesurament previ obligatori"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "Quan Cal Parar? El Criteri de Sortida de l'Etapa de Tall",
+          "paragraphs": [
+            "L'objectiu del tall no és la brillantor, sinó la geometria: un pla òptic uniforme on el defecte original ha desaparegut i només queda el patró fi i homogeni de la llana. Perseguir la brillantor amb el coixinet de tall és l'error clàssic de l'aficionat: cada passada extra consumeix micres sense aportar res que l'etapa de refinat no faci millor.",
+            "Abans de donar per tancada una secció, la netegem amb alcohol isopropílic diluït per retirar els olis del compost, que omplen i dissimulen els defectes. Inspeccionem amb un llum LED de 5000–6500 K en angle baix: si la ratllada original ja no projecta ombra i la boira de la llana és uniforme, la secció està a punt per al refinat."
+          ],
+          "conclusion": "El tall decideix si el defecte desapareix; el refinat decideix si el resultat sembla de fàbrica. En el següent article de l'Acadèmia desglossem exactament aquesta transició: els protocols de refinat i estabilització que converteixen la boira de la llana en un mirall."
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Protocols de Refinat i Estabilització: L'Acabat Mirall | restoreLab Acadèmia",
-      "seo_description": "Estabilització en dues etapes després de la correcció profunda. Elimina la boira de la llana, els hologrames i aconsegueix una claredat de vernís de grau espacial.",
+      "seo_title": "Refinat i Estabilització del Vernís | restoreLab Acadèmia",
+      "seo_description": "Estabilització en dues etapes després de la correcció. Elimina la boira de la llana i els hologrames i aconsegueix claredat de vernís de grau espacial.",
       "title": "Protocols de Refinat i Estabilització: L'Acabat Mirall",
       "description": "La transició de la correcció profunda a la claredat absoluta del vernís. Aprèn a eliminar completament la boira de treball deixada per la llana i estabilitzar la superfície per eliminar hologrames sota qualsevol font de llum.",
-      "intro": "Després de la passada inicial amb rotativa + llana, la superfície està lliure de ratllades profundes, però queda amb una boira microscòpica o marques de tall. A restoreLab tractem això com una condició intermèdia que requereix un procés d'estabilització en dues etapes.",
+      "intro": "Després de la passada inicial amb rotativa + llana, la superfície està lliure de ratllades profundes, però queda amb una boira microscòpica o marques de tall. A restoreLab tractem això com una condició intermèdia que requereix un procés d'estabilització en dues etapes. En aquesta guia detallem els paràmetres exactes de cada passada — màquines, coixinets, velocitats i pressions — juntament amb els protocols d'inspecció i els ajustos per a les pintures que menys perdonen: el negre sòlid i l'acrílic.",
       "sections": [
         {
           "number": "1",
           "title": "Segona Passada: Suavitzar el Patró de Tall",
           "paragraphs": [
-            "L'objectiu d'aquesta etapa és reduir les marques de treball deixades per la llana, preparant el vernís per a la brillantor final. Això redueix dràsticament el temps que la polidora de doble acció (DA) necessita en el següent pas."
+            "L'objectiu d'aquesta etapa és reduir les marques de treball deixades per la llana, preparant el vernís per a la brillantor final. Això redueix dràsticament el temps que la polidora de doble acció (DA) necessita en el següent pas.",
+            "Què és exactament aquesta boira? Sota lupa són micro-ratllades d'1 a 3 micres de profunditat deixades per les fibres de la llana. Individualment són invisibles, però en conjunt dispersen la llum i roben saturació al color: un negre corregit però sense refinar es veu gris sota el sol del migdia.",
+            "L'escuma de tall mitjà treballa de manera diferent de la llana: en lloc d'arrencar material amb fibres, l'anivella amb la seva estructura de cel·la oberta. La nostra regla és no saltar més d'un nivell d'agressivitat entre etapes: l'escuma mitjana pot esborrar el patró de la llana; la d'acabat, no."
           ],
           "tools": [
             {
@@ -1393,7 +1607,9 @@
           "number": "2",
           "title": "Tercera Passada: Estabilització Final (El Bisturí)",
           "paragraphs": [
-            "Aquí fem servir una polidora de doble acció (DA) per portar el vernís a un acabat de \"grau espacial\" — perfectament clar, amb zero hologrames."
+            "Aquí fem servir una polidora de doble acció (DA) per portar el vernís a un acabat de \"grau espacial\" — perfectament clar, amb zero hologrames.",
+            "La DA deu el seu acabat sense hologrames a l'òrbita excèntrica: l'eix descriu un cercle de 12–21 mm mentre el coixinet rota lliurement, de manera que cap punt de la superfície rep dues vegades la mateixa trajectòria. És geometria aleatòria davant la trajectòria circular fixa de la rotativa — per això la rotativa deixa hologrames i la DA els esborra.",
+            "El punt feble de la DA és el bloqueig de rotació en corbes i arestes: el coixinet deixa de girar i només vibra, polint a la meitat de la seva eficiència. Marquem el plat amb una línia de retolador per vigilar-ne la rotació de reüll; si la línia es congela, corregim l'angle de suport."
           ],
           "tools": [
             {
@@ -1416,7 +1632,8 @@
           "number": "3",
           "title": "Protocol de Treball per a Pintura Negra Sòlida i Acrílic",
           "paragraphs": [
-            "La pintura negra sòlida no metal·litzada i els acabats acrílics són els materials més exigents del nostre laboratori."
+            "La pintura negra sòlida no metal·litzada i els acabats acrílics són els materials més exigents del nostre laboratori.",
+            "El negre sòlid no perdona perquè no té partícula metàl·lica que dispersi la llum i distregui la vista: cada micro-marca queda exposada. Un acabat que en un gris plata passaria per perfecte, en un negre sota el sol dur de l'agost mostra hologrames a tres metres de distància."
           ],
           "tools": [
             {
@@ -1432,11 +1649,73 @@
             "title": "Manament d'enginyeria restoreLab",
             "text": "Els hologrames són les empremtes d'un aficionat. La veritable brillantor apareix només quan el vernís es torna òpticament anivellat i completament estabilitzat."
           }
+        },
+        {
+          "number": "4",
+          "title": "Com Verifiquem el Resultat? El Protocol d'Inspecció",
+          "paragraphs": [
+            "Els polish d'acabat contenen olis que omplen micro-defectes i regalen una brillantor temporal que desapareix amb el primer rentat. Per això cap secció es dona per acabada sense un panel wipe: alcohol isopropílic diluït al 10–15% aplicat amb una microfibra neta, que despulla el vernís i en mostra l'estat real.",
+            "La inspecció es fa amb tres llums, perquè cadascuna revela defectes diferents: la LED de mà de 5000–6500 K treu els hologrames, la llum difusa de taller mostra la uniformitat de la brillantor, i el sol directe — el jutge definitiu en el nostre clima — ho revela absolutament tot. Un vernís estabilitzat de debò suporta el sol del migdia sense una sola teranyina."
+          ],
+          "key_params": [
+            "Panel wipe: IPA al 10–15% en aigua desmineralitzada, microfibra de 350–400 g/m²",
+            "Llum d'inspecció: LED de 5000–6500 K en angle de 30–45 graus respecte al panell",
+            "Veredicte final: llum solar directa amb el panell a temperatura ambient"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Per Què la Temperatura del Panell Canvia el Protocol?",
+          "paragraphs": [
+            "Els polish d'acabat estan formulats per treballar amb el panell entre 20 i 45 °C. Per sota, l'abrasiu no es descompon i el cicle s'allarga; per sobre, els dissolvents s'evaporen abans d'hora, el polish s'asseca en 20 segons i deixa marques en lloc d'eliminar-les.",
+            "Com a servei mòbil a Sant Cugat i l'àrea de Barcelona, gestionem això cada dia: a l'estiu treballem sota carpa o en garatge, deixem refredar cada panell entre etapes i reduïm la mida de secció si el polish comença a assecar-se a mig cicle. Estabilitzar sobre un panell calent és la recepta perfecta per fabricar hologrames frescos."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "Què Ve Després de l'Estabilització?",
+          "paragraphs": [
+            "Un vernís acabat d'estabilitzar està en el seu punt de màxima receptivitat: òpticament pla i químicament net després del panel wipe. És la finestra ideal — d'hores, no de dies — per aplicar la protecció: segellant, recobriment ceràmic o PPF. Cada hora que el vernís nu passa a la intempèrie acumula contaminació que caldria tornar a retirar."
+          ],
+          "table": {
+            "caption": "Resum del protocol complet de tres passades restoreLab",
+            "headers": [
+              "Passada",
+              "Màquina",
+              "Coixinet",
+              "Pressió",
+              "Objectiu"
+            ],
+            "rows": [
+              [
+                "1 — Tall",
+                "Rotativa",
+                "Llana",
+                "Fins a 20 kg",
+                "Eliminar el defecte"
+              ],
+              [
+                "2 — Refinat",
+                "Rotativa",
+                "Escuma mitjana",
+                "≈12 kg",
+                "Esborrar el patró de la llana"
+              ],
+              [
+                "3 — Estabilització",
+                "DA",
+                "Escuma d'acabat",
+                "0–1 kg",
+                "Claredat òptica total"
+              ]
+            ]
+          },
+          "conclusion": "La correcció elimina el passat del vernís, l'estabilització defineix el seu present i la protecció assegura el seu futur. Qui domina aquestes tres passades no depèn de la sort ni de l'angle de la llum: el resultat se sosté sota qualsevol sol, inclòs el nostre."
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protocols de Protecció i Preservació: L'Escut Molecular | restoreLab Acadèmia",
+      "seo_title": "Protecció i Preservació Ceràmica | restoreLab Acadèmia",
       "seo_description": "Aplicació de recobriment ceràmic, el protocol de tres criteris i dades sobre longevitat del vernís. Com segellar un acabat mirall durant anys.",
       "title": "Protocols de Protecció i Preservació: L'Escut Molecular",
       "description": "L'etapa final d'estabilització de la superfície. Aprèn a segellar el resultat amb protecció de grafè, per què la cera és una elecció d'entusiastes i no de professionals, i com preservar un acabat mirall durant anys.",
@@ -1444,9 +1723,62 @@
       "sections": [
         {
           "number": "1",
+          "title": "Què És Químicament un Recobriment Ceràmic?",
+          "paragraphs": [
+            "Un recobriment ceràmic és un polímer líquid a base de diòxid de silici (SiO2) o polisilazans que, en curar-se, forma un enllaç covalent amb el vernís de fàbrica. A diferència d'una cera, que simplement es diposita sobre la pintura, la ceràmica es converteix en una extensió química de la mateixa superfície, amb un gruix final d'entre 1 i 2 micres.",
+            "Aquest enllaç covalent explica la seva durabilitat. Una cera es degrada amb els detergents, la calor i la radiació UV en qüestió de setmanes; un recobriment ceràmic curat només es pot eliminar per abrasió mecànica, és a dir, polint. Les formulacions de grafè afegeixen òxid de grafè reduït a la matriu de SiO2, cosa que millora la conductivitat tèrmica de la capa i redueix la formació de water spots en afavorir una evaporació més uniforme de l'aigua.",
+            "L'indicador que mesurem a la pràctica és l'angle de contacte: sobre un vernís nu i degradat, una gota d'aigua s'estén amb un angle de 50–70 graus; sobre una ceràmica de qualitat supera els 100–110 graus. Aquest és l'efecte de perlat que arrossega la brutícia en rodolar i manté el vehicle net més temps."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Cera, Segellant o Ceràmica? La Taula de Decisió",
+          "paragraphs": [
+            "Respectem la cera de carnauba: cap producte sintètic iguala la seva calidesa visual sobre colors foscos. Però és una elecció d'entusiastes, no de professionals: en el clima mediterrani, amb radiació UV intensa i rentats freqüents, una carnauba de qualitat sobreviu entre 6 i 8 setmanes. Un segellant polimèric sintètic aguanta de 4 a 6 mesos. Un recobriment ceràmic correctament aplicat protegeix de 2 a 5 anys."
+          ],
+          "table": {
+            "caption": "Comparativa de tecnologies de protecció",
+            "headers": [
+              "Tecnologia",
+              "Base química",
+              "Durabilitat real",
+              "Perfil d'ús"
+            ],
+            "rows": [
+              [
+                "Cera de carnauba",
+                "Cera natural + dissolvents",
+                "6–8 setmanes",
+                "Entusiasta: calidesa visual, renovació constant"
+              ],
+              [
+                "Segellant polimèric",
+                "Polímers sintètics",
+                "4–6 mesos",
+                "Intermedi: bona brillantor, aplicació senzilla"
+              ],
+              [
+                "Ceràmica SiO2",
+                "Diòxid de silici / polisilazans",
+                "2–5 anys",
+                "Professional: enllaç covalent amb el vernís"
+              ],
+              [
+                "Ceràmica de grafè",
+                "SiO2 + òxid de grafè",
+                "3–5 anys",
+                "Professional: menys water spots, millor gestió tèrmica"
+              ]
+            ]
+          },
+          "conclusion": "La nostra regla: la cera és un hobby, el segellant és un compromís i la ceràmica és una decisió d'enginyeria. Sobre un vernís acabat de corregir, només la ceràmica justifica les hores de polit invertides."
+        },
+        {
+          "number": "3",
           "title": "Triar Protecció: El Protocol de \"Tres Criteris\"",
           "paragraphs": [
-            "Després de provar desenes de productes, el nostre laboratori va definir tres paràmetres obligatoris per a un recobriment ceràmic eficaç:"
+            "Després de provar desenes de productes, el nostre laboratori va definir tres paràmetres obligatoris per a un recobriment ceràmic eficaç:",
+            "Treballem en format mòbil, així que hi afegim un quart criteri operatiu: el producte ha de tolerar l'aplicació fora de cabina, amb un temps d'evaporació predictible en un rang ampli de temperatura i humitat. Un recobriment que només es comporta bé a 20 graus exactes i 50% d'humitat és un producte de laboratori, no de carrer."
           ],
           "key_params": [
             "Accessibilitat i preu: El producte no hauria de costar tant com repintar mig cotxe.",
@@ -1455,10 +1787,12 @@
           ]
         },
         {
-          "number": "2",
+          "number": "4",
           "title": "Protocol Tècnic d'Aplicació",
           "paragraphs": [
-            "Abans de l'aplicació, la carrosseria ha d'estar completament desgreixada."
+            "Abans de l'aplicació, la carrosseria ha d'estar completament desgreixada.",
+            "El nostre ordre és estricte: rentat alcalí, descontaminació química (antiferro i dissolvent de quitrà), descontaminació mecànica amb plastilina, correcció de pintura i, com a pas final, un panel wipe amb solució d'alcohol isopropílic. Qualsevol resta d'olis de polit bloqueja l'enllaç covalent i el recobriment fallarà per adhesió, no per qualitat del producte.",
+            "Les condicions també importen: superfície freda al tacte, a l'ombra, idealment entre 15 i 25 graus. Apliquem en patró creuat —passades horitzontals i verticals solapades— i esperem el flash: el moment en què el producte forma un vel iridescent que indica que està a punt per anivellar."
           ],
           "tools": [
             {
@@ -1480,10 +1814,11 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Estabilització i Cura Posterior",
           "paragraphs": [
-            "Un recobriment ceràmic necessita temps per completar el seu procés de curat químic:"
+            "Un recobriment ceràmic necessita temps per completar el seu procés de curat químic:",
+            "Durant la vida del recobriment, el protocol de rentat decideix la seva longevitat real: xampú de pH neutre (6,5–7,5), mètode de dos cubells amb guant de microfibra i mai túnels de rentat amb raspalls, que mosseguen la capa ceràmica amb la brutícia acumulada de centenars de cotxes. Cada 3–4 mesos, un booster de SiO2 recarrega el rendiment hidrofòbic sense necessitat de reaplicar el sistema complet."
           ],
           "tools": [
             {
@@ -1501,10 +1836,20 @@
           ]
         },
         {
-          "number": "4",
+          "number": "6",
+          "title": "Per Què el Clima Mediterrani Castiga Tant el Vernís?",
+          "paragraphs": [
+            "A l'àrea de Barcelona l'índex UV arriba a valors de 8–9 durant tot l'estiu. La radiació ultraviolada trenca els polímers del vernís (fotodegradació), cosa que es tradueix en pèrdua de brillantor, oxidació i, en casos avançats, el clear coat failure que ja no es poleix, només es repinta. Un recobriment ceràmic actua com a filtre UV sacrificial sobre aquesta química.",
+            "A això s'hi suma l'aerosol de sal marina, que a les poblacions costaneres es diposita cada dia sobre la carrosseria i accelera la corrosió electroquímica en arestes i baixos. I la calima: la pols sahariana que arriba amb les pluges de fang deixa una pel·lícula mineral abrasiva que converteix cada passada d'eixugaparabrisa o cada assecat descuidat en microratllades.",
+            "L'aigua de xarxa de la zona és a més molt dura, rica en carbonats de calci: cada gota que s'asseca al sol deixa un anell mineral (water spot) que sobre un vernís desprotegit pot quedar gravat de forma permanent. I qui aparca sota els pins de Collserola coneix la resina i la saba, que a 40 graus de xapa es fonen amb la superfície en hores. Sobre una capa ceràmica, tots aquests contaminants es queden a la capa sacrificial i es retiren amb un rentat suau."
+          ]
+        },
+        {
+          "number": "7",
           "title": "Economia i Mites: Quant Dura el Vernís?",
           "paragraphs": [
-            "Moltes persones temen el polit perquè creuen que \"consumeix\" el vernís per sempre. Aquí teniu les dades de restoreLab:"
+            "Moltes persones temen el polit perquè creuen que \"consumeix\" el vernís per sempre. Aquí teniu les dades de restoreLab:",
+            "La protecció també és economia pura: la capa ceràmica absorbeix les microratllades del rentat que, altrament, obligarien a polir el mateix vernís. Cada cicle de correcció que evites són micres que conserva el cotxe."
           ],
           "key_params": [
             "La correcció profunda amb llana elimina una mitjana de 5,5 micres.",
@@ -1519,17 +1864,18 @@
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Detailing Especialitzat: Protocols per a Motos | restoreLab Acadèmia",
+      "seo_title": "Detailing de Motos: Protocols | restoreLab Acadèmia",
       "seo_description": "Polit de precisió en geometries complexes. Correcció de toc lleuger, treball en panells plàstics, neteja de metall i cura del cuir per a motos.",
       "title": "Detailing Especialitzat: Protocols per a Motos",
       "description": "Treball de precisió en geometries complexes. Per què les motos requereixen un enfocament exclusivament de toc lleuger, com treballar en plàstic quan no es pot mesurar el gruix del vernís, i l'art de netejar metall.",
-      "intro": "Una moto no és \"un cotxe petit\". És un objecte d'enginyeria complex, on el 70% de les peces pintades són de plàstic i l'accés a elles és limitat.",
+      "intro": "Una moto no és \"un cotxe petit\". És un objecte d'enginyeria complex, on el 70% de les peces pintades són de plàstic i l'accés a elles és limitat. Dipòsits amb gràfics sota el vernís, carenats que flecten sota pressió, acabats mats que no admeten abrasió i una zona de cadena que concentra la contaminació més agressiva: cada moto exigeix un protocol propi, no una versió reduïda del protocol de cotxe.",
       "sections": [
         {
           "number": "1",
           "title": "Protocol de Seguretat: Sense Tall Agressiu",
           "paragraphs": [
-            "A diferència d'un cotxe, una moto no té \"àrees de referència\" com els marcs de les portes on pots determinar un llindar de risc segur per a l'eliminació del vernís. La majoria de les motos han estat repintades en algun moment, i el gruix exacte del vernís sempre és desconegut."
+            "A diferència d'un cotxe, una moto no té \"àrees de referència\" com els marcs de les portes on pots determinar un llindar de risc segur per a l'eliminació del vernís. La majoria de les motos han estat repintades en algun moment, i el gruix exacte del vernís sempre és desconegut.",
+            "A això s'hi suma que molts dipòsits porten els gràfics serigrafiats directament sota el vernís: en alguns models japonesos, la capa de vernís sobre el logotip amb prou feines arriba a unes desenes de micres. Un tall agressiu en aquesta zona no deixa un holograma: deixa el gràfic malmès i la peça a punt per al pintor. Per això la nostra postura és conservadora per disseny."
           ],
           "tools": [
             {
@@ -1544,8 +1890,19 @@
         },
         {
           "number": "2",
+          "title": "Per Què el Plàstic Pintat Exigeix un Altre Enfocament que el Metall?",
+          "paragraphs": [
+            "Els mesuradors de gruix convencionals funcionen per inducció magnètica o corrents de Foucault i necessiten un substrat d'acer o alumini. Sobre l'ABS o el polipropilè d'un carenat no donen lectura: treballem literalment a cegues, i això obliga a triar sempre el procés menys agressiu que resolgui el defecte.",
+            "El plàstic a més gestiona malament la calor: la seva baixa conductivitat tèrmica fa que la temperatura generada pel coixinet es quedi concentrada a la zona de treball. L'ABS comença a deformar-se al voltant dels 100 graus, un llindar que una polidora rotativa assoleix en segons si t'hi atures. Per això treballem en passades curtes, controlem la superfície amb la mà entre seccions i mai insistim sobre una aresta.",
+            "I un carenat no és rígid: flecta sota la pressió de la màquina, cosa que canvia l'angle d'atac del coixinet i multiplica el risc d'hologrames i de cremar el vernís a les vores. Les arestes, la cargoleria i les juntes s'emmascaren sempre amb cinta abans d'engegar la polidora."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Protocol Tècnic de Correcció",
-          "paragraphs": [],
+          "paragraphs": [
+            "L'objectiu en moto no és la correcció al 100%, sinó la màxima brillantor amb la mínima abrasió. Abans de cada secció, emmascarem gràfics i arestes; després de cada passada, retirem el residu amb alcohol isopropílic i revisem amb llum puntual per decidir si cal insistir o parar."
+          ],
           "tools": [
             {
               "label": "Eines",
@@ -1562,9 +1919,29 @@
           ]
         },
         {
-          "number": "3",
+          "number": "4",
+          "title": "Acabats Mats: Per Què Aquí No Es Poleix Mai?",
+          "paragraphs": [
+            "Un vernís mat deu el seu aspecte a una microrugositat calculada de la superfície que dispersa la llum en lloc de reflectir-la. Polir aquesta superfície, encara que sigui amb el compost més fi, allisa la textura i crea una brillantor localitzada que no té reparació: la peça queda tacada de forma permanent.",
+            "Per això sobre mat la regla és absoluta: zero abrasius, zero ceres amb farciments, zero quick detailers estàndard. Només xampú de pH neutre, netejadors específics per a acabats mats i, com a protecció, segelladors formulats per a mat que no omplen la microtextura.",
+            "Les taques de greix o els water spots sobre mat es tracten amb netejadors químics dedicats i paciència, mai amb fricció. Si un client ens porta un dipòsit mat amb una ratllada profunda, la resposta honesta és la que donem: això és feina de pintor, no de polidor."
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Zona de Cadena: La Contaminació Més Agressiva",
+          "paragraphs": [
+            "La cadena lubrica per projecció: cada quilòmetre, el lubricant surt disparat i es diposita al basculant, la llanda posterior i el colí, barrejat amb partícules metàl·liques del mateix desgast de la cadena i amb pols de fre. El resultat és una pel·lícula greixosa i abrasiva que un xampú normal no toca.",
+            "El nostre protocol: desgreixant específic aplicat en fred, raspalls de detailing de duresa mitjana i esbandida dirigida, protegint sempre els retens. Sobre la mateixa cadena només fem servir netejadors compatibles amb retens tòrics (O-ring i X-ring): un dissolvent agressiu elimina el greix intern i escurça dràsticament la vida del component.",
+            "La llanda posterior mereix menció pròpia: la barreja de lubricant de cadena recuit i pols de fre és de les coses més difícils de netejar en una moto. Un recobriment ceràmic aplicat sobre les llandes converteix aquesta neteja de vint minuts amb raspall en una esbandida de dos."
+          ]
+        },
+        {
+          "number": "6",
           "title": "Neteja de Metall i Cura del Cuir",
-          "paragraphs": [],
+          "paragraphs": [
+            "Dues advertències de taller: mai apliquem puliment de metalls sobre peces anoditzades —la capa anòdica és un tractament superficial de micres que s'elimina i no es recupera— i el blavós tèrmic dels escapaments de titani és, per a molts propietaris, part de l'estètica de la moto: es poleix només si el client ho demana expressament."
+          ],
           "tools": [
             {
               "label": "Metall",
@@ -1575,35 +1952,60 @@
               "text": "El protocol restoreLab inclou neteja amb un raspall suau i un netejador escumós, eliminació de residus amb una tovallola de microfibra humida, i preservació obligatòria amb una crema acondicionadora protectora."
             }
           ]
+        },
+        {
+          "number": "7",
+          "title": "Protecció Final: Segellar la Moto per al Clima Mediterrani",
+          "paragraphs": [
+            "Una moto viu pitjor que un cotxe: acostuma a dormir al carrer, rep la radiació UV mediterrània sense ombra i, a les poblacions costaneres, l'aerosol de sal marina ataca cada dia la cargoleria, les soldadures i l'alumini nu. Per això el cicle acaba sempre amb protecció.",
+            "Sobre dipòsit i carenats apliquem recobriment ceràmic després de la correcció lleugera: l'enllaç amb el vernís aporta filtre UV, efecte hidrofòbic i una superfície a la qual els insectes i el greix de cadena s'adhereixen molt menys. Sobre acabats mats, un segellador específic per a mat; sobre plàstics texturitzats sense pintar, un recondicionador de base aquosa que no deixa brillantor artificial.",
+            "I una regla de seguretat que no negociem: els condicionadors i abrillantadors mai toquen el seient, els punys, els estreps, els pneumàtics ni els discos de fre. En un vehicle que es condueix amb el cos, una superfície relliscosa no és un defecte estètic: és un risc real."
+          ]
         }
       ]
     },
     "remove_swirl_marks": {
       "howto": true,
-      "seo_title": "Com Eliminar Marques Circulars de la Pintura | restoreLab Acadèmia",
+      "seo_title": "Com Eliminar Marques Circulars de la Pintura del Cotxe",
       "seo_description": "Què causa les marques circulars i com les eliminen els professionals. Procés de correcció pas a pas, eines i consells de prevenció.",
       "title": "Com Eliminar Marques Circulars de la Pintura",
       "description": "Entén què causa aquestes ratllades circulars visibles sota llum directa — i el procés professional exacte per eliminar-les permanentment sense danyar el vernís.",
-      "intro": "Les marques circulars (marques circulars) són el defecte de pintura més comú que trobem. Apareixen com ratllades circulars o en forma de teranyina visibles sota la llum solar directa o il·luminació artificial. A restoreLab, les veiem en 9 de cada 10 vehicles que passen pel nostre servei.",
+      "intro": "Les marques circulars són el defecte de pintura més comú que trobem. Apareixen com ratllades circulars o en forma de teranyina visibles sota la llum solar directa o il·luminació artificial. A restoreLab, les veiem en 9 de cada 10 vehicles que passen pel nostre servei. En aquesta guia expliquem què són exactament, per què els productes de farciment no les eliminen de veritat i com és el procés de correcció professional pas a pas, incloent-hi els límits de seguretat que mesurem abans d'acostar una polidora a la carrosseria.",
       "sections": [
         {
           "number": "1",
           "title": "Què Causa les Marques Circulars?",
           "paragraphs": [
-            "Les marques circulars són micro-ratllades al vernís causades per tècniques inadequades de rentat i assecat. Els culpables més comuns són:"
+            "Per entendre per què apareixen convé tenir present l'escala del problema. El vernís de fàbrica mesura entre 35 i 50 micres — més fi que un cabell humà. Una marca circular típica penetra només entre 0,5 i 2 micres, però és suficient per dispersar la llum: quan una font puntual com el sol incideix sobre milers de micro-ratllades orientades en totes direccions, l'ull percep aquell halo circular característic al voltant del reflex.",
+            "El mecanisme gairebé sempre és el mateix: una partícula de brutícia — sílice, pols de fre, sorra fina — queda atrapada entre la pintura i allò que la toca, i actua com un paper de vidre en miniatura. Les marques circulars són micro-ratllades al vernís causades per tècniques inadequades de rentat i assecat. Els culpables més comuns són:"
           ],
           "key_params": [
             "Rentats automàtics amb raspalls giratoris que arrosseguen brutícia sobre la pintura",
             "Fer servir el mètode d'un sol cubell sense reixeta anti-brutícia",
             "Assecar el cotxe amb una tovallola seca o bruta",
             "Aplicar cera o puliment amb un aplicador contaminat"
-          ]
+          ],
+          "analogy": {
+            "title": "L'analogia del vidre de rellotge",
+            "text": "Pensa en el vernís com el vidre d'un rellotge que portes cada dia: cada frec amb la màniga deixa una micro-ratlla invisible, però després de centenars de frecs el vidre perd brillantor i nitidesa. La pintura funciona igual — no és una ratllada la que mata la brillantor, són milers."
+          }
         },
         {
           "number": "2",
+          "title": "Funcionen els Productes 'Treu-Ratllades' de Farciment?",
+          "paragraphs": [
+            "Abans de parlar de la solució real, aclarim la falsa: les ceres i glazes 'omple-ratllades' de gran superfície no eliminen les marques circulars — les amaguen. Contenen olis, silicones i polímers que omplen temporalment el solc de la ratllada i redueixen la dispersió de la llum. L'efecte és real, però dura entre dos i quatre rentats: quan el farciment es degrada, el defecte reapareix intacte.",
+            "Els puliments 'tot en un' amb abrasiu suau sí que eliminen una mica de material i poden millorar marques molt fines de manera apreciable, però no tenen el poder de tall necessari per anivellar marques mitjanes. I aplicats a mà, sense màquina, el seu efecte sobre un vernís modern endurit és pràcticament cosmètic."
+          ],
+          "conclusion": "Regla simple: si el defecte desapareix en mullar el panell amb aigua i reapareix en assecar-se, necessita polit mecànic real — no farciment."
+        },
+        {
+          "number": "3",
           "title": "El Procés Professional d'Eliminació",
           "paragraphs": [
-            "Eliminar les marques circulars requereix polit mecànic — no existeix una drecera química. El procés implica abrasió controlada del vernís per anivellar la superfície per sota de la profunditat de les ratllades."
+            "Eliminar les marques circulars requereix polit mecànic — no existeix una drecera química. El procés implica abrasió controlada del vernís per anivellar la superfície per sota de la profunditat de les ratllades.",
+            "La paraula clau és 'controlada'. Abans de polir mesurem el gruix de la pintura amb un mesurador digital en diversos punts de cada panell: capós i sostres repintats, cantells i zones ja corregides anteriorment tenen menys marge. Una correcció ben executada elimina entre 2 i 5 micres de vernís; un acabat de fàbrica admet un nombre limitat de correccions al llarg de la seva vida, i aquest pressupost no s'ha de malgastar.",
+            "També fem sempre una zona de prova de 50×50 cm on validem la combinació de compost, coixinet i màquina abans de comprometre tot el vehicle. Cada pintura endureix diferent: el vernís ceràmic d'un alemany modern no reacciona igual que el vernís tou d'un japonès."
           ],
           "tools": [
             {
@@ -1622,12 +2024,39 @@
               "label": "Pas 4",
               "text": "Passada d'acabat amb polish fi per aconseguir la màxima claredat."
             }
-          ]
+          ],
+          "table": {
+            "caption": "Quin mètode correspon a cada nivell de defecte",
+            "headers": [
+              "Defecte",
+              "Profunditat aprox.",
+              "Mètode"
+            ],
+            "rows": [
+              [
+                "Marques circulars fines",
+                "0,5–1 micra",
+                "Polit d'acabat en 1 etapa"
+              ],
+              [
+                "Marques mitjanes i hologrames",
+                "1–2 micres",
+                "Correcció en 2 etapes (tall + acabat)"
+              ],
+              [
+                "Ratllades que atrapen l'ungla",
+                "més de 5 micres",
+                "Polit localitzat, retoc o repintat"
+              ]
+            ]
+          }
         },
         {
-          "number": "3",
+          "number": "4",
           "title": "Prevenció: Mantenir les Marques Circulars Lluny",
           "paragraphs": [
+            "La gran majoria de les marques noves es generen durant el rentat i l'assecat. Canviar la tècnica costa zero euros i és més eficaç que qualsevol producte: prerentat amb escuma activa per estovar la brutícia abans de tocar la pintura, guant de microfibra en lloc d'esponja, i assecat per contacte amb tovallola de microfibra d'alt gramatge o amb aire.",
+            "Un recobriment ceràmic no fa la pintura 'a prova de ratllades', però ajuda de dues maneres: la seva duresa superficial i el seu baix coeficient de fricció fan que la brutícia llisqui en lloc d'arrossegar-se, i el seu efecte hidrofòbic redueix la freqüència i l'agressivitat dels rentats necessaris.",
             "Després de la correcció, protegir el resultat és essencial. Aquests són els hàbits clau per evitar que les marques circulars tornin:"
           ],
           "key_params": [
@@ -1636,34 +2065,70 @@
             "Fes servir tovalloles de microfibra d'alta qualitat i reemplaça-les regularment",
             "Aplica un recobriment ceràmic o segellant per a protecció a llarg termini"
           ]
+        },
+        {
+          "number": "5",
+          "title": "Puc Polir les Marques Jo Mateix?",
+          "paragraphs": [
+            "Amb una polidora de doble acció d'iniciació, un compost d'un sol pas i unes quantes hores d'aprenentatge, un aficionat pot millorar marques fines de manera visible. Els riscos: cremar el vernís en cantells i plàstics, deixar hologrames — micro-marques de màquina visibles al sol — i, sobretot, polir sense saber quanta pintura queda, l'únic error que no té marxa enrere.",
+            "La nostra recomanació honesta: si el cotxe és el teu projecte i acceptes un resultat imperfecte, el polit casolà és una afició estupenda. Si busques un acabat uniforme a tot el vehicle, certesa sobre el gruix eliminat i una protecció posterior ben aplicada, la correcció professional amortitza cada euro — especialment abans d'una venda o d'instal·lar un recobriment ceràmic."
+          ],
+          "conclusion": "Les marques circulars no són inevitables: són el resultat de centenars de petits contactes evitables. Corregeix-les una vegada amb criteri, protegeix el vernís i canvia la rutina de rentat — i la pintura es pot mantenir impecable durant anys."
         }
       ]
     },
     "windshield_scratch_repair": {
-      "seo_title": "Reparació de Ratllades al Parabrisa: DIY vs Professional | restoreLab Acadèmia",
-      "seo_description": "Quan arreglar ratllades del parabrisa tu mateix i quan trucar a un professional. Comparació honesta de kits DIY vs polit professional.",
-      "title": "Reparació de Ratllades al Parabrisa: DIY vs Professional",
-      "description": "Una comparació honesta entre kits de reparació casolans i el polit professional de vidre. Desglossem costos, riscos i quan té sentit cada opció.",
-      "intro": "Les ratllades al parabrisa causades per neteja-parabrises desgastats són un dels problemes més comuns. La pregunta sempre és la mateixa: puc arreglar-ho jo mateix o necessito un professional? Aquesta és la nostra resposta honesta.",
+      "seo_title": "Polir Vidres del Cotxe Ratllats: DIY o Professional?",
+      "seo_description": "Com treure ratllades del vidre del cotxe: prova de l'ungla, què fan els kits d'òxid de ceri i quan polir estalvia 300-500€ davant de substituir.",
+      "title": "Polir Vidres del Cotxe Ratllats: DIY o Professional?",
+      "description": "Una comparació honesta entre kits de reparació casolans i el polit professional de vidre. Desglossem la prova de l'ungla, costos, riscos, la ITV i quan té sentit cada opció.",
+      "intro": "Es poden polir els vidres ratllats del cotxe? Sí — sempre que la ratllada sigui superficial. La regla ràpida: passa l'ungla en perpendicular a la ratllada; si no s'enganxa, es pot eliminar polint amb òxid de ceri; si s'enganxa, cap polit la farà desaparèixer sense deformar el vidre. Les ratllades causades per neteja-parabrises desgastats són el problema més comú que veiem, i la pregunta sempre és la mateixa: puc arreglar-ho jo mateix o necessito un professional? Aquesta és la nostra resposta honesta, sense vendre fum en cap de les dues direccions.",
       "sections": [
         {
           "number": "1",
-          "title": "Kits DIY: Què Poden i Què No Poden Fer",
+          "title": "La Prova de l'Ungla: Superficial o Profunda?",
           "paragraphs": [
-            "Els kits d'eliminació de ratllades de vidre solen incloure pols d'òxid de ceri i una roda de polit de feltre. Poden funcionar per a ratllades superficials molt lleus, però tenen limitacions significatives."
+            "Tot diagnòstic d'un vidre ratllat comença igual: neteja la zona i passa l'ungla lentament en perpendicular a la ratllada. Si l'ungla llisca sense enganxar-se, el dany afecta només les primeres micres del vidre i és candidat al polit. Si l'ungla es clava, el solc és massa profund i el polit deixa de ser viable.",
+            "Per què existeix aquesta frontera? El vidre no es pot 'omplir': l'única manera d'eliminar una ratllada és rebaixar tot el material del voltant fins al fons del solc. En una ratllada profunda això significa retirar tant de vidre que es crea una depressió amb efecte lupa — una distorsió òptica que al parabrisa és més perillosa que la mateixa ratllada.",
+            "Hi ha un tercer cas freqüent que no és una ratllada: el gravat calcari. Les gotes d'aigua dura o d'aspersors que s'assequen al sol deixen dipòsits minerals que, amb el temps, ataquen químicament la superfície del vidre. No es noten amb l'ungla, però enlluernen de nit amb els llums dels cotxes que vénen de cara. La bona notícia: el polit amb òxid de ceri els elimina del tot."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Per Què es Ratlla el Parabrisa?",
+          "paragraphs": [
+            "L'origen número u són les escombretes del neteja-parabrises. La goma en si no ratlla el vidre; el problema és la sorra fina i la pols que queden atrapades sota una escombreta desgastada o resseca, que a cada passada actuen com un paper de vidre arrossegat per tot l'arc de visió. Accionar el neteja-parabrises en sec sobre un vidre polsós multiplica el dany. Les causes que més veiem:"
+          ],
+          "key_params": [
+            "Escombretes amb més d'un any o amb la goma esquerdada",
+            "Fer servir el neteja-parabrises sense líquid sobre pols o fang sec",
+            "Rascar gel amb rasquetes danyades o amb targetes improvisades",
+            "Anells, rellotges o sivelles en netejar el vidre a mà",
+            "Aigua dura assecada al sol: gravat calcari en lloc de ratllada"
+          ],
+          "conclusion": "Consell preventiu que repetim sempre: escombretes noves cada temporada i mai accionar el neteja-parabrises en sec. És la diferència entre polir el parabrisa una vegada cada molts anys o cada dos."
+        },
+        {
+          "number": "3",
+          "title": "Kits DIY d'Òxid de Ceri: Què Poden i Què No",
+          "paragraphs": [
+            "Els kits d'eliminació de ratllades de vidre solen incloure pols d'òxid de ceri i una roda de polit de feltre. Poden funcionar per a ratllades superficials molt lleus, però tenen limitacions significatives.",
+            "L'òxid de ceri és l'abrasiu correcte — és el mateix compost que fem servir els professionals. La diferència és tota la resta: els kits es munten sobre un trepant domèstic que no manté una velocitat constant, la roda de feltre és petita i concentra la calor, i la barreja d'aigua i pols s'ha de mantenir en una consistència exacta perquè talli sense assecar-se. Un vidre sobreescalfat en un punt pot arribar a fissurar-se per estrès tèrmic."
           ],
           "key_params": [
             "Efectius només en ratllades que no es noten amb l'ungla",
             "Risc de crear distorsió òptica si s'apliquen de forma desigual",
             "Requereixen típicament 2-4 hores de treball manual per zona petita",
             "Cost: 20-50€ per kit, però els resultats solen ser inconsistents"
-          ]
+          ],
+          "conclusion": "En resum: un kit DIY ben utilitzat pot atenuar marques d'escombreta fines en una zona petita. El que no pot és deixar un parabrisa sencer uniforme i sense distorsió — això exigeix màquina professional, mètode i experiència."
         },
         {
-          "number": "2",
-          "title": "Polit Professional de Vidre",
+          "number": "4",
+          "title": "Com Treballa un Professional el Polit de Vidres?",
           "paragraphs": [
-            "El polit professional de vidre utilitza equipament especialitzat i compostos que treballen a un nivell diferent que els kits DIY. La diferència clau és precisió i consistència."
+            "El polit professional de vidre utilitza equipament especialitzat i compostos que treballen a un nivell diferent que els kits DIY. La diferència clau és precisió i consistència.",
+            "El procés comença pel diagnòstic: marquem les ratllades des de l'interior del vidre, comprovem la profunditat amb l'ungla i amb lupa, i descartem danys que afectin el laminat. Després treballem per seccions amb passades creuades, controlant la temperatura del vidre amb pauses — el vidre calent es poleix malament i corre risc d'estrès tèrmic. En acabar verifiquem la claredat òptica mirant a través del vidre en angle, que és com ho fa l'ull en conduir."
           ],
           "tools": [
             {
@@ -1681,7 +2146,54 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
+          "title": "Polir o Substituir el Parabrisa?",
+          "paragraphs": [
+            "El càlcul econòmic és clar. Substituir un parabrisa modern costa habitualment entre 400 i 900€, i si el cotxe munta una càmera ADAS darrere el vidre cal sumar-hi la recalibració, entre 150 i 300€ addicionals. Davant d'això, polir les ratllades d'escombreta costa una fracció i conserva el vidre original de fàbrica amb el segellat intacte — per això diem que el polit estalvia 300-500€ quan el dany ho permet.",
+            "Però hi ha casos on la substitució és l'única opció responsable:"
+          ],
+          "key_params": [
+            "Esquerdes o fissures de qualsevol mida: el polit no les repara i la vibració les estén",
+            "Impactes de pedra amb dany a la capa laminada (PVB) interior",
+            "Ratllades profundes que atrapen l'ungla dins de la zona d'escombrada del conductor",
+            "Picat generalitzat per sorra que exigiria rebaixar massa vidre"
+          ],
+          "table": {
+            "caption": "Comparativa d'opcions davant d'un vidre ratllat",
+            "headers": [
+              "Opció",
+              "Cost orientatiu",
+              "Per a què serveix"
+            ],
+            "rows": [
+              [
+                "Kit DIY d'òxid de ceri",
+                "20-50€",
+                "Marques fines i petites fora de la visió directa"
+              ],
+              [
+                "Polit professional",
+                "Una fracció de la substitució",
+                "Marques d'escombreta i gravat calcari sense dany profund"
+              ],
+              [
+                "Substitució del parabrisa",
+                "400-900€ (+ recalibració ADAS)",
+                "Esquerdes, impactes i dany al laminat"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "I la ITV? La Línia de Visió del Conductor",
+          "paragraphs": [
+            "A Espanya, el manual de procediment de la ITV presta una atenció especial al camp de visió del conductor: la zona del parabrisa que escombra l'escombreta davant del volant. Esquerdes, impactes o qualsevol defecte que dificulti la visió en aquesta zona pot qualificar-se com a defecte greu i, per tant, suposar una inspecció desfavorable.",
+            "Això té dues lectures pràctiques. La primera: unes ratllades d'escombreta que enlluernen de nit convé resoldre-les abans de la inspecció, no després. La segona, menys òbvia: un polit mal executat que deixi distorsió òptica a la línia de visió és un defecte tan real com la ratllada original — una raó més per no experimentar amb un trepant precisament a la zona per on mires en conduir."
+          ]
+        },
+        {
+          "number": "7",
           "title": "Quan Triar Cada Opció",
           "paragraphs": [],
           "tools": [
@@ -1697,22 +2209,26 @@
               "label": "Substituir",
               "text": "Esquerdes, impactes que s'han estès, o danys a la capa laminada del parabrisa."
             }
-          ]
+          ],
+          "conclusion": "La decisió cap en tres preguntes: s'enganxa l'ungla?, és el dany a la línia de visió del conductor?, hi ha esquerdes o impactes? Si tot són 'no' i la zona és petita, prova el DIY si t'hi veus amb cor. Tota la resta mereix un diagnòstic professional — demanar una valoració no costa res i evita convertir una ratllada en una distorsió permanent."
         }
       ]
     },
     "paint_correction_cost_barcelona": {
-      "seo_title": "Guia de Preus Correcció de Pintura Barcelona 2025 | restoreLab",
-      "seo_description": "Quant costa la correcció de pintura a Barcelona? 5 paquets des de 149€ Express Refresh fins a 1 049€ Ceràmic Premium 5 Anys. Multiplicadors per mida.",
-      "title": "Guia de Preus Correcció de Pintura Barcelona 2025",
-      "description": "Un desglossament transparent del que costa la correcció professional de pintura a l'àrea metropolitana de Barcelona. Nivells de paquets, factors de preu i com obtenir el millor valor per al teu vehicle.",
-      "intro": "Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2025.",
+      "seo_title": "Preus Correcció de Pintura Barcelona 2026 | restoreLab",
+      "seo_description": "Quant costa la correcció de pintura a Barcelona el 2026? Tarifes reals des de 149€, taula comparativa de nivells i què amaga el polit de 50€.",
+      "title": "Guia de Preus Correcció de Pintura Barcelona 2026",
+      "description": "Un desglossament transparent del que costa la correcció professional de pintura a l'àrea metropolitana de Barcelona. Nivells de paquets, factors de preu, què amaguen les ofertes barates i com obtenir el millor valor per al teu vehicle.",
+      "intro": "Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2026, ampliada amb el que realment amaguen les ofertes de polit a 50€, com comparar pressupostos entre tallers de l'àrea de Barcelona i les preguntes que separen un professional d'un aficionat amb polidora.",
       "sections": [
         {
           "number": "1",
           "title": "Què Afecta el Preu?",
           "paragraphs": [
-            "Diversos factors determinen el cost final d'un treball de correcció de pintura. Entendre'ls t'ajuda a saber què esperar."
+            "Diversos factors determinen el cost final d'un treball de correcció de pintura. Entendre'ls t'ajuda a saber què esperar.",
+            "La mida és el factor més mecànic: cada panell addicional són metres quadrats de laca que cal mesurar, corregir i refinar. Un compacte tipus Golf ronda els 8-9 m² de superfície pintada; un SUV gran supera fàcilment els 12 m². Per això treballem amb preu base sedan i apliquem un ajust de −10% per a compactes i de +10 a +20% per a SUV, segons la superfície real.",
+            "L'estat de la pintura pesa encara més que la mida. Unes marques circulars de rentat superficials es resolen amb una passada de polit fi; els hologrames d'un polit anterior mal fet, les ratllades que atrapen l'ungla o un vernís oxidat exigeixen compostos de tall, més passades i control constant amb mesurador de gruixos. Entre un cotxe cuidat i un de castigat hi pot haver el doble d'hores de feina.",
+            "El color influeix més del que la gent creu. Els negres i tons foscos mostren cada defecte i exigeixen un refinat final impecable, perquè qualsevol holograma queda a la vista sota el sol. Els metal·litzats i perlats dispersen la llum i dissimulen defectes, però obliguen a inspeccionar amb làmpades específiques per no deixar res a mitges. Els blancs sòlids perdonen més, tot i que amaguen defectes que reapareixen tan bon punt s'aplica un ceràmic."
           ],
           "key_params": [
             "Mida del vehicle: un cotxe compacte requereix menys temps que un SUV o furgoneta",
@@ -1723,9 +2239,9 @@
         },
         {
           "number": "2",
-          "title": "Els Nostres Nivells de Paquets",
+          "title": "Els Nostres Nivells de Paquets 2026",
           "paragraphs": [
-            "A restoreLab oferim cinc paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +20%, SUV gran +35%."
+            "A restoreLab oferim cinc paquets clarament definits (preu base sedan) perquè no hi hagi sorpreses. S'apliquen multiplicadors per mida: compacte −10%, SUV +10-20% segons la superfície real de la carrosseria."
           ],
           "tools": [
             {
@@ -1748,13 +2264,100 @@
               "label": "Ceràmic Premium 5 Anys",
               "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores."
             }
-          ]
+          ],
+          "table": {
+            "caption": "Comparativa de nivells 2026 (preu base sedan)",
+            "headers": [
+              "Paquet",
+              "Preu",
+              "Durada",
+              "Ideal per a"
+            ],
+            "rows": [
+              [
+                "Express Refresh",
+                "149€",
+                "~2 h",
+                "Manteniment i posada a punt ràpida"
+              ],
+              [
+                "Correcció d'Una Fase",
+                "289€",
+                "3-4 h",
+                "Marques lleus, cotxes d'ús diari"
+              ],
+              [
+                "Correcció de Dues Fases",
+                "549€",
+                "5-7 h",
+                "Defectes marcats, pintura descuidada"
+              ],
+              [
+                "Ceràmic 2 Anys",
+                "649€",
+                "6-8 h",
+                "Correcció + protecció duradora"
+              ],
+              [
+                "Ceràmic Premium 5 Anys",
+                "1 049€",
+                "8-10 h",
+                "Vehicles premium i de col·lecció"
+              ]
+            ]
+          },
+          "conclusion": "Si dubtes entre dos nivells, la regla pràctica és senzilla: la correcció elimina defectes i el ceràmic conserva el resultat. Corregir sense protegir és deixar la feina a mitges."
         },
         {
           "number": "3",
+          "title": "Preu vs Valor: Què Estàs Comprant Realment?",
+          "paragraphs": [
+            "El mercat de Barcelona ofereix de tot: des de polits de 50-80€ en centres de rentat fins a correccions d'estudi que superen els 1.500€ en vehicles de col·lecció. Aquesta forquilla no és cap caprici: reflecteix hores reals de feina, qualitat de productes, il·luminació d'inspecció, mesurament de gruixos i, sobretot, el criteri de qui subjecta la polidora.",
+            "La nostra manera de veure-ho és simple: una correcció de pintura no és una despesa de neteja, és una intervenció sobre el vernís de fàbrica — un recurs finit d'unes 35-50 micres que no es regenera. Cada polit agressiu mal plantejat consumeix material que no torna. Pagar per criteri professional és pagar per conservar aquest marge per al futur del cotxe.",
+            "En termes de valor, el càlcul sol afavorir la feina ben feta: un cotxe amb la pintura corregida i protegida es fotografia millor, es ven abans i deixa menys marge al regateig per les ratllades. En vehicles a partir de 20.000€, la diferència de percepció en una venda supera amb escreix el cost d'una correcció de dues fases."
+          ],
+          "analogy": {
+            "title": "L'analogia del vestit a mida",
+            "text": "Comparar una correcció professional amb un polit exprés és com comparar un vestit a mida amb un arranjament de mercat ambulant: de lluny tots dos fan el fet, però un està construït per durar i l'altre per anar fent fins al primer rentat."
+          }
+        },
+        {
+          "number": "4",
+          "title": "El Polit de 50€: Què Compres Realment",
+          "paragraphs": [
+            "Les ofertes de polit complet per 50€ que circulen per Barcelona rarament inclouen correcció real. Amb aquesta tarifa no hi ha temps material per descontaminar, corregir i refinar: el que s'aplica en la majoria de casos és un glaze — un abrillantador de farciment — sovint amb una rotativa a una sola passada ràpida.",
+            "El glaze funciona farcint temporalment les microratllades amb olis i ceres: la pintura sembla corregida sota la llum del local, però el defecte continua allà. Després de 2-4 rentats els farciments desapareixen i les marques circulars reapareixen exactament igual — o pitjor, perquè una rotativa amb presses sol deixar hologrames nous.",
+            "El glaze no és un mal producte: és una preparació estètica legítima de curta durada. El problema és vendre'l com a correcció permanent. I si a més s'aplica un ceràmic sobre una pintura sense corregir ni descontaminar, el recobriment segella els defectes i els fa més difícils d'eliminar després. Aquests són els senyals d'alarma més habituals:"
+          ],
+          "key_params": [
+            "Preu molt per sota del mercat: una correcció real requereix de 3 a 10 hores de feina",
+            "Ningú inspecciona la pintura amb làmpada ni mesura el gruix del vernís abans de donar preu",
+            "Prometen eliminar totes les ratllades sense haver vist el cotxe",
+            "El cotxe es lliura mullat o acabat d'encerar: l'aigua i les ceres amaguen hologrames",
+            "No saben explicar quin compost, esponja i màquina faran servir en la teva pintura"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Preguntes que Hauries de Fer a Qualsevol Detailer",
+          "paragraphs": [
+            "Abans de deixar el teu cotxe en qualsevol taller — el nostre inclòs — fes aquestes preguntes. Un professional les respondrà amb detall i sense molestar-se; les respostes vagues ja són informació en si mateixes."
+          ],
+          "key_params": [
+            "Mesureu el gruix de la pintura abans de polir i amb quin instrument?",
+            "Quin percentatge de correcció espereu en el meu cas concret i quins defectes no sortiran?",
+            "Feu servir productes de farciment en la fase final? El resultat sobreviu a una neteja amb alcohol isopropílic?",
+            "Quina marca de compostos i de recobriment ceràmic apliqueu i amb quina garantia escrita?",
+            "Puc veure fotos d'abans i després sota làmpada d'inspecció de treballs semblants al meu?"
+          ],
+          "conclusion": "Amb aquestes cinc preguntes filtres la gran majoria d'ofertes problemàtiques abans de gastar un sol euro — i qualsevol professional seriós agrairà que les facis."
+        },
+        {
+          "number": "6",
           "title": "Com Obtenir un Pressupost",
           "paragraphs": [
-            "La forma més ràpida d'obtenir un pressupost exacte és enviar-nos fotos del teu vehicle per WhatsApp. Avaluarem l'estat de la pintura i recomanarem el paquet adequat — sense obligacions, sense pressió."
+            "La forma més ràpida d'obtenir un pressupost exacte és enviar-nos fotos del teu vehicle per WhatsApp. Avaluarem l'estat de la pintura i recomanarem el paquet adequat — sense obligacions, sense pressió.",
+            "Recorda que els preus d'aquesta guia són la base sedan de 2026: amb les fotos podrem confirmar-te l'ajust exacte per a la teva carrosseria i si la teva pintura necessita una o dues fases de correcció."
           ],
           "key_params": [
             "Envia 4-6 fotos a la llum directa del sol mostrant la pintura des de diferents angles",
@@ -1766,20 +2369,23 @@
       ]
     },
     "uv_damage_acrylic_restoration": {
-      "seo_title": "Dany UV en Finestres Acríliques: Prevenció i Restauració | restoreLab Acadèmia",
-      "seo_description": "Com la radiació UV degrada les finestres acríliques i el procés professional de restauració. Consells de prevenció i alternatives econòmiques.",
+      "seo_title": "Dany UV en Acrílic i Policarbonat: Guia | restoreLab",
+      "seo_description": "Com el sol mediterrani degrada acrílic i policarbonat: fars, pantalles de moto i finestres de vaixell. El procés professional de restauració, pas a pas.",
       "title": "Dany UV en Finestres Acríliques: Prevenció i Restauració",
-      "description": "Com la radiació ultravioleta degrada progressivament les superfícies acríliques i de policarbonat, tornant-les grogues i opaques — i el procés professional de restauració que els retorna la transparència total.",
-      "intro": "Les finestres acríliques i de policarbonat són lleugeres, resistents a impactes i àmpliament utilitzades en vaixells, caravanes, claraboies i instal·lacions arquitectòniques. Però tenen una debilitat: la radiació UV. Amb el temps, els raigs UV trenquen les cadenes de polímers, causant grogor, opacitat i fragilitat.",
+      "description": "Com la radiació ultraviolada degrada progressivament les superfícies acríliques i de policarbonat, tornant-les grogues i opaques — les diferències entre PMMA i policarbonat, i el procés professional de restauració que els retorna la transparència total.",
+      "intro": "Les finestres acríliques i de policarbonat són lleugeres, resistents a impactes i àmpliament utilitzades en vaixells, caravanes, claraboies i instal·lacions arquitectòniques. Però tenen una debilitat: la radiació UV. Amb el temps, els raigs UV trenquen les cadenes de polímers, causant grogor, opacitat i fragilitat. A l'arc mediterrani el problema s'accelera: entre Barcelona i Sant Cugat l'índex UV supera el nivell 8 durant bona part de l'estiu, i les superfícies plàstiques de cotxes, motos i embarcacions envelleixen visiblement més ràpid que al nord d'Europa. Aquesta guia ampliada explica la química del dany, les diferències entre PMMA i policarbonat, i fins on arriba — i on no — la restauració professional.",
       "sections": [
         {
           "number": "1",
-          "title": "Com l'UV Danya l'Acrílic",
+          "title": "Com Danya l'UV l'Acrílic?",
           "paragraphs": [
-            "La llum ultravioleta causa foto-oxidació en superfícies d'acrílic (PMMA) i policarbonat. Aquest procés químic degrada la capa superficial, resultant en canvis visibles."
+            "La llum ultraviolada causa foto-oxidació en superfícies d'acrílic (PMMA) i policarbonat. Aquest procés químic degrada la capa superficial, resultant en canvis visibles.",
+            "En el PMMA — polimetilmetacrilat, l'acrílic o plexiglàs clàssic — la degradació és relativament uniforme: el material esgrogueeix i perd brillantor de manera gradual, però admet polit profund perquè és homogeni en tot el seu gruix. Finestres de vaixell, claraboies de caravana i mampares solen ser PMMA colat, el cas més agraït de restaurar.",
+            "El policarbonat és una altra història. És molt més resistent a l'impacte — per això s'usa en cúpules de fars i pantalles de moto — però és químicament més vulnerable a l'UV, així que surt de fàbrica amb una laca protectora anti-UV d'unes poques micres. Quan aquesta laca s'esgota, el policarbonat nu esgrogueeix a gran velocitat: és el vel groguenc típic dels fars amb més de 6-8 anys.",
+            "La conseqüència pràctica: en PMMA polim el mateix material; en policarbonat eliminem les restes de la laca degradada i hem de reposar la protecció UV al final, perquè un far polit i sense segellar torna a esgrogueir en qüestió de 6-12 mesos sota el sol mediterrani."
           ],
           "key_params": [
-            "Grogor: el senyal més visible, causat per la formació de cromòfors al polímers",
+            "Grogor: el senyal més visible, causat per la formació de cromòfors al polímer",
             "Opacitat: el micro-esquerdat a la superfície dispersa la llum, reduint la transparència",
             "Fragilitat: l'exposició prolongada debilita el material, fent-lo propens a esquerdes",
             "Cronologia: la degradació notable comença típicament després de 3-5 anys d'exposició solar directa"
@@ -1787,9 +2393,54 @@
         },
         {
           "number": "2",
+          "title": "PMMA o Policarbonat? Identifica la Teva Superfície",
+          "paragraphs": [
+            "Abans de tocar una superfície plàstica cal saber quin material és, perquè el procés i les expectatives canvien completament. Aquestes són les aplicacions habituals que veiem a la zona de Barcelona:"
+          ],
+          "table": {
+            "caption": "PMMA vs policarbonat: on és cadascun",
+            "headers": [
+              "Superfície",
+              "Material habitual",
+              "Particularitat"
+            ],
+            "rows": [
+              [
+                "Cúpules de fars",
+                "Policarbonat amb laca UV",
+                "Restaurable; el segellat UV posterior és obligatori"
+              ],
+              [
+                "Pantalles de moto",
+                "Policarbonat (de vegades PMMA)",
+                "Polit delicat: es ratlla i se sobreescalfa amb facilitat"
+              ],
+              [
+                "Finestres de vaixell",
+                "PMMA colat",
+                "El millor candidat: admet llijat i polit profunds"
+              ],
+              [
+                "Claraboies de caravana",
+                "PMMA o policarbonat",
+                "Verificar esquerdes abans de polir; la calamarsa causa microfissures"
+              ],
+              [
+                "Mampares i marquesines",
+                "PMMA extrudit",
+                "Restaurable; més tou i propens a ratllar-se que el colat"
+              ]
+            ]
+          },
+          "conclusion": "Un truc de taller: el PMMA sona més cristal·lí en colpejar-lo suaument amb l'ungla i desprèn una olor afruitada en llijar-lo; el policarbonat és més sord i flexible. Davant del dubte, tractem la peça com a policarbonat — el material més delicat dels dos."
+        },
+        {
+          "number": "3",
           "title": "El Procés Professional de Restauració",
           "paragraphs": [
-            "A diferència del vidre, l'acrílic pot restaurar-se mitjançant polit perquè el material és més tou i uniforme. El procés implica abrasius progressivament més fins per eliminar la capa superficial danyada."
+            "A diferència del vidre, l'acrílic pot restaurar-se mitjançant polit perquè el material és més tou i uniforme. El procés implica abrasius progressivament més fins per eliminar la capa superficial danyada.",
+            "La progressió de grans és la clau del resultat. En un cas típic de grogor severa comencem amb llijat humit P800-P1200 per retirar la capa oxidada, pugem a P1500-P2000 per esborrar el ratllat del pas anterior i tanquem amb P3000 abans de passar a la polidora. Saltar-se un gra per estalviar temps deixa ratllades profundes que el polit no elimina i que reapareixen com a vels a contrallum.",
+            "El control de temperatura és el que separa un polit correcte d'una peça arruïnada. Tant el PMMA com el policarbonat són termoplàstics: si la fricció escalfa la superfície en excés, aquesta s'estova i l'esponja l'arrossega, creant distorsions òptiques permanents. Per això treballem a baixes revolucions, amb esponges específiques i pauses de refredament, especialment en pantalles de moto de paret fina."
           ],
           "tools": [
             {
@@ -1808,20 +2459,40 @@
               "label": "Protecció UV",
               "text": "Aplicació de recobriment amb estabilitzador UV per alentir la degradació futura."
             }
+          ],
+          "analogy": {
+            "title": "L'analogia de la cremada solar",
+            "text": "La capa degradada per l'UV funciona com una cremada solar: el dany viu a les capes exteriors i cal retirar-les del tot fins a arribar a material sa. Polir per sobre del dany sense eliminar-lo és maquillar el problema — la grogor torna en setmanes."
+          }
+        },
+        {
+          "number": "4",
+          "title": "Quan es Pot Restaurar i Quan Toca Substituir?",
+          "paragraphs": [
+            "La restauració té límits físics i convé conèixer-los abans d'invertir-hi. La regla general: si el dany és superficial — grogor, opacitat, microratllades — el polit ho resol; si el dany és estructural, cap polit no ho reverteix.",
+            "En pantalles de moto i finestres de vaixell hi ha un altre factor: el gruix restant. Cada restauració retira material, i una peça polida massa vegades acaba sent massa fina per a la seva funció estructural. Per això documentem l'estat abans de començar i som clars quan la substitució és l'opció honesta."
+          ],
+          "key_params": [
+            "Restaurable: grogor i vel superficial, laca UV oxidada, ratllades que no atrapen l'ungla",
+            "Restaurable amb reserves: micro-esquerdat superficial poc profund en PMMA de bon gruix",
+            "No restaurable: esquerdes passants, delaminació interna o grogor en massa de policarbonat vell",
+            "No restaurable: condensació dins d'un far segellat — el problema és la junta, no la cúpula"
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Consells de Prevenció",
           "paragraphs": [
-            "Protegir l'acrílic del dany UV és més efectiu que restaurar-lo després. Aquestes són les recomanacions professionals:"
+            "Protegir l'acrílic del dany UV és més efectiu que restaurar-lo després. En el clima mediterrani la prevenció marca una diferència enorme: una pantalla de moto aparcada cada dia al sol pot envellir en un parell d'estius el que una altra de protegida triga anys a acumular. Aquestes són les recomanacions professionals:"
           ],
           "key_params": [
             "Aplica recobriment protector UV anualment a totes les superfícies acríliques exposades",
             "Fes servir fundes quan la superfície no estigui en ús actiu (fundes de vaixell, tendals de caravana)",
             "Neteja només amb netejadors de pH neutre — evita productes a base d'amoníac",
-            "Mai assequis l'acrílic en sec — sempre fes servir una tovallola de microfibra humida per prevenir ratllades"
-          ]
+            "Mai assequis l'acrílic en sec — sempre fes servir una tovallola de microfibra humida per prevenir ratllades",
+            "Revisa les superfícies cada primavera: la grogor incipient es corregeix amb un polit lleuger; l'avançada exigeix llijat complet"
+          ],
+          "conclusion": "Restaurar costa una fracció de substituir, però prevenir costa encara menys: una funda i un segellat UV anual són la inversió més rendible per a qualsevol propietari de vaixell, moto o caravana a la costa mediterrània."
         }
       ]
     },

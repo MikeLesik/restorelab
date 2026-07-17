@@ -70,7 +70,7 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
       }
     },
     "datePublished": card.date || "2025-01-15",
-    "dateModified": card.date || "2025-01-15",
+    "dateModified": card.updated || card.date || "2025-01-15",
     "mainEntityOfPage": `${SITE_URL}/${lang}/academy/${slug}`
   })} />
 

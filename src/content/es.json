@@ -984,7 +984,8 @@
         "excerpt": "Por qué elegimos pulidoras rotativas y DA específicas, platos de soporte y compuestos de almohadillas para cada trabajo — y cómo la elección incorrecta puede dañar una superficie permanentemente.",
         "slug": "equipment-selection",
         "date": "2025-01-15",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "02",
@@ -992,7 +993,8 @@
         "excerpt": "¿Por qué la capa más fina de barniz se encuentra en los bordes? Aprende la \"regla de los 2 mm\" y entiende por qué enmascarar las \"zonas rojas\" es el único seguro real contra un repintado costoso.",
         "slug": "masking-protocols",
         "date": "2025-02-05",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "03",
@@ -1000,7 +1002,8 @@
         "excerpt": "Domina la física del \"patrón serpiente\" y el control de temperatura. Aprende cómo 20 kg de presión y una almohadilla de lana cortan defectos profundos preservando el barniz.",
         "slug": "mechanical-correction",
         "date": "2025-02-19",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "04",
@@ -1008,7 +1011,8 @@
         "excerpt": "La transición de la corrección profunda a la claridad absoluta del barniz. Aprende a eliminar la bruma de trabajo dejada por la lana y estabilizar la superficie sin hologramas.",
         "slug": "refining-stabilization",
         "date": "2025-03-12",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "05",
@@ -1016,7 +1020,8 @@
         "excerpt": "La etapa final de estabilización de la superficie. Aprende a sellar el resultado con protección de grafeno y a preservar un acabado espejo durante años.",
         "slug": "protection-preservation",
         "date": "2025-03-26",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "06",
@@ -1024,7 +1029,8 @@
         "excerpt": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente suave y el arte de limpiar metal y cuero.",
         "slug": "motorcycle-detailing",
         "date": "2025-04-16",
-        "status": "hidden"
+        "status": "hidden",
+        "updated": "2026-07-17"
       },
       {
         "number": "07",
@@ -1032,7 +1038,8 @@
         "excerpt": "Entiende qué causa esos arañazos circulares en tu pintura y el proceso profesional paso a paso para eliminarlos permanentemente.",
         "slug": "remove-swirl-marks",
         "date": "2025-05-07",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "08",
@@ -1040,7 +1047,8 @@
         "excerpt": "¿Cuándo puedes arreglar los arañazos del parabrisas tú mismo y cuándo debes llamar a un profesional? Comparación honesta de métodos, costes y resultados.",
         "slug": "windshield-scratch-repair",
         "date": "2025-05-28",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "09",
@@ -1048,7 +1056,8 @@
         "excerpt": "¿Cuánto cuesta realmente la corrección profesional de pintura en Barcelona? Desglose transparente de factores de precio, niveles de paquetes y qué afecta al presupuesto final.",
         "slug": "paint-correction-cost-barcelona",
         "date": "2025-06-11",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "10",
@@ -1056,7 +1065,8 @@
         "excerpt": "Cómo la radiación UV degrada las superficies acrílicas y de policarbonato con el tiempo, y el proceso profesional de restauración que les devuelve la transparencia total.",
         "slug": "uv-damage-acrylic-restoration",
         "date": "2025-07-02",
-        "status": "published"
+        "status": "published",
+        "updated": "2026-07-17"
       },
       {
         "number": "11",
@@ -1144,15 +1154,17 @@
     "equipment_selection": {
       "howto": true,
       "seo_title": "Rotativa vs Doble Acción — Selección | restoreLab Academia",
-      "seo_description": "Por qué el 99% del resultado depende de la selección de herramientas. Pulidoras rotativas vs doble acción — análisis de ingeniería, tabla comparativa y recomendaciones.",
+      "seo_description": "Rotativa vs doble acción: análisis de ingeniería, tabla comparativa y protocolo restoreLab. Por qué el 99% del resultado depende de la herramienta.",
       "title": "Elige Tu Arma: Rotativa vs. Doble Acción",
       "description": "Física del Proceso: Por Qué el 99% del Resultado Depende de la Selección de Herramientas. Aprende a distinguir el manejo de un \"kart\" del comportamiento de un \"camión\", y comprende por qué un centro de gravedad bajo es la base de la corrección profesional de pintura.",
-      "intro": "En nuestro laboratorio seguimos un protocolo claro: la primera pasada — la que elimina el 99% de todos los arañazos — se realiza de forma más eficaz con una pulidora rotativa. La máquina de doble acción, en cambio, es una herramienta para la estabilización final de la superficie.",
+      "intro": "En nuestro laboratorio seguimos un protocolo claro: la primera pasada — la que elimina el 99% de todos los arañazos — se realiza de forma más eficaz con una pulidora rotativa. La máquina de doble acción, en cambio, es una herramienta para la estabilización final de la superficie. En esta guía desmontamos ambas arquitecturas desde la ingeniería: cómo transmiten la potencia, cuánto calor generan, qué almohadillas piden y cómo las combinamos en un servicio móvil real en Barcelona y el Vallès.",
       "sections": [
         {
           "number": "1",
           "title": "Pulidora Rotativa: Potencia y Control",
           "paragraphs": [
+            "Una rotativa es transmisión directa: el plato gira solidario al eje del motor, normalmente entre 600 y 3.000 RPM, y cada punto de la almohadilla trabaja a velocidad constante. Esa arquitectura le da la máxima capacidad de corte del mercado — y también su único riesgo real: toda la energía se convierte en fricción y calor sobre la zona de contacto, y es el operario quien debe gestionarla con movimiento y presión constantes.",
+            "Nuestro rango de trabajo real está entre 900 y 1.800 RPM. Por encima de 2.000 RPM, el barniz de un coche moderno (35–50 micras) se calienta más rápido de lo que la mano puede reaccionar; por debajo de 900, el corte cae y el tiempo por panel se dispara sin ganancia de seguridad.",
             "La rotativa es la base de la corrección profunda. Al seleccionar una máquina, nos centramos en tres parámetros críticos:"
           ],
           "key_params": [
@@ -1201,9 +1213,20 @@
         },
         {
           "number": "2",
+          "title": "¿Por qué el calor es el verdadero enemigo del barniz?",
+          "paragraphs": [
+            "El barniz de automoción empieza a reblandecerse en torno a los 60–70 °C y puede quemarse de forma irreversible al superar los 100 °C. Una rotativa con almohadilla de lana a 1.500 RPM alcanza esas temperaturas sobre una arista en cuestión de segundos: por eso el enmascarado y el control térmico son inseparables del uso de esta máquina.",
+            "Trabajamos con un termómetro infrarrojo a mano y una regla simple de respaldo: si el dorso de la mano no aguanta sobre el panel, la máquina se detiene. En el verano mediterráneo el margen es aún menor — un capó negro al sol ya parte de 50–60 °C antes de la primera pasada — así que la corrección se hace siempre en sombra y por secciones cortas.",
+            "La doble acción reparte la misma energía en un patrón orbital y pierde velocidad bajo presión excesiva: quemar un barniz con ella es mucho más difícil, aunque no imposible. Esa tolerancia al error es la razón de que sea la máquina que recomendamos a cualquiera que empiece."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Doble Acción: El Bisturí del Acabado",
           "paragraphs": [
-            "Una vez que los defectos principales se han eliminado con la rotativa, comienza la fase de acabado. El plato de soporte de una pulidora de doble acción realiza dos tipos de movimiento simultáneamente: rotacional y oscilante. Esto permite lograr una superficie perfectamente limpia sin hologramas."
+            "Una vez que los defectos principales se han eliminado con la rotativa, comienza la fase de acabado. El plato de soporte de una pulidora de doble acción realiza dos tipos de movimiento simultáneamente: rotacional y oscilante. Esto permite lograr una superficie perfectamente limpia sin hologramas.",
+            "La cifra clave de una doble acción es su órbita (throw): el diámetro del círculo que describe el eje. Las órbitas de 8 mm son versátiles y controlables; las de 15 mm aceleran el trabajo en paneles grandes; las de 21 mm cubren superficie a máxima velocidad, pero se vuelven nerviosas en curvas y zonas estrechas. Nuestro estándar para acabado es una órbita de 15 mm con plato de 125 mm.",
+            "También distinguimos entre doble acción de giro libre y de engranaje forzado. En la primera, el plato deja de girar si se presiona en exceso — el mejor \"fusible\" de seguridad que existe. La segunda combina órbita y rotación forzada, y se acerca a la capacidad de corte de una rotativa manteniendo el patrón orbital."
           ],
           "tools_title": "Equipamiento profesional de doble acción de restoreLab",
           "tools": [
@@ -1220,27 +1243,106 @@
               "text": "Soluciones inalámbricas FLEX (XCE 8 125 y PXE 80) para máxima movilidad al trabajar en áreas pequeñas."
             }
           ]
+        },
+        {
+          "number": "4",
+          "title": "¿Qué almohadilla corresponde a cada máquina?",
+          "paragraphs": [
+            "La máquina es solo la mitad del sistema; la otra mitad es la almohadilla. Una combinación incorrecta anula las ventajas de cualquier herramienta, por cara que sea:"
+          ],
+          "table": {
+            "caption": "Combinaciones almohadilla–máquina que usamos en restoreLab",
+            "headers": [
+              "Almohadilla",
+              "Máquina",
+              "Fase",
+              "Nota"
+            ],
+            "rows": [
+              [
+                "Lana / híbrida",
+                "Rotativa",
+                "Corte pesado",
+                "Máxima capacidad de corte; exige enmascarado estricto de aristas"
+              ],
+              [
+                "Microfibra",
+                "Doble acción",
+                "Corte medio",
+                "Corta casi como la lana generando mucho menos calor"
+              ],
+              [
+                "Espuma firme de corte",
+                "Ambas",
+                "Corte medio",
+                "Predecible en superficies planas grandes"
+              ],
+              [
+                "Espuma de pulido",
+                "Doble acción",
+                "Refinado",
+                "Elimina las trazas de la etapa de corte"
+              ],
+              [
+                "Espuma blanda de acabado",
+                "Doble acción",
+                "Acabado",
+                "Brillo final sin hologramas, lista para cerámica"
+              ]
+            ]
+          },
+          "conclusion": "Regla de compatibilidad: el diámetro de la almohadilla siempre 10–25 mm mayor que el plato, y nunca una espuma blanda de acabado sobre una rotativa a más de 1.200 RPM — el calor arruina la espuma en minutos."
+        },
+        {
+          "number": "5",
+          "title": "¿Cómo combinamos ambas máquinas en un trabajo real?",
+          "paragraphs": [
+            "Un servicio de corrección en dos etapas típico de restoreLab sigue siempre la misma secuencia:"
+          ],
+          "key_params": [
+            "Medición — mapa de espesores del barniz, panel a panel, con medidor de capas.",
+            "Enmascarado — aristas, gomas y plásticos según nuestro protocolo de los 2 mm.",
+            "Corte — rotativa Makita 9237CB a 1.200–1.500 RPM con lana: elimina la gran mayoría de los defectos.",
+            "Refinado — doble acción de órbita de 15 mm con espuma de pulido: borra las trazas de la lana.",
+            "Acabado — pasada final con espuma blanda y abrasivo fino: superficie lista para cerámica o PPF."
+          ],
+          "conclusion": "Al ser un servicio móvil, la autonomía importa: las doble acción sin cable de FLEX nos permiten completar acabados y zonas pequeñas sin depender de la toma de corriente del cliente — clave cuando trabajamos en un garaje comunitario de Sant Cugat o a pie de calle en Barcelona."
+        },
+        {
+          "number": "6",
+          "title": "¿Y si solo puedes comprar una máquina?",
+          "paragraphs": [
+            "Para un aficionado que corrige su propio coche una o dos veces al año, la respuesta es inequívoca: una doble acción de giro libre con órbita de 8–15 mm. Perdona los errores, cubre desde la limpieza del barniz hasta el acabado y, con una almohadilla de microfibra, resuelve la mayor parte de los defectos de un coche de calle.",
+            "La rotativa sigue siendo insustituible en manos profesionales: donde una doble acción necesita seis pasadas, una rotativa con lana necesita dos. En un oficio donde el tiempo por panel define la rentabilidad, esa diferencia paga con creces la curva de aprendizaje — pero esa curva se recorre sobre paneles de desguace, nunca sobre el coche de un cliente."
+          ],
+          "conclusion": "La jerarquía correcta no es \"rotativa o doble acción\", sino \"rotativa para el corte, doble acción para el acabado\". Cada una hace peor el trabajo de la otra."
         }
       ]
     },
     "masking_protocols": {
-      "seo_title": "Protocolos de Enmascarado: Proteger el Borde | restoreLab Academia",
+      "seo_title": "Enmascarado: Proteger el Borde | restoreLab Academia",
       "seo_description": "Por qué la capa más fina de barniz está en los bordes. La regla de los 2 mm, cintas de contorno y técnicas de re-enmascarado para prevenir quemaduras.",
       "title": "Protocolos de Enmascarado: Proteger el Borde",
       "description": "¿Por qué la capa más fina de barniz se encuentra en los bordes? Aprende la \"regla de los 2 mm\" y entiende por qué enmascarar las \"zonas rojas\" es el único seguro real contra un repintado costoso.",
-      "intro": "El enmascarado es el paso más ignorado por los principiantes — y la causa más común de quemadura del barniz. En restoreLab no confiamos en la suerte; confiamos en la cinta de enmascarar.",
+      "intro": "El enmascarado es el paso más ignorado por los principiantes — y la causa más común de quemadura del barniz. Una quemadura en un borde no se pule ni se retoca: obliga a repintar el panel completo, con un coste de varios cientos de euros por pieza y la pérdida de la pintura original. En restoreLab no confiamos en la suerte; confiamos en la cinta de enmascarar. En esta guía explicamos por qué el barniz es más fino justo donde más castiga la almohadilla, qué zonas marcamos siempre como intocables y cómo el enmascarado evoluciona a lo largo de las tres etapas de una corrección profesional.",
       "sections": [
         {
           "number": "1",
-          "title": "Zona de Riesgo: La Física del Barniz en los Bordes",
+          "title": "¿Por qué el barniz es más fino en los bordes?",
           "paragraphs": [
-            "En los bordes y líneas agudas de la carrocería, el barniz siempre es significativamente más fino que en las superficies planas. Sin enmascarado, la primera pasada con una almohadilla de lana puede ser fatal para el panel."
+            "En los bordes y líneas agudas de la carrocería, el barniz siempre es significativamente más fino que en las superficies planas. Sin enmascarado, la primera pasada con una almohadilla de lana puede ser fatal para el panel.",
+            "La razón es física de fluidos: la pintura y el barniz se aplican en estado líquido, y la tensión superficial retira el material de las aristas y lo acumula en las zonas planas mientras cura. En una superficie plana medimos habitualmente entre 35 y 50 micras de barniz de fábrica; sobre una arista estampada esa cifra puede caer a 15–20 micras — menos de la mitad del margen de trabajo.",
+            "El borde, además, juega en nuestra contra dos veces durante el pulido: concentra toda la presión de la almohadilla en una franja de pocos milímetros y disipa peor el calor. Con una rotativa a 1.500 RPM y almohadilla de lana, la temperatura sobre una arista puede superar el umbral de reblandecimiento del barniz — en torno a los 60–70 °C — en cuestión de segundos.",
+            "Por eso, antes de tocar cualquier panel, en restoreLab medimos el espesor con un medidor de capas y tratamos cada arista como zona de exclusión. La regla es simple: lo que no se puede medir ni controlar, se enmascara."
           ]
         },
         {
           "number": "2",
-          "title": "El Método de Enmascarado restoreLab",
-          "paragraphs": [],
+          "title": "La regla de los 2 mm: el método de enmascarado restoreLab",
+          "paragraphs": [
+            "Nuestra regla básica cabe en una frase: la cinta debe invadir 2 mm del propio panel, no limitarse a cubrir la moldura vecina. Esos 2 mm quedan sin corregir durante la pasada agresiva — y es exactamente lo que buscamos: la almohadilla nunca llega a morder la arista donde el barniz es más fino.",
+            "La elección de la cinta importa tanto como su posición. Trabajamos con cinta de enmascarar específica de automoción, con adhesivo de baja transferencia y resistencia térmica de 80–110 °C. El papel de pintor doméstico se deshace con la fricción de la almohadilla y deja adhesivo cocido sobre el barniz."
+          ],
           "tools": [
             {
               "label": "Regla del perímetro",
@@ -1257,31 +1359,94 @@
             {
               "label": "Cintas de contorno",
               "text": "Para curvas complejas y líneas estampadas, usamos cinta de vinilo estrecha (6 mm), que nos permite seguir con precisión las líneas de la carrocería."
+            },
+            {
+              "label": "Gomas y juntas",
+              "text": "Los perfiles de goma de puertas y ventanas se cubren siempre: el pulimento incrustado en la goma se blanquea con el sol y es casi imposible de limpiar después."
+            },
+            {
+              "label": "Plásticos texturizados",
+              "text": "Las molduras de plástico rugoso atrapan el pulimento en su textura. Las cubrimos con cinta ancha de 24–36 mm antes de la primera pasada."
             }
           ]
         },
         {
           "number": "3",
-          "title": "Re-Enmascarado para Pasadas de Acabado",
+          "title": "¿Qué zonas marcamos siempre como \"zonas rojas\"?",
           "paragraphs": [
-            "El enmascarado no es estático. Después de la primera pasada (agresiva) con una almohadilla de lana, la cinta se reposiciona \"bajo el borde\". Esto permite que las segunda y tercera etapas (con almohadillas de espuma) refinen los propios bordes, para que no destaquen del brillo general de la superficie plana pulida."
+            "Antes de encender la máquina, recorremos el coche con el medidor de espesores y marcamos las zonas donde la corrección está prohibida o limitada. En un turismo medio, la lista es más larga de lo que la mayoría espera:"
+          ],
+          "key_params": [
+            "Aristas y líneas de carácter — barniz un 30–50% más fino que en las superficies planas.",
+            "Bordes de capó, puertas y portón — acumulan el desgaste de pulidos anteriores de otros propietarios.",
+            "Emblemas, letras y molduras cromadas — el pulimento seco atrapado debajo es casi imposible de extraer.",
+            "Sensores de aparcamiento y cámaras — el residuo de pulimento puede cubrir su superficie y alterar su funcionamiento.",
+            "Juntas entre paneles — el polvo de pulido se acumula dentro y reaparece con el primer lavado.",
+            "Plásticos mate y vinilos — un solo toque de almohadilla los deja brillantes de forma irreversible."
+          ],
+          "conclusion": "Si el medidor de espesores da lecturas anómalas — picos de más de 200 micras que delatan masilla, o valores muy bajos tras un pulido anterior — la zona se enmascara por completo y se documenta con el cliente antes de continuar."
+        },
+        {
+          "number": "4",
+          "title": "Re-enmascarado: la cinta se mueve con cada etapa",
+          "paragraphs": [
+            "El enmascarado no es estático. Después de la primera pasada (agresiva) con una almohadilla de lana, la cinta se reposiciona \"bajo el borde\". Esto permite que las segunda y tercera etapas (con almohadillas de espuma) refinen los propios bordes, para que no destaquen del brillo general de la superficie plana pulida.",
+            "En la práctica esto significa tres posiciones de cinta en un mismo trabajo: 2 mm sobre el panel para el corte con lana, al ras del borde para la etapa de pulido medio, y retirada casi por completo — reducida a las zonas rojas absolutas — para el acabado final con espuma blanda y abrasivo fino. Las pasadas de acabado generan mucho menos calor, así que la propia arista puede recibir dos o tres pasadas suaves sin riesgo.",
+            "Cambiar la cinta lleva unos diez minutos por etapa. Comparado con las horas y el coste de un repintado — y con la pérdida de la pintura original, que en un coche premium afecta directamente al valor de reventa — es la póliza de seguro más barata de todo el proceso."
           ]
+        },
+        {
+          "number": "5",
+          "title": "¿Cómo afecta el clima mediterráneo al enmascarado?",
+          "paragraphs": [
+            "Trabajamos a domicilio en Sant Cugat, Barcelona y el Vallès, y eso significa sol. Con el panel a 40–50 °C — algo habitual de mayo a septiembre — el adhesivo de la cinta se hornea sobre el barniz: a partir de 30–40 minutos al sol directo puede dejar residuo o, en un panel repintado, tirar del barniz al retirarla.",
+            "Nuestro protocolo de verano: trabajar en sombra o crearla con una carpa, enmascarar por secciones en lugar de todo el coche de una vez, retirar la cinta tirando de ella en un ángulo de 45 grados sobre sí misma, y nunca dejar el coche enmascarado \"para mañana\". La humedad matinal también cuenta: la cinta no agarra sobre un panel con rocío, así que la superficie se seca y desengrasa antes de pegar un solo centímetro."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "Errores de enmascarado que vemos cada semana",
+          "paragraphs": [
+            "Estos son los fallos que más veces hemos tenido que \"rescatar\" en coches que llegan de pulidos anteriores:"
+          ],
+          "tools": [
+            {
+              "label": "Cinta equivocada",
+              "text": "Cinta de embalaje o cinta americana: adhesivo demasiado agresivo, cero resistencia térmica y residuo garantizado sobre el barniz caliente."
+            },
+            {
+              "label": "Enmascarar y olvidar",
+              "text": "Dejar la misma cinta durante las tres etapas anula la posibilidad de refinar las aristas y deja un \"marco\" mate alrededor de cada panel."
+            },
+            {
+              "label": "Cubrir solo la moldura",
+              "text": "Proteger la pieza vecina pero dejar la arista descubierta: la moldura sobrevive, el borde del panel no."
+            },
+            {
+              "label": "Retirar tarde y mal",
+              "text": "La cinta se retira al terminar cada etapa, en ángulo de 45 grados. Quitarla al día siguiente, con el adhesivo curado por el calor, multiplica el riesgo de delaminación."
+            }
+          ],
+          "conclusion": "El enmascarado no añade brillo, no sale en las fotos del antes y después y el cliente rara vez lo nota. Pero es la diferencia entre una corrección de pintura profesional y una ruleta rusa con el barniz de tu coche."
         }
       ]
     },
     "mechanical_correction": {
       "howto": true,
-      "seo_title": "Protocolos de Corrección Mecánica: El Arte del Corte | restoreLab Academia",
+      "seo_title": "Corrección Mecánica: El Arte del Corte | restoreLab Academia",
       "seo_description": "La técnica del patrón serpiente, protocolo de 20 kg de presión y física de la almohadilla de lana. Cómo cortar defectos profundos preservando el barniz.",
       "title": "Protocolos de Corrección Mecánica: El Arte del Corte",
       "description": "Domina la física del \"patrón serpiente\" y el control de temperatura. Aprende cómo 20 kg de presión y una almohadilla de lana pueden cortar defectos profundos preservando la integridad estructural del barniz.",
-      "intro": "La primera pasada es la etapa donde se decide el destino del 99,9% de los arañazos. En restoreLab usamos la combinación Rotativa + Lana porque es la forma más eficiente de llegar al fondo de un arañazo sin perder tiempo.",
+      "intro": "La primera pasada es la etapa donde se decide el destino del 99,9% de los arañazos. En restoreLab usamos la combinación Rotativa + Lana porque es la forma más eficiente de llegar al fondo de un arañazo sin perder tiempo. Antes de tocar la máquina, medimos; y antes de medir, planificamos. En esta guía compartimos el protocolo exacto que aplicamos a diario en Sant Cugat y el área de Barcelona: presiones, revoluciones, temperaturas y los criterios que separan un corte controlado de un barniz quemado.",
       "sections": [
         {
           "number": "1",
           "title": "El Protocolo \"40×40\" y la Técnica del \"Patrón Serpiente\"",
           "paragraphs": [
-            "Pulir un panel entero de una vez es el camino más rápido al sobrecalentamiento y resultados desiguales."
+            "Pulir un panel entero de una vez es el camino más rápido al sobrecalentamiento y resultados desiguales.",
+            "¿Por qué exactamente 40×40 cm? Porque es el área máxima en la que el compuesto de corte mantiene su viscosidad de trabajo antes de secarse, y la mínima en la que la rotativa puede desarrollar un patrón de movimiento uniforme sin solapamientos caóticos. En un capó estándar salen entre seis y ocho secciones; en una puerta, dos o tres.",
+            "El solapamiento entre líneas del patrón serpiente es del 50%: cada pasada cubre la mitad de la anterior. Así garantizamos que cada punto del panel recibe la misma cantidad de trabajo mecánico y evitamos las franjas de corte desigual que el sol mediterráneo delata en cuestión de segundos.",
+            "En cuanto a revoluciones, trabajamos la lana entre 1.200 y 1.500 RPM para el corte general, y subimos puntualmente a 1.800 RPM solo sobre defectos aislados. Por encima de ese umbral, la temperatura del barniz se dispara más rápido de lo que la mano llega a detectar."
           ],
           "tools": [
             {
@@ -1302,7 +1467,9 @@
           "number": "2",
           "title": "Gestión de Presión y Temperatura",
           "paragraphs": [
-            "La eficiencia de corte depende directamente de cuánta fuerza apliques."
+            "La eficiencia de corte depende directamente de cuánta fuerza apliques.",
+            "El barniz de fábrica empieza a ablandarse alrededor de los 60 °C y sufre daño estructural a partir de los 80 °C. Nuestro límite operativo es de 50–55 °C medidos con termómetro infrarrojo; la comprobación con la palma es el respaldo rápido entre mediciones: si no puedes mantener la mano apoyada tres segundos, la sección necesita descansar.",
+            "En el verano barcelonés esto es crítico: un capó oscuro aparcado al sol alcanza 70–80 °C antes incluso de encender la máquina. Por eso trabajamos siempre a la sombra o bajo carpa y, en julio y agosto, planificamos las correcciones a primera hora de la mañana, cuando el panel parte de 25–30 °C."
           ],
           "tools": [
             {
@@ -1323,7 +1490,9 @@
           "number": "3",
           "title": "La Física de la Almohadilla de Lana",
           "paragraphs": [
-            "La lana es la herramienta de corte más agresiva de nuestro arsenal."
+            "La lana es la herramienta de corte más agresiva de nuestro arsenal.",
+            "Una almohadilla de lana de 180 mm girando a 1.500 RPM alcanza una velocidad periférica de unos 14 m/s en el borde, pero el trabajo real lo hace la corona situada a 30–60 mm del centro, donde presión y velocidad se equilibran. Por eso el borde exterior tiende a esparcir el compuesto en lugar de cortar con él.",
+            "Y no toda la lana corta igual: la fibra trenzada larga es la más agresiva y deja el patrón más marcado; la lana híbrida de fibra corta corta un 20–30% menos, pero entrega un acabado que la segunda pasada agradece. Elegimos la fibra según la dureza del barniz: los barnices cerámicos alemanes, duros, piden trenzada; los japoneses, más blandos, se conforman con híbrida."
           ],
           "tools": [
             {
@@ -1340,7 +1509,8 @@
           "number": "4",
           "title": "Higiene de Herramientas: Limpieza de la Almohadilla de Lana",
           "paragraphs": [
-            "Una almohadilla de lana obstruida con compuesto gastado deja de cortar y empieza a \"saltar\" por el panel."
+            "Una almohadilla de lana obstruida con compuesto gastado deja de cortar y empieza a \"saltar\" por el panel.",
+            "El compuesto gastado mezclado con barniz cortado forma una pasta abrasiva descontrolada: es la causa número uno de los arañazos \"nuevos\" que aparecen misteriosamente a mitad de una corrección."
           ],
           "tools": [
             {
@@ -1356,21 +1526,65 @@
             "title": "Analogía de ingeniería restoreLab",
             "text": "¿Por qué caminar cuando puedes volar? La combinación Rotativa + Lana es tu avión. Te lleva al objetivo dramáticamente más rápido y con mucho menos esfuerzo que intentar cortar un arañazo profundo con espuma o una pulidora de doble acción."
           }
+        },
+        {
+          "number": "5",
+          "title": "¿Cuánto Barniz Podemos Sacrificar? El Presupuesto de Micras",
+          "paragraphs": [
+            "El barniz de fábrica mide entre 35 y 55 micras, sobre un espesor total de pintura de 100 a 160 micras. Una corrección profunda con lana elimina de forma realista entre 3 y 8 micras. Parece poco, pero la protección UV de la capa de color solo está garantizada mientras queden al menos 25–30 micras de barniz por encima.",
+            "Por eso, antes de la primera pasada, mapeamos el vehículo con un medidor de espesores en 30–40 puntos. Si un panel ha sido repintado o pulido agresivamente en el pasado, el presupuesto de corte se reduce y la estrategia cambia: menos presión, un compuesto menos agresivo o, en casos límite, aceptar eliminar el defecto al 80% en lugar del 100%. Un arañazo atenuado siempre es mejor que un barniz agotado."
+          ],
+          "table": {
+            "caption": "Presupuesto orientativo de barniz por tipo de operación",
+            "headers": [
+              "Operación",
+              "Micras eliminadas",
+              "¿Repetible?"
+            ],
+            "rows": [
+              [
+                "Pulido de mantenimiento (1 etapa)",
+                "1–2 µm",
+                "Sí, varias veces"
+              ],
+              [
+                "Corrección en dos etapas",
+                "3–5 µm",
+                "2–3 veces en la vida del coche"
+              ],
+              [
+                "Corte profundo con lana",
+                "5–8 µm",
+                "Una vez, con medición previa obligatoria"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "¿Cuándo Parar? El Criterio de Salida de la Etapa de Corte",
+          "paragraphs": [
+            "El objetivo del corte no es el brillo, sino la geometría: un plano óptico uniforme donde el defecto original ha desaparecido y solo queda el patrón fino y homogéneo de la lana. Perseguir el brillo con la almohadilla de corte es el error clásico del aficionado: cada pasada extra consume micras sin aportar nada que la etapa de refinado no vaya a hacer mejor.",
+            "Antes de dar por cerrada una sección, la limpiamos con alcohol isopropílico diluido para retirar los aceites del compuesto, que rellenan y disimulan los defectos. Inspeccionamos con una lámpara LED de 5000–6500 K en ángulo bajo: si el arañazo original ya no proyecta sombra y la bruma de la lana es uniforme, la sección está lista para el refinado."
+          ],
+          "conclusion": "El corte decide si el defecto desaparece; el refinado decide si el resultado parece de fábrica. En el siguiente artículo de la Academia desglosamos exactamente esa transición: los protocolos de refinado y estabilización que convierten la bruma de la lana en un espejo."
         }
       ]
     },
     "refining_stabilization": {
-      "seo_title": "Protocolos de Refinado y Estabilización: El Acabado Espejo | restoreLab Academia",
-      "seo_description": "Estabilización en dos etapas después de la corrección profunda. Elimina la bruma de la lana, los hologramas y logra una claridad de barniz de grado espacial.",
+      "seo_title": "Refinado y Estabilización del Barniz | restoreLab Academia",
+      "seo_description": "Estabilización en dos etapas tras la corrección profunda. Elimina la bruma de la lana y los hologramas y logra claridad de barniz de grado espacial.",
       "title": "Protocolos de Refinado y Estabilización: El Acabado Espejo",
       "description": "La transición de la corrección profunda a la claridad absoluta del barniz. Aprende a eliminar completamente la bruma de trabajo dejada por la lana y estabilizar la superficie para eliminar hologramas bajo cualquier fuente de luz.",
-      "intro": "Después de la pasada inicial con rotativa + lana, la superficie está libre de arañazos profundos, pero queda con una bruma microscópica o marcas de corte. En restoreLab tratamos esto como una condición intermedia que requiere un proceso de estabilización en dos etapas.",
+      "intro": "Después de la pasada inicial con rotativa + lana, la superficie está libre de arañazos profundos, pero queda con una bruma microscópica o marcas de corte. En restoreLab tratamos esto como una condición intermedia que requiere un proceso de estabilización en dos etapas. En esta guía detallamos los parámetros exactos de cada pasada — máquinas, almohadillas, velocidades y presiones — junto con los protocolos de inspección y los ajustes para las pinturas que menos perdonan: el negro sólido y el acrílico.",
       "sections": [
         {
           "number": "1",
           "title": "Segunda Pasada: Suavizar el Patrón de Corte",
           "paragraphs": [
-            "El objetivo de esta etapa es reducir las marcas de trabajo dejadas por la lana, preparando el barniz para el brillo final. Esto reduce drásticamente el tiempo que la pulidora de doble acción (DA) necesita en el siguiente paso."
+            "El objetivo de esta etapa es reducir las marcas de trabajo dejadas por la lana, preparando el barniz para el brillo final. Esto reduce drásticamente el tiempo que la pulidora de doble acción (DA) necesita en el siguiente paso.",
+            "¿Qué es exactamente esa bruma? Bajo lupa son micro-arañazos de 1 a 3 micras de profundidad dejados por las fibras de la lana. Individualmente son invisibles, pero en conjunto dispersan la luz y roban saturación al color: un negro corregido pero sin refinar se ve gris bajo el sol de mediodía.",
+            "La espuma de corte medio trabaja de forma distinta a la lana: en lugar de arrancar material con fibras, lo alisa con su estructura de celda abierta. Nuestra regla es no saltar más de un nivel de agresividad entre etapas: la espuma media puede borrar el patrón de la lana; la de acabado, no."
           ],
           "tools": [
             {
@@ -1393,7 +1607,9 @@
           "number": "2",
           "title": "Tercera Pasada: Estabilización Final (El Bisturí)",
           "paragraphs": [
-            "Aquí usamos una pulidora de doble acción (DA) para llevar el barniz a un acabado de \"grado espacial\" — perfectamente claro, con cero hologramas."
+            "Aquí usamos una pulidora de doble acción (DA) para llevar el barniz a un acabado de \"grado espacial\" — perfectamente claro, con cero hologramas.",
+            "La DA debe su acabado sin hologramas a la órbita excéntrica: el eje describe un círculo de 12–21 mm mientras la almohadilla rota libremente, de modo que ningún punto de la superficie recibe dos veces la misma trayectoria. Es geometría aleatoria frente a la trayectoria circular fija de la rotativa — por eso la rotativa deja hologramas y la DA los borra.",
+            "El punto débil de la DA es el bloqueo de rotación en curvas y aristas: la almohadilla deja de girar y solo vibra, puliendo a la mitad de su eficiencia. Marcamos el plato con una línea de rotulador para vigilar la rotación con el rabillo del ojo; si la línea se congela, corregimos el ángulo de apoyo."
           ],
           "tools": [
             {
@@ -1416,7 +1632,8 @@
           "number": "3",
           "title": "Protocolo de Trabajo para Pintura Negra Sólida y Acrílico",
           "paragraphs": [
-            "La pintura negra sólida no metálica y los acabados acrílicos son los materiales más exigentes de nuestro laboratorio."
+            "La pintura negra sólida no metálica y los acabados acrílicos son los materiales más exigentes de nuestro laboratorio.",
+            "El negro sólido no perdona porque carece de partícula metálica que disperse la luz y distraiga la vista: cada micro-marca queda expuesta. Un acabado que en un gris plata pasaría por perfecto, en un negro bajo el sol duro de agosto muestra hologramas a tres metros de distancia."
           ],
           "tools": [
             {
@@ -1432,11 +1649,73 @@
             "title": "Mandamiento de ingeniería restoreLab",
             "text": "Los hologramas son las huellas de un aficionado. El verdadero brillo aparece solo cuando el barniz se vuelve ópticamente nivelado y completamente estabilizado."
           }
+        },
+        {
+          "number": "4",
+          "title": "¿Cómo Verificamos el Resultado? El Protocolo de Inspección",
+          "paragraphs": [
+            "Los polish de acabado contienen aceites que rellenan micro-defectos y regalan un brillo temporal que desaparece con el primer lavado. Por eso ninguna sección se da por terminada sin un panel wipe: alcohol isopropílico diluido al 10–15% aplicado con una microfibra limpia, que desnuda el barniz y muestra su estado real.",
+            "La inspección se hace con tres luces, porque cada una revela defectos distintos: la LED de mano de 5000–6500 K saca los hologramas, la luz difusa de taller muestra la uniformidad del brillo, y el sol directo — el juez definitivo en nuestro clima — lo revela absolutamente todo. Un barniz estabilizado de verdad soporta el sol de mediodía sin una sola telaraña."
+          ],
+          "key_params": [
+            "Panel wipe: IPA al 10–15% en agua desmineralizada, microfibra de 350–400 g/m²",
+            "Luz de inspección: LED de 5000–6500 K en ángulo de 30–45 grados respecto al panel",
+            "Veredicto final: luz solar directa con el panel a temperatura ambiente"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "¿Por Qué la Temperatura del Panel Cambia el Protocolo?",
+          "paragraphs": [
+            "Los polish de acabado están formulados para trabajar con el panel entre 20 y 45 °C. Por debajo, el abrasivo no se descompone y el ciclo se alarga; por encima, los disolventes se evaporan antes de tiempo, el polish se seca en 20 segundos y deja marcas en lugar de eliminarlas.",
+            "Como servicio móvil en Sant Cugat y el área de Barcelona, gestionamos esto a diario: en verano trabajamos bajo carpa o en garaje, dejamos enfriar cada panel entre etapas y reducimos el tamaño de sección si el polish empieza a secarse a mitad de ciclo. Estabilizar sobre un panel caliente es la receta perfecta para fabricar hologramas frescos."
+          ]
+        },
+        {
+          "number": "6",
+          "title": "¿Qué Viene Después de la Estabilización?",
+          "paragraphs": [
+            "Un barniz recién estabilizado está en su punto de máxima receptividad: ópticamente plano y químicamente limpio tras el panel wipe. Es la ventana ideal — de horas, no de días — para aplicar la protección: sellante, recubrimiento cerámico o PPF. Cada hora que el barniz desnudo pasa a la intemperie acumula contaminación que habría que volver a retirar."
+          ],
+          "table": {
+            "caption": "Resumen del protocolo completo de tres pasadas restoreLab",
+            "headers": [
+              "Pasada",
+              "Máquina",
+              "Almohadilla",
+              "Presión",
+              "Objetivo"
+            ],
+            "rows": [
+              [
+                "1 — Corte",
+                "Rotativa",
+                "Lana",
+                "Hasta 20 kg",
+                "Eliminar el defecto"
+              ],
+              [
+                "2 — Refinado",
+                "Rotativa",
+                "Espuma media",
+                "≈12 kg",
+                "Borrar el patrón de la lana"
+              ],
+              [
+                "3 — Estabilización",
+                "DA",
+                "Espuma de acabado",
+                "0–1 kg",
+                "Claridad óptica total"
+              ]
+            ]
+          },
+          "conclusion": "La corrección elimina el pasado del barniz, la estabilización define su presente y la protección asegura su futuro. Quien domina estas tres pasadas no depende de la suerte ni del ángulo de la luz: el resultado se sostiene bajo cualquier sol, incluido el nuestro."
         }
       ]
     },
     "protection_preservation": {
-      "seo_title": "Protocolos de Protección y Preservación: El Escudo Molecular | restoreLab Academia",
+      "seo_title": "Protección y Preservación Cerámica | restoreLab Academia",
       "seo_description": "Aplicación de recubrimiento cerámico, el protocolo de tres criterios y datos sobre longevidad del barniz. Cómo sellar un acabado espejo durante años.",
       "title": "Protocolos de Protección y Preservación: El Escudo Molecular",
       "description": "La etapa final de estabilización de la superficie. Aprende a sellar el resultado con protección de grafeno, por qué la cera es una elección de entusiastas y no de profesionales, y cómo preservar un acabado espejo durante años.",
@@ -1444,9 +1723,62 @@
       "sections": [
         {
           "number": "1",
+          "title": "¿Qué Es Químicamente un Recubrimiento Cerámico?",
+          "paragraphs": [
+            "Un recubrimiento cerámico es un polímero líquido a base de dióxido de silicio (SiO2) o polisilazanos que, al curar, forma un enlace covalente con el barniz de fábrica. A diferencia de una cera, que simplemente se deposita sobre la pintura, la cerámica se convierte en una extensión química de la propia superficie, con un grosor final de entre 1 y 2 micras.",
+            "Ese enlace covalente explica su durabilidad. Una cera se degrada con los detergentes, el calor y la radiación UV en cuestión de semanas; un recubrimiento cerámico curado solo puede eliminarse por abrasión mecánica, es decir, puliendo. Las formulaciones de grafeno añaden óxido de grafeno reducido a la matriz de SiO2, lo que mejora la conductividad térmica de la capa y reduce la formación de water spots al favorecer una evaporación más uniforme del agua.",
+            "El indicador que medimos en la práctica es el ángulo de contacto: sobre un barniz desnudo y degradado, una gota de agua se extiende con un ángulo de 50–70 grados; sobre una cerámica de calidad supera los 100–110 grados. Ese es el efecto de perlado que arrastra la suciedad al rodar y mantiene el vehículo limpio más tiempo."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "¿Cera, Sellante o Cerámica? La Tabla de Decisión",
+          "paragraphs": [
+            "Respetamos la cera de carnauba: ningún producto sintético iguala su calidez visual sobre colores oscuros. Pero es una elección de entusiastas, no de profesionales: en el clima mediterráneo, con radiación UV intensa y lavados frecuentes, una carnauba de calidad sobrevive entre 6 y 8 semanas. Un sellante polimérico sintético aguanta de 4 a 6 meses. Un recubrimiento cerámico correctamente aplicado protege de 2 a 5 años."
+          ],
+          "table": {
+            "caption": "Comparativa de tecnologías de protección",
+            "headers": [
+              "Tecnología",
+              "Base química",
+              "Durabilidad real",
+              "Perfil de uso"
+            ],
+            "rows": [
+              [
+                "Cera de carnauba",
+                "Cera natural + disolventes",
+                "6–8 semanas",
+                "Entusiasta: calidez visual, renovación constante"
+              ],
+              [
+                "Sellante polimérico",
+                "Polímeros sintéticos",
+                "4–6 meses",
+                "Intermedio: buen brillo, aplicación sencilla"
+              ],
+              [
+                "Cerámica SiO2",
+                "Dióxido de silicio / polisilazanos",
+                "2–5 años",
+                "Profesional: enlace covalente con el barniz"
+              ],
+              [
+                "Cerámica de grafeno",
+                "SiO2 + óxido de grafeno",
+                "3–5 años",
+                "Profesional: menos water spots, mejor gestión térmica"
+              ]
+            ]
+          },
+          "conclusion": "Nuestra regla: la cera es un hobby, el sellante es un compromiso y la cerámica es una decisión de ingeniería. Sobre un barniz recién corregido, solo la cerámica justifica las horas de pulido invertidas."
+        },
+        {
+          "number": "3",
           "title": "Elegir Protección: El Protocolo de \"Tres Criterios\"",
           "paragraphs": [
-            "Después de probar docenas de productos, nuestro laboratorio definió tres parámetros obligatorios para un recubrimiento cerámico eficaz:"
+            "Después de probar docenas de productos, nuestro laboratorio definió tres parámetros obligatorios para un recubrimiento cerámico eficaz:",
+            "Trabajamos en formato móvil, así que añadimos un cuarto criterio operativo: el producto debe tolerar la aplicación fuera de cabina, con un tiempo de evaporación predecible en un rango amplio de temperatura y humedad. Un recubrimiento que solo se comporta bien a 20 grados exactos y 50% de humedad es un producto de laboratorio, no de calle."
           ],
           "key_params": [
             "Accesibilidad y precio: El producto no debería costar tanto como repintar medio coche.",
@@ -1455,10 +1787,12 @@
           ]
         },
         {
-          "number": "2",
+          "number": "4",
           "title": "Protocolo Técnico de Aplicación",
           "paragraphs": [
-            "Antes de la aplicación, la carrocería debe estar completamente desengrasada."
+            "Antes de la aplicación, la carrocería debe estar completamente desengrasada.",
+            "Nuestro orden es estricto: lavado alcalino, descontaminación química (antihierro y disolvente de alquitrán), descontaminación mecánica con plastilina, corrección de pintura y, como paso final, un panel wipe con solución de alcohol isopropílico. Cualquier resto de aceites de pulido bloquea el enlace covalente y el recubrimiento fallará por adhesión, no por calidad del producto.",
+            "Las condiciones también importan: superficie fría al tacto, a la sombra, idealmente entre 15 y 25 grados. Aplicamos en patrón cruzado —pasadas horizontales y verticales solapadas— y esperamos el flash: el momento en que el producto forma un velo iridiscente que indica que está listo para nivelar."
           ],
           "tools": [
             {
@@ -1480,10 +1814,11 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Estabilización y Cuidado Posterior",
           "paragraphs": [
-            "Un recubrimiento cerámico necesita tiempo para completar su proceso de curado químico:"
+            "Un recubrimiento cerámico necesita tiempo para completar su proceso de curado químico:",
+            "Durante la vida del recubrimiento, el protocolo de lavado decide su longevidad real: champú de pH neutro (6,5–7,5), método de dos cubos con guante de microfibra y nunca túneles de lavado con cepillos, que muerden la capa cerámica con la suciedad acumulada de cientos de coches. Cada 3–4 meses, un booster de SiO2 recarga el rendimiento hidrofóbico sin necesidad de reaplicar el sistema completo."
           ],
           "tools": [
             {
@@ -1501,10 +1836,20 @@
           ]
         },
         {
-          "number": "4",
+          "number": "6",
+          "title": "¿Por Qué el Clima Mediterráneo Castiga Tanto el Barniz?",
+          "paragraphs": [
+            "En el área de Barcelona el índice UV alcanza valores de 8–9 durante todo el verano. La radiación ultravioleta rompe los polímeros del barniz (fotodegradación), lo que se traduce en pérdida de brillo, oxidación y, en casos avanzados, el clear coat failure que ya no se pule, solo se repinta. Un recubrimiento cerámico actúa como filtro UV sacrificial sobre esa química.",
+            "A esto se suma el aerosol de sal marina, que en las poblaciones costeras se deposita a diario sobre la carrocería y acelera la corrosión electroquímica en aristas y bajos. Y la calima: el polvo sahariano que llega con las lluvias de barro deja una película mineral abrasiva que convierte cada pasada de limpiaparabrisas o cada secado descuidado en microarañazos.",
+            "El agua de red de la zona es además muy dura, rica en carbonatos de calcio: cada gota que se seca al sol deja un anillo mineral (water spot) que sobre un barniz desprotegido puede grabarse de forma permanente. Y quien aparca bajo los pinos de Collserola conoce la resina y la savia, que a 40 grados de chapa se funden con la superficie en horas. Sobre una capa cerámica, todos estos contaminantes se quedan en la capa sacrificial y se retiran con un lavado suave."
+          ]
+        },
+        {
+          "number": "7",
           "title": "Economía y Mitos: ¿Cuánto Dura el Barniz?",
           "paragraphs": [
-            "Muchas personas temen el pulido porque creen que \"consume\" el barniz para siempre. Aquí están los datos de restoreLab:"
+            "Muchas personas temen el pulido porque creen que \"consume\" el barniz para siempre. Aquí están los datos de restoreLab:",
+            "La protección también es economía pura: la capa cerámica absorbe los microarañazos del lavado que, de otro modo, obligarían a pulir el propio barniz. Cada ciclo de corrección que evitas son micras que conserva el coche."
           ],
           "key_params": [
             "La corrección profunda con lana elimina una media de 5,5 micras.",
@@ -1519,17 +1864,18 @@
       ]
     },
     "motorcycle_detailing": {
-      "seo_title": "Detailing Especializado: Protocolos para Motos | restoreLab Academia",
+      "seo_title": "Detailing de Motos: Protocolos | restoreLab Academia",
       "seo_description": "Pulido de precisión en geometrías complejas. Corrección de toque ligero, trabajo en paneles plásticos, limpieza de metal y cuidado del cuero para motos.",
       "title": "Detailing Especializado: Protocolos para Motos",
       "description": "Trabajo de precisión en geometrías complejas. Por qué las motos requieren un enfoque exclusivamente de toque ligero, cómo trabajar en plástico cuando no se puede medir el grosor del barniz, y el arte de limpiar metal.",
-      "intro": "Una moto no es \"un coche pequeño\". Es un objeto de ingeniería complejo, donde el 70% de las piezas pintadas son de plástico y el acceso a ellas es limitado.",
+      "intro": "Una moto no es \"un coche pequeño\". Es un objeto de ingeniería complejo, donde el 70% de las piezas pintadas son de plástico y el acceso a ellas es limitado. Depósitos con gráficos bajo el barniz, carenados que flexan bajo presión, acabados mate que no admiten abrasión y una zona de cadena que concentra la contaminación más agresiva: cada moto exige un protocolo propio, no una versión reducida del protocolo de coche.",
       "sections": [
         {
           "number": "1",
           "title": "Protocolo de Seguridad: Sin Corte Agresivo",
           "paragraphs": [
-            "A diferencia de un coche, una moto no tiene \"áreas de referencia\" como los marcos de las puertas donde puedes determinar un umbral de riesgo seguro para la eliminación del barniz. La mayoría de las motos han sido repintadas en algún momento, y el grosor exacto del barniz siempre es desconocido."
+            "A diferencia de un coche, una moto no tiene \"áreas de referencia\" como los marcos de las puertas donde puedes determinar un umbral de riesgo seguro para la eliminación del barniz. La mayoría de las motos han sido repintadas en algún momento, y el grosor exacto del barniz siempre es desconocido.",
+            "A esto se suma que muchos depósitos llevan los gráficos serigrafiados directamente bajo el barniz: en algunos modelos japoneses, la capa de barniz sobre el logotipo apenas alcanza unas decenas de micras. Un corte agresivo en esa zona no deja un holograma: deja el gráfico dañado y la pieza lista para el pintor. Por eso nuestra postura es conservadora por diseño."
           ],
           "tools": [
             {
@@ -1544,8 +1890,19 @@
         },
         {
           "number": "2",
+          "title": "¿Por Qué el Plástico Pintado Exige Otro Enfoque que el Metal?",
+          "paragraphs": [
+            "Los medidores de espesor convencionales funcionan por inducción magnética o corrientes de Foucault y necesitan un sustrato de acero o aluminio. Sobre el ABS o el polipropileno de un carenado no dan lectura: trabajamos literalmente a ciegas, y eso obliga a elegir siempre el proceso menos agresivo que resuelva el defecto.",
+            "El plástico además gestiona mal el calor: su baja conductividad térmica hace que la temperatura generada por la almohadilla se quede concentrada en la zona de trabajo. El ABS empieza a deformarse alrededor de los 100 grados, un umbral que una pulidora rotativa alcanza en segundos si te detienes. Por eso trabajamos en pasadas cortas, controlamos la superficie con la mano entre secciones y nunca insistimos sobre una arista.",
+            "Y un carenado no es rígido: flexa bajo la presión de la máquina, lo que cambia el ángulo de ataque de la almohadilla y multiplica el riesgo de hologramas y de quemar el barniz en los bordes. Las aristas, la tornillería y las juntas se enmascaran siempre con cinta antes de encender la pulidora."
+          ]
+        },
+        {
+          "number": "3",
           "title": "Protocolo Técnico de Corrección",
-          "paragraphs": [],
+          "paragraphs": [
+            "El objetivo en moto no es la corrección al 100%, sino el máximo brillo con la mínima abrasión. Antes de cada sección, enmascaramos gráficos y aristas; después de cada pasada, retiramos el residuo con alcohol isopropílico y revisamos con luz puntual para decidir si hace falta insistir o parar."
+          ],
           "tools": [
             {
               "label": "Herramientas",
@@ -1562,9 +1919,29 @@
           ]
         },
         {
-          "number": "3",
+          "number": "4",
+          "title": "Acabados Mate: ¿Por Qué Aquí No Se Pule Nunca?",
+          "paragraphs": [
+            "Un barniz mate debe su aspecto a una microrrugosidad calculada de la superficie que dispersa la luz en lugar de reflejarla. Pulir esa superficie, aunque sea con el compuesto más fino, alisa la textura y crea un brillo localizado que no tiene reparación: la pieza queda manchada de forma permanente.",
+            "Por eso sobre mate la regla es absoluta: cero abrasivos, cero ceras con rellenos, cero quick detailers estándar. Solo champú de pH neutro, limpiadores específicos para acabados mate y, como protección, selladores formulados para mate que no rellenan la microtextura.",
+            "Las manchas de grasa o los water spots sobre mate se tratan con limpiadores químicos dedicados y paciencia, nunca con fricción. Si un cliente nos trae un depósito mate con un arañazo profundo, la respuesta honesta es la que damos: eso es trabajo de pintor, no de pulidor."
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Zona de Cadena: La Contaminación Más Agresiva",
+          "paragraphs": [
+            "La cadena lubrica por proyección: cada kilómetro, el lubricante sale despedido y se deposita en el basculante, la llanta trasera y el colín, mezclado con partículas metálicas del propio desgaste de la cadena y con polvo de freno. El resultado es una película grasa y abrasiva que un champú normal no toca.",
+            "Nuestro protocolo: desengrasante específico aplicado en frío, cepillos de detailing de dureza media y aclarado dirigido, protegiendo siempre los retenes. Sobre la propia cadena solo usamos limpiadores compatibles con retenes tóricos (O-ring y X-ring): un disolvente agresivo elimina la grasa interna y acorta drásticamente la vida del componente.",
+            "La llanta trasera merece mención propia: la mezcla de lubricante de cadena horneado y polvo de freno es de lo más difícil de limpiar en una moto. Un recubrimiento cerámico aplicado sobre las llantas convierte esa limpieza de veinte minutos con cepillo en un aclarado de dos."
+          ]
+        },
+        {
+          "number": "6",
           "title": "Limpieza de Metal y Cuidado del Cuero",
-          "paragraphs": [],
+          "paragraphs": [
+            "Dos advertencias de taller: nunca aplicamos pulimento de metales sobre piezas anodizadas —la capa anódica es un tratamiento superficial de micras que se elimina y no se recupera— y el azulado térmico de los escapes de titanio es, para muchos propietarios, parte de la estética de la moto: se pule solo si el cliente lo pide expresamente."
+          ],
           "tools": [
             {
               "label": "Metal",
@@ -1575,35 +1952,60 @@
               "text": "El protocolo restoreLab incluye limpieza con un cepillo suave y un limpiador espumoso, eliminación de residuos con una toalla de microfibra húmeda, y preservación obligatoria con una crema acondicionadora protectora."
             }
           ]
+        },
+        {
+          "number": "7",
+          "title": "Protección Final: Sellar la Moto para el Clima Mediterráneo",
+          "paragraphs": [
+            "Una moto vive peor que un coche: suele dormir en la calle, recibe la radiación UV mediterránea sin sombra y, en las poblaciones costeras, el aerosol de sal marina ataca a diario la tornillería, las soldaduras y el aluminio desnudo. Por eso el ciclo termina siempre con protección.",
+            "Sobre depósito y carenados aplicamos recubrimiento cerámico tras la corrección ligera: el enlace con el barniz aporta filtro UV, efecto hidrofóbico y una superficie a la que los insectos y la grasa de cadena se adhieren mucho menos. Sobre acabados mate, un sellador específico para mate; sobre plásticos texturizados sin pintar, un reacondicionador de base acuosa que no deja brillo artificial.",
+            "Y una regla de seguridad que no negociamos: los acondicionadores y abrillantadores nunca tocan el asiento, los puños, las estriberas, los neumáticos ni los discos de freno. En un vehículo que se conduce con el cuerpo, una superficie resbaladiza no es un defecto estético: es un riesgo real."
+          ]
         }
       ]
     },
     "remove_swirl_marks": {
       "howto": true,
-      "seo_title": "Cómo Eliminar Marcas Circulares de la Pintura | restoreLab Academia",
+      "seo_title": "Cómo Eliminar Marcas Circulares de la Pintura del Coche",
       "seo_description": "Qué causa las marcas circulares y cómo las eliminan los profesionales. Proceso de corrección paso a paso, herramientas y consejos de prevención.",
       "title": "Cómo Eliminar Marcas Circulares de la Pintura",
       "description": "Entiende qué causa esos arañazos circulares visibles bajo luz directa — y el proceso profesional exacto para eliminarlos permanentemente sin dañar el barniz.",
-      "intro": "Las marcas circulares son el defecto de pintura más común que encontramos. Aparecen como arañazos circulares o en forma de telaraña visibles bajo la luz solar directa o iluminación artificial. En restoreLab, las vemos en 9 de cada 10 vehículos que pasan por nuestro servicio.",
+      "intro": "Las marcas circulares son el defecto de pintura más común que encontramos. Aparecen como arañazos circulares o en forma de telaraña visibles bajo la luz solar directa o iluminación artificial. En restoreLab, las vemos en 9 de cada 10 vehículos que pasan por nuestro servicio. En esta guía explicamos qué son exactamente, por qué los productos de relleno no las eliminan de verdad y cómo es el proceso de corrección profesional paso a paso, incluyendo los límites de seguridad que medimos antes de acercar una pulidora a la carrocería.",
       "sections": [
         {
           "number": "1",
           "title": "¿Qué Causa las Marcas Circulares?",
           "paragraphs": [
-            "Las marcas circulares son micro-arañazos en el barniz causados por técnicas inadecuadas de lavado y secado. Los culpables más comunes son:"
+            "Para entender por qué aparecen conviene tener presente la escala del problema. El barniz de fábrica mide entre 35 y 50 micras — más fino que un cabello humano. Una marca circular típica penetra solo entre 0,5 y 2 micras, pero es suficiente para dispersar la luz: cuando una fuente puntual como el sol incide sobre miles de micro-arañazos orientados en todas direcciones, el ojo percibe ese halo circular característico alrededor del reflejo.",
+            "El mecanismo casi siempre es el mismo: una partícula de suciedad — sílice, polvo de freno, arenilla — queda atrapada entre la pintura y aquello que la toca, y actúa como una lija en miniatura. Las marcas circulares son micro-arañazos en el barniz causados por técnicas inadecuadas de lavado y secado. Los culpables más comunes son:"
           ],
           "key_params": [
             "Lavados automáticos con cepillos giratorios que arrastran suciedad sobre la pintura",
             "Usar el método de un solo cubo sin rejilla anti-suciedad",
             "Secar el coche con una toalla seca o sucia",
             "Aplicar cera o pulimento con un aplicador contaminado"
-          ]
+          ],
+          "analogy": {
+            "title": "La analogía del cristal de reloj",
+            "text": "Piensa en el barniz como el cristal de un reloj que llevas a diario: cada roce con la manga deja una micro-raya invisible, pero tras cientos de roces el cristal pierde brillo y nitidez. La pintura funciona igual — no es un arañazo el que mata el brillo, son miles."
+          }
         },
         {
           "number": "2",
+          "title": "¿Funcionan los Productos 'Quita-Arañazos' de Relleno?",
+          "paragraphs": [
+            "Antes de hablar de la solución real, aclaremos la falsa: las ceras y glazes 'rellena-arañazos' de gran superficie no eliminan las marcas circulares — las esconden. Contienen aceites, siliconas y polímeros que rellenan temporalmente el surco del arañazo y reducen la dispersión de la luz. El efecto es real, pero dura entre dos y cuatro lavados: en cuanto el relleno se degrada, el defecto reaparece intacto.",
+            "Los pulimentos 'todo en uno' con abrasivo suave sí eliminan algo de material y pueden mejorar marcas muy finas de forma apreciable, pero carecen del poder de corte necesario para nivelar marcas medias. Y aplicados a mano, sin máquina, su efecto sobre un barniz moderno endurecido es prácticamente cosmético."
+          ],
+          "conclusion": "Regla simple: si el defecto desaparece al mojar el panel con agua y reaparece al secarse, necesita pulido mecánico real — no relleno."
+        },
+        {
+          "number": "3",
           "title": "El Proceso Profesional de Eliminación",
           "paragraphs": [
-            "Eliminar las marcas circulares requiere pulido mecánico — no existe un atajo químico. El proceso implica abrasión controlada del barniz para nivelar la superficie por debajo de la profundidad de los arañazos."
+            "Eliminar las marcas circulares requiere pulido mecánico — no existe un atajo químico. El proceso implica abrasión controlada del barniz para nivelar la superficie por debajo de la profundidad de los arañazos.",
+            "La palabra clave es 'controlada'. Antes de pulir medimos el grosor de la pintura con un medidor digital en varios puntos de cada panel: capós y techos repintados, cantos y zonas ya corregidas anteriormente tienen menos margen. Una corrección bien ejecutada elimina entre 2 y 5 micras de barniz; un acabado de fábrica admite un número limitado de correcciones a lo largo de su vida, y ese presupuesto no se debe malgastar.",
+            "También hacemos siempre una zona de prueba de 50×50 cm donde validamos la combinación de compuesto, almohadilla y máquina antes de comprometer todo el vehículo. Cada pintura endurece distinto: el barniz cerámico de un alemán moderno no reacciona igual que el barniz blando de un japonés."
           ],
           "tools": [
             {
@@ -1622,12 +2024,39 @@
               "label": "Paso 4",
               "text": "Pasada de acabado con polish fino para lograr la máxima claridad."
             }
-          ]
+          ],
+          "table": {
+            "caption": "Qué método corresponde a cada nivel de defecto",
+            "headers": [
+              "Defecto",
+              "Profundidad aprox.",
+              "Método"
+            ],
+            "rows": [
+              [
+                "Marcas circulares finas",
+                "0,5–1 micra",
+                "Pulido de acabado en 1 etapa"
+              ],
+              [
+                "Marcas medias y hologramas",
+                "1–2 micras",
+                "Corrección en 2 etapas (corte + acabado)"
+              ],
+              [
+                "Arañazos que atrapan la uña",
+                "más de 5 micras",
+                "Pulido localizado, retoque o repintado"
+              ]
+            ]
+          }
         },
         {
-          "number": "3",
+          "number": "4",
           "title": "Prevención: Mantener las Marcas Circulares Lejos",
           "paragraphs": [
+            "La gran mayoría de las marcas nuevas se generan en el lavado y el secado. Cambiar la técnica cuesta cero euros y es más eficaz que cualquier producto: prelavado con espuma activa para ablandar la suciedad antes de tocar la pintura, guante de microfibra en lugar de esponja, y secado por contacto con toalla de microfibra de alto gramaje o con aire.",
+            "Un recubrimiento cerámico no hace la pintura 'a prueba de arañazos', pero ayuda de dos maneras: su dureza superficial y su bajo coeficiente de fricción hacen que la suciedad se deslice en lugar de arrastrarse, y su efecto hidrofóbico reduce la frecuencia y la agresividad de los lavados necesarios.",
             "Después de la corrección, proteger el resultado es esencial. Estos son los hábitos clave para evitar que las marcas circulares vuelvan:"
           ],
           "key_params": [
@@ -1636,34 +2065,70 @@
             "Usa toallas de microfibra de alta calidad y reemplázalas regularmente",
             "Aplica un recubrimiento cerámico o sellante para protección a largo plazo"
           ]
+        },
+        {
+          "number": "5",
+          "title": "¿Puedo Pulir las Marcas Yo Mismo?",
+          "paragraphs": [
+            "Con una pulidora de doble acción de iniciación, un compuesto de un solo paso y varias horas de aprendizaje, un aficionado puede mejorar marcas finas de forma visible. Los riesgos: quemar el barniz en cantos y plásticos, dejar hologramas — micro-marcas de máquina visibles al sol — y, sobre todo, pulir sin saber cuánta pintura queda, el único error que no tiene vuelta atrás.",
+            "Nuestra recomendación honesta: si el coche es tu proyecto y aceptas un resultado imperfecto, el pulido casero es una afición estupenda. Si buscas un acabado uniforme en todo el vehículo, certeza sobre el grosor eliminado y una protección posterior bien aplicada, la corrección profesional amortiza cada euro — especialmente antes de una venta o de instalar un recubrimiento cerámico."
+          ],
+          "conclusion": "Las marcas circulares no son inevitables: son el resultado de cientos de pequeños contactos evitables. Corrígelas una vez con criterio, protege el barniz y cambia la rutina de lavado — y la pintura puede mantenerse impecable durante años."
         }
       ]
     },
     "windshield_scratch_repair": {
-      "seo_title": "Reparación de Arañazos en Parabrisas: DIY vs Profesional | restoreLab Academia",
-      "seo_description": "Cuándo arreglar arañazos del parabrisas tú mismo y cuándo llamar a un profesional. Comparación honesta de kits DIY vs pulido profesional.",
-      "title": "Reparación de Arañazos en Parabrisas: DIY vs Profesional",
-      "description": "Una comparación honesta entre kits de reparación caseros y el pulido profesional de vidrio. Desglosamos costes, riesgos y cuándo tiene sentido cada opción.",
-      "intro": "Los arañazos en el parabrisas causados por limpiaparabrisas desgastados son uno de los problemas más comunes. La pregunta siempre es la misma: ¿puedo arreglarlo yo mismo o necesito un profesional? Esta es nuestra respuesta honesta.",
+      "seo_title": "Pulir Cristales del Coche Rayados: ¿DIY o Profesional?",
+      "seo_description": "Cómo quitar arañazos del cristal del coche: prueba de la uña, qué logran los kits de óxido de cerio y cuándo pulir ahorra 300-500€ frente a sustituir.",
+      "title": "Pulir Cristales del Coche Rayados: ¿DIY o Profesional?",
+      "description": "Una comparación honesta entre kits de reparación caseros y el pulido profesional de vidrio. Desglosamos la prueba de la uña, costes, riesgos, la ITV y cuándo tiene sentido cada opción.",
+      "intro": "¿Se pueden pulir los cristales rayados del coche? Sí — siempre que el arañazo sea superficial. La regla rápida: pasa la uña en perpendicular al arañazo; si no se engancha, se puede eliminar puliendo con óxido de cerio; si se engancha, ningún pulido lo hará desaparecer sin deformar el vidrio. Los arañazos causados por limpiaparabrisas desgastados son el problema más común que vemos, y la pregunta siempre es la misma: ¿puedo arreglarlo yo mismo o necesito un profesional? Esta es nuestra respuesta honesta, sin vender humo en ninguna de las dos direcciones.",
       "sections": [
         {
           "number": "1",
-          "title": "Kits DIY: Qué Pueden y Qué No Pueden Hacer",
+          "title": "La Prueba de la Uña: ¿Superficial o Profundo?",
           "paragraphs": [
-            "Los kits de eliminación de arañazos de vidrio suelen incluir polvo de óxido de cerio y una rueda de pulido de fieltro. Pueden funcionar para arañazos superficiales muy leves, pero tienen limitaciones significativas."
+            "Todo diagnóstico de un cristal rayado empieza igual: limpia la zona y pasa la uña lentamente en perpendicular al arañazo. Si la uña se desliza sin engancharse, el daño afecta solo a las primeras micras del vidrio y es candidato al pulido. Si la uña se clava, el surco es demasiado profundo y el pulido deja de ser viable.",
+            "¿Por qué existe esa frontera? El vidrio no se 'rellena': la única forma de eliminar un arañazo es rebajar todo el material circundante hasta el fondo del surco. En un arañazo profundo eso significa retirar tanto vidrio que se crea una depresión con efecto lupa — una distorsión óptica que en el parabrisas es más peligrosa que el propio arañazo.",
+            "Hay un tercer caso frecuente que no es un arañazo: el grabado calcáreo. Las gotas de agua dura o de aspersores que se secan al sol dejan depósitos minerales que, con el tiempo, atacan químicamente la superficie del vidrio. No se notan con la uña, pero deslumbran de noche con las luces de los coches que vienen de frente. La buena noticia: el pulido con óxido de cerio los elimina por completo."
+          ]
+        },
+        {
+          "number": "2",
+          "title": "¿Por Qué se Raya el Parabrisas?",
+          "paragraphs": [
+            "El origen número uno son las escobillas del limpiaparabrisas. La goma en sí no raya el vidrio; el problema es la arenilla y el polvo que quedan atrapados bajo una escobilla desgastada o reseca, que en cada barrido actúan como una lija arrastrada por todo el arco de visión. Accionar el limpiaparabrisas en seco sobre un cristal polvoriento multiplica el daño. Las causas que más vemos:"
+          ],
+          "key_params": [
+            "Escobillas con más de un año o con la goma agrietada",
+            "Usar el limpiaparabrisas sin líquido sobre polvo o barro seco",
+            "Rascar hielo con rasquetas dañadas o con tarjetas improvisadas",
+            "Anillos, relojes o hebillas al limpiar el cristal a mano",
+            "Agua dura secada al sol: grabado calcáreo en lugar de arañazo"
+          ],
+          "conclusion": "Consejo preventivo que repetimos siempre: escobillas nuevas cada temporada y nunca accionar el limpia en seco. Es la diferencia entre pulir el parabrisas una vez cada muchos años o cada dos."
+        },
+        {
+          "number": "3",
+          "title": "Kits DIY de Óxido de Cerio: Qué Pueden y Qué No",
+          "paragraphs": [
+            "Los kits de eliminación de arañazos de vidrio suelen incluir polvo de óxido de cerio y una rueda de pulido de fieltro. Pueden funcionar para arañazos superficiales muy leves, pero tienen limitaciones significativas.",
+            "El óxido de cerio es el abrasivo correcto — es el mismo compuesto que usamos los profesionales. La diferencia está en todo lo demás: los kits se montan sobre un taladro doméstico que no mantiene una velocidad constante, la rueda de fieltro es pequeña y concentra el calor, y la mezcla de agua y polvo hay que mantenerla en una consistencia exacta para que corte sin secarse. Un vidrio sobrecalentado en un punto puede llegar a fisurarse por estrés térmico."
           ],
           "key_params": [
             "Efectivos solo en arañazos que no se sienten con la uña",
             "Riesgo de crear distorsión óptica si se aplican de forma desigual",
             "Requieren típicamente 2-4 horas de trabajo manual por zona pequeña",
             "Coste: 20-50€ por kit, pero los resultados suelen ser inconsistentes"
-          ]
+          ],
+          "conclusion": "En resumen: un kit DIY bien usado puede atenuar marcas de escobilla finas en una zona pequeña. Lo que no puede es dejar un parabrisas completo uniforme y sin distorsión — eso exige máquina profesional, método y experiencia."
         },
         {
-          "number": "2",
-          "title": "Pulido Profesional de Vidrio",
+          "number": "4",
+          "title": "¿Cómo Trabaja un Profesional el Pulido de Cristales?",
           "paragraphs": [
-            "El pulido profesional de vidrio utiliza equipamiento especializado y compuestos que trabajan a un nivel diferente que los kits DIY. La diferencia clave es precisión y consistencia."
+            "El pulido profesional de vidrio utiliza equipamiento especializado y compuestos que trabajan a un nivel diferente que los kits DIY. La diferencia clave es precisión y consistencia.",
+            "El proceso empieza por el diagnóstico: marcamos los arañazos desde el interior del cristal, comprobamos la profundidad con la uña y con lupa, y descartamos daños que afecten al laminado. Después trabajamos por secciones con pasadas cruzadas, controlando la temperatura del vidrio con pausas — el vidrio caliente se pule mal y corre riesgo de estrés térmico. Al terminar verificamos la claridad óptica mirando a través del cristal en ángulo, que es como lo hace el ojo al conducir."
           ],
           "tools": [
             {
@@ -1681,7 +2146,54 @@
           ]
         },
         {
-          "number": "3",
+          "number": "5",
+          "title": "¿Pulir o Sustituir el Parabrisas?",
+          "paragraphs": [
+            "La cuenta económica es clara. Sustituir un parabrisas moderno cuesta habitualmente entre 400 y 900€, y si el coche monta una cámara ADAS tras el cristal hay que sumar la recalibración, entre 150 y 300€ adicionales. Frente a eso, pulir los arañazos de escobilla cuesta una fracción y conserva el cristal original de fábrica con su sellado intacto — por eso decimos que el pulido ahorra 300-500€ cuando el daño lo permite.",
+            "Pero hay casos donde la sustitución es la única opción responsable:"
+          ],
+          "key_params": [
+            "Grietas o fisuras de cualquier tamaño: el pulido no las repara y la vibración las extiende",
+            "Impactos de piedra con daño en la capa laminada (PVB) interior",
+            "Arañazos profundos que atrapan la uña dentro de la zona de barrido del conductor",
+            "Picado generalizado por arena que exigiría rebajar demasiado vidrio"
+          ],
+          "table": {
+            "caption": "Comparativa de opciones ante un cristal rayado",
+            "headers": [
+              "Opción",
+              "Coste orientativo",
+              "Para qué sirve"
+            ],
+            "rows": [
+              [
+                "Kit DIY de óxido de cerio",
+                "20-50€",
+                "Marcas finas y pequeñas fuera de la visión directa"
+              ],
+              [
+                "Pulido profesional",
+                "Una fracción de la sustitución",
+                "Marcas de escobilla y grabado calcáreo sin daño profundo"
+              ],
+              [
+                "Sustitución del parabrisas",
+                "400-900€ (+ recalibración ADAS)",
+                "Grietas, impactos y daño en el laminado"
+              ]
+            ]
+          }
+        },
+        {
+          "number": "6",
+          "title": "¿Y la ITV? La Línea de Visión del Conductor",
+          "paragraphs": [
+            "En España, el manual de procedimiento de la ITV presta especial atención al campo de visión del conductor: la zona del parabrisas que barre la escobilla delante del volante. Grietas, impactos o cualquier defecto que dificulte la visión en esa zona puede calificarse como defecto grave y, por tanto, suponer una inspección desfavorable.",
+            "Esto tiene dos lecturas prácticas. La primera: unos arañazos de escobilla que deslumbran de noche conviene resolverlos antes de la inspección, no después. La segunda, menos obvia: un pulido mal ejecutado que deje distorsión óptica en la línea de visión es un defecto tan real como el arañazo original — otra razón para no experimentar con un taladro precisamente en la zona por la que miras al conducir."
+          ]
+        },
+        {
+          "number": "7",
           "title": "Cuándo Elegir Cada Opción",
           "paragraphs": [],
           "tools": [
@@ -1697,22 +2209,26 @@
               "label": "Sustituir",
               "text": "Grietas, impactos que se han extendido, o daños en la capa laminada del parabrisas."
             }
-          ]
+          ],
+          "conclusion": "La decisión cabe en tres preguntas: ¿se engancha la uña?, ¿está el daño en la línea de visión del conductor?, ¿hay grietas o impactos? Si todo son 'no' y la zona es pequeña, prueba el DIY si te apetece. Todo lo demás merece un diagnóstico profesional — pedir una valoración no cuesta nada y evita convertir un arañazo en una distorsión permanente."
         }
       ]
     },
     "paint_correction_cost_barcelona": {
-      "seo_title": "Guía de Precios Corrección de Pintura Barcelona 2025 | restoreLab",
-      "seo_description": "¿Cuánto cuesta la corrección de pintura en Barcelona? 5 paquetes desde 149€ Express Refresh hasta 1 049€ Cerámico Premium 5 Años. Multiplicadores por tamaño.",
-      "title": "Guía de Precios Corrección de Pintura Barcelona 2025",
-      "description": "Un desglose transparente de lo que cuesta la corrección profesional de pintura en el área metropolitana de Barcelona. Niveles de paquetes, factores de precio y cómo obtener el mejor valor para tu vehículo.",
-      "intro": "Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta la corrección de pintura? La respuesta honesta es que depende de varios factores — pero creemos en la transparencia total. Aquí está nuestra guía completa de precios para 2025.",
+      "seo_title": "Precios Corrección de Pintura Barcelona 2026 | restoreLab",
+      "seo_description": "¿Cuánto cuesta la corrección de pintura en Barcelona en 2026? Tarifas reales desde 149€, tabla comparativa de niveles y qué esconde el pulido de 50€.",
+      "title": "Guía de Precios Corrección de Pintura Barcelona 2026",
+      "description": "Un desglose transparente de lo que cuesta la corrección profesional de pintura en el área metropolitana de Barcelona. Niveles de paquetes, factores de precio, qué esconden las ofertas baratas y cómo obtener el mejor valor para tu vehículo.",
+      "intro": "Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta la corrección de pintura? La respuesta honesta es que depende de varios factores — pero creemos en la transparencia total. Aquí está nuestra guía completa de precios para 2026, ampliada con lo que realmente esconden las ofertas de pulido a 50€, cómo comparar presupuestos entre talleres del área de Barcelona y las preguntas que separan a un profesional de un aficionado con pulidora.",
       "sections": [
         {
           "number": "1",
           "title": "¿Qué Afecta al Precio?",
           "paragraphs": [
-            "Varios factores determinan el coste final de un trabajo de corrección de pintura. Entenderlos te ayuda a saber qué esperar."
+            "Varios factores determinan el coste final de un trabajo de corrección de pintura. Entenderlos te ayuda a saber qué esperar.",
+            "El tamaño es el factor más mecánico: cada panel adicional son metros cuadrados de laca que hay que medir, corregir y refinar. Un compacto tipo Golf ronda los 8-9 m² de superficie pintada; un SUV grande supera fácilmente los 12 m². Por eso trabajamos con precio base sedán y aplicamos un ajuste de −10% para compactos y de +10 a +20% para SUV, según la superficie real.",
+            "El estado de la pintura pesa incluso más que el tamaño. Unas marcas circulares de lavado superficiales se resuelven con una pasada de pulido fino; los hologramas de un pulido anterior mal hecho, los arañazos que atrapan la uña o un barniz oxidado exigen compuestos de corte, más pasadas y control constante con medidor de espesores. Entre un coche cuidado y uno castigado puede haber el doble de horas de trabajo.",
+            "El color influye más de lo que la gente cree. Los negros y tonos oscuros muestran cada defecto y exigen un refinado final impecable, porque cualquier holograma queda a la vista bajo el sol. Los metalizados y perlados dispersan la luz y disimulan defectos, pero obligan a inspeccionar con lámparas específicas para no dejar nada a medias. Los blancos sólidos perdonan más, aunque esconden defectos que reaparecen en cuanto se aplica un cerámico."
           ],
           "key_params": [
             "Tamaño del vehículo: un coche compacto requiere menos tiempo que un SUV o furgoneta",
@@ -1723,9 +2239,9 @@
         },
         {
           "number": "2",
-          "title": "Nuestros Niveles de Paquetes",
+          "title": "Nuestros Niveles de Paquetes 2026",
           "paragraphs": [
-            "En restoreLab ofrecemos cinco paquetes claramente definidos (precio base sedán) para que no haya sorpresas. Se aplican multiplicadores por tamaño: compacto −10%, SUV +20%, SUV grande +35%."
+            "En restoreLab ofrecemos cinco paquetes claramente definidos (precio base sedán) para que no haya sorpresas. Se aplican multiplicadores por tamaño: compacto −10%, SUV +10-20% según la superficie real de la carrocería."
           ],
           "tools": [
             {
@@ -1748,13 +2264,100 @@
               "label": "Cerámico Premium 5 Años",
               "text": "1 049€. Corrección multifase + cerámico grafeno 5 años + parabrisas + llantas. 8-10 horas."
             }
-          ]
+          ],
+          "table": {
+            "caption": "Comparativa de niveles 2026 (precio base sedán)",
+            "headers": [
+              "Paquete",
+              "Precio",
+              "Duración",
+              "Ideal para"
+            ],
+            "rows": [
+              [
+                "Express Refresh",
+                "149€",
+                "~2 h",
+                "Mantenimiento y puesta a punto rápida"
+              ],
+              [
+                "Corrección de Una Fase",
+                "289€",
+                "3-4 h",
+                "Marcas leves, coches de uso diario"
+              ],
+              [
+                "Corrección de Dos Fases",
+                "549€",
+                "5-7 h",
+                "Defectos marcados, pintura descuidada"
+              ],
+              [
+                "Cerámico 2 Años",
+                "649€",
+                "6-8 h",
+                "Corrección + protección duradera"
+              ],
+              [
+                "Cerámico Premium 5 Años",
+                "1 049€",
+                "8-10 h",
+                "Vehículos premium y de colección"
+              ]
+            ]
+          },
+          "conclusion": "Si dudas entre dos niveles, la regla práctica es sencilla: la corrección elimina defectos y el cerámico conserva el resultado. Corregir sin proteger es dejar el trabajo a medias."
         },
         {
           "number": "3",
+          "title": "Precio vs Valor: ¿Qué Estás Comprando Realmente?",
+          "paragraphs": [
+            "El mercado de Barcelona ofrece de todo: desde pulidos de 50-80€ en centros de lavado hasta correcciones de estudio que superan los 1.500€ en vehículos de colección. Esa horquilla no es capricho: refleja horas reales de trabajo, calidad de productos, iluminación de inspección, medición de espesores y, sobre todo, el criterio de quien sujeta la pulidora.",
+            "Nuestra forma de verlo es simple: una corrección de pintura no es un gasto de limpieza, es una intervención sobre el barniz de fábrica — un recurso finito de unas 35-50 micras que no se regenera. Cada pulido agresivo mal planteado consume material que no vuelve. Pagar por criterio profesional es pagar por conservar ese margen para el futuro del coche.",
+            "En términos de valor, el cálculo suele favorecer al trabajo bien hecho: un coche con la pintura corregida y protegida se fotografía mejor, se vende antes y deja menos margen al regateo por los arañazos. En vehículos a partir de 20.000€, la diferencia de percepción en una venta supera con creces el coste de una corrección de dos fases."
+          ],
+          "analogy": {
+            "title": "La analogía del traje a medida",
+            "text": "Comparar una corrección profesional con un pulido exprés es como comparar un traje a medida con un arreglo de mercadillo: de lejos ambos quedan bien, pero uno está construido para durar y el otro para salir del paso hasta el primer lavado."
+          }
+        },
+        {
+          "number": "4",
+          "title": "El Pulido de 50€: Qué Compras Realmente",
+          "paragraphs": [
+            "Las ofertas de pulido completo por 50€ que circulan por Barcelona rara vez incluyen corrección real. Con esa tarifa no da tiempo material a descontaminar, corregir y refinar: lo que se aplica en la mayoría de los casos es un glaze — un abrillantador de relleno — a menudo con una rotativa a una sola pasada rápida.",
+            "El glaze funciona rellenando temporalmente los microarañazos con aceites y ceras: la pintura parece corregida bajo la luz del local, pero el defecto sigue ahí. Tras 2-4 lavados los rellenos desaparecen y las marcas circulares reaparecen exactamente igual — o peor, porque una rotativa con prisas suele dejar hologramas nuevos.",
+            "El glaze no es un mal producto: es una preparación estética legítima de corta duración. El problema es venderlo como corrección permanente. Y si además se aplica un cerámico encima de una pintura sin corregir ni descontaminar, el recubrimiento sella los defectos y los hace más difíciles de eliminar después. Estas son las señales de alarma más habituales:"
+          ],
+          "key_params": [
+            "Precio muy por debajo del mercado: una corrección real requiere de 3 a 10 horas de trabajo",
+            "Nadie inspecciona la pintura con lámpara ni mide el espesor del barniz antes de dar precio",
+            "Prometen eliminar todos los arañazos sin haber visto el coche",
+            "El coche se entrega mojado o recién encerado: el agua y las ceras esconden hologramas",
+            "No saben explicar qué compuesto, boina y máquina van a usar en tu pintura"
+          ]
+        },
+        {
+          "number": "5",
+          "title": "Preguntas que Deberías Hacer a Cualquier Detailer",
+          "paragraphs": [
+            "Antes de dejar tu coche en cualquier taller — el nuestro incluido — haz estas preguntas. Un profesional las responderá con detalle y sin molestarse; las respuestas vagas ya son información en sí mismas."
+          ],
+          "key_params": [
+            "¿Medís el espesor de la pintura antes de pulir y con qué instrumento?",
+            "¿Qué porcentaje de corrección esperáis en mi caso concreto y qué defectos no saldrán?",
+            "¿Usáis productos de relleno en la fase final? ¿El resultado sobrevive a una limpieza con alcohol isopropílico?",
+            "¿Qué marca de compuestos y de recubrimiento cerámico aplicáis y con qué garantía escrita?",
+            "¿Puedo ver fotos de antes y después bajo lámpara de inspección de trabajos similares al mío?"
+          ],
+          "conclusion": "Con estas cinco preguntas filtras la gran mayoría de ofertas problemáticas antes de gastar un solo euro — y cualquier profesional serio agradecerá que las hagas."
+        },
+        {
+          "number": "6",
           "title": "Cómo Obtener un Presupuesto",
           "paragraphs": [
-            "La forma más rápida de obtener un presupuesto exacto es enviarnos fotos de tu vehículo por WhatsApp. Evaluaremos el estado de la pintura y recomendaremos el paquete adecuado — sin obligaciones, sin presión."
+            "La forma más rápida de obtener un presupuesto exacto es enviarnos fotos de tu vehículo por WhatsApp. Evaluaremos el estado de la pintura y recomendaremos el paquete adecuado — sin obligaciones, sin presión.",
+            "Recuerda que los precios de esta guía son la base sedán de 2026: con las fotos podremos confirmarte el ajuste exacto para tu carrocería y si tu pintura necesita una o dos fases de corrección."
           ],
           "key_params": [
             "Envía 4-6 fotos a la luz directa del sol mostrando la pintura desde diferentes ángulos",
@@ -1766,17 +2369,20 @@
       ]
     },
     "uv_damage_acrylic_restoration": {
-      "seo_title": "Daño UV en Ventanas Acrílicas: Prevención y Restauración | restoreLab Academia",
-      "seo_description": "Cómo la radiación UV degrada las ventanas acrílicas y el proceso profesional de restauración. Consejos de prevención y alternativas económicas.",
+      "seo_title": "Daño UV en Acrílico y Policarbonato: Guía | restoreLab",
+      "seo_description": "Cómo el sol mediterráneo degrada acrílico y policarbonato: faros, pantallas de moto y ventanas de barco. Proceso profesional de restauración paso a paso.",
       "title": "Daño UV en Ventanas Acrílicas: Prevención y Restauración",
-      "description": "Cómo la radiación ultravioleta degrada progresivamente las superficies acrílicas y de policarbonato, volviéndolas amarillas y opacas — y el proceso profesional de restauración que les devuelve la transparencia total.",
-      "intro": "Las ventanas acrílicas y de policarbonato son ligeras, resistentes a impactos y ampliamente utilizadas en barcos, caravanas, claraboyas e instalaciones arquitectónicas. Pero tienen una debilidad: la radiación UV. Con el tiempo, los rayos UV rompen las cadenas de polímero, causando amarillamiento, opacidad y fragilidad.",
+      "description": "Cómo la radiación ultravioleta degrada progresivamente las superficies acrílicas y de policarbonato, volviéndolas amarillas y opacas — las diferencias entre PMMA y policarbonato, y el proceso profesional de restauración que les devuelve la transparencia total.",
+      "intro": "Las ventanas acrílicas y de policarbonato son ligeras, resistentes a impactos y ampliamente utilizadas en barcos, caravanas, claraboyas e instalaciones arquitectónicas. Pero tienen una debilidad: la radiación UV. Con el tiempo, los rayos UV rompen las cadenas de polímero, causando amarillamiento, opacidad y fragilidad. En el arco mediterráneo el problema se acelera: entre Barcelona y Sant Cugat el índice UV supera el nivel 8 durante buena parte del verano, y las superficies plásticas de coches, motos y embarcaciones envejecen visiblemente más rápido que en el norte de Europa. Esta guía ampliada explica la química del daño, las diferencias entre PMMA y policarbonato, y hasta dónde llega — y dónde no — la restauración profesional.",
       "sections": [
         {
           "number": "1",
-          "title": "Cómo el UV Daña el Acrílico",
+          "title": "¿Cómo Daña el UV al Acrílico?",
           "paragraphs": [
-            "La luz ultravioleta causa foto-oxidación en superficies de acrílico (PMMA) y policarbonato. Este proceso químico degrada la capa superficial, resultando en cambios visibles."
+            "La luz ultravioleta causa foto-oxidación en superficies de acrílico (PMMA) y policarbonato. Este proceso químico degrada la capa superficial, resultando en cambios visibles.",
+            "En el PMMA — polimetilmetacrilato, el acrílico o plexiglás clásico — la degradación es relativamente uniforme: el material amarillea y pierde brillo de forma gradual, pero admite pulido profundo porque es homogéneo en todo su espesor. Ventanas de barco, claraboyas de caravana y mamparas suelen ser PMMA colado, el caso más agradecido de restaurar.",
+            "El policarbonato es otra historia. Es mucho más resistente al impacto — por eso se usa en cúpulas de faros y pantallas de moto — pero es químicamente más vulnerable al UV, así que sale de fábrica con una laca protectora anti-UV de unas pocas micras. Cuando esa laca se agota, el policarbonato desnudo amarillea a gran velocidad: es el velo amarillento típico de los faros con más de 6-8 años.",
+            "La consecuencia práctica: en PMMA pulimos el propio material; en policarbonato eliminamos los restos de la laca degradada y debemos reponer la protección UV al final, porque un faro pulido y sin sellar vuelve a amarillear en cuestión de 6-12 meses bajo el sol mediterráneo."
           ],
           "key_params": [
             "Amarillamiento: la señal más visible, causada por la formación de cromóforos en el polímero",
@@ -1787,9 +2393,54 @@
         },
         {
           "number": "2",
+          "title": "¿PMMA o Policarbonato? Identifica tu Superficie",
+          "paragraphs": [
+            "Antes de tocar una superficie plástica hay que saber qué material es, porque el proceso y las expectativas cambian por completo. Estas son las aplicaciones habituales que vemos en la zona de Barcelona:"
+          ],
+          "table": {
+            "caption": "PMMA vs policarbonato: dónde está cada uno",
+            "headers": [
+              "Superficie",
+              "Material habitual",
+              "Particularidad"
+            ],
+            "rows": [
+              [
+                "Cúpulas de faros",
+                "Policarbonato con laca UV",
+                "Restaurable; el sellado UV posterior es obligatorio"
+              ],
+              [
+                "Pantallas de moto",
+                "Policarbonato (a veces PMMA)",
+                "Pulido delicado: se raya y se sobrecalienta con facilidad"
+              ],
+              [
+                "Ventanas de barco",
+                "PMMA colado",
+                "El mejor candidato: admite lijado y pulido profundos"
+              ],
+              [
+                "Claraboyas de caravana",
+                "PMMA o policarbonato",
+                "Verificar grietas antes de pulir; el granizo causa microfisuras"
+              ],
+              [
+                "Mamparas y marquesinas",
+                "PMMA extruido",
+                "Restaurable; más blando y propenso a rayarse que el colado"
+              ]
+            ]
+          },
+          "conclusion": "Un truco de taller: el PMMA suena más cristalino al golpearlo suavemente con la uña y desprende un olor afrutado al lijarlo; el policarbonato es más sordo y flexible. Ante la duda, tratamos la pieza como policarbonato — el material más delicado de los dos."
+        },
+        {
+          "number": "3",
           "title": "El Proceso Profesional de Restauración",
           "paragraphs": [
-            "A diferencia del vidrio, el acrílico puede restaurarse mediante pulido porque el material es más blando y uniforme. El proceso implica abrasivos progresivamente más finos para eliminar la capa superficial dañada."
+            "A diferencia del vidrio, el acrílico puede restaurarse mediante pulido porque el material es más blando y uniforme. El proceso implica abrasivos progresivamente más finos para eliminar la capa superficial dañada.",
+            "La progresión de granos es la clave del resultado. En un caso típico de amarillamiento severo empezamos con lijado húmedo P800-P1200 para retirar la capa oxidada, subimos a P1500-P2000 para borrar el rayado del paso anterior y cerramos con P3000 antes de pasar a la pulidora. Saltarse un grano para ahorrar tiempo deja arañazos profundos que el pulido no elimina y que reaparecen como velos al contraluz.",
+            "El control de temperatura es lo que separa un pulido correcto de una pieza arruinada. Tanto el PMMA como el policarbonato son termoplásticos: si la fricción calienta la superficie en exceso, esta se ablanda y la boina la arrastra, creando distorsiones ópticas permanentes. Por eso trabajamos a bajas revoluciones, con boinas específicas y pausas de enfriamiento, especialmente en pantallas de moto de pared fina."
           ],
           "tools": [
             {
@@ -1808,20 +2459,40 @@
               "label": "Protección UV",
               "text": "Aplicación de recubrimiento con estabilizador UV para ralentizar la degradación futura."
             }
+          ],
+          "analogy": {
+            "title": "La analogía de la quemadura solar",
+            "text": "La capa degradada por UV funciona como una quemadura solar: el daño vive en las capas exteriores y hay que retirarlas por completo hasta llegar a material sano. Pulir por encima del daño sin eliminarlo es maquillar el problema — el amarilleo vuelve en semanas."
+          }
+        },
+        {
+          "number": "4",
+          "title": "¿Cuándo se Puede Restaurar y Cuándo Toca Sustituir?",
+          "paragraphs": [
+            "La restauración tiene límites físicos y conviene conocerlos antes de invertir en ella. La regla general: si el daño es superficial — amarilleo, opacidad, microarañazos — el pulido lo resuelve; si el daño es estructural, ningún pulido lo revierte.",
+            "En pantallas de moto y ventanas de barco hay otro factor: el grosor restante. Cada restauración retira material, y una pieza pulida demasiadas veces acaba siendo demasiado fina para su función estructural. Por eso documentamos el estado antes de empezar y somos claros cuando la sustitución es la opción honesta."
+          ],
+          "key_params": [
+            "Restaurable: amarilleo y velo superficial, laca UV oxidada, arañazos que no atrapan la uña",
+            "Restaurable con reservas: micro-agrietamiento superficial poco profundo en PMMA de buen espesor",
+            "No restaurable: grietas pasantes, delaminación interna o amarilleo en masa de policarbonato viejo",
+            "No restaurable: condensación dentro de un faro sellado — el problema es la junta, no la cúpula"
           ]
         },
         {
-          "number": "3",
+          "number": "5",
           "title": "Consejos de Prevención",
           "paragraphs": [
-            "Proteger el acrílico del daño UV es más efectivo que restaurarlo después. Estas son las recomendaciones profesionales:"
+            "Proteger el acrílico del daño UV es más efectivo que restaurarlo después. En el clima mediterráneo la prevención marca una diferencia enorme: una pantalla de moto aparcada a diario al sol puede envejecer en un par de veranos lo que otra protegida tarda años en acumular. Estas son las recomendaciones profesionales:"
           ],
           "key_params": [
             "Aplica recubrimiento protector UV anualmente a todas las superficies acrílicas expuestas",
             "Usa fundas cuando la superficie no esté en uso activo (fundas de barco, toldos de caravana)",
             "Limpia solo con limpiadores de pH neutro — evita productos a base de amoníaco",
-            "Nunca seques el acrílico en seco — siempre usa una toalla de microfibra húmeda para prevenir arañazos"
-          ]
+            "Nunca seques el acrílico en seco — siempre usa una toalla de microfibra húmeda para prevenir arañazos",
+            "Revisa las superficies cada primavera: el amarilleo incipiente se corrige con un pulido ligero; el avanzado exige lijado completo"
+          ],
+          "conclusion": "Restaurar cuesta una fracción de sustituir, pero prevenir cuesta aún menos: una funda y un sellado UV anual son la inversión más rentable para cualquier propietario de barco, moto o caravana en la costa mediterránea."
         }
       ]
     },
