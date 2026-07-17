@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import LegalSections from '@/components/LegalSections.astro';
 import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
@@ -14,7 +15,6 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const { t } = Astro.props;
-const ln = t.legal_notice;
 ---
 
 <BaseLayout
@@ -26,28 +26,8 @@ const ln = t.legal_notice;
 >
   <div class="pt-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 class="section-title text-4xl mb-8">{ln.title}</h1>
-
-      <div class="prose dark:prose-invert prose-sm max-w-none text-th-body/80 space-y-8">
-        {ln.sections.map((section: any) => (
-          <section>
-            <h2 class="text-th-heading font-semibold text-lg mb-3">{section.title}</h2>
-            {section.paragraphs?.map((p: string) => (
-              <p class="leading-relaxed">{p}</p>
-            ))}
-            {section.details && (
-              <dl class="mt-4 rounded-xl border border-th-border/10 overflow-hidden">
-                {section.details.map(([label, value]: [string, string], idx: number) => (
-                  <div class:list={['flex flex-col sm:flex-row gap-1 sm:gap-4 px-4 py-2.5 bg-th-surface/[0.03]', idx > 0 && 'border-t border-th-border/5']}>
-                    <dt class="sm:w-40 flex-shrink-0 text-th-muted text-sm font-medium">{label}</dt>
-                    <dd class="text-th-body text-sm">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            )}
-          </section>
-        ))}
-      </div>
+      <h1 class="section-title text-4xl mb-8">{t.legal_notice.title}</h1>
+      <LegalSections page={t.legal_notice} lang={lang} />
     </div>
   </div>
 </BaseLayout>

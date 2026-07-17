@@ -1,0 +1,67 @@
+---
+/**
+ * Shared renderer for legal-page content (aviso legal, privacy, terms, cookies).
+ * Section fields: title, paragraphs[], details[[label, value]], table{headers, rows},
+ * link{href, label} (lang-relative). Page fields: sections[], updated.
+ */
+export interface Props {
+  page: Record<string, any>;
+  lang: string;
+}
+
+const { page, lang } = Astro.props;
+---
+
+<div class="prose dark:prose-invert prose-sm max-w-none text-th-body/80 space-y-8">
+  {page.sections.map((section: any) => (
+    <section>
+      <h2 class="text-th-heading font-semibold text-lg mb-3">{section.title}</h2>
+      {section.paragraphs?.map((p: string) => (
+        <p class="leading-relaxed mb-3">{p}</p>
+      ))}
+      {section.details && (
+        <dl class="mt-4 rounded-xl border border-th-border/10 overflow-hidden">
+          {section.details.map(([label, value]: [string, string], idx: number) => (
+            <div class:list={['flex flex-col sm:flex-row gap-1 sm:gap-4 px-4 py-2.5 bg-th-surface/[0.03]', idx > 0 && 'border-t border-th-border/5']}>
+              <dt class="sm:w-56 flex-shrink-0 text-th-muted text-sm font-medium">{label}</dt>
+              <dd class="text-th-body text-sm">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {section.table && (
+        <div class="mt-4 overflow-x-auto rounded-xl border border-th-border/10">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-th-border/10 bg-th-surface/5">
+                {section.table.headers.map((header: string) => (
+                  <th class="px-4 py-3 text-left font-semibold text-th-heading whitespace-nowrap">{header}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.table.rows.map((row: string[], idx: number) => (
+                <tr class:list={['border-b border-th-border/5', { 'bg-th-surface/[0.02]': idx % 2 === 1 }]}>
+                  {row.map((cell: string, cellIdx: number) => (
+                    <td class:list={['px-4 py-3', cellIdx === 0 ? 'font-medium text-th-heading whitespace-nowrap' : 'text-th-body/80']}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {section.link && (
+        <p class="mt-3">
+          <a href={`/${lang}${section.link.href}`} class="text-brand-accent hover:underline focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+            {section.link.label} →
+          </a>
+        </p>
+      )}
+    </section>
+  ))}
+
+  {page.updated && (
+    <p class="pt-4 border-t border-th-border/10 text-th-faint text-xs">{page.updated}</p>
+  )}
+</div>

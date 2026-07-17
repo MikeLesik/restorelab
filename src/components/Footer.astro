@@ -108,8 +108,8 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
             </a>
           </li>
           <li>
-            <a href="mailto:hola@restorelab.io" data-event="footer_email" class="hover:text-th-heading transition-colors">
-              hola@restorelab.io
+            <a href="mailto:support@restorelab.io" data-event="footer_email" class="hover:text-th-heading transition-colors">
+              support@restorelab.io
             </a>
           </li>
           <li>
@@ -131,10 +131,8 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
           )}
         </ul>
         {t.footer.legal_entity && (
-          <div class="mt-4 pt-4 border-t border-th-border/10 space-y-1">
-            <p class="text-th-faint text-xs font-medium">{t.footer.legal_entity}</p>
-            {t.footer.legal_nif && <p class="text-th-faint text-xs">{t.footer.legal_nif}</p>}
-            <p class="text-th-faint text-xs">{t.footer.legal_address}</p>
+          <div class="mt-4 pt-4 border-t border-th-border/10">
+            <p class="text-th-faint text-xs">{t.footer.legal_entity}</p>
           </div>
         )}
       </div>
@@ -152,12 +150,12 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
           {t.footer.privacy}
         </a>
         <span class="text-th-border/40" aria-hidden="true">·</span>
-        <a href={`/${lang}/terms`} class="text-th-faint hover:text-th-heading transition-colors">
-          {t.footer.terms}
-        </a>
-        <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/cookies`} class="text-th-faint hover:text-th-heading transition-colors">
           {t.footer.cookies_label || 'Cookies'}
+        </a>
+        <span class="text-th-border/40" aria-hidden="true">·</span>
+        <a href={`/${lang}/terms`} class="text-th-faint hover:text-th-heading transition-colors">
+          {t.footer.terms}
         </a>
       </div>
       <p class="text-th-faint text-sm">{t.footer.made_in}</p>

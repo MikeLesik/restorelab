@@ -967,10 +967,8 @@
     "commercial_glass_link": "Commercial Glass",
     "plans_link": "Care Plans",
     "booking_link": "Book Online",
-    "legal_entity": "Mikhail Lesik · restoreLab",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "legal_entity": "restoreLab — Mikhail Lesik · NIF Z3355742R · Sant Cugat del Vallès",
     "company_title": "Company",
-    "legal_nif": "NIF: Z3355742R",
     "legal_notice_label": "Legal notice",
     "cookies_label": "Cookies"
   },
@@ -4000,6 +3998,7 @@
   },
   "legal_notice": {
     "title": "Legal Notice",
+    "updated": "Last updated: 17 July 2026",
     "sections": [
       {
         "title": "1. Site owner identification",
@@ -4021,62 +4020,51 @@
           ],
           [
             "Address",
-            "Sant Cugat del Vallès, 08172, Barcelona (Spain)"
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, Spain"
           ],
           [
             "Email",
-            "hola@restorelab.io"
+            "support@restorelab.io"
           ],
           [
-            "Phone",
+            "Tel. / WhatsApp",
             "+34 680 265 190"
           ],
           [
-            "Website",
-            "https://restorelab.io"
+            "Activity",
+            "Restoration and detailing of vehicle and boat surfaces; mobile at-home service"
           ]
         ]
       },
       {
         "title": "2. Purpose",
         "paragraphs": [
-          "This website provides information about the mobile surface-restoration services (paint correction, glass polishing, headlight, acrylic and leather restoration) offered by the owner in Sant Cugat del Vallès and the Barcelona metropolitan area, and enables contact and quote requests."
+          "This website provides information about the mobile restoration and detailing services for vehicle and boat surfaces (paint correction, glass polishing, headlight, acrylic and leather restoration) offered by the owner at your location in Sant Cugat del Vallès and the Barcelona metropolitan area, and enables contact and quote requests."
         ]
       },
       {
-        "title": "3. Terms of use",
+        "title": "3. Intellectual property",
         "paragraphs": [
-          "Accessing and using this website confers the status of user and implies acceptance of these terms. The user agrees to make appropriate use of the contents and not to employ them for unlawful activities or against good faith."
+          "The contents of this website — texts, photographs, logos, brand and design — are owned by Mikhail Lesik or used with their owners' permission. Reproduction, distribution or transformation without express authorisation is prohibited."
         ]
       },
       {
-        "title": "4. Intellectual property",
+        "title": "4. Liability and acceptable use",
         "paragraphs": [
-          "The contents of this website (texts, images, logos and design) are owned by Mikhail Lesik or used with their owners' permission. Reproduction, distribution or transformation without express authorisation is prohibited."
-        ]
-      },
-      {
-        "title": "5. Liability",
-        "paragraphs": [
-          "The owner is not responsible for misuse of the contents of this website or for the contents of third-party sites linked from it. Prices shown are indicative and do not constitute a contractual offer; the final price is confirmed after vehicle assessment."
-        ]
-      },
-      {
-        "title": "6. Governing law",
-        "paragraphs": [
-          "These terms are governed by Spanish law. Any dispute shall be submitted to the courts of Barcelona, unless consumer regulations establish a different jurisdiction."
+          "The user agrees to make appropriate use of the contents and not to employ them for unlawful activities or against good faith. The owner is not responsible for the contents of third-party sites linked from this website or for misuse of its contents. Prices shown are indicative; the final price is confirmed after assessing the vehicle or boat."
         ]
       }
     ]
   },
   "cookies_page": {
     "title": "Cookie Policy",
+    "updated": "Last updated: 17 July 2026",
     "intro": "This policy explains which cookies restorelab.io uses, for what purpose, and how you can manage your consent at any time.",
     "sections": [
       {
         "title": "1. Controller",
         "paragraphs": [
-          "The data controller is Mikhail Lesik (trade name restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contact: hola@restorelab.io."
+          "The controller is Mikhail Lesik (trade name restoreLab), NIF Z3355742R, Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona. Contact: support@restorelab.io."
         ]
       },
       {
@@ -4088,25 +4076,51 @@
       {
         "title": "3. Cookies we use",
         "paragraphs": [
-          "Analytics and marketing cookies are only loaded if you expressly accept them in the consent banner."
+          "Analytics and marketing cookies are only set if you expressly accept them in the consent banner."
         ],
-        "details": [
-          [
-            "Necessary",
-            "Essential for the site to work and to remember your consent choice (CookieConsent). Always active."
+        "table": {
+          "headers": [
+            "Cookie",
+            "Provider",
+            "Purpose",
+            "Duration"
           ],
-          [
-            "Analytics",
-            "Google Tag Manager and Microsoft Clarity — help us understand how the site is used. Only with your consent."
-          ],
-          [
-            "Marketing",
-            "Meta Pixel (Facebook) — enables relevant advertising. Only with your consent."
+          "rows": [
+            [
+              "cc_cookie",
+              "restorelab.io (first-party)",
+              "Stores your consent choice",
+              "6 months"
+            ],
+            [
+              "_ga",
+              "Google (GA4 via Tag Manager)",
+              "Distinguishing users (analytics)",
+              "2 years"
+            ],
+            [
+              "_ga_*",
+              "Google (GA4)",
+              "Maintaining session state",
+              "2 years"
+            ],
+            [
+              "_clck / _clsk",
+              "Microsoft Clarity",
+              "Usage and interaction analytics",
+              "1 year / 1 day"
+            ],
+            [
+              "_fbp",
+              "Meta (Facebook)",
+              "Personalised advertising",
+              "3 months"
+            ]
           ]
-        ]
+        }
       },
       {
-        "title": "4. Managing your consent",
+        "title": "4. Withdrawing your consent",
         "paragraphs": [
           "You can change or withdraw your consent at any time using the “Manage cookies” button on this page, or delete cookies via your browser settings."
         ]
@@ -4114,8 +4128,190 @@
     ],
     "manage_button": "Manage cookies"
   },
-  "privacy_responsable": {
-    "title": "Data controller",
-    "text": "The controller of the personal data collected through this website (contact form, appointment booking and analytics) is Mikhail Lesik (trade name restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contact: hola@restorelab.io · +34 680 265 190."
+  "privacy_page": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: 17 July 2026",
+    "sections": [
+      {
+        "title": "1. Data controller",
+        "paragraphs": [
+          "The controller of the personal data collected through this website is:"
+        ],
+        "details": [
+          [
+            "Owner",
+            "Mikhail Lesik (sole trader / autónomo)"
+          ],
+          [
+            "Trade name",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Address",
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, Spain"
+          ],
+          [
+            "Email",
+            "support@restorelab.io"
+          ],
+          [
+            "Tel. / WhatsApp",
+            "+34 680 265 190"
+          ],
+          [
+            "Activity",
+            "Restoration and detailing of vehicle and boat surfaces; mobile at-home service"
+          ]
+        ]
+      },
+      {
+        "title": "2. What data we collect",
+        "paragraphs": [
+          "Contact form and WhatsApp: name, phone number, town, details of your vehicle or boat and any photos you send us.",
+          "Appointment booking (Cal.com): name and email address.",
+          "Analytics and marketing cookies: only if you accept them in the consent banner."
+        ]
+      },
+      {
+        "title": "3. Purposes and legal basis",
+        "paragraphs": [
+          "We process your data for the following purposes under art. 6 GDPR:"
+        ],
+        "details": [
+          [
+            "Answering your enquiry and preparing a quote",
+            "Pre-contractual measures — art. 6.1(b) GDPR"
+          ],
+          [
+            "Providing the service and warranty follow-up",
+            "Contract performance — art. 6.1(b) GDPR"
+          ],
+          [
+            "Website usage analytics",
+            "Consent — art. 6.1(a) GDPR"
+          ],
+          [
+            "Invoicing and tax obligations",
+            "Legal obligation — art. 6.1(c) GDPR"
+          ]
+        ]
+      },
+      {
+        "title": "4. Recipients and processors",
+        "paragraphs": [
+          "We rely on providers acting as data processors: Cloudflare (hosting), Google (Tag Manager / Analytics), Cal.com (appointment scheduling) and Meta/WhatsApp (messaging). Your data is never sold or shared with third parties for commercial purposes."
+        ]
+      },
+      {
+        "title": "5. International transfers",
+        "paragraphs": [
+          "Some of these providers are located in the United States. Transfers are covered by the EU-U.S. Data Privacy Framework and/or standard contractual clauses approved by the European Commission."
+        ]
+      },
+      {
+        "title": "6. Retention",
+        "paragraphs": [
+          "We keep your data while your enquiry is being handled and for the duration of the service warranty. Invoicing data is kept for the periods required by tax law."
+        ]
+      },
+      {
+        "title": "7. Your rights",
+        "paragraphs": [
+          "You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability at any time by writing to support@restorelab.io. You also have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es)."
+        ]
+      },
+      {
+        "title": "8. Cookies",
+        "paragraphs": [
+          "This site uses technical cookies and, only with your consent, analytics and marketing cookies. See the Cookie Policy for details and how to withdraw your consent."
+        ],
+        "link": {
+          "href": "/cookies",
+          "label": "Cookie Policy"
+        }
+      }
+    ]
+  },
+  "terms_page": {
+    "title": "Terms & Conditions",
+    "updated": "Last updated: 17 July 2026",
+    "sections": [
+      {
+        "title": "1. Identification",
+        "paragraphs": [
+          "These terms govern the contracting of the services offered through this website by:"
+        ],
+        "details": [
+          [
+            "Owner",
+            "Mikhail Lesik (sole trader / autónomo)"
+          ],
+          [
+            "Trade name",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Address",
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, Spain"
+          ],
+          [
+            "Email",
+            "support@restorelab.io"
+          ],
+          [
+            "Tel. / WhatsApp",
+            "+34 680 265 190"
+          ],
+          [
+            "Activity",
+            "Restoration and detailing of vehicle and boat surfaces; mobile at-home service"
+          ]
+        ]
+      },
+      {
+        "title": "2. Services and quotes",
+        "paragraphs": [
+          "We provide mobile restoration and detailing services for vehicle and boat surfaces at your location. Published prices are indicative (sedan base, with the size multipliers published on the pricing page); the final quote is confirmed after assessing the actual condition of the surfaces, from photos or in person."
+        ]
+      },
+      {
+        "title": "3. Results and limitations",
+        "paragraphs": [
+          "Paint correction, glass polishing and surface restoration have inherent limitations: scratches that penetrate through the clear coat to the primer or substrate cannot be fully removed by polishing. We assess your surfaces and give you an honest expectation of results before starting."
+        ]
+      },
+      {
+        "title": "4. Right of withdrawal",
+        "paragraphs": [
+          "For contracts concluded at a distance you have 14 calendar days to withdraw without giving any reason. The right of withdrawal is extinguished once the service has been fully performed with your prior express consent and acknowledgement that the right is lost (art. 103.a of the Spanish Consumer Protection Act, TRLGDCU). To withdraw, write to support@restorelab.io or via WhatsApp at +34 680 265 190."
+        ]
+      },
+      {
+        "title": "5. Appointment cancellation",
+        "paragraphs": [
+          "Cancellations must be notified at least 24 hours in advance. For late cancellations or no-shows we may charge a call-out compensation equal to the travel fee published on this website for your area."
+        ]
+      },
+      {
+        "title": "6. Liability and warranty",
+        "paragraphs": [
+          "We work with the utmost care on all surfaces. Visible damage must be reported upon acceptance of the work, before the vehicle or boat leaves the service location — without prejudice to the rights that consumer legislation grants to the consumer."
+        ]
+      },
+      {
+        "title": "7. Governing law and jurisdiction",
+        "paragraphs": [
+          "These terms are governed by Spanish law. In the event of a dispute with a consumer, the courts of the consumer's place of residence shall have jurisdiction."
+        ]
+      }
+    ]
   }
 }

@@ -139,7 +139,7 @@ async function main() {
   out.push('## Contact');
   out.push('');
   out.push('- WhatsApp: +34 680 265 190');
-  out.push('- Email: hola@restorelab.io');
+  out.push('- Email: support@restorelab.io');
   out.push('- Service area: Barcelona metropolitan area, Catalonia, Spain');
   out.push('- Booking: ' + SITE_URL + '/es/booking');
   out.push('');

@@ -844,10 +844,8 @@
     "commercial_glass_link": "Cristal Comercial",
     "plans_link": "Planes de Cuidado",
     "booking_link": "Reservar Online",
-    "legal_entity": "Mikhail Lesik · restoreLab",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "legal_entity": "restoreLab — Mikhail Lesik · NIF Z3355742R · Sant Cugat del Vallès",
     "company_title": "Empresa",
-    "legal_nif": "NIF: Z3355742R",
     "legal_notice_label": "Aviso legal",
     "cookies_label": "Cookies"
   },
@@ -4000,6 +3998,7 @@
   },
   "legal_notice": {
     "title": "Aviso Legal",
+    "updated": "Última actualización: 17 de julio de 2026",
     "sections": [
       {
         "title": "1. Identificación del titular",
@@ -4009,7 +4008,7 @@
         "details": [
           [
             "Titular",
-            "Mikhail Lesik (empresario individual)"
+            "Mikhail Lesik (autónomo)"
           ],
           [
             "Nombre comercial",
@@ -4021,62 +4020,51 @@
           ],
           [
             "Domicilio",
-            "Sant Cugat del Vallès, 08172, Barcelona (España)"
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, España"
           ],
           [
             "Email",
-            "hola@restorelab.io"
+            "support@restorelab.io"
           ],
           [
-            "Teléfono",
+            "Tel. / WhatsApp",
             "+34 680 265 190"
           ],
           [
-            "Sitio web",
-            "https://restorelab.io"
+            "Actividad",
+            "Restauración y detailing de superficies de vehículos y embarcaciones; servicio móvil a domicilio"
           ]
         ]
       },
       {
         "title": "2. Objeto",
         "paragraphs": [
-          "Este sitio web tiene por objeto informar sobre los servicios de restauración móvil de superficies (corrección de pintura, pulido de vidrio, restauración de faros, acrílico y cuero) prestados por el titular en Sant Cugat del Vallès y el área metropolitana de Barcelona, así como facilitar el contacto y la solicitud de presupuestos."
+          "Este sitio web informa sobre los servicios de restauración y detailing móvil de superficies de vehículos y embarcaciones (corrección de pintura, pulido de vidrio, restauración de faros, acrílico y cuero) prestados por el titular a domicilio en Sant Cugat del Vallès y el área metropolitana de Barcelona, y facilita el contacto y la solicitud de presupuestos."
         ]
       },
       {
-        "title": "3. Condiciones de uso",
+        "title": "3. Propiedad intelectual",
         "paragraphs": [
-          "El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las presentes condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas o contrarias a la buena fe."
+          "Los contenidos de este sitio web — textos, fotografías, logotipos, marca y diseño — son titularidad de Mikhail Lesik o se utilizan con autorización de sus titulares. Queda prohibida su reproducción, distribución o transformación sin autorización expresa."
         ]
       },
       {
-        "title": "4. Propiedad intelectual",
+        "title": "4. Responsabilidad y uso del sitio",
         "paragraphs": [
-          "Los contenidos de este sitio web (textos, imágenes, logotipos y diseño) son titularidad de Mikhail Lesik o se utilizan con autorización de sus titulares. Queda prohibida su reproducción, distribución o transformación sin autorización expresa."
-        ]
-      },
-      {
-        "title": "5. Responsabilidad",
-        "paragraphs": [
-          "El titular no se hace responsable del mal uso que se realice de los contenidos de este sitio web ni de los contenidos de sitios de terceros enlazados desde el mismo. Los presupuestos mostrados son orientativos y no constituyen oferta contractual; el precio final se confirma tras la evaluación del vehículo."
-        ]
-      },
-      {
-        "title": "6. Legislación aplicable",
-        "paragraphs": [
-          "Las presentes condiciones se rigen por la legislación española. Para cualquier controversia serán competentes los juzgados y tribunales de Barcelona, salvo que la normativa de consumidores establezca otro fuero."
+          "El usuario se compromete a hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas o contrarias a la buena fe. El titular no se hace responsable de los contenidos de sitios de terceros enlazados desde este sitio web ni del mal uso que se realice de sus contenidos. Los presupuestos mostrados son orientativos; el precio final se confirma tras la evaluación del vehículo o embarcación."
         ]
       }
     ]
   },
   "cookies_page": {
     "title": "Política de Cookies",
+    "updated": "Última actualización: 17 de julio de 2026",
     "intro": "Esta política explica qué cookies utiliza restorelab.io, con qué finalidad y cómo puedes gestionar tu consentimiento en cualquier momento.",
     "sections": [
       {
         "title": "1. Responsable",
         "paragraphs": [
-          "El responsable del tratamiento es Mikhail Lesik (nombre comercial restoreLab), NIF Z3355742R, con domicilio en Sant Cugat del Vallès, 08172, Barcelona. Contacto: hola@restorelab.io."
+          "El responsable es Mikhail Lesik (nombre comercial restoreLab), NIF Z3355742R, Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona. Contacto: support@restorelab.io."
         ]
       },
       {
@@ -4088,25 +4076,51 @@
       {
         "title": "3. Cookies que utilizamos",
         "paragraphs": [
-          "Las cookies de análisis y marketing solo se cargan si las aceptas expresamente en el banner de consentimiento."
+          "Las cookies analíticas y de marketing solo se instalan si las aceptas expresamente en el banner de consentimiento."
         ],
-        "details": [
-          [
-            "Necesarias",
-            "Imprescindibles para el funcionamiento del sitio y para recordar tu elección de consentimiento (CookieConsent). Siempre activas."
+        "table": {
+          "headers": [
+            "Cookie",
+            "Proveedor",
+            "Finalidad",
+            "Duración"
           ],
-          [
-            "Analíticas",
-            "Google Tag Manager y Microsoft Clarity — nos ayudan a entender cómo se usa el sitio. Solo con tu consentimiento."
-          ],
-          [
-            "Marketing",
-            "Meta Pixel (Facebook) — permite mostrar anuncios relevantes. Solo con tu consentimiento."
+          "rows": [
+            [
+              "cc_cookie",
+              "restorelab.io (propia)",
+              "Guarda tu elección de consentimiento",
+              "6 meses"
+            ],
+            [
+              "_ga",
+              "Google (GA4 vía Tag Manager)",
+              "Distinguir usuarios (analítica)",
+              "2 años"
+            ],
+            [
+              "_ga_*",
+              "Google (GA4)",
+              "Mantener el estado de la sesión",
+              "2 años"
+            ],
+            [
+              "_clck / _clsk",
+              "Microsoft Clarity",
+              "Análisis de uso e interacción",
+              "1 año / 1 día"
+            ],
+            [
+              "_fbp",
+              "Meta (Facebook)",
+              "Publicidad personalizada",
+              "3 meses"
+            ]
           ]
-        ]
+        }
       },
       {
-        "title": "4. Cómo gestionar tu consentimiento",
+        "title": "4. Cómo retirar tu consentimiento",
         "paragraphs": [
           "Puedes cambiar o retirar tu consentimiento en cualquier momento con el botón «Gestionar cookies» de esta página, o eliminar las cookies desde la configuración de tu navegador."
         ]
@@ -4114,8 +4128,190 @@
     ],
     "manage_button": "Gestionar cookies"
   },
-  "privacy_responsable": {
-    "title": "Responsable del tratamiento",
-    "text": "El responsable del tratamiento de los datos personales recogidos a través de este sitio web (formulario de contacto, reserva de cita y analítica) es Mikhail Lesik (nombre comercial restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contacto: hola@restorelab.io · +34 680 265 190."
+  "privacy_page": {
+    "title": "Política de Privacidad",
+    "updated": "Última actualización: 17 de julio de 2026",
+    "sections": [
+      {
+        "title": "1. Responsable del tratamiento",
+        "paragraphs": [
+          "El responsable del tratamiento de los datos personales recogidos a través de este sitio web es:"
+        ],
+        "details": [
+          [
+            "Titular",
+            "Mikhail Lesik (autónomo)"
+          ],
+          [
+            "Nombre comercial",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Domicilio",
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, España"
+          ],
+          [
+            "Email",
+            "support@restorelab.io"
+          ],
+          [
+            "Tel. / WhatsApp",
+            "+34 680 265 190"
+          ],
+          [
+            "Actividad",
+            "Restauración y detailing de superficies de vehículos y embarcaciones; servicio móvil a domicilio"
+          ]
+        ]
+      },
+      {
+        "title": "2. Qué datos recogemos",
+        "paragraphs": [
+          "Formulario de contacto y WhatsApp: nombre, teléfono, localidad, datos del vehículo o embarcación y, en su caso, fotografías que nos envíes.",
+          "Reserva de cita (Cal.com): nombre y dirección de email.",
+          "Cookies analíticas y de marketing: únicamente si las aceptas en el banner de consentimiento."
+        ]
+      },
+      {
+        "title": "3. Finalidades y base jurídica",
+        "paragraphs": [
+          "Tratamos tus datos con las siguientes finalidades y bases jurídicas del art. 6 RGPD:"
+        ],
+        "details": [
+          [
+            "Responder a tu consulta y calcular el presupuesto",
+            "Medidas precontractuales — art. 6.1.b RGPD"
+          ],
+          [
+            "Prestación del servicio y seguimiento de la garantía",
+            "Ejecución del contrato — art. 6.1.b RGPD"
+          ],
+          [
+            "Analítica de uso del sitio web",
+            "Consentimiento — art. 6.1.a RGPD"
+          ],
+          [
+            "Facturación y obligaciones fiscales",
+            "Obligación legal — art. 6.1.c RGPD"
+          ]
+        ]
+      },
+      {
+        "title": "4. Destinatarios y encargados del tratamiento",
+        "paragraphs": [
+          "Para prestar el servicio utilizamos proveedores que actúan como encargados del tratamiento: Cloudflare (alojamiento web), Google (Tag Manager / Analytics), Cal.com (agenda de citas) y Meta/WhatsApp (mensajería). Tus datos no se venden ni se ceden a terceros con fines comerciales."
+        ]
+      },
+      {
+        "title": "5. Transferencias internacionales",
+        "paragraphs": [
+          "Algunos de estos proveedores están ubicados en Estados Unidos. Las transferencias se amparan en el marco EU-U.S. Data Privacy Framework y/o en cláusulas contractuales tipo aprobadas por la Comisión Europea."
+        ]
+      },
+      {
+        "title": "6. Plazo de conservación",
+        "paragraphs": [
+          "Conservamos tus datos mientras se tramita tu consulta y durante la vigencia de la garantía del servicio. Los datos de facturación se conservan durante los plazos exigidos por la normativa fiscal."
+        ]
+      },
+      {
+        "title": "7. Tus derechos",
+        "paragraphs": [
+          "Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a support@restorelab.io. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+        ]
+      },
+      {
+        "title": "8. Cookies",
+        "paragraphs": [
+          "Este sitio utiliza cookies técnicas y, solo con tu consentimiento, cookies analíticas y de marketing. Encontrarás el detalle y cómo retirar tu consentimiento en la Política de cookies."
+        ],
+        "link": {
+          "href": "/cookies",
+          "label": "Política de cookies"
+        }
+      }
+    ]
+  },
+  "terms_page": {
+    "title": "Términos y Condiciones",
+    "updated": "Última actualización: 17 de julio de 2026",
+    "sections": [
+      {
+        "title": "1. Identificación",
+        "paragraphs": [
+          "Los presentes términos regulan la contratación de los servicios ofrecidos a través de este sitio web por:"
+        ],
+        "details": [
+          [
+            "Titular",
+            "Mikhail Lesik (autónomo)"
+          ],
+          [
+            "Nombre comercial",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Domicilio",
+            "Plaça Ausiàs March, Sant Cugat del Vallès, 08195 Barcelona, España"
+          ],
+          [
+            "Email",
+            "support@restorelab.io"
+          ],
+          [
+            "Tel. / WhatsApp",
+            "+34 680 265 190"
+          ],
+          [
+            "Actividad",
+            "Restauración y detailing de superficies de vehículos y embarcaciones; servicio móvil a domicilio"
+          ]
+        ]
+      },
+      {
+        "title": "2. Servicios y presupuestos",
+        "paragraphs": [
+          "Prestamos servicios móviles de restauración y detailing de superficies de vehículos y embarcaciones a domicilio. Los precios publicados son orientativos (base sedán, con multiplicadores por tamaño publicados en la página de precios); el presupuesto definitivo se confirma tras evaluar el estado real de las superficies, por fotos o en persona."
+        ]
+      },
+      {
+        "title": "3. Resultados y limitaciones",
+        "paragraphs": [
+          "La corrección de pintura, el pulido de vidrio y la restauración de superficies tienen limitaciones inherentes: los arañazos que atraviesan el barniz hasta la imprimación o el sustrato no pueden eliminarse por completo mediante pulido. Evaluamos tus superficies y te damos una expectativa honesta del resultado antes de empezar."
+        ]
+      },
+      {
+        "title": "4. Derecho de desistimiento",
+        "paragraphs": [
+          "En los contratos celebrados a distancia dispones de un plazo de 14 días naturales para desistir sin indicar el motivo. El derecho de desistimiento se extingue cuando el servicio se ha ejecutado completamente, con tu consentimiento expreso previo y el reconocimiento de la pérdida del derecho (art. 103.a del TRLGDCU). Para desistir, escríbenos a support@restorelab.io o por WhatsApp al +34 680 265 190."
+        ]
+      },
+      {
+        "title": "5. Cancelación de citas",
+        "paragraphs": [
+          "Las cancelaciones deben comunicarse con al menos 24 horas de antelación. En caso de cancelación tardía o de no presentarse, podremos facturar una compensación por el desplazamiento equivalente a la tarifa de desplazamiento (travel fee) publicada en este sitio web para tu zona."
+        ]
+      },
+      {
+        "title": "6. Responsabilidad y garantía",
+        "paragraphs": [
+          "Trabajamos con la máxima diligencia sobre todas las superficies. Los daños visibles deben comunicarse en el momento de la recepción del trabajo, antes de que el vehículo o la embarcación abandone el lugar del servicio — sin perjuicio de los derechos que la legislación de consumo reconoce al consumidor."
+        ]
+      },
+      {
+        "title": "7. Ley aplicable y jurisdicción",
+        "paragraphs": [
+          "Estos términos se rigen por la legislación española. En caso de controversia con consumidores, serán competentes los juzgados del domicilio del consumidor."
+        ]
+      }
+    ]
   }
 }

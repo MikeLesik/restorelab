@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import LegalSections from '@/components/LegalSections.astro';
 import en from '@/content/en.json';
 import es from '@/content/es.json';
 import ca from '@/content/ca.json';
@@ -29,26 +30,7 @@ const cp = t.cookies_page;
       <h1 class="section-title text-4xl mb-4">{cp.title}</h1>
       <p class="text-th-muted mb-10 leading-relaxed">{cp.intro}</p>
 
-      <div class="prose dark:prose-invert prose-sm max-w-none text-th-body/80 space-y-8">
-        {cp.sections.map((section: any) => (
-          <section>
-            <h2 class="text-th-heading font-semibold text-lg mb-3">{section.title}</h2>
-            {section.paragraphs?.map((p: string) => (
-              <p class="leading-relaxed">{p}</p>
-            ))}
-            {section.details && (
-              <dl class="mt-4 rounded-xl border border-th-border/10 overflow-hidden">
-                {section.details.map(([label, value]: [string, string], idx: number) => (
-                  <div class:list={['flex flex-col sm:flex-row gap-1 sm:gap-4 px-4 py-2.5 bg-th-surface/[0.03]', idx > 0 && 'border-t border-th-border/5']}>
-                    <dt class="sm:w-40 flex-shrink-0 text-th-muted text-sm font-medium">{label}</dt>
-                    <dd class="text-th-body text-sm">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            )}
-          </section>
-        ))}
-      </div>
+      <LegalSections page={cp} lang={lang} />
 
       <!-- Reopens the CookieConsent preferences modal (v3 data-cc binding) -->
       <button type="button" data-cc="show-preferencesModal" class="btn-secondary mt-10 focus-visible:ring-2 focus-visible:ring-brand-accent">
