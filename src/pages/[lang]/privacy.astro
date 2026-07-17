@@ -28,9 +28,15 @@ const { t } = Astro.props;
       <h1 class="section-title text-4xl mb-8">{t.footer.privacy}</h1>
 
       <div class="prose dark:prose-invert prose-sm max-w-none text-th-body/80 space-y-8">
+        <!-- RGPD data controller (art. 13) — per-language, from content JSON -->
+        <section class="rounded-xl border border-brand-accent/20 bg-brand-accent/5 p-5">
+          <h2 class="text-th-heading font-semibold text-lg mb-3">{t.privacy_responsable.title}</h2>
+          <p class="leading-relaxed">{t.privacy_responsable.text}</p>
+        </section>
+
         <section>
           <h2 class="text-th-heading font-semibold text-lg mb-3">1. Information We Collect</h2>
-          <p>When you contact us via our website form or WhatsApp, we collect the information you voluntarily provide, including your name, phone number, location, and details about your vehicle or vessel.</p>
+          <p>When you contact us via our website form or WhatsApp, we collect the information you voluntarily provide, including your name, phone number, location, and details about your vehicle.</p>
         </section>
 
         <section>
@@ -45,7 +51,7 @@ const { t } = Astro.props;
 
         <section>
           <h2 class="text-th-heading font-semibold text-lg mb-3">4. Cookies</h2>
-          <p>This website uses minimal cookies for basic functionality only. We do not use tracking or advertising cookies.</p>
+          <p>This website uses strictly necessary cookies for basic functionality. Analytics cookies (Google Tag Manager, Microsoft Clarity) and marketing cookies (Meta Pixel) are loaded only after you give consent through the cookie banner. See the <a href={`/${lang}/cookies`} class="text-brand-accent hover:underline">Cookie Policy</a> for details and to manage your consent.</p>
         </section>
 
         <section>

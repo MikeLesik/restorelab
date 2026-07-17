@@ -85,6 +85,14 @@
     "pre_sale": {
       "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
       "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value."
+    },
+    "legal": {
+      "title": "Legal Notice | restoreLab",
+      "description": "Legal notice and site-owner identification for restorelab.io pursuant to art. 10 of the Spanish LSSI-CE."
+    },
+    "cookies": {
+      "title": "Cookie Policy | restoreLab",
+      "description": "Information about the cookies used on restorelab.io, their purpose and how to manage your consent."
     }
   },
   "nav": {
@@ -959,9 +967,12 @@
     "commercial_glass_link": "Commercial Glass",
     "plans_link": "Care Plans",
     "booking_link": "Book Online",
-    "legal_entity": "restoreLab S.L.",
+    "legal_entity": "Mikhail Lesik · restoreLab",
     "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
-    "company_title": "Company"
+    "company_title": "Company",
+    "legal_nif": "NIF: Z3355742R",
+    "legal_notice_label": "Legal notice",
+    "cookies_label": "Cookies"
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",
@@ -3986,5 +3997,125 @@
     },
     "areas_dense_links_title": "Services we offer in {city}",
     "areas_dense_links_subtitle": "Mobile detailing — we come to your garage."
+  },
+  "legal_notice": {
+    "title": "Legal Notice",
+    "sections": [
+      {
+        "title": "1. Site owner identification",
+        "paragraphs": [
+          "In compliance with article 10 of Spanish Law 34/2002 of 11 July on Information Society Services and Electronic Commerce (LSSI-CE), the following details are provided:"
+        ],
+        "details": [
+          [
+            "Owner",
+            "Mikhail Lesik (sole trader / autónomo)"
+          ],
+          [
+            "Trade name",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Address",
+            "Sant Cugat del Vallès, 08172, Barcelona (Spain)"
+          ],
+          [
+            "Email",
+            "hola@restorelab.io"
+          ],
+          [
+            "Phone",
+            "+34 680 265 190"
+          ],
+          [
+            "Website",
+            "https://restorelab.io"
+          ]
+        ]
+      },
+      {
+        "title": "2. Purpose",
+        "paragraphs": [
+          "This website provides information about the mobile surface-restoration services (paint correction, glass polishing, headlight, acrylic and leather restoration) offered by the owner in Sant Cugat del Vallès and the Barcelona metropolitan area, and enables contact and quote requests."
+        ]
+      },
+      {
+        "title": "3. Terms of use",
+        "paragraphs": [
+          "Accessing and using this website confers the status of user and implies acceptance of these terms. The user agrees to make appropriate use of the contents and not to employ them for unlawful activities or against good faith."
+        ]
+      },
+      {
+        "title": "4. Intellectual property",
+        "paragraphs": [
+          "The contents of this website (texts, images, logos and design) are owned by Mikhail Lesik or used with their owners' permission. Reproduction, distribution or transformation without express authorisation is prohibited."
+        ]
+      },
+      {
+        "title": "5. Liability",
+        "paragraphs": [
+          "The owner is not responsible for misuse of the contents of this website or for the contents of third-party sites linked from it. Prices shown are indicative and do not constitute a contractual offer; the final price is confirmed after vehicle assessment."
+        ]
+      },
+      {
+        "title": "6. Governing law",
+        "paragraphs": [
+          "These terms are governed by Spanish law. Any dispute shall be submitted to the courts of Barcelona, unless consumer regulations establish a different jurisdiction."
+        ]
+      }
+    ]
+  },
+  "cookies_page": {
+    "title": "Cookie Policy",
+    "intro": "This policy explains which cookies restorelab.io uses, for what purpose, and how you can manage your consent at any time.",
+    "sections": [
+      {
+        "title": "1. Controller",
+        "paragraphs": [
+          "The data controller is Mikhail Lesik (trade name restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contact: hola@restorelab.io."
+        ]
+      },
+      {
+        "title": "2. What are cookies?",
+        "paragraphs": [
+          "Cookies are small files stored on your device when you visit a website. They remember your preferences, help analyse how the site is used, or enable relevant advertising."
+        ]
+      },
+      {
+        "title": "3. Cookies we use",
+        "paragraphs": [
+          "Analytics and marketing cookies are only loaded if you expressly accept them in the consent banner."
+        ],
+        "details": [
+          [
+            "Necessary",
+            "Essential for the site to work and to remember your consent choice (CookieConsent). Always active."
+          ],
+          [
+            "Analytics",
+            "Google Tag Manager and Microsoft Clarity — help us understand how the site is used. Only with your consent."
+          ],
+          [
+            "Marketing",
+            "Meta Pixel (Facebook) — enables relevant advertising. Only with your consent."
+          ]
+        ]
+      },
+      {
+        "title": "4. Managing your consent",
+        "paragraphs": [
+          "You can change or withdraw your consent at any time using the “Manage cookies” button on this page, or delete cookies via your browser settings."
+        ]
+      }
+    ],
+    "manage_button": "Manage cookies"
+  },
+  "privacy_responsable": {
+    "title": "Data controller",
+    "text": "The controller of the personal data collected through this website (contact form, appointment booking and analytics) is Mikhail Lesik (trade name restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contact: hola@restorelab.io · +34 680 265 190."
   }
 }

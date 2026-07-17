@@ -133,6 +133,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
         {t.footer.legal_entity && (
           <div class="mt-4 pt-4 border-t border-th-border/10 space-y-1">
             <p class="text-th-faint text-xs font-medium">{t.footer.legal_entity}</p>
+            {t.footer.legal_nif && <p class="text-th-faint text-xs">{t.footer.legal_nif}</p>}
             <p class="text-th-faint text-xs">{t.footer.legal_address}</p>
           </div>
         )}
@@ -142,13 +143,21 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-th-border/10 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-th-faint text-sm">{t.footer.copyright}</p>
-      <div class="flex items-center gap-4 text-sm">
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm">
+        <a href={`/${lang}/legal`} class="text-th-faint hover:text-th-heading transition-colors">
+          {t.footer.legal_notice_label || 'Legal notice'}
+        </a>
+        <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/privacy`} class="text-th-faint hover:text-th-heading transition-colors">
           {t.footer.privacy}
         </a>
         <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/terms`} class="text-th-faint hover:text-th-heading transition-colors">
           {t.footer.terms}
+        </a>
+        <span class="text-th-border/40" aria-hidden="true">·</span>
+        <a href={`/${lang}/cookies`} class="text-th-faint hover:text-th-heading transition-colors">
+          {t.footer.cookies_label || 'Cookies'}
         </a>
       </div>
       <p class="text-th-faint text-sm">{t.footer.made_in}</p>

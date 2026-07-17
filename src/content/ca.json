@@ -85,6 +85,14 @@
     "pre_sale": {
       "title": "Pack Pre-Venda — Maximitza el Valor de Revenda | restoreLab",
       "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe."
+    },
+    "legal": {
+      "title": "Avís Legal | restoreLab",
+      "description": "Avís legal i identificació del titular del lloc web restorelab.io conforme a l'art. 10 de la LSSI-CE."
+    },
+    "cookies": {
+      "title": "Política de Cookies | restoreLab",
+      "description": "Informació sobre les cookies utilitzades a restorelab.io, la seva finalitat i com gestionar el teu consentiment."
     }
   },
   "nav": {
@@ -836,9 +844,12 @@
     "commercial_glass_link": "Vidre Comercial",
     "plans_link": "Plans de Cura",
     "booking_link": "Reservar en Línia",
-    "legal_entity": "restoreLab S.L.",
+    "legal_entity": "Mikhail Lesik · restoreLab",
     "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
-    "company_title": "Empresa"
+    "company_title": "Empresa",
+    "legal_nif": "NIF: Z3355742R",
+    "legal_notice_label": "Avís legal",
+    "cookies_label": "Cookies"
   },
   "guarantee": {
     "section_title": "Zero Risc. Garantit.",
@@ -3986,5 +3997,125 @@
     },
     "areas_dense_links_title": "Serveis que oferim a {city}",
     "areas_dense_links_subtitle": "Detailing mòbil — anem al teu garatge."
+  },
+  "legal_notice": {
+    "title": "Avís Legal",
+    "sections": [
+      {
+        "title": "1. Identificació del titular",
+        "paragraphs": [
+          "En compliment de l'article 10 de la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSI-CE), s'informa de les dades següents:"
+        ],
+        "details": [
+          [
+            "Titular",
+            "Mikhail Lesik (empresari individual)"
+          ],
+          [
+            "Nom comercial",
+            "restoreLab"
+          ],
+          [
+            "NIF",
+            "Z3355742R"
+          ],
+          [
+            "Domicili",
+            "Sant Cugat del Vallès, 08172, Barcelona (Espanya)"
+          ],
+          [
+            "Email",
+            "hola@restorelab.io"
+          ],
+          [
+            "Telèfon",
+            "+34 680 265 190"
+          ],
+          [
+            "Lloc web",
+            "https://restorelab.io"
+          ]
+        ]
+      },
+      {
+        "title": "2. Objecte",
+        "paragraphs": [
+          "Aquest lloc web té per objecte informar sobre els serveis de restauració mòbil de superfícies (correcció de pintura, polit de vidre, restauració de fars, acrílic i cuir) prestats pel titular a Sant Cugat del Vallès i l'àrea metropolitana de Barcelona, així com facilitar el contacte i la sol·licitud de pressupostos."
+        ]
+      },
+      {
+        "title": "3. Condicions d'ús",
+        "paragraphs": [
+          "L'accés i l'ús d'aquest lloc web atribueix la condició d'usuari i implica l'acceptació d'aquestes condicions. L'usuari es compromet a fer un ús adequat dels continguts i a no emprar-los per a activitats il·lícites o contràries a la bona fe."
+        ]
+      },
+      {
+        "title": "4. Propietat intel·lectual",
+        "paragraphs": [
+          "Els continguts d'aquest lloc web (textos, imatges, logotips i disseny) són titularitat de Mikhail Lesik o s'utilitzen amb l'autorització dels seus titulars. Queda prohibida la seva reproducció, distribució o transformació sense autorització expressa."
+        ]
+      },
+      {
+        "title": "5. Responsabilitat",
+        "paragraphs": [
+          "El titular no es fa responsable del mal ús que es faci dels continguts d'aquest lloc web ni dels continguts de llocs de tercers enllaçats des del mateix. Els pressupostos mostrats són orientatius i no constitueixen oferta contractual; el preu final es confirma després de l'avaluació del vehicle."
+        ]
+      },
+      {
+        "title": "6. Legislació aplicable",
+        "paragraphs": [
+          "Aquestes condicions es regeixen per la legislació espanyola. Per a qualsevol controvèrsia seran competents els jutjats i tribunals de Barcelona, llevat que la normativa de consumidors estableixi un altre fur."
+        ]
+      }
+    ]
+  },
+  "cookies_page": {
+    "title": "Política de Cookies",
+    "intro": "Aquesta política explica quines cookies utilitza restorelab.io, amb quina finalitat i com pots gestionar el teu consentiment en qualsevol moment.",
+    "sections": [
+      {
+        "title": "1. Responsable",
+        "paragraphs": [
+          "El responsable del tractament és Mikhail Lesik (nom comercial restoreLab), NIF Z3355742R, amb domicili a Sant Cugat del Vallès, 08172, Barcelona. Contacte: hola@restorelab.io."
+        ]
+      },
+      {
+        "title": "2. Què són les cookies?",
+        "paragraphs": [
+          "Les cookies són petits fitxers que s'emmagatzemen al teu dispositiu quan visites un lloc web. Serveixen per recordar les teves preferències, analitzar l'ús del lloc o mostrar publicitat rellevant."
+        ]
+      },
+      {
+        "title": "3. Cookies que utilitzem",
+        "paragraphs": [
+          "Les cookies d'anàlisi i màrqueting només es carreguen si les acceptes expressament al bàner de consentiment."
+        ],
+        "details": [
+          [
+            "Necessàries",
+            "Imprescindibles per al funcionament del lloc i per recordar la teva elecció de consentiment (CookieConsent). Sempre actives."
+          ],
+          [
+            "Analítiques",
+            "Google Tag Manager i Microsoft Clarity — ens ajuden a entendre com s'utilitza el lloc. Només amb el teu consentiment."
+          ],
+          [
+            "Màrqueting",
+            "Meta Pixel (Facebook) — permet mostrar anuncis rellevants. Només amb el teu consentiment."
+          ]
+        ]
+      },
+      {
+        "title": "4. Com gestionar el teu consentiment",
+        "paragraphs": [
+          "Pots canviar o retirar el teu consentiment en qualsevol moment amb el botó «Gestionar cookies» d'aquesta pàgina, o eliminar les cookies des de la configuració del teu navegador."
+        ]
+      }
+    ],
+    "manage_button": "Gestionar cookies"
+  },
+  "privacy_responsable": {
+    "title": "Responsable del tractament",
+    "text": "El responsable del tractament de les dades personals recollides a través d'aquest lloc web (formulari de contacte, reserva de cita i analítica) és Mikhail Lesik (nom comercial restoreLab), NIF Z3355742R, Sant Cugat del Vallès, 08172, Barcelona. Contacte: hola@restorelab.io · +34 680 265 190."
   }
 }

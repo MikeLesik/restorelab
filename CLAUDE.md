@@ -46,8 +46,10 @@ src/
       business.astro                — B2B / fleet vertical
       ev.astro                      — EV vertical
       commercial-glass.astro        — commercial glass vertical
-      privacy.astro                 — privacy policy
+      privacy.astro                 — privacy policy (incl. RGPD data-controller block)
       terms.astro                   — terms & conditions
+      legal.astro                   — aviso legal (LSSI-CE art. 10: titular Mikhail Lesik, NIF, domicilio)
+      cookies.astro                 — cookie policy ("manage cookies" button reopens CC preferences)
       academy.astro                 — academy (blog) listing
       academy/[slug].astro          — academy article (20 articles; slug → JSON key via slug.replace(/-/g,'_'))
       areas/[city].astro            — geo area landing (11 cities × 3 langs)
@@ -145,7 +147,7 @@ Reusable CSS classes in `global.css`: `.btn-primary`, `.btn-secondary`, `.btn-wh
 ```bash
 npm run dev        # dev server
 npm run check      # TypeScript / Astro check
-npm run build      # astro check && astro build (164 pages → dist/)
+npm run build      # astro check && astro build (170 pages → dist/)
 npm run preview    # preview built site
 npm run new:case   # scaffold a new before/after case
 npm run new:post   # scaffold a new academy article
@@ -153,7 +155,7 @@ npm run gen:llms   # regenerate public/llms.txt
 ```
 
 ## Build Output
-- **164 static pages** (3 langs × routes + 20 academy articles/lang + 11 area pages/lang + verticals + plans/booking + 12 ES-only area×service canary pages + a static 404)
+- **170 static pages** (3 langs × routes + 20 academy articles/lang + 11 area pages/lang + verticals + plans/booking + 12 ES-only area×service canary pages + a static 404)
 - Sitemap: `dist/sitemap-index.xml` (+ `dist/sitemap-0.xml`)
 - Build must pass with **0 errors and 0 warnings**
 
