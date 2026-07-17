@@ -21,5 +21,9 @@ export default defineConfig({
     // Replaces astro-critters (Astro 4 only): inline small stylesheets,
     // keep larger ones as external cached <link>. 'auto' is the Astro 5 default.
     inlineStylesheets: 'auto',
+    // 'file' emits /es/pricing.html instead of /es/pricing/index.html.
+    // Cloudflare Pages serves .html at the extensionless URL directly, so
+    // canonical/sitemap URLs (no trailing slash) stop 308-redirecting to /path/.
+    format: 'file',
   },
 });
