@@ -1,5 +1,10 @@
 ---
 import '@/styles/global.css';
+// Hashed URLs of the two above-the-fold font files (same assets the CSS
+// references) — preloaded so text paints in the right font without waiting
+// for the render-blocking CSS to be parsed first.
+import dmSansWoff2 from '@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url';
+import spaceGroteskWoff2 from '@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import StickyCTA from '@/components/StickyCTA.astro';
@@ -30,7 +35,10 @@ const {
 } = Astro.props;
 
 const siteUrl = SITE_URL;
-const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
+// With build.format:'file', Astro.url.pathname ends in ".html" (or "/index.html"
+// for the root) — strip it so canonical/OG URLs stay extensionless.
+const cleanPath = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+const canonical = canonicalURL || `${siteUrl}${cleanPath}`;
 
 const gtmId = import.meta.env.PUBLIC_GTM_ID || '';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID || '';
@@ -191,6 +199,10 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
 
     <!-- dataLayer init (must be before GTM) -->
     <script>(window as any).dataLayer = (window as any).dataLayer || [];</script>
+
+    <!-- Font preload (LCP text paints without FOUT) -->
+    <link rel="preload" as="font" type="font/woff2" href={dmSansWoff2} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={spaceGroteskWoff2} crossorigin />
 
     <!-- Favicon & PWA -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
