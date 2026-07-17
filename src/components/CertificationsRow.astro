@@ -4,12 +4,9 @@ export interface Props {
 }
 
 const { t } = Astro.props;
-const certs = t.trust?.certifications || [
-  { name: 'Gyeon Certified', status: 'active', icon: 'shield' },
-  { name: 'Gtechniq Accredited', status: 'active', icon: 'shield' },
-  { name: 'IDA Member', status: 'pending', eta: 'Q3 2026', icon: 'badge' },
-  { name: 'Ceramic Pro', status: 'pending', eta: 'Q4 2026', icon: 'badge' },
-];
+// Fail closed: render nothing when the content JSON has no certifications —
+// never fall back to hardcoded claims.
+const certs = t.trust?.certifications || [];
 ---
 
 <section class="py-8">

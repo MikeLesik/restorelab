@@ -101,7 +101,11 @@
     "scroll": "Scroll",
     "verified": "Verified",
     "fastest_response": "Fastest response — same day",
-    "see_all_google": "See all {count} on Google"
+    "see_all_google": "See all {count} on Google",
+    "call_us": "Call us",
+    "call_sub": "Mon–Sat, 8:00–19:00",
+    "email_us": "Email us",
+    "email_sub": "We reply the same day"
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",

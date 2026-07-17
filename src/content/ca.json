@@ -101,7 +101,11 @@
     "scroll": "Desplaça't",
     "verified": "Verificat",
     "fastest_response": "Resposta més ràpida — el mateix dia",
-    "see_all_google": "Veure les {count} a Google"
+    "see_all_google": "Veure les {count} a Google",
+    "call_us": "Truca'ns",
+    "call_sub": "Dl–Ds, 8:00–19:00",
+    "email_us": "Escriu-nos un correu",
+    "email_sub": "Responem el mateix dia"
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",

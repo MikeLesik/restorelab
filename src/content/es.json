@@ -101,7 +101,11 @@
     "scroll": "Desplázate",
     "verified": "Verificado",
     "fastest_response": "Respuesta más rápida — el mismo día",
-    "see_all_google": "Ver las {count} en Google"
+    "see_all_google": "Ver las {count} en Google",
+    "call_us": "Llámanos",
+    "call_sub": "Lun–Sáb, 8:00–19:00",
+    "email_us": "Escríbenos un email",
+    "email_sub": "Respondemos el mismo día"
   },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
