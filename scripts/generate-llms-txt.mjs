@@ -69,9 +69,12 @@ function pricingPackages() {
 
 async function main() {
   const en = await loadJson(path.join(ROOT, 'src/content/en.json'));
+  const es = await loadJson(path.join(ROOT, 'src/content/es.json'));
   const services = await loadServiceProfiles();
   const areas = await loadAreaProfiles();
 
+  // ES is the default locale and primary market — llms.txt links point to /es/,
+  // with /en/ alternates listed once so AI engines can route English queries.
   const out = [];
 
   out.push('# restoreLab — Mobile Detailing & Restoration');
@@ -79,21 +82,29 @@ async function main() {
   out.push('> Premium mobile car detailing service in Barcelona metropolitan area');
   out.push('> (Sant Cugat, Pedralbes, Terrassa, etc.). Specialties: paint correction,');
   out.push('> ceramic coating, glass polishing, headlight restoration, acrylic restoration.');
+  out.push('> Primary language: Spanish (/es/). Also available in English (/en/) and Catalan (/ca/).');
   out.push('');
+
+  const esServiceTitles = Object.fromEntries(
+    (es.services?.items || []).map((i) => [i.id, i.title])
+  );
 
   out.push('## Services');
   out.push('');
   for (const id of Object.keys(services)) {
     const s = services[id];
     if (!s.active) continue;
-    const url = `${SITE_URL}/en/services/${id}`;
-    out.push(`- [${s.englishLabel}](${url}): ${s.englishBrief}`);
+    const url = `${SITE_URL}/es/services/${id}`;
+    const title = esServiceTitles[id] ? `${esServiceTitles[id]} (${s.englishLabel})` : s.englishLabel;
+    out.push(`- [${title}](${url}): ${s.englishBrief} [EN](${SITE_URL}/en/services/${id})`);
   }
   out.push('');
 
   out.push('## Service areas');
   out.push('');
-  out.push(areas.map((a) => a.name).join(', ') + '.');
+  for (const a of areas) {
+    out.push(`- [${a.name}](${SITE_URL}/es/areas/${a.slug})`);
+  }
   out.push('');
 
   out.push('## Pricing');
@@ -101,30 +112,36 @@ async function main() {
   for (const p of pricingPackages()) {
     out.push(`- ${p.name}: €${p.price}`);
   }
+  out.push(`- Full price list: ${SITE_URL}/es/pricing (EN: ${SITE_URL}/en/pricing)`);
   out.push('');
 
   out.push('## Knowledge base');
   out.push('');
-  const articles = (en.academy?.articles || []).filter((a) => a.status === 'published');
-  for (const a of articles) {
-    const url = `${SITE_URL}/en/academy/${a.slug}`;
-    out.push(`- [${a.title}](${url})`);
+  const esArticles = (es.academy?.articles || []).filter((a) => a.status === 'published');
+  const enTitles = Object.fromEntries(
+    (en.academy?.articles || []).map((a) => [a.slug, a.title])
+  );
+  for (const a of esArticles) {
+    const url = `${SITE_URL}/es/academy/${a.slug}`;
+    const enSuffix = enTitles[a.slug] ? ` (EN: ${SITE_URL}/en/academy/${a.slug})` : '';
+    out.push(`- [${a.title}](${url})${enSuffix}`);
   }
   out.push('');
 
   out.push('## Vertical landings');
   out.push('');
-  out.push(`- [EV specialists (Tesla, BMW i, Polestar)](${SITE_URL}/en/ev)`);
-  out.push(`- [B2B & fleet services](${SITE_URL}/en/business)`);
-  out.push(`- [Care plans (subscription)](${SITE_URL}/en/plans)`);
-  out.push(`- [Commercial glass restoration](${SITE_URL}/en/commercial-glass)`);
+  out.push(`- [EV specialists (Tesla, BMW i, Polestar)](${SITE_URL}/es/ev)`);
+  out.push(`- [B2B & fleet services](${SITE_URL}/es/business)`);
+  out.push(`- [Care plans (subscription)](${SITE_URL}/es/plans)`);
+  out.push(`- [Commercial glass restoration](${SITE_URL}/es/commercial-glass)`);
   out.push('');
 
   out.push('## Contact');
   out.push('');
   out.push('- WhatsApp: +34 680 265 190');
+  out.push('- Email: hola@restorelab.io');
   out.push('- Service area: Barcelona metropolitan area, Catalonia, Spain');
-  out.push('- Booking: ' + SITE_URL + '/en/booking');
+  out.push('- Booking: ' + SITE_URL + '/es/booking');
   out.push('');
 
   const output = out.join('\n');

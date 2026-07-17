@@ -3,19 +3,30 @@
 > Premium mobile car detailing service in Barcelona metropolitan area
 > (Sant Cugat, Pedralbes, Terrassa, etc.). Specialties: paint correction,
 > ceramic coating, glass polishing, headlight restoration, acrylic restoration.
+> Primary language: Spanish (/es/). Also available in English (/en/) and Catalan (/ca/).
 
 ## Services
 
-- [Car Paint Correction](https://restorelab.io/en/services/car-paint-correction): Multi-stage machine polishing for swirl marks, scratches, and oxidation removal.
-- [Glass Polishing](https://restorelab.io/en/services/glass-polishing): Windshield scratch removal, water stain removal, and clarity restoration.
-- [Acrylic Restoration](https://restorelab.io/en/services/acrylic-restoration): UV-damaged plexiglass restoration for motorcycle visors, boat windows, and acrylic surfaces.
-- [Headlight Restoration](https://restorelab.io/en/services/headlight-restoration): UV-yellowed lens restoration with sealant for clarity and durability.
-- [Interior Leather Restoration](https://restorelab.io/en/services/interior-leather): Leather seat conditioning, color repair, and sun damage restoration.
-- [Pre-Sale Detailing Pack](https://restorelab.io/en/services/pre-sale-pack): Comprehensive detailing to maximize used-car listing photos and sale price.
+- [Corrección de Pintura Auto (Car Paint Correction)](https://restorelab.io/es/services/car-paint-correction): Multi-stage machine polishing for swirl marks, scratches, and oxidation removal. [EN](https://restorelab.io/en/services/car-paint-correction)
+- [Eliminación de Arañazos en Vidrio (Glass Polishing)](https://restorelab.io/es/services/glass-polishing): Windshield scratch removal, water stain removal, and clarity restoration. [EN](https://restorelab.io/en/services/glass-polishing)
+- [Acrílico y Policarbonato (Acrylic Restoration)](https://restorelab.io/es/services/acrylic-restoration): UV-damaged plexiglass restoration for motorcycle visors, boat windows, and acrylic surfaces. [EN](https://restorelab.io/en/services/acrylic-restoration)
+- [Restauración de Faros (Headlight Restoration)](https://restorelab.io/es/services/headlight-restoration): UV-yellowed lens restoration with sealant for clarity and durability. [EN](https://restorelab.io/en/services/headlight-restoration)
+- [Limpieza de Cuero Interior (Interior Leather Restoration)](https://restorelab.io/es/services/interior-leather): Leather seat conditioning, color repair, and sun damage restoration. [EN](https://restorelab.io/en/services/interior-leather)
+- [Pack Pre-Venta (Pre-Sale Detailing Pack)](https://restorelab.io/es/services/pre-sale-pack): Comprehensive detailing to maximize used-car listing photos and sale price. [EN](https://restorelab.io/en/services/pre-sale-pack)
 
 ## Service areas
 
-Sant Cugat del Vallès, Barcelona, Terrassa, Matadepera, Sant Just Desvern, Sant Quirze del Vallès, Bellaterra, Pedralbes, Sant Gervasi – Tres Torres, Castelldefels, Alella · Tiana · Teià.
+- [Sant Cugat del Vallès](https://restorelab.io/es/areas/sant-cugat)
+- [Barcelona](https://restorelab.io/es/areas/barcelona)
+- [Terrassa](https://restorelab.io/es/areas/terrassa)
+- [Matadepera](https://restorelab.io/es/areas/matadepera)
+- [Sant Just Desvern](https://restorelab.io/es/areas/sant-just-desvern)
+- [Sant Quirze del Vallès](https://restorelab.io/es/areas/sant-quirze-del-valles)
+- [Bellaterra](https://restorelab.io/es/areas/bellaterra)
+- [Pedralbes](https://restorelab.io/es/areas/pedralbes)
+- [Sant Gervasi – Tres Torres](https://restorelab.io/es/areas/sant-gervasi)
+- [Castelldefels](https://restorelab.io/es/areas/castelldefels)
+- [Alella · Tiana · Teià](https://restorelab.io/es/areas/alella-tiana-teia)
 
 ## Pricing
 
@@ -24,33 +35,40 @@ Sant Cugat del Vallès, Barcelona, Terrassa, Matadepera, Sant Just Desvern, Sant
 - Two-Stage Correction: €549
 - Ceramic Coating 2Y: €649
 - Ceramic Coating 5Y: €1049
+- Full price list: https://restorelab.io/es/pricing (EN: https://restorelab.io/en/pricing)
 
 ## Knowledge base
 
-- [Equipment Selection Protocols](https://restorelab.io/en/academy/equipment-selection)
-- [Masking Protocols: Protecting the Edge](https://restorelab.io/en/academy/masking-protocols)
-- [Mechanical Correction Protocols: The Art of the Cut](https://restorelab.io/en/academy/mechanical-correction)
-- [Refining & Stabilization Protocols: The Mirror Finish](https://restorelab.io/en/academy/refining-stabilization)
-- [Protection & Preservation Protocols: The Molecular Shield](https://restorelab.io/en/academy/protection-preservation)
-- [How to Remove Swirl Marks from Car Paint](https://restorelab.io/en/academy/remove-swirl-marks)
-- [Windshield Scratch Repair: DIY vs Professional](https://restorelab.io/en/academy/windshield-scratch-repair)
-- [Car Paint Correction Cost Guide Barcelona 2025](https://restorelab.io/en/academy/paint-correction-cost-barcelona)
-- [UV Damage on Acrylic Windows: Prevention & Restoration](https://restorelab.io/en/academy/uv-damage-acrylic-restoration)
-- [Polish or Repaint: When Paint Restoration Makes Sense in Barcelona](https://restorelab.io/en/academy/polish-vs-repaint-barcelona)
-- [Tesla & EV Paint Care in the Mediterranean](https://restorelab.io/en/academy/tesla-ev-paint-care-mediterranean)
-- [Headlight Restoration Guide: 2026 Guide for Barcelona Drivers](https://restorelab.io/en/academy/headlight-restoration-guide-barcelona)
-- [Pre-Sale Detailing Checklist: What Buyers in Catalonia Look For](https://restorelab.io/en/academy/pre-sale-detailing-checklist-catalonia)
-- [Mediterranean Climate & Your Car's Paint: Protection Guide](https://restorelab.io/en/academy/mediterranean-climate-car-paint-protection)
+- [Protocolos de Selección de Equipos](https://restorelab.io/es/academy/equipment-selection) (EN: https://restorelab.io/en/academy/equipment-selection)
+- [Protocolos de Enmascarado: Proteger el Borde](https://restorelab.io/es/academy/masking-protocols) (EN: https://restorelab.io/en/academy/masking-protocols)
+- [Protocolos de Corrección Mecánica: El Arte del Corte](https://restorelab.io/es/academy/mechanical-correction) (EN: https://restorelab.io/en/academy/mechanical-correction)
+- [Protocolos de Refinado y Estabilización: El Acabado Espejo](https://restorelab.io/es/academy/refining-stabilization) (EN: https://restorelab.io/en/academy/refining-stabilization)
+- [Protocolos de Protección y Preservación: El Escudo Molecular](https://restorelab.io/es/academy/protection-preservation) (EN: https://restorelab.io/en/academy/protection-preservation)
+- [Cómo Eliminar Marcas Circulares de la Pintura](https://restorelab.io/es/academy/remove-swirl-marks) (EN: https://restorelab.io/en/academy/remove-swirl-marks)
+- [Reparación de Arañazos en Parabrisas: DIY vs Profesional](https://restorelab.io/es/academy/windshield-scratch-repair) (EN: https://restorelab.io/en/academy/windshield-scratch-repair)
+- [Guía de Precios Corrección de Pintura Barcelona 2025](https://restorelab.io/es/academy/paint-correction-cost-barcelona) (EN: https://restorelab.io/en/academy/paint-correction-cost-barcelona)
+- [Daño UV en Ventanas Acrílicas: Prevención y Restauración](https://restorelab.io/es/academy/uv-damage-acrylic-restoration) (EN: https://restorelab.io/en/academy/uv-damage-acrylic-restoration)
+- [Pulir o Repintar: Cuándo Tiene Sentido la Restauración de Pintura en Barcelona](https://restorelab.io/es/academy/polish-vs-repaint-barcelona) (EN: https://restorelab.io/en/academy/polish-vs-repaint-barcelona)
+- [Cuidado de Pintura para Tesla y Vehículos Eléctricos en el Mediterráneo](https://restorelab.io/es/academy/tesla-ev-paint-care-mediterranean) (EN: https://restorelab.io/en/academy/tesla-ev-paint-care-mediterranean)
+- [Guía de Restauración de Faros: Guía 2026 para Conductores de Barcelona](https://restorelab.io/es/academy/headlight-restoration-guide-barcelona) (EN: https://restorelab.io/en/academy/headlight-restoration-guide-barcelona)
+- [Checklist de Detailing Pre-Venta: Qué Buscan los Compradores en Cataluña](https://restorelab.io/es/academy/pre-sale-detailing-checklist-catalonia) (EN: https://restorelab.io/en/academy/pre-sale-detailing-checklist-catalonia)
+- [Clima Mediterráneo y la Pintura de tu Coche: Guía de Protección](https://restorelab.io/es/academy/mediterranean-climate-car-paint-protection) (EN: https://restorelab.io/en/academy/mediterranean-climate-car-paint-protection)
+- [Tapicería de Cuero Dañada por el Sol: Restauración en Clima Mediterráneo](https://restorelab.io/es/academy/leather-seats-mediterranean-restoration) (EN: https://restorelab.io/en/academy/leather-seats-mediterranean-restoration)
+- [Eliminación de Manchas de Agua en Cristales: ¿Pulir o Sustituir?](https://restorelab.io/es/academy/water-stain-removal-car-windows) (EN: https://restorelab.io/en/academy/water-stain-removal-car-windows)
+- [Faros Amarillos vs Opacos: Causas, Vida Útil y Coste de Restauración](https://restorelab.io/es/academy/yellow-vs-cloudy-headlights-causes-lifespan) (EN: https://restorelab.io/en/academy/yellow-vs-cloudy-headlights-causes-lifespan)
+- [Daño UV en Viseras de Moto y Acrílico de Embarcación](https://restorelab.io/es/academy/uv-damage-motorcycle-yacht-acrylic) (EN: https://restorelab.io/en/academy/uv-damage-motorcycle-yacht-acrylic)
+- [Cómo el Detailing Aumenta el Precio de Venta del Coche de Segunda Mano en Cataluña](https://restorelab.io/es/academy/detailing-used-car-sale-price-catalonia) (EN: https://restorelab.io/en/academy/detailing-used-car-sale-price-catalonia)
 
 ## Vertical landings
 
-- [EV specialists (Tesla, BMW i, Polestar)](https://restorelab.io/en/ev)
-- [B2B & fleet services](https://restorelab.io/en/business)
-- [Care plans (subscription)](https://restorelab.io/en/plans)
-- [Commercial glass restoration](https://restorelab.io/en/commercial-glass)
+- [EV specialists (Tesla, BMW i, Polestar)](https://restorelab.io/es/ev)
+- [B2B & fleet services](https://restorelab.io/es/business)
+- [Care plans (subscription)](https://restorelab.io/es/plans)
+- [Commercial glass restoration](https://restorelab.io/es/commercial-glass)
 
 ## Contact
 
 - WhatsApp: +34 680 265 190
+- Email: hola@restorelab.io
 - Service area: Barcelona metropolitan area, Catalonia, Spain
-- Booking: https://restorelab.io/en/booking
+- Booking: https://restorelab.io/es/booking
