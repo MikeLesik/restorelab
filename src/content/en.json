@@ -960,7 +960,8 @@
     "plans_link": "Care Plans",
     "booking_link": "Book Online",
     "legal_entity": "restoreLab S.L.",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona"
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "company_title": "Company"
   },
   "academy": {
     "headline": "restoreLab Academy: Engineering Excellence",

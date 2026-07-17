@@ -837,7 +837,8 @@
     "plans_link": "Plans de Cura",
     "booking_link": "Reservar en Línia",
     "legal_entity": "restoreLab S.L.",
-    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona"
+    "legal_address": "Sant Cugat del Vallès, 08172 Barcelona",
+    "company_title": "Empresa"
   },
   "guarantee": {
     "section_title": "Zero Risc. Garantit.",

@@ -61,37 +61,10 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
         </ul>
       </div>
 
-      <!-- Contact -->
+      <!-- Company -->
       <div>
-        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.contact_title}</h3>
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.company_title || 'Company'}</h3>
         <ul class="space-y-2 text-sm text-th-muted">
-          <li>
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
-              WhatsApp
-            </a>
-          </li>
-          <li>
-            <a href={`tel:+${wa}`} data-event="footer_phone" class="hover:text-th-heading transition-colors">
-              +34 680 265 190
-            </a>
-          </li>
-          <li>
-            <a href="mailto:hola@restorelab.io" data-event="footer_email" class="hover:text-th-heading transition-colors">
-              hola@restorelab.io
-            </a>
-          </li>
-          <li>
-            <a href={`/${lang}/contact`} class="hover:text-th-heading transition-colors">
-              {t.nav.contact}
-            </a>
-          </li>
-          {t.footer.gbp_url && (
-            <li>
-              <a href={t.footer.gbp_url} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
-                {t.footer.gbp_label || 'Google Reviews'}
-              </a>
-            </li>
-          )}
           <li>
             <a href={`/${lang}/about`} class="hover:text-th-heading transition-colors">
               {t.trust?.founder?.link_label || 'About us'}
@@ -117,28 +90,45 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
               {t.footer.plans_link || 'Care Plans'}
             </a>
           </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.contact_title}</h3>
+        <ul class="space-y-2 text-sm text-th-muted">
+          <li>
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href={`tel:+${wa}`} data-event="footer_phone" class="hover:text-th-heading transition-colors">
+              +34 680 265 190
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hola@restorelab.io" data-event="footer_email" class="hover:text-th-heading transition-colors">
+              hola@restorelab.io
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/contact`} class="hover:text-th-heading transition-colors">
+              {t.nav.contact}
+            </a>
+          </li>
           <li>
             <a href={`/${lang}/booking`} class="hover:text-th-heading transition-colors">
               {t.footer.booking_link || 'Book Online'}
             </a>
           </li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div>
-        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.legal_title}</h3>
-        <ul class="space-y-2">
-          <li>
-            <a href={`/${lang}/privacy`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
-              {t.footer.privacy}
-            </a>
-          </li>
-          <li>
-            <a href={`/${lang}/terms`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
-              {t.footer.terms}
-            </a>
-          </li>
+          {t.footer.gbp_url && (
+            <li>
+              <a href={t.footer.gbp_url} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
+                {t.footer.gbp_label || 'Google Reviews'}
+              </a>
+            </li>
+          )}
         </ul>
         {t.footer.legal_entity && (
           <div class="mt-4 pt-4 border-t border-th-border/10 space-y-1">
@@ -152,6 +142,15 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
     <!-- Bottom bar -->
     <div class="mt-12 pt-8 border-t border-th-border/10 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-th-faint text-sm">{t.footer.copyright}</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href={`/${lang}/privacy`} class="text-th-faint hover:text-th-heading transition-colors">
+          {t.footer.privacy}
+        </a>
+        <span class="text-th-border/40" aria-hidden="true">·</span>
+        <a href={`/${lang}/terms`} class="text-th-faint hover:text-th-heading transition-colors">
+          {t.footer.terms}
+        </a>
+      </div>
       <p class="text-th-faint text-sm">{t.footer.made_in}</p>
     </div>
   </div>
