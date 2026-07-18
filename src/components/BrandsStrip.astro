@@ -13,13 +13,16 @@ const brands = t.trust?.brands || [
 ];
 
 // Official brand assets in /public/images/brands.
-// extra classes fix visibility on the dark theme (Koch Chemie ships dark text).
+// Per-asset filters keep every logo visible in BOTH themes:
+// - white-fill SVGs (Gyeon, CarPro) → black silhouette in light, natural white in dark
+// - grey SVG (Koch Chemie) → natural in light, forced white in dark
+// - red-plate marks (Gtechniq, Rupes) → grayscale plate in both, color on hover
 const logoMap: Record<string, { src: string; cls?: string }> = {
-  'Gyeon':       { src: '/images/brands/gyeon.svg' },
-  'Gtechniq':    { src: '/images/brands/gtechniq.svg' },
-  'Rupes':       { src: '/images/brands/rupes.png' },
-  'Koch Chemie': { src: '/images/brands/koch-chemie.svg', cls: 'brightness-0 invert' },
-  'CarPro':      { src: '/images/brands/carpro.svg' },
+  'Gyeon':       { src: '/images/brands/gyeon.svg', cls: 'brightness-0 dark:brightness-100' },
+  'Gtechniq':    { src: '/images/brands/gtechniq.svg', cls: 'grayscale hover:grayscale-0' },
+  'Rupes':       { src: '/images/brands/rupes.png', cls: 'grayscale hover:grayscale-0' },
+  'Koch Chemie': { src: '/images/brands/koch-chemie.svg', cls: 'dark:brightness-0 dark:invert' },
+  'CarPro':      { src: '/images/brands/carpro.svg', cls: 'brightness-0 dark:brightness-100' },
 };
 ---
 
@@ -34,7 +37,7 @@ const logoMap: Record<string, { src: string; cls?: string }> = {
             alt={brand.name}
             title={brand.name}
             loading="lazy"
-            class:list={['h-6 sm:h-7 w-auto opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300', logo.cls]}
+            class:list={['h-6 sm:h-7 w-auto opacity-60 dark:opacity-50 hover:opacity-100 transition-all duration-300', logo.cls]}
           />
         ) : (
           <span class="font-display font-bold text-th-muted text-sm sm:text-base tracking-wide opacity-40">

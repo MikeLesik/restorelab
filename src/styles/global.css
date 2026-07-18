@@ -25,28 +25,32 @@
   --hero-from: #0A0A0A;
   --hero-via:  #0D1B2A;
   --hero-to:   #1B3A5C;
+
+  --brand-whatsapp: 37 211 102;   /* #25D366 */
 }
 
 /* ── Theme: Light ──────────────────────────────────────────────────────── */
 :root:not(.dark) {
   --brand-dark:   255 255 255;    /* #FFFFFF */
-  --brand-navy:   247 248 250;    /* #F7F8FA */
-  --brand-blue:   226 230 237;    /* #E2E6ED */
+  --brand-navy:   229 236 246;    /* #E5ECF6 — cool section/footer tint */
+  --brand-blue:   214 223 238;    /* #D6DFEE — borders, icon plates */
   --brand-accent: 26 102 229;     /* #1A66E5 */
-  --brand-gold:   184 145 31;     /* #B8911F */
+  --brand-gold:   138 106 16;     /* #8A6A10 — readable ochre on white (4.9:1) */
   --brand-light:  26 26 46;       /* #1A1A2E */
   --brand-white:  13 13 26;       /* #0D0D1A */
 
   --th-heading: 13 13 26;
   --th-body:    26 26 46;
-  --th-muted:   80 80 100;
-  --th-faint:   140 140 160;
+  --th-muted:   74 85 104;        /* #4A5568 */
+  --th-faint:   116 124 148;      /* #747C94 */
   --th-surface: 13 13 26;
   --th-border:  13 13 26;
 
   --hero-from: #FFFFFF;
-  --hero-via:  #F0F4FF;
-  --hero-to:   #E8EEFF;
+  --hero-via:  #EEF3FC;
+  --hero-to:   #DCE7F8;
+
+  --brand-whatsapp: 16 138 79;    /* #108A4F — keeps white label readable on light */
 }
 
 @layer base {
@@ -97,7 +101,18 @@
 
 /* Card theme helper — auto-select dark/light style */
 .dark .card { @apply bg-th-surface/5 border border-th-border/10 backdrop-blur-sm; }
-:root:not(.dark) .card { @apply bg-brand-dark border border-th-border/10 shadow-lg; }
+:root:not(.dark) .card {
+  @apply bg-brand-dark border border-[#E3E9F3];
+  box-shadow: 0 1px 2px rgb(23 43 77 / 0.06), 0 12px 32px -14px rgb(23 43 77 / 0.16);
+}
+
+/* Light theme — secondary buttons must not read as disabled */
+:root:not(.dark) .btn-secondary {
+  @apply bg-white border-[#D7DFEC] shadow-sm hover:border-brand-accent/50 hover:text-brand-accent;
+}
+:root:not(.dark) .btn-plan-alt {
+  @apply bg-white border-[#D7DFEC] shadow-sm hover:border-brand-accent/50 hover:text-brand-accent hover:bg-white;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }

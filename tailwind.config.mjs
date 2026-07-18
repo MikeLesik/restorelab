@@ -13,7 +13,7 @@ export default {
           gold:     'rgb(var(--brand-gold) / <alpha-value>)',
           light:    'rgb(var(--brand-light) / <alpha-value>)',
           white:    'rgb(var(--brand-white) / <alpha-value>)',
-          whatsapp: '#25D366',
+          whatsapp: 'rgb(var(--brand-whatsapp) / <alpha-value>)',
         },
         th: {
           heading: 'rgb(var(--th-heading) / <alpha-value>)',
