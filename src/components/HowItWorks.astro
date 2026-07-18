@@ -29,11 +29,18 @@ const stepIcons: string[] = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
 
-      <!-- Connector line (desktop only) -->
-      <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent"></div>
-
       {t.how_it_works.steps.map((step: any, i: number) => (
         <div class="relative text-center group">
+
+          <!-- Connector segment to the next step (desktop only, between tiles) -->
+          {i < t.how_it_works.steps.length - 1 && (
+            <div class="hidden lg:flex absolute top-8 left-[calc(50%+44px)] w-[calc(100%-56px)] items-center pointer-events-none" aria-hidden="true">
+              <div class="h-px flex-1 bg-gradient-to-r from-brand-accent/40 to-brand-accent/15"></div>
+              <svg class="w-3 h-3 text-brand-accent/40 flex-shrink-0 -ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          )}
 
           <!-- Icon circle -->
           <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 mb-6 mx-auto transition-all duration-300 group-hover:bg-brand-accent/20 group-hover:border-brand-accent/40 group-hover:scale-105">
