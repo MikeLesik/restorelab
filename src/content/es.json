@@ -122,13 +122,13 @@
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
     "trust_pills": [
-      "★ 5.0 Google",
-      "47+ Reseñas",
-      "500+ Trabajos"
+      "Seguro RC 500.000 €",
+      "Certificados Gyeon & Gtechniq",
+      "Servicio móvil — vamos a ti"
     ],
     "cta_car": "Restauración Auto",
     "sticky_cta": "Presupuesto via WhatsApp",
-    "badge": "★ Valorado 5.0 • 500+ Trabajos"
+    "badge": "Detailing premium a domicilio"
   },
   "trust": {
     "brands": [
@@ -170,9 +170,9 @@
       "link_label": "Sobre nosotros",
       "link_url": "/about"
     },
-    "micro_service": "★ 5.0 · 500+ trabajos · Servicio móvil",
+    "micro_service": "Servicio móvil · Presupuesto por fotos",
     "micro_pricing": "Técnicos certificados · Garantía de satisfacción",
-    "micro_prefooter": "Respuesta media 28 min · Vamos a ti",
+    "micro_prefooter": "Vamos a ti · Sin compromiso",
     "booking_urgency": "Reservando con 2 semanas de antelación"
   },
   "social_proof": {
@@ -191,14 +191,14 @@
       {
         "name": "David M.",
         "location": "Sant Cugat",
-        "text": "Resultado increíble en mi BMW. Los arañazos profundos desaparecieron por completo, la pintura parece nueva. Vinieron a mi aparcamiento, sin complicaciones. Muy recomendado.",
+        "text": "Resultado increíble en mi BMW. Los arañazos profundos quedaron prácticamente invisibles, la pintura parece nueva. Vinieron a mi aparcamiento, sin complicaciones. Muy recomendado.",
         "rating": 5,
         "service": "Corrección de Pintura"
       },
       {
         "name": "Sofia R.",
         "location": "Barcelona",
-        "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. restoreLab los eliminó por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
+        "text": "Mi parabrisas tenía arañazos profundos del limpiaparabrisas tras 3 años. restoreLab los eliminó casi por completo — me ahorré €400 en una sustitución. ¡Trabajo fantástico!",
         "rating": 5,
         "service": "Pulido de Vidrio"
       },
@@ -251,7 +251,7 @@
         "icon": "acrylic",
         "features": [
           "Eliminación de oxidación UV",
-          "Transparencia completamente restaurada",
+          "Transparencia restaurada",
           "Económico vs sustitución"
         ],
         "cta_label": "Presupuesto Acrílico",
@@ -330,7 +330,7 @@
       {
         "number": "02",
         "title": "Reciba Presupuesto",
-        "description": "Respuesta normalmente en 30 min. Precio transparente, sin costes ocultos."
+        "description": "Precio transparente, sin costes ocultos ni sorpresas."
       },
       {
         "number": "03",
@@ -683,13 +683,13 @@
     "section_title": "Antes de Contactarnos",
     "section_subtitle": "Respuestas prácticas sobre nuestro servicio móvil — para que sepas exactamente qué esperar",
     "cta_title": "¿Tienes más preguntas?",
-    "cta_subtitle": "Respondemos en menos de 30 minutos de media.",
+    "cta_subtitle": "Escríbenos por WhatsApp — te respondemos rápido y sin compromiso.",
     "cta_btn": "Preguntar por WhatsApp",
     "items": [
       {
         "icon": "money",
         "question": "¿Cuánto cuesta la corrección de pintura en Barcelona?",
-        "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección de dos fases completa más recubrimiento certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto — respondemos en menos de 30 minutos. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
+        "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección de dos fases completa más recubrimiento certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto y sin compromiso. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
         "icon": "swap",
@@ -801,7 +801,7 @@
     "service_presale": "¡Hola restoreLab! Me interesa el Pack Pre-Venta."
   },
   "lead_form": {
-    "section_title": "Obtén tu Presupuesto Gratuito en 30 Minutos",
+    "section_title": "Obtén tu Presupuesto Gratuito",
     "section_subtitle": "Envíanos fotos del daño. Te responderemos con un precio honesto — sin obligaciones, sin costes ocultos.",
     "fields": {
       "name": "Tu Nombre",
@@ -850,7 +850,7 @@
     "cookies_label": "Cookies"
   },
   "guarantee": {
-    "section_title": "Cero Riesgo. Garantizado.",
+    "section_title": "Garantía honesta.",
     "items": [
       {
         "icon": "assessment",
@@ -890,7 +890,7 @@
         "before": "/images/cases/car1-before.jpg",
         "after": "/images/cases/car1-after.jpg",
         "result": "Remolinos eliminados, brillo profundo restaurado",
-        "metric": "95% de claridad",
+        "metric": "Claridad recuperada",
         "location": "Sant Cugat"
       },
       {
@@ -920,7 +920,7 @@
         "before": "/images/cases/car5-before.jpg",
         "after": "/images/cases/car5-after.jpg",
         "result": "Amarilleo por UV revertido, claridad restaurada",
-        "metric": "100% de claridad",
+        "metric": "Transparencia recuperada",
         "location": "Sant Cugat"
       },
       {
@@ -937,10 +937,10 @@
   },
   "pre_footer_cta": {
     "title": "¿Listo para restaurar?",
-    "subtitle": "Envíanos una foto y recibe un presupuesto honesto en menos de 30 minutos. Sin compromiso ni costes ocultos.",
+    "subtitle": "Envíanos una foto y recibe un presupuesto honesto por WhatsApp. Sin compromiso ni costes ocultos.",
     "cta": "Enviar fotos por WhatsApp",
-    "trust_pill": "5.0 · 500+ trabajos en Sant Cugat y Barcelona",
-    "reply_note": "Respuesta media: 28 min · Servicio móvil, vamos a donde estés"
+    "trust_pill": "Detailing premium · Sant Cugat y Barcelona",
+    "reply_note": "Servicio móvil — vamos a donde estés"
   },
   "about": {
     "hero_title": "Nacidos en Sant Cugat. Impulsados por la artesanía.",
@@ -967,8 +967,8 @@
         "label": "Valoración Google"
       },
       {
-        "value": "0",
-        "label": "Repintados necesarios"
+        "value": "11",
+        "label": "Zonas de servicio"
       }
     ]
   },
@@ -2373,7 +2373,7 @@
             "Envía 4-6 fotos a la luz directa del sol mostrando la pintura desde diferentes ángulos",
             "Incluye primeros planos de las zonas más afectadas",
             "Menciona la marca, modelo y año de tu vehículo",
-            "Respondemos en una media de 30 minutos con una evaluación honesta y precio"
+            "Respondemos con una evaluación honesta y un precio claro"
           ]
         }
       ]
@@ -2811,7 +2811,7 @@
           "paragraphs": [
             "Consejo honesto: no todos los interiores de cuero dañados son candidatos a la restauración. Hay cuatro situaciones en las que declinamos el trabajo o aconsejamos directamente al cliente que opte por el retapizado — no porque no podamos mejorar el aspecto, sino porque una restauración en ese nivel de daño no aguantará, y el cliente merece saberlo antes de gastar dinero. La primera es el fallo estructural de la fibra: cuando el cuero se desmenuza en los bordes de las grietas, la reparación del color y el acondicionamiento no pueden restaurar la integridad mecánica. La segunda es una restauración previa mal hecha: cuando un asiento ha sido recubierto con una capa gruesa de pintura acrílica por un taller anterior, la superficie es demasiado rígida para aceptar un sistema de color profesional sin delaminarse. Es posible eliminar los viejos recubrimientos, pero añade coste y riesgo, y a veces el sustrato subyacente está demasiado degradado para justificar el esfuerzo.",
             "La tercera situación es la subsidencia de la espuma: cuando la espuma del cojín bajo el cuero se ha compactado o degradado, la funda de cuero se arruga y deforma de formas que ningún tratamiento superficial puede corregir. El aspecto arrugado reaparece en pocas semanas porque la estructura subyacente ya no sostiene la forma de la piel. Esto es habitual en asientos de BMW Serie 3 y Audi A4 de muchos kilómetros donde el conductor ha pasado diez o más años en la misma posición. La cuarta es la humedad combinada con moho: el cuero que ha sido empapado y no secado correctamente desarrolla moho en las costuras y en el sustrato de espuma. El moho superficial puede tratarse, pero las esporas incrustadas en la espuma reaparecerán, y el daño estructural por humedad prolongada suele ser grave. En estos casos, recomendar el retapizado es la respuesta profesional y honesta — y los clientes aprecian sistemáticamente la franqueza.",
-            "Si no estás seguro de en qué categoría se encuentra tu vehículo, la respuesta más rápida es enviarnos fotos por WhatsApp — evaluamos la fase del daño a partir de fotos en 30 minutos y te diremos claramente si la restauración tiene sentido para tu situación concreta."
+            "Si no estás seguro de en qué categoría se encuentra tu vehículo, la respuesta más rápida es enviarnos fotos por WhatsApp — evaluamos la fase del daño a partir de fotos el mismo día y te diremos claramente si la restauración tiene sentido para tu situación concreta."
           ]
         },
         {
@@ -2909,7 +2909,7 @@
           "paragraphs": [
             "Hay cuatro situaciones en las que el pulido profesional de cristales es la respuesta incorrecta y lo decimos claramente antes de aceptar el encargo. La primera es las picaduras profundas en Fase 4: cuando la superficie del cristal ha perdido espesor medible y ha adquirido una textura física — no solo una mancha química — la calidad óptica del cristal se ha alterado permanentemente. El pulido con cerio puede alisar la superficie y reducir la apariencia de las picaduras, pero no puede restaurar el plano óptico plano original del cristal. A la luz directa del sol o con los faros de frente por la noche, permanecerá cierto grado de dispersión de luz. Para los parabrisas en particular, donde se aplican normas de seguridad (los inspectores de la ITV comprueban la distorsión óptica), el grabado en Fase 4 generalmente requiere sustitución.",
             "La segunda situación es el cristal agrietado o astillado. Cualquier grieta, incluso una fisura capilar, es descalificante para el pulido: la vibración mecánica de una pulidora rotativa propaga la tensión a través de los extremos de las grietas y puede causar rotura catastrófica. No puliamos cristales con ningún daño estructural, y desaconsejamos cualquier técnico que ofrezca hacerlo. La tercera es el cristal que ha sido tratado previamente con ácido fuerte (en ocasiones utilizado en intentos de bricolaje con productos limpiainodoros que contienen ácido clorhídrico): el daño por ácido se extiende muy por debajo del depósito mineral, creando picaduras irregulares que no pueden corregirse con un pulido superficial.",
-            "La cuarta situación es el cristal con tintas o recubrimientos fuertemente teñidos cuya película de tintado o recubrimiento de fábrica ha sido dañada químicamente por los mismos depósitos minerales que grabaron la superficie del cristal. Algunos cristales de privacidad de fábrica y láminas de tintado de posventa se delaminan o decoloran en contacto con disolventes minerales concentrados, y pulir un tintado que se está delaminando lo separará aún más del cristal. En estos casos, es necesario retirar y sustituir la lámina de tintado antes de realizar cualquier pulido — lo que cambia significativamente el cálculo de costes. Si nos envías fotos por WhatsApp podemos evaluar el estado concreto de tu cristal en menos de 30 minutos y darte una respuesta directa sobre si el pulido, la sustitución o un enfoque combinado es lo adecuado para tu vehículo."
+            "La cuarta situación es el cristal con tintas o recubrimientos fuertemente teñidos cuya película de tintado o recubrimiento de fábrica ha sido dañada químicamente por los mismos depósitos minerales que grabaron la superficie del cristal. Algunos cristales de privacidad de fábrica y láminas de tintado de posventa se delaminan o decoloran en contacto con disolventes minerales concentrados, y pulir un tintado que se está delaminando lo separará aún más del cristal. En estos casos, es necesario retirar y sustituir la lámina de tintado antes de realizar cualquier pulido — lo que cambia significativamente el cálculo de costes. Si nos envías fotos por WhatsApp podemos evaluar el estado concreto de tu cristal el mismo día y darte una respuesta directa sobre si el pulido, la sustitución o un enfoque combinado es lo adecuado para tu vehículo."
           ]
         },
         {

@@ -122,13 +122,13 @@
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
     "trust_pills": [
-      "★ 5.0 Google",
-      "47+ Reviews",
-      "500+ Jobs"
+      "€500K liability insurance",
+      "Gyeon & Gtechniq certified",
+      "Mobile service — we come to you"
     ],
     "cta_car": "Car Restoration",
     "sticky_cta": "Get Quote via WhatsApp",
-    "badge": "★ Rated 5.0 • 500+ Jobs Done"
+    "badge": "Premium detailing at your door"
   },
   "trust": {
     "brands": [
@@ -170,9 +170,9 @@
       "link_label": "About us",
       "link_url": "/about"
     },
-    "micro_service": "★ 5.0 · 500+ jobs · Mobile service",
+    "micro_service": "Mobile service · Photo estimates",
     "micro_pricing": "Certified detailers · Satisfaction guarantee",
-    "micro_prefooter": "Avg reply 28 min · We come to you",
+    "micro_prefooter": "We come to you · No obligation",
     "booking_urgency": "Currently booking 2 weeks ahead"
   },
   "social_proof": {
@@ -191,14 +191,14 @@
       {
         "name": "David M.",
         "location": "Sant Cugat",
-        "text": "Incredible result on my BMW. Deep scratches completely gone, paint looks like new. Came to my parking, no hassle. Highly recommended.",
+        "text": "Incredible result on my BMW. Deep scratches virtually invisible now, paint looks like new. Came to my parking, no hassle. Highly recommended.",
         "rating": 5,
         "service": "Car Paint Correction"
       },
       {
         "name": "Sofia R.",
         "location": "Barcelona",
-        "text": "My windshield had deep wiper scratches after 3 years. restoreLab removed them completely — saved me from a €400 replacement. Fantastic job!",
+        "text": "My windshield had deep wiper scratches after 3 years. restoreLab removed them almost entirely — saved me from a €400 replacement. Fantastic job!",
         "rating": 5,
         "service": "Glass Polishing"
       },
@@ -251,7 +251,7 @@
         "icon": "acrylic",
         "features": [
           "UV oxidation removal",
-          "Full transparency restored",
+          "Transparency restored",
           "Cost-effective vs replacement"
         ],
         "cta_label": "Get Acrylic Estimate",
@@ -330,7 +330,7 @@
       {
         "number": "02",
         "title": "Receive Estimate",
-        "description": "Reply usually within 30 min. Transparent price, no hidden fees, no surprises."
+        "description": "Transparent price, no hidden fees, no surprises."
       },
       {
         "number": "03",
@@ -683,13 +683,13 @@
     "section_title": "Before You Get in Touch",
     "section_subtitle": "Practical answers about our mobile service — so you know exactly what to expect",
     "cta_title": "Still have a question?",
-    "cta_subtitle": "We reply within 30 minutes on average.",
+    "cta_subtitle": "Message us on WhatsApp — quick, honest answers with no obligation.",
     "cta_btn": "Ask via WhatsApp",
     "items": [
       {
         "icon": "money",
         "question": "How much does paint correction cost in Barcelona?",
-        "answer": "Sedan prices range from €149 for an Express Refresh to €1 049 for Premium 5-Year Ceramic. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a certified 2-year coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise quote — we reply within 30 minutes. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
+        "answer": "Sedan prices range from €149 for an Express Refresh to €1 049 for Premium 5-Year Ceramic. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a certified 2-year coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise, no-obligation quote. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "icon": "swap",
@@ -777,7 +777,7 @@
     ]
   },
   "guarantee": {
-    "section_title": "Zero Risk. Guaranteed.",
+    "section_title": "An honest guarantee.",
     "items": [
       {
         "icon": "assessment",
@@ -817,7 +817,7 @@
         "before": "/images/cases/car1-before.jpg",
         "after": "/images/cases/car1-after.jpg",
         "result": "Swirl marks eliminated, deep gloss restored",
-        "metric": "95% clarity",
+        "metric": "Clarity restored",
         "location": "Sant Cugat"
       },
       {
@@ -847,7 +847,7 @@
         "before": "/images/cases/car5-before.jpg",
         "after": "/images/cases/car5-after.jpg",
         "result": "UV yellowing reversed, clarity restored",
-        "metric": "100% clarity",
+        "metric": "Transparency restored",
         "location": "Sant Cugat"
       },
       {
@@ -887,7 +887,7 @@
     "service_presale": "Hello restoreLab! I'm interested in the Pre-Sale Detail Pack."
   },
   "lead_form": {
-    "section_title": "Get Your Free Estimate in 30 Minutes",
+    "section_title": "Get Your Free Estimate",
     "section_subtitle": "Send photos of the damage. We'll reply with an honest price — no obligations, no hidden fees.",
     "fields": {
       "name": "Your Name",
@@ -914,10 +914,10 @@
   },
   "pre_footer_cta": {
     "title": "Ready to restore?",
-    "subtitle": "Send us a photo and get an honest estimate in under 30 minutes. No obligations, no hidden fees.",
+    "subtitle": "Send us a photo and get an honest estimate on WhatsApp. No obligations, no hidden fees.",
     "cta": "Send Photos via WhatsApp",
-    "trust_pill": "5.0 · 500+ jobs in Sant Cugat & Barcelona",
-    "reply_note": "Average reply: 28 min · Mobile service, we come to you"
+    "trust_pill": "Premium detailing · Sant Cugat & Barcelona",
+    "reply_note": "Mobile service — we come to you"
   },
   "about": {
     "hero_title": "Built in Sant Cugat. Driven by craft.",
@@ -944,8 +944,8 @@
         "label": "Google rating"
       },
       {
-        "value": "0",
-        "label": "Repaints needed"
+        "value": "11",
+        "label": "Service areas"
       }
     ]
   },
@@ -2373,7 +2373,7 @@
             "Send 4-6 photos in direct sunlight showing the paint from different angles",
             "Include close-ups of the worst areas",
             "Mention your vehicle make, model and year",
-            "We reply within 30 minutes on average with an honest assessment and price"
+            "We reply with an honest assessment and a clear price"
           ]
         }
       ]
@@ -2766,7 +2766,7 @@
           "paragraphs": [
             "Honest advice: not every damaged leather interior is a restoration candidate. There are four situations where we decline the job or actively steer the client toward reupholstery — not because we cannot improve the appearance, but because a restoration at that damage level will not hold and the client deserves to know that before spending money. The first is structural fibre failure: when leather crumbles at the edges of splits, colour repair and conditioning cannot restore mechanical integrity. The second is previous bad restoration: when a seat has been over-coated with thick acrylic paint by an earlier shop, the surface is too inflexible to accept a professional colour system without delaminating. Stripping old coatings is possible but adds cost and risk, and sometimes the substrate beneath is too degraded to justify the effort.",
             "The third situation is foam subsidence: when the cushion foam beneath the leather has compacted or degraded, the leather cover wrinkles and deforms in ways that no surface treatment can fix. The wrinkled appearance returns within weeks because the underlying structure is no longer supporting the hide's shape. This is common in high-mileage BMW 3 Series and Audi A4 seats where the driver has spent ten or more years in the same position. The fourth is moisture damage combined with mould: leather that has been soaked and not dried correctly develops mould in the stitching and in the foam substrate. Surface mould can be treated, but embedded spores in the foam will return, and the structural damage from prolonged moisture is often severe. In these cases, recommending reupholstery is the professional and honest response — and clients consistently appreciate the candour.",
-            "If you are unsure which category your vehicle falls into, the fastest answer is to send us photos via WhatsApp — we assess damage stage from photos within 30 minutes and will tell you plainly whether restoration makes sense for your specific situation."
+            "If you are unsure which category your vehicle falls into, the fastest answer is to send us photos via WhatsApp — we assess damage stage from photos the same day and will tell you plainly whether restoration makes sense for your specific situation."
           ]
         },
         {
@@ -2864,7 +2864,7 @@
           "paragraphs": [
             "There are four situations where professional glass polishing is the wrong answer and we say so clearly before accepting a booking. The first is deep pitting at Stage 4: when the glass surface has lost measurable thickness and acquired a physical texture — not just a chemical stain — the optical quality of the glass has been permanently altered. Cerium polishing can smooth the surface and reduce the appearance of pitting, but cannot restore the original flat optical plane of the glass. In direct sunlight or oncoming headlights at night, some degree of light scatter will remain. For windshields in particular, where safety standards apply (ITV inspectors check for optical distortion), Stage 4 etching typically requires replacement.",
             "The second situation is cracked or chipped glass. Any crack, even a hairline, is disqualifying for polishing: the mechanical vibration of a rotary polisher propagates stress through crack tips and can cause catastrophic failure. We will not polish glass with any structural damage, and we recommend against any technician who offers to do so. Third is glass that has been previously treated with strong acid (occasionally done as a DIY attempt using toilet-cleaner products containing hydrochloric acid): the acid damage goes well below the mineral deposit, creating irregular pitting that cannot be corrected by surface polishing.",
-            "The fourth situation is heavily tinted or coated glass where the tint film or factory coating has been chemically damaged by the same mineral deposits that etched the glass surface. Some factory privacy glass and aftermarket window films delaminate or discolour on contact with concentrated mineral dissolvers, and polishing a delaminating tint will separate it further from the glass. In these cases, removal and replacement of the tint film is required before any glass polishing can be done — which changes the cost calculus significantly. If you send us photos via WhatsApp we can assess your specific glass condition in under 30 minutes and give you a direct answer on whether polishing, replacement, or a combined approach is right for your vehicle."
+            "The fourth situation is heavily tinted or coated glass where the tint film or factory coating has been chemically damaged by the same mineral deposits that etched the glass surface. Some factory privacy glass and aftermarket window films delaminate or discolour on contact with concentrated mineral dissolvers, and polishing a delaminating tint will separate it further from the glass. In these cases, removal and replacement of the tint film is required before any glass polishing can be done — which changes the cost calculus significantly. If you send us photos via WhatsApp we can assess your specific glass condition the same day and give you a direct answer on whether polishing, replacement, or a combined approach is right for your vehicle."
           ]
         },
         {

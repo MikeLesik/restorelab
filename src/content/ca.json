@@ -122,13 +122,13 @@
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
     "trust_pills": [
-      "★ 5.0 Google",
-      "47+ Ressenyes",
-      "500+ Treballs"
+      "Assegurança RC 500.000 €",
+      "Certificats Gyeon & Gtechniq",
+      "Servei mòbil — anem a tu"
     ],
     "cta_car": "Restauració Auto",
     "sticky_cta": "Pressupost via WhatsApp",
-    "badge": "★ Valorat 5.0 • 500+ Treballs"
+    "badge": "Detailing premium a domicili"
   },
   "trust": {
     "brands": [
@@ -170,9 +170,9 @@
       "link_label": "Sobre nosaltres",
       "link_url": "/about"
     },
-    "micro_service": "★ 5.0 · 500+ treballs · Servei mòbil",
+    "micro_service": "Servei mòbil · Pressupost per fotos",
     "micro_pricing": "Tècnics certificats · Garantia de satisfacció",
-    "micro_prefooter": "Resposta mitjana 28 min · Anem a tu",
+    "micro_prefooter": "Anem a tu · Sense compromís",
     "booking_urgency": "Reservant amb 2 setmanes d'antelació"
   },
   "social_proof": {
@@ -191,7 +191,7 @@
       {
         "name": "David M.",
         "location": "Sant Cugat",
-        "text": "Resultat increïble al meu BMW. Les ratllades profundes van desaparèixer completament, la pintura sembla nova. Van venir al meu aparcament, sense complicacions. Molt recomanat.",
+        "text": "Resultat increïble al meu BMW. Les ratllades profundes van quedar pràcticament invisibles, la pintura sembla nova. Van venir al meu aparcament, sense complicacions. Molt recomanat.",
         "rating": 5,
         "service": "Correcció de Pintura"
       },
@@ -251,7 +251,7 @@
         "icon": "acrylic",
         "features": [
           "Eliminació d'oxidació UV",
-          "Transparència completament restaurada",
+          "Transparència restaurada",
           "Econòmic vs substitució"
         ],
         "cta_label": "Pressupost Acrílic",
@@ -330,7 +330,7 @@
       {
         "number": "02",
         "title": "Rebeu Pressupost",
-        "description": "Resposta normalment en 30 min. Preu transparent, sense costos ocults."
+        "description": "Preu transparent, sense costos ocults ni sorpreses."
       },
       {
         "number": "03",
@@ -683,13 +683,13 @@
     "section_title": "Abans de Contactar-nos",
     "section_subtitle": "Respostes pràctiques sobre el nostre servei mòbil — perquè sàpigues exactament què esperar",
     "cta_title": "Tens més preguntes?",
-    "cta_subtitle": "Responem en menys de 30 minuts de mitjana.",
+    "cta_subtitle": "Escriu-nos per WhatsApp — et responem ràpid i sense compromís.",
     "cta_btn": "Preguntar per WhatsApp",
     "items": [
       {
         "icon": "money",
         "question": "Quant costa la correcció de pintura a Barcelona?",
-        "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 1 049 € (Ceràmic Premium 5 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció de dues fases completa més recobriment certificat de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte — responem en menys de 30 minuts. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+        "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 1 049 € (Ceràmic Premium 5 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció de dues fases completa més recobriment certificat de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte i sense compromís. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
         "icon": "swap",
@@ -801,7 +801,7 @@
     "service_presale": "Hola restoreLab! M'interessa el Pack Pre-Venda."
   },
   "lead_form": {
-    "section_title": "Obtén el teu Pressupost Gratuït en 30 Minuts",
+    "section_title": "Obtén el teu Pressupost Gratuït",
     "section_subtitle": "Envia'ns fotos del dany. Et respondrem amb un preu honest — sense obligacions, sense costos ocults.",
     "fields": {
       "name": "El Vostre Nom",
@@ -850,7 +850,7 @@
     "cookies_label": "Cookies"
   },
   "guarantee": {
-    "section_title": "Zero Risc. Garantit.",
+    "section_title": "Garantia honesta.",
     "items": [
       {
         "icon": "assessment",
@@ -890,7 +890,7 @@
         "before": "/images/cases/car1-before.jpg",
         "after": "/images/cases/car1-after.jpg",
         "result": "Remolins eliminats, brillantor profunda restaurada",
-        "metric": "95% de claredat",
+        "metric": "Claredat recuperada",
         "location": "Sant Cugat"
       },
       {
@@ -920,7 +920,7 @@
         "before": "/images/cases/car5-before.jpg",
         "after": "/images/cases/car5-after.jpg",
         "result": "Groguenc per UV revertit, claredat restaurada",
-        "metric": "100% de claredat",
+        "metric": "Transparència recuperada",
         "location": "Sant Cugat"
       },
       {
@@ -937,10 +937,10 @@
   },
   "pre_footer_cta": {
     "title": "Preparat per restaurar?",
-    "subtitle": "Envia'ns una foto i rep un pressupost honest en menys de 30 minuts. Sense compromís ni costos ocults.",
+    "subtitle": "Envia'ns una foto i rep un pressupost honest per WhatsApp. Sense compromís ni costos ocults.",
     "cta": "Enviar fotos per WhatsApp",
-    "trust_pill": "5.0 · 500+ treballs a Sant Cugat i Barcelona",
-    "reply_note": "Resposta mitjana: 28 min · Servei mòbil, anem a on siguis"
+    "trust_pill": "Detailing premium · Sant Cugat i Barcelona",
+    "reply_note": "Servei mòbil — anem a on siguis"
   },
   "about": {
     "hero_title": "Nascuts a Sant Cugat. Impulsats per l'artesania.",
@@ -967,8 +967,8 @@
         "label": "Valoració Google"
       },
       {
-        "value": "0",
-        "label": "Repintats necessaris"
+        "value": "11",
+        "label": "Zones de servei"
       }
     ]
   },
@@ -2373,7 +2373,7 @@
             "Envia 4-6 fotos a la llum directa del sol mostrant la pintura des de diferents angles",
             "Inclou primers plans de les zones més afectades",
             "Esmenta la marca, model i any del teu vehicle",
-            "Responem en una mitjana de 30 minuts amb una avaluació honesta i preu"
+            "Responem amb una avaluació honesta i un preu clar"
           ]
         }
       ]
@@ -3095,7 +3095,7 @@
           "paragraphs": [
             "Hi ha quatre situacions en les quals el poliment professional de vidres és la resposta incorrecta i ho diem clarament abans d'acceptar una reserva. La primera és les picadures profundes de l'Etapa 4: quan la superfície del vidre ha perdut gruix mesurable i ha adquirit una textura física — no simplement una taca química — la qualitat òptica del vidre ha estat alterada permanentment. El poliment amb ceri pot suavitzar la superfície i reduir l'aspecte de les picadures, però no pot restaurar el pla òptic pla original del vidre. A la llum directa del sol o els fars d'un cotxe de davant de nit, quedarà algun grau de dispersió de llum. Per als parabrises en particular, on s'apliquen normes de seguretat (els inspectors de la ITV comproven la distorsió òptica), el gravat de l'Etapa 4 normalment requereix la substitució.",
             "La segona situació és el vidre esquerdat o amb cops. Qualsevol esquerda, fins i tot la més fina, és disqualificadora per al poliment: la vibració mecànica d'una polidora rotatòria propaga l'estrès a través dels extrems de les esquerdes i pot provocar una fallada catastròfica. No polirem vidres amb cap dany estructural, i recomanem no confiar en cap tècnic que ho ofereixi. La tercera és el vidre que ha estat tractat prèviament amb àcid fort (de vegades realitzat com a intent DIY usant productes netejadors de vàter que contenen àcid clorhídric): el dany per àcid arriba molt per sota del dipòsit mineral, creant picadures irregulars que no es poden corregir amb poliment superficial.",
-            "La quarta situació és el vidre fortament tenyit o recobert on la làmina de tint o el recobriment de fàbrica ha estat químicament danyat pels mateixos dipòsits minerals que han gravat la superfície del vidre. Alguns vidres de privacitat de fàbrica i làmines de finestres aftermarket es delaminen o decoloren en contacte amb dissolvedors minerals concentrats, i polir un tint que es delamina el separarà encara més del vidre. En aquests casos, cal eliminar i substituir la làmina de tint abans de realitzar qualsevol poliment de vidre — cosa que canvia el càlcul de costos significativament. Si ens envies fotos per WhatsApp podem avaluar l'estat específic del teu vidre en menys de 30 minuts i donar-te una resposta directa sobre si el poliment, la substitució o un enfocament combinat és l'adequat per al teu vehicle."
+            "La quarta situació és el vidre fortament tenyit o recobert on la làmina de tint o el recobriment de fàbrica ha estat químicament danyat pels mateixos dipòsits minerals que han gravat la superfície del vidre. Alguns vidres de privacitat de fàbrica i làmines de finestres aftermarket es delaminen o decoloren en contacte amb dissolvedors minerals concentrats, i polir un tint que es delamina el separarà encara més del vidre. En aquests casos, cal eliminar i substituir la làmina de tint abans de realitzar qualsevol poliment de vidre — cosa que canvia el càlcul de costos significativament. Si ens envies fotos per WhatsApp podem avaluar l'estat específic del teu vidre el mateix dia i donar-te una resposta directa sobre si el poliment, la substitució o un enfocament combinat és l'adequat per al teu vehicle."
           ]
         },
         {
@@ -3188,7 +3188,7 @@
           "paragraphs": [
             "Un consell honest: no tot interior de cuir danyat és candidat a la restauració. Hi ha quatre situacions en les quals refusem la feina o orientem activament el client cap a la retapisseria — no perquè no puguem millorar l'aspecte, sinó perquè una restauració en aquell nivell de dany no aguantarà i el client mereix saber-ho abans de gastar diners. La primera és la fallada estructural de les fibres: quan el cuir s'esmicarrisa a les vores de les esquerdes, la reparació de color i el condicionament no poden restaurar la integritat mecànica. La segona és una restauració prèvia dolenta: quan un seient ha estat sobrecobert amb pintura acrílica espessa per un taller anterior, la superfície és massa inflexible per acceptar un sistema de color professional sense delaminarse. Extreure els recobriments antics és possible però afegeix cost i risc, i de vegades el substrat sota és massa degradat per justificar l'esforç.",
             "La tercera situació és la subsidència de l'escuma: quan l'escuma del coixí sota el cuir s'ha compactat o degradat, la coberta de cuir s'arruga i es deforma de maneres que cap tractament superficial pot arreglar. L'aspecte arrugat torna en poques setmanes perquè l'estructura subjacent ja no suporta la forma de la pell. Això és comú en seients de BMW Sèrie 3 i Audi A4 d'alt quilometratge on el conductor ha passat deu o més anys en la mateixa posició. La quarta és el dany per humitat combinat amb floridura: el cuir que s'ha remullat i no s'ha assecat correctament desenvolupa floridura a les costures i a l'escuma del substrat. La floridura superficial es pot tractar, però les espores incrustades a l'escuma tornen, i el dany estructural d'una humitat prolongada sovint és greu. En aquests casos, recomanar la retapisseria és la resposta professional i honesta — i els clients aprecien constantment la sinceritat.",
-            "Si no estàs segur a quina categoria correspon el teu vehicle, la resposta més ràpida és enviar-nos fotos per WhatsApp — avaluem l'etapa del dany a partir de fotos en 30 minuts i et direm clarament si la restauració té sentit per a la teva situació concreta."
+            "Si no estàs segur a quina categoria correspon el teu vehicle, la resposta més ràpida és enviar-nos fotos per WhatsApp — avaluem l'etapa del dany a partir de fotos el mateix dia i et direm clarament si la restauració té sentit per a la teva situació concreta."
           ]
         },
         {
