@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#2A7FFF"/>
-  <path d="M8 17l6 6L24 9" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="120" fill="#0D1B2A"/>
+  <!-- r : stem + shoulder (butt caps, Space Grotesk-like) -->
+  <path d="M150 372 V218" stroke="#FFFFFF" stroke-width="46"/>
+  <path d="M150 246 Q150 218 178 218 H210 Q238 218 238 248 V258" stroke="#FFFFFF" stroke-width="46"/>
+  <!-- l : ascender bar -->
+  <path d="M298 150 V372" stroke="#2A7FFF" stroke-width="46"/>
+  <!-- gold period -->
+  <circle cx="384" cy="349" r="23" fill="#D4A537"/>
 </svg>
