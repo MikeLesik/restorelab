@@ -11,18 +11,37 @@ const brands = t.trust?.brands || [
   { name: 'Koch Chemie', status: 'equipment' },
   { name: 'CarPro', status: 'products' },
 ];
+
+// Official brand assets in /public/images/brands.
+// extra classes fix visibility on the dark theme (Koch Chemie ships dark text).
+const logoMap: Record<string, { src: string; cls?: string }> = {
+  'Gyeon':       { src: '/images/brands/gyeon.svg' },
+  'Gtechniq':    { src: '/images/brands/gtechniq.svg' },
+  'Rupes':       { src: '/images/brands/rupes.png' },
+  'Koch Chemie': { src: '/images/brands/koch-chemie.svg', cls: 'brightness-0 invert' },
+  'CarPro':      { src: '/images/brands/carpro.svg' },
+};
 ---
 
 <section class="py-6 border-y border-th-border/5">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-      {brands.map((brand: any) => (
-        <div class="group flex items-center gap-2 opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default">
-          <span class="font-display font-bold text-th-muted text-sm sm:text-base tracking-wide group-hover:text-th-heading transition-colors">
+    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+      {brands.map((brand: any) => {
+        const logo = logoMap[brand.name];
+        return logo ? (
+          <img
+            src={logo.src}
+            alt={brand.name}
+            title={brand.name}
+            loading="lazy"
+            class:list={['h-6 sm:h-7 w-auto opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300', logo.cls]}
+          />
+        ) : (
+          <span class="font-display font-bold text-th-muted text-sm sm:text-base tracking-wide opacity-40">
             {brand.name}
           </span>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

@@ -157,12 +157,14 @@
       {
         "name": "Gyeon Certificat",
         "status": "active",
-        "icon": "shield"
+        "icon": "shield",
+        "logo": "/images/brands/gyeon.svg"
       },
       {
         "name": "Gtechniq Acreditat",
         "status": "active",
-        "icon": "shield"
+        "icon": "shield",
+        "logo": "/images/brands/gtechniq.svg"
       }
     ],
     "founder": {
