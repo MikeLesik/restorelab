@@ -3958,7 +3958,26 @@
     "cta_subtitle": "Demana el teu pressupost gratuït per WhatsApp — resposta mitjana en 28 minuts.",
     "cta_whatsapp_template": "Hola restoreLab! M'agradaria un pressupost per a {service} a {area}.",
     "back_to_area": "Tornar a {area}",
-    "back_to_service": "Veure tots els paquets de {service}"
+    "back_to_service": "Veure tots els paquets de {service}",
+    "overrides": {
+      "sant-cugat/headlight-restoration": {
+        "title": "Polit de Fars a Sant Cugat — a Domicili, des de 79 €/parell",
+        "meta_description": "Polit i restauració de fars a domicili a Sant Cugat del Vallès: eliminem grogor i opacitat des de 79 € el parell, amb segellant UV opcional de 2+ anys. Venim al teu garatge — pressupost per WhatsApp en ~30 min.",
+        "h1": "Polit de Fars a Domicili a Sant Cugat — des de 79 € el parell",
+        "subtitle": "Fars esgrogueïts o opacs restaurats a claredat cristal·lina al teu propi garatge, en 1–2 hores. Sense desmuntar res i sense desplaçar-te.",
+        "intro_body": "A Sant Cugat la majoria de cotxes dormen en garatges comunitaris o xalets amb accés directe — l'escenari ideal per al nostre servei mòbil. El sol intens del Vallès degrada el policarbonat dels fars: s'esgrogueeixen, perden claredat i redueixen la visibilitat nocturna. Els restaurem mitjançant polit humit progressiu i polit a màquina, i acabem amb un segellant UV opcional que protegeix 2+ anys. Des de 79 € el parell per a un turisme, amb desplaçament inclòs i pressupost exacte per fotos per WhatsApp.",
+        "extra_faqs": [
+          {
+            "question": "Quant costa polir els fars a Sant Cugat?",
+            "answer": "Des de 79 € el parell en un turisme estàndard, a domicili i amb el desplaçament a Sant Cugat inclòs. El segellant UV de llarga durada és opcional i es pressuposta a part. Envia una foto dels teus fars per WhatsApp i et donem el preu exacte en ~30 minuts."
+          },
+          {
+            "question": "Es passa la ITV amb els fars opacs?",
+            "answer": "Uns fars molt opacs o esgrogueïts poden ser motiu d'observació a la ITV si redueixen l'eficàcia de l'enllumenat. Restaurar-los a temps elimina aquest risc, millora la visibilitat nocturna i costa força menys que substituir els fars complets."
+          }
+        ]
+      }
+    }
   },
   "booking": {
     "hero_title": "Reserva la teva cita",

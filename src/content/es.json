@@ -3958,7 +3958,26 @@
     "cta_subtitle": "Pide tu presupuesto gratis por WhatsApp — respuesta media en 28 minutos.",
     "cta_whatsapp_template": "¡Hola restoreLab! Me gustaría un presupuesto para {service} en {area}.",
     "back_to_area": "Volver a {area}",
-    "back_to_service": "Ver todos los paquetes de {service}"
+    "back_to_service": "Ver todos los paquetes de {service}",
+    "overrides": {
+      "sant-cugat/headlight-restoration": {
+        "title": "Pulido de Faros en Sant Cugat — a Domicilio, desde 79 €/par",
+        "meta_description": "Pulido y restauración de faros a domicilio en Sant Cugat del Vallès: eliminamos amarilleo y opacidad desde 79 € el par, con sellante UV opcional de 2+ años. Vamos a tu garaje — presupuesto por WhatsApp en ~30 min.",
+        "h1": "Pulido de Faros a Domicilio en Sant Cugat — desde 79 € el par",
+        "subtitle": "Faros amarillentos u opacos restaurados a claridad cristalina en tu propio garaje, en 1–2 horas. Sin desmontar nada y sin desplazarte.",
+        "intro_body": "En Sant Cugat la mayoría de coches duermen en garajes comunitarios o chalets con acceso directo — el escenario ideal para nuestro servicio móvil. El sol intenso del Vallès degrada el policarbonato de los faros: amarillean, pierden claridad y reducen la visibilidad nocturna. Los restauramos mediante lijado húmedo progresivo y pulido a máquina, y terminamos con un sellante UV opcional que protege 2+ años. Desde 79 € el par para un turismo, con desplazamiento incluido y presupuesto exacto por fotos en WhatsApp.",
+        "extra_faqs": [
+          {
+            "question": "¿Cuánto cuesta pulir los faros en Sant Cugat?",
+            "answer": "Desde 79 € el par en un turismo estándar, a domicilio y con el desplazamiento a Sant Cugat incluido. El sellante UV de larga duración es opcional y se presupuesta aparte. Envía una foto de tus faros por WhatsApp y te damos el precio exacto en ~30 minutos."
+          },
+          {
+            "question": "¿Se pasa la ITV con los faros opacos?",
+            "answer": "Unos faros muy opacos o amarillentos pueden ser motivo de observación en la ITV si reducen la eficacia del alumbrado. Restaurarlos a tiempo elimina ese riesgo, mejora la visibilidad nocturna y cuesta bastante menos que sustituir los faros completos."
+          }
+        ]
+      }
+    }
   },
   "booking": {
     "hero_title": "Reserva tu cita",

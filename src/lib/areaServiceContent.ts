@@ -196,7 +196,7 @@ export function generateAreaServiceContent(
   const serviceName = getServiceName(service.id, t);
   const priceStr = service.startingPriceEur ? String(service.startingPriceEur) : '';
 
-  return {
+  const slots: AreaServiceSlots = {
     title: substitute(asp.title_template, { area: area.name, service: serviceName }),
     metaDescription: substitute(asp.meta_description_template, { area: area.name, service: serviceName, price: priceStr }),
     h1: substitute(asp.h1_template, { area: area.name, service: serviceName }),
@@ -217,6 +217,20 @@ export function generateAreaServiceContent(
     backToAreaLabel: substitute(asp.back_to_area, { area: area.shortName }),
     backToServiceLabel: substitute(asp.back_to_service, { service: serviceName.toLowerCase() }),
   };
+
+  // Per-pair hand-written overrides (asp.overrides["city/service"]) beat the templates —
+  // used to sharpen high-opportunity pages without forking the generator.
+  const ov = asp.overrides?.[`${citySlug}/${serviceId}`];
+  if (ov) {
+    if (ov.title) slots.title = ov.title;
+    if (ov.meta_description) slots.metaDescription = ov.meta_description;
+    if (ov.h1) slots.h1 = ov.h1;
+    if (ov.subtitle) slots.subtitle = ov.subtitle;
+    if (ov.intro_body) slots.introBody = ov.intro_body;
+    if (ov.extra_faqs?.length) slots.faqs = [...ov.extra_faqs, ...slots.faqs];
+  }
+
+  return slots;
 }
 
 /** The 12 canary pairs — frozen at the start of Plan 2 canary. */

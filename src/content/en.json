@@ -3958,7 +3958,26 @@
     "cta_subtitle": "Get a free quote on WhatsApp — average reply 28 minutes.",
     "cta_whatsapp_template": "Hello restoreLab! I'd like a quote for {service} in {area}.",
     "back_to_area": "Back to {area}",
-    "back_to_service": "See all {service} packages"
+    "back_to_service": "See all {service} packages",
+    "overrides": {
+      "sant-cugat/headlight-restoration": {
+        "title": "Headlight Polishing in Sant Cugat — At Your Home, from €79/pair",
+        "meta_description": "At-home headlight polishing and restoration in Sant Cugat del Vallès: we remove yellowing and haze from €79 per pair, with optional 2+ year UV sealant. We come to your garage — WhatsApp quote in ~30 min.",
+        "h1": "At-Home Headlight Polishing in Sant Cugat — from €79 per pair",
+        "subtitle": "Yellowed or hazy headlights restored to crystal clarity in your own garage, in 1–2 hours. Nothing dismantled, no travel on your part.",
+        "intro_body": "In Sant Cugat most cars sleep in communal garages or driveways with direct access — the ideal setting for our mobile service. The intense Vallès sun degrades headlight polycarbonate: lenses yellow, lose clarity and cut night visibility. We restore them with progressive wet sanding and machine polishing, finishing with an optional UV sealant that protects for 2+ years. From €79 per pair for a standard car, travel included, with an exact photo quote via WhatsApp.",
+        "extra_faqs": [
+          {
+            "question": "How much does headlight polishing cost in Sant Cugat?",
+            "answer": "From €79 per pair on a standard car, at your home and with travel to Sant Cugat included. The long-life UV sealant is optional and quoted separately. Send a photo of your headlights via WhatsApp and we'll give you an exact price in ~30 minutes."
+          },
+          {
+            "question": "Will hazy headlights pass the ITV inspection?",
+            "answer": "Very hazy or yellowed headlights can be flagged at the ITV if they reduce lighting effectiveness. Restoring them in time removes that risk, improves night visibility and costs far less than replacing the complete units."
+          }
+        ]
+      }
+    }
   },
   "booking": {
     "hero_title": "Book your appointment",
