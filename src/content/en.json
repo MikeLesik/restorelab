@@ -2,16 +2,16 @@
   "lang": "en",
   "meta": {
     "home": {
-      "title": "restoreLab — Surface Restoration Sant Cugat & Barcelona",
-      "description": "Premium mobile paint correction, glass scratch removal & acrylic restoration in Sant Cugat & Barcelona. No repainting. No replacement.",
+      "title": "restoreLab — Mobile Detailing at Your Home | Sant Cugat & Barcelona",
+      "description": "Premium mobile paint correction, glass scratch removal & acrylic restoration at your home in Sant Cugat & Barcelona. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Car, Glass & Acrylic Restoration | restoreLab",
+      "title": "At-Home Car, Glass & Acrylic Restoration | restoreLab",
       "description": "Car paint correction, glass polishing and acrylic restoration. Mobile service across Sant Cugat & Barcelona."
     },
     "car_paint": {
-      "title": "Car Paint Correction & Polishing Sant Cugat | restoreLab",
+      "title": "Mobile Paint Correction at Your Home — Sant Cugat | restoreLab",
       "description": "Mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches & restore deep gloss. Ceramic prep available. No repaint."
     },
     "glass": {
@@ -75,16 +75,16 @@
       "description": "Why 99% of the result depends on tool selection. Rotary vs dual action polishers — analysis, comparison table and pro recommendations."
     },
     "headlight": {
-      "title": "Headlight Polishing & Restoration Barcelona | restoreLab",
+      "title": "Headlight Restoration at Your Home — Barcelona | restoreLab",
       "description": "Professional headlight polishing and restoration — remove yellowing, haze and UV oxidation. From €79/pair. Mobile service in Sant Cugat & Barcelona."
     },
     "interior_leather": {
       "title": "Interior Leather Cleaning & Ceramic Coating | restoreLab",
-      "description": "Deep leather cleaning, stain removal and optional ceramic coating. Seats, dashboard & door cards. From €189. Mobile service."
+      "description": "Deep leather cleaning, stain removal and optional ceramic coating. Seats, dashboard & door cards. From €189. Mobile service. At-home service in Sant Cugat & Barcelona."
     },
     "pre_sale": {
       "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
-      "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value."
+      "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value. At-home service in Sant Cugat & Barcelona."
     },
     "legal": {
       "title": "Legal Notice | restoreLab",
@@ -117,7 +117,7 @@
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
-    "subheadline": "Paint correction, glass polishing, headlight & interior restoration — premium mobile service in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
+    "subheadline": "Paint correction, glass polishing, headlight & interior restoration — premium mobile service at your home in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
     "cta_primary": "Get a Free Estimate",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
@@ -229,7 +229,8 @@
           "Mobile service at your location"
         ],
         "cta_label": "Get Car Estimate",
-        "tag": "Most popular"
+        "tag": "Most popular",
+        "h1": "Mobile Paint Correction at Your Home in Sant Cugat & Barcelona"
       },
       {
         "id": "glass-polishing",
@@ -244,7 +245,7 @@
         ],
         "cta_label": "Get Glass Estimate",
         "tag": null,
-        "h1": "Polishing Scratched Car Glass in Barcelona"
+        "h1": "Polishing Scratched Car Glass at Your Home in Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -272,7 +273,7 @@
         ],
         "cta_label": "Get Headlight Estimate",
         "tag": null,
-        "h1": "Headlight Polishing & Restoration in Barcelona"
+        "h1": "Headlight Polishing & Restoration at Your Home in Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -300,7 +301,8 @@
           "Optional ceramic coating (€289)"
         ],
         "cta_label": "Get Interior Estimate",
-        "tag": null
+        "tag": null,
+        "h1": "Interior Leather Cleaning at Your Home in Sant Cugat & Barcelona"
       },
       {
         "id": "pre-sale-pack",

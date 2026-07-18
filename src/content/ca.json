@@ -2,21 +2,21 @@
   "lang": "ca",
   "meta": {
     "home": {
-      "title": "restoreLab — Restauració de Superfícies a Sant Cugat",
-      "description": "Correcció de pintura, eliminació de ratllades en vidre i restauració d'acrílic. Servei mòbil a Sant Cugat i Barcelona. Sense repintura.",
+      "title": "restoreLab — Detailing a Domicili a Sant Cugat i Barcelona",
+      "description": "Correcció de pintura, eliminació de ratllades en vidre i restauració d'acrílic. Servei mòbil a domicili a Sant Cugat i Barcelona. Sense repintura.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Serveis — Restauració Auto, Vidre i Acrílic | restoreLab",
-      "description": "Correcció de pintura d'automòbil, polit de vidre i restauració d'acrílic. Servei mòbil a Sant Cugat i Barcelona."
+      "title": "Serveis a Domicili — Restauració Auto, Vidre i Fars | restoreLab",
+      "description": "Correcció de pintura d'automòbil, polit de vidre i restauració d'acrílic. Servei a domicili a Sant Cugat i Barcelona."
     },
     "car_paint": {
-      "title": "Correcció de Pintura Automòbil Sant Cugat | restoreLab",
-      "description": "Correcció de pintura mòbil a Sant Cugat i Barcelona. Elimineu marques circulars, ratllades i restaureu la brillantor. Preparació ceràmica. Sense repintura."
+      "title": "Correcció de Pintura a Domicili — Sant Cugat | restoreLab",
+      "description": "Correcció de pintura a domicili a Sant Cugat i Barcelona. Elimineu marques circulars, ratllades i restaureu la brillantor. Preparació ceràmica. Sense repintura."
     },
     "glass": {
       "title": "Polir Vidres del Cotxe Ratllats a Barcelona | restoreLab",
-      "description": "Polit de vidres: elimina ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a Barcelona i Sant Cugat. Sense substitució."
+      "description": "Polit de vidres: elimina ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a domicili a Barcelona i Sant Cugat. Sense substitució."
     },
     "acrylic": {
       "title": "Restauració d'Acrílic i Policarbonat Espanya | restoreLab",
@@ -75,16 +75,16 @@
       "description": "Per què el 99% del resultat depèn de la selecció d'eines. Rotativa vs doble acció — anàlisi, taula comparativa i recomanacions."
     },
     "headlight": {
-      "title": "Polit de Fars a Barcelona i Sant Cugat | restoreLab",
+      "title": "Polit de Fars a Domicili — Barcelona i Sant Cugat | restoreLab",
       "description": "Polit i restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
     },
     "interior_leather": {
       "title": "Neteja de Cuir Interior i Ceràmic | restoreLab",
-      "description": "Neteja profunda de cuir, eliminació de taques i ceràmic opcional. Seients, quadre de comandaments i panells. Des de 189€. Servei mòbil."
+      "description": "Neteja profunda de cuir, eliminació de taques i ceràmic opcional. Seients, quadre de comandaments i panells. Des de 189€. Servei mòbil. Servei a domicili a Sant Cugat i Barcelona."
     },
     "pre_sale": {
       "title": "Pack Pre-Venda — Maximitza el Valor de Revenda | restoreLab",
-      "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe."
+      "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe. A domicili a Sant Cugat i Barcelona."
     },
     "legal": {
       "title": "Avís Legal | restoreLab",
@@ -117,7 +117,7 @@
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
-    "subheadline": "Correcció de pintura, polit de vidres, fars i interior — servei mòbil premium a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
+    "subheadline": "Correcció de pintura, polit de vidres, fars i interior — servei mòbil premium a domicili a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
     "cta_primary": "Pressupost Gratuït",
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
@@ -229,7 +229,8 @@
           "Servei mòbil a la teva ubicació"
         ],
         "cta_label": "Pressupost Auto",
-        "tag": "Més popular"
+        "tag": "Més popular",
+        "h1": "Correcció de Pintura a Domicili a Sant Cugat i Barcelona"
       },
       {
         "id": "glass-polishing",
@@ -244,7 +245,7 @@
         ],
         "cta_label": "Pressupost Vidre",
         "tag": null,
-        "h1": "Polit de Vidres Ratllats a Barcelona"
+        "h1": "Polit de Vidres Ratllats a Domicili a Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -272,7 +273,7 @@
         ],
         "cta_label": "Pressupost Fars",
         "tag": null,
-        "h1": "Polit i Restauració de Fars a Barcelona"
+        "h1": "Polit i Restauració de Fars a Domicili a Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -300,7 +301,8 @@
           "Ceràmic opcional (289€)"
         ],
         "cta_label": "Pressupost Interior",
-        "tag": null
+        "tag": null,
+        "h1": "Neteja de Cuir Interior a Domicili a Sant Cugat i Barcelona"
       },
       {
         "id": "pre-sale-pack",

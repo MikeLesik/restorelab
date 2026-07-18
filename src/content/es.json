@@ -2,21 +2,21 @@
   "lang": "es",
   "meta": {
     "home": {
-      "title": "restoreLab — Restauración de Superficies en Sant Cugat",
-      "description": "Corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio móvil en Sant Cugat y Barcelona. Sin repintura.",
+      "title": "restoreLab — Detailing a Domicilio en Sant Cugat y Barcelona",
+      "description": "Corrección de pintura, eliminación de arañazos en vidrio y restauración de acrílico. Servicio móvil a domicilio en Sant Cugat y Barcelona. Sin repintura.",
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Servicios — Restauración Auto, Vidrio y Acrílico | restoreLab",
-      "description": "Corrección de pintura de automóvil, pulido de vidrio y restauración de acrílico. Servicio móvil en Sant Cugat y Barcelona."
+      "title": "Servicios a Domicilio — Restauración Auto, Vidrio y Faros | restoreLab",
+      "description": "Corrección de pintura de automóvil, pulido de vidrio y restauración de acrílico. Servicio a domicilio en Sant Cugat y Barcelona."
     },
     "car_paint": {
-      "title": "Corrección de Pintura Automóvil Sant Cugat | restoreLab",
-      "description": "Corrección de pintura móvil en Sant Cugat y Barcelona. Elimine marcas circulares, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
+      "title": "Corrección de Pintura a Domicilio — Sant Cugat | restoreLab",
+      "description": "Corrección de pintura a domicilio en Sant Cugat y Barcelona. Elimine marcas circulares, arañazos y restaure el brillo. Preparación cerámica. Sin repintura."
     },
     "glass": {
       "title": "Pulir Cristales del Coche Rayados en Barcelona | restoreLab",
-      "description": "Pulido de cristales: elimina arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Barcelona y Sant Cugat. Sin sustitución."
+      "description": "Pulido de cristales: elimina arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil a domicilio en Barcelona y Sant Cugat. Sin sustitución."
     },
     "acrylic": {
       "title": "Restauración de Acrílico y Policarbonato España | restoreLab",
@@ -75,16 +75,16 @@
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
     },
     "headlight": {
-      "title": "Pulido de Faros en Barcelona y Sant Cugat | restoreLab",
+      "title": "Pulido de Faros a Domicilio — Barcelona y Sant Cugat | restoreLab",
       "description": "Pulido y restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
     },
     "interior_leather": {
       "title": "Limpieza de Cuero Interior y Cerámico | restoreLab",
-      "description": "Limpieza profunda de cuero, eliminación de manchas y cerámico opcional. Asientos, salpicadero y paneles. Desde 189€. Servicio móvil."
+      "description": "Limpieza profunda de cuero, eliminación de manchas y cerámico opcional. Asientos, salpicadero y paneles. Desde 189€. Servicio móvil. Servicio a domicilio en Sant Cugat y Barcelona."
     },
     "pre_sale": {
       "title": "Pack Pre-Venta — Maximiza el Valor de Reventa | restoreLab",
-      "description": "Corrección de pintura, limpieza interior profunda y detailing del motor en un paquete. 249€ para sedán. Aumenta el valor de reventa de tu coche."
+      "description": "Corrección de pintura, limpieza interior profunda y detailing del motor en un paquete. 249€ para sedán. Aumenta el valor de reventa de tu coche. A domicilio en Sant Cugat y Barcelona."
     },
     "legal": {
       "title": "Aviso Legal | restoreLab",
@@ -117,7 +117,7 @@
   },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
-    "subheadline": "Corrección de pintura, pulido de cristales, faros e interior — servicio móvil premium en Sant Cugat, Barcelona y Vallès Occidental. Vamos a tu garaje.",
+    "subheadline": "Corrección de pintura, pulido de cristales, faros e interior — servicio móvil premium a domicilio en Sant Cugat, Barcelona y Vallès Occidental. Vamos a tu garaje.",
     "cta_primary": "Presupuesto Gratuito",
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
@@ -229,7 +229,8 @@
           "Servicio móvil en tu ubicación"
         ],
         "cta_label": "Presupuesto Auto",
-        "tag": "Más popular"
+        "tag": "Más popular",
+        "h1": "Corrección de Pintura a Domicilio en Sant Cugat y Barcelona"
       },
       {
         "id": "glass-polishing",
@@ -244,7 +245,7 @@
         ],
         "cta_label": "Presupuesto Vidrio",
         "tag": null,
-        "h1": "Pulido de Cristales Rayados en Barcelona"
+        "h1": "Pulido de Cristales Rayados a Domicilio en Barcelona"
       },
       {
         "id": "acrylic-restoration",
@@ -272,7 +273,7 @@
         ],
         "cta_label": "Presupuesto Faros",
         "tag": null,
-        "h1": "Pulido y Restauración de Faros en Barcelona"
+        "h1": "Pulido y Restauración de Faros a Domicilio en Barcelona"
       },
       {
         "id": "trim-restoration",
@@ -300,7 +301,8 @@
           "Cerámico opcional (289€)"
         ],
         "cta_label": "Presupuesto Interior",
-        "tag": null
+        "tag": null,
+        "h1": "Limpieza de Cuero Interior a Domicilio en Sant Cugat y Barcelona"
       },
       {
         "id": "pre-sale-pack",
