@@ -600,7 +600,8 @@
       "paragraphs": [
         "Ceramic coating at restoreLab costs €649 (2-year protection) or €1,049 (premium 5-year protection) for a sedan, full paint correction included. Unlike many shops, the price includes paint preparation — ceramic applied over defects only seals them in permanently.",
         "Prices are sedan-based; size multipliers apply (compact −10%, SUV +10-20%). The service is fully mobile: we apply the coating in your garage across Sant Cugat, Barcelona, Terrassa and nearby. Ask for an exact quote on WhatsApp with photos of your car."
-      ]
+      ],
+      "landing_link_label": "Ceramic coating in Barcelona: prices & details"
     }
   },
   "estimator": {
@@ -888,7 +889,8 @@
     "service_glass_polishing": "Hello restoreLab! I'm interested in Glass Polishing.",
     "service_headlight": "Hello restoreLab! I'm interested in headlight restoration.",
     "service_interior_leather": "Hello restoreLab! I'm interested in interior leather cleaning.",
-    "service_presale": "Hello restoreLab! I'm interested in the Pre-Sale Detail Pack."
+    "service_presale": "Hello restoreLab! I'm interested in the Pre-Sale Detail Pack.",
+    "ceramic_landing": "Hi restoreLab! I'd like a quote for at-home ceramic coating in Barcelona. My car: "
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",
@@ -4317,5 +4319,42 @@
         ]
       }
     ]
+  },
+  "ceramic_landing": {
+    "title": "Ceramic Coating for Cars in Barcelona — Prices from €649",
+    "meta_description": "At-home ceramic coating in Barcelona: €649 (2-year) or €1,049 (graphene, 5-year) for a sedan — paint correction included. Certified Gyeon & Gtechniq products. Exact quote via WhatsApp.",
+    "h1": "Ceramic Coating for Your Car in Barcelona — from €649",
+    "subtitle": "Fixed price with paint correction included. 100% at-home service: we apply the coating in your garage, anywhere in Barcelona.",
+    "intro_label": "What the price includes",
+    "intro_paragraphs": [
+      "Unlike many Barcelona workshops, our price includes the preceding paint correction. A ceramic applied over swirls and scratches only seals them in permanently — so we correct the paint before protecting it, and state it in the price upfront.",
+      "We work exclusively with certified Gyeon and Gtechniq coatings, applied by an accredited installer. And the service is fully mobile: you never drop your car at a shop — we come to your garage or parking spot with self-contained equipment."
+    ],
+    "plans_label": "Ceramic coating prices",
+    "plans_note": "Sedan pricing. Compact −10%, SUV +10–20%. Send photos via WhatsApp for an exact quote in ~30 minutes.",
+    "ppf_line": "After maximum protection? Ask about the Flagship pack with PPF from €2,290.",
+    "faq_label": "Ceramic coating questions — Barcelona",
+    "faqs": [
+      {
+        "question": "How much does ceramic coating cost in Barcelona?",
+        "answer": "At restoreLab: €649 with 2-year protection or €1,049 with 5-year graphene ceramic, for a sedan and with paint correction included. Compact −10%, SUV +10–20%. When comparing quotes, note many advertised prices exclude paint preparation — always ask for the breakdown."
+      },
+      {
+        "question": "How long does a ceramic coating last?",
+        "answer": "The certified 2-year ceramic (Gyeon / Gtechniq) keeps its hydrophobic effect and gloss with correct washing. The premium graphene protects up to 5 years. In both cases we recommend an annual coating check-up."
+      },
+      {
+        "question": "Do you apply ceramic coating at home in Barcelona?",
+        "answer": "Yes — the service is 100% mobile. We only need a garage or parking spot with access to the vehicle. We work across every Barcelona district, plus Sant Cugat, Terrassa and the rest of Vallès. The treatment takes 6–10 hours depending on the package."
+      },
+      {
+        "question": "How do I maintain a ceramic-coated car?",
+        "answer": "Hand wash or pressure wash without aggressive brushes, using pH-neutral shampoo. No waxes or polishes on top of the coating. With that care, the ceramic keeps its gloss and protection for its full service life."
+      }
+    ],
+    "cta_title": "Exact quote in ~30 minutes",
+    "cta_subtitle": "Send us photos of your car via WhatsApp and we'll confirm price and date — no obligation.",
+    "back_to_area": "Barcelona",
+    "see_pricing": "See all prices"
   }
 }

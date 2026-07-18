@@ -600,7 +600,8 @@
       "paragraphs": [
         "El tractament ceràmic a restoreLab costa 649 € (protecció de 2 anys) o 1.049 € (protecció premium de 5 anys) per a un sedan, amb correcció de pintura completa inclosa. A diferència de molts tallers, el preu inclou la preparació de la pintura — un ceràmic aplicat sobre defectes només els segella per sempre.",
         "Els preus són per a sedan; s'aplica el multiplicador per mida (compacte −10%, SUV +10-20%). El servei és 100% mòbil: apliquem el ceràmic al teu garatge a Sant Cugat, Barcelona, Terrassa i rodalies. Demana pressupost exacte per WhatsApp amb fotos del teu cotxe."
-      ]
+      ],
+      "landing_link_label": "Ceràmic a Barcelona: preus i detalls"
     }
   },
   "estimator": {
@@ -802,7 +803,8 @@
     "service_glass_polishing": "Hola restoreLab! M'interessa el poliment de vidres.",
     "service_headlight": "Hola restoreLab! M'interessa la restauració de fars.",
     "service_interior_leather": "Hola restoreLab! M'interessa la neteja de cuir interior.",
-    "service_presale": "Hola restoreLab! M'interessa el Pack Pre-Venda."
+    "service_presale": "Hola restoreLab! M'interessa el Pack Pre-Venda.",
+    "ceramic_landing": "Hola restoreLab! Vull un pressupost per a tractament ceràmic a domicili a Barcelona. El meu cotxe: "
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",
@@ -4317,5 +4319,42 @@
         ]
       }
     ]
+  },
+  "ceramic_landing": {
+    "title": "Tractament Ceràmic Cotxe Barcelona — Preus des de 649 €",
+    "meta_description": "Tractament ceràmic a domicili a Barcelona: 649 € (2 anys) o 1 049 € (grafè, 5 anys) per a sedan — correcció de pintura inclosa. Productes certificats Gyeon i Gtechniq. Pressupost exacte per WhatsApp.",
+    "h1": "Tractament Ceràmic per al Cotxe a Barcelona — des de 649 €",
+    "subtitle": "Preu tancat amb correcció de pintura inclosa. Servei 100 % a domicili: apliquem el ceràmic al teu garatge, a qualsevol districte de Barcelona.",
+    "intro_label": "Què inclou el preu",
+    "intro_paragraphs": [
+      "A diferència de molts tallers de Barcelona, el nostre preu inclou la correcció de pintura prèvia. Un ceràmic aplicat sobre remolins i ratllades només els segella de forma permanent — per això corregim la pintura abans de protegir-la, i ho indiquem al preu des del primer moment.",
+      "Treballem únicament amb recobriments certificats Gyeon i Gtechniq, amb instal·lador acreditat. I el servei és completament mòbil: no deixes el cotxe a cap taller — venim al teu garatge o pàrquing amb equip autònom."
+    ],
+    "plans_label": "Preus del tractament ceràmic",
+    "plans_note": "Preus per a sedan. Compacte −10 %, SUV +10–20 %. Envia'ns fotos per WhatsApp i rep el preu exacte en ~30 minuts.",
+    "ppf_line": "Busques la màxima protecció? Pregunta pel pack Flagship amb PPF des de 2 290 €.",
+    "faq_label": "Preguntes sobre el ceràmic a Barcelona",
+    "faqs": [
+      {
+        "question": "Quant costa un tractament ceràmic a Barcelona?",
+        "answer": "A restoreLab: 649 € amb protecció de 2 anys o 1 049 € amb ceràmic de grafè de 5 anys, per a un sedan i amb la correcció de pintura inclosa. Compacte −10 %, SUV +10–20 %. Atenció en comparar: molts preus anunciats no inclouen la preparació de la pintura — demana sempre el desglossament."
+      },
+      {
+        "question": "Quant dura el recobriment ceràmic?",
+        "answer": "El ceràmic certificat de 2 anys (Gyeon / Gtechniq) manté l'efecte hidrofòbic i la brillantor amb rentats correctes. El grafè premium protegeix fins a 5 anys. En tots dos casos recomanem una revisió anual del recobriment."
+      },
+      {
+        "question": "Apliqueu el ceràmic a domicili a Barcelona?",
+        "answer": "Sí, el servei és 100 % mòbil. Només necessitem un garatge o pàrquing amb accés al vehicle — treballem a qualsevol districte de Barcelona, a més de Sant Cugat, Terrassa i la resta del Vallès. El tractament dura entre 6 i 10 hores segons el paquet."
+      },
+      {
+        "question": "Quin manteniment necessita un cotxe amb ceràmic?",
+        "answer": "Rentat a mà o amb aigua a pressió sense raspalls agressius, amb xampú de pH neutre. Sense ceres ni polits per sobre del recobriment. Amb aquesta cura, el ceràmic conserva la brillantor i la protecció durant tota la seva vida útil."
+      }
+    ],
+    "cta_title": "Pressupost exacte en ~30 minuts",
+    "cta_subtitle": "Envia'ns fotos del teu cotxe per WhatsApp i et confirmem preu i data — sense compromís.",
+    "back_to_area": "Barcelona",
+    "see_pricing": "Veure tots els preus"
   }
 }

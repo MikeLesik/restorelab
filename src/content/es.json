@@ -600,7 +600,8 @@
       "paragraphs": [
         "El tratamiento cerámico en restoreLab cuesta 649 € (protección de 2 años) o 1 049 € (protección premium de 5 años) para un sedán, corrección de pintura completa incluida. A diferencia de muchos talleres, el precio incluye la preparación de la pintura — un cerámico aplicado sobre defectos solo los sella para siempre.",
         "Los precios son para sedán; aplica el multiplicador por tamaño (compacto −10%, SUV +10-20%). El servicio es 100% móvil: aplicamos el cerámico en tu garaje en Sant Cugat, Barcelona, Terrassa y alrededores. Pide presupuesto exacto por WhatsApp con fotos de tu coche."
-      ]
+      ],
+      "landing_link_label": "Cerámico en Barcelona: precios y detalles"
     }
   },
   "estimator": {
@@ -802,7 +803,8 @@
     "service_glass_polishing": "¡Hola restoreLab! Me interesa el pulido de cristales.",
     "service_headlight": "¡Hola restoreLab! Me interesa la restauración de faros.",
     "service_interior_leather": "¡Hola restoreLab! Me interesa la limpieza de cuero interior.",
-    "service_presale": "¡Hola restoreLab! Me interesa el Pack Pre-Venta."
+    "service_presale": "¡Hola restoreLab! Me interesa el Pack Pre-Venta.",
+    "ceramic_landing": "¡Hola restoreLab! Quiero un presupuesto para tratamiento cerámico a domicilio en Barcelona. Mi coche: "
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",
@@ -4317,5 +4319,42 @@
         ]
       }
     ]
+  },
+  "ceramic_landing": {
+    "title": "Tratamiento Cerámico Coche Barcelona — Precios desde 649 €",
+    "meta_description": "Tratamiento cerámico a domicilio en Barcelona: 649 € (2 años) o 1 049 € (grafeno, 5 años) para sedán — corrección de pintura incluida. Productos certificados Gyeon y Gtechniq. Presupuesto exacto por WhatsApp.",
+    "h1": "Tratamiento Cerámico para Coche en Barcelona — desde 649 €",
+    "subtitle": "Precio cerrado con corrección de pintura incluida. Servicio 100% a domicilio: aplicamos el cerámico en tu garaje, en cualquier distrito de Barcelona.",
+    "intro_label": "Qué incluye el precio",
+    "intro_paragraphs": [
+      "A diferencia de muchos talleres de Barcelona, nuestro precio incluye la corrección de pintura previa. Un cerámico aplicado sobre remolinos y arañazos solo los sella de forma permanente — por eso corregimos la pintura antes de proteger, y lo indicamos en el precio desde el primer momento.",
+      "Trabajamos únicamente con recubrimientos certificados Gyeon y Gtechniq, con instalador acreditado. Y el servicio es completamente móvil: no dejas el coche en ningún taller — vamos a tu garaje o parking con nuestro equipo autónomo."
+    ],
+    "plans_label": "Precios del tratamiento cerámico",
+    "plans_note": "Precios para sedán. Compacto −10 %, SUV +10–20 %. Envíanos fotos por WhatsApp y recibe el precio exacto en ~30 minutos.",
+    "ppf_line": "¿Buscas la máxima protección? Pregunta por el pack Flagship con PPF desde 2 290 €.",
+    "faq_label": "Preguntas sobre el cerámico en Barcelona",
+    "faqs": [
+      {
+        "question": "¿Cuánto cuesta un tratamiento cerámico en Barcelona?",
+        "answer": "En restoreLab: 649 € con protección de 2 años o 1 049 € con cerámico de grafeno de 5 años, para un sedán y con la corrección de pintura incluida. Compacto −10 %, SUV +10–20 %. Ojo al comparar: muchos precios anunciados no incluyen la preparación de la pintura — pide siempre el desglose."
+      },
+      {
+        "question": "¿Cuánto dura el recubrimiento cerámico?",
+        "answer": "El cerámico certificado de 2 años (Gyeon / Gtechniq) mantiene su efecto hidrofóbico y el brillo con lavados correctos. El grafeno premium protege hasta 5 años. En ambos casos recomendamos una revisión anual del recubrimiento."
+      },
+      {
+        "question": "¿Aplicáis el cerámico a domicilio en Barcelona?",
+        "answer": "Sí, el servicio es 100 % móvil. Solo necesitamos un garaje o parking con acceso al vehículo — trabajamos en cualquier distrito de Barcelona, además de Sant Cugat, Terrassa y el resto del Vallès. El tratamiento dura entre 6 y 10 horas según el paquete."
+      },
+      {
+        "question": "¿Qué mantenimiento necesita un coche con tratamiento cerámico?",
+        "answer": "Lavado a mano o con agua a presión sin cepillos agresivos, con champú de pH neutro. Sin ceras ni pulidos por encima del recubrimiento. Con ese cuidado, el cerámico conserva el brillo y la protección durante toda su vida útil."
+      }
+    ],
+    "cta_title": "Presupuesto exacto en ~30 minutos",
+    "cta_subtitle": "Envíanos fotos de tu coche por WhatsApp y te confirmamos precio y fecha — sin compromiso.",
+    "back_to_area": "Barcelona",
+    "see_pricing": "Ver todos los precios"
   }
 }

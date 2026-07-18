@@ -1,0 +1,173 @@
+---
+// Hand-crafted ES-only landing for the "tratamiento cerámico coche Barcelona (precio)"
+// query family. Competitors rank with price-first pages; this page leads with the price
+// and pulls plan facts straight from t.pricing so figures can never drift out of sync.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQ from '@/components/FAQ.astro';
+import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
+
+import es from '@/content/es.json';
+
+export function getStaticPaths() {
+  // Same ES-only scope as the area×service canary pages.
+  return [{ params: { lang: 'es' }, props: { t: es, lang: 'es' } }];
+}
+
+const { t, lang } = Astro.props as { t: any; lang: 'es' };
+const cl = t.ceramic_landing;
+
+// Plan facts come from the pricing source of truth.
+const carCategory = t.pricing.categories.find((c: any) => c.id === 'car');
+const ceramicPlans = carCategory.packages.filter((p: any) =>
+  ['ceramic-2y', 'premium-5y'].includes(p.slug)
+);
+
+const wa = WHATSAPP_NUMBER;
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.ceramic_landing)}`;
+const areaUrl = `/${lang}/areas/barcelona`;
+const pricingUrl = `/${lang}/pricing`;
+const pagePath = '/areas/barcelona/tratamiento-ceramico';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": cl.h1,
+  "name": cl.title,
+  "description": cl.meta_description,
+  "provider": {
+    "@type": "AutomotiveBusiness",
+    "name": "restoreLab",
+    "url": `${SITE_URL}/${lang}`,
+  },
+  "areaServed": { "@type": "City", "name": "Barcelona" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": 649,
+    "highPrice": 1049,
+    "offerCount": ceramicPlans.length,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/${lang}` },
+    { "@type": "ListItem", "position": 2, "name": cl.back_to_area, "item": `${SITE_URL}${areaUrl}` },
+    { "@type": "ListItem", "position": 3, "name": cl.h1, "item": `${SITE_URL}/${lang}${pagePath}` },
+  ],
+};
+---
+
+<BaseLayout
+  title={cl.title}
+  description={cl.meta_description}
+  lang={lang}
+  t={t}
+  currentPath={pagePath}
+  availableLangs={['es']}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="pt-24">
+    <!-- Hero / H1 -->
+    <section class="relative py-14 sm:py-16 overflow-hidden bg-gradient-hero">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(42,127,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42,127,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href={areaUrl} class="inline-flex items-center gap-2 text-sm text-th-faint hover:text-th-heading mb-5 transition-colors focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          {cl.back_to_area}
+        </a>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-4 leading-tight">{cl.h1}</h1>
+        <p class="text-xl text-th-muted mb-0 leading-relaxed">{cl.subtitle}</p>
+      </div>
+    </section>
+
+    <!-- Intro: what the price includes -->
+    <section class="py-12 sm:py-14">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-3">{cl.intro_label}</p>
+        {cl.intro_paragraphs.map((p: string) => (
+          <p class="text-lg text-th-body leading-relaxed mb-4 last:mb-0">{p}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- Plans — facts pulled from t.pricing -->
+    <section class="py-10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-5">{cl.plans_label}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {ceramicPlans.map((pkg: any) => (
+            <div class:list={['card flex flex-col', pkg.highlight && 'border-brand-accent/40']}>
+              <h2 class="text-xl font-display font-bold text-th-heading mb-1">{pkg.name}</h2>
+              <p class="text-3xl font-display font-bold text-brand-accent mb-1">{pkg.price}</p>
+              <p class="text-xs text-th-faint mb-4">{pkg.duration}</p>
+              <ul class="space-y-2 mb-5 flex-1">
+                {pkg.includes.map((f: string) => (
+                  <li class="flex items-start gap-2 text-sm text-th-body">
+                    <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-whatsapp text-sm w-full"
+                data-event="wa_click"
+                data-source="ceramic-landing"
+                data-plan={pkg.slug}
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp" /></svg>
+                WhatsApp
+              </a>
+            </div>
+          ))}
+        </div>
+        <p class="text-sm text-th-muted mt-5">{cl.plans_note}</p>
+        <p class="text-sm text-th-muted mt-1">
+          {cl.ppf_line}{' '}
+          <a href={pricingUrl} class="text-brand-accent hover:underline" data-event="pricing_view" data-source="ceramic-landing">{cl.see_pricing}</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQ
+      t={t}
+      title={cl.faq_label}
+      subtitle={null}
+      items={cl.faqs}
+      showCta={false}
+    />
+
+    <!-- CTA -->
+    <section class="py-12 sm:py-14">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl border border-brand-accent/25 bg-brand-accent/8 p-6 sm:p-8 text-center">
+          <p class="text-2xl font-display font-bold text-th-heading mb-2">{cl.cta_title}</p>
+          <p class="text-th-muted text-sm mb-5">{cl.cta_subtitle}</p>
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-brand-whatsapp hover:brightness-110 text-white font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+            data-event="wa_click"
+            data-source="ceramic-landing"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp" /></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
