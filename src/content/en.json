@@ -3428,6 +3428,21 @@
           "Masnou",
           "Premià de Dalt"
         ]
+      },
+      {
+        "slug": "sant-boi",
+        "name": "Sant Boi de Llobregat",
+        "short": "Sant Boi",
+        "region": "Baix Llobregat",
+        "lat": 41.3459,
+        "lng": 2.0367,
+        "description": "We cover Sant Boi and Baix Llobregat with our mobile service: communal garages, houses and industrial estates. Headlight restoration, paint correction and glass polishing without moving your car.",
+        "nearby": [
+          "Cornellà de Llobregat",
+          "Sant Joan Despí",
+          "Viladecans",
+          "Gavà"
+        ]
       }
     ]
   },
@@ -3970,6 +3985,23 @@
           {
             "question": "How much does headlight polishing cost in Sant Cugat?",
             "answer": "From €79 per pair on a standard car, at your home and with travel to Sant Cugat included. The long-life UV sealant is optional and quoted separately. Send a photo of your headlights via WhatsApp and we'll give you an exact price in ~30 minutes."
+          },
+          {
+            "question": "Will hazy headlights pass the ITV inspection?",
+            "answer": "Very hazy or yellowed headlights can be flagged at the ITV if they reduce lighting effectiveness. Restoring them in time removes that risk, improves night visibility and costs far less than replacing the complete units."
+          }
+        ]
+      },
+      "sant-boi/headlight-restoration": {
+        "title": "Headlight Polishing in Sant Boi de Llobregat — from €79/pair",
+        "meta_description": "At-home headlight restoration in Sant Boi de Llobregat: we remove yellowing and haze from €79 per pair, with optional UV sealant. We come to your garage in Baix Llobregat — WhatsApp quote in ~30 min.",
+        "h1": "At-Home Headlight Restoration in Sant Boi — from €79 per pair",
+        "subtitle": "Yellowed or hazy headlights restored to crystal clarity in your garage or parking spot, in 1–2 hours. Nothing dismantled.",
+        "intro_body": "In Sant Boi and the rest of Baix Llobregat the sun punishes headlight polycarbonate: lenses yellow, lose clarity and worsen night visibility. We restore them at your home with progressive wet sanding and machine polishing, plus an optional UV sealant protecting for 2+ years. From €79 per pair for a standard car, with an exact photo quote via WhatsApp in ~30 minutes.",
+        "extra_faqs": [
+          {
+            "question": "How much does headlight polishing cost in Sant Boi de Llobregat?",
+            "answer": "From €79 per pair on a standard car, at your home in Sant Boi and nearby towns. The long-life UV sealant is optional and quoted separately. Send a photo of your headlights via WhatsApp for an exact price in ~30 minutes."
           },
           {
             "question": "Will hazy headlights pass the ITV inspection?",

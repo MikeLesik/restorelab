@@ -247,4 +247,5 @@ export const CANARY_PAIRS: Array<{ city: string; service: string }> = [
   { city: 'pedralbes', service: 'car-paint-correction' },
   { city: 'pedralbes', service: 'glass-polishing' },
   { city: 'pedralbes', service: 'headlight-restoration' },
+  { city: 'sant-boi', service: 'headlight-restoration' },
 ];

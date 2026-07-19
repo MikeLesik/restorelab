@@ -67,6 +67,21 @@ export const areaProfiles: Record<string, AreaProfile> = {
     landmarks: ['Sagrada Família', 'Parc de la Ciutadella', 'Diagonal'],
     tier: 'primary',
   },
+  'sant-boi': {
+    slug: 'sant-boi',
+    name: 'Sant Boi de Llobregat',
+    shortName: 'Sant Boi',
+    population: 84500, // VERIFY
+    avgIncome: 'mid',
+    evDensity: 'medium',
+    commonCarBrands: ['SEAT', 'Volkswagen', 'Renault', 'Peugeot', 'Toyota'], // VERIFY
+    parkingContext: 'mixed — street parking and communal garages',
+    climateMicro: 'Llobregat delta — humid, strong coastal sun',
+    travelFee: 15, // VERIFY
+    caseCount: '0',
+    landmarks: ['Ermita de Sant Ramon', 'Museu de Sant Boi'],
+    tier: 'secondary',
+  },
   'terrassa': {
     slug: 'terrassa',
     name: 'Terrassa',

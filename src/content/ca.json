@@ -3428,6 +3428,21 @@
           "Masnou",
           "Premià de Dalt"
         ]
+      },
+      {
+        "slug": "sant-boi",
+        "name": "Sant Boi de Llobregat",
+        "short": "Sant Boi",
+        "region": "Baix Llobregat",
+        "lat": 41.3459,
+        "lng": 2.0367,
+        "description": "Cobrim Sant Boi i el Baix Llobregat amb el nostre servei mòbil: garatges comunitaris, xalets i polígons. Restauració de fars, correcció de pintura i polit de vidres sense que moguis el cotxe.",
+        "nearby": [
+          "Cornellà de Llobregat",
+          "Sant Joan Despí",
+          "Viladecans",
+          "Gavà"
+        ]
       }
     ]
   },
@@ -3970,6 +3985,23 @@
           {
             "question": "Quant costa polir els fars a Sant Cugat?",
             "answer": "Des de 79 € el parell en un turisme estàndard, a domicili i amb el desplaçament a Sant Cugat inclòs. El segellant UV de llarga durada és opcional i es pressuposta a part. Envia una foto dels teus fars per WhatsApp i et donem el preu exacte en ~30 minuts."
+          },
+          {
+            "question": "Es passa la ITV amb els fars opacs?",
+            "answer": "Uns fars molt opacs o esgrogueïts poden ser motiu d'observació a la ITV si redueixen l'eficàcia de l'enllumenat. Restaurar-los a temps elimina aquest risc, millora la visibilitat nocturna i costa força menys que substituir els fars complets."
+          }
+        ]
+      },
+      "sant-boi/headlight-restoration": {
+        "title": "Polit de Fars a Sant Boi de Llobregat — des de 79 €/parell",
+        "meta_description": "Restauració de fars a domicili a Sant Boi de Llobregat: eliminem grogor i opacitat des de 79 € el parell, amb segellant UV opcional. Venim al teu garatge al Baix Llobregat — pressupost per WhatsApp en ~30 min.",
+        "h1": "Restauració de Fars a Domicili a Sant Boi — des de 79 € el parell",
+        "subtitle": "Fars esgrogueïts o opacs restaurats a claredat cristal·lina al teu garatge o pàrquing, en 1–2 hores. Sense desmuntar res.",
+        "intro_body": "A Sant Boi i la resta del Baix Llobregat el sol castiga el policarbonat dels fars: s'esgrogueeixen, perden claredat i empitjoren la visibilitat nocturna. Els restaurem a domicili amb polit humit progressiu i polit a màquina, amb un segellant UV opcional que protegeix 2+ anys. Des de 79 € el parell per a un turisme, amb pressupost exacte per fotos per WhatsApp en ~30 minuts.",
+        "extra_faqs": [
+          {
+            "question": "Quant costa polir els fars a Sant Boi de Llobregat?",
+            "answer": "Des de 79 € el parell en un turisme estàndard, a domicili a Sant Boi i rodalies. El segellant UV de llarga durada és opcional i es pressuposta a part. Envia una foto dels teus fars per WhatsApp i et donem el preu exacte en ~30 minuts."
           },
           {
             "question": "Es passa la ITV amb els fars opacs?",
