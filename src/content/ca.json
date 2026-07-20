@@ -116,7 +116,7 @@
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
-    "subheadline": "Correcció de pintura, polit de vidres, fars i interior — servei mòbil premium a domicili a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
+    "subheadline": "Correcció de pintura, polit de vidres i restauració de fars — servei mòbil premium a domicili a Sant Cugat, Barcelona i Vallès Occidental. Anem al teu garatge.",
     "cta_primary": "Pressupost Gratuït",
     "cta_secondary": "Veure Abans i Després",
     "reply_time": "Resposta mitjana: ~30 minuts",
@@ -247,8 +247,7 @@
         "starting_price": "249€",
         "features": [
           "Correcció de pintura d'una fase",
-          "Restauració de fars inclosa",
-          "Pneumàtics i plàstics tractats"
+          "Restauració de fars inclosa"
         ],
         "cta_label": "Pressupost Pre-Venda",
         "tag": "Pack estalvi"
@@ -522,8 +521,7 @@
             "description": "Correcció de pintura d'una fase i restauració de fars — l'exterior surt a les fotos de l'anunci com toca.",
             "includes": [
               "Correcció de pintura d'una fase",
-              "Restauració de fars",
-              "Tractament de pneumàtics i plàstics"
+              "Restauració de fars"
             ],
             "best_for": "Vendre o lliurar el teu vehicle",
             "highlight": true
@@ -3412,7 +3410,7 @@
   },
   "business": {
     "hero_title": "Detailing Mòbil Pre-Venda per a Concessionaris de Barcelona",
-    "hero_subtitle": "Anem al teu concessionari. Correcció de pintura professional, ceràmic i detailing interior — servei in situ amb lliurament en ≤24h.",
+    "hero_subtitle": "Anem al teu concessionari. Correcció de pintura professional, ceràmic i polit de vidres — servei in situ amb lliurament en ≤24h.",
     "hero_cta": "Reservar Trucada de 15 min",
     "hero_cta_secondary": "Descarregar Tarifa",
     "value_props_title": "Dissenyat per a Operacions de Concessionari",
@@ -3439,13 +3437,10 @@
       {
         "name": "Lot-Ready Estàndard",
         "price": "169",
-        "desc": "Rentat descontaminant + polit en una fase + aspirat interior + condicionat pneumàtics. Ideal per a estoc fins a 30.000€.",
+        "desc": "Rentat descontaminant + polit mecànic en una fase. Ideal per a estoc fins a 30.000€.",
         "includes": [
           "Rentat descontaminant + clay bar",
-          "Polit mecànic en una fase",
-          "Aspirat i neteja interior",
-          "Condicionat de pneumàtics i motllures",
-          "Informe fotogràfic"
+          "Polit mecànic en una fase"
         ]
       },
       {
@@ -3454,9 +3449,7 @@
         "desc": "Igual que Estàndard per a SUV, crossovers i familiars. Panells més grans, més temps.",
         "includes": [
           "Tot el d'Estàndard",
-          "Cobertura mida SUV/familiar",
-          "Maleter i zona de càrrega",
-          "Informe fotogràfic ampliat"
+          "Cobertura mida SUV/familiar"
         ]
       },
       {
@@ -3465,10 +3458,7 @@
         "desc": "Correcció en dues fases per a vehicles premium i esportius. Dissenyat per a cotxes de més de 40.000€.",
         "includes": [
           "Correcció de pintura en dues fases",
-          "Detailing interior complet",
-          "Polit de vidres i compartiment motor",
-          "Detall de llandes + ceràmica motllures",
-          "Informe de 30 fotos"
+          "Polit de vidres"
         ]
       }
     ],
@@ -3565,8 +3555,7 @@
           "Gtechniq Crystal Serum Ultra 5Y",
           "Set complet hidrofòbic vidres",
           "Ceràmic llandes + pinces",
-          "Restauració motllures plàstiques",
-          "Condicionat cuir interior"
+          "Restauració motllures plàstiques"
         ],
         "popular": true
       }
@@ -3703,8 +3692,7 @@
         "includes": [
           "Avaluació in situ",
           "Polit a màquina",
-          "Segellant hidrofòbic",
-          "Informe fotogràfic"
+          "Segellant hidrofòbic"
         ]
       },
       {
@@ -3820,7 +3808,6 @@
           "Descontaminació bimensual de pintura (ferro + quitrà)",
           "Retoc trimestral de polit d'una sola fase",
           "Retoc ceràmic cada 4 mesos",
-          "Neteja profunda d'interior (trimestral)",
           "Mesurament anual del gruix de pintura",
           "10% de descompte en qualsevol servei addicional"
         ],
@@ -3839,7 +3826,6 @@
           "Retoc ceràmic mensual",
           "Renovació del recobriment de rodes (trimestral)",
           "Inspecció i retoc de vores del recobriment",
-          "Detall del compartiment del motor (semestral)",
           "Programació prioritària el mateix dia",
           "20% de descompte en qualsevol servei addicional"
         ],

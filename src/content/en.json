@@ -116,7 +116,7 @@
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
-    "subheadline": "Paint correction, glass polishing, headlight & interior restoration — premium mobile service at your home in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
+    "subheadline": "Paint correction, glass polishing and headlight restoration — premium mobile service at your home in Sant Cugat, Barcelona & Vallès Occidental. We come to your garage.",
     "cta_primary": "Get a Free Estimate",
     "cta_secondary": "See Before & After",
     "reply_time": "Average reply: ~30 minutes",
@@ -247,8 +247,7 @@
         "starting_price": "€249",
         "features": [
           "Single-stage paint correction",
-          "Headlight restoration included",
-          "Tyre & trim dressed"
+          "Headlight restoration included"
         ],
         "cta_label": "Get Pre-Sale Estimate",
         "tag": "Value pack"
@@ -393,8 +392,7 @@
               "Full two-stage correction",
               "Paint depth measurements",
               "IPA wipedown & surface prep",
-              "2-year ceramic coating (Gyeon / Gtechniq)",
-              "Tyre & trim dressing"
+              "2-year ceramic coating (Gyeon / Gtechniq)"
             ],
             "best_for": "Anyone wanting long-term protection with a showroom finish",
             "highlight": true
@@ -523,8 +521,7 @@
             "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [
               "Single-stage paint correction",
-              "Headlight restoration",
-              "Tyre & trim dressing"
+              "Headlight restoration"
             ],
             "best_for": "Selling or trading in your vehicle",
             "highlight": true
@@ -3412,7 +3409,7 @@
   },
   "business": {
     "hero_title": "Mobile Pre-Sale Detailing for Barcelona Dealers",
-    "hero_subtitle": "We come to your lot. Professional paint correction, ceramic coating and interior detailing — delivered on-site with ≤24h turnaround.",
+    "hero_subtitle": "We come to your lot. Professional paint correction, ceramic coating and glass polishing — delivered on-site with ≤24h turnaround.",
     "hero_cta": "Book a 15-min Call",
     "hero_cta_secondary": "Download Rate Card",
     "value_props_title": "Built for Dealership Operations",
@@ -3439,13 +3436,10 @@
       {
         "name": "Lot-Ready Standard",
         "price": "169",
-        "desc": "Decon wash + single-stage polish + interior vacuum + tyre dress. Perfect for stock cars under €30K.",
+        "desc": "Decon wash + single-stage machine polish. Perfect for stock cars under €30K.",
         "includes": [
           "Decon wash & clay bar",
-          "Single-stage machine polish",
-          "Interior vacuum & wipe",
-          "Tyre & trim dressing",
-          "Photo report"
+          "Single-stage machine polish"
         ]
       },
       {
@@ -3454,9 +3448,7 @@
         "desc": "Same as Standard for SUVs, crossovers and estates. Larger panels, more time.",
         "includes": [
           "Everything in Standard",
-          "SUV/estate size coverage",
-          "Boot & cargo area",
-          "Extended photo report"
+          "SUV/estate size coverage"
         ]
       },
       {
@@ -3465,10 +3457,7 @@
         "desc": "Two-stage correction for premium and sports vehicles. Designed for cars listed above €40K.",
         "includes": [
           "Two-stage paint correction",
-          "Full interior detail",
-          "Glass polish & engine bay",
-          "Wheel detail + ceramic trim",
-          "30-photo report"
+          "Glass polishing"
         ]
       }
     ],
@@ -3565,8 +3554,7 @@
           "Gtechniq Crystal Serum Ultra 5Y",
           "Full glass hydrophobic set",
           "Wheel + caliper ceramic",
-          "Plastic trim restoration",
-          "Interior leather conditioning"
+          "Plastic trim restoration"
         ],
         "popular": true
       }
@@ -3703,8 +3691,7 @@
         "includes": [
           "On-site assessment",
           "Machine polishing",
-          "Hydrophobic sealant",
-          "Photo report"
+          "Hydrophobic sealant"
         ]
       },
       {
@@ -3820,7 +3807,6 @@
           "Bi-monthly paint decontamination (iron + tar)",
           "Quarterly single-stage polish touch-up",
           "Ceramic top-up every 4 months",
-          "Interior deep clean (quarterly)",
           "Annual paint thickness measurement",
           "10% off any additional service"
         ],
@@ -3839,7 +3825,6 @@
           "Monthly ceramic top-up",
           "Wheel coating refresh (quarterly)",
           "Coating edge inspection & touch-up",
-          "Engine bay detail (bi-annually)",
           "Priority same-day scheduling",
           "20% off any additional service"
         ],

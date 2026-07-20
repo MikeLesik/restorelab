@@ -116,7 +116,7 @@
   },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
-    "subheadline": "Corrección de pintura, pulido de cristales, faros e interior — servicio móvil premium a domicilio en Sant Cugat, Barcelona y Vallès Occidental. Vamos a tu garaje.",
+    "subheadline": "Corrección de pintura, pulido de cristales y restauración de faros — servicio móvil premium a domicilio en Sant Cugat, Barcelona y Vallès Occidental. Vamos a tu garaje.",
     "cta_primary": "Presupuesto Gratuito",
     "cta_secondary": "Ver Antes y Después",
     "reply_time": "Respuesta media: ~30 minutos",
@@ -247,8 +247,7 @@
         "starting_price": "249€",
         "features": [
           "Corrección de pintura de una fase",
-          "Restauración de faros incluida",
-          "Neumáticos y plásticos tratados"
+          "Restauración de faros incluida"
         ],
         "cta_label": "Presupuesto Pre-Venta",
         "tag": "Pack ahorro"
@@ -522,8 +521,7 @@
             "description": "Corrección de pintura de una fase y restauración de faros — el exterior entra en las fotos del anuncio como debe.",
             "includes": [
               "Corrección de pintura de una fase",
-              "Restauración de faros",
-              "Tratamiento de neumáticos y plásticos"
+              "Restauración de faros"
             ],
             "best_for": "Vender o entregar tu vehículo",
             "highlight": true
@@ -3412,7 +3410,7 @@
   },
   "business": {
     "hero_title": "Detailing Móvil Pre-Venta para Concesionarios de Barcelona",
-    "hero_subtitle": "Vamos a tu concesionario. Corrección de pintura profesional, cerámico y detailing interior — servicio in situ con entrega en ≤24h.",
+    "hero_subtitle": "Vamos a tu concesionario. Corrección de pintura profesional, cerámico y pulido de cristales — servicio in situ con entrega en ≤24h.",
     "hero_cta": "Reservar Llamada de 15 min",
     "hero_cta_secondary": "Descargar Tarifa",
     "value_props_title": "Diseñado para Operaciones de Concesionario",
@@ -3439,13 +3437,10 @@
       {
         "name": "Preparación Estándar",
         "price": "169",
-        "desc": "Lavado descontaminante + pulido en una fase + aspirado interior + acondicionado neumáticos. Ideal para stock hasta 30.000€.",
+        "desc": "Lavado descontaminante + pulido mecánico en una fase. Ideal para stock hasta 30.000€.",
         "includes": [
           "Lavado descontaminante + clay bar",
-          "Pulido mecánico en una fase",
-          "Aspirado y limpieza interior",
-          "Acondicionado de neumáticos y molduras",
-          "Informe fotográfico"
+          "Pulido mecánico en una fase"
         ]
       },
       {
@@ -3454,9 +3449,7 @@
         "desc": "Igual que Estándar para SUV, crossovers y familiares. Paneles más grandes, más tiempo.",
         "includes": [
           "Todo lo de Estándar",
-          "Cobertura tamaño SUV/familiar",
-          "Maletero y zona de carga",
-          "Informe fotográfico ampliado"
+          "Cobertura tamaño SUV/familiar"
         ]
       },
       {
@@ -3465,10 +3458,7 @@
         "desc": "Corrección en dos fases para vehículos premium y deportivos. Diseñado para coches de más de 40.000€.",
         "includes": [
           "Corrección de pintura en dos fases",
-          "Detailing interior completo",
-          "Pulido de cristales y vano motor",
-          "Detalle de llantas + cerámica molduras",
-          "Informe de 30 fotos"
+          "Pulido de cristales"
         ]
       }
     ],
@@ -3565,8 +3555,7 @@
           "Gtechniq Crystal Serum Ultra 5Y",
           "Set completo hidrofóbico cristales",
           "Cerámico llantas + pinzas",
-          "Restauración molduras plásticas",
-          "Acondicionado cuero interior"
+          "Restauración molduras plásticas"
         ],
         "popular": true
       }
@@ -3703,8 +3692,7 @@
         "includes": [
           "Evaluación in situ",
           "Pulido a máquina",
-          "Sellador hidrofóbico",
-          "Informe fotográfico"
+          "Sellador hidrofóbico"
         ]
       },
       {
@@ -3820,7 +3808,6 @@
           "Descontaminación de pintura bimensual (hierro + alquitrán)",
           "Retoque de pulido en una fase trimestral",
           "Refuerzo cerámico cada 4 meses",
-          "Limpieza profunda de interior (trimestral)",
           "Medición anual del espesor de pintura",
           "10% de descuento en cualquier servicio adicional"
         ],
@@ -3839,7 +3826,6 @@
           "Refuerzo cerámico mensual",
           "Renovación del revestimiento de llantas (trimestral)",
           "Inspección y retoque de bordes del recubrimiento",
-          "Detallado del vano motor (semestral)",
           "Programación prioritaria en el mismo día",
           "20% de descuento en cualquier servicio adicional"
         ],
