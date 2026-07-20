@@ -113,7 +113,9 @@
     "call_us": "Call us",
     "call_sub": "Mon–Sat, 8:00–19:00",
     "email_us": "Email us",
-    "email_sub": "We reply the same day"
+    "email_sub": "We reply the same day",
+    "analytics_off": "Analytics disabled on this device",
+    "analytics_on": "Analytics re-enabled on this device"
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",

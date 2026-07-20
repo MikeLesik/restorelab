@@ -341,11 +341,40 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     </script>
 
     <!-- ── Tracking: GTM + Clarity + Meta Pixel + Cookie Consent ── -->
-    <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId, ccTranslation }}>
+    <script define:vars={{ pageLang: lang, gtmId, clarityId, metaPixelId, ccTranslation, internalCopy: { off: t.ui.analytics_off, on: t.ui.analytics_on } }}>
+      // ── Internal-traffic opt-out ────────────────────────────────────────────
+      // Owner/staff devices skip tracking entirely. Flagged per DEVICE, not per
+      // IP: the phone browses over cellular, where IP filters never match.
+      // Visit any page with ?internal=1 to flag this device, ?internal=0 to undo.
+
+      function isInternalDevice() {
+        try { return localStorage.getItem('rl_internal') === '1'; } catch (e) { return false; }
+      }
+
+      (function applyInternalFlag() {
+        var flag;
+        try { flag = new URLSearchParams(window.location.search).get('internal'); } catch (e) { return; }
+        if (flag !== '1' && flag !== '0') return;
+        try {
+          if (flag === '1') localStorage.setItem('rl_internal', '1');
+          else localStorage.removeItem('rl_internal');
+        } catch (e) { return; }
+
+        // Confirm visually — the phone has no console to check.
+        window.addEventListener('DOMContentLoaded', function() {
+          var toast = document.createElement('div');
+          toast.textContent = flag === '1' ? internalCopy.off : internalCopy.on;
+          toast.setAttribute('role', 'status');
+          toast.className = 'fixed bottom-28 left-1/2 -translate-x-1/2 z-[9999] max-w-[90vw] text-center rounded-full px-4 py-2 text-sm font-medium bg-brand-navy text-brand-white shadow-lg';
+          document.body.appendChild(toast);
+          setTimeout(function() { toast.remove(); }, 6000);
+        });
+      })();
+
       // ── Loaders (called after consent) ──────────────────────────────────────
 
       function loadGTM() {
-        if (!gtmId || window.__gtmLoaded) return;
+        if (!gtmId || window.__gtmLoaded || isInternalDevice()) return;
         window.__gtmLoaded = true;
         (function(w,d,s,l,i){
           w[l]=w[l]||[];
@@ -368,7 +397,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       }
 
       function loadClarity() {
-        if (!clarityId || window.__clarityLoaded) return;
+        if (!clarityId || window.__clarityLoaded || isInternalDevice()) return;
         window.__clarityLoaded = true;
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -379,7 +408,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       }
 
       function loadMetaPixel() {
-        if (!metaPixelId || window.__pixelLoaded) return;
+        if (!metaPixelId || window.__pixelLoaded || isInternalDevice()) return;
         window.__pixelLoaded = true;
         !function(f,b,e,v,n,t,s){
           if(f.fbq)return;
@@ -397,6 +426,8 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       // See src/lib/analytics.ts for TypeScript types
 
       window.__rl_push = function(payload) {
+        if (isInternalDevice()) return;
+
         // Check CookieConsent — only push if analytics consent granted
         var cc = window.CookieConsent;
         if (cc && typeof cc.acceptedCategory === 'function' && !cc.acceptedCategory('analytics')) return;

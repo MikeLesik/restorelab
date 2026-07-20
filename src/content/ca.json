@@ -113,7 +113,9 @@
     "call_us": "Truca'ns",
     "call_sub": "Dl–Ds, 8:00–19:00",
     "email_us": "Escriu-nos un correu",
-    "email_sub": "Responem el mateix dia"
+    "email_sub": "Responem el mateix dia",
+    "analytics_off": "Analítica desactivada en aquest dispositiu",
+    "analytics_on": "Analítica reactivada en aquest dispositiu"
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",

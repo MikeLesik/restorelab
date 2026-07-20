@@ -113,7 +113,9 @@
     "call_us": "Llámanos",
     "call_sub": "Lun–Sáb, 8:00–19:00",
     "email_us": "Escríbenos un email",
-    "email_sub": "Respondemos el mismo día"
+    "email_sub": "Respondemos el mismo día",
+    "analytics_off": "Analítica desactivada en este dispositivo",
+    "analytics_on": "Analítica reactivada en este dispositivo"
   },
   "hero": {
     "headline": "Acabado de fábrica. En tu garaje.",
