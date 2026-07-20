@@ -15,21 +15,48 @@ const [h1First, ...h1Rest] = t.hero.headline.split('.');
 const h1Second = h1Rest.filter(Boolean).join('.').trim();
 ---
 
-<section class="relative min-h-screen supports-[height:100svh]:min-h-svh flex flex-col items-center overflow-hidden bg-gradient-hero pt-16">
+<section class="relative min-h-screen supports-[height:100svh]:min-h-svh flex flex-col items-center overflow-hidden bg-hero-base pt-16">
 
-  <!-- Background grid -->
-  <div class="absolute inset-0 opacity-10 pointer-events-none">
-    <div class="absolute inset-0 bg-[linear-gradient(theme(colors.brand.accent/0.3)_1px,transparent_1px),linear-gradient(90deg,theme(colors.brand.accent/0.3)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-  </div>
+  <!-- Background plate: a car body flank under studio light.
+       object-position bottom pins the highlight to the lower edge at every
+       viewport ratio, so it never crops up into the headline. -->
+  <picture class="hero-plate-wrap">
+    <source srcset="/images/hero/hero-flank-dark-v1.avif" type="image/avif" />
+    <source srcset="/images/hero/hero-flank-dark-v1.webp" type="image/webp" />
+    <img
+      src="/images/hero/hero-flank-dark-v1.webp"
+      alt=""
+      aria-hidden="true"
+      width="1376"
+      height="768"
+      fetchpriority="high"
+      decoding="async"
+      class="hero-plate hero-plate-dark"
+    />
+  </picture>
+  <picture class="hero-plate-wrap">
+    <source srcset="/images/hero/hero-flank-light-v1.avif" type="image/avif" />
+    <source srcset="/images/hero/hero-flank-light-v1.webp" type="image/webp" />
+    <img
+      src="/images/hero/hero-flank-light-v1.webp"
+      alt=""
+      aria-hidden="true"
+      width="1376"
+      height="768"
+      fetchpriority="high"
+      decoding="async"
+      class="hero-plate hero-plate-light"
+    />
+  </picture>
 
-  <!-- Glow -->
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-brand-accent/15 dark:bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-brand-gold/10 dark:bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Scrim: holds the headline zone dark enough for AA contrast, and a
+       vignette that keeps the eye centred. Both sit above the plate. -->
+  <div class="hero-scrim" aria-hidden="true"></div>
 
   <!-- Top spacer -->
-  <div class="flex-1"></div>
+  <div class="relative z-10 flex-1"></div>
 
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
     <!-- H1 -->
     <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-th-heading mb-6 leading-tight tracking-tight">
@@ -65,12 +92,12 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
     </div>
 
     <!-- Microcopy -->
-    <p class="text-th-faint/80 text-sm">{t.hero.reply_time}</p>
+    <p class="text-th-muted text-sm">{t.hero.reply_time}</p>
 
   </div>
 
   <!-- Trust pills — centered between microcopy and scroll -->
-  <div class="flex-1 flex items-center justify-center px-4 py-8">
+  <div class="relative z-10 flex-1 flex items-center justify-center px-4 py-8">
     <div class="flex flex-wrap justify-center gap-x-2 gap-y-2.5 sm:gap-2 max-w-xl">
       {t.hero.trust_pills.map((pill: string, i: number) => (
         <span class:list={[
@@ -84,7 +111,7 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
   </div>
 
   <!-- Scroll indicator -->
-  <div class="pb-8 flex flex-col items-center gap-2 text-th-faint/60">
+  <div class="relative z-10 pb-8 flex flex-col items-center gap-2 text-th-muted/80">
     <span class="text-xs uppercase tracking-widest">{t.ui.scroll}</span>
     <div class="w-px h-8 bg-th-surface/20 animate-pulse"></div>
   </div>
