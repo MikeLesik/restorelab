@@ -150,6 +150,10 @@
       {
         "name": "CarPro",
         "status": "products"
+      },
+      {
+        "name": "Sonax",
+        "status": "products"
       }
     ],
     "certifications_title": "Certificaciones y equipo",
