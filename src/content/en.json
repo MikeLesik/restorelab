@@ -818,16 +818,6 @@
         "location": "Terrassa"
       },
       {
-        "id": 4,
-        "title": "Acrylic Windows — UV Restore",
-        "category": "acrylic",
-        "before": "/images/cases/car5-before.jpg",
-        "after": "/images/cases/car5-after.jpg",
-        "result": "UV yellowing reversed, clarity restored",
-        "metric": "Transparency restored",
-        "location": "Sant Cugat"
-      },
-      {
         "id": 5,
         "title": "Mercedes GLE — Scratch Removal",
         "category": "car",

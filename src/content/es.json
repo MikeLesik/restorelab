@@ -902,16 +902,6 @@
         "location": "Terrassa"
       },
       {
-        "id": 4,
-        "title": "Ventanas Acrílicas — Restauración UV",
-        "category": "acrylic",
-        "before": "/images/cases/car5-before.jpg",
-        "after": "/images/cases/car5-after.jpg",
-        "result": "Amarilleo por UV revertido, claridad restaurada",
-        "metric": "Transparencia recuperada",
-        "location": "Sant Cugat"
-      },
-      {
         "id": 5,
         "title": "Mercedes GLE — Eliminación de Arañazos",
         "category": "car",

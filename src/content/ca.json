@@ -902,16 +902,6 @@
         "location": "Terrassa"
       },
       {
-        "id": 4,
-        "title": "Finestres Acríliques — Restauració UV",
-        "category": "acrylic",
-        "before": "/images/cases/car5-before.jpg",
-        "after": "/images/cases/car5-after.jpg",
-        "result": "Groguenc per UV revertit, claredat restaurada",
-        "metric": "Transparència recuperada",
-        "location": "Sant Cugat"
-      },
-      {
         "id": 5,
         "title": "Mercedes GLE — Eliminació de Ratllades",
         "category": "car",
