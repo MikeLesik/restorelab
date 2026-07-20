@@ -14,11 +14,15 @@ function splitCert(name: string) {
   return { brand, label: rest.join(' ') };
 }
 
-/** White-fill SVGs vanish on the light theme — render them as dark silhouettes there.
- *  gtechniq.svg is white-filled too and was missing here, so it rendered as an
- *  empty box captioned ACREDITADO on every page carrying this block. */
+/** Bare white wordmarks vanish on the light theme — render them as dark
+ *  silhouettes there. Applies ONLY to logos that are pure white artwork.
+ *
+ *  gtechniq.svg is deliberately excluded: it is not a bare wordmark but a full
+ *  lockup — white type on the brand's own red parallelogram (.st1 fill #FE0000).
+ *  brightness-0 flattens the red and the white together and leaves a solid black
+ *  slab. It carries its own background, so it needs no theme treatment at all. */
 function logoCls(src: string) {
-  return /gyeon|carpro|gtechniq/.test(src) ? 'brightness-0 dark:brightness-100' : '';
+  return /gyeon|carpro/.test(src) ? 'brightness-0 dark:brightness-100' : '';
 }
 ---
 
