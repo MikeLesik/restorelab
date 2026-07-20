@@ -85,6 +85,10 @@
     "cookies": {
       "title": "Política de Cookies | restoreLab",
       "description": "Informació sobre les cookies utilitzades a restorelab.io, la seva finalitat i com gestionar el teu consentiment."
+    },
+    "examples": {
+      "title": "Exemples il·lustratius — Abans i Després | restoreLab",
+      "description": "Galeria d’exemples del tipus de resultat que aconseguim en correcció de pintura, vidres, fars i més. Imatges il·lustratives, no fotos de clients."
     }
   },
   "nav": {
@@ -93,7 +97,8 @@
     "cases": "Portfolio",
     "contact": "Contacte",
     "academy": "Acadèmia",
-    "cta": "Pressupost"
+    "cta": "Pressupost",
+    "examples": "Exemples"
   },
   "ui": {
     "language": "Idioma",
@@ -4367,5 +4372,16 @@
     "cta_subtitle": "Envia'ns fotos del teu cotxe per WhatsApp i et confirmem preu i data — sense compromís.",
     "back_to_area": "Barcelona",
     "see_pricing": "Veure tots els preus"
+  },
+  "examples_page": {
+    "hero_title": "Exemples de resultats",
+    "hero_subtitle": "El tipus d’acabat que aconseguim, servei per servei.",
+    "disclaimer": "Imatges generades per il·lustrar el tipus de defecte i el resultat esperat. No són fotos de feines reals ni casos de clients concrets. Els nostres casos reals són a la galeria Abans i Després.",
+    "cases_link": "Veure casos reals",
+    "cat_paint": "Correcció de pintura",
+    "cat_glass": "Polit de vidres",
+    "cat_headlights": "Fars",
+    "cat_acrylic": "Acrílic",
+    "cat_ceramic": "Ceràmic"
   }
 }

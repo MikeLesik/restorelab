@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { examples } from '@/lib/examples';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const ep = t.examples_page;
+const catLabel: Record<string, string> = {
+  paint: ep.cat_paint,
+  glass: ep.cat_glass,
+  headlights: ep.cat_headlights,
+  acrylic: ep.cat_acrylic,
+  ceramic: ep.cat_ceramic,
+};
+// Deliberately NOT a CollectionPage / ImageObject schema — that markup asserts a
+// gallery of real work. These are illustrations; only /cases gets the schema.
+---
+
+<BaseLayout
+  title={t.meta.examples.title}
+  description={t.meta.examples.description}
+  lang={lang}
+  t={t}
+  currentPath="/examples"
+>
+  <div class="pt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center pt-10 pb-6">
+        <h1 class="section-title text-5xl mb-4">{ep.hero_title}</h1>
+        <p class="section-subtitle mx-auto">{ep.hero_subtitle}</p>
+      </div>
+
+      {/* The disclaimer is the whole point of this page existing separately from
+          /cases: it states plainly that nothing here is a real customer job. */}
+      <div class="max-w-3xl mx-auto mb-12 p-5 rounded-2xl border border-brand-gold/25 bg-brand-gold/5 text-center">
+        <p class="text-brand-gold text-sm leading-relaxed">{ep.disclaimer}</p>
+        <a href={`/${lang}/cases`} class="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-brand-accent hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+          {ep.cases_link}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+        {examples.map((ex) => (
+          <figure class="rounded-2xl overflow-hidden border border-th-border/10 bg-th-surface/5">
+            <div class="relative aspect-video">
+              <picture>
+                <source srcset={`/images/examples/${ex.id}.webp`} type="image/webp" />
+                <img src={`/images/examples/${ex.id}.jpg`} alt={`${t.services.illustration_before} / ${t.services.illustration_after} — ${catLabel[ex.cat]}`}
+                     class="w-full h-full object-cover" width="1000" height="563" loading="lazy" decoding="async" />
+              </picture>
+              <span class="absolute top-3 left-3 px-2 py-1 bg-black/85 rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_before}</span>
+              <span class="absolute top-3 right-3 px-2 py-1 bg-black/85 border border-brand-accent rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_after}</span>
+            </div>
+            <figcaption class="px-4 py-3">
+              <span class="text-xs font-semibold text-th-muted uppercase tracking-wider">{catLabel[ex.cat]}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
