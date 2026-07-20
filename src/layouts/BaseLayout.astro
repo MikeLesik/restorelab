@@ -307,7 +307,13 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     <main class="pb-24 md:pb-0">
       <slot />
     </main>
-    {currentPath !== '/contact' && <PreFooterCTA t={t} lang={lang} />}
+    {/* Suppressed where the page already ends with its own closing CTA. /contact
+        is the form. The four verticals each close with a bespoke, vertical-
+        specific CTA section (EV / fleet / plans / commercial glass) that is more
+        relevant than this generic ask and carries an email option — stacking the
+        generic block after it, then StickyCTA on mobile, was three asks in two
+        screens. */}
+    {!['/contact', '/ev', '/plans', '/business', '/commercial-glass'].includes(currentPath) && <PreFooterCTA t={t} lang={lang} />}
     <Footer t={t} lang={lang} />
     {/* Suppressed where the page already puts a full-width green WhatsApp button
         in the same viewport — two identical CTAs a thumb's width apart is the
