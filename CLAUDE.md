@@ -92,8 +92,8 @@ scripts/
 `HowItWorks`, `HubSpokeList`, `LeadForm`, `PreFooterCTA`, `PricingCards`, `RelatedGuides`,
 `ServiceCTA`, `ServicesGrid`, `StickyCTA`, `Testimonials`.
 
-- **`Estimator.astro`** is the interactive price estimator (replaced the old `Calculator`; there is no `Calculator.astro` / `calculatorConfig.ts`). Its tier prices must stay in sync with `t.pricing`.
-- `LeadForm.astro` renders on the homepage but its `<section>` is currently `hidden` (kept for reuse). The visible form lives on `/contact`.
+- **`Estimator.astro`** is the interactive package picker (replaced the old `Calculator`; there is no `Calculator.astro` / `calculatorConfig.ts`). It asks one question, plus a second only where the answer branches, and resolves to a single package via a 13-row `OUTCOMES` lookup — no scoring. It **never carries its own prices**: name, price and duration are joined from `t.pricing` by package slug, and a missing slug throws at build time. It renders *below* `PricingCards` on `/[lang]` and `/[lang]/pricing`, and takes a `source` prop used only as an analytics dimension.
+- `LeadForm.astro` is **not rendered anywhere** — its `<section>` is unconditionally `hidden` and the component exposes no prop to unhide it. Kept for reuse only. The visible form lives on `/contact`.
 
 ## Content JSON Structure
 Each `{lang}.json` has these top-level keys:
@@ -105,8 +105,8 @@ Each `{lang}.json` has these top-level keys:
 Notable substructures:
 - `meta` — per-page SEO (title/description) keyed by: `home`, `services`, `car_paint`, `glass`, `acrylic`, `pricing`, `cases`, `contact`, `about`, `business`, `ev`, `commercial_glass`, `plans`, `booking`, `privacy`, `terms`, `academy`, `academy_equipment`, `headlight`, `interior_leather`, `pre_sale`
 - `services.items[]` — each: `id`, `title`, `subtitle`, `icon`, `features[]`, `tag`, `starting_price`, `vs_price` (7 items; 6 have dedicated pages)
-- `pricing.categories[]` (`car`, `glass`, `extras`) each with `plans[]`; `pricing.ui.*` holds pricing UI strings
-- `estimator` — estimator UI + `estimator.tiers` (per-tier `name`/`desc`, sourced into the client script via `define:vars`)
+- `pricing.categories[]` (`car`, `glass`, `extras`) each with `packages[]` (each carrying a `slug`); `pricing.ui.*` holds pricing UI strings; `pricing.home_title` is the homepage-only `PricingCards` heading
+- `estimator` — estimator UI, the 13 `why_*` rationale lines, and `estimator.tiers` **keyed by pricing slug** carrying `desc` only. Never put a package `name` or `price` here: they come from `t.pricing`, so drift is structurally impossible. Estimator WhatsApp copy lives in `t.wa_messages.estimator_*` (Critical Rule 3), assembled line by line so empty fields are omitted rather than sent blank.
 - `wa_messages` — **all WhatsApp message templates** (keys such as `header`, `hero`, `pricing_plan`, `pricing_custom`, `sticky_cta`, `prefooter_cta`, `footer`, `contact`)
 - `social_proof` — `rating`, `reviews_count`, `platform`, `areas`, `testimonials`, section labels
 - `academy_articles` — keyed by article slug (underscored)
