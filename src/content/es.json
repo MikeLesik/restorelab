@@ -255,7 +255,10 @@
       }
     ],
     "learn_more": "Saber más",
-    "get_quote": "Presupuesto"
+    "get_quote": "Presupuesto",
+    "illustration_caption": "Ejemplo ilustrativo del tipo de defecto que tratamos y el resultado esperado. No es un caso de un cliente concreto.",
+    "illustration_before": "Antes",
+    "illustration_after": "Después"
   },
   "how_it_works": {
     "section_title": "Cómo Funciona",

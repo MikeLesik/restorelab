@@ -67,14 +67,21 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
             </div>
           </div>
 
-          <div class="relative aspect-square max-w-md rounded-3xl bg-brand-navy/50 border border-th-border/10 flex items-center justify-center">
-            <div class="text-center p-8">
-              <svg class="w-24 h-24 text-brand-accent/30 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-              </svg>
-              <p class="text-th-faint/60 text-sm">Acrylic & Polycarbonate Restoration</p>
+          {/* Illustration, not a customer case — see the caption. The <figcaption>
+              states it plainly so the image cannot read as real work in the way the
+              deleted yacht case did. */}
+          <figure class="max-w-md">
+            <div class="relative aspect-video rounded-3xl overflow-hidden border border-th-border/10">
+              <picture>
+                <source srcset="/images/services/acrylic-example.webp" type="image/webp" />
+                <img src="/images/services/acrylic-example.jpg" alt={`${t.services.illustration_before} / ${t.services.illustration_after} — ${service?.title}`}
+                     class="w-full h-full object-cover" width="1200" height="675" loading="eager" decoding="async" fetchpriority="high" />
+              </picture>
+              <span class="absolute top-3 left-3 px-2 py-1 bg-black/85 rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_before}</span>
+              <span class="absolute top-3 right-3 px-2 py-1 bg-black/85 border border-brand-accent rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_after}</span>
             </div>
-          </div>
+            <figcaption class="text-th-faint text-xs mt-3 leading-relaxed">{t.services.illustration_caption}</figcaption>
+          </figure>
         </div>
       </div>
     </section>
