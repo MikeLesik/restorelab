@@ -24,9 +24,19 @@ function isActive(segment: string): boolean {
 }
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b border-th-border/5 bg-brand-dark/80 backdrop-blur-md">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<!-- Below lg the bar spans the full width and carries the mobile menu inside it.
+     From lg the bar detaches into a floating panel so the hero photo can run to
+     the top edge instead of being cut by an opaque strip. -->
+<header
+  class="site-header fixed top-0 left-0 right-0 z-50 border-b border-th-border/5 bg-brand-dark/80 backdrop-blur-md
+         lg:border-0 lg:bg-transparent lg:backdrop-blur-none lg:pt-3 lg:px-6 xl:px-8"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5
+           lg:rounded-full lg:border lg:border-th-border/10 lg:bg-brand-dark/70
+           lg:backdrop-blur-md lg:shadow-xl lg:shadow-black/20"
+  >
+    <div class="flex items-center justify-between h-16 lg:h-[58px]">
 
       <!-- Logo -->
       <a href={`/${lang}`} class="flex items-center gap-2.5 flex-shrink-0">
@@ -37,7 +47,7 @@ function isActive(segment: string): boolean {
       </a>
 
       <!-- Nav Desktop -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-8">
         {[
           { segment: 'services', label: t.nav.services },
           { segment: 'cases',    label: t.nav.cases    },
@@ -66,7 +76,7 @@ function isActive(segment: string): boolean {
         <button
           id="theme-toggle"
           aria-label="Toggle theme"
-          class="hidden md:flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          class="hidden lg:flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         >
           <!-- Sun icon (shown in dark mode) -->
           <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -80,7 +90,7 @@ function isActive(segment: string): boolean {
         </button>
 
         <!-- Language Switcher Dropdown — desktop only -->
-        <div class="hidden md:block relative" id="lang-dropdown">
+        <div class="hidden lg:block relative" id="lang-dropdown">
           <button
             id="lang-btn"
             aria-expanded="false"
@@ -130,7 +140,7 @@ function isActive(segment: string): boolean {
         <a
           href={`/${lang}/booking`}
           data-event="nav_book"
-          class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-accent hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+          class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-accent hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
         >
           <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -142,7 +152,7 @@ function isActive(segment: string): boolean {
         <button
           id="theme-toggle-mobile"
           aria-label="Toggle theme"
-          class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+          class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         >
           <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"/>
@@ -156,7 +166,7 @@ function isActive(segment: string): boolean {
         <!-- Burger — mobile only -->
         <button
           id="mobile-menu-btn"
-          class="md:hidden p-2 text-th-body/70 hover:text-th-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
+          class="lg:hidden p-2 text-th-body/70 hover:text-th-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg"
           aria-label="Toggle menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -174,7 +184,7 @@ function isActive(segment: string): boolean {
   </div>
 
   <!-- Mobile menu -->
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-th-border/10 bg-brand-dark" aria-label="Mobile navigation">
+  <nav id="mobile-menu" class="hidden lg:hidden border-t border-th-border/10 bg-brand-dark" aria-label="Mobile navigation">
     <div class="px-4 py-4 flex flex-col gap-1">
 
       {[
