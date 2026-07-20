@@ -112,7 +112,15 @@ function getGridClass(count: number): string {
                   </div>
                   <div class="flex gap-2">
                     <a
-                      href={`https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.pricing_plan.replace('{plan}', pkg.name).replace('{category}', category.title))}`}
+                      href={`https://wa.me/${wa}?text=${encodeURIComponent(
+                        // `only` builds a synthetic group with no title, and the
+                        // categorised template interpolates it — which shipped
+                        // 21 links reading 'el plan "X" (null)'. Flat mode gets
+                        // a template that never mentions a category.
+                        category.title
+                          ? t.wa_messages.pricing_plan.replace('{plan}', pkg.name).replace('{category}', category.title)
+                          : t.wa_messages.pricing_plan_flat.replace('{plan}', pkg.name)
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       class:list={[

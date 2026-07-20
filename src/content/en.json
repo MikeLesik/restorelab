@@ -819,6 +819,7 @@
     "header": "Hello restoreLab! I'm looking at getting some work done on my car and I'd like a quote — what do you need from me to put a price together?",
     "hero": "Hello restoreLab! I'd like a quote for my car. What details or photos do you need to price it up?",
     "pricing_plan": "Hello restoreLab! I'm interested in the {plan} package ({category}). Could you confirm the price for my car and let me know when you're next free?",
+    "pricing_plan_flat": "Hello restoreLab! I'm interested in the {plan} package. Could you confirm the price for my car and let me know when you're next free?",
     "pricing_custom": "Hello restoreLab! I'd like a custom quote for {category} — the standard packages aren't quite right for my car. What details do you need from me?",
     "pricing_custom_general": "Hello restoreLab! I'd like a custom quote — my car needs a bit more than the standard packages cover. What do you need from me to price it up?",
     "sticky_cta": "Hello restoreLab! I'd like a quote for some work on my car. What do you need to know to price it up?",

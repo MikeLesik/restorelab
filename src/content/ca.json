@@ -743,6 +743,7 @@
     "header": "Hola restoreLab! M'agradaria demanar un pressupost per al meu cotxe. Què necessites saber per donar-me un preu?",
     "hero": "Hola restoreLab! Acabo d'entrar a la web i m'interessa el servei a domicili. T'envio unes fotos del cotxe i em dius preu?",
     "pricing_plan": "Hola restoreLab! M'interessa el pla «{plan}» ({category}). Em pots confirmar el preu per al meu cotxe i quan podries venir?",
+    "pricing_plan_flat": "Hola restoreLab! M'interessa el pla «{plan}». Em pots confirmar el preu per al meu cotxe i quan podries venir?",
     "pricing_custom": "Hola restoreLab! Voldria un pressupost a mida per a {category}. Què necessites saber del cotxe per calcular-lo?",
     "pricing_custom_general": "Hola restoreLab! He mirat els preus de la web i voldria un pressupost a mida per al meu cotxe. Què necessites saber per preparar-lo?",
     "sticky_cta": "Hola restoreLab! M'agradaria saber quant em costaria posar el cotxe a punt. Per on comencem?",

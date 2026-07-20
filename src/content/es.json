@@ -743,6 +743,7 @@
     "header": "¡Hola restoreLab! Estoy viendo la web y me gustaría pedir un presupuesto. ¿Qué necesitas saber del coche para darme un precio?",
     "hero": "¡Hola restoreLab! Me gustaría un presupuesto para dejar mi coche como nuevo. ¿Qué fotos necesitas para pasarme un precio?",
     "pricing_plan": "¡Hola restoreLab! Me interesa el plan \"{plan}\" ({category}). ¿Me confirmas el precio para mi coche y cuándo tendrías hueco?",
+    "pricing_plan_flat": "¡Hola restoreLab! Me interesa el plan \"{plan}\". ¿Me confirmas el precio para mi coche y cuándo tendrías hueco?",
     "pricing_custom": "¡Hola restoreLab! Las opciones de {category} no me encajan del todo y me gustaría un presupuesto a medida. ¿Qué fotos te mando?",
     "pricing_custom_general": "¡Hola restoreLab! He visto los precios, pero prefiero un presupuesto a medida para mi caso. ¿Qué necesitas saber del coche?",
     "sticky_cta": "¡Hola restoreLab! Quería pedir presupuesto para mi coche. Dime qué fotos o datos necesitas y te los mando ahora mismo.",
