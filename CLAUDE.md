@@ -60,9 +60,8 @@ src/
         glass-polishing.astro
         acrylic-restoration.astro
         headlight-restoration.astro
-        interior-leather.astro
         pre-sale-pack.astro
-  components/                        — 22 components (see below)
+  components/                        — 20 components (see below)
   lib/
     constants.ts                    — WHATSAPP_NUMBER, SITE_URL (from env vars)
     analytics.ts                    — analytics helpers
@@ -86,18 +85,18 @@ scripts/
   new-case.mjs, new-post.mjs, generate-llms-txt.mjs
 ```
 
-### Components (22, in `src/components/`)
+### Components (20, in `src/components/`)
 `AreaServedSection`, `ArticleSchema`, `BeforeAfterCarousel`, `BrandsStrip`, `CasesGallery`,
 `CertificationsRow`, `Estimator`, `FAQ`, `Footer`, `GuaranteeBlock`, `Header`, `Hero`,
 `HowItWorks`, `HubSpokeList`, `LeadForm`, `PreFooterCTA`, `PricingCards`, `RelatedGuides`,
-`ServiceCTA`, `ServicesGrid`, `StickyCTA`, `Testimonials`.
+`ServiceCTA`, `ServicesGrid`, `StickyCTA`.
 
 - **`Estimator.astro`** is the interactive package picker (replaced the old `Calculator`; there is no `Calculator.astro` / `calculatorConfig.ts`). It asks one question, plus a second only where the answer branches, and resolves to a single package via a 13-row `OUTCOMES` lookup — no scoring. It **never carries its own prices**: name, price and duration are joined from `t.pricing` by package slug, and a missing slug throws at build time. It renders *below* `PricingCards` on `/[lang]` and `/[lang]/pricing`, and takes a `source` prop used only as an analytics dimension.
 - `LeadForm.astro` is **not rendered anywhere** — its `<section>` is unconditionally `hidden` and the component exposes no prop to unhide it. Kept for reuse only. The visible form lives on `/contact`.
 
 ## Content JSON Structure
 Each `{lang}.json` has these top-level keys:
-`lang`, `meta`, `nav`, `hero`, `trust`, `social_proof`, `services`, `how_it_works`,
+`lang`, `meta`, `nav`, `ui`, `hero`, `trust`, `services`, `how_it_works`,
 `pricing`, `estimator`, `faq`, `area`, `wa_messages`, `lead_form`, `footer`, `guarantee`,
 `cases_section`, `pre_footer_cta`, `about`, `academy`, `academy_articles`, `area_pages`,
 `business`, `ev`, `commercial_glass`, `plans`, `area_service_pages`, `booking`, `cluster_ui`.
@@ -108,7 +107,6 @@ Notable substructures:
 - `pricing.categories[]` (`car`, `glass`, `extras`) each with `packages[]` (each carrying a `slug`); `pricing.ui.*` holds pricing UI strings; `pricing.home_title` is the homepage-only `PricingCards` heading
 - `estimator` — estimator UI, the 13 `why_*` rationale lines, and `estimator.tiers` **keyed by pricing slug** carrying `desc` only. Never put a package `name` or `price` here: they come from `t.pricing`, so drift is structurally impossible. Estimator WhatsApp copy lives in `t.wa_messages.estimator_*` (Critical Rule 3), assembled line by line so empty fields are omitted rather than sent blank.
 - `wa_messages` — **all WhatsApp message templates** (keys such as `header`, `hero`, `pricing_plan`, `pricing_custom`, `sticky_cta`, `prefooter_cta`, `footer`, `contact`)
-- `social_proof` — `rating`, `reviews_count`, `platform`, `areas`, `testimonials`, section labels
 - `academy_articles` — keyed by article slug (underscored)
 
 ## Environment Variables
@@ -147,7 +145,7 @@ Reusable CSS classes in `global.css`: `.btn-primary`, `.btn-secondary`, `.btn-wh
 ```bash
 npm run dev        # dev server
 npm run check      # TypeScript / Astro check
-npm run build      # astro check && astro build (175 pages → dist/)
+npm run build      # astro check && astro build (172 pages → dist/)
 npm run preview    # preview built site
 npm run new:case   # scaffold a new before/after case
 npm run new:post   # scaffold a new academy article
@@ -155,12 +153,12 @@ npm run gen:llms   # regenerate public/llms.txt
 ```
 
 ## Build Output
-- **175 static pages** (3 langs × routes + 20 academy articles/lang + 12 area pages/lang + verticals + plans/booking + 13 ES-only area×service canary pages + ES-only ceramic Barcelona landing + a static 404)
+- **172 static pages** (3 langs × routes + 20 academy articles/lang + 12 area pages/lang + verticals + plans/booking + 13 ES-only area×service canary pages + ES-only ceramic Barcelona landing + a static 404)
 - Sitemap: `dist/sitemap-index.xml` (+ `dist/sitemap-0.xml`)
 - Build must pass with **0 errors and 0 warnings**
 
 ## SEO & Tracking
-- JSON-LD schemas: `AutomotiveBusiness` + `Organization` + `AggregateRating` (BaseLayout, one per page), `Service` (service/vertical pages), `BreadcrumbList` (most pages), `Offer` (pricing/verticals), `FAQPage` (FAQ component), `BlogPosting` with a `Person` author (academy articles).
+- JSON-LD schemas: `AutomotiveBusiness` + `Organization` (BaseLayout, one per page; **no** `AggregateRating` — the rating was never defensible and both the schema and the visible claim are gone), `Service` (service/vertical pages), `BreadcrumbList` (most pages), `Offer` (pricing/verticals), `FAQPage` (FAQ component), `BlogPosting` with a `Person` author (academy articles).
 - hreflang: only for the languages a page exists in (`availableLangs`), + `x-default` → ES.
 - OpenGraph + Twitter Card meta on every page; `og:locale` per lang (`es_ES` / `en_GB` / `ca_ES`).
 - Unified analytics push: `window.__rl_push(payload)` fans out to GTM → Clarity → Meta Pixel, gated on CookieConsent analytics/marketing consent. `data-event` attributes on CTAs drive event delegation.
@@ -185,14 +183,14 @@ npm run gen:llms   # regenerate public/llms.txt
 10. **GDPR**: all tracking behind CookieConsent — never load GTM/Clarity/Pixel without consent.
 
 ## Service IDs (used in JSON and route matching)
-Services grid (`services.items`) has 7 entries; 6 have dedicated `/services/*` pages:
+Services grid (`services.items`) has 6 entries; 5 have dedicated `/services/*` pages:
 - `car-paint-correction` → `/services/car-paint-correction`
 - `glass-polishing` → `/services/glass-polishing`
 - `acrylic-restoration` → `/services/acrylic-restoration`
 - `headlight-restoration` → `/services/headlight-restoration`
-- `interior-leather` → `/services/interior-leather`
 - `pre-sale-pack` → `/services/pre-sale-pack`
-(`trim-restoration` appears in the grid but has no dedicated page.)
+(`trim-restoration` appears in the grid but has no dedicated page. Interior leather
+cleaning was withdrawn — it quoted three different prices and had no package.)
 
 ## Pricing Category IDs (`PricingCards` `categoryId` prop)
 - `car` — car paint correction plans
