@@ -107,9 +107,7 @@
   "ui": {
     "language": "Idioma",
     "scroll": "Desplaça't",
-    "verified": "Verificat",
     "fastest_response": "Resposta més ràpida — el mateix dia",
-    "see_all_google": "Veure les {count} a Google",
     "call_us": "Truca'ns",
     "call_sub": "Dl–Ds, 8:00–19:00",
     "email_us": "Escriu-nos un correu",
@@ -178,42 +176,6 @@
     "micro_pricing": "Tècnics certificats · Garantia de satisfacció",
     "micro_prefooter": "Anem a tu · Sense compromís",
     "booking_urgency": "Reservant amb 2 setmanes d'antelació"
-  },
-  "social_proof": {
-    "rating": "5.0",
-    "reviews_count": "47+ ressenyes",
-    "platform": "Google Reviews",
-    "areas": [
-      "Sant Cugat",
-      "Barcelona",
-      "Terrassa",
-      "Sabadell"
-    ],
-    "section_title": "Resultats de Clients",
-    "areas_label": "Àrees de servei",
-    "testimonials": [
-      {
-        "name": "David M.",
-        "location": "Sant Cugat",
-        "text": "Resultat increïble al meu BMW. Les ratllades profundes van quedar pràcticament invisibles, la pintura sembla nova. Van venir al meu aparcament, sense complicacions. Molt recomanat.",
-        "rating": 5,
-        "service": "Correcció de Pintura"
-      },
-      {
-        "name": "Sofia R.",
-        "location": "Barcelona",
-        "text": "El meu parabrisa tenia ratllades profundes del neteja-parabrises després de 3 anys. restoreLab les va eliminar completament — em vaig estalviar €400 en una substitució. Feina fantàstica!",
-        "rating": 5,
-        "service": "Polit de Vidre"
-      },
-      {
-        "name": "Anna K.",
-        "location": "Terrassa",
-        "text": "Les finestres d'acrílic del meu projecte estaven completament grogues. Ara estan cristal·lines. Transformació increïble — no puc creure la diferència.",
-        "rating": 5,
-        "service": "Restauració d'Acrílic"
-      }
-    ]
   },
   "services": {
     "section_title": "Què Restaurem",
@@ -989,11 +951,7 @@
         "label": "Vehicles restaurats"
       },
       {
-        "value": "5.0",
-        "label": "Valoració Google"
-      },
-      {
-        "value": "11",
+        "value": "12",
         "label": "Zones de servei"
       }
     ]

@@ -107,9 +107,7 @@
   "ui": {
     "language": "Language",
     "scroll": "Scroll",
-    "verified": "Verified",
     "fastest_response": "Fastest response — same day",
-    "see_all_google": "See all {count} on Google",
     "call_us": "Call us",
     "call_sub": "Mon–Sat, 8:00–19:00",
     "email_us": "Email us",
@@ -178,42 +176,6 @@
     "micro_pricing": "Certified detailers · Satisfaction guarantee",
     "micro_prefooter": "We come to you · No obligation",
     "booking_urgency": "Currently booking 2 weeks ahead"
-  },
-  "social_proof": {
-    "rating": "5.0",
-    "reviews_count": "47+ reviews",
-    "platform": "Google Reviews",
-    "areas": [
-      "Sant Cugat",
-      "Barcelona",
-      "Terrassa",
-      "Sabadell"
-    ],
-    "section_title": "Client Results",
-    "areas_label": "Areas served",
-    "testimonials": [
-      {
-        "name": "David M.",
-        "location": "Sant Cugat",
-        "text": "Incredible result on my BMW. Deep scratches virtually invisible now, paint looks like new. Came to my parking, no hassle. Highly recommended.",
-        "rating": 5,
-        "service": "Car Paint Correction"
-      },
-      {
-        "name": "Sofia R.",
-        "location": "Barcelona",
-        "text": "My windshield had deep wiper scratches after 3 years. restoreLab removed them almost entirely — saved me from a €400 replacement. Fantastic job!",
-        "rating": 5,
-        "service": "Glass Polishing"
-      },
-      {
-        "name": "Anna K.",
-        "location": "Terrassa",
-        "text": "The acrylic windows on my project were completely yellow. Now they're crystal clear. Amazing transformation — I can't believe the difference.",
-        "rating": 5,
-        "service": "Acrylic Restoration"
-      }
-    ]
   },
   "services": {
     "section_title": "What We Restore",
@@ -966,11 +928,7 @@
         "label": "Vehicles restored"
       },
       {
-        "value": "5.0",
-        "label": "Google rating"
-      },
-      {
-        "value": "11",
+        "value": "12",
         "label": "Service areas"
       }
     ]
