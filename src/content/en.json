@@ -643,56 +643,67 @@
   "faq": {
     "section_title": "Before You Get in Touch",
     "section_subtitle": "Practical answers about our mobile service — so you know exactly what to expect",
+    "short_subtitle": "The essentials of the mobile service, in 30 seconds.",
     "cta_title": "Still have a question?",
     "cta_subtitle": "Message us on WhatsApp — quick, honest answers with no obligation.",
     "cta_btn": "Ask via WhatsApp",
     "items": [
       {
+        "id": "money",
         "icon": "money",
         "question": "How much does paint correction cost in Barcelona?",
         "answer": "Sedan prices range from €149 for an Express Refresh to €1 049 for Premium 5-Year Ceramic. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a certified 2-year coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise, no-obligation quote. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
+        "id": "swap",
         "icon": "swap",
         "question": "What is the difference between paint correction and repainting?",
         "answer": "<a href='/en/services/car-paint-correction' class='text-brand-accent hover:underline'>Paint correction</a> removes defects from the existing clear coat (swirl marks, scratches, oxidation) without adding new paint. It costs significantly less than repainting (from €149 vs €800-2,000+), takes hours instead of days, and preserves the original factory paint. Repainting is only necessary when the paint is physically missing or damaged beyond the clear coat. See our <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
       },
       {
+        "id": "glass",
         "icon": "glass",
         "question": "Can you remove scratches from a windshield without replacing it?",
         "answer": "Yes — professional <a href='/en/services/glass-polishing' class='text-brand-accent hover:underline'>glass polishing</a> removes most wiper scratches, water spots and haziness. It saves €300-500 compared to a new windshield. Deep scratches you can feel with your fingernail or damage to the laminated layer do require replacement — we tell you honestly before starting. More details in our <a href='/en/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>windshield scratch repair guide</a>."
       },
       {
+        "id": "clock",
         "icon": "clock",
         "question": "How long does the service take and how long do results last?",
         "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years, Premium 5Y lasts 5+ years; the sealant in the Express Refresh package lasts 1-2 months. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
+        "id": "car",
         "icon": "car",
         "question": "Does machine polishing damage car paint?",
         "answer": "Not when done by a professional. Each deep correction pass removes an average of 5.5 microns of clear coat. Factory clear coat is typically 40-60 microns thick, allowing 10+ deep corrections over the car's lifetime. At restoreLab we measure paint depth with a digital gauge before every job to ensure safe limits. More about the process in our <a href='/en/academy/mechanical-correction' class='text-brand-accent hover:underline'>mechanical correction article</a>."
       },
       {
+        "id": "map",
         "icon": "map",
         "question": "What areas near Barcelona do you cover?",
         "answer": "We cover the full Barcelona metropolitan area from 3 bases: <a href='/en/areas/sant-cugat' class='text-brand-accent hover:underline'>Sant Cugat del Vallès</a> (Rubí, Cerdanyola, Bellaterra), <a href='/en/areas/barcelona' class='text-brand-accent hover:underline'>Barcelona city</a> (Badalona, L'Hospitalet, Esplugues), and <a href='/en/areas/terrassa' class='text-brand-accent hover:underline'>Terrassa</a> (Sabadell, Mollet, Castellar). For large projects or fleets outside these zones, we travel — just ask."
       },
       {
+        "id": "bolt",
         "icon": "bolt",
         "question": "How does your mobile service work?",
         "answer": "We are 100% self-sufficient — we bring our own generator, professional-grade polishing machines and water supply. All you need is a standard parking bay (about 1 metre of clearance on each side). We come to your home, office or garage in Sant Cugat, Barcelona and surrounding areas. This saves you time without having to take your car to a workshop."
       },
       {
+        "id": "rain",
         "icon": "rain",
         "question": "What happens if it rains or weather conditions are poor?",
         "answer": "<a href='/en/services/glass-polishing' class='text-brand-accent hover:underline'>Glass</a> and <a href='/en/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrylic</a> jobs can proceed in light rain. <a href='/en/services/car-paint-correction' class='text-brand-accent hover:underline'>Paint correction</a> and ceramic coating require dry conditions. We check the forecast in advance — if conditions are unsuitable, we reschedule at no charge across Sant Cugat, Barcelona and the entire metro area."
       },
       {
+        "id": "user",
         "icon": "user",
         "question": "Do I need to be present during the entire service?",
         "answer": "Not at all. Most clients leave their car and get on with their day — whether it is paint correction, glass polishing or <a href='/en/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrylic restoration</a>. Just leave us access to the vehicle and a contact number. We send you a photo report when the job is complete."
       },
       {
+        "id": "shield",
         "icon": "shield",
         "question": "What is your satisfaction guarantee?",
         "answer": "If you are not satisfied with the result, we come back and redo it at zero extra cost. Premium ceramic packages include a 12-month coating protection warranty. The price you approve is always the price you pay — no surprises. See our <a href='/en/pricing' class='text-brand-accent hover:underline'>pricing</a> and <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."

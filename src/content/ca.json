@@ -643,56 +643,67 @@
   "faq": {
     "section_title": "Abans de Contactar-nos",
     "section_subtitle": "Respostes pràctiques sobre el nostre servei mòbil — perquè sàpigues exactament què esperar",
+    "short_subtitle": "L'essencial del servei mòbil, en 30 segons.",
     "cta_title": "Tens més preguntes?",
     "cta_subtitle": "Escriu-nos per WhatsApp — et responem ràpid i sense compromís.",
     "cta_btn": "Preguntar per WhatsApp",
     "items": [
       {
+        "id": "money",
         "icon": "money",
         "question": "Quant costa la correcció de pintura a Barcelona?",
         "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 1 049 € (Ceràmic Premium 5 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció de dues fases completa més recobriment certificat de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte i sense compromís. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
+        "id": "swap",
         "icon": "swap",
         "question": "Quina és la diferència entre polir i repintar un cotxe?",
         "answer": "La <a href='/ca/services/car-paint-correction' class='text-brand-accent hover:underline'>correcció de pintura</a> elimina defectes del vernís original (marques circulars, ratllades, oxidació) sense afegir pintura nova. Costa significativament menys que repintar (des de 149 € vs 800-2.000+ €), es completa en hores en comptes de dies i conserva la pintura de fàbrica. Repintar només és necessari quan la pintura s'ha perdut físicament o està danyada més enllà del vernís. Consulteu els nostres <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."
       },
       {
+        "id": "glass",
         "icon": "glass",
         "question": "Es poden treure ratllades del parabrisa sense canviar-lo?",
         "answer": "Sí — el <a href='/ca/services/glass-polishing' class='text-brand-accent hover:underline'>polit professional de vidre</a> elimina la majoria de ratllades del neteja-parabrises, taques d'aigua i opacitat. Estalvia 300-500 € respecte a un parabrisa nou. Les ratllades profundes que es noten amb l'ungla o danys a la capa laminada sí que requereixen substitució — t'ho diem sincerament abans de començar. Més detalls a la nostra <a href='/ca/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>guia de reparació de ratllades</a>."
       },
       {
+        "id": "clock",
         "icon": "clock",
         "question": "Quant de temps dura el servei i el resultat?",
         "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys, el Premium 5 Anys dura 5+ anys; el segellant de l'Express Refresh dura 1-2 mesos. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
+        "id": "car",
         "icon": "car",
         "question": "El polit a màquina danya la pintura del cotxe?",
         "answer": "No, quan ho fa un professional. Cada passada de correcció profunda retira una mitjana de 5,5 micres de vernís. Un vernís de fàbrica té 40-60 micres de gruix, cosa que permet més de 10 correccions profundes al llarg de la vida del cotxe. A restoreLab mesurem el gruix amb un mesurador digital abans de cada treball per garantir límits segurs. Més sobre el procés al nostre <a href='/ca/academy/mechanical-correction' class='text-brand-accent hover:underline'>article sobre correcció mecànica</a>."
       },
       {
+        "id": "map",
         "icon": "map",
         "question": "Quines zones prop de Barcelona cobriu?",
         "answer": "Cobrim tota l'àrea metropolitana de Barcelona des de 3 bases: <a href='/ca/areas/sant-cugat' class='text-brand-accent hover:underline'>Sant Cugat del Vallès</a> (Rubí, Cerdanyola, Bellaterra), <a href='/ca/areas/barcelona' class='text-brand-accent hover:underline'>Barcelona ciutat</a> (Badalona, L'Hospitalet, Esplugues) i <a href='/ca/areas/terrassa' class='text-brand-accent hover:underline'>Terrassa</a> (Sabadell, Mollet, Castellar). Per a projectes grans o flotes fora d'aquestes zones, ens desplacem — pregunteu-nos."
       },
       {
+        "id": "bolt",
         "icon": "bolt",
         "question": "Com funciona el vostre servei mòbil?",
         "answer": "Som 100% autosuficients — portem generador, màquines polidores professionals i subministrament d'aigua. Només necessiteu una plaça d'aparcament estàndard (1 metre lliure a cada costat). Anem a casa vostra, oficina o garatge a Sant Cugat, Barcelona i voltants. Així estalvieu temps sense haver de portar el cotxe a cap taller."
       },
       {
+        "id": "rain",
         "icon": "rain",
         "question": "Què passa si plou o les condicions meteorològiques són dolentes?",
         "answer": "Els treballs de <a href='/ca/services/glass-polishing' class='text-brand-accent hover:underline'>vidre</a> i <a href='/ca/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrílic</a> es poden fer amb pluja lleugera. La <a href='/ca/services/car-paint-correction' class='text-brand-accent hover:underline'>correcció de pintura</a> i el recobriment ceràmic requereixen condicions seques. Comprovem la previsió amb antelació — si les condicions no són adequades, reprogramem sense cost a Sant Cugat, Barcelona i tota la zona metropolitana."
       },
       {
+        "id": "user",
         "icon": "user",
         "question": "Necessito ser-hi present durant tot el servei?",
         "answer": "De cap manera. La majoria dels clients deixen el cotxe i segueixen amb el seu dia — ja sigui correcció de pintura, polit de vidre o <a href='/ca/services/acrylic-restoration' class='text-brand-accent hover:underline'>restauració d'acrílic</a>. Només deixeu-nos accés al vehicle i un número de contacte. Us enviem un informe fotogràfic quan el treball estigui acabat."
       },
       {
+        "id": "shield",
         "icon": "shield",
         "question": "Quina és la vostra garantia de satisfacció?",
         "answer": "Si no estàs satisfet amb el resultat, tornem i ho refem sense cost addicional. Els paquets ceràmics premium inclouen 12 mesos de garantia de protecció del recobriment. El preu que aproves és sempre el preu que pagues — sense sorpreses. Consulteu els nostres <a href='/ca/pricing' class='text-brand-accent hover:underline'>preus</a> i <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."

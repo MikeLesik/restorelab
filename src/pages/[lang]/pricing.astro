@@ -64,6 +64,6 @@ const { t } = Astro.props;
       </section>
     )}
 
-    <FAQ t={t} />
+    <FAQ t={t} only={['money', 'swap', 'clock', 'shield']} subtitle={t.faq.short_subtitle} />
   </div>
 </BaseLayout>

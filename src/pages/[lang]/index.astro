@@ -45,5 +45,5 @@ const { t } = Astro.props;
   <Estimator t={t} lang={lang} source="home" />
   <GuaranteeBlock t={t} />
   <CertificationsRow t={t} />
-  <FAQ t={t} />
+  <FAQ t={t} only={['money', 'map', 'user', 'clock', 'shield']} subtitle={t.faq.short_subtitle} showCta={false} />
 </BaseLayout>

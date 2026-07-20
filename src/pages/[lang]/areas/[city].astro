@@ -200,7 +200,7 @@ const nearbyChips = city.nearby.filter((n: string) => !siblingNames.has(n));
       </div>
     </section>
 
-    <FAQ t={t} />
+    <FAQ t={t} only={['map', 'clock', 'car', 'user']} subtitle={t.faq.short_subtitle} />
 
     {cityRelatedClusters.length > 0 && (
       <section class="py-12 sm:py-14">

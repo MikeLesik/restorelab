@@ -643,56 +643,67 @@
   "faq": {
     "section_title": "Antes de Contactarnos",
     "section_subtitle": "Respuestas prácticas sobre nuestro servicio móvil — para que sepas exactamente qué esperar",
+    "short_subtitle": "Lo esencial del servicio móvil, en 30 segundos.",
     "cta_title": "¿Tienes más preguntas?",
     "cta_subtitle": "Escríbenos por WhatsApp — te respondemos rápido y sin compromiso.",
     "cta_btn": "Preguntar por WhatsApp",
     "items": [
       {
+        "id": "money",
         "icon": "money",
         "question": "¿Cuánto cuesta la corrección de pintura en Barcelona?",
         "answer": "Los precios para sedán van desde 149 € (Express Refresh) hasta 1 049 € (Cerámico Premium 5 Años). Nuestro paquete más popular es el <strong>Cerámico 2 Años a 649 €</strong> — corrección de dos fases completa más recubrimiento certificado de 2 años. Se aplican multiplicadores por tamaño (compacto −10%, SUV +20%). Envíanos fotos para un presupuesto exacto y sin compromiso. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
+        "id": "swap",
         "icon": "swap",
         "question": "¿Cuál es la diferencia entre pulir y repintar un coche?",
         "answer": "La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> elimina defectos del barniz original (marcas circulares, arañazos, oxidación) sin añadir pintura nueva. Cuesta significativamente menos que repintar (desde 149 € vs 800-2.000+ €), se completa en horas en vez de días y conserva la pintura de fábrica. Repintar solo es necesario cuando la pintura está físicamente perdida o dañada más allá del barniz. Consulta nuestros <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."
       },
       {
+        "id": "glass",
         "icon": "glass",
         "question": "¿Se pueden quitar arañazos del parabrisas sin cambiarlo?",
         "answer": "Sí — el <a href='/es/services/glass-polishing' class='text-brand-accent hover:underline'>pulido profesional de vidrio</a> elimina la mayoría de arañazos de limpiaparabrisas, manchas de agua y opacidad. Ahorra 300-500 € frente a un parabrisas nuevo. Los arañazos profundos que se notan con la uña o daños en la capa laminada sí requieren sustitución — te lo decimos sinceramente antes de empezar. Más detalles en nuestra <a href='/es/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>guía de reparación de arañazos</a>."
       },
       {
+        "id": "clock",
         "icon": "clock",
         "question": "¿Cuánto tiempo dura el servicio y el resultado?",
         "answer": "La corrección de pintura tarda entre 2 y 10 horas según el paquete y el tamaño del vehículo. El pulido de vidrio, 1-2 horas. La corrección en sí es permanente — esos defectos no vuelven solos. Nuestro Cerámico 2 Años dura 2+ años, el Premium 5 Años dura 5+ años; el sellante del Express Refresh dura 1-2 meses. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
+        "id": "car",
         "icon": "car",
         "question": "¿El pulido a máquina daña la pintura del coche?",
         "answer": "No, cuando lo hace un profesional. Cada pasada de corrección profunda retira una media de 5,5 micras de barniz. Un barniz de fábrica tiene 40-60 micras de espesor, lo que permite más de 10 correcciones profundas a lo largo de la vida del coche. En restoreLab medimos el espesor con un medidor digital antes de cada trabajo para garantizar límites seguros. Más sobre el proceso en nuestro <a href='/es/academy/mechanical-correction' class='text-brand-accent hover:underline'>artículo sobre corrección mecánica</a>."
       },
       {
+        "id": "map",
         "icon": "map",
         "question": "¿Qué zonas cerca de Barcelona cubrís?",
         "answer": "Cubrimos toda el área metropolitana de Barcelona desde 3 bases: <a href='/es/areas/sant-cugat' class='text-brand-accent hover:underline'>Sant Cugat del Vallès</a> (Rubí, Cerdanyola, Bellaterra), <a href='/es/areas/barcelona' class='text-brand-accent hover:underline'>Barcelona ciudad</a> (Badalona, L'Hospitalet, Esplugues) y <a href='/es/areas/terrassa' class='text-brand-accent hover:underline'>Terrassa</a> (Sabadell, Mollet, Castellar). Para proyectos grandes o flotas fuera de estas zonas, nos desplazamos — pregúntanos."
       },
       {
+        "id": "bolt",
         "icon": "bolt",
         "question": "¿Cómo funciona vuestro servicio móvil?",
         "answer": "Somos 100% autosuficientes — traemos generador, máquinas pulidoras profesionales y suministro de agua. Solo necesitas una plaza de aparcamiento estándar (1 metro libre a cada lado). Vamos a tu casa, oficina o garaje en Sant Cugat, Barcelona y alrededores. Así ahorras tiempo sin tener que llevar el coche a ningún taller."
       },
       {
+        "id": "rain",
         "icon": "rain",
         "question": "¿Qué pasa si llueve o las condiciones meteorológicas son malas?",
         "answer": "Los trabajos de <a href='/es/services/glass-polishing' class='text-brand-accent hover:underline'>vidrio</a> y <a href='/es/services/acrylic-restoration' class='text-brand-accent hover:underline'>acrílico</a> pueden realizarse con lluvia ligera. La <a href='/es/services/car-paint-correction' class='text-brand-accent hover:underline'>corrección de pintura</a> y el recubrimiento cerámico requieren condiciones secas. Comprobamos la previsión con antelación — si las condiciones no son adecuadas, reprogramamos sin coste en Sant Cugat, Barcelona y toda la zona metropolitana."
       },
       {
+        "id": "user",
         "icon": "user",
         "question": "¿Necesito estar presente durante todo el servicio?",
         "answer": "Para nada. La mayoría de los clientes dejan el coche y siguen con su día — ya sea corrección de pintura, pulido de vidrio o <a href='/es/services/acrylic-restoration' class='text-brand-accent hover:underline'>restauración de acrílico</a>. Solo déjanos acceso al vehículo y un número de contacto. Te enviamos un informe fotográfico cuando el trabajo esté terminado."
       },
       {
+        "id": "shield",
         "icon": "shield",
         "question": "¿Cuál es vuestra garantía de satisfacción?",
         "answer": "Si no estás satisfecho con el resultado, volvemos y lo rehacemos sin coste adicional. Los paquetes cerámicos premium incluyen 12 meses de garantía de protección del recubrimiento. El precio que apruebas es siempre el precio que pagas — sin sorpresas. Consulta nuestros <a href='/es/pricing' class='text-brand-accent hover:underline'>precios</a> y <a href='/es/cases' class='text-brand-accent hover:underline'>resultados antes y después</a>."

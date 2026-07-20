@@ -12,15 +12,31 @@ export interface Props {
   subtitle?: string | null;
   /** Whether to render the contact CTA at the bottom. Default true. */
   showCta?: boolean;
+  /** Render only these question ids, in this order. Ids come from `faq.items[].id`.
+   *  Without it the block renders all ten, which is what made every page carry the
+   *  same list. Unknown ids throw at build time rather than silently rendering less. */
+  only?: string[];
+  /** Emit the FAQPage JSON-LD. Default FALSE: the same payload used to ship on 60
+   *  URLs per build, three identical copies of it, one per language. Exactly one
+   *  page per language should own the schema, and it must be the one that renders
+   *  every question — schema and visible content have to match. */
+  schema?: boolean;
 }
 
-const { t, items, title, subtitle, showCta = true } = Astro.props;
+const { t, items, title, subtitle, showCta = true, only, schema = false } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 // The FAQ block has its own message: the visitor is here because the answer
 // they wanted was not in the list, which is a different intent from the footer.
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.faq ?? t.wa_messages.footer)}`;
 
-const resolvedItems = items ?? t.faq?.items ?? [];
+const allItems = items ?? t.faq?.items ?? [];
+const resolvedItems = only
+  ? only.map((id) => {
+      const found = allItems.find((i: any) => i.id === id);
+      if (!found) throw new Error(`FAQ: no item with id "${id}" (have: ${allItems.map((i: any) => i.id).join(', ')})`);
+      return found;
+    })
+  : allItems;
 const resolvedTitle = title ?? t.faq?.section_title ?? '';
 const resolvedSubtitle = subtitle === null ? null : (subtitle ?? t.faq?.section_subtitle ?? null);
 
@@ -115,8 +131,8 @@ const resolvedSubtitle = subtitle === null ? null : (subtitle ?? t.faq?.section_
   </div>
 </section>
 
-<!-- FAQPage Schema (SEO) -->
-{resolvedItems.length > 0 && (
+<!-- FAQPage Schema (SEO) — opt-in, see the `schema` prop -->
+{schema && resolvedItems.length > 0 && (
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",

@@ -124,7 +124,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       </a>
     </div>
 
-    <FAQ t={t} />
+    <FAQ t={t} only={['money', 'swap', 'clock', 'shield']} subtitle={t.faq.short_subtitle} />
     <HubSpokeList hub="car-paint-correction" t={t} lang={lang} />
   </div>
 </BaseLayout>
