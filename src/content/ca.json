@@ -260,7 +260,8 @@
     "get_quote": "Pressupost",
     "illustration_caption": "Exemple il·lustratiu del tipus de defecte que tractem i el resultat esperat. No és un cas d’un client concret.",
     "illustration_before": "Abans",
-    "illustration_after": "Després"
+    "illustration_after": "Després",
+    "card_illustration_note": "Imatges d’exemple del tipus de feina — no són casos concrets de clients."
   },
   "how_it_works": {
     "section_title": "Com Funciona",

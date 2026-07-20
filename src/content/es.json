@@ -260,7 +260,8 @@
     "get_quote": "Presupuesto",
     "illustration_caption": "Ejemplo ilustrativo del tipo de defecto que tratamos y el resultado esperado. No es un caso de un cliente concreto.",
     "illustration_before": "Antes",
-    "illustration_after": "Después"
+    "illustration_after": "Después",
+    "card_illustration_note": "Imágenes de ejemplo del tipo de trabajo — no son casos concretos de clientes."
   },
   "how_it_works": {
     "section_title": "Cómo Funciona",

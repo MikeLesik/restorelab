@@ -23,6 +23,18 @@ const SERVICE_PAGES = new Set([
 const wa = WHATSAPP_NUMBER;
 const services = t.services.items.filter((s: any) => !exclude.includes(s.id));
 
+// Before/after banner per service. Illustrations (generated), not customer
+// cases — a single note under the grid says so, so the cards cannot read as
+// real results the way the deleted yacht case did. A service without an image
+// falls back to its icon.
+const serviceImages: Record<string, string> = {
+  'car-paint-correction': '/images/services/car-paint-correction-ba',
+  'glass-polishing': '/images/services/glass-polishing-ba',
+  'headlight-restoration': '/images/services/headlight-restoration-ba',
+  'acrylic-restoration': '/images/services/acrylic-restoration-ba',
+  'pre-sale-pack': '/images/services/pre-sale-pack-ba',
+};
+
 // Per-service visual config
 const serviceConfig: Record<string, { color: string; iconBg: string; borderTop: string; iconPaths: string }> = {
   'car-paint-correction': {
@@ -92,10 +104,11 @@ const colsClass = getColsClass(services.length);
         const ctaLabel = service.cta_label ?? t.services.get_quote;
         const waText = encodeURIComponent(t.wa_messages.services_grid_quote.replace('{service}', service.title));
         const serviceHref = SERVICE_PAGES.has(service.id) ? `/${lang}/services/${service.id}` : null;
+        const img = serviceImages[service.id];
 
         return (
           <div class:list={[
-            'group relative rounded-2xl border bg-th-surface/5 backdrop-blur-sm p-6 flex flex-col',
+            'group relative rounded-2xl border bg-th-surface/5 backdrop-blur-sm overflow-hidden flex flex-col',
             'transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
             cfg.borderTop,
             isFeatured
@@ -105,40 +118,41 @@ const colsClass = getColsClass(services.length);
 
             {/* Featured glow ring */}
             {isFeatured && (
-              <div class="absolute -inset-px rounded-2xl bg-gradient-to-b from-brand-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div class="absolute -inset-px rounded-2xl bg-gradient-to-b from-brand-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
             )}
 
-            {/* Icon + tag */}
-            <div class="flex items-start justify-between mb-5">
-              <div class:list={[
-                'w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-200',
-                cfg.iconBg
-              ]}>
-                <svg
-                  class:list={['w-6 h-6', cfg.color]}
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  focusable="false"
-                  set:html={cfg.iconPaths}
-                />
+            {/* Before/after banner (illustrative) — replaces the icon. Falls back
+                to the icon plate when a service has no image. */}
+            {img ? (
+              <div class="relative aspect-video overflow-hidden">
+                <picture>
+                  <source srcset={`${img}.webp`} type="image/webp" />
+                  <img src={`${img}.jpg`} alt={`${t.services.illustration_before} / ${t.services.illustration_after} — ${service.title}`}
+                       class="w-full h-full object-cover" width="800" height="450" loading="lazy" decoding="async" />
+                </picture>
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 bg-black/85 rounded text-[10px] text-white uppercase tracking-wider">{t.services.illustration_before}</span>
+                <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/85 border border-brand-accent rounded text-[10px] text-white uppercase tracking-wider">{t.services.illustration_after}</span>
               </div>
+            ) : (
+              <div class="p-6 pb-0">
+                <div class:list={['w-12 h-12 rounded-xl flex items-center justify-center', cfg.iconBg]}>
+                  <svg class:list={['w-6 h-6', cfg.color]} fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={cfg.iconPaths} />
+                </div>
+              </div>
+            )}
 
-              {service.tag && (
-                <span class:list={[
-                  'text-xs font-semibold px-3 py-1 rounded-full border',
-                  isFeatured
-                    ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/25 animate-pulse'
-                    : 'bg-brand-gold/10 text-brand-gold border-brand-gold/20'
-                ]}>
-                  {service.tag}
-                </span>
-              )}
-            </div>
+            <div class="p-6 flex flex-col flex-1">
+
+            {service.tag && (
+              <span class:list={[
+                'self-start text-xs font-semibold px-3 py-1 rounded-full border mb-3',
+                isFeatured
+                  ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/25'
+                  : 'bg-brand-gold/10 text-brand-gold border-brand-gold/20'
+              ]}>
+                {service.tag}
+              </span>
+            )}
 
             {/* Title — doubles as the card's link to the service page. The
                 ::after overlay stretches it across the whole card, which is why
@@ -192,9 +206,16 @@ const colsClass = getColsClass(services.length);
             </a>
             <p class="text-center text-th-faint text-[10px] mt-2 tracking-wide">{t.trust.micro_service}</p>
 
+            </div>
           </div>
         );
       })}
     </div>
+
+    {/* One honest note for the whole grid — the card images are generated
+        illustrations, not real customer jobs. */}
+    {t.services.card_illustration_note && (
+      <p class="text-center caption mt-8">{t.services.card_illustration_note}</p>
+    )}
   </div>
 </section>

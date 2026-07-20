@@ -260,7 +260,8 @@
     "get_quote": "Get Estimate",
     "illustration_caption": "Illustrative example of the defect type we treat and the expected result. Not a specific customer case.",
     "illustration_before": "Before",
-    "illustration_after": "After"
+    "illustration_after": "After",
+    "card_illustration_note": "Example images of the kind of work — not specific customer cases."
   },
   "how_it_works": {
     "section_title": "How It Works",
