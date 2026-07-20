@@ -11,7 +11,7 @@ const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.footer)}`;
 ---
 
-<footer class="bg-brand-navy border-t border-th-border/10 mt-24">
+<footer class="bg-brand-navy border-t border-th-border/10 mt-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -59,31 +59,31 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
 
       <!-- Company -->
       <div>
-        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.company_title || 'Company'}</h3>
+        <h3 class="text-th-heading font-semibold mb-4 text-sm uppercase tracking-widest">{t.footer.company_title}</h3>
         <ul class="space-y-2 text-sm text-th-muted">
           <li>
             <a href={`/${lang}/about`} class="hover:text-th-heading transition-colors">
-              {t.trust?.founder?.link_label || 'About us'}
+              {t.trust.founder.link_label}
             </a>
           </li>
           <li>
             <a href={`/${lang}/business`} class="hover:text-th-heading transition-colors">
-              {t.footer.business_link || 'For Business'}
+              {t.footer.business_link}
             </a>
           </li>
           <li>
             <a href={`/${lang}/ev`} class="hover:text-th-heading transition-colors">
-              {t.footer.ev_link || 'EV Protection'}
+              {t.footer.ev_link}
             </a>
           </li>
           <li>
             <a href={`/${lang}/commercial-glass`} class="hover:text-th-heading transition-colors">
-              {t.footer.commercial_glass_link || 'Commercial Glass'}
+              {t.footer.commercial_glass_link}
             </a>
           </li>
           <li>
             <a href={`/${lang}/plans`} class="hover:text-th-heading transition-colors">
-              {t.footer.plans_link || 'Care Plans'}
+              {t.footer.plans_link}
             </a>
           </li>
         </ul>
@@ -115,13 +115,13 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
           </li>
           <li>
             <a href={`/${lang}/booking`} class="hover:text-th-heading transition-colors">
-              {t.footer.booking_link || 'Book Online'}
+              {t.footer.booking_link}
             </a>
           </li>
           {t.footer.gbp_url && (
             <li>
               <a href={t.footer.gbp_url} target="_blank" rel="noopener noreferrer" class="hover:text-th-heading transition-colors">
-                {t.footer.gbp_label || 'Google Reviews'}
+                {t.footer.gbp_label}
               </a>
             </li>
           )}
@@ -139,7 +139,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
       <p class="text-th-faint text-sm">{t.footer.copyright}</p>
       <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm">
         <a href={`/${lang}/legal`} class="text-th-faint hover:text-th-heading transition-colors">
-          {t.footer.legal_notice_label || 'Legal notice'}
+          {t.footer.legal_notice_label}
         </a>
         <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/privacy`} class="text-th-faint hover:text-th-heading transition-colors">
@@ -147,7 +147,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
         </a>
         <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/cookies`} class="text-th-faint hover:text-th-heading transition-colors">
-          {t.footer.cookies_label || 'Cookies'}
+          {t.footer.cookies_label}
         </a>
         <span class="text-th-border/40" aria-hidden="true">·</span>
         <a href={`/${lang}/terms`} class="text-th-faint hover:text-th-heading transition-colors">

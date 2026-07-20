@@ -109,7 +109,10 @@
     "email_us": "Email us",
     "email_sub": "We reply the same day",
     "analytics_off": "Analytics disabled on this device",
-    "analytics_on": "Analytics re-enabled on this device"
+    "analytics_on": "Analytics re-enabled on this device",
+    "toggle_theme": "Toggle theme",
+    "toggle_menu": "Open the navigation menu",
+    "mobile_nav": "Mobile navigation"
   },
   "hero": {
     "headline": "Factory finish. At your doorstep.",
@@ -942,10 +945,8 @@
     "trust": "Trusted by 500+ clients in Sant Cugat & Barcelona",
     "services_title": "Services",
     "contact_title": "Contact",
-    "legal_title": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
-    "cookies": "Cookie Policy",
     "copyright": "© 2026 restoreLab. All rights reserved.",
     "made_in": "Made in Spain.",
     "gbp_url": "",

@@ -109,7 +109,10 @@
     "email_us": "Escriu-nos un correu",
     "email_sub": "Responem el mateix dia",
     "analytics_off": "Analítica desactivada en aquest dispositiu",
-    "analytics_on": "Analítica reactivada en aquest dispositiu"
+    "analytics_on": "Analítica reactivada en aquest dispositiu",
+    "toggle_theme": "Canviar de tema",
+    "toggle_menu": "Obrir el menú de navegació",
+    "mobile_nav": "Navegació mòbil"
   },
   "hero": {
     "headline": "Acabat de fàbrica. Al teu garatge.",
@@ -821,10 +824,8 @@
     "tagline": "Restauració premium mòbil de superfícies",
     "services_title": "Serveis",
     "contact_title": "Contacte",
-    "legal_title": "Legal",
     "privacy": "Política de Privadesa",
     "terms": "Termes i Condicions",
-    "cookies": "Política de Cookies",
     "copyright": "© 2026 restoreLab. Tots els drets reservats.",
     "made_in": "Fet a Espanya.",
     "trust": "Amb la confiança de més de 500 clients a Sant Cugat i Barcelona",
