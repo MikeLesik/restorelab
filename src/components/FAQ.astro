@@ -38,14 +38,14 @@ const resolvedSubtitle = subtitle === null ? null : (subtitle ?? t.faq?.section_
     </div>
 
     <!-- Accordion -->
-    <div class="rounded-2xl border border-th-border/10 overflow-hidden divide-y divide-th-border/8">
+    <div class="rounded-2xl border border-th-border/10 overflow-hidden divide-y divide-th-border/10">
       {resolvedItems.map((item: any, i: number) => {
         const answerId = `faq-answer-${i}`;
         return (
           <details class="group faq-item">
             <summary
               aria-controls={answerId}
-              class="flex items-center gap-4 px-5 py-4 cursor-pointer select-none hover:bg-th-surface/3 transition-colors duration-150 [&::-webkit-details-marker]:hidden list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-inset"
+              class="flex items-center gap-4 px-5 py-4 cursor-pointer select-none hover:bg-th-surface/5 transition-colors duration-150 [&::-webkit-details-marker]:hidden list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-inset"
             >
 
               <!-- Icon -->
@@ -93,7 +93,7 @@ const resolvedSubtitle = subtitle === null ? null : (subtitle ?? t.faq?.section_
 
     <!-- CTA -->
     {showCta && (
-      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-th-surface/3 border border-th-border/8 rounded-2xl">
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-th-surface/5 border border-th-border/10 rounded-2xl">
         <div>
           <p class="text-th-heading font-medium text-sm">{t.faq.cta_title}</p>
           <p class="text-th-faint text-xs mt-0.5">{t.faq.cta_subtitle}</p>

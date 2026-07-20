@@ -217,7 +217,7 @@ const nearbyChips = city.nearby.filter((n: string) => !siblingNames.has(n));
               return (
                 <a
                   href={canaryServices.has(id) ? `/${lang}/areas/${city.slug}/${id}` : `/${lang}${def.hub}`}
-                  class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/3 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/5 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
                   data-event="area_service_click"
                   data-area={city.slug}
                   data-service={id}

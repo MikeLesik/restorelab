@@ -53,7 +53,7 @@ const ui = t.cluster_ui || {};
           {primarySpokes.map((article: any) => (
             <a
               href={`/${lang}/academy/${article.slug}`}
-              class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/3 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
+              class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/5 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
               data-event="hub_spoke_click"
               data-spoke={article.slug}
             >
@@ -71,7 +71,7 @@ const ui = t.cluster_ui || {};
 
       {subClusterSpokes.length > 0 && (
         <details class="group mt-8 rounded-2xl border border-th-border/10 overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer select-none hover:bg-th-surface/3 transition-colors [&::-webkit-details-marker]:hidden list-none">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer select-none hover:bg-th-surface/5 transition-colors [&::-webkit-details-marker]:hidden list-none">
             <span class="text-sm font-semibold text-th-heading">{subClusterLabel}</span>
             <svg
               class="w-4 h-4 text-th-faint transition-transform duration-200 group-open:rotate-180"
@@ -84,7 +84,7 @@ const ui = t.cluster_ui || {};
             {subClusterSpokes.map((article: any) => (
               <a
                 href={`/${lang}/academy/${article.slug}`}
-                class="group/card block p-4 rounded-xl border border-th-border/8 hover:border-brand-accent/30 transition-colors"
+                class="group/card block p-4 rounded-xl border border-th-border/10 hover:border-brand-accent/30 transition-colors"
                 data-event="hub_spoke_click"
                 data-spoke={article.slug}
                 data-sub-cluster="true"
