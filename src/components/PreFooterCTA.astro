@@ -23,7 +23,10 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.prefo
 
     <!-- Trust pill -->
     <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-xs font-medium mb-6">
-      <span>★★★★★</span>
+      {/* Five stars used to sit here. The pill text makes no rating claim; the
+          stars did, on every page, with nothing behind them — the reviews and
+          the 5.0 came out in 1daf34b for exactly that reason. Put them back
+          only alongside a real, attributable rating. */}
       <span>{t.pre_footer_cta.trust_pill}</span>
     </div>
 
