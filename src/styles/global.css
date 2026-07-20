@@ -109,6 +109,24 @@
       linear-gradient(180deg, rgb(255 255 255 / 0.55) 0%, rgb(255 255 255 / 0.25) 34%, rgb(255 255 255 / 0) 62%),
       radial-gradient(125% 80% at 50% 38%, transparent 58%, rgb(15 32 60 / 0.08) 100%);
   }
+  /* Trust pills sat on bg-brand-gold/10 — a 10% tint, so their contrast was
+     whatever happened to be behind them. Over the hero photo that dropped the
+     gold text below AA on mid-width viewports, and in light theme it had been
+     failing everywhere since long before the photo. Giving the pill its own
+     near-opaque base makes contrast deterministic: --brand-dark resolves to
+     near-black in dark theme and to white in light, so one rule serves both. */
+  .trust-pill {
+    background-color: rgb(var(--brand-dark) / 0.82);
+    background-image: linear-gradient(rgb(var(--brand-gold) / 0.14), rgb(var(--brand-gold) / 0.14));
+  }
+  /* Light theme has far less headroom: the ochre --brand-gold is only ~4.9:1 on
+     pure white, so even a 14% gold wash pushed it under AA. Keep the base almost
+     white and the tint minimal. */
+  :root:not(.dark) .trust-pill {
+    background-color: rgb(var(--brand-dark) / 0.94);
+    background-image: linear-gradient(rgb(var(--brand-gold) / 0.05), rgb(var(--brand-gold) / 0.05));
+  }
+
   /* The <picture> wrappers are in-flow flex items of the hero column; taking
      them out of layout keeps any future gap/space utility from spacing them. */
   .hero-plate-wrap { display: contents; }
