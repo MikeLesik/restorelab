@@ -153,6 +153,14 @@
       {
         "name": "3M",
         "status": "products"
+      },
+      {
+        "name": "Mirka",
+        "status": "equipment"
+      },
+      {
+        "name": "3D",
+        "status": "products"
       }
     ],
     "certifications_title": "Certifications and equipment",
