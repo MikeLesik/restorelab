@@ -78,10 +78,6 @@
       "title": "Polit de Fars a Domicili — Barcelona i Sant Cugat | restoreLab",
       "description": "Polit i restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
     },
-    "interior_leather": {
-      "title": "Neteja de Cuir Interior i Ceràmic | restoreLab",
-      "description": "Neteja profunda de cuir, eliminació de taques i ceràmic opcional. Seients, quadre de comandaments i panells. Des de 189€. Servei mòbil. Servei a domicili a Sant Cugat i Barcelona."
-    },
     "pre_sale": {
       "title": "Pack Pre-Venda — Maximitza el Valor de Revenda | restoreLab",
       "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe. A domicili a Sant Cugat i Barcelona."
@@ -252,21 +248,6 @@
         ],
         "cta_label": "Pressupost Plàstics",
         "tag": null
-      },
-      {
-        "id": "interior-leather",
-        "title": "Neteja de Cuir Interior",
-        "subtitle": "Seients, quadre de comandaments i panells netejats i protegits",
-        "icon": "interior",
-        "starting_price": "Des de 189€",
-        "features": [
-          "Neteja profunda i condicionament del cuir",
-          "Eliminació de taques i transferència de tint",
-          "Ceràmic opcional (289€)"
-        ],
-        "cta_label": "Pressupost Interior",
-        "tag": null,
-        "h1": "Neteja de Cuir Interior a Domicili a Sant Cugat i Barcelona"
       },
       {
         "id": "pre-sale-pack",
@@ -774,7 +755,6 @@
     "service_car_paint": "Hola restoreLab! M'interessa la correcció de pintura a domicili per al meu cotxe. Voldria saber quin nivell necessita i quant costaria.",
     "service_glass_polishing": "Hola restoreLab! Tinc ratllades als vidres del cotxe i m'interessa el polit a domicili. Quant costa i quan podries venir?",
     "service_headlight": "Hola restoreLab! M'interessa la restauració de fars a domicili. Voldria saber el preu i quina disponibilitat tens aquesta setmana.",
-    "service_interior_leather": "Hola restoreLab! M'interessa la neteja i restauració del cuir interior del cotxe. Quant costaria i quan podries passar a fer-ho?",
     "service_presale": "Hola restoreLab! Vull posar el cotxe a la venda i m'interessa el Pack Pre-Venda a domicili. Quin preu té i amb quina antelació s'ha de reservar?",
     "ceramic_landing": "Hola restoreLab! M'interessa el tractament ceràmic a domicili a Barcelona. Què necessites saber del cotxe per fer-me un pressupost?",
     "faq": "Hola restoreLab! He llegit les preguntes freqüents i encara em queda un dubte sobre el servei. T'ho puc preguntar per aquí?",
@@ -3936,7 +3916,6 @@
       "glass-polishing": "1 a 3",
       "headlight-restoration": "1 a 2",
       "acrylic-restoration": "2 a 4",
-      "interior-leather": "2 a 5",
       "pre-sale-pack": "4 a 8"
     },
     "cta_title": "Reserva {service} a {area}",
@@ -4009,7 +3988,6 @@
       "glass_polishing": "Poliment de Vidres",
       "acrylic_restoration": "Restauració d'Acrílic",
       "headlight_restoration": "Restauració de Fars",
-      "interior_leather": "Interior i Cuir",
       "pre_sale_pack": "Pack Pre-Venda",
       "trim_restoration": "Restauració de Plàstics",
       "ev": "Especialistes EV",

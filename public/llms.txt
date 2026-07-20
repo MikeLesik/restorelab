@@ -11,13 +11,13 @@
 - [Pulido de Cristales y Eliminación de Arañazos (Glass Polishing)](https://restorelab.io/es/services/glass-polishing): Windshield scratch removal, water stain removal, and clarity restoration. [EN](https://restorelab.io/en/services/glass-polishing)
 - [Acrílico y Policarbonato (Acrylic Restoration)](https://restorelab.io/es/services/acrylic-restoration): UV-damaged plexiglass restoration for motorcycle visors, boat windows, and acrylic surfaces. [EN](https://restorelab.io/en/services/acrylic-restoration)
 - [Pulido y Restauración de Faros (Headlight Restoration)](https://restorelab.io/es/services/headlight-restoration): UV-yellowed lens restoration with sealant for clarity and durability. [EN](https://restorelab.io/en/services/headlight-restoration)
-- [Limpieza de Cuero Interior (Interior Leather Restoration)](https://restorelab.io/es/services/interior-leather): Leather seat conditioning, color repair, and sun damage restoration. [EN](https://restorelab.io/en/services/interior-leather)
 - [Pack Pre-Venta (Pre-Sale Detailing Pack)](https://restorelab.io/es/services/pre-sale-pack): Comprehensive detailing to maximize used-car listing photos and sale price. [EN](https://restorelab.io/en/services/pre-sale-pack)
 
 ## Service areas
 
 - [Sant Cugat del Vallès](https://restorelab.io/es/areas/sant-cugat)
 - [Barcelona](https://restorelab.io/es/areas/barcelona)
+- [Sant Boi de Llobregat](https://restorelab.io/es/areas/sant-boi)
 - [Terrassa](https://restorelab.io/es/areas/terrassa)
 - [Matadepera](https://restorelab.io/es/areas/matadepera)
 - [Sant Just Desvern](https://restorelab.io/es/areas/sant-just-desvern)

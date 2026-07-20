@@ -78,10 +78,6 @@
       "title": "Pulido de Faros a Domicilio — Barcelona y Sant Cugat | restoreLab",
       "description": "Pulido y restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
     },
-    "interior_leather": {
-      "title": "Limpieza de Cuero Interior y Cerámico | restoreLab",
-      "description": "Limpieza profunda de cuero, eliminación de manchas y cerámico opcional. Asientos, salpicadero y paneles. Desde 189€. Servicio móvil. Servicio a domicilio en Sant Cugat y Barcelona."
-    },
     "pre_sale": {
       "title": "Pack Pre-Venta — Maximiza el Valor de Reventa | restoreLab",
       "description": "Corrección de pintura, limpieza interior profunda y detailing del motor en un paquete. 249€ para sedán. Aumenta el valor de reventa de tu coche. A domicilio en Sant Cugat y Barcelona."
@@ -252,21 +248,6 @@
         ],
         "cta_label": "Presupuesto Plásticos",
         "tag": null
-      },
-      {
-        "id": "interior-leather",
-        "title": "Limpieza de Cuero Interior",
-        "subtitle": "Asientos, salpicadero y paneles limpiados y protegidos",
-        "icon": "interior",
-        "starting_price": "Desde 189€",
-        "features": [
-          "Limpieza profunda y acondicionamiento del cuero",
-          "Eliminación de manchas y transferencia de tinte",
-          "Cerámico opcional (289€)"
-        ],
-        "cta_label": "Presupuesto Interior",
-        "tag": null,
-        "h1": "Limpieza de Cuero Interior a Domicilio en Sant Cugat y Barcelona"
       },
       {
         "id": "pre-sale-pack",
@@ -774,7 +755,6 @@
     "service_car_paint": "¡Hola restoreLab! Me interesa la corrección de pintura a domicilio para quitar arañazos y marcas circulares en el barniz. ¿Qué fotos necesitas para pasarme precio?",
     "service_glass_polishing": "¡Hola restoreLab! Me interesa el pulido de cristales para quitar arañazos del parabrisas o de las ventanillas. ¿Qué fotos necesitas para valorarlo?",
     "service_headlight": "¡Hola restoreLab! Me interesa la restauración de faros porque los tengo amarillentos y opacos. ¿Me pasas precio y me dices cuándo podrías venir?",
-    "service_interior_leather": "¡Hola restoreLab! Me interesa la limpieza y restauración del cuero de mi coche. ¿Qué fotos del tapizado necesitas para pasarme precio?",
     "service_presale": "¡Hola restoreLab! Voy a vender el coche y me interesa el pack pre-venta. ¿Qué incluye exactamente y en cuánto tiempo lo tendrías listo?",
     "ceramic_landing": "¡Hola restoreLab! Quiero un presupuesto para tratamiento cerámico a domicilio en Barcelona. ¿Qué fotos del coche necesitas y qué duración me recomiendas, 2 o 5 años?",
     "faq": "¡Hola restoreLab! He mirado las preguntas frecuentes y me queda una duda que no aparece ahí. ¿Me la puedes resolver?",
@@ -3936,7 +3916,6 @@
       "glass-polishing": "1 a 3",
       "headlight-restoration": "1 a 2",
       "acrylic-restoration": "2 a 4",
-      "interior-leather": "2 a 5",
       "pre-sale-pack": "4 a 8"
     },
     "cta_title": "Reserva {service} en {area}",
@@ -4009,7 +3988,6 @@
       "glass_polishing": "Pulido de Cristales",
       "acrylic_restoration": "Restauración de Acrílico",
       "headlight_restoration": "Restauración de Faros",
-      "interior_leather": "Interior y Cuero",
       "pre_sale_pack": "Pack Pre-Venta",
       "trim_restoration": "Restauración de Plásticos",
       "ev": "Especialistas EV",

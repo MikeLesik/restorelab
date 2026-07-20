@@ -45,13 +45,6 @@ export const serviceProfiles: Record<string, ServiceProfile> = {
     startingPriceEur: 79,
     englishBrief: 'UV-yellowed lens restoration with sealant for clarity and durability.',
   },
-  'interior-leather': {
-    id: 'interior-leather',
-    active: true,
-    englishLabel: 'Interior Leather Restoration',
-    startingPriceEur: 199,
-    englishBrief: 'Leather seat conditioning, color repair, and sun damage restoration.',
-  },
   'pre-sale-pack': {
     id: 'pre-sale-pack',
     active: true,

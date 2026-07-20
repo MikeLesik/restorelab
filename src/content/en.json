@@ -78,10 +78,6 @@
       "title": "Headlight Restoration at Your Home — Barcelona | restoreLab",
       "description": "Professional headlight polishing and restoration — remove yellowing, haze and UV oxidation. From €79/pair. Mobile service in Sant Cugat & Barcelona."
     },
-    "interior_leather": {
-      "title": "Interior Leather Cleaning & Ceramic Coating | restoreLab",
-      "description": "Deep leather cleaning, stain removal and optional ceramic coating. Seats, dashboard & door cards. From €189. Mobile service. At-home service in Sant Cugat & Barcelona."
-    },
     "pre_sale": {
       "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
       "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value. At-home service in Sant Cugat & Barcelona."
@@ -252,21 +248,6 @@
         ],
         "cta_label": "Get Trim Estimate",
         "tag": null
-      },
-      {
-        "id": "interior-leather",
-        "title": "Interior Leather Refresh",
-        "subtitle": "Seats, dashboard & door cards cleaned and protected",
-        "icon": "interior",
-        "starting_price": "From €189",
-        "features": [
-          "Deep leather cleaning & conditioning",
-          "Stain & dye transfer removal",
-          "Optional ceramic coating (€289)"
-        ],
-        "cta_label": "Get Interior Estimate",
-        "tag": null,
-        "h1": "Interior Leather Cleaning at Your Home in Sant Cugat & Barcelona"
       },
       {
         "id": "pre-sale-pack",
@@ -850,7 +831,6 @@
     "service_car_paint": "Hello restoreLab! I'm interested in paint correction for my car. Happy to send photos of the paintwork if that helps with the quote.",
     "service_glass_polishing": "Hello restoreLab! I'm after glass polishing — I've got a few scratches I'd like removed. Can I send you photos so you can tell me whether they'll come out?",
     "service_headlight": "Hello restoreLab! My headlights have gone cloudy and yellow, and I'd like them restored. What would that cost, and when could you come out?",
-    "service_interior_leather": "Hello restoreLab! I'd like the leather interior in my car cleaned and refreshed. What do you need from me to quote for it?",
     "service_presale": "Hello restoreLab! I'm selling my car and I'd like the pre-sale detail pack to get it looking its best before viewings. When could you fit me in?",
     "ceramic_landing": "Hello restoreLab! I'd like a quote for a ceramic coating at my place in Barcelona. What details do you need about my car to price it up?",
     "faq": "Hello restoreLab! I've been through your FAQ but my question isn't covered there. Are you free to answer it?",
@@ -3936,7 +3916,6 @@
       "glass-polishing": "1 to 3",
       "headlight-restoration": "1 to 2",
       "acrylic-restoration": "2 to 4",
-      "interior-leather": "2 to 5",
       "pre-sale-pack": "4 to 8"
     },
     "cta_title": "Book {service} in {area}",
@@ -4009,7 +3988,6 @@
       "glass_polishing": "Glass Polishing",
       "acrylic_restoration": "Acrylic Restoration",
       "headlight_restoration": "Headlight Restoration",
-      "interior_leather": "Interior & Leather",
       "pre_sale_pack": "Pre-Sale Detailing",
       "trim_restoration": "Trim Restoration",
       "ev": "EV Specialists",

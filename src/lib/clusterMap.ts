@@ -79,20 +79,14 @@ export const clusterMap: Record<string, ClusterDef> = {
     relatedAreas: ['sant-cugat', 'barcelona', 'terrassa'],
   },
 
-  'interior-leather': {
-    hub: '/services/interior-leather',
-    hubLabelKey: 'interior_leather',
-    hubActive: true,
-    primarySpokes: ['leather-seats-mediterranean-restoration'],
-    relatedHubs: ['business'],
-    relatedAreas: ['pedralbes', 'sant-gervasi', 'sant-cugat'],
-  },
-
   'pre-sale-pack': {
     hub: '/services/pre-sale-pack',
     hubLabelKey: 'pre_sale_pack',
     hubActive: true,
-    primarySpokes: ['pre-sale-detailing-checklist-catalonia', 'detailing-used-car-sale-price-catalonia'],
+    // leather-seats-* was the interior-leather hub's spoke. That service is gone,
+    // but the article still earns traffic, so it rehomes here — the pre-sale pack
+    // is the remaining service that covers interior work.
+    primarySpokes: ['pre-sale-detailing-checklist-catalonia', 'detailing-used-car-sale-price-catalonia', 'leather-seats-mediterranean-restoration'],
     relatedHubs: ['business'],
     relatedAreas: ['barcelona', 'sant-cugat', 'terrassa'],
   },
@@ -133,7 +127,7 @@ export const clusterMap: Record<string, ClusterDef> = {
     hubLabelKey: 'plans',
     hubActive: true,
     primarySpokes: [],
-    relatedHubs: ['car-paint-correction', 'glass-polishing', 'headlight-restoration', 'interior-leather'],
+    relatedHubs: ['car-paint-correction', 'glass-polishing', 'headlight-restoration'],
     relatedAreas: ['sant-cugat', 'barcelona'],
   },
 
