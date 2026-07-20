@@ -11,22 +11,27 @@ const { t, equipment = true } = Astro.props;
 // never fall back to hardcoded claims.
 const certs = t.trust?.certifications || [];
 
-// The supplier brands, folded in from the deleted BrandsStrip. They are NOT
-// accreditations, so they render as a plain text line, gated on `status` —
-// showing them as logos beside the certified marks was why they read as
-// endorsements. `authorized` brands (Gyeon, Gtechniq) are the certifications
-// above and are excluded here. Compare with ===, not ??: the JSON uses
-// empty-string placeholders, and '' would slip past a nullish guard.
+// The supplier brands, folded in from the deleted BrandsStrip. They are the
+// tools we buy — NOT accreditations — so they render as a monochrome logo row
+// under an explicit "we use, not sponsors" caption, gated on `status`. The
+// `authorized` brands (Gyeon, Gtechniq) are the certifications above and are
+// excluded here. Compare with ===, not ??: the JSON uses empty-string
+// placeholders, and '' would slip past a nullish guard.
 const TOOL_TIERS = ['equipment', 'products'];
 const toolBrands = (t.trust?.brands || []).filter((b: any) => TOOL_TIERS.includes(b.status));
-const tierLabels = t.trust?.tool_tiers || {};
-const toolLine = TOOL_TIERS
-  .map((tier) => {
-    const names = toolBrands.filter((b: any) => b.status === tier).map((b: any) => b.name);
-    return names.length ? `${tierLabels[tier] ?? tier}: ${names.join(', ')}` : null;
-  })
-  .filter(Boolean)
-  .join(' · ');
+
+// Logo asset per brand. Only brands we genuinely use appear here; adding a logo
+// for a brand with no real relationship would be the false-endorsement problem
+// the reviews had. rupes-mono.png is the white wordmark keyed out of the opaque
+// red source PNG so it sits in a monochrome row cleanly.
+const BRAND_LOGOS: Record<string, string> = {
+  'Rupes': '/images/brands/rupes-mono.png',
+  'Koch Chemie': '/images/brands/koch-chemie.svg',
+  'CarPro': '/images/brands/carpro.svg',
+};
+const toolLogos = toolBrands
+  .map((b: any) => ({ name: b.name, src: BRAND_LOGOS[b.name] }))
+  .filter((b: any) => b.src);
 
 /** "Gyeon Certificado" -> { brand: "Gyeon", label: "Certificado" } */
 function splitCert(name: string) {
@@ -94,10 +99,23 @@ function logoCls(src: string) {
         })}
       </div>
 
-      {equipment && toolLine && t.trust?.tools_note && (
-        <p class="text-center caption mt-6 max-w-xl mx-auto">
-          <span class="text-th-muted">{toolLine}.</span>{' '}{t.trust.tools_note}
-        </p>
+      {equipment && toolLogos.length > 0 && (
+        <div class="mt-10">
+          <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+            {toolLogos.map((b: any) => (
+              <img
+                src={b.src}
+                alt={b.name}
+                title={b.name}
+                loading="lazy"
+                class="h-6 sm:h-7 w-auto brightness-0 dark:invert opacity-55 hover:opacity-90 transition-opacity duration-300"
+              />
+            ))}
+          </div>
+          {t.trust?.tools_note && (
+            <p class="text-center caption mt-6 max-w-xl mx-auto">{t.trust.tools_note}</p>
+          )}
+        </div>
       )}
     </div>
   </section>
