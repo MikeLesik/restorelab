@@ -604,87 +604,93 @@
         "Los precios son para sedán; aplica el multiplicador por tamaño (compacto −10%, SUV +10-20%). El servicio es 100% móvil: aplicamos el cerámico en tu garaje en Sant Cugat, Barcelona, Terrassa y alrededores. Pide presupuesto exacto por WhatsApp con fotos de tu coche."
       ],
       "landing_link_label": "Cerámico en Barcelona: precios y detalles"
-    }
+    },
+    "home_title": "Precios publicados, sin sorpresas"
   },
   "estimator": {
-    "tiers": {
-      "express": {
-        "name": "Renovación Exprés",
-        "desc": "Pulido a máquina de una etapa. Elimina remolinos leves y manchas de agua."
-      },
-      "single_stage": {
-        "name": "Corrección de Una Etapa",
-        "desc": "Corrección en un paso con compuesto de corte medio. ~70% de defectos eliminados."
-      },
-      "two_stage": {
-        "name": "Corrección en Dos Etapas",
-        "desc": "Corte + refinado completo. Elimina 85–95% de los defectos, incluidos remolinos profundos."
-      },
-      "ceramic_2y": {
-        "name": "Recubrimiento Cerámico 2 Años",
-        "desc": "Una etapa + recubrimiento cerámico Gyeon MOHS de 2 años."
-      },
-      "ceramic_5y": {
-        "name": "Cerámico Premium 5 Años",
-        "desc": "Dos etapas + cerámico Gtechniq Crystal Serum Ultra de 5 años."
-      },
-      "windshield_polish": {
-        "name": "Pulido de Parabrisas",
-        "desc": "Elimina arañazos de limpiaparabrisas, manchas de agua y velo del parabrisas."
-      },
-      "windshield_hydrophobic": {
-        "name": "Parabrisas + Hidrofóbico",
-        "desc": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad."
-      },
-      "full_glass_set": {
-        "name": "Set Completo de Cristales",
-        "desc": "Todos los cristales pulidos y tratados: parabrisas, ventanillas y luneta."
-      }
-    },
-    "title": "Obtén tu Presupuesto Instantáneo",
-    "subtitle": "Responde 4 preguntas rápidas y recibe un rango de precio en segundos.",
-    "step1_title": "Tamaño del vehículo",
+    "title": "¿Qué paquete te toca?",
+    "subtitle": "Dos toques y te decimos cuál de nuestros precios públicos es el tuyo. Sin email, sin registro.",
+    "q1_title": "¿Qué quieres resolver?",
+    "need_paint": "Recuperar el brillo y quitar arañazos",
+    "need_ceramic": "Proteger la pintura con cerámico",
+    "need_sale": "Dejarlo listo para venderlo",
+    "need_glass": "Cristales rayados o con mala visibilidad",
+    "need_headlights": "Faros amarillentos",
+    "need_unsure": "No lo tengo claro",
+    "q2_paint_title": "¿Cómo está la pintura ahora?",
+    "paint_light": "Apagada, con marcas leves",
+    "paint_medium": "Con arañazos y remolinos visibles",
+    "paint_heavy": "Arañazos profundos u oxidación",
+    "paint_help_label": "¿Cómo lo compruebo?",
+    "paint_help": "Mira el coche a pleno sol, o pon la linterna del móvil casi pegada a la pintura: las marcas circulares aparecen enseguida. Si un arañazo se nota con la uña, cuenta como profundo.",
+    "dark_toggle": "Mi coche es negro o de un color oscuro sólido",
+    "q2_ceramic_title": "¿Cuánta protección quieres?",
+    "ceramic_2y": "2 años (Gyeon MOHS)",
+    "ceramic_5y": "5 años (Gtechniq Crystal Serum Ultra)",
+    "q2_glass_title": "¿Qué cristales?",
+    "glass_windshield": "Solo el parabrisas",
+    "glass_rain": "Parabrisas + repelente de lluvia",
+    "glass_all": "Todos los cristales",
     "size_small": "Pequeño",
-    "size_small_desc": "Compacto, sedán",
     "size_medium": "Mediano",
-    "size_medium_desc": "Familiar, coupé, SUV pequeño",
     "size_large": "Grande",
-    "size_large_desc": "SUV grande, furgoneta, camión",
-    "step2_title": "Estado de la pintura",
-    "cond_light": "Leve",
-    "cond_light_desc": "Marcas circulares leves, manchas de agua",
-    "cond_medium": "Medio",
-    "cond_medium_desc": "Arañazos visibles, acabado opaco",
-    "cond_heavy": "Severo",
-    "cond_heavy_desc": "Arañazos profundos, oxidación",
-    "step3_title": "Color de la pintura",
-    "color_standard": "Estándar",
-    "color_standard_desc": "Rojo, azul, verde…",
-    "color_metallic": "Metalizado",
-    "color_metallic_desc": "Plata, gris metalizado",
-    "color_black": "Negro",
-    "color_black_desc": "Negro sólido o metalizado",
-    "color_white": "Blanco",
-    "color_white_desc": "Blanco sólido o perlado",
-    "step4_title": "¿Qué necesitas?",
-    "step4_hint": "Selecciona uno o más objetivos",
-    "goal_gloss": "Restaurar brillo y eliminar arañazos",
-    "goal_ceramic": "Aplicar recubrimiento cerámico",
-    "goal_presale": "Preparar para venta",
-    "goal_protection": "Protección de pintura a largo plazo",
-    "goal_glass": "Eliminación de arañazos en cristal",
-    "submit": "Ver Mi Presupuesto",
-    "result_title": "Tus Opciones Recomendadas",
-    "addons_title": "Complementos sugeridos",
+    "size_label": "Para reservar las horas (opcional)",
+    "size_hint": "No cambia el precio. Solo nos dice cuánto tiempo reservar en tu garaje.",
+    "result_label": "Tu paquete",
+    "alt_label": "Si buscas el máximo acabado:",
+    "addon_label": "Se suele añadir:",
+    "see_package": "Ver el paquete completo",
+    "honesty": "Precio público, el mismo de la tabla de arriba. El tamaño del coche cambia el tiempo, no el paquete. Cerramos el precio cuando vemos dos fotos por WhatsApp.",
+    "unsure_title": "Mejor te lo decimos mirándolo",
+    "unsure_body": "Mándanos dos fotos por WhatsApp — una del coche entero y otra del defecto que más te molesta — y te damos precio cerrado el mismo día. Nuestros trabajos van de 79€ a 1 049€ y todos los precios están arriba.",
     "cta_whatsapp": "Enviar por WhatsApp",
-    "cta_booking": "Reservar Visita",
-    "cta_restart": "Empezar de Nuevo",
-    "back": "Atrás",
-    "recommended_tag": "Recomendado",
-    "note_black": "La pintura negra marca cada defecto. Si buscas un acabado impecable, la corrección en dos fases es la opción segura — lo confirmamos con fotos.",
-    "note_heavy": "Los defectos severos pueden requerir medición de espesor de pintura. Evaluación gratuita in situ incluida.",
-    "note_large": "Los vehículos grandes requieren tiempo adicional. Los tiempos mostrados son aproximados.",
-    "wa_message": "¡Hola restoreLab! He usado el estimador:\n• Vehículo: {vehicleSize}\n• Estado: {paintCondition}\n• Color: {colorSensitivity}\n• Objetivos: {goals}\n• Recomendado: {tierName} — {price}\n\nMe gustaría confirmar el precio para mi coche. Dime qué fotos necesitas y te las mando."
+    "cta_whatsapp_hint": "Te respondemos con el precio confirmado, normalmente en menos de una hora.",
+    "cta_booking": "O reserva una visita de valoración",
+    "why_paint_light": "Con marcas leves, un solo paso de pulido ya devuelve el brillo: no hace falta pagar corrección completa.",
+    "why_paint_light_dark": "En pintura oscura las marcas leves se ven el doble, así que subimos un nivel para que quede limpio.",
+    "why_paint_medium": "Con arañazos y remolinos visibles, un pase de corrección quita la mayoría y el coche se ve muy bien.",
+    "why_paint_dark": "En negro cada pasada se ve. Subimos a dos fases para no dejar holograma.",
+    "why_paint_heavy": "Los arañazos profundos necesitan corte y luego refinado: en un solo pase quedarían marcas de pulido.",
+    "why_paint_heavy_dark": "Arañazos profundos sobre pintura oscura es el caso más exigente: corte y refinado, sin atajos.",
+    "why_ceramic_2y": "Dos años de protección con un pulido previo de un paso: la relación protección/precio más equilibrada.",
+    "why_ceramic_5y": "Cinco años pide una base perfecta, así que va con corrección completa antes del cerámico.",
+    "why_sale": "Es el pack pensado para el anuncio: toca pintura, cristales, faros e interior en una sola visita.",
+    "why_glass_windshield": "Los arañazos que molestan de noche están casi siempre en el parabrisas: es donde se nota el pulido.",
+    "why_glass_rain": "Pulido más recubrimiento: quitas los arañazos y además el agua sale sola al coger velocidad.",
+    "why_glass_all": "Tratar todo el conjunto en una sola visita sale mejor que ir cristal por cristal.",
+    "why_headlights": "Los faros amarillentos son de lo primero que ve alguien, y se resuelven en menos de una hora.",
+    "tiers": {
+      "express-refresh": {
+        "desc": "Devuelve brillo y quita las marcas más leves. No elimina arañazos que se noten con la uña."
+      },
+      "single-stage": {
+        "desc": "Un pase de pulido. El coche se ve muy bien, no perfecto."
+      },
+      "two-stage": {
+        "desc": "Dos pases: corte y refinado. Acabado de exposición, sin marcas de pulido bajo el sol."
+      },
+      "ceramic-2y": {
+        "desc": "Pulido de un pase más una capa cerámica que protege 2 años y hace el lavado mucho más fácil."
+      },
+      "premium-5y": {
+        "desc": "Corrección completa más la capa cerámica de 5 años. Nuestro máximo nivel de acabado y protección."
+      },
+      "windshield-polish": {
+        "desc": "Quita los arañazos de limpiaparabrisas y el velo del parabrisas. Se nota sobre todo de noche."
+      },
+      "windshield-hydrophobic": {
+        "desc": "Lo anterior más un tratamiento que repele la lluvia: a partir de 60 km/h casi no necesitas limpiaparabrisas."
+      },
+      "full-glass-set": {
+        "desc": "Parabrisas, ventanillas y luneta, todos pulidos y tratados en la misma visita."
+      },
+      "pre-sale-pack": {
+        "desc": "Corrección exprés, cristales, faros e interior: el coche entra en las fotos del anuncio como debe."
+      },
+      "headlight-restoration": {
+        "desc": "Lijado progresivo y sellado UV. Faros transparentes otra vez, y así se quedan."
+      }
+    }
   },
   "faq": {
     "section_title": "Antes de Contactarnos",
@@ -807,7 +813,16 @@
     "service_interior_leather": "¡Hola restoreLab! Me interesa la limpieza y restauración del cuero de mi coche. ¿Qué fotos del tapizado necesitas para pasarme precio?",
     "service_presale": "¡Hola restoreLab! Voy a vender el coche y me interesa el pack pre-venta. ¿Qué incluye exactamente y en cuánto tiempo lo tendrías listo?",
     "ceramic_landing": "¡Hola restoreLab! Quiero un presupuesto para tratamiento cerámico a domicilio en Barcelona. ¿Qué fotos del coche necesitas y qué duración me recomiendas, 2 o 5 años?",
-    "faq": "¡Hola restoreLab! He mirado las preguntas frecuentes y me queda una duda que no aparece ahí. ¿Me la puedes resolver?"
+    "faq": "¡Hola restoreLab! He mirado las preguntas frecuentes y me queda una duda que no aparece ahí. ¿Me la puedes resolver?",
+    "estimator_intro": "¡Hola restoreLab! Vengo del estimador de la web:",
+    "estimator_line_need": "• Quiero: {need}",
+    "estimator_line_detail": "• Detalle: {detail}",
+    "estimator_line_dark": "• Pintura negra u oscura: sí",
+    "estimator_line_size": "• Vehículo: {size}",
+    "estimator_line_pkg": "• Vuestra recomendación: {tierName} — {price} ({duration})",
+    "estimator_line_addon": "• Me interesa añadir: {addon} — {addonPrice}",
+    "estimator_outro": "¿Me confirmáis precio y un hueco esta semana? Os mando ahora dos fotos del coche.",
+    "estimator_unsure": "¡Hola restoreLab! Vengo del estimador de la web y no tengo claro qué necesita mi coche. Os mando ahora dos fotos — una del coche entero y otra del defecto que más se nota — para que me digáis qué paquete me toca y el precio."
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",

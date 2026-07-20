@@ -43,9 +43,9 @@ const { t } = Astro.props;
   <HowItWorks t={t} lang={lang} />
   <Testimonials t={t} />
   <BeforeAfterCarousel t={t} lang={lang} />
-  <Estimator t={t} lang={lang} />
-  <PricingCards t={t} lang={lang} categoryId="car" />
-  <CertificationsRow t={t} />
+  <PricingCards t={t} lang={lang} categoryId="car" title={t.pricing.home_title} />
+  <Estimator t={t} lang={lang} source="home" />
   <GuaranteeBlock t={t} />
+  <CertificationsRow t={t} />
   <FAQ t={t} />
 </BaseLayout>

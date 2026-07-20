@@ -604,87 +604,93 @@
         "Els preus són per a sedan; s'aplica el multiplicador per mida (compacte −10%, SUV +10-20%). El servei és 100% mòbil: apliquem el ceràmic al teu garatge a Sant Cugat, Barcelona, Terrassa i rodalies. Demana pressupost exacte per WhatsApp amb fotos del teu cotxe."
       ],
       "landing_link_label": "Ceràmic a Barcelona: preus i detalls"
-    }
+    },
+    "home_title": "Preus publicats, sense sorpreses"
   },
   "estimator": {
-    "tiers": {
-      "express": {
-        "name": "Renovació Exprés",
-        "desc": "Poliment a màquina d'una etapa. Elimina remolins lleus i taques d'aigua."
-      },
-      "single_stage": {
-        "name": "Correcció d'Una Etapa",
-        "desc": "Correcció en un pas amb compost de tall mitjà. ~70% de defectes eliminats."
-      },
-      "two_stage": {
-        "name": "Correcció en Dues Etapes",
-        "desc": "Tall + refinat complet. Elimina 85–95% dels defectes, inclosos remolins profunds."
-      },
-      "ceramic_2y": {
-        "name": "Recobriment Ceràmic 2 Anys",
-        "desc": "Una etapa + recobriment ceràmic Gyeon MOHS de 2 anys."
-      },
-      "ceramic_5y": {
-        "name": "Ceràmic Premium 5 Anys",
-        "desc": "Dues etapes + ceràmic Gtechniq Crystal Serum Ultra de 5 anys."
-      },
-      "windshield_polish": {
-        "name": "Poliment de Parabrisa",
-        "desc": "Elimina ratllades de l'eixugaparabrises, taques d'aigua i vel del parabrisa."
-      },
-      "windshield_hydrophobic": {
-        "name": "Parabrisa + Hidrofòbic",
-        "desc": "Poliment de parabrisa més recobriment hidrofòbic repel·lent de pluja per a millor visibilitat."
-      },
-      "full_glass_set": {
-        "name": "Joc Complet de Vidres",
-        "desc": "Tots els vidres polits i tractats: parabrisa, finestretes i lluna."
-      }
-    },
-    "title": "Obtén el teu Pressupost Instantani",
-    "subtitle": "Respon 4 preguntes ràpides i rep un rang de preu en segons.",
-    "step1_title": "Mida del vehicle",
+    "title": "Quin paquet et toca?",
+    "subtitle": "Dos tocs i et diem quin dels nostres preus públics és el teu. Sense correu, sense registre.",
+    "q1_title": "Què vols resoldre?",
+    "need_paint": "Recuperar la brillantor i treure ratllades",
+    "need_ceramic": "Protegir la pintura amb ceràmic",
+    "need_sale": "Deixar-lo llest per vendre'l",
+    "need_glass": "Vidres ratllats o amb mala visibilitat",
+    "need_headlights": "Fars grocs",
+    "need_unsure": "No ho tinc clar",
+    "q2_paint_title": "Com està la pintura ara?",
+    "paint_light": "Apagada, amb marques lleus",
+    "paint_medium": "Amb ratllades i remolins visibles",
+    "paint_heavy": "Ratllades profundes o oxidació",
+    "paint_help_label": "Com ho comprovo?",
+    "paint_help": "Mira el cotxe a ple sol, o posa la llanterna del mòbil gairebé enganxada a la pintura: les marques circulars apareixen de seguida. Si notes una ratllada amb l'ungla, compta com a profunda.",
+    "dark_toggle": "El meu cotxe és negre o d'un color fosc sòlid",
+    "q2_ceramic_title": "Quanta protecció vols?",
+    "ceramic_2y": "2 anys (Gyeon MOHS)",
+    "ceramic_5y": "5 anys (Gtechniq Crystal Serum Ultra)",
+    "q2_glass_title": "Quins vidres?",
+    "glass_windshield": "Només el parabrisa",
+    "glass_rain": "Parabrisa + repel·lent de pluja",
+    "glass_all": "Tots els vidres",
     "size_small": "Petit",
-    "size_small_desc": "Compacte, sedan",
     "size_medium": "Mitjà",
-    "size_medium_desc": "Familiar, coupé, SUV petit",
     "size_large": "Gran",
-    "size_large_desc": "SUV gran, furgoneta, camió",
-    "step2_title": "Estat de la pintura",
-    "cond_light": "Lleu",
-    "cond_light_desc": "Marques circulars lleus, taques d'aigua",
-    "cond_medium": "Mitjà",
-    "cond_medium_desc": "Ratlles visibles, acabat opac",
-    "cond_heavy": "Sever",
-    "cond_heavy_desc": "Ratlles profundes, oxidació",
-    "step3_title": "Color de la pintura",
-    "color_standard": "Estàndard",
-    "color_standard_desc": "Vermell, blau, verd…",
-    "color_metallic": "Metal·litzat",
-    "color_metallic_desc": "Plata, gris metal·litzat",
-    "color_black": "Negre",
-    "color_black_desc": "Negre sòlid o metal·litzat",
-    "color_white": "Blanc",
-    "color_white_desc": "Blanc sòlid o perlat",
-    "step4_title": "Què necessites?",
-    "step4_hint": "Selecciona un o més objectius",
-    "goal_gloss": "Restaurar brillantor i eliminar ratlles",
-    "goal_ceramic": "Aplicar recobriment ceràmic",
-    "goal_presale": "Preparar per a la venda",
-    "goal_protection": "Protecció de pintura a llarg termini",
-    "goal_glass": "Eliminació de ratlles al vidre",
-    "submit": "Veure el Meu Pressupost",
-    "result_title": "Les Teves Opcions Recomanades",
-    "addons_title": "Complements suggerits",
+    "size_label": "Per reservar les hores (opcional)",
+    "size_hint": "No canvia el preu. Només ens diu quanta estona reservar al teu garatge.",
+    "result_label": "El teu paquet",
+    "alt_label": "Si busques el màxim acabat:",
+    "addon_label": "S'hi sol afegir:",
+    "see_package": "Veure el paquet complet",
+    "honesty": "Preu públic, el mateix de la taula de dalt. La mida del cotxe canvia el temps, no el paquet. Tanquem el preu quan veiem dues fotos per WhatsApp.",
+    "unsure_title": "Millor t'ho diem mirant-ho",
+    "unsure_body": "Envia'ns dues fotos per WhatsApp — una del cotxe sencer i una altra del defecte que més et molesta — i et donem preu tancat el mateix dia. Les nostres feines van de 79€ a 1 049€ i tots els preus són a dalt.",
     "cta_whatsapp": "Enviar per WhatsApp",
-    "cta_booking": "Reservar Visita",
-    "cta_restart": "Tornar a Començar",
-    "back": "Enrere",
-    "recommended_tag": "Recomanat",
-    "note_black": "La pintura negra marca cada defecte. Si vols un acabat impecable, la correcció en dues fases és l'opció segura — ho confirmem amb fotos.",
-    "note_heavy": "Els defectes severs poden requerir mesurament de gruix de pintura. Avaluació gratuïta in situ inclosa.",
-    "note_large": "Els vehicles grans requereixen temps addicional. Els temps mostrats són aproximats.",
-    "wa_message": "Hola restoreLab! He usat l'estimador:\n• Vehicle: {vehicleSize}\n• Estat: {paintCondition}\n• Color: {colorSensitivity}\n• Objectius: {goals}\n• Recomanat: {tierName} — {price}\n\nM'agradaria confirmar el preu per al meu cotxe. Digue'm quines fotos necessites i te les envio."
+    "cta_whatsapp_hint": "Et responem amb el preu confirmat, normalment en menys d’una hora.",
+    "cta_booking": "O reserva una visita de valoració",
+    "why_paint_light": "Amb marques lleus, un sol pas de poliment ja retorna la brillantor: no cal pagar correcció completa.",
+    "why_paint_light_dark": "En pintura fosca les marques lleus es veuen el doble, així que pugem un nivell perquè quedi net.",
+    "why_paint_medium": "Amb ratllades i remolins visibles, una passada de correcció en treu la majoria i el cotxe es veu molt bé.",
+    "why_paint_dark": "En negre es veu cada passada. Pugem a dues fases per no deixar holograma.",
+    "why_paint_heavy": "Les ratllades profundes necessiten tall i després refinat: en una sola passada quedarien marques de poliment.",
+    "why_paint_heavy_dark": "Ratllades profundes sobre pintura fosca és el cas més exigent: tall i refinat, sense dreceres.",
+    "why_ceramic_2y": "Dos anys de protecció amb un poliment previ d'un pas: la relació protecció/preu més equilibrada.",
+    "why_ceramic_5y": "Cinc anys demana una base perfecta, així que va amb correcció completa abans del ceràmic.",
+    "why_sale": "És el pack pensat per a l'anunci: toca pintura, vidres, fars i interior en una sola visita.",
+    "why_glass_windshield": "Les ratllades que molesten de nit són gairebé sempre al parabrisa: és on es nota el poliment.",
+    "why_glass_rain": "Poliment més recobriment: treus les ratllades i a més l'aigua marxa sola en agafar velocitat.",
+    "why_glass_all": "Tractar tot el conjunt en una sola visita surt millor que anar vidre per vidre.",
+    "why_headlights": "Els fars grocs són de les primeres coses que veu algú, i es resolen en menys d’una hora.",
+    "tiers": {
+      "express-refresh": {
+        "desc": "Retorna brillantor i treu les marques més lleus. No elimina ratllades que es notin amb l'ungla."
+      },
+      "single-stage": {
+        "desc": "Una passada de poliment. El cotxe es veu molt bé, no perfecte."
+      },
+      "two-stage": {
+        "desc": "Dues passades: tall i refinat. Acabat d'exposició, sense marques de poliment sota el sol."
+      },
+      "ceramic-2y": {
+        "desc": "Poliment d'una passada més una capa ceràmica que protegeix 2 anys i fa el rentat molt més fàcil."
+      },
+      "premium-5y": {
+        "desc": "Correcció completa més la capa ceràmica de 5 anys. El nostre màxim nivell d’acabat i protecció."
+      },
+      "windshield-polish": {
+        "desc": "Treu les ratllades d'eixugaparabrises i el vel del parabrisa. Es nota sobretot de nit."
+      },
+      "windshield-hydrophobic": {
+        "desc": "L'anterior més un tractament que repel·leix la pluja: a partir de 60 km/h gairebé no necessites eixugaparabrises."
+      },
+      "full-glass-set": {
+        "desc": "Parabrisa, finestretes i llunes, tots polits i tractats en la mateixa visita."
+      },
+      "pre-sale-pack": {
+        "desc": "Correcció exprés, vidres, fars i interior: el cotxe surt a les fotos de l'anunci com toca."
+      },
+      "headlight-restoration": {
+        "desc": "Escatat progressiu i segellat UV. Transparents un altre cop, i s'hi mantenen."
+      }
+    }
   },
   "faq": {
     "section_title": "Abans de Contactar-nos",
@@ -807,7 +813,16 @@
     "service_interior_leather": "Hola restoreLab! M'interessa la neteja i restauració del cuir interior del cotxe. Quant costaria i quan podries passar a fer-ho?",
     "service_presale": "Hola restoreLab! Vull posar el cotxe a la venda i m'interessa el Pack Pre-Venda a domicili. Quin preu té i amb quina antelació s'ha de reservar?",
     "ceramic_landing": "Hola restoreLab! M'interessa el tractament ceràmic a domicili a Barcelona. Què necessites saber del cotxe per fer-me un pressupost?",
-    "faq": "Hola restoreLab! He llegit les preguntes freqüents i encara em queda un dubte sobre el servei. T'ho puc preguntar per aquí?"
+    "faq": "Hola restoreLab! He llegit les preguntes freqüents i encara em queda un dubte sobre el servei. T'ho puc preguntar per aquí?",
+    "estimator_intro": "Hola restoreLab! Vinc de l'estimador del web:",
+    "estimator_line_need": "• Vull: {need}",
+    "estimator_line_detail": "• Detall: {detail}",
+    "estimator_line_dark": "• Pintura negra o fosca: sí",
+    "estimator_line_size": "• Vehicle: {size}",
+    "estimator_line_pkg": "• La vostra recomanació: {tierName} — {price} ({duration})",
+    "estimator_line_addon": "• M'interessa afegir: {addon} — {addonPrice}",
+    "estimator_outro": "Em confirmeu el preu i un forat aquesta setmana? Ara us envio dues fotos del cotxe.",
+    "estimator_unsure": "Hola restoreLab! Vinc de l'estimador del web i no tinc clar què necessita el meu cotxe. Ara us envio dues fotos — una del cotxe sencer i una altra del defecte que més es nota — perquè em digueu quin paquet em toca i el preu."
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",

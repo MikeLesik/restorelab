@@ -4,479 +4,389 @@ import { WHATSAPP_NUMBER } from '@/lib/constants';
 export interface Props {
   t: Record<string, any>;
   lang: string;
+  /** Analytics dimension only. Where this instance is rendered. */
+  source?: string;
 }
 
-const { t, lang } = Astro.props;
+const { t, lang, source = 'unknown' } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.estimator || {};
-const estI18n = {
-  recommended: ui.recommended_tag || 'Recommended',
-  noteBlack: ui.note_black || 'Black paint shows every imperfection. Two-stage correction minimum recommended.',
-  noteHeavy: ui.note_heavy || 'Heavy defects may require paint depth measurement. Free on-site assessment included.',
-  noteLarge: ui.note_large || 'Large vehicles require additional time. ETAs shown are approximate.',
-  waMessage: ui.wa_message || 'restoreLab estimate — Vehicle: {vehicleSize}, Condition: {paintCondition}, Colour: {colorSensitivity}, Goals: {goals}, Recommended: {tierName} (€{min}–{max}).',
-};
+const waMsg = t.wa_messages || {};
+const pricingPath = `/${lang}/pricing`;
 
-// Translated tier desc, keyed by tier id.
-const tiersI18n = ui.tiers || {};
-
-// Price, name and duration come from t.pricing — the same packages the pricing
-// table renders — joined on the package `slug`, which is identical in all three
-// locales. Previously the estimator carried its own copy of the numbers plus a
-// size multiplier, a black-paint surcharge and a ±band, so it quoted 140–160€
-// for a package the price list sells at 149€ and up to 1790€ for one sold at
-// 1049€. Deriving from the same source makes drift impossible.
-const TIER_SLUG: Record<string, string> = {
-  express: 'express-refresh',
-  single_stage: 'single-stage',
-  two_stage: 'two-stage',
-  ceramic_2y: 'ceramic-2y',
-  ceramic_5y: 'premium-5y',
-  windshield_polish: 'windshield-polish',
-  windshield_hydrophobic: 'windshield-hydrophobic',
-  full_glass_set: 'full-glass-set',
-};
-
-const packagesBySlug: Record<string, any> = {};
+// Name, price and duration come from t.pricing ONLY — never from t.estimator.
+// t.estimator.tiers carries `desc` and nothing else, keyed by the pricing slug,
+// so name/price drift is structurally impossible (commits d650a3d, 69f4dee).
+const bySlug: Record<string, any> = {};
 for (const cat of t.pricing?.categories ?? []) {
-  for (const pkg of cat.packages ?? []) {
-    if (pkg.slug) packagesBySlug[pkg.slug] = pkg;
-  }
+  for (const p of cat.packages ?? []) if (p.slug) bySlug[p.slug] = p;
 }
 
-const tierPricing: Record<string, { name: string; price: string; duration: string }> = {};
-for (const [id, slug] of Object.entries(TIER_SLUG)) {
-  const pkg = packagesBySlug[slug];
-  if (!pkg) throw new Error(`Estimator: no pricing package for slug "${slug}" (tier "${id}") in ${lang}.json`);
-  tierPricing[id] = { name: pkg.name, price: pkg.price, duration: pkg.duration };
-}
-
-// Human-readable labels for the WhatsApp summary (avoid raw tokens like "small").
-const estLabels = {
-  size: { small: ui.size_small || 'Small', medium: ui.size_medium || 'Medium', large: ui.size_large || 'Large' },
-  condition: { light: ui.cond_light || 'Light', medium: ui.cond_medium || 'Medium', heavy: ui.cond_heavy || 'Heavy' },
-  color: { standard: ui.color_standard || 'Standard', metallic: ui.color_metallic || 'Metallic', black: ui.color_black || 'Black', white: ui.color_white || 'White' },
-  goal: {
-    restore_gloss: ui.goal_gloss || 'Restore gloss & remove scratches',
-    add_ceramic: ui.goal_ceramic || 'Add ceramic coating',
-    pre_sale: ui.goal_presale || 'Prepare for sale',
-    long_term_protection: ui.goal_protection || 'Long-term paint protection',
-    glass_clarity: ui.goal_glass || 'Glass scratch removal',
-  },
+const pkg = (slug: string) => {
+  const p = bySlug[slug];
+  if (!p) throw new Error(`Estimator: no pricing package for slug "${slug}" in ${lang}.json`);
+  return {
+    slug,
+    name: p.name,
+    price: p.price,
+    duration: p.duration,
+    desc: ui.tiers?.[slug]?.desc || '',
+    href: `${pricingPath}#${slug}`,
+  };
 };
+
+// The whole recommendation engine. 13 rows, no arithmetic, no scoring.
+// key = need[:detail][:dark]
+const O = (main: string, o: { alt?: string; addon?: string; why?: string } = {}) => ({
+  main: pkg(main),
+  alt: o.alt ? pkg(o.alt) : null,
+  addon: o.addon ? pkg(o.addon) : null,
+  why: o.why ? (ui[o.why] || '') : '',
+});
+
+const OUTCOMES: Record<string, any> = {
+  'paint:light':       O('express-refresh', { alt: 'single-stage', addon: 'headlight-restoration', why: 'why_paint_light' }),
+  'paint:light:dark':  O('single-stage',    { alt: 'two-stage',    addon: 'headlight-restoration', why: 'why_paint_light_dark' }),
+  'paint:medium':      O('single-stage',    { alt: 'two-stage',    addon: 'headlight-restoration', why: 'why_paint_medium' }),
+  'paint:medium:dark': O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_dark' }),
+  'paint:heavy':       O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_heavy' }),
+  'paint:heavy:dark':  O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_heavy_dark' }),
+  'ceramic:2y':        O('ceramic-2y',      { alt: 'premium-5y',   addon: 'windshield-hydrophobic', why: 'why_ceramic_2y' }),
+  'ceramic:5y':        O('premium-5y',      {                      addon: 'windshield-hydrophobic', why: 'why_ceramic_5y' }),
+  'sale':              O('pre-sale-pack',   {                      addon: 'headlight-restoration', why: 'why_sale' }),
+  'glass:windshield':  O('windshield-polish',      { alt: 'windshield-hydrophobic', why: 'why_glass_windshield' }),
+  'glass:rain':        O('windshield-hydrophobic', { alt: 'full-glass-set',         why: 'why_glass_rain' }),
+  'glass:all':         O('full-glass-set',         {                                why: 'why_glass_all' }),
+  'headlights':        O('headlight-restoration',  {                                why: 'why_headlights' }),
+  // 'unsure' has no row on purpose — it is the one honest non-answer.
+};
+
+const NEEDS = [
+  { v: 'paint',      label: ui.need_paint,      q2: 'paint' },
+  { v: 'ceramic',    label: ui.need_ceramic,    q2: 'ceramic' },
+  { v: 'sale',       label: ui.need_sale,       q2: '' },
+  { v: 'glass',      label: ui.need_glass,      q2: 'glass' },
+  { v: 'headlights', label: ui.need_headlights, q2: '' },
+  { v: 'unsure',     label: ui.need_unsure,     q2: '' },
+];
+
+const Q2 = {
+  paint: { title: ui.q2_paint_title, opts: [
+    { v: 'light',  label: ui.paint_light },
+    { v: 'medium', label: ui.paint_medium },
+    { v: 'heavy',  label: ui.paint_heavy },
+  ]},
+  ceramic: { title: ui.q2_ceramic_title, opts: [
+    { v: '2y', label: ui.ceramic_2y },
+    { v: '5y', label: ui.ceramic_5y },
+  ]},
+  glass: { title: ui.q2_glass_title, opts: [
+    { v: 'windshield', label: ui.glass_windshield },
+    { v: 'rain',       label: ui.glass_rain },
+    { v: 'all',        label: ui.glass_all },
+  ]},
+};
+
+const SIZES = [
+  { v: 'small',  label: ui.size_small },
+  { v: 'medium', label: ui.size_medium },
+  { v: 'large',  label: ui.size_large },
+];
+
+// Labels for the WhatsApp summary, so the message never carries a raw token.
+const LABELS: Record<string, string> = Object.fromEntries([
+  ...NEEDS.map((n) => [n.v, n.label]),
+  ...Object.values(Q2).flatMap((g) => g.opts.map((o) => [o.v, o.label])),
+  ...SIZES.map((s) => [`size_${s.v}`, s.label]),
+]);
+
+// WhatsApp copy lives only in t.wa_messages (Critical Rule 3).
+const WA = {
+  intro:   waMsg.estimator_intro       || '',
+  need:    waMsg.estimator_line_need   || '',
+  detail:  waMsg.estimator_line_detail || '',
+  dark:    waMsg.estimator_line_dark   || '',
+  size:    waMsg.estimator_line_size   || '',
+  pkgLine: waMsg.estimator_line_pkg    || '',
+  addon:   waMsg.estimator_line_addon  || '',
+  outro:   waMsg.estimator_outro       || '',
+  unsure:  waMsg.estimator_unsure      || '',
+};
+
+// Shared option-row classes. peer-checked reaches the nested dot/tick with
+// Tailwind 3.4 arbitrary variants, so no global.css rule is needed.
+const OPT = [
+  'flex items-center gap-3 w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04]',
+  'px-4 py-3 text-sm text-th-heading transition-colors cursor-pointer',
+  'hover:border-brand-accent/50',
+  'peer-checked:border-brand-accent peer-checked:bg-brand-accent/10',
+  'peer-checked:[&_.est-dot]:border-brand-accent',
+  'peer-checked:[&_.est-tick]:opacity-100',
+  'peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent',
+].join(' ');
 ---
 
-<section id="estimator" class="py-14">
+<section id="estimator" class="py-14" aria-labelledby="est-title">
   <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-10">
-      <h2 class="section-title mb-2">{ui.title || 'Get Your Instant Estimate'}</h2>
-      <p class="text-th-muted text-sm">{ui.subtitle || 'Answer 4 quick questions and get a price range in seconds.'}</p>
+    <div class="text-center mb-8">
+      <h2 id="est-title" class="section-title mb-2">{ui.title}</h2>
+      <p class="text-th-muted text-sm">{ui.subtitle}</p>
     </div>
 
-    <!-- Step indicators -->
-    <div class="flex items-center justify-center gap-2 mb-8" id="est-steps">
-      {[1,2,3,4].map((n) => (
-        <div
-          data-step-dot={n}
-          class:list={[
-            'w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300',
-            n === 1
-              ? 'bg-brand-accent text-white'
-              : 'bg-th-surface/10 text-th-faint'
-          ]}
-        >
-          {n}
+    <!-- Q1 — always visible, always editable -->
+    <fieldset class="mb-6">
+      <legend class="text-th-heading font-semibold text-lg mb-3">{ui.q1_title}</legend>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {NEEDS.map((n) => (
+          <label class="block">
+            <input type="radio" name="est-need" value={n.v} data-q2={n.q2} class="peer sr-only" />
+            <span class={OPT}>
+              <span aria-hidden="true" class="est-dot w-5 h-5 rounded-full border-2 border-th-border/40 shrink-0 flex items-center justify-center transition-colors">
+                <svg class="est-tick w-3 h-3 text-brand-accent opacity-0 transition-opacity" fill="currentColor" viewBox="0 0 24 24" focusable="false">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              </span>
+              <span>{n.label}</span>
+            </span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <!-- Q2 — three groups, at most one visible -->
+    {Object.entries(Q2).map(([key, group]) => (
+      <fieldset data-est-q2={key} class="est-q2 hidden mb-6">
+        <legend class="text-th-heading font-semibold text-lg mb-3">{group.title}</legend>
+        <div class="grid grid-cols-1 gap-2">
+          {group.opts.map((o) => (
+            <label class="block">
+              <input type="radio" name={`est-detail-${key}`} value={o.v} class="peer sr-only" />
+              <span class={OPT}>
+                <span aria-hidden="true" class="est-dot w-5 h-5 rounded-full border-2 border-th-border/40 shrink-0 flex items-center justify-center transition-colors">
+                  <svg class="est-tick w-3 h-3 text-brand-accent opacity-0 transition-opacity" fill="currentColor" viewBox="0 0 24 24" focusable="false">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                  </svg>
+                </span>
+                <span>{o.label}</span>
+              </span>
+            </label>
+          ))}
         </div>
-      ))}
-    </div>
 
-    <!-- Step 1: Vehicle Size -->
-    <div data-est-panel="1" class="est-panel">
-      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step1_title || 'Vehicle size'}</h3>
-      <div class="grid grid-cols-3 gap-3">
-        {[
-          { value: 'small', label: ui.size_small || 'Small', desc: ui.size_small_desc || 'Hatchback, sedan' },
-          { value: 'medium', label: ui.size_medium || 'Medium', desc: ui.size_medium_desc || 'Estate, coupe, small SUV' },
-          { value: 'large', label: ui.size_large || 'Large', desc: ui.size_large_desc || 'Large SUV, van, truck' },
-        ].map((opt) => (
-          <button
-            data-est-choice="vehicleSize"
-            data-value={opt.value}
-            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-          >
-            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
-            <div class="text-xs text-th-faint">{opt.desc}</div>
-          </button>
-        ))}
-      </div>
-    </div>
+        {key === 'paint' && (
+          <>
+            <details class="mt-3">
+              <summary class="text-xs text-brand-accent cursor-pointer rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+                {ui.paint_help_label}
+              </summary>
+              <p class="text-xs text-th-muted mt-2 pl-3 border-l-2 border-th-border/25">{ui.paint_help}</p>
+            </details>
 
-    <!-- Step 2: Paint Condition -->
-    <div data-est-panel="2" class="est-panel hidden">
-      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step2_title || 'Paint condition'}</h3>
-      <div class="grid grid-cols-3 gap-3">
-        {[
-          { value: 'light', label: ui.cond_light || 'Light', desc: ui.cond_light_desc || 'Minor swirls, water spots' },
-          { value: 'medium', label: ui.cond_medium || 'Medium', desc: ui.cond_medium_desc || 'Visible scratches, dull finish' },
-          { value: 'heavy', label: ui.cond_heavy || 'Heavy', desc: ui.cond_heavy_desc || 'Deep scratches, oxidation' },
-        ].map((opt) => (
-          <button
-            data-est-choice="paintCondition"
-            data-value={opt.value}
-            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-          >
-            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
-            <div class="text-xs text-th-faint">{opt.desc}</div>
-          </button>
-        ))}
-      </div>
-    </div>
+            <label class="mt-3 flex items-center gap-3 text-sm text-th-muted cursor-pointer">
+              <input id="est-dark" type="checkbox"
+                class="w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" />
+              <span>{ui.dark_toggle}</span>
+            </label>
+          </>
+        )}
+      </fieldset>
+    ))}
 
-    <!-- Step 3: Color Sensitivity -->
-    <div data-est-panel="3" class="est-panel hidden">
-      <h3 class="text-th-heading font-semibold text-lg mb-4">{ui.step3_title || 'Paint color'}</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {[
-          { value: 'standard', label: ui.color_standard || 'Standard', desc: ui.color_standard_desc || 'Red, blue, green…' },
-          { value: 'metallic', label: ui.color_metallic || 'Metallic', desc: ui.color_metallic_desc || 'Silver, grey metallic' },
-          { value: 'black', label: ui.color_black || 'Black', desc: ui.color_black_desc || 'Solid or metallic black' },
-          { value: 'white', label: ui.color_white || 'White', desc: ui.color_white_desc || 'Solid or pearl white' },
-        ].map((opt) => (
-          <button
-            data-est-choice="colorSensitivity"
-            data-value={opt.value}
-            class="est-option card p-4 text-center hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-          >
-            <div class="text-sm font-semibold text-th-heading mb-1">{opt.label}</div>
-            <div class="text-xs text-th-faint">{opt.desc}</div>
-          </button>
-        ))}
-      </div>
-    </div>
+    <!-- Result — expands, never replaces -->
+    <div id="est-result" class="hidden" role="status" aria-live="polite">
 
-    <!-- Step 4: Service Goal -->
-    <div data-est-panel="4" class="est-panel hidden">
-      <h3 class="text-th-heading font-semibold text-lg mb-2">{ui.step4_title || 'What do you need?'}</h3>
-      <p class="text-th-faint text-xs mb-4">{ui.step4_hint || 'Select one or more goals'}</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {[
-          { value: 'restore_gloss', label: ui.goal_gloss || 'Restore gloss & remove scratches' },
-          { value: 'add_ceramic', label: ui.goal_ceramic || 'Add ceramic coating' },
-          { value: 'pre_sale', label: ui.goal_presale || 'Prepare for sale' },
-          { value: 'long_term_protection', label: ui.goal_protection || 'Long-term paint protection' },
-          { value: 'glass_clarity', label: ui.goal_glass || 'Glass scratch removal' },
-        ].map((opt) => (
-          <button
-            data-est-goal
-            data-value={opt.value}
-            class="est-goal-btn card p-3 text-left hover:border-brand-accent/40 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-          >
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded border-2 border-th-border/30 flex items-center justify-center flex-shrink-0 est-goal-check">
-              </div>
-              <span class="text-sm text-th-heading">{opt.label}</span>
-            </div>
-          </button>
-        ))}
-      </div>
-      <button
-        id="est-submit"
-        class="btn-primary w-full mt-6"
-      >
-        {ui.submit || 'See My Estimate'}
-      </button>
-    </div>
+      <div id="est-pkg" class="hidden">
+        <p class="label text-th-muted mb-2">{ui.result_label}</p>
 
-    <!-- Results -->
-    <div data-est-panel="result" class="est-panel hidden">
-      <h3 class="text-th-heading font-semibold text-lg mb-6">{ui.result_title || 'Your Recommended Options'}</h3>
-
-      <div id="est-tiers" class="space-y-4 mb-6">
-        <!-- Filled dynamically -->
-      </div>
-
-      <div id="est-notes" class="space-y-2 mb-6">
-        <!-- Filled dynamically -->
-      </div>
-
-      <div id="est-addons" class="mb-6 hidden">
-        <h4 class="text-th-heading font-semibold text-sm mb-3">{ui.addons_title || 'Suggested add-ons'}</h4>
-        <div id="est-addons-list" class="space-y-2">
-          <!-- Filled dynamically -->
+        <div class="card flex items-start justify-between gap-4 mb-3">
+          <div>
+            <span id="est-name" class="font-semibold text-th-heading"></span>
+            <p id="est-desc" class="text-th-muted text-sm mt-1"></p>
+          </div>
+          <div class="text-right shrink-0">
+            <div id="est-price" class="text-brand-accent font-display font-bold text-xl whitespace-nowrap"></div>
+            <div id="est-eta" class="text-th-muted text-xs mt-0.5"></div>
+          </div>
         </div>
+
+        <p id="est-why" class="hidden text-sm text-th-body mb-3 border-l-2 border-brand-accent pl-3"></p>
+
+        <p id="est-alt" class="hidden text-sm text-th-muted mb-3">
+          <span>{ui.alt_label}</span>{' '}
+          <a id="est-alt-link" href={pricingPath}
+             class="text-brand-accent font-semibold hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"></a>
+        </p>
+
+        <!-- the block that has shipped empty since launch -->
+        <p id="est-addons" class="hidden text-sm text-th-muted mb-3">
+          <span>{ui.addon_label}</span>{' '}
+          <a id="est-addon-link" href={pricingPath}
+             class="text-brand-accent font-semibold hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"></a>
+        </p>
+
+        <fieldset class="mb-4">
+          <legend class="text-th-muted text-xs mb-2">{ui.size_label}</legend>
+          <div class="flex flex-wrap gap-2">
+            {SIZES.map((s) => (
+              <label class="block">
+                <input type="radio" name="est-size" value={s.v} class="peer sr-only" />
+                <span class="inline-block rounded-full border border-th-border/15 bg-th-surface/[0.04] px-3 py-1 text-xs text-th-body cursor-pointer transition-colors hover:border-brand-accent/50 peer-checked:border-brand-accent peer-checked:text-brand-accent peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent">
+                  {s.label}
+                </span>
+              </label>
+            ))}
+          </div>
+          <p class="text-th-muted text-xs mt-2">{ui.size_hint}</p>
+        </fieldset>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a
-          id="est-wa-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-event="estimator_wa"
-          class="btn-whatsapp flex-1 text-center"
-        >
-          <svg class="w-4 h-4 inline mr-1.5" viewBox="0 0 24 24" fill="currentColor">
-            <use href="#icon-whatsapp" />
-          </svg>
-          {ui.cta_whatsapp || 'Send to WhatsApp'}
+      <div id="est-unsure" class="hidden card mb-4">
+        <p class="font-semibold text-th-heading mb-1">{ui.unsure_title}</p>
+        <p class="text-th-muted text-sm">{ui.unsure_body}</p>
+      </div>
+
+      <p class="text-th-muted text-xs mb-4">{ui.honesty}</p>
+
+      <a id="est-wa" href="#" target="_blank" rel="noopener noreferrer"
+         data-event="estimator_wa" class="btn-whatsapp w-full">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <use href="#icon-whatsapp" />
+        </svg>
+        {ui.cta_whatsapp}
+      </a>
+      <p class="text-th-muted text-xs text-center mt-2">{ui.cta_whatsapp_hint}</p>
+
+      <div class="flex flex-col items-center gap-2 mt-4">
+        <a id="est-pkg-link" href={pricingPath} data-event="estimator_pkg_detail"
+           class="hidden text-sm text-brand-accent hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+          {ui.see_package}
         </a>
-        <a
-          id="est-booking-link"
-          href={`/${lang}/booking`}
-          data-event="estimator_book"
-          class="btn-primary flex-1 text-center"
-        >
-          <svg class="w-4 h-4 inline mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          {ui.cta_booking || 'Book Estimate Visit'}
+        <a href={`/${lang}/booking`} data-event="estimator_book"
+           class="text-sm text-th-muted hover:text-th-heading transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+          {ui.cta_booking}
         </a>
       </div>
-      <button
-        id="est-restart"
-        class="btn-secondary w-full mt-2"
-      >
-        {ui.cta_restart || 'Start Over'}
-      </button>
     </div>
-
-    <!-- Back button (shown on steps 2-4) -->
-    <button
-      id="est-back"
-      class="hidden mt-4 text-sm text-th-muted hover:text-th-heading transition-colors"
-    >
-      ← {ui.back || 'Back'}
-    </button>
-
   </div>
 </section>
 
-<script define:vars={{ wa, estI18n, tiersI18n, estLabels, tierPricing }}>
-  // ── Estimator client-side logic ─────────────────────────────────────────────
+<script define:vars={{ wa, OUTCOMES, LABELS, WA, source }}>
+  const $ = (id) => document.getElementById(id);
+  const state = { need: '', detail: '', dark: false, size: '' };
+  let started = false, scrolled = false, current = null;
 
-  // Tier definitions carry only what SCORING needs. Name, price and duration
-  // are injected from t.pricing (see the frontmatter), so the estimator can
-  // never quote a number the pricing table contradicts.
-  const TIER_DEFS = [
-    { id: 'express', category: 'car', conditions: ['light'], goals: ['restore_gloss', 'pre_sale'] },
-    { id: 'single_stage', category: 'car', conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'] },
-    { id: 'two_stage', category: 'car', conditions: ['medium', 'heavy'], goals: ['restore_gloss'] },
-    { id: 'ceramic_2y', category: 'car', conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'] },
-    { id: 'ceramic_5y', category: 'car', conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'] },
-    // Glass tiers — surfaced when the user selects the glass_clarity goal.
-    { id: 'windshield_polish', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
-    { id: 'windshield_hydrophobic', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
-    { id: 'full_glass_set', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
-  ];
+  const show = (el, on) => el && el.classList.toggle('hidden', !on);
 
-  const TIERS = TIER_DEFS.map((d, i) => ({
-    ...d,
-    order: i,
-    name: tierPricing[d.id].name,
-    price: tierPricing[d.id].price,
-    eta: tierPricing[d.id].duration,
-    desc: (tiersI18n[d.id] && tiersI18n[d.id].desc) || '',
-  }));
-
-  const state = { step: 1, vehicleSize: '', paintCondition: '', colorSensitivity: '', goals: [] };
-
-  function showStep(n) {
-    document.querySelectorAll('.est-panel').forEach(p => p.classList.add('hidden'));
-    const panel = n === 'result'
-      ? document.querySelector('[data-est-panel="result"]')
-      : document.querySelector(`[data-est-panel="${n}"]`);
-    if (panel) panel.classList.remove('hidden');
-
-    // Update dots
-    document.querySelectorAll('[data-step-dot]').forEach(dot => {
-      const dotN = parseInt(dot.getAttribute('data-step-dot'));
-      const current = typeof n === 'number' ? n : 5;
-      dot.classList.toggle('bg-brand-accent', dotN <= current);
-      dot.classList.toggle('text-white', dotN <= current);
-      dot.classList.toggle('bg-th-surface/10', dotN > current);
-      dot.classList.toggle('text-th-faint', dotN > current);
-    });
-
-    // Back button
-    const back = document.getElementById('est-back');
-    if (back) back.classList.toggle('hidden', n === 1 || n === 'result');
-
-    state.step = n;
+  function key() {
+    if (!state.need || state.need === 'unsure') return state.need;
+    const q2 = document.querySelector(`[data-est-q2="${state.need}"]`);
+    if (q2 && !state.detail) return '';            // waiting on Q2
+    let k = q2 ? `${state.need}:${state.detail}` : state.need;
+    if (state.need === 'paint' && state.dark) k += ':dark';
+    return k;
   }
 
-  // Choice handlers (steps 1-3: auto-advance on click)
-  document.querySelectorAll('[data-est-choice]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const field = btn.getAttribute('data-est-choice');
-      const value = btn.getAttribute('data-value');
-      state[field] = value;
-
-      // Fire estimator_started on first interaction
-      if (field === 'vehicleSize' && typeof window.__rl_push === 'function') {
-        window.__rl_push({ event: 'estimator_started' });
-      }
-
-      // Highlight selected
-      btn.closest('.est-panel').querySelectorAll('[data-est-choice]').forEach(b => {
-        b.classList.toggle('border-brand-accent', b === btn);
-        b.classList.toggle('bg-brand-accent/5', b === btn);
-      });
-
-      // Auto advance after brief delay
-      setTimeout(() => showStep(state.step + 1), 200);
-    });
-  });
-
-  // Goal multi-select (step 4)
-  document.querySelectorAll('[data-est-goal]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const value = btn.getAttribute('data-value');
-      const idx = state.goals.indexOf(value);
-      if (idx >= 0) {
-        state.goals.splice(idx, 1);
-        btn.classList.remove('border-brand-accent', 'bg-brand-accent/5');
-        btn.querySelector('.est-goal-check').innerHTML = '';
-      } else {
-        state.goals.push(value);
-        btn.classList.add('border-brand-accent', 'bg-brand-accent/5');
-        btn.querySelector('.est-goal-check').innerHTML = '<svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
-      }
-    });
-  });
-
-  // Submit
-  document.getElementById('est-submit')?.addEventListener('click', () => {
-    if (state.goals.length === 0) state.goals = ['restore_gloss'];
-    showResults();
-  });
-
-  // Back button
-  document.getElementById('est-back')?.addEventListener('click', () => {
-    if (state.step > 1) showStep(state.step - 1);
-  });
-
-  // Restart
-  document.getElementById('est-restart')?.addEventListener('click', () => {
-    state.vehicleSize = '';
-    state.paintCondition = '';
-    state.colorSensitivity = '';
-    state.goals = [];
-    // Clear selections
-    document.querySelectorAll('.est-option, .est-goal-btn').forEach(b => {
-      b.classList.remove('border-brand-accent', 'bg-brand-accent/5');
-    });
-    document.querySelectorAll('.est-goal-check').forEach(c => { c.innerHTML = ''; });
-    showStep(1);
-  });
-
-  function showResults() {
-    // Tier pool: if glass scratch removal is the ONLY goal, recommend glass
-    // packages (not body-paint tiers). Otherwise show body tiers, plus glass
-    // tiers only when glass_clarity is also selected.
-    const goals = state.goals;
-    const onlyGlass = goals.length > 0 && goals.every(g => g === 'glass_clarity');
-    const wantsGlass = goals.includes('glass_clarity');
-    const pool = onlyGlass
-      ? TIERS.filter(tier => tier.category === 'glass')
-      : TIERS.filter(tier => tier.category !== 'glass' || wantsGlass);
-
-    // Score tiers
-    const scored = pool.map(tier => {
-      let score = 0;
-      if (tier.conditions.includes(state.paintCondition)) score += 3;
-      const goalMatches = goals.filter(g => tier.goals.includes(g)).length;
-      score += goalMatches * 2;
-      if (goals.includes('add_ceramic') && tier.id.startsWith('ceramic')) score += 3;
-      if (goals.includes('long_term_protection') && tier.id === 'ceramic_5y') score += 2;
-      if (goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
-      if (state.paintCondition === 'heavy' && tier.id === 'express') score -= 5;
-
-      // Paint colour used to affect nothing but a +50 surcharge, while the note
-      // under the result told the customer black needs two-stage correction as a
-      // minimum — and the algorithm went on recommending a one-step polish. Make
-      // the scoring agree with the advice: on black, a single pass leaves
-      // holograms, so push away from express and toward two-stage.
-      if (state.colorSensitivity === 'black' && tier.category === 'car') {
-        if (tier.id === 'express') score -= 3;
-        if (tier.id === 'two_stage') score += 2;
-      }
-
-      return { ...tier, score };
-    });
-
-    // Deterministic tie-break: equal score means both tiers fit, so recommend
-    // the cheaper one. TIER_DEFS is price-ascending, so `order` encodes that.
-    // Recommending up on a tie would be an upsell the customer cannot verify.
-    // (This used to fall out of array order by accident; now it is intentional.)
-    scored.sort((a, b) => b.score - a.score || a.order - b.order);
-    const top = scored.filter(s => s.score > 0).slice(0, 3);
-    if (top.length === 0) top.push(scored[0]);
-
-    const recommended = top[0];
-
-    // Render tiers
-    const tiersEl = document.getElementById('est-tiers');
-    if (tiersEl) {
-      tiersEl.innerHTML = top.map(t => `
-        <div class="card p-5 ${t.id === recommended.id ? 'border-brand-accent/40 bg-brand-accent/5' : ''}">
-          <div class="flex items-start justify-between mb-2">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="font-semibold text-th-heading text-sm">${t.name}</span>
-                ${t.id === recommended.id ? `<span class="tag text-[10px]">${estI18n.recommended}</span>` : ''}
-              </div>
-              <p class="text-th-faint text-xs mt-1">${t.desc}</p>
-            </div>
-            <div class="text-right flex-shrink-0 ml-4">
-              <div class="text-brand-accent font-display font-bold whitespace-nowrap">${t.price}</div>
-              <div class="text-[10px] text-th-faint">${t.eta}</div>
-            </div>
-          </div>
-        </div>
-      `).join('');
+  // Assemble the WhatsApp message from t.wa_messages line keys, omitting any
+  // line whose value is empty — no "• Estado: " blanks reach the technician.
+  function buildMessage(o) {
+    const lines = [WA.intro];
+    if (LABELS[state.need]) lines.push(WA.need.replace('{need}', LABELS[state.need]));
+    if (LABELS[state.detail]) lines.push(WA.detail.replace('{detail}', LABELS[state.detail]));
+    if (state.dark) lines.push(WA.dark);
+    if (state.size) lines.push(WA.size.replace('{size}', LABELS['size_' + state.size]));
+    lines.push(
+      WA.pkgLine
+        .replace('{tierName}', o.main.name)
+        .replace('{price}', o.main.price)
+        .replace('{duration}', o.main.duration)
+    );
+    if (o.addon) {
+      lines.push(WA.addon.replace('{addon}', o.addon.name).replace('{addonPrice}', o.addon.price));
     }
-
-    // Notes
-    const notesEl = document.getElementById('est-notes');
-    const notes = [];
-    if (state.colorSensitivity === 'black') notes.push(estI18n.noteBlack);
-    if (state.paintCondition === 'heavy') notes.push(estI18n.noteHeavy);
-    if (state.vehicleSize === 'large') notes.push(estI18n.noteLarge);
-
-    if (notesEl) {
-      notesEl.innerHTML = notes.length ? notes.map(n => `
-        <div class="flex items-start gap-2 text-xs text-th-muted">
-          <svg class="w-3.5 h-3.5 text-brand-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-          </svg>
-          <span>${n}</span>
-        </div>
-      `).join('') : '';
-    }
-
-    // WhatsApp link with context
-    const waLink = document.getElementById('est-wa-link');
-    if (waLink) {
-      const msg = estI18n.waMessage
-        .replace('{vehicleSize}', estLabels.size[state.vehicleSize] || state.vehicleSize)
-        .replace('{paintCondition}', estLabels.condition[state.paintCondition] || state.paintCondition)
-        .replace('{colorSensitivity}', estLabels.color[state.colorSensitivity] || state.colorSensitivity)
-        .replace('{goals}', state.goals.map(g => estLabels.goal[g] || g).join(', '))
-        .replace('{tierName}', recommended.name)
-        .replace('{price}', recommended.price);
-      waLink.setAttribute('href', `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
-    }
-
-    // Fire estimator_completed event
-    if (typeof window.__rl_push === 'function') {
-      window.__rl_push({
-        event: 'estimator_completed',
-        tier: recommended.id,
-        priceBand: `€${recommended.min}–${recommended.max}`
-      });
-    }
-
-    showStep('result');
+    return lines.filter(Boolean).join('\n') + '\n\n' + WA.outro;
   }
+
+  function render() {
+    const k = key();
+    if (!k) { show($('est-result'), false); current = null; return; }
+
+    if (k === 'unsure') {
+      show($('est-pkg'), false);
+      show($('est-unsure'), true);
+      show($('est-pkg-link'), false);
+      $('est-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(WA.unsure)}`;
+      if (current !== 'unsure') {
+        current = 'unsure';
+        window.__rl_push?.({ event: 'estimator_result', source, need: 'unsure', slug: null, price: null });
+      }
+    } else {
+      const o = OUTCOMES[k];
+      if (!o) { show($('est-result'), false); return; }
+      show($('est-unsure'), false);
+      show($('est-pkg'), true);
+
+      $('est-name').textContent  = o.main.name;
+      $('est-desc').textContent  = o.main.desc;
+      $('est-price').textContent = o.main.price;
+      $('est-eta').textContent   = o.main.duration;
+
+      $('est-why').textContent = o.why;
+      show($('est-why'), !!o.why);
+
+      if (o.alt) {
+        $('est-alt-link').textContent = `${o.alt.name} — ${o.alt.price}`;
+        $('est-alt-link').href = o.alt.href;
+      }
+      show($('est-alt'), !!o.alt);
+
+      if (o.addon) {
+        $('est-addon-link').textContent = `${o.addon.name} — ${o.addon.price}`;
+        $('est-addon-link').href = o.addon.href;
+      }
+      show($('est-addons'), !!o.addon);
+
+      $('est-pkg-link').href = o.main.href;
+      show($('est-pkg-link'), true);
+
+      $('est-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(buildMessage(o))}`;
+
+      if (current !== k) {
+        current = k;
+        window.__rl_push?.({
+          event: 'estimator_result', source,
+          need: state.need, detail: state.detail || null, dark: state.dark,
+          slug: o.main.slug, price: o.main.price,
+        });
+      }
+    }
+
+    show($('est-result'), true);
+    if (!scrolled) {
+      scrolled = true;
+      $('est-result').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  document.querySelectorAll('input[name="est-need"]').forEach((r) =>
+    r.addEventListener('change', () => {
+      if (!started) { started = true; window.__rl_push?.({ event: 'estimator_started', source }); }
+      state.need = r.value; state.detail = ''; state.dark = false; state.size = '';
+      if ($('est-dark')) $('est-dark').checked = false;
+      document.querySelectorAll('.est-q2').forEach((g) => show(g, g.dataset.estQ2 === r.dataset.q2));
+      document.querySelectorAll('.est-q2 input[type=radio], input[name="est-size"]')
+        .forEach((i) => { i.checked = false; });
+      render();
+    })
+  );
+
+  document.querySelectorAll('.est-q2 input[type=radio]').forEach((r) =>
+    r.addEventListener('change', () => { state.detail = r.value; render(); })
+  );
+
+  $('est-dark')?.addEventListener('change', (e) => { state.dark = e.target.checked; render(); });
+
+  document.querySelectorAll('input[name="est-size"]').forEach((r) =>
+    r.addEventListener('change', () => { state.size = r.value; render(); })
+  );
 </script>

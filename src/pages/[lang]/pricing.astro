@@ -34,8 +34,8 @@ const { t } = Astro.props;
       <p class="section-subtitle mx-auto">{t.pricing.section_subtitle}</p>
     </div>
 
-    <Estimator t={t} lang={lang} />
     <PricingCards t={t} lang={lang} />
+    <Estimator t={t} lang={lang} source="pricing" />
 
     <!-- Direct answer for "precio tratamiento cerámico coche" queries -->
     {t.pricing.ceramic_answer && (

@@ -604,87 +604,93 @@
         "Prices are sedan-based; size multipliers apply (compact −10%, SUV +10-20%). The service is fully mobile: we apply the coating in your garage across Sant Cugat, Barcelona, Terrassa and nearby. Ask for an exact quote on WhatsApp with photos of your car."
       ],
       "landing_link_label": "Ceramic coating in Barcelona: prices & details"
-    }
+    },
+    "home_title": "Published prices, no surprises"
   },
   "estimator": {
-    "tiers": {
-      "express": {
-        "name": "Express Refresh",
-        "desc": "Single-stage machine polish. Removes light swirls and water spots."
-      },
-      "single_stage": {
-        "name": "Single-Stage Correction",
-        "desc": "One-step correction with medium-cut compound. ~70% defect removal."
-      },
-      "two_stage": {
-        "name": "Two-Stage Correction",
-        "desc": "Full cut + refine. Removes 85–95% of defects including deep swirls."
-      },
-      "ceramic_2y": {
-        "name": "Ceramic Coating 2Y",
-        "desc": "Single-stage + Gyeon MOHS 2-year ceramic coating."
-      },
-      "ceramic_5y": {
-        "name": "Ceramic Premium 5Y",
-        "desc": "Two-stage + Gtechniq Crystal Serum Ultra 5-year ceramic."
-      },
-      "windshield_polish": {
-        "name": "Windshield Polish",
-        "desc": "Remove wiper scratches, water spots and light haze from your windshield."
-      },
-      "windshield_hydrophobic": {
-        "name": "Windshield + Hydrophobic",
-        "desc": "Windshield polish plus rain-repellent hydrophobic coating for better visibility."
-      },
-      "full_glass_set": {
-        "name": "Full Glass Set",
-        "desc": "All windows polished and treated — windshield, side and rear glass."
-      }
-    },
-    "title": "Get Your Instant Estimate",
-    "subtitle": "Answer 4 quick questions and get a price range in seconds.",
-    "step1_title": "Vehicle size",
+    "title": "Which package is yours?",
+    "subtitle": "Two taps and we'll tell you which of our published prices applies. No email, no sign-up.",
+    "q1_title": "What do you want sorted?",
+    "need_paint": "Bring the gloss back and remove scratches",
+    "need_ceramic": "Protect the paint with a ceramic coating",
+    "need_sale": "Get it ready to sell",
+    "need_glass": "Scratched glass or poor visibility",
+    "need_headlights": "Yellowed headlights",
+    "need_unsure": "I'm not sure",
+    "q2_paint_title": "How does the paint look right now?",
+    "paint_light": "Dull, with light marks",
+    "paint_medium": "Visible scratches and swirls",
+    "paint_heavy": "Deep scratches or oxidation",
+    "paint_help_label": "How do I check?",
+    "paint_help": "Look at the car in full sun, or hold your phone torch almost against the paint: swirl marks show up immediately. If you can feel a scratch with your fingernail, it counts as deep.",
+    "dark_toggle": "My car is black or a solid dark colour",
+    "q2_ceramic_title": "How much protection do you want?",
+    "ceramic_2y": "2 years (Gyeon MOHS)",
+    "ceramic_5y": "5 years (Gtechniq Crystal Serum Ultra)",
+    "q2_glass_title": "Which glass?",
+    "glass_windshield": "Windscreen only",
+    "glass_rain": "Windscreen + rain repellent",
+    "glass_all": "All the glass",
     "size_small": "Small",
-    "size_small_desc": "Hatchback, sedan",
     "size_medium": "Medium",
-    "size_medium_desc": "Estate, coupé, small SUV",
     "size_large": "Large",
-    "size_large_desc": "Large SUV, van, truck",
-    "step2_title": "Paint condition",
-    "cond_light": "Light",
-    "cond_light_desc": "Minor swirls, water spots",
-    "cond_medium": "Medium",
-    "cond_medium_desc": "Visible scratches, dull finish",
-    "cond_heavy": "Heavy",
-    "cond_heavy_desc": "Deep scratches, oxidation",
-    "step3_title": "Paint colour",
-    "color_standard": "Standard",
-    "color_standard_desc": "Red, blue, green…",
-    "color_metallic": "Metallic",
-    "color_metallic_desc": "Silver, grey metallic",
-    "color_black": "Black",
-    "color_black_desc": "Solid or metallic black",
-    "color_white": "White",
-    "color_white_desc": "Solid or pearl white",
-    "step4_title": "What do you need?",
-    "step4_hint": "Select one or more goals",
-    "goal_gloss": "Restore gloss & remove scratches",
-    "goal_ceramic": "Add ceramic coating",
-    "goal_presale": "Prepare for sale",
-    "goal_protection": "Long-term paint protection",
-    "goal_glass": "Glass scratch removal",
-    "submit": "See My Estimate",
-    "result_title": "Your Recommended Options",
-    "addons_title": "Suggested add-ons",
-    "cta_whatsapp": "Send to WhatsApp",
-    "cta_booking": "Book Estimate Visit",
-    "cta_restart": "Start Over",
-    "back": "Back",
-    "recommended_tag": "Recommended",
-    "note_black": "Black paint shows every defect. If you want a flawless finish, two-stage correction is the safer call — we confirm from photos.",
-    "note_heavy": "Heavy defects may require paint depth measurement. Free on-site assessment included.",
-    "note_large": "Large vehicles require additional time. ETAs shown are approximate.",
-    "wa_message": "Hello restoreLab! I used the estimator:\n• Vehicle: {vehicleSize}\n• Condition: {paintCondition}\n• Colour: {colorSensitivity}\n• Goals: {goals}\n• Recommended: {tierName} — {price}\n\nI'd like to confirm the price for my car. Tell me what photos you need and I'll send them."
+    "size_label": "So we can book the hours (optional)",
+    "size_hint": "It does not change the price. It only tells us how long to book in your garage.",
+    "result_label": "Your package",
+    "alt_label": "If you want the very best finish:",
+    "addon_label": "Usually added:",
+    "see_package": "See the full package",
+    "honesty": "Published price — the same one in the table above. Car size changes the time, not the package. We lock the price once we've seen two photos on WhatsApp.",
+    "unsure_title": "Better if we take a look",
+    "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 1 049€ and every price is listed above.",
+    "cta_whatsapp": "Send on WhatsApp",
+    "cta_whatsapp_hint": "We reply with the confirmed price, usually within the hour.",
+    "cta_booking": "Or book an assessment visit",
+    "why_paint_light": "With light marks, a single polishing step already brings the gloss back — no need to pay for full correction.",
+    "why_paint_light_dark": "On dark paint light marks show twice as much, so we step up a level to leave it clean.",
+    "why_paint_medium": "With visible scratches and swirls, one correction pass removes most of them and the car looks very good.",
+    "why_paint_dark": "On black, every pass shows. We step up to two-stage so it doesn't hologram.",
+    "why_paint_heavy": "Deep scratches need cutting and then refining — a single pass would leave polishing marks.",
+    "why_paint_heavy_dark": "Deep scratches on dark paint is the hardest case: cutting and refining, no shortcuts.",
+    "why_ceramic_2y": "Two years of protection with a single-stage polish first — the most balanced protection-per-euro.",
+    "why_ceramic_5y": "Five years demands a perfect base, so it comes with full correction before the coating.",
+    "why_sale": "This is the pack built for the listing: it covers paint, glass, headlights and interior in one visit.",
+    "why_glass_windshield": "The scratches that bother you at night are nearly always on the windscreen — that's where polishing shows.",
+    "why_glass_rain": "Polish plus coating: the scratches go, and the water clears itself once you pick up speed.",
+    "why_glass_all": "Treating the full set in one visit works out better than doing it glass by glass.",
+    "why_headlights": "Yellowed headlights are one of the first things anyone notices, and they’re sorted in under an hour.",
+    "tiers": {
+      "express-refresh": {
+        "desc": "Brings the gloss back and removes the lightest marks. It will not remove scratches you can feel with a fingernail."
+      },
+      "single-stage": {
+        "desc": "One polishing pass. The car looks very good, not flawless."
+      },
+      "two-stage": {
+        "desc": "Two passes: cutting and refining. Show-car finish, with no polishing marks in sunlight."
+      },
+      "ceramic-2y": {
+        "desc": "A single-stage polish plus a ceramic layer that protects for 2 years and makes washing far easier."
+      },
+      "premium-5y": {
+        "desc": "Full correction plus the 5-year ceramic layer. Our highest level of finish and protection."
+      },
+      "windshield-polish": {
+        "desc": "Removes wiper scratches and haze from the windscreen. Most noticeable at night."
+      },
+      "windshield-hydrophobic": {
+        "desc": "The above plus a rain-repellent treatment: above 60 km/h you barely need the wipers."
+      },
+      "full-glass-set": {
+        "desc": "Windscreen, side windows and rear window, all polished and treated in the same visit."
+      },
+      "pre-sale-pack": {
+        "desc": "Express correction, glass, headlights and interior — the car photographs the way the listing needs."
+      },
+      "headlight-restoration": {
+        "desc": "Progressive sanding and a UV seal. Clear again — and they stay clear."
+      }
+    }
   },
   "faq": {
     "section_title": "Before You Get in Touch",
@@ -893,7 +899,16 @@
     "service_interior_leather": "Hello restoreLab! I'd like the leather interior in my car cleaned and refreshed. What do you need from me to quote for it?",
     "service_presale": "Hello restoreLab! I'm selling my car and I'd like the pre-sale detail pack to get it looking its best before viewings. When could you fit me in?",
     "ceramic_landing": "Hello restoreLab! I'd like a quote for a ceramic coating at my place in Barcelona. What details do you need about my car to price it up?",
-    "faq": "Hello restoreLab! I've been through your FAQ but my question isn't covered there. Are you free to answer it?"
+    "faq": "Hello restoreLab! I've been through your FAQ but my question isn't covered there. Are you free to answer it?",
+    "estimator_intro": "Hi restoreLab! I came from the estimator on your site:",
+    "estimator_line_need": "• I want: {need}",
+    "estimator_line_detail": "• Detail: {detail}",
+    "estimator_line_dark": "• Black or dark paint: yes",
+    "estimator_line_size": "• Vehicle: {size}",
+    "estimator_line_pkg": "• Your recommendation: {tierName} — {price} ({duration})",
+    "estimator_line_addon": "• I'd like to add: {addon} — {addonPrice}",
+    "estimator_outro": "Can you confirm the price and a slot this week? Sending two photos of the car now.",
+    "estimator_unsure": "Hi restoreLab! I came from the estimator on your site and I'm not sure what my car needs. I'm sending two photos now — one of the whole car and one of the most visible defect — so you can tell me which package applies and what it costs."
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

@@ -305,7 +305,11 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     </main>
     {currentPath !== '/contact' && <PreFooterCTA t={t} lang={lang} />}
     <Footer t={t} lang={lang} />
-    <StickyCTA label={t.hero.sticky_cta} t={t} />
+    {/* Suppressed where the page already puts a full-width green WhatsApp button
+        in the same viewport — two identical CTAs a thumb's width apart is the
+        highest-cost mis-tap on the site. The homepage keeps it: the estimator is
+        one of ten sections there and is usually off-screen. */}
+    {!['/contact', '/pricing'].includes(currentPath) && <StickyCTA label={t.hero.sticky_cta} t={t} />}
 
     <!-- ── Brand name styling: "Lab" in accent color ── -->
     <script is:inline>

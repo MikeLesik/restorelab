@@ -3,6 +3,9 @@ export interface Props {
   t: Record<string, any>;
   lang: string;
   categoryId?: string;
+  /** Optional section heading. Only pages without their own <h1> covering the
+   *  price table pass this — it keeps the homepage outline from skipping h1→h3. */
+  title?: string;
   /** Service enrichment passed by /services/* pages so a single merged
    *  Service node is emitted here instead of a second page-level block. */
   serviceType?: string;
@@ -12,7 +15,7 @@ export interface Props {
 
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
-const { t, lang, categoryId, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
+const { t, lang, categoryId, title, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.pricing.ui || {};
 
@@ -31,6 +34,8 @@ function getGridClass(count: number): string {
 
 <section class="pt-8 pb-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {title && <h2 class="section-title text-center mb-8">{title}</h2>}
 
     {t.pricing.anchor_text && (
       <div class="mb-12 p-5 rounded-xl bg-brand-gold/5 border border-brand-gold/20 text-center">
