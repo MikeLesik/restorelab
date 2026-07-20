@@ -30,7 +30,10 @@ const ap = t.area_pages;
 const wa = WHATSAPP_NUMBER;
 
 const fill = (tpl: string) => tpl.replace(/\{city\}/g, city.name);
-const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.hero.replace('[From homepage]', `[From ${city.short} area page]`))}`;
+// area_quote is the template built for this — it carries {city}, so the message
+// names the city in every language. (The previous version string-replaced an
+// English literal, so the substitution silently did nothing in ES and CA.)
+const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(fill(t.wa_messages.area_quote))}`;
 
 // Find clusters whose relatedAreas include this city's slug.
 // Take up to 3 (prioritize order they appear in clusterMap — primary services first).
