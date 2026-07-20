@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import LeadForm from '@/components/LeadForm.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -243,7 +242,6 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
       </div>
     </section>
 
-    <LeadForm t={t} lang={lang} />
   </div>
 
   <!-- Billing Toggle Script -->

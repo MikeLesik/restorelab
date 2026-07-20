@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ServicesGrid from '@/components/ServicesGrid.astro';
-import LeadForm from '@/components/LeadForm.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -34,6 +33,5 @@ const { t } = Astro.props;
     </div>
 
     <ServicesGrid t={t} lang={lang} compact exclude={['acrylic-restoration', 'trim-restoration']} />
-    <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>

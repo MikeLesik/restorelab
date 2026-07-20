@@ -3,7 +3,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import PricingCards from '@/components/PricingCards.astro';
 import Estimator from '@/components/Estimator.astro';
 import FAQ from '@/components/FAQ.astro';
-import LeadForm from '@/components/LeadForm.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -66,6 +65,5 @@ const { t } = Astro.props;
     )}
 
     <FAQ t={t} />
-    <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>

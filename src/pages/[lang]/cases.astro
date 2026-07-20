@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CasesGallery from '@/components/CasesGallery.astro';
-import LeadForm from '@/components/LeadForm.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -56,6 +55,5 @@ const { t } = Astro.props;
     </div>
 
     <CasesGallery t={t} lang={lang} />
-    <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>

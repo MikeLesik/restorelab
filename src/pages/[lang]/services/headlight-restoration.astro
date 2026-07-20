@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PricingCards from '@/components/PricingCards.astro';
-import LeadForm from '@/components/LeadForm.astro';
 import FAQ from '@/components/FAQ.astro';
 import HubSpokeList from '@/components/HubSpokeList.astro';
 
@@ -85,7 +84,6 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       ]
     })} />
 
-
     <PricingCards
       t={t}
       lang={lang}
@@ -105,6 +103,5 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
 
     <FAQ t={t} />
     <HubSpokeList hub="headlight-restoration" t={t} lang={lang} />
-    <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>

@@ -193,8 +193,25 @@
   .card {
     @apply rounded-2xl p-6;
   }
+  /* .tag defined geometry but never a colour, so every badge rendered as bare
+     inherited text inside an invisible pill. Two of the four call sites are
+     "most popular" badges pinned at -top-3 over a card's border, where a
+     transparent background let the border line run straight through the text.
+     Same approach as .trust-pill: an opaque base of its own so contrast does
+     not depend on the backdrop, and --brand-dark flips per theme so one rule
+     serves both. */
   .tag {
-    @apply inline-block text-xs font-semibold px-3 py-1 rounded-full;
+    @apply inline-block text-xs font-semibold px-3 py-1 rounded-full border;
+    color: rgb(var(--brand-accent));
+    border-color: rgb(var(--brand-accent) / 0.3);
+    background-color: rgb(var(--brand-dark) / 0.92);
+    background-image: linear-gradient(rgb(var(--brand-accent) / 0.12), rgb(var(--brand-accent) / 0.12));
+  }
+  /* Light theme runs the other way: the wash darkens a white base *towards* the
+     blue text instead of away from it, so 12% drops the badge to 4.36:1. Keep
+     the tint thin — 5% measures 4.81:1. */
+  :root:not(.dark) .tag {
+    background-image: linear-gradient(rgb(var(--brand-accent) / 0.05), rgb(var(--brand-accent) / 0.05));
   }
   /* Typography scale */
   .lead {

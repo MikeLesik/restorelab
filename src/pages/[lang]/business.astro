@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import FAQ from '@/components/FAQ.astro';
-import LeadForm from '@/components/LeadForm.astro';
 import BrandsStrip from '@/components/BrandsStrip.astro';
 import CertificationsRow from '@/components/CertificationsRow.astro';
 
@@ -198,6 +197,5 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
       </div>
     </section>
 
-    <LeadForm t={t} lang={lang} />
   </div>
 </BaseLayout>
