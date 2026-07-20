@@ -80,7 +80,7 @@
     },
     "pre_sale": {
       "title": "Pack Pre-Venta — Maximiza el Valor de Reventa | restoreLab",
-      "description": "Corrección de pintura, limpieza interior profunda y detailing del motor en un paquete. 249€ para sedán. Aumenta el valor de reventa de tu coche. A domicilio en Sant Cugat y Barcelona."
+      "description": "Corrección de pintura de una fase y restauración de faros en un paquete pensado para vender. 249€ para sedán, servicio móvil a domicilio en Sant Cugat y Barcelona."
     },
     "legal": {
       "title": "Aviso Legal | restoreLab",
@@ -247,8 +247,8 @@
         "starting_price": "249€",
         "features": [
           "Corrección de pintura de una fase",
-          "Limpieza profunda del interior",
-          "Detailing del motor incluido"
+          "Restauración de faros incluida",
+          "Neumáticos y plásticos tratados"
         ],
         "cta_label": "Presupuesto Pre-Venta",
         "tag": "Pack ahorro"
@@ -519,11 +519,10 @@
             "slug": "pre-sale-pack",
             "price": "249€",
             "duration": "4–5 horas",
-            "description": "Corrección de pintura + limpieza interior + motor — todo lo que inspecciona un comprador.",
+            "description": "Corrección de pintura de una fase y restauración de faros — el exterior entra en las fotos del anuncio como debe.",
             "includes": [
               "Corrección de pintura de una fase",
-              "Aspirado y limpieza completa del interior",
-              "Detailing del motor",
+              "Restauración de faros",
               "Tratamiento de neumáticos y plásticos"
             ],
             "best_for": "Vender o entregar tu vehículo",
@@ -591,7 +590,7 @@
     "why_paint_heavy_dark": "Arañazos profundos sobre pintura oscura es el caso más exigente: corte y refinado, sin atajos.",
     "why_ceramic_2y": "Dos años de protección con un pulido previo de un paso: la relación protección/precio más equilibrada.",
     "why_ceramic_5y": "Cinco años pide una base perfecta, así que va con corrección completa antes del cerámico.",
-    "why_sale": "Es el pack pensado para el anuncio: toca pintura, cristales, faros e interior en una sola visita.",
+    "why_sale": "Es el pack pensado para el anuncio: corrección de pintura y faros restaurados en una sola visita.",
     "why_glass_windshield": "Los arañazos que molestan de noche están casi siempre en el parabrisas: es donde se nota el pulido.",
     "why_glass_rain": "Pulido más recubrimiento: quitas los arañazos y además el agua sale sola al coger velocidad.",
     "why_glass_all": "Tratar todo el conjunto en una sola visita sale mejor que ir cristal por cristal.",
@@ -622,7 +621,7 @@
         "desc": "Parabrisas, ventanillas y luneta, todos pulidos y tratados en la misma visita."
       },
       "pre-sale-pack": {
-        "desc": "Corrección exprés, cristales, faros e interior: el coche entra en las fotos del anuncio como debe."
+        "desc": "Corrección de pintura de una fase y restauración de faros: el coche entra en las fotos del anuncio como debe."
       },
       "headlight-restoration": {
         "desc": "Lijado progresivo y sellado UV. Faros transparentes otra vez, y así se quedan."
@@ -913,7 +912,7 @@
     "subtitle": "Envíanos una foto y recibe un presupuesto honesto por WhatsApp. Sin compromiso ni costes ocultos.",
     "cta": "Enviar fotos por WhatsApp",
     "trust_pill": "Detailing premium · Sant Cugat y Barcelona",
-    "reply_note": "Servicio móvil — vamos a donde estés"
+    "reply_note": "Te respondemos con presupuesto, normalmente en menos de una hora."
   },
   "about": {
     "hero_title": "Nacidos en Sant Cugat. Impulsados por la artesanía.",

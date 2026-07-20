@@ -80,7 +80,7 @@
     },
     "pre_sale": {
       "title": "Pack Pre-Venda — Maximitza el Valor de Revenda | restoreLab",
-      "description": "Correcció de pintura, neteja interior profunda i detailing del motor en un paquet. 249€ per a sedan. Augmenta el valor de revenda del teu cotxe. A domicili a Sant Cugat i Barcelona."
+      "description": "Correcció de pintura d'una fase i restauració de fars en un paquet pensat per vendre. 249€ per a sedan, servei mòbil a domicili a Sant Cugat i Barcelona."
     },
     "legal": {
       "title": "Avís Legal | restoreLab",
@@ -247,8 +247,8 @@
         "starting_price": "249€",
         "features": [
           "Correcció de pintura d'una fase",
-          "Neteja profunda de l'interior",
-          "Detailing del motor inclòs"
+          "Restauració de fars inclosa",
+          "Pneumàtics i plàstics tractats"
         ],
         "cta_label": "Pressupost Pre-Venda",
         "tag": "Pack estalvi"
@@ -519,11 +519,10 @@
             "slug": "pre-sale-pack",
             "price": "249€",
             "duration": "4–5 hores",
-            "description": "Correcció de pintura + neteja interior + motor — tot el que inspecciona un comprador.",
+            "description": "Correcció de pintura d'una fase i restauració de fars — l'exterior surt a les fotos de l'anunci com toca.",
             "includes": [
               "Correcció de pintura d'una fase",
-              "Aspirat i neteja completa de l'interior",
-              "Detailing del motor",
+              "Restauració de fars",
               "Tractament de pneumàtics i plàstics"
             ],
             "best_for": "Vendre o lliurar el teu vehicle",
@@ -591,7 +590,7 @@
     "why_paint_heavy_dark": "Ratllades profundes sobre pintura fosca és el cas més exigent: tall i refinat, sense dreceres.",
     "why_ceramic_2y": "Dos anys de protecció amb un poliment previ d'un pas: la relació protecció/preu més equilibrada.",
     "why_ceramic_5y": "Cinc anys demana una base perfecta, així que va amb correcció completa abans del ceràmic.",
-    "why_sale": "És el pack pensat per a l'anunci: toca pintura, vidres, fars i interior en una sola visita.",
+    "why_sale": "És el pack pensat per a l'anunci: correcció de pintura i fars restaurats en una sola visita.",
     "why_glass_windshield": "Les ratllades que molesten de nit són gairebé sempre al parabrisa: és on es nota el poliment.",
     "why_glass_rain": "Poliment més recobriment: treus les ratllades i a més l'aigua marxa sola en agafar velocitat.",
     "why_glass_all": "Tractar tot el conjunt en una sola visita surt millor que anar vidre per vidre.",
@@ -622,7 +621,7 @@
         "desc": "Parabrisa, finestretes i llunes, tots polits i tractats en la mateixa visita."
       },
       "pre-sale-pack": {
-        "desc": "Correcció exprés, vidres, fars i interior: el cotxe surt a les fotos de l'anunci com toca."
+        "desc": "Correcció de pintura d'una fase i restauració de fars: el cotxe surt a les fotos de l'anunci com toca."
       },
       "headlight-restoration": {
         "desc": "Escatat progressiu i segellat UV. Transparents un altre cop, i s'hi mantenen."
@@ -913,7 +912,7 @@
     "subtitle": "Envia'ns una foto i rep un pressupost honest per WhatsApp. Sense compromís ni costos ocults.",
     "cta": "Enviar fotos per WhatsApp",
     "trust_pill": "Detailing premium · Sant Cugat i Barcelona",
-    "reply_note": "Servei mòbil — anem a on siguis"
+    "reply_note": "Et responem amb pressupost, normalment en menys d'una hora."
   },
   "about": {
     "hero_title": "Nascuts a Sant Cugat. Impulsats per l'artesania.",

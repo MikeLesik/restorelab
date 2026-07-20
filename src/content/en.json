@@ -80,7 +80,7 @@
     },
     "pre_sale": {
       "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
-      "description": "Paint correction, interior deep clean and engine bay detailing in one package. €249 for sedan. Boost your car's resale value. At-home service in Sant Cugat & Barcelona."
+      "description": "Single-stage paint correction and headlight restoration in a package built for selling. €249 for a sedan, at-home mobile service in Sant Cugat & Barcelona."
     },
     "legal": {
       "title": "Legal Notice | restoreLab",
@@ -247,8 +247,8 @@
         "starting_price": "€249",
         "features": [
           "Single-stage paint correction",
-          "Interior deep clean",
-          "Engine bay detailing included"
+          "Headlight restoration included",
+          "Tyre & trim dressed"
         ],
         "cta_label": "Get Pre-Sale Estimate",
         "tag": "Value pack"
@@ -520,11 +520,10 @@
             "slug": "pre-sale-pack",
             "price": "249€",
             "duration": "4–5 hours",
-            "description": "Paint correction + interior clean + engine bay — everything a buyer inspects.",
+            "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [
               "Single-stage paint correction",
-              "Full interior vacuum & clean",
-              "Engine bay detailing",
+              "Headlight restoration",
               "Tyre & trim dressing"
             ],
             "best_for": "Selling or trading in your vehicle",
@@ -591,7 +590,7 @@
     "why_paint_heavy_dark": "Deep scratches on dark paint is the hardest case: cutting and refining, no shortcuts.",
     "why_ceramic_2y": "Two years of protection with a single-stage polish first — the most balanced protection-per-euro.",
     "why_ceramic_5y": "Five years demands a perfect base, so it comes with full correction before the coating.",
-    "why_sale": "This is the pack built for the listing: it covers paint, glass, headlights and interior in one visit.",
+    "why_sale": "This is the pack built for the listing: paint correction and restored headlights in one visit.",
     "why_glass_windshield": "The scratches that bother you at night are nearly always on the windscreen — that's where polishing shows.",
     "why_glass_rain": "Polish plus coating: the scratches go, and the water clears itself once you pick up speed.",
     "why_glass_all": "Treating the full set in one visit works out better than doing it glass by glass.",
@@ -622,7 +621,7 @@
         "desc": "Windscreen, side windows and rear window, all polished and treated in the same visit."
       },
       "pre-sale-pack": {
-        "desc": "Express correction, glass, headlights and interior — the car photographs the way the listing needs."
+        "desc": "Single-stage paint correction and headlight restoration — the car photographs the way the listing needs."
       },
       "headlight-restoration": {
         "desc": "Progressive sanding and a UV seal. Clear again — and they stay clear."
@@ -892,7 +891,7 @@
     "subtitle": "Send us a photo and get an honest estimate on WhatsApp. No obligations, no hidden fees.",
     "cta": "Send Photos via WhatsApp",
     "trust_pill": "Premium detailing · Sant Cugat & Barcelona",
-    "reply_note": "Mobile service — we come to you"
+    "reply_note": "We reply with a quote, usually within the hour."
   },
   "about": {
     "hero_title": "Built in Sant Cugat. Driven by craft.",
