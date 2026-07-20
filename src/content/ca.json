@@ -3440,7 +3440,9 @@
         "desc": "Rentat descontaminant + polit mecànic en una fase. Ideal per a estoc fins a 30.000€.",
         "includes": [
           "Rentat descontaminant + clay bar",
-          "Polit mecànic en una fase"
+          "Polit mecànic en una fase",
+          "Restauració de fars",
+          "Polit de vidres"
         ]
       },
       {
@@ -3449,7 +3451,8 @@
         "desc": "Igual que Estàndard per a SUV, crossovers i familiars. Panells més grans, més temps.",
         "includes": [
           "Tot el d'Estàndard",
-          "Cobertura mida SUV/familiar"
+          "Cobertura mida SUV/familiar",
+          "Correcció en dues fases opcional"
         ]
       },
       {
@@ -3458,7 +3461,9 @@
         "desc": "Correcció en dues fases per a vehicles premium i esportius. Dissenyat per a cotxes de més de 40.000€.",
         "includes": [
           "Correcció de pintura en dues fases",
-          "Polit de vidres"
+          "Polit de vidres",
+          "Ceràmic 2 anys (Gyeon MOHS)",
+          "Restauració de fars"
         ]
       }
     ],

@@ -3439,7 +3439,9 @@
         "desc": "Decon wash + single-stage machine polish. Perfect for stock cars under €30K.",
         "includes": [
           "Decon wash & clay bar",
-          "Single-stage machine polish"
+          "Single-stage machine polish",
+          "Headlight restoration",
+          "Glass polishing"
         ]
       },
       {
@@ -3448,7 +3450,8 @@
         "desc": "Same as Standard for SUVs, crossovers and estates. Larger panels, more time.",
         "includes": [
           "Everything in Standard",
-          "SUV/estate size coverage"
+          "SUV/estate size coverage",
+          "Optional two-stage correction"
         ]
       },
       {
@@ -3457,7 +3460,9 @@
         "desc": "Two-stage correction for premium and sports vehicles. Designed for cars listed above €40K.",
         "includes": [
           "Two-stage paint correction",
-          "Glass polishing"
+          "Glass polishing",
+          "2-year ceramic (Gyeon MOHS)",
+          "Headlight restoration"
         ]
       }
     ],

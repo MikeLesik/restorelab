@@ -3440,7 +3440,9 @@
         "desc": "Lavado descontaminante + pulido mecánico en una fase. Ideal para stock hasta 30.000€.",
         "includes": [
           "Lavado descontaminante + clay bar",
-          "Pulido mecánico en una fase"
+          "Pulido mecánico en una fase",
+          "Restauración de faros",
+          "Pulido de cristales"
         ]
       },
       {
@@ -3449,7 +3451,8 @@
         "desc": "Igual que Estándar para SUV, crossovers y familiares. Paneles más grandes, más tiempo.",
         "includes": [
           "Todo lo de Estándar",
-          "Cobertura tamaño SUV/familiar"
+          "Cobertura tamaño SUV/familiar",
+          "Corrección en dos fases opcional"
         ]
       },
       {
@@ -3458,7 +3461,9 @@
         "desc": "Corrección en dos fases para vehículos premium y deportivos. Diseñado para coches de más de 40.000€.",
         "includes": [
           "Corrección de pintura en dos fases",
-          "Pulido de cristales"
+          "Pulido de cristales",
+          "Cerámico 2 años (Gyeon MOHS)",
+          "Restauración de faros"
         ]
       }
     ],
