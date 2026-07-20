@@ -277,23 +277,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "Envíe Fotos",
-        "description": "Envíenos fotos de los daños por WhatsApp. Evaluaremos las condiciones y la viabilidad."
+        "title": "Envías dos fotos",
+        "description": "Una del coche entero y otra del defecto que más te molesta, por WhatsApp. Con eso valoramos el estado real y te decimos qué se puede conseguir y qué no."
       },
       {
         "number": "02",
-        "title": "Reciba Presupuesto",
-        "description": "Precio transparente, sin costes ocultos ni sorpresas."
+        "title": "Te damos un precio cerrado",
+        "description": "Uno de los paquetes publicados, sin costes ocultos. Si por las fotos no se puede decidir, te lo decimos en vez de inventar una cifra."
       },
       {
         "number": "03",
-        "title": "Vamos a Usted",
-        "description": "Llegamos a tu casa, oficina o aparcamiento con todo el equipo profesional."
+        "title": "Llegamos con todo el equipo",
+        "description": "Generador, pulidoras profesionales y suministro de agua propios: no gastamos tu luz ni tu agua. Solo necesitamos una plaza de aparcamiento estándar con un metro libre a cada lado."
       },
       {
         "number": "04",
-        "title": "Restauración y Protección",
-        "description": "Acabado de calidad de fábrica. ¿No estás satisfecho? Lo rehacemos gratis."
+        "title": "Trabajamos y te enviamos el informe",
+        "description": "Corregimos la pintura y sellamos la superficie mientras tú sigues con lo tuyo. No hace falta que te quedes: nos dejas acceso al coche y un teléfono, y al terminar te mandamos fotos del antes y el después."
       }
     ],
     "cta_banner": "Pruébalo ahora — envíanos una foto y recibe tu presupuesto",

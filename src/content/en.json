@@ -277,23 +277,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "Send Photos",
-        "description": "Send us photos of the damage via WhatsApp. We'll assess the condition and feasibility."
+        "title": "You send two photos",
+        "description": "One of the whole car, one of the defect that bothers you most, over WhatsApp. That is enough to judge the real condition and tell you what is achievable and what is not."
       },
       {
         "number": "02",
-        "title": "Receive Estimate",
-        "description": "Transparent price, no hidden fees, no surprises."
+        "title": "We give you a firm price",
+        "description": "One of the published packages, with nothing hidden. If the photos are not enough to decide, we say so instead of inventing a figure."
       },
       {
         "number": "03",
-        "title": "We Come to You",
-        "description": "We arrive at your home, office or parking with all professional equipment."
+        "title": "We arrive fully self-sufficient",
+        "description": "Our own generator, professional polishers and water supply — we use none of your power or water. All we need is a standard parking bay with a metre clear on each side."
       },
       {
         "number": "04",
-        "title": "Restore & Protect",
-        "description": "Factory-level quality finish. Not satisfied with the result? We rework it free."
+        "title": "We work, then send you the report",
+        "description": "We correct the paint and seal the surface while you get on with things. You do not need to stay: leave us access to the car and a phone number, and when we finish we send you before and after photos."
       }
     ],
     "cta_banner": "Try it now — send us a photo and get your estimate",

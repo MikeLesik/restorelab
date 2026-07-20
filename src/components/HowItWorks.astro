@@ -1,6 +1,5 @@
 ---
 import { WHATSAPP_NUMBER } from '@/lib/constants';
-import { stepIcons } from '@/lib/icons';
 
 export interface Props {
   t: Record<string, any>;
@@ -9,58 +8,64 @@ export interface Props {
 
 const { t, lang } = Astro.props;
 const wa = WHATSAPP_NUMBER;
+const hw = t.how_it_works;
+// WhatsApp copy comes only from t.wa_messages (Critical Rule 3). This URL was
+// computed here for months and never rendered; the banner below uses it now.
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.how_it_works)}`;
-
 ---
 
 <section class="py-14 bg-brand-navy/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-10">
-      <h2 class="section-title">{t.how_it_works.section_title}</h2>
-      <p class="section-subtitle mx-auto">{t.how_it_works.section_subtitle}</p>
-    </div>
+    {/* Two columns, not a four-up card grid: the same centred-h2-over-cards
+        silhouette every other homepage block already uses reads as one shape
+        repeated. The left rail holds the pitch and the ask; the right holds the
+        steps, so the ask sits beside the sequence that justifies it — but
+        `order-last` keeps it after the steps below lg, where it stacks. */}
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      <div class="lg:col-span-5 order-last lg:order-first">
+        <div class="lg:sticky lg:top-24">
+          <h2 class="section-title">{hw.section_title}</h2>
+          <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
 
-      {t.how_it_works.steps.map((step: any, i: number) => (
-        <div class="relative text-center group">
-
-          <!-- Connector segment to the next step (desktop only, between tiles) -->
-          {i < t.how_it_works.steps.length - 1 && (
-            <div class="hidden lg:flex absolute top-8 left-[calc(50%+44px)] w-[calc(100%-56px)] items-center pointer-events-none" aria-hidden="true">
-              <div class="h-px flex-1 bg-gradient-to-r from-brand-accent/40 to-brand-accent/15"></div>
-              <svg class="w-3 h-3 text-brand-accent/40 flex-shrink-0 -ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+          {hw.cta_banner && (
+            <div class="mt-8 card">
+              <p class="text-th-body text-sm mb-4">{hw.cta_banner}</p>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-event="wa_click"
+                class="btn-whatsapp w-full"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <use href="#icon-whatsapp" />
+                </svg>
+                {hw.cta_banner_btn}
+              </a>
             </div>
           )}
-
-          <!-- Icon circle -->
-          <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 mb-6 mx-auto transition-all duration-300 group-hover:bg-brand-accent/20 group-hover:border-brand-accent/40 group-hover:scale-105">
-            <svg
-              class="w-7 h-7 text-brand-accent"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-              set:html={stepIcons[i]}
-            />
-            <!-- Step number badge -->
-            <span class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-brand-dark border border-brand-accent/30 text-brand-accent text-[10px] font-bold flex items-center justify-center">
-              {i + 1}
-            </span>
-          </div>
-
-          <h3 class="font-display font-bold text-th-heading text-lg mb-3">{step.title}</h3>
-          <p class="text-th-muted text-sm leading-relaxed">{step.description}</p>
         </div>
-      ))}
-    </div>
+      </div>
 
+      {/* role="list" is deliberate: preflight sets list-style:none, and Safari
+          then drops list semantics from a styled <ol>, so nothing announces the
+          sequence. The numeral is aria-hidden — the list role carries order. */}
+      <ol role="list" class="lg:col-span-7 space-y-8">
+        {hw.steps.map((step: any, i: number) => (
+          <li class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center" aria-hidden="true">
+              <span class="font-display font-bold text-brand-accent text-lg">{step.number ?? String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <div class="pt-1">
+              <h3 class="font-display font-bold text-th-heading text-lg mb-1.5">{step.title}</h3>
+              <p class="text-th-muted text-sm leading-relaxed">{step.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+    </div>
   </div>
 </section>

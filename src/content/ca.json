@@ -277,23 +277,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "Envieu Fotos",
-        "description": "Envieu-nos fotos dels danys per WhatsApp. Avaluarem les condicions i la viabilitat."
+        "title": "Envies dues fotos",
+        "description": "Una del cotxe sencer i una altra del defecte que més et molesta, per WhatsApp. Amb això valorem l'estat real i et diem què es pot aconseguir i què no."
       },
       {
         "number": "02",
-        "title": "Rebeu Pressupost",
-        "description": "Preu transparent, sense costos ocults ni sorpreses."
+        "title": "Et donem un preu tancat",
+        "description": "Un dels paquets publicats, sense costos ocults. Si per les fotos no es pot decidir, t'ho diem en lloc d'inventar una xifra."
       },
       {
         "number": "03",
-        "title": "Anem a Tu",
-        "description": "Arribem a casa teva, oficina o aparcament amb tot l'equip professional."
+        "title": "Arribem amb tot l'equip",
+        "description": "Generador, polidores professionals i subministrament d'aigua propis: no gastem el teu llum ni la teva aigua. Només necessitem una plaça d'aparcament estàndard amb un metre lliure a cada costat."
       },
       {
         "number": "04",
-        "title": "Restauració i Protecció",
-        "description": "Acabat de qualitat de fàbrica. No estàs satisfet? Ho refem gratis."
+        "title": "Treballem i t'enviem l'informe",
+        "description": "Corregim la pintura i segellem la superfície mentre tu continues amb el que estiguis fent. No cal que t'hi quedis: ens deixes accés al cotxe i un telèfon, i en acabar t'enviem fotos de l'abans i el després."
       }
     ],
     "cta_banner": "Prova-ho ara — envia'ns una foto i rep el teu pressupost",
