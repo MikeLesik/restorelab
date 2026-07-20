@@ -864,7 +864,18 @@
     "section_subtitle": "Resultats reals del nostre servei mòbil de restauració a Sant Cugat i Barcelona",
     "view_all": "Veure Tots els Casos",
     "cta_subtitle": "Vols resultats com aquests?",
-    "cta_button": "Demana el Teu Pressupost Gratuït"
+    "cta_button": "Demana el Teu Pressupost Gratuït",
+    "before_label": "Abans",
+    "after_label": "Després",
+    "alt_before": "Abans — {title}",
+    "alt_after": "Després — {title}",
+    "aria_region": "Casos abans i després",
+    "aria_slider": "Abans i després: {title}",
+    "aria_handle": "Arrossega per comparar abans i després",
+    "aria_prev": "Cas anterior",
+    "aria_next": "Cas següent",
+    "location_tpl": "Feina realitzada a {location}",
+    "aria_filter": "Filtrar casos per categoria"
   },
   "cases_gallery": {
     "items": [

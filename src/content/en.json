@@ -780,7 +780,18 @@
     "section_subtitle": "Real results from our mobile restoration work across Sant Cugat & Barcelona",
     "view_all": "View All Cases",
     "cta_subtitle": "Want results like these?",
-    "cta_button": "Get Your Free Estimate"
+    "cta_button": "Get Your Free Estimate",
+    "before_label": "Before",
+    "after_label": "After",
+    "alt_before": "Before — {title}",
+    "alt_after": "After — {title}",
+    "aria_region": "Before and after cases",
+    "aria_slider": "Before and after: {title}",
+    "aria_handle": "Drag to compare before and after",
+    "aria_prev": "Previous case",
+    "aria_next": "Next case",
+    "location_tpl": "Work carried out in {location}",
+    "aria_filter": "Filter cases by category"
   },
   "cases_gallery": {
     "items": [

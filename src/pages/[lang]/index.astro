@@ -39,8 +39,11 @@ const { t } = Astro.props;
   <Hero t={t} lang={lang} />
   <BrandsStrip t={t} />
   <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration', 'trim-restoration']} />
-  <HowItWorks t={t} lang={lang} />
+  {/* Proof before process: the before/after work is the only evidence on the
+      page that we can do the job, and it sat at ~37% scroll depth behind an
+      explanation of how a visit is booked. Show what we deliver, then how. */}
   <BeforeAfterCarousel t={t} lang={lang} />
+  <HowItWorks t={t} lang={lang} />
   <PricingCards t={t} lang={lang} categoryId="car" title={t.pricing.home_title} />
   <Estimator t={t} lang={lang} source="home" />
   <GuaranteeBlock t={t} />

@@ -864,7 +864,18 @@
     "section_subtitle": "Resultados reales de nuestro servicio móvil de restauración en Sant Cugat y Barcelona",
     "view_all": "Ver Todos los Casos",
     "cta_subtitle": "¿Quieres resultados así?",
-    "cta_button": "Pide Tu Presupuesto Gratis"
+    "cta_button": "Pide Tu Presupuesto Gratis",
+    "before_label": "Antes",
+    "after_label": "Después",
+    "alt_before": "Antes — {title}",
+    "alt_after": "Después — {title}",
+    "aria_region": "Casos antes y después",
+    "aria_slider": "Antes y después: {title}",
+    "aria_handle": "Arrastra para comparar antes y después",
+    "aria_prev": "Caso anterior",
+    "aria_next": "Caso siguiente",
+    "location_tpl": "Trabajo realizado en {location}",
+    "aria_filter": "Filtrar casos por categoría"
   },
   "cases_gallery": {
     "items": [
