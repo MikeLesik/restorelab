@@ -152,12 +152,16 @@
     "certifications": [
       {
         "name": "Gyeon Certified",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gyeon.svg"
       },
       {
         "name": "Gtechniq Accredited",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gtechniq.svg"
@@ -169,7 +173,7 @@
       "link_url": "/about"
     },
     "micro_service": "Mobile service · Photo estimates",
-    "micro_pricing": "Certified detailers · Satisfaction guarantee",
+    "micro_pricing": "Fixed quote from photos · Satisfaction guarantee",
     "micro_prefooter": "We come to you · No obligation",
     "booking_urgency": "Currently booking 2 weeks ahead"
   },
@@ -751,7 +755,7 @@
       {
         "icon": "warranty",
         "title": "Protection Warranty",
-        "description": "Up to 12 months coating protection guarantee on premium packages."
+        "description": "Coating warranty matches the package you buy: 2 years (Gyeon MOHS) or 5 years (Gtechniq Crystal Serum Ultra)."
       },
       {
         "icon": "price",
@@ -786,7 +790,7 @@
         "before": "/images/cases/car2-before.jpg",
         "after": "/images/cases/car2-after.jpg",
         "result": "Full two-stage correction + ceramic coating",
-        "metric": "Saved €900",
+        "metric": "2-year ceramic seal",
         "location": "Barcelona"
       },
       {
@@ -796,7 +800,7 @@
         "before": "/images/cases/glass1-before.jpg",
         "after": "/images/cases/glass1-after.jpg",
         "result": "Deep wiper marks removed",
-        "metric": "Saved €380",
+        "metric": "Night visibility restored",
         "location": "Terrassa"
       },
       {
@@ -806,7 +810,7 @@
         "before": "/images/cases/car3-before.jpg",
         "after": "/images/cases/car3-after.jpg",
         "result": "Deep scratch corrected — no repainting",
-        "metric": "Saved €1,100",
+        "metric": "Original paint kept",
         "location": "Barcelona"
       }
     ]
@@ -881,7 +885,7 @@
   "about": {
     "hero_title": "Built in Sant Cugat. Driven by craft.",
     "hero_subtitle": "restoreLab is a mobile surface restoration studio serving the Barcelona metro area. We bring professional-grade correction and protection directly to your location.",
-    "founder_name": "Miguel",
+    "founder_name": "Mikhail Lesik",
     "founder_role": "Founder & Lead Technician",
     "founder_photo_note": "⚠ Placeholder — add real founder photo to /images/team/founder.jpg",
     "origin_title": "Why restoreLab exists",

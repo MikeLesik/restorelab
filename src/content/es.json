@@ -152,12 +152,16 @@
     "certifications": [
       {
         "name": "Gyeon Certificado",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gyeon.svg"
       },
       {
         "name": "Gtechniq Acreditado",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gtechniq.svg"
@@ -169,7 +173,7 @@
       "link_url": "/about"
     },
     "micro_service": "Servicio móvil · Presupuesto por fotos",
-    "micro_pricing": "Técnicos certificados · Garantía de satisfacción",
+    "micro_pricing": "Presupuesto cerrado por fotos · Garantía de satisfacción",
     "micro_prefooter": "Vamos a ti · Sin compromiso",
     "booking_urgency": "Reservando con 2 semanas de antelación"
   },
@@ -834,7 +838,7 @@
       {
         "icon": "warranty",
         "title": "Garantía de Protección",
-        "description": "Hasta 12 meses de garantía de protección del recubrimiento."
+        "description": "La garantía del recubrimiento es la del paquete contratado: 2 años (Gyeon MOHS) o 5 años (Gtechniq Crystal Serum Ultra)."
       },
       {
         "icon": "price",
@@ -869,7 +873,7 @@
         "before": "/images/cases/car2-before.jpg",
         "after": "/images/cases/car2-after.jpg",
         "result": "Corrección completa en dos etapas + recubrimiento cerámico",
-        "metric": "Ahorro de 900 €",
+        "metric": "Sellado cerámico 2 años",
         "location": "Barcelona"
       },
       {
@@ -879,7 +883,7 @@
         "before": "/images/cases/glass1-before.jpg",
         "after": "/images/cases/glass1-after.jpg",
         "result": "Marcas profundas de limpiaparabrisas eliminadas",
-        "metric": "Ahorro de 380 €",
+        "metric": "Visibilidad nocturna recuperada",
         "location": "Terrassa"
       },
       {
@@ -889,7 +893,7 @@
         "before": "/images/cases/car3-before.jpg",
         "after": "/images/cases/car3-after.jpg",
         "result": "Arañazo profundo corregido — sin repintar",
-        "metric": "Ahorro de 1.100 €",
+        "metric": "Pintura original conservada",
         "location": "Barcelona"
       }
     ]
@@ -904,7 +908,7 @@
   "about": {
     "hero_title": "Nacidos en Sant Cugat. Impulsados por la artesanía.",
     "hero_subtitle": "restoreLab es un estudio móvil de restauración de superficies que sirve al área metropolitana de Barcelona. Llevamos corrección y protección profesional directamente a tu ubicación.",
-    "founder_name": "Miguel",
+    "founder_name": "Mikhail Lesik",
     "founder_role": "Fundador y Técnico Principal",
     "founder_photo_note": "⚠ Placeholder — añadir foto real del fundador en /images/team/founder.jpg",
     "origin_title": "Por qué existe restoreLab",

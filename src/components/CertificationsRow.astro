@@ -14,9 +14,11 @@ function splitCert(name: string) {
   return { brand, label: rest.join(' ') };
 }
 
-/** White-fill SVGs vanish on the light theme — render them as dark silhouettes there. */
+/** White-fill SVGs vanish on the light theme — render them as dark silhouettes there.
+ *  gtechniq.svg is white-filled too and was missing here, so it rendered as an
+ *  empty box captioned ACREDITADO on every page carrying this block. */
 function logoCls(src: string) {
-  return /gyeon|carpro/.test(src) ? 'brightness-0 dark:brightness-100' : '';
+  return /gyeon|carpro|gtechniq/.test(src) ? 'brightness-0 dark:brightness-100' : '';
 }
 ---
 
@@ -37,6 +39,21 @@ function logoCls(src: string) {
                   </span>
                 )}
                 <p class="text-brand-accent text-xs font-semibold uppercase tracking-widest mt-1.5">{label}</p>
+                {/* Both programmes run a public installer registry. A credential
+                    a visitor cannot check is not a credential — when the JSON
+                    carries an id (and optionally a registry URL), show it. */}
+                {cert.credential_id && (
+                  <p class="text-th-muted text-xs mt-1">
+                    {cert.verify_url ? (
+                      <a
+                        href={cert.verify_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-brand-accent underline underline-offset-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                      >{cert.credential_id}</a>
+                    ) : cert.credential_id}
+                  </p>
+                )}
               </div>
               <div class="w-9 h-9 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">

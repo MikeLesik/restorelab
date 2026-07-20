@@ -152,12 +152,16 @@
     "certifications": [
       {
         "name": "Gyeon Certificat",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gyeon.svg"
       },
       {
         "name": "Gtechniq Acreditat",
+        "credential_id": "",
+        "verify_url": "",
         "status": "active",
         "icon": "shield",
         "logo": "/images/brands/gtechniq.svg"
@@ -169,7 +173,7 @@
       "link_url": "/about"
     },
     "micro_service": "Servei mòbil · Pressupost per fotos",
-    "micro_pricing": "Tècnics certificats · Garantia de satisfacció",
+    "micro_pricing": "Pressupost tancat per fotos · Garantia de satisfacció",
     "micro_prefooter": "Anem a tu · Sense compromís",
     "booking_urgency": "Reservant amb 2 setmanes d'antelació"
   },
@@ -834,7 +838,7 @@
       {
         "icon": "warranty",
         "title": "Garantia de Protecció",
-        "description": "Fins a 12 mesos de garantia de protecció del recobriment."
+        "description": "La garantia del recobriment és la del paquet contractat: 2 anys (Gyeon MOHS) o 5 anys (Gtechniq Crystal Serum Ultra)."
       },
       {
         "icon": "price",
@@ -869,7 +873,7 @@
         "before": "/images/cases/car2-before.jpg",
         "after": "/images/cases/car2-after.jpg",
         "result": "Correcció completa en dues etapes + recobriment ceràmic",
-        "metric": "Estalvi de 900 €",
+        "metric": "Segellat ceràmic 2 anys",
         "location": "Barcelona"
       },
       {
@@ -879,7 +883,7 @@
         "before": "/images/cases/glass1-before.jpg",
         "after": "/images/cases/glass1-after.jpg",
         "result": "Marques profundes de l'eixugaparabrises eliminades",
-        "metric": "Estalvi de 380 €",
+        "metric": "Visibilitat nocturna recuperada",
         "location": "Terrassa"
       },
       {
@@ -889,7 +893,7 @@
         "before": "/images/cases/car3-before.jpg",
         "after": "/images/cases/car3-after.jpg",
         "result": "Ratllada profunda corregida — sense repintar",
-        "metric": "Estalvi de 1.100 €",
+        "metric": "Pintura original conservada",
         "location": "Barcelona"
       }
     ]
@@ -904,7 +908,7 @@
   "about": {
     "hero_title": "Nascuts a Sant Cugat. Impulsats per l'artesania.",
     "hero_subtitle": "restoreLab és un estudi mòbil de restauració de superfícies que serveix l'àrea metropolitana de Barcelona. Portem correcció i protecció professional directament a la teva ubicació.",
-    "founder_name": "Miguel",
+    "founder_name": "Mikhail Lesik",
     "founder_role": "Fundador i Tècnic Principal",
     "founder_photo_note": "⚠ Placeholder — afegir foto real del fundador a /images/team/founder.jpg",
     "origin_title": "Per què existeix restoreLab",
