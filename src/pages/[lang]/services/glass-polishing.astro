@@ -67,21 +67,19 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
             </div>
           </div>
 
-          <div class="relative aspect-square max-w-md rounded-3xl overflow-hidden border border-th-border/10">
-            <picture>
-              <source srcset="/images/services/glass-polish.webp" type="image/webp" />
-              <img
-                src="/images/services/glass-polish.jpg"
-                alt="Glass scratch removal result"
-                class="w-full h-full object-cover"
-                width="800"
-                height="450"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </picture>
-          </div>
+          {/* Illustration, not a customer case — see the figcaption. */}
+          <figure>
+            <div class="relative aspect-video rounded-3xl overflow-hidden border border-th-border/10">
+              <picture>
+                <source srcset="/images/services/glass-hero.webp" type="image/webp" />
+                <img src="/images/services/glass-hero.jpg" alt={`${t.services.illustration_before} / ${t.services.illustration_after} — ${service?.title}`}
+                     class="w-full h-full object-cover" width="1200" height="675" loading="eager" decoding="async" fetchpriority="high" />
+              </picture>
+              <span class="absolute top-3 left-3 px-2 py-1 bg-black/85 rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_before}</span>
+              <span class="absolute top-3 right-3 px-2 py-1 bg-black/85 border border-brand-accent rounded text-xs text-white uppercase tracking-wider">{t.services.illustration_after}</span>
+            </div>
+            <figcaption class="text-th-faint text-xs mt-3 leading-relaxed">{t.services.illustration_caption}</figcaption>
+          </figure>
         </div>
       </div>
     </section>
