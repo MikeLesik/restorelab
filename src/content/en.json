@@ -681,7 +681,7 @@
     "cta_restart": "Start Over",
     "back": "Back",
     "recommended_tag": "Recommended",
-    "note_black": "Black paint shows every imperfection. Two-stage correction minimum recommended.",
+    "note_black": "Black paint shows every defect. If you want a flawless finish, two-stage correction is the safer call — we confirm from photos.",
     "note_heavy": "Heavy defects may require paint depth measurement. Free on-site assessment included.",
     "note_large": "Large vehicles require additional time. ETAs shown are approximate.",
     "wa_message": "Hello restoreLab! I used the estimator:\n• Vehicle: {vehicleSize}\n• Condition: {paintCondition}\n• Colour: {colorSensitivity}\n• Goals: {goals}\n• Recommended: {tierName} — {price}\n\nI'd like to confirm the price for my car. Tell me what photos you need and I'll send them."

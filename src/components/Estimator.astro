@@ -270,8 +270,9 @@ const estLabels = {
     { id: 'full_glass_set', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
   ];
 
-  const TIERS = TIER_DEFS.map(d => ({
+  const TIERS = TIER_DEFS.map((d, i) => ({
     ...d,
+    order: i,
     name: tierPricing[d.id].name,
     price: tierPricing[d.id].price,
     eta: tierPricing[d.id].duration,
@@ -391,10 +392,24 @@ const estLabels = {
       if (goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
       if (state.paintCondition === 'heavy' && tier.id === 'express') score -= 5;
 
+      // Paint colour used to affect nothing but a +50 surcharge, while the note
+      // under the result told the customer black needs two-stage correction as a
+      // minimum — and the algorithm went on recommending a one-step polish. Make
+      // the scoring agree with the advice: on black, a single pass leaves
+      // holograms, so push away from express and toward two-stage.
+      if (state.colorSensitivity === 'black' && tier.category === 'car') {
+        if (tier.id === 'express') score -= 3;
+        if (tier.id === 'two_stage') score += 2;
+      }
+
       return { ...tier, score };
     });
 
-    scored.sort((a, b) => b.score - a.score);
+    // Deterministic tie-break: equal score means both tiers fit, so recommend
+    // the cheaper one. TIER_DEFS is price-ascending, so `order` encodes that.
+    // Recommending up on a tie would be an upsell the customer cannot verify.
+    // (This used to fall out of array order by accident; now it is intentional.)
+    scored.sort((a, b) => b.score - a.score || a.order - b.order);
     const top = scored.filter(s => s.score > 0).slice(0, 3);
     if (top.length === 0) top.push(scored[0]);
 

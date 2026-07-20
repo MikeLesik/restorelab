@@ -681,7 +681,7 @@
     "cta_restart": "Tornar a Començar",
     "back": "Enrere",
     "recommended_tag": "Recomanat",
-    "note_black": "La pintura negra mostra cada imperfecció. Es recomana correcció en dues fases com a mínim.",
+    "note_black": "La pintura negra marca cada defecte. Si vols un acabat impecable, la correcció en dues fases és l'opció segura — ho confirmem amb fotos.",
     "note_heavy": "Els defectes severs poden requerir mesurament de gruix de pintura. Avaluació gratuïta in situ inclosa.",
     "note_large": "Els vehicles grans requereixen temps addicional. Els temps mostrats són aproximats.",
     "wa_message": "Hola restoreLab! He usat l'estimador:\n• Vehicle: {vehicleSize}\n• Estat: {paintCondition}\n• Color: {colorSensitivity}\n• Objectius: {goals}\n• Recomanat: {tierName} — {price}\n\nM'agradaria confirmar el preu per al meu cotxe. Digue'm quines fotos necessites i te les envio."
