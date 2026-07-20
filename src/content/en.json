@@ -205,9 +205,9 @@
         "icon": "glass",
         "starting_price": "From €119",
         "features": [
-          "Restore glass clarity",
-          "No removing or replacing the glass",
-          "Water spot & wiper marks removed"
+          "Polishing for light scratches, water spots and haze",
+          "Sanding + polishing for deep scratches",
+          "No removing or replacing the glass"
         ],
         "cta_label": "Get Glass Estimate",
         "tag": null,
@@ -441,7 +441,7 @@
             "slug": "windshield-polish",
             "price": "119€",
             "duration": "1–2 hours",
-            "description": "Remove wiper scratches, water spots and light haze from your windshield.",
+            "description": "Removes wiper scratches, water spots and light haze. Deep scratches need sanding + polishing, quoted from a photo.",
             "includes": [
               "Surface assessment",
               "Machine polishing of windshield",

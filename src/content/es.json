@@ -205,9 +205,9 @@
         "icon": "glass",
         "starting_price": "Desde 119€",
         "features": [
-          "Restaura la claridad del vidrio",
-          "Sin desmontar ni sustituir el cristal",
-          "Manchas y arañazos de limpiaparabrisas"
+          "Pulido para arañazos superficiales, manchas de agua y velo",
+          "Lijado + pulido para arañazos profundos",
+          "Sin desmontar ni sustituir el cristal"
         ],
         "cta_label": "Presupuesto Vidrio",
         "tag": null,
@@ -441,7 +441,7 @@
             "slug": "windshield-polish",
             "price": "119€",
             "duration": "1–2 horas",
-            "description": "Elimina arañazos de limpiaparabrisas, manchas de agua y opacidad leve.",
+            "description": "Elimina arañazos de limpiaparabrisas, manchas de agua y opacidad leve. Los arañazos profundos requieren lijado + pulido; se valora por foto.",
             "includes": [
               "Evaluación de la superficie",
               "Pulido mecánico del parabrisas",

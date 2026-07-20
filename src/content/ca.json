@@ -205,9 +205,9 @@
         "icon": "glass",
         "starting_price": "Des de 119€",
         "features": [
-          "Restaura la claredat del vidre",
-          "Sense desmuntar ni substituir el vidre",
-          "Taques i ratllades del neteja-parabrises"
+          "Polit per a ratllades superficials, taques d'aigua i vel",
+          "Escatat + polit per a ratllades profundes",
+          "Sense desmuntar ni substituir el vidre"
         ],
         "cta_label": "Pressupost Vidre",
         "tag": null,
@@ -441,7 +441,7 @@
             "slug": "windshield-polish",
             "price": "119€",
             "duration": "1–2 hores",
-            "description": "Elimina ratllades del neteja-parabrises, taques d'aigua i opacitat lleu.",
+            "description": "Elimina ratllades d'eixugaparabrises, taques d'aigua i opacitat lleu. Les ratllades profundes requereixen escatat + polit; es valora per foto.",
             "includes": [
               "Avaluació de la superfície",
               "Polit mecànic del parabrisa",
