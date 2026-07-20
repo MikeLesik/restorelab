@@ -76,7 +76,7 @@
     },
     "pre_sale": {
       "title": "Pre-Sale Detail Pack — Maximise Resale Value | restoreLab",
-      "description": "Single-stage paint correction and headlight restoration in a package built for selling. €249 for a sedan, at-home mobile service in Sant Cugat & Barcelona."
+      "description": "Single-stage paint correction and headlight restoration in a package built for selling. €289 for a sedan, at-home mobile service in Sant Cugat & Barcelona."
     },
     "legal": {
       "title": "Legal Notice | restoreLab",
@@ -255,7 +255,7 @@
         "title": "Pre-Sale Detail Pack",
         "subtitle": "Maximise resale value before selling or trading in",
         "icon": "sale",
-        "starting_price": "€249",
+        "starting_price": "€289",
         "features": [
           "Single-stage paint correction",
           "Headlight restoration included"
@@ -527,7 +527,7 @@
           {
             "name": "Pre-Sale Detail Pack",
             "slug": "pre-sale-pack",
-            "price": "249€",
+            "price": "289€",
             "duration": "4–5 hours",
             "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [
