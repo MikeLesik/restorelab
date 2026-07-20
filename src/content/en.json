@@ -54,10 +54,6 @@
       "title": "Care Plans — Subscription Paint Protection | restoreLab",
       "description": "Monthly care plans for ongoing paint protection. Scheduled maintenance, ceramic top-ups, priority booking. From €39/month."
     },
-    "booking": {
-      "title": "Book an Appointment | restoreLab",
-      "description": "Book a free estimate visit or schedule your detailing appointment online. Mobile service in Sant Cugat, Barcelona and Terrassa."
-    },
     "privacy": {
       "title": "Privacy Policy | restoreLab",
       "description": "restoreLab privacy policy — how we collect and use your personal data."
@@ -97,8 +93,7 @@
     "cases": "Cases",
     "contact": "Contact",
     "academy": "Academy",
-    "cta": "Get Estimate",
-    "book": "Book Online"
+    "cta": "Get Estimate"
   },
   "ui": {
     "language": "Language",
@@ -305,7 +300,6 @@
       "most_popular": "Most Popular",
       "best_for": "Best for:",
       "get_quote": "Get Quote",
-      "book_visit": "Book Visit",
       "size_title": "Vehicle Size Multipliers",
       "size_subtitle": "Prices above are for sedan-size vehicles. Adjust based on your vehicle:",
       "sensitive_paint": "Sensitive paint surcharge",
@@ -586,7 +580,6 @@
     "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 1 049€ and every price is listed above.",
     "cta_whatsapp": "Send on WhatsApp",
     "cta_whatsapp_hint": "We reply with the confirmed price, usually within the hour.",
-    "cta_booking": "Or book an assessment visit",
     "why_paint_light": "With light marks, a single polishing step already brings the gloss back — no need to pay for full correction.",
     "why_paint_light_dark": "On dark paint light marks show twice as much, so we step up a level to leave it clean.",
     "why_paint_medium": "With visible scratches and swirls, one correction pass removes most of them and the car looks very good.",
@@ -939,7 +932,6 @@
     "ev_link": "EV Protection",
     "commercial_glass_link": "Commercial Glass",
     "plans_link": "Care Plans",
-    "booking_link": "Book Online",
     "legal_entity": "restoreLab — Mikhail Lesik · NIF Z3355742R · Sant Cugat del Vallès",
     "company_title": "Company",
     "legal_notice_label": "Legal notice",

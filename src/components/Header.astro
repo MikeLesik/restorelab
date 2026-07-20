@@ -136,16 +136,19 @@ function isActive(segment: string): boolean {
           </div>
         </div>
 
-        <!-- Primary CTA — Book Online -->
+        {/* Primary CTA — WhatsApp. Online booking (Cal) was removed: the price
+            depends on photos, so the real first step is a chat, not a slot. */}
         <a
-          href={`/${lang}/booking`}
-          data-event="nav_book"
-          class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-accent hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+          href={`https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.header)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-event="wa_click"
+          class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-whatsapp hover:brightness-110 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
         >
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <use href="#icon-whatsapp" />
           </svg>
-          {t.nav.book}
+          {t.nav.cta}
         </a>
 
         <!-- Theme Toggle — mobile (visible as icon before burger) -->

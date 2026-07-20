@@ -132,16 +132,6 @@ function getGridClass(count: number): string {
                     >
                       {ui.get_quote || 'Get Quote'}
                     </a>
-                    <a
-                      href={`/${lang}/booking`}
-                      data-event="pricing_book"
-                      class="flex items-center justify-center px-3 py-3 rounded-lg text-sm font-semibold transition-colors border border-brand-accent/30 text-brand-accent hover:bg-brand-accent/10"
-                      title={ui.book_visit || 'Book Visit'}
-                    >
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </a>
                   </div>
                   <p class="text-center text-th-faint text-[10px] mt-2 tracking-wide">{t.trust.micro_pricing}</p>
                 </div>

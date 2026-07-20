@@ -54,10 +54,6 @@
       "title": "Planes de Cuidado — Protección de Pintura | restoreLab",
       "description": "Planes mensuales de cuidado para protección continua. Mantenimiento programado, recargas cerámicas, reserva prioritaria. Desde 39€/mes."
     },
-    "booking": {
-      "title": "Reservar Cita | restoreLab",
-      "description": "Reserva una visita de valoración gratuita o programa tu sesión de detailing online. Servicio móvil en Sant Cugat, Barcelona y Terrassa."
-    },
     "privacy": {
       "title": "Política de Privacidad | restoreLab",
       "description": "Política de privacidad de restoreLab — cómo recopilamos y utilizamos sus datos personales."
@@ -97,8 +93,7 @@
     "cases": "Portfolio",
     "contact": "Contacto",
     "academy": "Academia",
-    "cta": "Presupuesto",
-    "book": "Reservar"
+    "cta": "Presupuesto"
   },
   "ui": {
     "language": "Idioma",
@@ -304,7 +299,6 @@
       "most_popular": "Más Popular",
       "best_for": "Ideal para:",
       "get_quote": "Pedir Presupuesto",
-      "book_visit": "Reservar Visita",
       "size_title": "Multiplicadores por Tamaño de Vehículo",
       "size_subtitle": "Los precios indicados son para vehículos tipo sedán. Ajusta según tu vehículo:",
       "sensitive_paint": "Recargo pintura sensible",
@@ -587,7 +581,6 @@
     "unsure_body": "Mándanos dos fotos por WhatsApp — una del coche entero y otra del defecto que más te molesta — y te damos precio cerrado el mismo día. Nuestros trabajos van de 79€ a 1 049€ y todos los precios están arriba.",
     "cta_whatsapp": "Enviar por WhatsApp",
     "cta_whatsapp_hint": "Te respondemos con el precio confirmado, normalmente en menos de una hora.",
-    "cta_booking": "O reserva una visita de valoración",
     "why_paint_light": "Con marcas leves, un solo paso de pulido ya devuelve el brillo: no hace falta pagar corrección completa.",
     "why_paint_light_dark": "En pintura oscura las marcas leves se ven el doble, así que subimos un nivel para que quede limpio.",
     "why_paint_medium": "Con arañazos y remolinos visibles, un pase de corrección quita la mayoría y el coche se ve muy bien.",
@@ -820,7 +813,6 @@
     "ev_link": "Protección EV",
     "commercial_glass_link": "Cristal Comercial",
     "plans_link": "Planes de Cuidado",
-    "booking_link": "Reservar Online",
     "legal_entity": "restoreLab — Mikhail Lesik · NIF Z3355742R · Sant Cugat del Vallès",
     "company_title": "Empresa",
     "legal_notice_label": "Aviso legal",

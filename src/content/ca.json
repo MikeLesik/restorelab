@@ -54,10 +54,6 @@
       "title": "Plans de Cura — Protecció de Pintura | restoreLab",
       "description": "Plans mensuals de cura per a protecció contínua. Manteniment programat, recàrregues ceràmiques, reserva prioritària. Des de 39€/mes."
     },
-    "booking": {
-      "title": "Reservar Cita | restoreLab",
-      "description": "Reserva una visita de valoració gratuïta o programa la teva sessió de detailing en línia. Servei mòbil a Sant Cugat, Barcelona i Terrassa."
-    },
     "privacy": {
       "title": "Política de Privadesa | restoreLab",
       "description": "Política de privadesa de restoreLab — com recopilem i utilitzem les vostres dades personals."
@@ -97,8 +93,7 @@
     "cases": "Portfolio",
     "contact": "Contacte",
     "academy": "Acadèmia",
-    "cta": "Pressupost",
-    "book": "Reservar"
+    "cta": "Pressupost"
   },
   "ui": {
     "language": "Idioma",
@@ -304,7 +299,6 @@
       "most_popular": "Més Popular",
       "best_for": "Ideal per a:",
       "get_quote": "Demanar Pressupost",
-      "book_visit": "Reservar Visita",
       "size_title": "Multiplicadors per Mida de Vehicle",
       "size_subtitle": "Els preus indicats són per a vehicles tipus sedan. Ajusteu segons el vostre vehicle:",
       "sensitive_paint": "Recàrrec pintura sensible",
@@ -587,7 +581,6 @@
     "unsure_body": "Envia'ns dues fotos per WhatsApp — una del cotxe sencer i una altra del defecte que més et molesta — i et donem preu tancat el mateix dia. Les nostres feines van de 79€ a 1 049€ i tots els preus són a dalt.",
     "cta_whatsapp": "Enviar per WhatsApp",
     "cta_whatsapp_hint": "Et responem amb el preu confirmat, normalment en menys d’una hora.",
-    "cta_booking": "O reserva una visita de valoració",
     "why_paint_light": "Amb marques lleus, un sol pas de poliment ja retorna la brillantor: no cal pagar correcció completa.",
     "why_paint_light_dark": "En pintura fosca les marques lleus es veuen el doble, així que pugem un nivell perquè quedi net.",
     "why_paint_medium": "Amb ratllades i remolins visibles, una passada de correcció en treu la majoria i el cotxe es veu molt bé.",
@@ -820,7 +813,6 @@
     "ev_link": "Protecció VE",
     "commercial_glass_link": "Vidre Comercial",
     "plans_link": "Plans de Cura",
-    "booking_link": "Reservar en Línia",
     "legal_entity": "restoreLab — Mikhail Lesik · NIF Z3355742R · Sant Cugat del Vallès",
     "company_title": "Empresa",
     "legal_notice_label": "Avís legal",
