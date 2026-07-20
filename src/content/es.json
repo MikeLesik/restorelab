@@ -684,7 +684,7 @@
     "note_black": "La pintura negra muestra cada imperfección. Se recomienda corrección en dos fases como mínimo.",
     "note_heavy": "Los defectos severos pueden requerir medición de espesor de pintura. Evaluación gratuita in situ incluida.",
     "note_large": "Los vehículos grandes requieren tiempo adicional. Los tiempos mostrados son aproximados.",
-    "wa_message": "¡Hola restoreLab! He usado el estimador:\n• Vehículo: {vehicleSize}\n• Estado: {paintCondition}\n• Color: {colorSensitivity}\n• Objetivos: {goals}\n• Recomendado: {tierName} (€{min}–{max})\n\nMe gustaría recibir un presupuesto."
+    "wa_message": "¡Hola restoreLab! He usado el estimador:\n• Vehículo: {vehicleSize}\n• Estado: {paintCondition}\n• Color: {colorSensitivity}\n• Objetivos: {goals}\n• Recomendado: {tierName} — {price}\n\nMe gustaría confirmar el precio para mi coche. Dime qué fotos necesitas y te las mando."
   },
   "faq": {
     "section_title": "Antes de Contactarnos",

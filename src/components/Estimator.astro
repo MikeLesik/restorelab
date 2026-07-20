@@ -17,8 +17,39 @@ const estI18n = {
   waMessage: ui.wa_message || 'restoreLab estimate — Vehicle: {vehicleSize}, Condition: {paintCondition}, Colour: {colorSensitivity}, Goals: {goals}, Recommended: {tierName} (€{min}–{max}).',
 };
 
-// Translated tier name/desc, keyed by tier id — source of truth for copy.
+// Translated tier desc, keyed by tier id.
 const tiersI18n = ui.tiers || {};
+
+// Price, name and duration come from t.pricing — the same packages the pricing
+// table renders — joined on the package `slug`, which is identical in all three
+// locales. Previously the estimator carried its own copy of the numbers plus a
+// size multiplier, a black-paint surcharge and a ±band, so it quoted 140–160€
+// for a package the price list sells at 149€ and up to 1790€ for one sold at
+// 1049€. Deriving from the same source makes drift impossible.
+const TIER_SLUG: Record<string, string> = {
+  express: 'express-refresh',
+  single_stage: 'single-stage',
+  two_stage: 'two-stage',
+  ceramic_2y: 'ceramic-2y',
+  ceramic_5y: 'premium-5y',
+  windshield_polish: 'windshield-polish',
+  windshield_hydrophobic: 'windshield-hydrophobic',
+  full_glass_set: 'full-glass-set',
+};
+
+const packagesBySlug: Record<string, any> = {};
+for (const cat of t.pricing?.categories ?? []) {
+  for (const pkg of cat.packages ?? []) {
+    if (pkg.slug) packagesBySlug[pkg.slug] = pkg;
+  }
+}
+
+const tierPricing: Record<string, { name: string; price: string; duration: string }> = {};
+for (const [id, slug] of Object.entries(TIER_SLUG)) {
+  const pkg = packagesBySlug[slug];
+  if (!pkg) throw new Error(`Estimator: no pricing package for slug "${slug}" (tier "${id}") in ${lang}.json`);
+  tierPricing[id] = { name: pkg.name, price: pkg.price, duration: pkg.duration };
+}
 
 // Human-readable labels for the WhatsApp summary (avoid raw tokens like "small").
 const estLabels = {
@@ -221,31 +252,29 @@ const estLabels = {
   </div>
 </section>
 
-<script define:vars={{ wa, estI18n, tiersI18n, estLabels }}>
+<script define:vars={{ wa, estI18n, tiersI18n, estLabels, tierPricing }}>
   // ── Estimator client-side logic ─────────────────────────────────────────────
-  const SIZE_MULTIPLIER = { small: 1.0, medium: 1.2, large: 1.5 };
-  const COLOR_SURCHARGE = { standard: 0, metallic: 0, black: 50, white: 0 };
 
-  // Structural tier definitions. PRICES ARE THE SOURCE OF TRUTH IN t.pricing
-  // (car + glass categories in the content JSON) — keep `base` in sync with it:
-  //   car:   express 149, single_stage 289, two_stage 549, ceramic_2y 649, ceramic_5y 1049
-  //   glass: windshield_polish 119, windshield_hydrophobic 179, full_glass_set 289
-  // name/desc come from t.estimator.tiers (translated) and are merged in below.
+  // Tier definitions carry only what SCORING needs. Name, price and duration
+  // are injected from t.pricing (see the frontmatter), so the estimator can
+  // never quote a number the pricing table contradicts.
   const TIER_DEFS = [
-    { id: 'express', base: 149, eta: '2–3h', category: 'car', conditions: ['light'], goals: ['restore_gloss', 'pre_sale'] },
-    { id: 'single_stage', base: 289, eta: '4–5h', category: 'car', conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'] },
-    { id: 'two_stage', base: 549, eta: '6–8h', category: 'car', conditions: ['medium', 'heavy'], goals: ['restore_gloss'] },
-    { id: 'ceramic_2y', base: 649, eta: '1 day', category: 'car', conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'] },
-    { id: 'ceramic_5y', base: 1049, eta: '1–2 days', category: 'car', conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'] },
+    { id: 'express', category: 'car', conditions: ['light'], goals: ['restore_gloss', 'pre_sale'] },
+    { id: 'single_stage', category: 'car', conditions: ['light', 'medium'], goals: ['restore_gloss', 'pre_sale'] },
+    { id: 'two_stage', category: 'car', conditions: ['medium', 'heavy'], goals: ['restore_gloss'] },
+    { id: 'ceramic_2y', category: 'car', conditions: ['light', 'medium'], goals: ['add_ceramic', 'long_term_protection'] },
+    { id: 'ceramic_5y', category: 'car', conditions: ['medium', 'heavy'], goals: ['add_ceramic', 'long_term_protection'] },
     // Glass tiers — surfaced when the user selects the glass_clarity goal.
-    { id: 'windshield_polish', base: 119, eta: '1–2h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
-    { id: 'windshield_hydrophobic', base: 179, eta: '2h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
-    { id: 'full_glass_set', base: 289, eta: '3–4h', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
+    { id: 'windshield_polish', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
+    { id: 'windshield_hydrophobic', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
+    { id: 'full_glass_set', category: 'glass', conditions: ['light', 'medium', 'heavy'], goals: ['glass_clarity'] },
   ];
 
   const TIERS = TIER_DEFS.map(d => ({
     ...d,
-    name: (tiersI18n[d.id] && tiersI18n[d.id].name) || d.id,
+    name: tierPricing[d.id].name,
+    price: tierPricing[d.id].price,
+    eta: tierPricing[d.id].duration,
     desc: (tiersI18n[d.id] && tiersI18n[d.id].desc) || '',
   }));
 
@@ -362,15 +391,7 @@ const estLabels = {
       if (goals.includes('pre_sale') && (tier.id === 'express' || tier.id === 'single_stage')) score += 2;
       if (state.paintCondition === 'heavy' && tier.id === 'express') score -= 5;
 
-      // Glass packages are flat-priced — no vehicle-size / paint-colour surcharge.
-      const isGlass = tier.category === 'glass';
-      const sm = isGlass ? 1 : (SIZE_MULTIPLIER[state.vehicleSize] || 1);
-      const cs = isGlass ? 0 : (COLOR_SURCHARGE[state.colorSensitivity] || 0);
-      const priceBase = tier.base * sm + cs;
-      const min = Math.round(priceBase * 0.95 / 10) * 10;
-      const max = Math.round(priceBase * 1.10 / 10) * 10;
-
-      return { ...tier, score, min, max };
+      return { ...tier, score };
     });
 
     scored.sort((a, b) => b.score - a.score);
@@ -393,7 +414,7 @@ const estLabels = {
               <p class="text-th-faint text-xs mt-1">${t.desc}</p>
             </div>
             <div class="text-right flex-shrink-0 ml-4">
-              <div class="text-brand-accent font-display font-bold">€${t.min}–${t.max}</div>
+              <div class="text-brand-accent font-display font-bold whitespace-nowrap">${t.price}</div>
               <div class="text-[10px] text-th-faint">${t.eta}</div>
             </div>
           </div>
@@ -428,8 +449,7 @@ const estLabels = {
         .replace('{colorSensitivity}', estLabels.color[state.colorSensitivity] || state.colorSensitivity)
         .replace('{goals}', state.goals.map(g => estLabels.goal[g] || g).join(', '))
         .replace('{tierName}', recommended.name)
-        .replace('{min}', recommended.min)
-        .replace('{max}', recommended.max);
+        .replace('{price}', recommended.price);
       waLink.setAttribute('href', `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`);
     }
 

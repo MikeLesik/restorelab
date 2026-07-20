@@ -684,7 +684,7 @@
     "note_black": "La pintura negra mostra cada imperfecció. Es recomana correcció en dues fases com a mínim.",
     "note_heavy": "Els defectes severs poden requerir mesurament de gruix de pintura. Avaluació gratuïta in situ inclosa.",
     "note_large": "Els vehicles grans requereixen temps addicional. Els temps mostrats són aproximats.",
-    "wa_message": "Hola restoreLab! He usat l'estimador:\n• Vehicle: {vehicleSize}\n• Estat: {paintCondition}\n• Color: {colorSensitivity}\n• Objectius: {goals}\n• Recomanat: {tierName} (€{min}–{max})\n\nM'agradaria rebre un pressupost."
+    "wa_message": "Hola restoreLab! He usat l'estimador:\n• Vehicle: {vehicleSize}\n• Estat: {paintCondition}\n• Color: {colorSensitivity}\n• Objectius: {goals}\n• Recomanat: {tierName} — {price}\n\nM'agradaria confirmar el preu per al meu cotxe. Digue'm quines fotos necessites i te les envio."
   },
   "faq": {
     "section_title": "Abans de Contactar-nos",
