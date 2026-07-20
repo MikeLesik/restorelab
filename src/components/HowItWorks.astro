@@ -22,10 +22,14 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.how_i
         repeated. The left rail holds the pitch and the ask; the right holds the
         steps, so the ask sits beside the sequence that justifies it — but
         `order-last` keeps it after the steps below lg, where it stacks. */}
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+    {/* items-center balances the short left rail (heading + CTA) against the
+        taller four-step column, so the left content no longer floats at the top
+        with a dead gap under it. Sticky is dropped — it fought the centering and
+        the block is short enough not to need it. */}
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-center">
 
       <div class="lg:col-span-5 order-last lg:order-first">
-        <div class="lg:sticky lg:top-24">
+        <div>
           <h2 class="section-title">{hw.section_title}</h2>
           <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
 
