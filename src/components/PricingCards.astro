@@ -3,6 +3,12 @@ export interface Props {
   t: Record<string, any>;
   lang: string;
   categoryId?: string;
+  /** Render an explicit, ordered set of packages by slug, flat and with no
+   *  category heading. A service is not a pricing category, so `categoryId`
+   *  could only ever select the bucket a service happens to sit in — which is
+   *  how the acrylic page ended up advertising windscreen polishing, and its
+   *  Service schema ended up carrying windscreen Offers. */
+  only?: string[];
   /** Optional section heading. Only pages without their own <h1> covering the
    *  price table pass this — it keeps the homepage outline from skipping h1→h3. */
   title?: string;
@@ -15,15 +21,29 @@ export interface Props {
 
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
-const { t, lang, categoryId, title, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
+const { t, lang, categoryId, only, title, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.pricing.ui || {};
 
-const categories = categoryId
-  ? t.pricing.categories.filter((c: any) => c.id === categoryId)
-  : t.pricing.categories;
+const flat = Array.isArray(only) && only.length > 0;
 
-const showMultipliers = !categoryId && ui.size_categories;
+// `only` selects packages across every category, in the order given, and drops
+// the category heading — the page's own <h1> already names the service.
+const categories = flat
+  ? [{
+      title: null,
+      packages: (only as string[])
+        .map((slug) => t.pricing.categories
+          .flatMap((c: any) => c.packages)
+          .find((p: any) => p.slug === slug))
+        .filter(Boolean),
+    }]
+  : categoryId
+    ? t.pricing.categories.filter((c: any) => c.id === categoryId)
+    : t.pricing.categories;
+
+// The size-multiplier table belongs to the full catalogue only.
+const showMultipliers = !flat && !categoryId && ui.size_categories;
 
 function getGridClass(count: number): string {
   if (count === 1) return 'grid-cols-1 max-w-md';
@@ -45,9 +65,11 @@ function getGridClass(count: number): string {
 
     {categories.map((category: any) => (
         <div class="mb-10">
-          <h3 class="font-display font-semibold text-th-muted mb-8 uppercase tracking-widest text-sm border-b border-th-border/10 pb-4">
-            {category.title}
-          </h3>
+          {category.title && (
+            <h3 class="font-display font-semibold text-th-muted mb-8 uppercase tracking-widest text-sm border-b border-th-border/10 pb-4">
+              {category.title}
+            </h3>
+          )}
 
           <div class:list={['grid gap-5', getGridClass(category.packages.length)]}>
             {category.packages.map((pkg: any) => (
@@ -179,7 +201,10 @@ function getGridClass(count: number): string {
           } : null;
         })
         .filter(Boolean);
-      return offers.length > 0 ? (
+      // A quote-only service still deserves its Service node — it just has no
+      // Offer. Emitting nothing was how the acrylic page ended up relying on a
+      // neighbouring category's prices to describe itself.
+      return (serviceType || offers.length > 0) ? (
         <script type="application/ld+json" set:html={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -188,7 +213,7 @@ function getGridClass(count: number): string {
           ...(serviceDescription ? { "description": serviceDescription } : {}),
           ...(serviceAreaServed ? { "areaServed": serviceAreaServed } : {}),
           "provider": { "@type": "AutomotiveBusiness", "name": "restoreLab", "url": SITE_URL },
-          "offers": offers
+          ...(offers.length > 0 ? { "offers": offers } : {})
         })} />
       ) : null;
     })}

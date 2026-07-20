@@ -197,7 +197,7 @@
         "title": "Glass Polishing & Scratch Removal",
         "subtitle": "Windows, windshields & architectural glass",
         "icon": "glass",
-        "starting_price": "From €89",
+        "starting_price": "From €119",
         "features": [
           "Restore glass clarity",
           "Save vs €400 replacement",
@@ -489,6 +489,7 @@
           },
           {
             "name": "Acrylic Restoration",
+            "slug": "acrylic-restoration",
             "price": "Custom quote",
             "duration": "1–4 hours",
             "description": "Price based on surface size and damage severity. Acrylic & polycarbonate panels.",

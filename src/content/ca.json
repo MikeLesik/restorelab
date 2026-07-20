@@ -197,7 +197,7 @@
         "title": "Polit de Vidres i Eliminació de Ratllades",
         "subtitle": "Finestres, parabrises i vidre arquitectònic",
         "icon": "glass",
-        "starting_price": "Des de 89€",
+        "starting_price": "Des de 119€",
         "features": [
           "Restaura la claredat del vidre",
           "Estalvia vs substitució de 400€",
@@ -488,6 +488,7 @@
           },
           {
             "name": "Restauració d'Acrílic",
+            "slug": "acrylic-restoration",
             "price": "Pressupost personalitzat",
             "duration": "1–4 hores",
             "description": "Preu basat en la mida de la superfície i la gravetat dels danys. Panells acrílics i policarbonat.",

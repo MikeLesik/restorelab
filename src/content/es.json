@@ -197,7 +197,7 @@
         "title": "Pulido de Cristales y Eliminación de Arañazos",
         "subtitle": "Ventanas, parabrisas y vidrio arquitectónico",
         "icon": "glass",
-        "starting_price": "Desde 89€",
+        "starting_price": "Desde 119€",
         "features": [
           "Restaura la claridad del vidrio",
           "Ahorra vs sustitución de 400€",
@@ -488,6 +488,7 @@
           },
           {
             "name": "Restauración de Acrílico",
+            "slug": "acrylic-restoration",
             "price": "Presupuesto personalizado",
             "duration": "1–4 horas",
             "description": "Precio basado en el tamaño de la superficie y la gravedad de los daños. Paneles acrílicos y policarbonato.",
