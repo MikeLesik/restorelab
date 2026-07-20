@@ -1,122 +1,56 @@
 ---
 export interface Props {
   t: Record<string, any>;
-  /** Also list the tools we buy (machinery, products) as a text note. On by
-   *  default; /about turns it off because its prose already names the brands. */
+  /** Kept for call-site compatibility; the block no longer varies by page. */
   equipment?: boolean;
 }
 
-const { t, equipment = true } = Astro.props;
-// Fail closed: render nothing when the content JSON has no certifications —
-// never fall back to hardcoded claims.
-const certs = t.trust?.certifications || [];
+const { t } = Astro.props;
 
-// The supplier brands, folded in from the deleted BrandsStrip. They are the
-// tools we buy — NOT accreditations — so they render as a monochrome logo row
-// under an explicit "we use, not sponsors" caption, gated on `status`. The
-// `authorized` brands (Gyeon, Gtechniq) are the certifications above and are
-// excluded here. Compare with ===, not ??: the JSON uses empty-string
-// placeholders, and '' would slip past a nullish guard.
-const TOOL_TIERS = ['equipment', 'products'];
-const toolBrands = (t.trust?.brands || []).filter((b: any) => TOOL_TIERS.includes(b.status));
-
-// Logo asset per brand. Only brands we genuinely use appear here; adding a logo
-// for a brand with no real relationship would be the false-endorsement problem
-// the reviews had. rupes-mono.png is the white wordmark keyed out of the opaque
-// red source PNG so it sits in a monochrome row cleanly.
+// A single monochrome logo wall of the brands we work with — the certification
+// cards and the "not sponsors" disclaimer were removed at the owner's request.
+// Only brands with a real relationship appear: a logo for a brand we do not use
+// would be the false-endorsement problem the fabricated reviews had. Each name
+// maps to an asset; brands without one are skipped rather than shown as text.
+//
+// rupes-mono.png is the RUPES wordmark keyed out of its opaque red source PNG,
+// and gtechniq-mono.svg is the GTECHNIQ wordmark with its red plate removed, so
+// both sit in a one-colour row cleanly instead of as coloured blocks.
 const BRAND_LOGOS: Record<string, string> = {
+  'Gyeon': '/images/brands/gyeon.svg',
+  'Gtechniq': '/images/brands/gtechniq-mono.svg',
   'Rupes': '/images/brands/rupes-mono.png',
   'Koch Chemie': '/images/brands/koch-chemie.svg',
   'CarPro': '/images/brands/carpro.svg',
 };
-const toolLogos = toolBrands
+
+const logos = (t.trust?.brands || [])
   .map((b: any) => ({ name: b.name, src: BRAND_LOGOS[b.name] }))
   .filter((b: any) => b.src);
-
-/** "Gyeon Certificado" -> { brand: "Gyeon", label: "Certificado" } */
-function splitCert(name: string) {
-  const [brand, ...rest] = name.split(' ');
-  return { brand, label: rest.join(' ') };
-}
-
-/** Bare white wordmarks vanish on the light theme — render them as dark
- *  silhouettes there. Applies ONLY to logos that are pure white artwork.
- *
- *  gtechniq.svg is deliberately excluded: it is not a bare wordmark but a full
- *  lockup — white type on the brand's own red parallelogram (.st1 fill #FE0000).
- *  brightness-0 flattens the red and the white together and leaves a solid black
- *  slab. It carries its own background, so it needs no theme treatment at all. */
-function logoCls(src: string) {
-  return /gyeon|carpro/.test(src) ? 'brightness-0 dark:brightness-100' : '';
-}
 ---
 
-{certs.length > 0 && (
-  <section class="py-8" aria-labelledby="certs-title">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+{logos.length > 0 && (
+  <section class="py-10" aria-labelledby="brands-title">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {t.trust?.certifications_title && (
-        <h2 id="certs-title" class="section-title text-center text-2xl md:text-3xl mb-8">
+        <h2 id="brands-title" class="section-title text-center text-2xl md:text-3xl mb-10">
           {t.trust.certifications_title}
         </h2>
       )}
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {certs.map((cert: any) => {
-          const { brand, label } = splitCert(cert.name);
-          return (
-            <div class="flex items-center gap-5 p-6 rounded-xl border border-brand-accent/20 bg-brand-accent/5">
-              <div class="flex-1 min-w-0">
-                {cert.logo ? (
-                  <img src={cert.logo} alt={brand} class:list={['h-8 w-auto opacity-90', logoCls(cert.logo)]} loading="lazy" />
-                ) : (
-                  <span class="font-display font-bold text-th-heading text-2xl tracking-[0.18em] uppercase">
-                    {brand}
-                  </span>
-                )}
-                <p class="text-brand-accent text-xs font-semibold uppercase tracking-widest mt-1.5">{label}</p>
-                {/* Both programmes run a public installer registry. A credential
-                    a visitor cannot check is not a credential — when the JSON
-                    carries an id (and optionally a registry URL), show it. */}
-                {cert.credential_id && (
-                  <p class="text-th-muted text-xs mt-1">
-                    {cert.verify_url ? (
-                      <a
-                        href={cert.verify_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-brand-accent underline underline-offset-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-                      >{cert.credential_id}</a>
-                    ) : cert.credential_id}
-                  </p>
-                )}
-              </div>
-              <div class="w-9 h-9 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-            </div>
-          );
-        })}
-      </div>
 
-      {equipment && toolLogos.length > 0 && (
-        <div class="mt-10">
-          <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {toolLogos.map((b: any) => (
-              <img
-                src={b.src}
-                alt={b.name}
-                title={b.name}
-                loading="lazy"
-                class="h-6 sm:h-7 w-auto brightness-0 dark:invert opacity-55 hover:opacity-90 transition-opacity duration-300"
-              />
-            ))}
-          </div>
-          {t.trust?.tools_note && (
-            <p class="text-center caption mt-6 max-w-xl mx-auto">{t.trust.tools_note}</p>
-          )}
-        </div>
-      )}
+      {/* One treatment for every logo, so the row reads as one system:
+          brightness-0 → black on the light theme, dark:invert → white on dark. */}
+      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+        {logos.map((b: any) => (
+          <img
+            src={b.src}
+            alt={b.name}
+            title={b.name}
+            loading="lazy"
+            class="h-6 sm:h-7 w-auto brightness-0 dark:invert opacity-55 hover:opacity-90 transition-opacity duration-300"
+          />
+        ))}
+      </div>
     </div>
   </section>
 )}

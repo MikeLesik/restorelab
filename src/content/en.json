@@ -152,30 +152,7 @@
         "status": "products"
       }
     ],
-    "certifications": [
-      {
-        "name": "Gyeon Certified",
-        "credential_id": "",
-        "verify_url": "",
-        "status": "active",
-        "icon": "shield",
-        "logo": "/images/brands/gyeon.svg"
-      },
-      {
-        "name": "Gtechniq Accredited",
-        "credential_id": "",
-        "verify_url": "",
-        "status": "active",
-        "icon": "shield",
-        "logo": "/images/brands/gtechniq.svg"
-      }
-    ],
     "certifications_title": "Certifications and equipment",
-    "tools_note": "Brands we buy and use every day. They don't sponsor us and we have no commercial relationship with them.",
-    "tool_tiers": {
-      "equipment": "Machinery",
-      "products": "Products"
-    },
     "founder": {
       "text": "Founded in Sant Cugat. Mobile-first since day one.",
       "link_label": "About us",

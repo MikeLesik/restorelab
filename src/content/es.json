@@ -152,30 +152,7 @@
         "status": "products"
       }
     ],
-    "certifications": [
-      {
-        "name": "Gyeon Certificado",
-        "credential_id": "",
-        "verify_url": "",
-        "status": "active",
-        "icon": "shield",
-        "logo": "/images/brands/gyeon.svg"
-      },
-      {
-        "name": "Gtechniq Acreditado",
-        "credential_id": "",
-        "verify_url": "",
-        "status": "active",
-        "icon": "shield",
-        "logo": "/images/brands/gtechniq.svg"
-      }
-    ],
     "certifications_title": "Certificaciones y equipo",
-    "tools_note": "Marcas que compramos y usamos a diario. No nos patrocinan ni tenemos ningún vínculo comercial con ellas.",
-    "tool_tiers": {
-      "equipment": "Maquinaria",
-      "products": "Productos"
-    },
     "founder": {
       "text": "Fundado en Sant Cugat. Servicio móvil desde el primer día.",
       "link_label": "Sobre nosotros",
