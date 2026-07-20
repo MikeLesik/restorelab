@@ -756,6 +756,8 @@
     "section_subtitle": "3 bases operativas — vamos a donde estés",
     "cta_prefix": "Presupuesto en",
     "travel_note": "¿Proyecto grande o flota fuera de estas áreas? Viajamos — solo pregunta.",
+    "all_areas_title": "¿Cuál es tu zona?",
+    "all_areas_subtitle": "Entra en tu población para ver los servicios y precios que ofrecemos allí.",
     "hubs": [
       {
         "city": "Sant Cugat",
@@ -3281,6 +3283,8 @@
     "services_heading": "Nuestros Servicios en {city}",
     "cta_tpl": "Presupuesto Gratuito en {city}",
     "areas_heading": "Áreas que cubrimos desde {city}",
+    "other_areas_heading": "¿Vives en otra población?",
+    "other_areas_subtitle": "Estas son las demás zonas donde trabajamos — entra en la tuya para ver servicios y precios.",
     "cities": [
       {
         "slug": "sant-cugat",
@@ -3435,7 +3439,7 @@
       {
         "slug": "alella-tiana-teia",
         "name": "Alella · Tiana · Teià",
-        "short": "Maresme Premium",
+        "short": "Alella · Tiana · Teià",
         "region": "Maresme",
         "lat": 41.495,
         "lng": 2.295,

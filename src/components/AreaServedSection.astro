@@ -3,9 +3,12 @@ import { WHATSAPP_NUMBER } from '@/lib/constants';
 
 export interface Props {
   t: Record<string, any>;
+  lang: string;
 }
 
-const { t } = Astro.props;
+// `lang` is an explicit prop, not a read of `t.lang`: a broken contract then
+// fails `astro check` (ts2322) instead of silently emitting /undefined/areas/*.
+const { t, lang } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 
 const hubIcons = [
@@ -95,6 +98,34 @@ const hubIcons = [
           </a>
         </div>
       ))}
+    </div>
+
+    <!-- Full coverage index. The only non-geo page that links every area page,
+         so the 12-page cluster is not a closed clique: /contact is in the main
+         nav, which puts every city page at crawl depth 2 in every language.
+         Sits above the travel note on purpose — list the towns we have pages
+         for, then tell everyone else we still travel. -->
+    <div class="mt-12 pt-8 border-t border-th-border/10 max-w-3xl mx-auto">
+      <h3 class="text-center font-display font-semibold text-th-heading text-lg mb-1.5">
+        {t.area.all_areas_title}
+      </h3>
+      <p class="text-center caption mb-6">{t.area.all_areas_subtitle}</p>
+
+      <nav aria-label={t.area.all_areas_title}>
+        <ul class="flex flex-wrap justify-center gap-2">
+          {t.area_pages.cities.map((c: any) => (
+            <li>
+              <a
+                href={`/${lang}/areas/${c.slug}`}
+                class="inline-flex items-center px-4 py-2 rounded-full bg-th-surface/5 border border-th-border/10 text-th-body text-sm hover:text-brand-accent hover:border-brand-accent/40 hover:bg-brand-accent/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                data-event="area_index_click"
+              >
+                {c.short}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
 
     <!-- Travel note -->

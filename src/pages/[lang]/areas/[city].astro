@@ -57,6 +57,35 @@ const cityRelatedClusters = getActiveClusterIds()
 
 // Hub labels lookup (typed as any to allow string indexing in template)
 const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
+
+// --- Sibling area pages -------------------------------------------------
+// Before this, 25 of the 36 city pages had no editorial inbound link at all
+// (reachable only via the language switcher and the sitemap). Every city page
+// now links to the other 11, so no area page is an orphan in any language.
+//
+// Ordering: same-`region` first, then original array order. `region` is only
+// ever compared within a single `t`, so this is language-safe without a
+// slug-keyed region map. Three cities are the sole member of their region and
+// correctly fall through to array order. The explicit index tiebreak means we
+// do not rely on Array#sort stability.
+const siblingAreas = t.area_pages.cities
+  .map((c: any, i: number) => ({ c, i }))
+  .filter(({ c }: any) => c.slug !== city.slug)
+  .sort((a: any, b: any) => {
+    const rank = (x: any) => (x.c.region === city.region ? 0 : 1);
+    return rank(a) - rank(b) || a.i - b.i;
+  })
+  .map(({ c }: any) => c);
+
+// Deduplicate the plain coverage chips against the linked sibling row: 9 of the
+// 48 `nearby` strings name a town that has its own page (e.g. Matadepera lists
+// "Terrassa"), and rendering it once as dead text and once as a link reads as
+// two different places. Exact comparison against `name` is enough — both sides
+// come from the same `t`, so no accent-insensitive matching is needed.
+// Deliberately NOT handled: Pedralbes lists "Sarrià-Sant Gervasi" (the district)
+// while the sibling page is "Sant Gervasi – Tres Torres". Different entities.
+const siblingNames = new Set(siblingAreas.map((c: any) => c.name));
+const nearbyChips = city.nearby.filter((n: string) => !siblingNames.has(n));
 ---
 
 <BaseLayout
@@ -136,11 +165,37 @@ const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
           <span class="px-4 py-2 bg-brand-accent/10 border border-brand-accent/20 rounded-full text-brand-accent text-sm font-medium">
             {city.name}
           </span>
-          {city.nearby.map((area: string) => (
+          {nearbyChips.map((area: string) => (
             <span class="px-4 py-2 bg-th-surface/5 border border-th-border/10 rounded-full text-th-muted text-sm">
               {area}
             </span>
           ))}
+        </div>
+
+        <!-- Towns with their own page. Separated by a rule and given an accent
+             hover/focus state so these read as navigation, not as more of the
+             non-interactive coverage chips above. -->
+        <div class="mt-10 pt-8 border-t border-th-border/10">
+          <h3 class="text-center font-display font-semibold text-th-heading text-lg mb-1.5">
+            {ap.other_areas_heading}
+          </h3>
+          <p class="text-center caption mb-6">{ap.other_areas_subtitle}</p>
+
+          <nav aria-label={ap.other_areas_heading}>
+            <ul class="flex flex-wrap justify-center gap-2">
+              {siblingAreas.map((c: any) => (
+                <li>
+                  <a
+                    href={`/${lang}/areas/${c.slug}`}
+                    class="inline-flex items-center px-4 py-2 rounded-full bg-th-surface/5 border border-th-border/10 text-th-body text-sm hover:text-brand-accent hover:border-brand-accent/40 hover:bg-brand-accent/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                    data-event="area_cross_link"
+                  >
+                    {c.short}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </section>
