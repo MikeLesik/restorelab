@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CertificationsRow from '@/components/CertificationsRow.astro';
-import BrandsStrip from '@/components/BrandsStrip.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -113,8 +112,7 @@ const about = t.about;
   </div>
 
   <!-- Brands & Certifications -->
-  <BrandsStrip t={t} />
-  <CertificationsRow t={t} />
+  <CertificationsRow t={t} equipment={false} />
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 

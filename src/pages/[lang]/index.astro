@@ -8,7 +8,6 @@ import FAQ from '@/components/FAQ.astro';
 import BeforeAfterCarousel from '@/components/BeforeAfterCarousel.astro';
 import GuaranteeBlock from '@/components/GuaranteeBlock.astro';
 
-import BrandsStrip from '@/components/BrandsStrip.astro';
 import CertificationsRow from '@/components/CertificationsRow.astro';
 import Estimator from '@/components/Estimator.astro';
 
@@ -37,7 +36,6 @@ const { t } = Astro.props;
   currentPath=""
 >
   <Hero t={t} lang={lang} />
-  <BrandsStrip t={t} />
   <ServicesGrid t={t} lang={lang} exclude={['acrylic-restoration', 'trim-restoration']} />
   {/* Proof before process: the before/after work is the only evidence on the
       page that we can do the job, and it sat at ~37% scroll depth behind an

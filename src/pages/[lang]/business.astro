@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import FAQ from '@/components/FAQ.astro';
-import BrandsStrip from '@/components/BrandsStrip.astro';
 import CertificationsRow from '@/components/CertificationsRow.astro';
 
 import en from '@/content/en.json';
@@ -158,7 +157,6 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
     </section>
 
     <!-- Trust signals -->
-    <BrandsStrip t={t} />
     <CertificationsRow t={t} />
 
     <!-- B2B FAQ -->

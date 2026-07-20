@@ -71,7 +71,11 @@ function getColsClass(count: number): string {
 const colsClass = getColsClass(services.length);
 ---
 
-<section class={compact ? '' : 'pt-16 pb-20'}>
+{/* border-t terminates the full-viewport Hero. BrandsStrip used to provide this
+    seam; with it gone, ServicesGrid — now the first section after the Hero on
+    the homepage — carries it. `compact` (the /services listing) has its own h1
+    above and needs no seam. */}
+<section class={compact ? '' : 'pt-16 pb-20 border-t border-th-border/5'}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {!compact && (
