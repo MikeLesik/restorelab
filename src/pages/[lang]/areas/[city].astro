@@ -8,6 +8,7 @@ import ca from '@/content/ca.json';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 import { clusterMap, getActiveClusterIds } from '@/lib/clusterMap';
 import { serviceProfiles } from '@/lib/serviceProfiles';
+import { CANARY_PAIRS } from '@/lib/areaServiceContent';
 
 export function getStaticPaths() {
   const langs = [
@@ -27,6 +28,18 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const { t, city } = Astro.props;
 const ap = t.area_pages;
+
+// The ES-only area×service pages are the most specific answer to a
+// "<service> in <city>" query, but nothing linked to them — 13 of the 14 were
+// orphans, reachable only through the sitemap. Where one exists for this city,
+// the service card points at it instead of the generic service page.
+const canaryServices = new Set(
+  lang === 'es'
+    ? CANARY_PAIRS.filter((p) => p.city === city.slug).map((p) => p.service)
+    : []
+);
+const serviceHref = (id: string) =>
+  canaryServices.has(id) ? `/${lang}/areas/${city.slug}/${id}` : `/${lang}/services/${id}`;
 const wa = WHATSAPP_NUMBER;
 
 const fill = (tpl: string) => tpl.replace(/\{city\}/g, city.name);
@@ -98,7 +111,13 @@ const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.services.items.filter((s: any) => !['trim-restoration'].includes(s.id)).map((s: any) => (
-            <a href={`/${lang}/services/${s.id}`} class="card hover:border-th-border/20 transition-colors group">
+            <a
+              href={serviceHref(s.id)}
+              class="card hover:border-th-border/20 transition-colors group"
+              data-event="area_service_click"
+              data-area={city.slug}
+              data-service={s.id}
+            >
               <h3 class="font-display font-semibold text-th-heading text-lg mb-2 group-hover:text-brand-accent transition-colors">{s.title}</h3>
               <p class="text-th-muted text-sm mb-4">{s.subtitle}</p>
               <span class="text-brand-accent text-sm font-medium">{s.starting_price || t.services.get_quote}</span>
@@ -142,7 +161,7 @@ const clusterHubLabels: any = t.cluster_ui?.hubs ?? {};
               const label = clusterHubLabels[def.hubLabelKey] || serviceProfiles[id]?.englishLabel || id;
               return (
                 <a
-                  href={`/${lang}${def.hub}`}
+                  href={canaryServices.has(id) ? `/${lang}/areas/${city.slug}/${id}` : `/${lang}${def.hub}`}
                   class="group block p-5 rounded-2xl border border-th-border/10 hover:border-brand-accent/40 hover:bg-th-surface/3 transition-all focus-visible:ring-2 focus-visible:ring-brand-accent"
                   data-event="area_service_click"
                   data-area={city.slug}

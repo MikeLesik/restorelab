@@ -9,6 +9,17 @@ export interface Props {
 }
 
 const { t, lang, compact = false, exclude = [] } = Astro.props;
+
+// Service ids that have a dedicated page. The grid also renders
+// `trim-restoration`, which has none, so that card must stay unlinked.
+const SERVICE_PAGES = new Set([
+  'car-paint-correction',
+  'glass-polishing',
+  'acrylic-restoration',
+  'headlight-restoration',
+  'interior-leather',
+  'pre-sale-pack',
+]);
 const wa = WHATSAPP_NUMBER;
 const services = t.services.items.filter((s: any) => !exclude.includes(s.id));
 
@@ -82,6 +93,7 @@ const colsClass = getColsClass(services.length);
         const isFeatured = service.tag === 'Most popular' || service.tag === 'Más popular' || service.tag === 'Més popular';
         const ctaLabel = service.cta_label ?? t.services.get_quote;
         const waText = encodeURIComponent(t.wa_messages.services_grid_quote.replace('{service}', service.title));
+        const serviceHref = SERVICE_PAGES.has(service.id) ? `/${lang}/services/${service.id}` : null;
 
         return (
           <div class:list={[
@@ -125,8 +137,20 @@ const colsClass = getColsClass(services.length);
               )}
             </div>
 
-            {/* Title */}
-            <h3 class="text-xl font-display font-bold text-th-heading mb-1">{service.title}</h3>
+            {/* Title — doubles as the card's link to the service page. The
+                ::after overlay stretches it across the whole card, which is why
+                the WhatsApp CTA below needs its own stacking context: anchors
+                cannot be nested. */}
+            <h3 class="text-xl font-display font-bold text-th-heading mb-1">
+              {serviceHref ? (
+                <a
+                  href={serviceHref}
+                  class="after:absolute after:inset-0 after:content-[''] after:rounded-2xl hover:text-brand-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark rounded"
+                >
+                  {service.title}
+                </a>
+              ) : service.title}
+            </h3>
 
             {/* Subtitle — 1 line */}
             <p class="text-sm text-th-muted mb-5 leading-snug">{service.subtitle}</p>
@@ -156,7 +180,7 @@ const colsClass = getColsClass(services.length);
               target="_blank"
               rel="noopener noreferrer"
               data-event="wa_click"
-              class="mt-auto flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-brand-whatsapp hover:brightness-110 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+              class="relative z-10 mt-auto flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-brand-whatsapp hover:brightness-110 text-white text-sm font-semibold rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
             >
               <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <use href="#icon-whatsapp" />
