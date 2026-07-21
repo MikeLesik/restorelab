@@ -85,10 +85,6 @@
     "cookies": {
       "title": "Política de Cookies | restoreLab",
       "description": "Información sobre las cookies utilizadas en restorelab.io, su finalidad y cómo gestionar tu consentimiento."
-    },
-    "examples": {
-      "title": "Ejemplos ilustrativos — Antes y Después | restoreLab",
-      "description": "Galería de ejemplos del tipo de resultado que conseguimos en corrección de pintura, cristales, faros y más. Imágenes ilustrativas, no fotos de clientes."
     }
   },
   "nav": {
@@ -97,8 +93,7 @@
     "cases": "Portfolio",
     "contact": "Contacto",
     "academy": "Academia",
-    "cta": "Presupuesto",
-    "examples": "Ejemplos"
+    "cta": "Presupuesto"
   },
   "ui": {
     "language": "Idioma",
@@ -4372,16 +4367,5 @@
     "cta_subtitle": "Envíanos fotos de tu coche por WhatsApp y te confirmamos precio y fecha — sin compromiso.",
     "back_to_area": "Barcelona",
     "see_pricing": "Ver todos los precios"
-  },
-  "examples_page": {
-    "hero_title": "Ejemplos de resultados",
-    "hero_subtitle": "El tipo de acabado que conseguimos, servicio por servicio.",
-    "disclaimer": "Imágenes generadas para ilustrar el tipo de defecto y el resultado esperado. No son fotos de trabajos reales ni casos de clientes concretos. Nuestros casos reales están en la galería Antes y Después.",
-    "cases_link": "Ver casos reales",
-    "cat_paint": "Corrección de pintura",
-    "cat_glass": "Pulido de cristales",
-    "cat_headlights": "Faros",
-    "cat_acrylic": "Acrílico",
-    "cat_ceramic": "Cerámico"
   }
 }

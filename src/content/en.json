@@ -85,10 +85,6 @@
     "cookies": {
       "title": "Cookie Policy | restoreLab",
       "description": "Information about the cookies used on restorelab.io, their purpose and how to manage your consent."
-    },
-    "examples": {
-      "title": "Illustrative Examples — Before & After | restoreLab",
-      "description": "A gallery of the kind of results we achieve in paint correction, glass, headlights and more. Illustrative images, not customer photos."
     }
   },
   "nav": {
@@ -97,8 +93,7 @@
     "cases": "Cases",
     "contact": "Contact",
     "academy": "Academy",
-    "cta": "Get Estimate",
-    "examples": "Examples"
+    "cta": "Get Estimate"
   },
   "ui": {
     "language": "Language",
@@ -4371,16 +4366,5 @@
     "cta_subtitle": "Send us photos of your car via WhatsApp and we'll confirm price and date — no obligation.",
     "back_to_area": "Barcelona",
     "see_pricing": "See all prices"
-  },
-  "examples_page": {
-    "hero_title": "Example results",
-    "hero_subtitle": "The kind of finish we achieve, service by service.",
-    "disclaimer": "Images generated to illustrate the defect type and the expected result. They are not photos of real jobs or specific customer cases. Our real work is in the Before & After gallery.",
-    "cases_link": "See real cases",
-    "cat_paint": "Paint correction",
-    "cat_glass": "Glass polishing",
-    "cat_headlights": "Headlights",
-    "cat_acrylic": "Acrylic",
-    "cat_ceramic": "Ceramic"
   }
 }

@@ -55,12 +55,5 @@ const { t } = Astro.props;
     </div>
 
     <CasesGallery t={t} lang={lang} />
-
-    <div class="text-center pb-16">
-      <a href={`/${lang}/examples`} class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-accent hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
-        {t.examples_page.hero_title}
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-      </a>
-    </div>
   </div>
 </BaseLayout>
