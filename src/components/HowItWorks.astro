@@ -20,14 +20,14 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.how_i
     {/* Two columns, not a four-up card grid: the same centred-h2-over-cards
         silhouette every other homepage block already uses reads as one shape
         repeated. The left rail holds the pitch and the ask; the right holds the
-        steps, so the ask sits beside the sequence that justifies it — but
-        `order-last` keeps it after the steps below lg, where it stacks. */}
+        steps. It stacks in DOM order on mobile — heading first, then the steps —
+        so the section reads top-down naturally (no order swap). */}
     {/* The left rail is sticky so it travels with the scroll beside the four
         steps. Top-aligned (not vertically centred) so the heading lines up with
         step 01 and the text reads neatly against the sequence. */}
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-      <div class="lg:col-span-5 order-last lg:order-first">
+      <div class="lg:col-span-5">
         <div class="lg:sticky lg:top-24">
           <h2 class="section-title">{hw.section_title}</h2>
           <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
