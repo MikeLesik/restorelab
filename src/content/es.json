@@ -909,28 +909,11 @@
         "location": "Terrassa"
       },
       {
-        "id": 5,
-        "title": "Mercedes GLE — Eliminación de Arañazos",
-        "category": "car",
-        "before": "/images/cases/car3-before.jpg",
-        "after": "/images/cases/car3-after.jpg",
-        "result": "Arañazo profundo corregido — sin repintar",
-        "metric": "Pintura original conservada",
-        "location": "Barcelona"
-      },
-      {
         "id": 10,
         "title": "SUV negro — Corrección de pintura",
         "category": "car",
         "image": "/images/cases/realcar-suv-black.jpg",
         "result": "Remolinos y velo eliminados, brillo espejo recuperado"
-      },
-      {
-        "id": 11,
-        "title": "Compacto deportivo rojo — Restauración de brillo",
-        "category": "car",
-        "image": "/images/cases/realcar-hothatch-red.jpg",
-        "result": "Oxidación eliminada, rojo como de fábrica"
       },
       {
         "id": 12,

@@ -909,28 +909,11 @@
         "location": "Terrassa"
       },
       {
-        "id": 5,
-        "title": "Mercedes GLE — Eliminació de Ratllades",
-        "category": "car",
-        "before": "/images/cases/car3-before.jpg",
-        "after": "/images/cases/car3-after.jpg",
-        "result": "Ratllada profunda corregida — sense repintar",
-        "metric": "Pintura original conservada",
-        "location": "Barcelona"
-      },
-      {
         "id": 10,
         "title": "SUV negre — Correcció de pintura",
         "category": "car",
         "image": "/images/cases/realcar-suv-black.jpg",
         "result": "Remolins i vel eliminats, brillantor mirall recuperada"
-      },
-      {
-        "id": 11,
-        "title": "Compacte esportiu vermell — Restauració de brillantor",
-        "category": "car",
-        "image": "/images/cases/realcar-hothatch-red.jpg",
-        "result": "Oxidació eliminada, vermell com de fàbrica"
       },
       {
         "id": 12,

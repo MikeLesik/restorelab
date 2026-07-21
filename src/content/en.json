@@ -827,28 +827,11 @@
         "location": "Terrassa"
       },
       {
-        "id": 5,
-        "title": "Mercedes GLE — Scratch Removal",
-        "category": "car",
-        "before": "/images/cases/car3-before.jpg",
-        "after": "/images/cases/car3-after.jpg",
-        "result": "Deep scratch corrected — no repainting",
-        "metric": "Original paint kept",
-        "location": "Barcelona"
-      },
-      {
         "id": 10,
         "title": "Black SUV — Paint Correction",
         "category": "car",
         "image": "/images/cases/realcar-suv-black.jpg",
         "result": "Swirls and haze cut back, deep mirror gloss restored"
-      },
-      {
-        "id": 11,
-        "title": "Red Hot Hatch — Gloss Restoration",
-        "category": "car",
-        "image": "/images/cases/realcar-hothatch-red.jpg",
-        "result": "Oxidation removed, factory-fresh red brought back"
       },
       {
         "id": 12,
