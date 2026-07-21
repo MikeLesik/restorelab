@@ -58,15 +58,15 @@ function getGridClass(count: number): string {
     {title && <h2 class="section-title text-center mb-8">{title}</h2>}
 
     {t.pricing.anchor_text && (
-      <div class="mb-12 p-5 rounded-xl bg-brand-gold/5 border border-brand-gold/20 text-center">
+      <div class="mb-8 p-3.5 rounded-xl bg-brand-gold/5 border border-brand-gold/20 text-center">
         <p class="text-brand-gold text-sm font-medium">{t.pricing.anchor_text}</p>
       </div>
     )}
 
     {categories.map((category: any) => (
-        <div class="mb-10">
+        <div class="mb-8">
           {category.title && (
-            <h3 class="font-display font-semibold text-th-muted mb-8 uppercase tracking-widest text-sm border-b border-th-border/10 pb-4">
+            <h3 class="font-display font-semibold text-th-muted mb-5 uppercase tracking-widest text-sm border-b border-th-border/10 pb-3">
               {category.title}
             </h3>
           )}
@@ -87,15 +87,15 @@ function getGridClass(count: number): string {
                   </div>
                 )}
 
-                <div class="mb-5">
-                  <h4 class="font-display font-bold text-th-heading text-lg mb-2">{pkg.name}</h4>
-                  <div class="text-2xl font-display font-bold text-brand-accent mb-1">{pkg.price}</div>
+                <div class="mb-4">
+                  <h4 class="font-display font-bold text-th-heading text-lg mb-1.5">{pkg.name}</h4>
+                  <div class="text-2xl font-display font-bold text-brand-accent mb-0.5">{pkg.price}</div>
                   <div class="text-xs text-th-faint">{pkg.duration}</div>
                 </div>
 
-                <p class="text-sm text-th-muted mb-5 leading-relaxed">{pkg.description}</p>
+                <p class="text-sm text-th-muted mb-4 leading-snug">{pkg.description}</p>
 
-                <ul class="space-y-2 mb-6 flex-1">
+                <ul class="space-y-1.5 mb-5 flex-1">
                   {pkg.includes.map((item: string) => (
                     <li class="flex items-start gap-2 text-sm text-th-body/80">
                       <svg class="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@ function getGridClass(count: number): string {
                 </ul>
 
                 <div class="mt-auto">
-                  <div class="text-xs text-th-faint/70 mb-3">
+                  <div class="text-xs text-th-faint/70 mb-2.5">
                     <span class="font-medium text-th-muted">{ui.best_for || 'Best for:'}</span> {pkg.best_for}
                   </div>
                   <div class="flex gap-2">
@@ -217,7 +217,7 @@ function getGridClass(count: number): string {
     })}
 
     <!-- Custom quote CTA -->
-    <div class="text-center mt-8 p-8 border border-dashed border-th-border/15 rounded-2xl">
+    <div class="text-center mt-6 p-6 border border-dashed border-th-border/15 rounded-2xl">
       <p class="text-th-muted mb-4">{t.pricing.cta_custom}</p>
       <a
         href={`https://wa.me/${wa}?text=${encodeURIComponent(categoryId && categories[0] ? t.wa_messages.pricing_custom.replace('{category}', categories[0].title) : t.wa_messages.pricing_custom_general)}`}
