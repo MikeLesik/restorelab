@@ -786,7 +786,15 @@
     "aria_prev": "Previous case",
     "aria_next": "Next case",
     "location_tpl": "Work carried out in {location}",
-    "aria_filter": "Filter cases by category"
+    "aria_filter": "Filter cases by category",
+    "filters": {
+      "all": "All",
+      "car": "Cars",
+      "moto": "Motorcycles",
+      "glass": "Glass",
+      "headlight": "Headlights",
+      "acrylic": "Acrylic"
+    }
   },
   "cases_gallery": {
     "items": [
@@ -829,6 +837,139 @@
         "result": "Deep scratch corrected — no repainting",
         "metric": "Original paint kept",
         "location": "Barcelona"
+      },
+      {
+        "id": 10,
+        "title": "Black SUV — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-suv-black.jpg",
+        "result": "Swirls and haze cut back, deep mirror gloss restored"
+      },
+      {
+        "id": 11,
+        "title": "Red Hot Hatch — Gloss Restoration",
+        "category": "car",
+        "image": "/images/cases/realcar-hothatch-red.jpg",
+        "result": "Oxidation removed, factory-fresh red brought back"
+      },
+      {
+        "id": 12,
+        "title": "Yellow Coupé — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-coupe-yellow.jpg",
+        "result": "Fine scratches polished out, colour depth restored"
+      },
+      {
+        "id": 13,
+        "title": "Silver Hatchback — Swirl Removal",
+        "category": "car",
+        "image": "/images/cases/realcar-hatchback-silver.jpg",
+        "result": "Wash-induced swirls removed under strong light"
+      },
+      {
+        "id": 14,
+        "title": "White Saloon — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-sedan-white.jpg",
+        "result": "Dull finish refined to a clean, wet-look shine"
+      },
+      {
+        "id": 15,
+        "title": "Blue EV — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-ev-blue.jpg",
+        "result": "Single-stage correction, gloss lifted across the panels"
+      },
+      {
+        "id": 16,
+        "title": "White City Car — Gloss Restoration",
+        "category": "car",
+        "image": "/images/cases/realcar-citycar-white.jpg",
+        "result": "Light scratches removed, paint left slick and bright"
+      },
+      {
+        "id": 17,
+        "title": "Green Compact — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-mini-green.jpg",
+        "result": "Faded clear coat revived, rich colour returned"
+      },
+      {
+        "id": 18,
+        "title": "Grey SUV Coupé — Paint Correction",
+        "category": "car",
+        "image": "/images/cases/realcar-suvcoupe-grey.jpg",
+        "result": "Two-stage correction, metallic flake made to pop"
+      },
+      {
+        "id": 19,
+        "title": "Motorcycle Tank — Paint Correction",
+        "category": "moto",
+        "image": "/images/cases/moto-tank-red.jpg",
+        "result": "Scratches and swirls polished from the fuel tank"
+      },
+      {
+        "id": 20,
+        "title": "Cruiser Tank — Gloss Restoration",
+        "category": "moto",
+        "image": "/images/cases/realmoto-cruiser-tank.jpg",
+        "result": "Deep gloss brought back to the tank and side covers"
+      },
+      {
+        "id": 21,
+        "title": "Sport Bike — Paint Correction",
+        "category": "moto",
+        "image": "/images/cases/realmoto-sport-red.jpg",
+        "result": "Fairing paint refined, colour depth restored"
+      },
+      {
+        "id": 22,
+        "title": "Scooter — Gloss Restoration",
+        "category": "moto",
+        "image": "/images/cases/realmoto-scooter.jpg",
+        "result": "Bodywork polished, everyday scuffs removed"
+      },
+      {
+        "id": 23,
+        "title": "Windshield — Scratch & Haze Removal",
+        "category": "glass",
+        "image": "/images/cases/glass-windshield-front.jpg",
+        "result": "Wiper haze and fine scratches polished out"
+      },
+      {
+        "id": 24,
+        "title": "Windshield — Deep Scratch Sanding",
+        "category": "glass",
+        "image": "/images/cases/glass-windshield-angle.jpg",
+        "result": "Deep scratches sanded and polished — no glass swap"
+      },
+      {
+        "id": 25,
+        "title": "Side Window — Scratch Removal",
+        "category": "glass",
+        "image": "/images/cases/glass-side-window.jpg",
+        "result": "Scuffs and scratches removed, clarity restored"
+      },
+      {
+        "id": 26,
+        "title": "Panoramic Roof — Water Spot Removal",
+        "category": "glass",
+        "image": "/images/cases/glass-panoramic-roof.jpg",
+        "result": "Baked-on water spots and mineral etching polished away"
+      },
+      {
+        "id": 27,
+        "title": "Motorcycle Screen — Acrylic Restoration",
+        "category": "acrylic",
+        "image": "/images/cases/moto-acrylic-screen.jpg",
+        "result": "Scratched acrylic screen polished back to clear"
+      },
+      {
+        "id": 28,
+        "title": "Motorcycle Headlight — Restoration",
+        "category": "headlight",
+        "image": "/images/cases/moto-headlight-round.jpg",
+        "result": "Yellowed, oxidised lens restored to crystal clarity"
       }
     ]
   },

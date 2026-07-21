@@ -30,6 +30,16 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
     color: 'text-violet-600 dark:text-violet-400',
     iconPaths: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>`,
   },
+  moto: {
+    grad: 'from-orange-500/20 via-brand-navy to-brand-dark',
+    color: 'text-orange-600 dark:text-orange-400',
+    iconPaths: `<circle cx="6" cy="16" r="3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><circle cx="18" cy="16" r="3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 16l3-5h5l3 5M9 11l-1-3h4"/>`,
+  },
+  headlight: {
+    grad: 'from-amber-500/20 via-brand-navy to-brand-dark',
+    color: 'text-amber-600 dark:text-amber-400',
+    iconPaths: `<circle cx="10" cy="12" r="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 9h4M15 12h5M15 15h4"/>`,
+  },
 };
 ---
 
@@ -38,7 +48,7 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
 
     <!-- Filter tabs -->
     <div class="flex flex-wrap gap-2 justify-center mb-10" id="case-filters" role="tablist" aria-label={cs.aria_filter}>
-      {['all', 'car', 'glass', 'acrylic'].map((filter) => (
+      {['all', 'car', 'moto', 'glass', 'headlight', 'acrylic'].map((filter) => (
         <button
           data-filter={filter}
           role="tab"
@@ -50,7 +60,7 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
               : 'border-th-border/15 text-th-muted hover:text-th-heading hover:border-th-border/30'
           ]}
         >
-          {filter.charAt(0).toUpperCase() + filter.slice(1)}
+          {cs.filters[filter]}
         </button>
       ))}
     </div>
@@ -61,7 +71,19 @@ const categoryConfig: Record<string, { grad: string; iconPaths: string; color: s
         return (
           <div class="card group overflow-hidden hover:border-th-border/20 transition-all duration-300" data-category={c.category}>
 
-            {c.before && c.after ? (
+            {c.image ? (
+              /* Static labelled before|after comparison. The real_foto images are
+                 single baked splits, so no drag-slider — that needs two aligned shots. */
+              <div class="relative aspect-video rounded-xl mb-4 overflow-hidden">
+                <picture>
+                  <source srcset={c.image.replace('.jpg', '.webp')} type="image/webp" />
+                  <img src={c.image} alt={fill(cs.alt_after, { title: c.title })} class="absolute inset-0 w-full h-full object-cover" width="1200" height="670" loading="lazy" decoding="async" />
+                </picture>
+                <span class="absolute top-3 left-3 px-2 py-1 bg-black/85 rounded text-xs text-white uppercase tracking-wider">{cs.before_label}</span>
+                <span class="absolute top-3 right-3 px-2 py-1 bg-black/85 border border-brand-accent rounded text-xs text-white uppercase tracking-wider">{cs.after_label}</span>
+                <span class="absolute bottom-3 left-3 px-2 py-1 bg-black/85 rounded-md text-xs text-white uppercase tracking-wider">{c.category}</span>
+              </div>
+            ) : c.before && c.after ? (
               /* Before/after slider — activated when real photos are added */
               <div
                 class="relative aspect-video rounded-xl mb-4 overflow-hidden select-none"

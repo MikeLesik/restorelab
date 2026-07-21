@@ -868,7 +868,15 @@
     "aria_prev": "Caso anterior",
     "aria_next": "Caso siguiente",
     "location_tpl": "Trabajo realizado en {location}",
-    "aria_filter": "Filtrar casos por categoría"
+    "aria_filter": "Filtrar casos por categoría",
+    "filters": {
+      "all": "Todos",
+      "car": "Coches",
+      "moto": "Motos",
+      "glass": "Cristales",
+      "headlight": "Faros",
+      "acrylic": "Acrílico"
+    }
   },
   "cases_gallery": {
     "items": [
@@ -911,6 +919,139 @@
         "result": "Arañazo profundo corregido — sin repintar",
         "metric": "Pintura original conservada",
         "location": "Barcelona"
+      },
+      {
+        "id": 10,
+        "title": "SUV negro — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-suv-black.jpg",
+        "result": "Remolinos y velo eliminados, brillo espejo recuperado"
+      },
+      {
+        "id": 11,
+        "title": "Compacto deportivo rojo — Restauración de brillo",
+        "category": "car",
+        "image": "/images/cases/realcar-hothatch-red.jpg",
+        "result": "Oxidación eliminada, rojo como de fábrica"
+      },
+      {
+        "id": 12,
+        "title": "Cupé amarillo — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-coupe-yellow.jpg",
+        "result": "Arañazos finos pulidos, profundidad de color recuperada"
+      },
+      {
+        "id": 13,
+        "title": "Utilitario plateado — Eliminación de remolinos",
+        "category": "car",
+        "image": "/images/cases/realcar-hatchback-silver.jpg",
+        "result": "Remolinos de lavado eliminados bajo luz intensa"
+      },
+      {
+        "id": 14,
+        "title": "Berlina blanca — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-sedan-white.jpg",
+        "result": "Acabado apagado convertido en un brillo intenso"
+      },
+      {
+        "id": 15,
+        "title": "Eléctrico azul — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-ev-blue.jpg",
+        "result": "Corrección monocapa, brillo recuperado en la carrocería"
+      },
+      {
+        "id": 16,
+        "title": "Urbano blanco — Restauración de brillo",
+        "category": "car",
+        "image": "/images/cases/realcar-citycar-white.jpg",
+        "result": "Arañazos leves eliminados, pintura brillante y lisa"
+      },
+      {
+        "id": 17,
+        "title": "Compacto verde — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-mini-green.jpg",
+        "result": "Barniz apagado revitalizado, color intenso recuperado"
+      },
+      {
+        "id": 18,
+        "title": "SUV coupé gris — Corrección de pintura",
+        "category": "car",
+        "image": "/images/cases/realcar-suvcoupe-grey.jpg",
+        "result": "Corrección en dos fases, metalizado realzado"
+      },
+      {
+        "id": 19,
+        "title": "Depósito de moto — Corrección de pintura",
+        "category": "moto",
+        "image": "/images/cases/moto-tank-red.jpg",
+        "result": "Arañazos y remolinos pulidos del depósito"
+      },
+      {
+        "id": 20,
+        "title": "Depósito de custom — Restauración de brillo",
+        "category": "moto",
+        "image": "/images/cases/realmoto-cruiser-tank.jpg",
+        "result": "Brillo profundo recuperado en depósito y tapas"
+      },
+      {
+        "id": 21,
+        "title": "Moto deportiva — Corrección de pintura",
+        "category": "moto",
+        "image": "/images/cases/realmoto-sport-red.jpg",
+        "result": "Carenado pulido, profundidad de color recuperada"
+      },
+      {
+        "id": 22,
+        "title": "Scooter — Restauración de brillo",
+        "category": "moto",
+        "image": "/images/cases/realmoto-scooter.jpg",
+        "result": "Carrocería pulida, marcas de uso eliminadas"
+      },
+      {
+        "id": 23,
+        "title": "Parabrisas — Eliminación de arañazos y velo",
+        "category": "glass",
+        "image": "/images/cases/glass-windshield-front.jpg",
+        "result": "Velo de limpiaparabrisas y arañazos finos pulidos"
+      },
+      {
+        "id": 24,
+        "title": "Parabrisas — Lijado de arañazos profundos",
+        "category": "glass",
+        "image": "/images/cases/glass-windshield-angle.jpg",
+        "result": "Arañazos profundos lijados y pulidos, sin cambiar el cristal"
+      },
+      {
+        "id": 25,
+        "title": "Ventanilla lateral — Eliminación de arañazos",
+        "category": "glass",
+        "image": "/images/cases/glass-side-window.jpg",
+        "result": "Marcas y arañazos eliminados, claridad recuperada"
+      },
+      {
+        "id": 26,
+        "title": "Techo panorámico — Eliminación de cal",
+        "category": "glass",
+        "image": "/images/cases/glass-panoramic-roof.jpg",
+        "result": "Manchas de agua y cal incrustadas eliminadas"
+      },
+      {
+        "id": 27,
+        "title": "Cúpula de moto — Restauración de acrílico",
+        "category": "acrylic",
+        "image": "/images/cases/moto-acrylic-screen.jpg",
+        "result": "Cúpula acrílica rayada pulida hasta quedar transparente"
+      },
+      {
+        "id": 28,
+        "title": "Faro de moto — Restauración",
+        "category": "headlight",
+        "image": "/images/cases/moto-headlight-round.jpg",
+        "result": "Óptica amarilleada y oxidada restaurada a claridad total"
       }
     ]
   },

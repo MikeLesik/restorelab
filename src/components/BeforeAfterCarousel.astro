@@ -8,7 +8,11 @@ const { t, lang } = Astro.props;
 
 // Cases are the single source of truth in content JSON (t.cases_gallery.items),
 // translated per language. Never hardcode case data here.
-const cases = t.cases_gallery.items as Array<Record<string, any>>;
+// This carousel is a drag-slider, so it only shows cases with a separate
+// before + after pair; the single-image real works render on the /cases grid.
+const cases = (t.cases_gallery.items as Array<Record<string, any>>).filter(
+  (c) => c.before && c.after,
+);
 
 const cs = t.cases_section;
 // Every visible string comes from the content JSON. This block used to hardcode
