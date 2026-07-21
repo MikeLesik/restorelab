@@ -33,8 +33,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.how_i
           <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
 
           {hw.cta_banner && (
-            <div class="mt-8 card">
-              <p class="text-th-body text-sm mb-4 text-center">{hw.cta_banner}</p>
+            <div class="mt-8 card text-center">
+              <p class="text-th-body text-[15px] leading-relaxed text-balance">{hw.cta_banner}</p>
+              <div class="border-t border-th-border/10 -mx-6 my-5" aria-hidden="true"></div>
               <a
                 href={waUrl}
                 target="_blank"
