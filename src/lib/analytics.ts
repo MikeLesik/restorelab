@@ -53,7 +53,10 @@ export function pushEvent(payload: RestoreLabEvent): void {
     switch (payload.event) {
       case 'wa_click':
       case 'phone_click':
-        fbq('track', 'Contact');
+        // A tap-to-chat / tap-to-call is the primary lead action here, so it
+        // fires Lead (not Contact). The runtime pipeline (__rl_push in
+        // BaseLayout) also attaches an eventID for CAPI de-duplication.
+        fbq('track', 'Lead', { content_category: 'contact', currency: 'EUR' });
         break;
       case 'estimate_submit':
       case 'lead_submitted':

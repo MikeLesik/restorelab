@@ -446,6 +446,13 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         var cc = window.CookieConsent;
         if (cc && typeof cc.acceptedCategory === 'function' && !cc.acceptedCategory('analytics')) return;
 
+        // Shared event id so a future server-side Conversions API (CAPI) call can
+        // be de-duplicated against this browser Pixel event — Meta matches on eventID.
+        var eventID = (window.crypto && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : (Date.now() + '-' + Math.random().toString(16).slice(2));
+        payload.event_id = eventID;
+
         // GTM dataLayer
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
@@ -455,13 +462,20 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
           window.clarity('event', payload.event);
         }
 
-        // Meta Pixel — map to standard events
+        // Meta Pixel — map to standard events. A tap-to-chat / tap-to-call is the
+        // primary lead action for this business, so wa_click/phone_click fire Lead
+        // (not Contact). eventID is passed for CAPI de-duplication.
         if (typeof window.fbq === 'function') {
           var ev = payload.event;
-          if (ev === 'wa_click' || ev === 'phone_click') fbq('track', 'Contact');
-          else if (ev === 'estimate_submit' || ev === 'lead_submitted' || ev === 'b2b_inquiry' || ev === 'ev_inquiry' || ev === 'commercial_glass_inquiry') fbq('track', 'Lead');
-          else if (ev === 'estimator_completed') fbq('track', 'ViewContent', { content_name: payload.tier, currency: 'EUR' });
-          else if (ev === 'pricing_tier_clicked') fbq('track', 'ViewContent', { content_name: payload.tier });
+          var eid = { eventID: eventID };
+          if (ev === 'wa_click' || ev === 'phone_click') {
+            fbq('track', 'Lead', { content_name: payload.click_text || ev, content_category: 'contact', currency: 'EUR' }, eid);
+          }
+          else if (ev === 'estimate_submit' || ev === 'lead_submitted' || ev === 'b2b_inquiry' || ev === 'ev_inquiry' || ev === 'commercial_glass_inquiry') {
+            fbq('track', 'Lead', { content_category: ev }, eid);
+          }
+          else if (ev === 'estimator_completed') fbq('track', 'ViewContent', { content_name: payload.tier, currency: 'EUR' }, eid);
+          else if (ev === 'pricing_tier_clicked') fbq('track', 'ViewContent', { content_name: payload.tier }, eid);
         }
       };
 
