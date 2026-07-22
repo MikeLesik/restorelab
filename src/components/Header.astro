@@ -79,13 +79,14 @@ function isActive(segment: string): boolean {
           class="hidden lg:flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         >
           <!-- Sun icon (shown in dark mode) -->
-          <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="5"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2.75v1.6M12 19.65v1.6M4.6 4.6l1.13 1.13M18.27 18.27l1.13 1.13M2.75 12h1.6M19.65 12h1.6M4.6 19.4l1.13-1.13M18.27 5.73l1.13-1.13"/>
           </svg>
           <!-- Moon icon (shown in light mode) -->
-          <svg class="w-[18px] h-[18px] theme-icon-moon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="w-[18px] h-[18px] theme-icon-moon hidden" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M20.5 14.2A8.4 8.4 0 1 1 9.8 3.5 6.6 6.6 0 0 0 20.5 14.2Z"/>
+            <path d="M17.4 3.9v2.3M16.25 5.05h2.3" stroke-opacity=".5"/>
           </svg>
         </button>
 
@@ -97,8 +98,10 @@ function isActive(segment: string): boolean {
             aria-haspopup="true"
             class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-th-body/70 hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           >
-            <svg class="w-3.5 h-3.5 text-th-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+            <svg class="w-4 h-4 text-th-faint" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8.6"/>
+              <path d="M3.6 12h16.8" stroke-opacity=".55"/>
+              <path d="M12 3.4c2.3 2.4 3.5 5.4 3.5 8.6s-1.2 6.2-3.5 8.6c-2.3-2.4-3.5-5.4-3.5-8.6S9.7 5.8 12 3.4Z"/>
             </svg>
             {lang.toUpperCase()}
             <svg class="w-3 h-3 text-th-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,12 +160,13 @@ function isActive(segment: string): boolean {
           aria-label={t.ui.toggle_theme}
           class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-th-muted hover:text-th-heading hover:bg-th-surface/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
         >
-          <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="5"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          <svg class="w-[18px] h-[18px] theme-icon-sun" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2.75v1.6M12 19.65v1.6M4.6 4.6l1.13 1.13M18.27 18.27l1.13 1.13M2.75 12h1.6M19.65 12h1.6M4.6 19.4l1.13-1.13M18.27 5.73l1.13-1.13"/>
           </svg>
-          <svg class="w-[18px] h-[18px] theme-icon-moon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="w-[18px] h-[18px] theme-icon-moon hidden" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M20.5 14.2A8.4 8.4 0 1 1 9.8 3.5 6.6 6.6 0 0 0 20.5 14.2Z"/>
+            <path d="M17.4 3.9v2.3M16.25 5.05h2.3" stroke-opacity=".5"/>
           </svg>
         </button>
 
