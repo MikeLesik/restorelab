@@ -74,14 +74,11 @@ const hubIcons = [
             <span class="text-xs text-brand-accent/80 font-medium">{hub.coverage}</span>
           </div>
 
-          {/* Areas */}
-          <div class="flex flex-wrap gap-1.5 mb-7 flex-1">
-            {hub.areas.map((area: string) => (
-              <span class="px-2.5 py-1 bg-th-surface/5 border border-th-border/10 rounded-lg text-xs text-th-muted">
-                {area}
-              </span>
-            ))}
-          </div>
+          {/* Coverage towns — a clean middot-separated list reads far better than
+              the ragged bordered chips it replaced. */}
+          <p class="text-sm text-th-muted leading-relaxed mb-7 flex-1">
+            {hub.areas.join('  ·  ')}
+          </p>
 
           {/* CTA */}
           <a
