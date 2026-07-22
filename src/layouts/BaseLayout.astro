@@ -476,6 +476,19 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
           }
           else if (ev === 'estimator_completed') fbq('track', 'ViewContent', { content_name: payload.tier, currency: 'EUR' }, eid);
           else if (ev === 'pricing_tier_clicked') fbq('track', 'ViewContent', { content_name: payload.tier }, eid);
+
+          // ── Conversions API mirror — same eventID so the server copy de-dupes
+          // against this browser event. /api/capi is a no-op until META_CAPI_TOKEN
+          // is set, so this is safe to ship now (fire-and-forget; a 404 on the
+          // Astro preview is swallowed by .catch).
+          var capiCat = { wa_click:'contact', phone_click:'contact', estimate_submit:'estimate', lead_submitted:'form', b2b_inquiry:'b2b', ev_inquiry:'ev', commercial_glass_inquiry:'glass' }[ev];
+          if (capiCat) {
+            try {
+              var readCookie = function(n){ var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)'); return m ? m.pop() : ''; };
+              fetch('/api/capi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+                body: JSON.stringify({ event_name: 'Lead', event_id: eventID, url: location.href, ua: navigator.userAgent, fbp: readCookie('_fbp'), fbc: readCookie('_fbc'), category: capiCat }) }).catch(function(){});
+            } catch (e) {}
+          }
         }
       };
 
