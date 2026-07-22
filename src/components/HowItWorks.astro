@@ -29,8 +29,12 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.how_i
 
       <div class="lg:col-span-5">
         <div class="lg:sticky lg:top-24">
-          <h2 class="section-title">{hw.section_title}</h2>
-          <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
+          {/* Indent heading + subtitle to line up with the card's prompt text:
+              card padding (p-5/sm:p-6) + accent rail (w-1.5) + flex gap (gap-4/sm:gap-5). */}
+          <div class="pl-[42px] sm:pl-[50px]">
+            <h2 class="section-title">{hw.section_title}</h2>
+            <p class="section-subtitle mt-3">{hw.section_subtitle}</p>
+          </div>
 
           {hw.cta_banner && (
             <div class="mt-8 flex items-stretch gap-4 sm:gap-5 rounded-2xl p-5 sm:p-6 bg-brand-whatsapp/10 ring-1 ring-brand-whatsapp/20 dark:backdrop-blur-sm">
