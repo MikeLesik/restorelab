@@ -181,9 +181,12 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-th-border/20 text-th-heading font-semibold rounded-lg hover:bg-th-surface/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
   }
+  /* Frosted: translucent green glass — tint + blur + hairline, heading-colour
+     label with a green glyph. Recolour by swapping the brand-whatsapp token. */
   .btn-whatsapp {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-whatsapp text-white font-semibold rounded-lg hover:brightness-110 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-th-heading bg-brand-whatsapp/15 border border-brand-whatsapp/40 backdrop-blur-sm transition-all duration-200 hover:bg-brand-whatsapp/25 hover:border-brand-whatsapp/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark;
   }
+  .btn-whatsapp svg { @apply text-brand-whatsapp; }
   .section-title {
     @apply text-3xl md:text-4xl font-display font-bold text-th-heading mb-4;
   }
