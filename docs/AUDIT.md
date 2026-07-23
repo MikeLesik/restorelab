@@ -156,7 +156,7 @@ All behind CookieConsent v3 (GDPR compliant):
 |--------|----------|---------|---------------|
 | GTM | analytics | `PUBLIC_GTM_ID` = `GTM-W34GRX86` | `CookieConsent.acceptedCategory('analytics')` |
 | Clarity | analytics | `PUBLIC_CLARITY_ID` = `vmc619bvp9` | Same as GTM |
-| Meta Pixel | marketing | `PUBLIC_META_PIXEL_ID` = `812107381591231` | `CookieConsent.acceptedCategory('marketing')` |
+| Meta Pixel | marketing | `PUBLIC_META_PIXEL_ID` = `1556029059322810` | `CookieConsent.acceptedCategory('marketing')` |
 | CookieConsent CSS | necessary | — | Non-blocking (`media="print" onload`) |
 | CookieConsent JS | necessary | — | Appended to `<head>` dynamically |
 
@@ -181,7 +181,7 @@ PUBLIC_WHATSAPP_NUMBER=34680265190
 PUBLIC_SITE_URL=https://restorelab.io
 PUBLIC_GTM_ID=GTM-W34GRX86
 PUBLIC_CLARITY_ID=vmc619bvp9
-PUBLIC_META_PIXEL_ID=812107381591231
+PUBLIC_META_PIXEL_ID=1556029059322810
 ```
 
 Centralized in `src/lib/constants.ts`:

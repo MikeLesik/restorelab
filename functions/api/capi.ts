@@ -8,7 +8,7 @@
  * to ad-blockers / ITP / cookieless browsers after iOS.
  *
  * INERT until configured — returns a 200 no-op unless BOTH env vars are set:
- *   META_PIXEL_ID    e.g. 812107381591231
+ *   META_PIXEL_ID    e.g. 1556029059322810
  *   META_CAPI_TOKEN  System User token from Meta Business → Events Manager
  *
  * Add them in Cloudflare Pages → project → Settings → Environment variables

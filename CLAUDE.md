@@ -116,7 +116,7 @@ PUBLIC_WHATSAPP_NUMBER=34680265190    # digits only, with country code (Spain)
 PUBLIC_SITE_URL=https://restorelab.io
 PUBLIC_GTM_ID=GTM-W34GRX86
 PUBLIC_CLARITY_ID=vmc619bvp9
-PUBLIC_META_PIXEL_ID=812107381591231
+PUBLIC_META_PIXEL_ID=1556029059322810
 ```
 Access in Astro: `import.meta.env.PUBLIC_*`. WhatsApp number and site URL are centralized in `src/lib/constants.ts`.
 
