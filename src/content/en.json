@@ -354,8 +354,7 @@
             "includes": [
               "Decontamination wash",
               "Clay bar treatment",
-              "Light hand polish",
-              "Spray sealant protection (1–2 months)"
+              "Light hand polish"
             ],
             "best_for": "New or well-maintained vehicles needing a refresh",
             "highlight": false
@@ -369,8 +368,7 @@
             "includes": [
               "Full decontamination wash + clay bar",
               "Single-step machine polishing",
-              "Swirl mark & light scratch removal",
-              "6-month sealant protection"
+              "Swirl mark & light scratch removal"
             ],
             "best_for": "Daily drivers with moderate swirl marks",
             "highlight": false
@@ -663,7 +661,7 @@
         "id": "clock",
         "icon": "clock",
         "question": "How long does the service take and how long do results last?",
-        "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years, Premium 5Y lasts 5+ years; the sealant in the Express Refresh package lasts 1-2 months. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
+        "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years, Premium 5Y lasts 5+ years. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "id": "car",

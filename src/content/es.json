@@ -353,8 +353,7 @@
             "includes": [
               "Lavado descontaminante",
               "Tratamiento con clay bar",
-              "Pulido suave a mano",
-              "Protección con sellante spray (1–2 meses)"
+              "Pulido suave a mano"
             ],
             "best_for": "Vehículos nuevos o bien mantenidos que necesitan un repaso",
             "highlight": false
@@ -368,8 +367,7 @@
             "includes": [
               "Lavado descontaminante completo + clay bar",
               "Pulido mecánico de un paso",
-              "Eliminación de marcas circulares y arañazos leves",
-              "Protección con sellante de 6 meses"
+              "Eliminación de marcas circulares y arañazos leves"
             ],
             "best_for": "Vehículos de uso diario con marcas circulares moderadas",
             "highlight": false
@@ -664,7 +662,7 @@
         "id": "clock",
         "icon": "clock",
         "question": "¿Cuánto tiempo dura el servicio y el resultado?",
-        "answer": "La corrección de pintura tarda entre 2 y 10 horas según el paquete y el tamaño del vehículo. El pulido de vidrio, 1-2 horas. La corrección en sí es permanente — esos defectos no vuelven solos. Nuestro Cerámico 2 Años dura 2+ años, el Premium 5 Años dura 5+ años; el sellante del Express Refresh dura 1-2 meses. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
+        "answer": "La corrección de pintura tarda entre 2 y 10 horas según el paquete y el tamaño del vehículo. El pulido de vidrio, 1-2 horas. La corrección en sí es permanente — esos defectos no vuelven solos. Nuestro Cerámico 2 Años dura 2+ años, el Premium 5 Años dura 5+ años. Consulta todos los <a href='/es/pricing' class='text-brand-accent hover:underline'>paquetes y precios</a>."
       },
       {
         "id": "car",

@@ -353,8 +353,7 @@
             "includes": [
               "Rentat descontaminant",
               "Tractament amb clay bar",
-              "Polit suau a mà",
-              "Protecció amb segellant esprai (1–2 mesos)"
+              "Polit suau a mà"
             ],
             "best_for": "Vehicles nous o ben mantinguts que necessiten un repàs",
             "highlight": false
@@ -368,8 +367,7 @@
             "includes": [
               "Rentat descontaminant complet + clay bar",
               "Polit mecànic d'un pas",
-              "Eliminació de marques circulars i ratllades lleus",
-              "Protecció amb segellant de 6 mesos"
+              "Eliminació de marques circulars i ratllades lleus"
             ],
             "best_for": "Vehicles d'ús diari amb marques circulars moderats",
             "highlight": false
@@ -664,7 +662,7 @@
         "id": "clock",
         "icon": "clock",
         "question": "Quant de temps dura el servei i el resultat?",
-        "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys, el Premium 5 Anys dura 5+ anys; el segellant de l'Express Refresh dura 1-2 mesos. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+        "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys, el Premium 5 Anys dura 5+ anys. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
         "id": "car",
