@@ -442,51 +442,77 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       window.__rl_push = function(payload) {
         if (isInternalDevice()) return;
 
-        // Check CookieConsent — only push if analytics consent granted
+        // Consent, split by destination: the analytics category gates GA/GTM +
+        // Clarity; the marketing category gates the Meta Pixel + Conversions API
+        // (advertising data). They are independent — granting one must not leak
+        // into the other.
         var cc = window.CookieConsent;
-        if (cc && typeof cc.acceptedCategory === 'function' && !cc.acceptedCategory('analytics')) return;
+        var hasCat = cc && typeof cc.acceptedCategory === 'function';
+        var analyticsOk = !cc || (hasCat && cc.acceptedCategory('analytics'));
+        var marketingOk = hasCat && cc.acceptedCategory('marketing');
+        if (!analyticsOk && !marketingOk) return;
 
-        // Shared event id so a future server-side Conversions API (CAPI) call can
-        // be de-duplicated against this browser Pixel event — Meta matches on eventID.
+        // Shared event id so the server-side Conversions API (CAPI) copy is
+        // de-duplicated against this browser Pixel event — Meta matches on eventID.
         var eventID = (window.crypto && crypto.randomUUID)
           ? crypto.randomUUID()
           : (Date.now() + '-' + Math.random().toString(16).slice(2));
         payload.event_id = eventID;
 
-        // GTM dataLayer
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(payload);
-
-        // Microsoft Clarity custom event
-        if (typeof window.clarity === 'function') {
-          window.clarity('event', payload.event);
+        // ── Analytics destinations (analytics consent) ──
+        if (analyticsOk) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push(payload);
+          if (typeof window.clarity === 'function') window.clarity('event', payload.event);
         }
 
-        // Meta Pixel — map to standard events. A tap-to-chat / tap-to-call is the
-        // primary lead action for this business, so wa_click/phone_click fire Lead
-        // (not Contact). eventID is passed for CAPI de-duplication.
-        if (typeof window.fbq === 'function') {
-          var ev = payload.event;
-          var eid = { eventID: eventID };
-          if (ev === 'wa_click' || ev === 'phone_click') {
-            fbq('track', 'Lead', { content_name: payload.click_text || ev, content_category: 'contact', currency: 'EUR' }, eid);
-          }
-          else if (ev === 'estimate_submit' || ev === 'lead_submitted' || ev === 'b2b_inquiry' || ev === 'ev_inquiry' || ev === 'commercial_glass_inquiry') {
-            fbq('track', 'Lead', { content_category: ev }, eid);
-          }
-          else if (ev === 'estimator_completed') fbq('track', 'ViewContent', { content_name: payload.tier, currency: 'EUR' }, eid);
-          else if (ev === 'pricing_tier_clicked') fbq('track', 'ViewContent', { content_name: payload.tier }, eid);
+        // ── Map to a Meta standard event ──
+        // A "lead" is any tap-to-contact: WhatsApp, phone or email. It is derived
+        // from the link's href so EVERY contact CTA counts as a Lead regardless of
+        // its descriptive data-event slug (estimator_wa, ev_cta_wa, contact_phone,
+        // plans_cta_wa, b2b_hero_wa, comglass_cta_wa …). Non-link events fall back
+        // to event-name mapping. This is the single place a Lead is defined.
+        var eid = { eventID: eventID };
+        var url = (payload.click_url || '').toLowerCase();
+        var metaEvent = null, metaParams = null, capiCat = null;
+        if (url.indexOf('wa.me') !== -1 || url.indexOf('whatsapp.com') !== -1) {
+          metaEvent = 'Lead'; capiCat = 'whatsapp';
+          metaParams = { content_name: payload.click_text || payload.event, content_category: 'whatsapp', currency: 'EUR' };
+        } else if (url.indexOf('tel:') === 0) {
+          metaEvent = 'Lead'; capiCat = 'phone';
+          metaParams = { content_name: payload.click_text || payload.event, content_category: 'phone', currency: 'EUR' };
+        } else if (url.indexOf('mailto:') === 0) {
+          metaEvent = 'Lead'; capiCat = 'email';
+          metaParams = { content_name: payload.click_text || payload.event, content_category: 'email', currency: 'EUR' };
+        } else if (payload.event === 'wa_click' || payload.event === 'phone_click') {
+          metaEvent = 'Lead'; capiCat = 'contact';
+          metaParams = { content_name: payload.click_text || payload.event, content_category: 'contact', currency: 'EUR' };
+        } else if (payload.event === 'estimate_submit' || payload.event === 'lead_submitted') {
+          metaEvent = 'Lead'; capiCat = 'form';
+          metaParams = { content_category: payload.event };
+        } else if (payload.event === 'estimator_result' || payload.event === 'estimator_completed') {
+          metaEvent = 'ViewContent'; metaParams = { content_name: payload.tier || payload.slug || 'estimator', currency: 'EUR' };
+        } else if (payload.event === 'pricing_tier_clicked') {
+          metaEvent = 'ViewContent'; metaParams = { content_name: payload.tier };
+        }
 
-          // ── Conversions API mirror — same eventID so the server copy de-dupes
-          // against this browser event. /api/capi is a no-op until META_CAPI_TOKEN
-          // is set, so this is safe to ship now (fire-and-forget; a 404 on the
-          // Astro preview is swallowed by .catch).
-          var capiCat = { wa_click:'contact', phone_click:'contact', estimate_submit:'estimate', lead_submitted:'form', b2b_inquiry:'b2b', ev_inquiry:'ev', commercial_glass_inquiry:'glass' }[ev];
+        // ── Marketing destinations (marketing consent) ──
+        if (marketingOk) {
+          // Browser Pixel — only when fbevents.js actually loaded.
+          if (typeof window.fbq === 'function' && metaEvent) {
+            fbq('track', metaEvent, metaParams, eid);
+          }
+          // Conversions API mirror — fires for every LEAD independently of the
+          // Pixel, so it still lands when an ad-blocker prevents fbevents.js from
+          // loading (exactly the loss CAPI exists to recover). /api/capi is a
+          // no-op until META_CAPI_TOKEN is set; fire-and-forget.
           if (capiCat) {
             try {
               var readCookie = function(n){ var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)'); return m ? m.pop() : ''; };
+              var fbclid = '';
+              try { fbclid = new URLSearchParams(location.search).get('fbclid') || ''; } catch (e) {}
               fetch('/api/capi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
-                body: JSON.stringify({ event_name: 'Lead', event_id: eventID, url: location.href, ua: navigator.userAgent, fbp: readCookie('_fbp'), fbc: readCookie('_fbc'), category: capiCat }) }).catch(function(){});
+                body: JSON.stringify({ event_name: 'Lead', event_id: eventID, url: location.href, ua: navigator.userAgent, fbp: readCookie('_fbp'), fbc: readCookie('_fbc'), fbclid: fbclid, category: capiCat }) }).catch(function(){});
             } catch (e) {}
           }
         }
@@ -566,7 +592,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       ccScript.onload = function() {
         CookieConsent.run({
           guiOptions: {
-            consentModal: { layout: 'bar', position: 'bottom', equalWeightButtons: false }
+            consentModal: { layout: 'bar', position: 'bottom', equalWeightButtons: true }
           },
           categories: {
             necessary: { enabled: true, readOnly: true },

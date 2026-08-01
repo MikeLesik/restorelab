@@ -48,6 +48,13 @@ export async function onRequestPost(context: {
   }
   if (!b || !b.event_name || !b.event_id) return reply(false, 'missing_fields');
 
+  // First-party Meta identifiers for match quality. If the Pixel was blocked,
+  // _fbc never got set client-side — synthesise it from the ad click id so ad
+  // attribution still survives (Meta's documented fb.1.<timestamp>.<fbclid>).
+  const fbclid = b.fbclid ? String(b.fbclid) : '';
+  let fbc = b.fbc ? String(b.fbc) : '';
+  if (!fbc && fbclid) fbc = `fb.1.${Math.floor(Date.now() / 1000)}.${fbclid}`;
+
   const body = {
     data: [
       {
@@ -60,9 +67,8 @@ export async function onRequestPost(context: {
           client_ip_address: request.headers.get('CF-Connecting-IP') || undefined,
           client_user_agent:
             (b.ua ? String(b.ua) : '') || request.headers.get('User-Agent') || undefined,
-          // First-party Meta cookies, forwarded from the browser for match quality.
           fbp: b.fbp ? String(b.fbp) : undefined,
-          fbc: b.fbc ? String(b.fbc) : undefined,
+          fbc: fbc || undefined,
         },
         custom_data: {
           currency: 'EUR',
