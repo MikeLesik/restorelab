@@ -1,5 +1,6 @@
 ---
 import { WHATSAPP_NUMBER } from '@/lib/constants';
+import AvailabilityBanner from '@/components/AvailabilityBanner.astro';
 
 export interface Props {
   t: Record<string, any>;
@@ -91,8 +92,10 @@ const h1Second = h1Rest.filter(Boolean).join('.').trim();
       </a>
     </div>
 
-    <!-- Microcopy -->
-    <p class="text-th-muted text-sm">{t.hero.reply_time}</p>
+    <!-- Microcopy / availability notice -->
+    {t.availability?.active
+      ? <AvailabilityBanner t={t} variant="hero" />
+      : <p class="text-th-muted text-sm">{t.hero.reply_time}</p>}
 
   </div>
 

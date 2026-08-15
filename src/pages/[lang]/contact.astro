@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import FAQ from '@/components/FAQ.astro';
 import AreaServedSection from '@/components/AreaServedSection.astro';
+import AvailabilityBanner from '@/components/AvailabilityBanner.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -36,7 +37,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.conta
         <!-- Info side -->
         <div>
           <h1 class="section-title text-5xl mb-6">{t.meta.contact.title.split('—')[0]}</h1>
-          <p class="text-th-muted text-lg leading-relaxed mb-10">{t.meta.contact.description}</p>
+          <p class="text-th-muted text-lg leading-relaxed mb-6">{t.meta.contact.description}</p>
+
+          {t.availability?.active && <AvailabilityBanner t={t} variant="page" class="mb-10" />}
 
           <!-- Contact options -->
           <div class="space-y-4 mb-10">

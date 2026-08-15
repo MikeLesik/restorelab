@@ -1,0 +1,34 @@
+---
+// Availability notice — shows the schedule is fully booked and the first free slot.
+// Content comes from t.availability (per-language). Gated on t.availability.active,
+// so the whole banner disappears site-wide by flipping `active` to false (or bumping
+// first_slot_date) in the three content JSON files — no component/markup changes.
+export interface Props {
+  t: Record<string, any>;
+  variant?: 'hero' | 'page';
+  class?: string;
+}
+const { t, variant = 'hero', class: className = '' } = Astro.props;
+const a = t.availability;
+---
+{a?.active && (
+  <div class:list={[variant === 'page' ? 'flex flex-col items-start gap-2' : 'inline-block', className]}>
+    <div
+      role="status"
+      class:list={[
+        "inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-brand-gold/40 bg-brand-gold/10 backdrop-blur-sm text-th-body",
+        variant === 'hero' ? "px-4 py-2 text-sm justify-center" : "px-5 py-3 text-sm sm:text-base",
+      ]}
+    >
+      <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse flex-shrink-0" aria-hidden="true"></span>
+      <span class="font-semibold text-brand-gold">{a.badge}</span>
+      <span class="text-th-muted hidden sm:inline" aria-hidden="true">·</span>
+      <span>{a.line}.</span>
+      <span class="text-th-muted" aria-hidden="true">·</span>
+      <span>{a.first_slot_label}: <strong class="text-th-heading font-semibold">{a.first_slot_date}</strong></span>
+    </div>
+    {variant === 'page' && a.note && (
+      <p class="text-sm text-th-muted max-w-md">{a.note}</p>
+    )}
+  </div>
+)}

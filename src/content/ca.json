@@ -124,6 +124,14 @@
     "sticky_cta": "Pressupost via WhatsApp",
     "badge": "Detailing premium a domicili"
   },
+  "availability": {
+    "active": true,
+    "badge": "Agenda completa",
+    "line": "Sense forats les properes 2 setmanes",
+    "first_slot_label": "Primera plaça lliure",
+    "first_slot_date": "29 d'agost",
+    "note": "Escriu-nos i et reservem lloc per a la propera obertura."
+  },
   "trust": {
     "brands": [
       {
