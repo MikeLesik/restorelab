@@ -204,7 +204,7 @@
       {
         "id": "glass-polishing",
         "title": "Glass Polishing & Scratch Removal",
-        "subtitle": "Windows, windshields & architectural glass",
+        "subtitle": "Windshields, home windows, glass doors & shower screens",
         "icon": "glass",
         "starting_price": "From €119",
         "features": [
@@ -247,7 +247,7 @@
       {
         "id": "trim-restoration",
         "title": "Plastic Trim Restoration",
-        "subtitle": "Faded bumpers, mirrors & exterior trim revived",
+        "subtitle": "Bumpers, trim & soft-touch plastics — exterior and interior",
         "icon": "trim",
         "starting_price": "From €69",
         "features": [
@@ -664,6 +664,18 @@
         "icon": "glass",
         "question": "Can you remove scratches from a windshield without replacing it?",
         "answer": "Yes — professional <a href='/en/services/glass-polishing' class='text-brand-accent hover:underline'>glass polishing</a> removes most wiper scratches, water spots and haziness. It saves €300-500 compared to a new windshield. Deep scratches you can feel with your fingernail or damage to the laminated layer do require replacement — we tell you honestly before starting. More details in our <a href='/en/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>windshield scratch repair guide</a>."
+      },
+      {
+        "id": "home_glass",
+        "icon": "glass",
+        "question": "Do you polish home glass (windows, doors, shower screens), not just car glass?",
+        "answer": "Yes. As well as car windows and windshields, we polish home windows, glass doors and shower screens with surface scratches, water spots and haze — without removing or replacing the glass. Very deep scratches you can catch with a fingernail can sometimes only be reduced; we tell you honestly once we see a photo. Send us a photo with the rough size and your area and we'll quote you."
+      },
+      {
+        "id": "soft_touch",
+        "icon": "swap",
+        "question": "Do you restore soft-touch or trim plastics that have gone glossy or sticky?",
+        "answer": "Yes. We work on exterior and interior <a href='/en/services/acrylic-restoration' class='text-brand-accent hover:underline'>plastics and trim</a>, including soft-touch (rubberised) finishes that have turned shiny or tacky: we bring back an even matte/satin finish with no rubbery feel. Tell us the part and send photos, and we'll tell you what result is realistic and the price."
       },
       {
         "id": "clock",

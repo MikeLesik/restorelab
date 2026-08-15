@@ -204,7 +204,7 @@
       {
         "id": "glass-polishing",
         "title": "Polit de Vidres i Eliminació de Ratllades",
-        "subtitle": "Finestres, parabrises i vidre arquitectònic",
+        "subtitle": "Parabrises, finestres, portes de vidre i mampares",
         "icon": "glass",
         "starting_price": "Des de 119€",
         "features": [
@@ -247,7 +247,7 @@
       {
         "id": "trim-restoration",
         "title": "Restauració de Plàstics",
-        "subtitle": "Para-xocs, retrovisors i motllures exteriors revifades",
+        "subtitle": "Para-xocs, motllures i plàstics soft-touch — exterior i interior",
         "icon": "trim",
         "starting_price": "Des de 69€",
         "features": [
@@ -665,6 +665,18 @@
         "icon": "glass",
         "question": "Es poden treure ratllades del parabrisa sense canviar-lo?",
         "answer": "Sí — el <a href='/ca/services/glass-polishing' class='text-brand-accent hover:underline'>polit professional de vidre</a> elimina la majoria de ratllades del neteja-parabrises, taques d'aigua i opacitat. Estalvia 300-500 € respecte a un parabrisa nou. Les ratllades profundes que es noten amb l'ungla o danys a la capa laminada sí que requereixen substitució — t'ho diem sincerament abans de començar. Més detalls a la nostra <a href='/ca/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>guia de reparació de ratllades</a>."
+      },
+      {
+        "id": "home_glass",
+        "icon": "glass",
+        "question": "Poliu vidres de la llar (finestres, portes, mampares), no només del cotxe?",
+        "answer": "Sí. A més de llunes de cotxe, polim finestres, portes de vidre i mampares de dutxa amb ratllades superficials, taques d'aigua i opacitat — sense desmuntar ni substituir el vidre. Les ratllades molt profundes que s'enganxen amb l'ungla de vegades només s'atenuen; t'ho diem amb sinceritat en veure la foto. Envia'ns una foto amb la mida aproximada i la teva zona i et passem preu."
+      },
+      {
+        "id": "soft_touch",
+        "icon": "swap",
+        "question": "Restaureu plàstics soft-touch o motllures que han quedat brillants o enganxosos?",
+        "answer": "Sí. Treballem <a href='/ca/services/acrylic-restoration' class='text-brand-accent hover:underline'>plàstics i motllures</a> exteriors i interiors, inclosos els acabats soft-touch (tacte goma) que s'han tornat brillants o enganxosos: recuperem un acabat mat/setinat uniforme, sense efecte goma. Explica'ns la peça i envia'ns fotos i et diem quin resultat és realista i el preu."
       },
       {
         "id": "clock",

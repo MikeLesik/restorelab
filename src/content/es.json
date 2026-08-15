@@ -204,7 +204,7 @@
       {
         "id": "glass-polishing",
         "title": "Pulido de Cristales y Eliminación de Arañazos",
-        "subtitle": "Ventanas, parabrisas y vidrio arquitectónico",
+        "subtitle": "Parabrisas, ventanas, puertas de vidrio y mamparas",
         "icon": "glass",
         "starting_price": "Desde 119€",
         "features": [
@@ -247,7 +247,7 @@
       {
         "id": "trim-restoration",
         "title": "Restauración de Plásticos",
-        "subtitle": "Paragolpes, retrovisores y molduras exteriores revividas",
+        "subtitle": "Paragolpes, molduras y plásticos soft-touch — exterior e interior",
         "icon": "trim",
         "starting_price": "Desde 69€",
         "features": [
@@ -665,6 +665,18 @@
         "icon": "glass",
         "question": "¿Se pueden quitar arañazos del parabrisas sin cambiarlo?",
         "answer": "Sí — el <a href='/es/services/glass-polishing' class='text-brand-accent hover:underline'>pulido profesional de vidrio</a> elimina la mayoría de arañazos de limpiaparabrisas, manchas de agua y opacidad. Ahorra 300-500 € frente a un parabrisas nuevo. Los arañazos profundos que se notan con la uña o daños en la capa laminada sí requieren sustitución — te lo decimos sinceramente antes de empezar. Más detalles en nuestra <a href='/es/academy/windshield-scratch-repair' class='text-brand-accent hover:underline'>guía de reparación de arañazos</a>."
+      },
+      {
+        "id": "home_glass",
+        "icon": "glass",
+        "question": "¿Pulís cristales del hogar (ventanas, puertas, mamparas), no solo del coche?",
+        "answer": "Sí. Además de lunas de coche, pulimos ventanas, puertas de vidrio y mamparas de ducha con arañazos superficiales, marcas de agua y velo — sin desmontar ni sustituir el cristal. Los arañazos muy profundos que se enganchan con la uña a veces solo se atenúan; te lo decimos con sinceridad al ver la foto. Envíanos una foto con la medida aproximada y tu zona, y te pasamos precio."
+      },
+      {
+        "id": "soft_touch",
+        "icon": "swap",
+        "question": "¿Restauráis plásticos soft-touch o molduras que han quedado brillantes o pegajosos?",
+        "answer": "Sí. Trabajamos <a href='/es/services/acrylic-restoration' class='text-brand-accent hover:underline'>plásticos y molduras</a> exteriores e interiores, incluidos los acabados soft-touch (tacto goma) que se han vuelto brillantes o pegajosos: recuperamos un acabado mate/satinado uniforme, sin efecto goma. Cuéntanos la pieza y envíanos fotos, y te decimos qué resultado es realista y el precio."
       },
       {
         "id": "clock",
