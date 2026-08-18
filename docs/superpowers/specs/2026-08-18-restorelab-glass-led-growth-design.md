@@ -133,6 +133,8 @@ Two owner prerequisites: **IAE epígrafe 922.2** added via modelo 036 (the exist
 5. **Unpublish `/plans`** until rebuilt (see §7).
 6. Keep the availability banner (`t.availability`) current; retire it when the calendar opens.
 
+**Shipped 2026-08-18 (commit `37932d4`):** unauthorised accreditation claims removed in all three languages, the Ceramic 5Y package (Gtechniq Crystal Serum Ultra — accredited-installer-only) withdrawn from pricing, Estimator, ceramic landing and academy tables, the brand warranty replaced with a bounded own guarantee, the brand row retitled "Products & equipment", and the four remaining car packages laid out in one row. See §10 for the reasoning.
+
 ## 5. Ninety days
 
 Field days split 4/week: **1 day B2B batch · 2 days glass · 1 day big-ticket.** Quoting and WhatsApp sit outside the field window (~1–1.5 h/day, evenings).
@@ -209,10 +211,128 @@ As priced (EUR 39/month for a monthly on-site exterior wash) the plans are EUR 1
 
 ## 9. Open questions
 
-1. Does the existing modelo 036 alta already include 751.5 / 922.2, or must they be added? (Owner + gestor; blocks invoicing for home glass.)
+1. The owner already holds an alta for his unrelated activity. Does it carry **IAE 751.5 and 922.2**, or must they be added via modelo 036? Until 922.2 is on it, home-glass work cannot be invoiced — which blocks the whole §3 strategy.
 2. Outcome of the AEAT consulta vinculante on 10% IVA for home-glass repair.
 3. Marek's TIE work authorisation status.
 4. Whether the external activity's hours genuinely leave 4 full field days — the entire capacity model in §2 depends on it.
+
+## 10. Conduct and compliance
+
+Researched 2026-08-18 across seven angles with adversarial verification. Three of the four load-bearing assumptions were **refuted** — those corrections are in §10.9.
+
+### 10.1 Language
+
+Sant Cugat has the **highest Catalan comprehension of any large Catalan municipality** (98.3% understand it, 93.5% read it), but Catalan is the habitual language of only 32.6% of Catalonia. Two facts decide the policy:
+
+- **Convergence is the norm.** Only 17.4% of people who open in Catalan stay in Catalan when answered in Spanish; 70.4% switch. Answering in Spanish is statistically normal, not an insult.
+- **Migrant-facing asymmetry.** When the interlocutor is perceived as of migrant origin, only 19.7% are addressed in Catalan; 71.1% get Spanish. A Russian accent means he will almost never be forced into spoken Catalan.
+
+**Policy: write in Catalan, speak in Spanish.** This is simultaneously the legal minimum and a differentiator ~80% of migrant-origin providers don't offer.
+
+**Legally binding:** Llei 22/2010 art. 128-1 plus Llei 18/2017 require *at least in Catalan* — pressupostos, factures, contractual documentation, price lists and fixed commercial information, which includes **van livery and any public price list**. The Agència Catalana del Consum opened **486 sanctioning files in 2025** (206 in 2024) totalling €715,284, average ~€2,240; ~30% were for missing Catalan in fixed information. He may answer orally in Spanish, but must never say "no entiendo el catalán".
+
+Say the honesty line **once**, in Catalan, then stop apologising — repeated apologising reads as insecurity and damages more than the accent. Use the Catalan article before names ("en Jordi", "la Marta").
+
+### 10.2 Formality and timing
+
+Open every first contact in **usted / vostè** and let the customer downgrade ("¿Nos tuteamos?" / "Ens podem tutejar?"). **Never "vós"** — archaic and bizarre from a tradesperson. B2B: **tú** with talleres, compraventas and cristalerías; **usted** with administradores de fincas, hotel management and older gerentes.
+
+- **No commercial calls** before 09:00, 14:00–16:30, after 21:00, on Sundays or public holidays (Ley 11/2022 restricts them Mon–Fri 09:00–21:00).
+- **No commercial messages on 11 September (Diada)**; don't use Spanish-flag framing on 12 October; remember Catalonia-only holidays (Dilluns de Pasqua, 26 Dec Sant Esteve).
+- **Sant Cugat noise ordinance (2018) art. 30.3: machinery only 08:00–20:00 Mon–Fri and 09:00–20:00 weekends/holidays.** Sanctions to €300,000. A polisher in a communal garage at 20:30 is citable.
+- **August is genuinely dead** (invoices −16%, new RETA registrations −38.3%). Build the list in late August; knock in the first week of September.
+
+### 10.3 First contact (B2C)
+
+Speed is the largest measurable lever and it dwarfs everything else: **65% of Spanish consumers expect a reply in under 5 minutes**, sub-1-minute replies convert ~8× better than 5-minute ones, and the Spanish sector average is ~47 hours. **74.6% rank professionalism above price (39.8%)**, and professionalism is judged almost entirely by the speed and completeness of the first answer.
+
+- Set a WhatsApp Business greeting that fires instantly and asks for the three photos; a hard SLA of under 10 minutes, 09:00–20:00.
+- **Give a number in the first human reply** — a bounded range with "IVA incluido" — plus at most two qualifying questions. Never "depende", never "pásame tu email".
+- **Name the defect correctly in the first ten words** ("remolinos", "cal incrustada", "deformación óptica"). This positions harder than the whole website.
+- Ask for exactly 3 photos with a technique ("primer plano con la linterna del móvil en diagonal").
+- **Never discount when pushed** — services are not a haggling category in Spain and a rebate signals the first price was inflated. Move scope, slot or included extras, never the rate. Don't criticise the cheaper competitor; ask what their quote includes and how many phases.
+- **Don't lead with the limitation.** "Esa raya no se va" as an opener kills the sale; the same sentence after "esto sí se va entero" builds trust.
+- Quote validity: state **15 días naturales**.
+
+### 10.4 B2B outreach
+
+- Cold **visits and calls to businesses are legal and normal** (the puerta fría ban covers private homes). But **cold WhatsApp or email to a business he has never met is prohibited** — art. 21 LSSI, and the AEPD sanctions it in B2B (fines to ~€5,000). Order: visit or call → explicit permission → then WhatsApp.
+- Walk in **Tue–Thu, 09:30–11:00 or 16:00–17:30**. Never Monday morning, Friday after 13:00, 13:30–15:30, or a compraventa on Saturday morning (their peak selling window). Target 6–8 quality doors per half-day.
+- Visit #1 is a **name-capture mission**, not a close: leave with the decision-maker's name, their quiet hour, and permission to message.
+- Carry: tarjetas, a one-page tarifa with PVP vs TARIFA PROFESIONAL columns, a sample factura with NIF and the Ley 3/2004 footer, the RC certificate, before/after on the phone. Have the CAE / alta-de-proveedor pack as one PDF sendable within the hour — being the supplier who answers same-day beats being cheapest.
+- **Test panel only** — half a bonnet, one pane, one headlight. Never a full free car; operators trained on free work never start paying.
+- Say the non-poaching promise unprompted to talleres and cristalerías: **"yo no le doy mi tarjeta a tu cliente; el cliente es tuyo"** — the loudest unspoken objection in Spanish subcontracted trade.
+- **Don't accept 60–90 day terms on job #1.** Spanish PMP is ~80.5 days, autónomos wait 85+, only 1 invoice in 3 is paid on time, and automoción is among the worst-exposed sectors. Since 3 Apr 2025 a monitorio filed without a documented prior negotiation attempt is inadmissible — burofax with a dated proposal first.
+
+### 10.5 On site
+
+- Confirmation the evening before, "voy de camino" on the day, a **30-minute arrival window honoured**. The worst review found in the Barcelona set was not about finish quality — it was about being made to wait.
+- **Arrive with the pressupost already written** and signed before touching anything: name, NIF, full address, service description, itemised price with IVA, validity, start date and duration, the 6-month legal guarantee, the 14-day withdrawal notice, and two equal-sized ACEPTO / NO ACEPTO boxes. In Catalonia a written prior estimate is a legal obligation for services the consumer cannot price themselves, and **desplazamiento may only be charged once**.
+- **Never** put "no me hago responsable de daños" in the estimate — abusive under art. 86 TRLGDCU, null under art. 83, and it signals to a sophisticated customer that you expect to break something.
+- Joint filmed walkaround, narrated, **sent to the customer's WhatsApp immediately** — their holding a copy is what kills a false claim.
+- **Read paint thickness aloud per panel** and record it before and after. Art. 147 TRLGDCU reverses the burden of proof, so process evidence (µm readings, an approved test spot, products and pads used) protects better than damage photos alone.
+- Ask permission out loud for each new intrusion: parking spot, socket, tap, moving objects, photos.
+- Mid-job price changes go in writing as an "ampliación de presupuesto" with the exact figure and an explicit "conforme" before continuing — always offering the option to continue as agreed at no extra cost. Urgency and immediate-availability surcharges are **prohibited** for home services in Catalonia; night surcharges only 22:00–06:00.
+- **Cash over €1,000 is illegal** (Ley 11/2021) with a 25% penalty on **both** parties, splitting expressly caught. Say so before the visit, not at the door.
+
+### 10.6 Technical red lines
+
+Each of these can end a business line on its own:
+
+1. **Never polish the wiper-swept zone or the driver's direct field of view.** Optical distortion there is a **grave ITV defect** — the car cannot legally circulate until the glass is replaced, turning a €119 job into a €400–800 windscreen replacement.
+2. **Never touch coated glass** (bajo emisivo, control solar, antirreflectante) **or mirrors.** The coating cannot survive polishing; one ruined window in a Sant Cugat flat ends the residential glass line before it starts.
+3. **Never spot-polish a pane.** Polish an area materially wider than the scratch, or you create exactly the lens effect customers fear. Lead flat-glass sales with a free 10×10 cm test patch the customer chooses, inspected in reflection and backlight.
+4. **Never use running water on the public road or in a communal garage.** Barcelona treats soapy discharge as a serious infraction (€30–3,000), and washing in communal garages is broadly an actividad molesta under LPH art. 7.2 — one neighbour complaint reaches the administrador de fincas, who talks to dozens of buildings. Get written comunidad permission before booking communal-parking work.
+
+### 10.7 Reviews
+
+The threshold is **20 reviews** (47% of consumers refuse a business below it) and **83% of customers comply when asked on site**, so ~24 completed jobs with a disciplined ask reaches it around day 60–75. After that, recency is the whole game — 74% weigh only the last 3 months.
+
+- **Never offer anything in exchange.** Google's policy bans incentives, bans review-gating and bans pressuring customers on site; in May 2026 Google announced it will actively penalise businesses that pressure for positive reviews. RDL 24/2021 separately makes undisclosed incentivised reviews an unfair commercial practice with sanctions to 4% of turnover or €2M.
+- **GDPR trap in replies:** never confirm the reviewer was a client, and never mention their name, vehicle, plate, address, date, price or service detail — not even to rebut. The AEPD has fined €7,000, €4,000 and €1,500 for exactly this. Plates are personal data; blur by default, and get written photo-publication consent in the estimate.
+- If testimonials appear on the site, TRLGDCU art. 20.4 requires disclosing whether and how they are verified.
+
+### 10.8 Complaints
+
+- **Fulls oficials de queixa/reclamació/denúncia (Decret 121/2013) are obligatory for mobile businesses too** — art. 7.2 requires *carrying* them. They are free from an OGE, an OCIC or the ACC. Not having them is an infracció lleu of up to €10,000; look-alike branded forms are expressly prohibited (art. 4).
+- Print the availability notice on every pressupost, factura and the site footer — for a business with no premises this documentary notice substitutes for the wall sign.
+- Hand the form over instantly and cheerfully, even to someone who bought nothing. Signing is only proof of receipt (art. 9.1), and you may write your resolution offer on it on the spot — the cheapest de-escalation tool available.
+- **Answer in writing within 15 days** (TRLGDCU art. 21.3); the Catalan ceiling is one month, and silence is the failure mode already measured in this funnel.
+- **Insurance reality:** standard RC de explotación **excludes damage to the item being worked on**. Burning through a customer's clearcoat is not an insurable event — it is P&L. Buy the custody/depósito extension and still price the risk.
+
+### 10.9 What the evidence overturned
+
+| Assumption | Verdict |
+|---|---|
+| Replying in Spanish to a Catalan message costs trust | **Refuted** — 70.4% converge to Spanish; only 19.7% address a perceived migrant in Catalan. Catalan is differentiation, not survival. Written documents are the real obligation. |
+| Damage photos are the most important defence | **Refuted** — art. 147 TRLGDCU reverses the burden of proof, so *process* evidence (µm readings per panel, approved test spot, products used) matters more. Photos remain necessary but insufficient. |
+| A written guarantee + portfolio substitutes for reviews | **Refuted** — warranties raise perceived quality only for already-credible firms (Boulding & Kirmani 1993) and do not substitute for reputation in price or probability of sale (Roberts 2011, AEJ:Micro). 47% won't consider a business under 20 reviews. In the 2025 Castrol/OnePoll survey of 1,000 Spanish vehicle owners a guarantee **did not register as a decision factor at all**; the top driver was explaining the work and asking authorisation before proceeding (43%). |
+| Mobile businesses are exempt from complaint forms | **Confirmed obligatory** — Decret 121/2013 art. 7.2 names home-service providers explicitly. |
+
+The strongest available substitute for reviews is **third-party verifiable certification**, not self-attestation — which is why arbitration adhesion (§11) outranks any badge he could print himself. This matters more than usual in Catalonia, where an active fake-home-technician fraud wave (Barcelona arrests Feb 2026, 31 offences, ~€200,000) means a stranger's own printed credentials carry near-zero, possibly negative, trust weight.
+
+## 11. Owner checklist
+
+Things only the owner can do. Ordered by deadline.
+
+**Before the van (now → 28 Aug)**
+1. **Vehicle: N1 furgón cerrado, no rear seats.** 100% IVA deduction; IRPF requires exclusive business use and AEAT rejects the deduction entirely where private use is evident. Decided at purchase.
+2. **Gestor:** add **IAE 751.5** (vehicles) **and 922.2** (home glass) to the existing alta via modelo 036 — one cuota covers both. Tarifa plana is unavailable (already in RETA). Without 922.2 he cannot invoice home-glass work.
+3. **RC profesional** (~€250–450/yr) with the **third-party-goods-in-custody extension** — standard policies exclude exactly this risk.
+4. **Order the fulls oficials** from an OGE / OCIC / ACC office and keep a sealed pad in the van. Free.
+5. **Apply for adhesion to the Sistema Arbitral de Consumo** (Junta Arbitral de Consum de Catalunya, Rda. Sant Pau 43-45, 08015 Barcelona). Free, gives an official distintivo and a public-registry entry — the only third-party-verifiable trust mark available from day one. Specify **"en derecho"**, not the default equidad.
+6. **Pre-book 5–8 jobs** for the week of 31 Aug from the existing leads and neighbours, with photos and a review agreed up front.
+7. **Check Marek's TIE** for "autoriza a trabajar".
+
+**Week 1 of September**
+8. **Van livery** (€150–300) days 1–3 — also the missing evidence element in the GBP video. Livery must be at least in Catalan (fixed commercial information).
+9. **GBP video verification** days 3–5, as a service-area business with the address hidden. One unedited 60–120 s take: street identifiers → liveried van → open it with your own key → equipment → invoice showing restoreLab + NIF. Don't edit the profile while review is pending.
+10. **Enter the Google Ads payment method before 21 September** — the €400/€400 promo expires regardless of GBP status.
+
+**Standing rules**
+11. Answer every WhatsApp inside 10 minutes, 09:00–20:00. This is the single highest-ROI behaviour available at zero cost.
+12. Ask for the Google review on site, at the reveal, never with an incentive.
+13. Do not touch Meta.
 
 ---
 
