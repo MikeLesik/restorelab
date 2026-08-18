@@ -48,6 +48,8 @@ const showMultipliers = !flat && !categoryId && ui.size_categories;
 function getGridClass(count: number): string {
   if (count === 1) return 'grid-cols-1 max-w-md';
   if (count <= 3) return 'grid-cols-1 md:grid-cols-3';
+  // 4 packages fit one clean row on desktop — three-up would leave one orphan.
+  if (count === 4) return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
   return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
 }
 ---

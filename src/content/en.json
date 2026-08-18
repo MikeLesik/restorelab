@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Pricing — Car Polishing & Surface Restoration | restoreLab",
-      "description": "5 paint correction & ceramic coating packages from €149 to €1 049. Sedan baseline pricing with size multipliers. Free estimate via WhatsApp."
+      "description": "4 paint correction & ceramic coating packages from €149 to €649. Sedan baseline pricing with size multipliers. Free estimate via WhatsApp."
     },
     "cases": {
       "title": "Before & After Cases — restoreLab",
@@ -36,7 +36,7 @@
     },
     "about": {
       "title": "About restoreLab — Our Story & Mission | restoreLab",
-      "description": "Meet the team behind restoreLab. Mobile paint correction & ceramic coating in Sant Cugat and Barcelona. Certified, insured, passion-driven."
+      "description": "Meet the team behind restoreLab. Mobile paint correction & ceramic coating in Sant Cugat and Barcelona. Insured, meticulous, passion-driven."
     },
     "business": {
       "title": "B2B Mobile Detailing for Dealers & Fleets | restoreLab",
@@ -117,7 +117,7 @@
     "reply_time": "Average reply: ~30 minutes",
     "trust_pills": [
       "€500K liability insurance",
-      "Gyeon & Gtechniq certified",
+      "Gyeon & Gtechniq products",
       "Mobile service — we come to you"
     ],
     "cta_car": "Car Restoration",
@@ -136,11 +136,11 @@
     "brands": [
       {
         "name": "Gyeon",
-        "status": "authorized"
+        "status": "coatings"
       },
       {
         "name": "Gtechniq",
-        "status": "authorized"
+        "status": "coatings"
       },
       {
         "name": "Rupes",
@@ -171,7 +171,7 @@
         "status": "products"
       }
     ],
-    "certifications_title": "Certifications and equipment",
+    "certifications_title": "Products & equipment",
     "founder": {
       "text": "Founded in Sant Cugat. Mobile-first since day one.",
       "link_label": "About us",
@@ -282,22 +282,22 @@
     "section_subtitle": "Simple process, zero hassle. We come to you",
     "steps": [
       {
-        "number": "01",
+        "number": "1",
         "title": "You send two photos",
         "description": "One of the whole car, one of the defect that bothers you most, over WhatsApp. That is enough to judge the real condition and tell you what is achievable and what is not."
       },
       {
-        "number": "02",
+        "number": "2",
         "title": "We give you a firm price",
         "description": "One of the published packages, with nothing hidden. If the photos are not enough to decide, we say so instead of inventing a figure."
       },
       {
-        "number": "03",
+        "number": "3",
         "title": "We arrive fully self-sufficient",
         "description": "Our own generator, professional polishers and water supply — we use none of your power or water. All we need is a standard parking bay with a metre clear on each side."
       },
       {
-        "number": "04",
+        "number": "4",
         "title": "We work, then send you the report",
         "description": "We correct the paint and seal the surface while you get on with things. You do not need to stay: leave us access to the car and a phone number, and when we finish we send you before and after photos."
       }
@@ -308,7 +308,7 @@
   "pricing": {
     "section_title": "Transparent Pricing",
     "section_subtitle": "No surprises. Exact estimate after photo review",
-    "anchor_text": "Premium paint correction & ceramic coating by certified detailers. Sedan prices shown — see size multipliers below.",
+    "anchor_text": "Premium paint correction & ceramic coating with professional Gyeon and Gtechniq products. Sedan prices shown — see size multipliers below.",
     "cta_custom": "Need a custom quote?",
     "cta_whatsapp": "Ask via WhatsApp",
     "ui": {
@@ -402,7 +402,7 @@
             "slug": "ceramic-2y",
             "price": "649€",
             "duration": "6–8 hours",
-            "description": "Two-stage correction topped with a certified 2-year ceramic coating (Gyeon / Gtechniq).",
+            "description": "Two-stage correction topped with a 2-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
               "Full two-stage correction",
               "Paint depth measurements",
@@ -411,23 +411,6 @@
             ],
             "best_for": "Anyone wanting long-term protection with a showroom finish",
             "highlight": true
-          },
-          {
-            "name": "Premium Ceramic 5Y",
-            "slug": "premium-5y",
-            "price": "1 049€",
-            "duration": "8–10 hours",
-            "description": "Multi-stage correction with flagship 5-year graphene ceramic. Windshield and wheel coatings included.",
-            "includes": [
-              "Multi-stage paint correction",
-              "5-year graphene ceramic coating",
-              "Windshield hydrophobic coating",
-              "Wheel ceramic coating",
-              "Trim & tyre restoration",
-              "2-year warranty on coating"
-            ],
-            "best_for": "Luxury & sports cars, maximum long-term protection",
-            "highlight": false
           }
         ]
       },
@@ -548,7 +531,7 @@
       "id": "tratamiento-ceramico",
       "title": "How much does ceramic coating for a car cost?",
       "paragraphs": [
-        "Ceramic coating at restoreLab costs €649 (2-year protection) or €1,049 (premium 5-year protection) for a sedan, full paint correction included. Unlike many shops, the price includes paint preparation — ceramic applied over defects only seals them in permanently.",
+        "Ceramic coating at restoreLab costs €649 (2-year protection) for a sedan, full paint correction included. Unlike many shops, the price includes paint preparation — ceramic applied over defects only seals them in permanently.",
         "Prices are sedan-based; size multipliers apply (compact −10%, SUV +10-20%). The service is fully mobile: we apply the coating in your garage across Sant Cugat, Barcelona, Terrassa and nearby. Ask for an exact quote on WhatsApp with photos of your car."
       ],
       "landing_link_label": "Ceramic coating in Barcelona: prices & details"
@@ -572,9 +555,6 @@
     "paint_help_label": "How do I check?",
     "paint_help": "Look at the car in full sun, or hold your phone torch almost against the paint: swirl marks show up immediately. If you can feel a scratch with your fingernail, it counts as deep.",
     "dark_toggle": "My car is black or a solid dark colour",
-    "q2_ceramic_title": "How much protection do you want?",
-    "ceramic_2y": "2 years (Gyeon MOHS)",
-    "ceramic_5y": "5 years (Gtechniq Crystal Serum Ultra)",
     "q2_glass_title": "Which glass?",
     "glass_windshield": "Windscreen only",
     "glass_rain": "Windscreen + rain repellent",
@@ -590,7 +570,7 @@
     "see_package": "See the full package",
     "honesty": "Published price — the same one in the table above. Car size changes the time, not the package. We lock the price once we've seen two photos on WhatsApp.",
     "unsure_title": "Better if we take a look",
-    "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 1 049€ and every price is listed above.",
+    "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 649€ and every price is listed above.",
     "cta_whatsapp": "Send on WhatsApp",
     "cta_whatsapp_hint": "We reply with the confirmed price, usually within the hour.",
     "why_paint_light": "With light marks, a single polishing step already brings the gloss back — no need to pay for full correction.",
@@ -600,7 +580,6 @@
     "why_paint_heavy": "Deep scratches need cutting and then refining — a single pass would leave polishing marks.",
     "why_paint_heavy_dark": "Deep scratches on dark paint is the hardest case: cutting and refining, no shortcuts.",
     "why_ceramic_2y": "Two years of protection with a single-stage polish first — the most balanced protection-per-euro.",
-    "why_ceramic_5y": "Five years demands a perfect base, so it comes with full correction before the coating.",
     "why_sale": "This is the pack built for the listing: paint correction and restored headlights in one visit.",
     "why_glass_windshield": "The scratches that bother you at night are nearly always on the windscreen — that's where polishing shows.",
     "why_glass_rain": "Polish plus coating: the scratches go, and the water clears itself once you pick up speed.",
@@ -618,9 +597,6 @@
       },
       "ceramic-2y": {
         "desc": "A single-stage polish plus a ceramic layer that protects for 2 years and makes washing far easier."
-      },
-      "premium-5y": {
-        "desc": "Full correction plus the 5-year ceramic layer. Our highest level of finish and protection."
       },
       "windshield-polish": {
         "desc": "Removes wiper scratches and haze from the windscreen. Most noticeable at night."
@@ -651,7 +627,7 @@
         "id": "money",
         "icon": "money",
         "question": "How much does paint correction cost in Barcelona?",
-        "answer": "Sedan prices range from €149 for an Express Refresh to €1 049 for Premium 5-Year Ceramic. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a certified 2-year coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise, no-obligation quote. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
+        "answer": "Sedan prices range from €149 for an Express Refresh to €649 for Ceramic Coating 2Y. Our most popular package is the <strong>Ceramic Coating 2Y at €649</strong> — full two-stage correction plus a 2-year ceramic coating. Size multipliers apply (compact −10%, SUV +20%). Send us photos for a precise, no-obligation quote. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "id": "swap",
@@ -681,7 +657,7 @@
         "id": "clock",
         "icon": "clock",
         "question": "How long does the service take and how long do results last?",
-        "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years, Premium 5Y lasts 5+ years. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
+        "answer": "Paint correction takes 2-10 hours depending on the package and vehicle size. Glass polishing takes 1-2 hours. The correction itself is permanent — those defects do not come back on their own. Our Ceramic 2Y coating lasts 2+ years. See all <a href='/en/pricing' class='text-brand-accent hover:underline'>packages and pricing</a>."
       },
       {
         "id": "car",
@@ -717,7 +693,7 @@
         "id": "shield",
         "icon": "shield",
         "question": "What is your satisfaction guarantee?",
-        "answer": "If you are not satisfied with the result, we come back and redo it at zero extra cost. The coating warranty is the one that comes with the package you buy: 2 years with Gyeon MOHS, 5 years with Gtechniq Crystal Serum Ultra. The price you approve is always the price you pay — no surprises. See our <a href='/en/pricing' class='text-brand-accent hover:underline'>pricing</a> and <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
+        "answer": "If you are not satisfied with the result, we come back and redo it at zero extra cost. We give our own written guarantee of 2 years on the coating's water-beading performance across the treated panels, subject to the stated maintenance. The price you approve is always the price you pay — no surprises. See our <a href='/en/pricing' class='text-brand-accent hover:underline'>pricing</a> and <a href='/en/cases' class='text-brand-accent hover:underline'>before &amp; after results</a>."
       }
     ]
   },
@@ -777,7 +753,7 @@
       {
         "icon": "warranty",
         "title": "Protection Warranty",
-        "description": "Coating warranty matches the package you buy: 2 years (Gyeon MOHS) or 5 years (Gtechniq Crystal Serum Ultra)."
+        "description": "Our own written guarantee: 2 years on the coating's water-beading performance across the treated panels. If it fails sooner, we re-apply it free. Subject to the stated maintenance."
       },
       {
         "icon": "price",
@@ -1051,10 +1027,10 @@
     "philosophy_title": "Restore, don't replace",
     "philosophy_text": "Every restoration extends the life of existing materials. No paint waste, no glass going to landfill, no unnecessary replacement parts. It's better for your wallet and better for the environment. We believe the most sustainable repair is the one that doesn't create new waste.",
     "equipment_title": "Professional equipment",
-    "equipment_text": "We work exclusively with Rupes polishing machines, Gyeon and Gtechniq ceramic coatings, and Koch Chemie compounds. Every product is selected based on performance data, not marketing — and every technician is trained to use them correctly.",
+    "equipment_text": "We work exclusively with Rupes polishing machines, Gyeon and Gtechniq ceramic coatings, and Koch Chemie compounds. Every product is selected on performance data, not marketing, and applied following the manufacturer's protocol.",
     "local_title": "Local commitment",
     "local_text": "Based in Sant Cugat del Vallès, we serve the entire Barcelona metropolitan area — from Matadepera to Castelldefels, from Pedralbes to Terrassa. Our mobile unit comes to your home, office or parking spot. No need to leave your car at a workshop.",
-    "certifications_title": "Certifications & Training",
+    "certifications_title": "Products & training",
     "stats": [
       {
         "value": "500+",
@@ -2343,7 +2319,7 @@
       "seo_description": "Polishing a car costs €149–€549 depending on the level — and from €649 with a ceramic coating included. Real 2026 Barcelona rates, comparison table, and what a €50 polish really hides.",
       "title": "How Much Does It Cost to Polish a Car? 2026 Price Guide (Barcelona)",
       "description": "A transparent breakdown of what professional paint correction costs in the Barcelona metropolitan area. Package tiers, pricing factors, what cheap offers actually hide, and how to get the best value for your vehicle.",
-      "intro": "Quick answer: polishing a car costs between €149 (express polish) and €549 (two-stage correction) depending on paint condition and vehicle size; with a ceramic coating included, €649–€1,049. One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2026, expanded with what the €50 polish offers really hide, how to compare quotes across Barcelona-area workshops, and the questions that separate a professional from an amateur with a polisher.",
+      "intro": "Quick answer: polishing a car costs between €149 (express polish) and €549 (two-stage correction) depending on paint condition and vehicle size; with a ceramic coating included, €649. One of the most common questions we receive is: how much does paint correction cost? The honest answer is that it depends on several factors — but we believe in full transparency. Here is our complete pricing guide for 2026, expanded with what the €50 polish offers really hide, how to compare quotes across Barcelona-area workshops, and the questions that separate a professional from an amateur with a polisher.",
       "sections": [
         {
           "number": "1",
@@ -2382,11 +2358,7 @@
             },
             {
               "label": "Ceramic Coating 2Y",
-              "text": "649 EUR. Two-stage correction + 2-year certified ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular."
-            },
-            {
-              "label": "Premium Ceramic 5Y",
-              "text": "1 049 EUR. Multi-stage + 5-year graphene ceramic + windshield + wheels. 8-10 hours."
+              "text": "649 EUR. Two-stage correction + 2-year ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular."
             }
           ],
           "table": {
@@ -2421,12 +2393,6 @@
                 "€649",
                 "6-8 h",
                 "Correction plus lasting protection"
-              ],
-              [
-                "Premium Ceramic 5Y",
-                "€1 049",
-                "8-10 h",
-                "Premium and collector vehicles"
               ]
             ]
           },
@@ -2640,7 +2606,7 @@
           "number": "2",
           "title": "Cost Comparison: Correction vs Repaint in Barcelona",
           "paragraphs": [
-            "The economics strongly favour correction in most cases. A full two-stage paint correction at restoreLab starts at 549 euros for a sedan, while a professional respray of a single panel at a Barcelona body shop ranges from 300 to 600 euros — and a full-vehicle repaint runs between 2,000 and 5,000 euros depending on quality. Our most popular package, the Ceramic Coating 2Y at 649 euros, includes a full two-stage correction plus a certified 2-year Gyeon or Gtechniq ceramic coating — delivering both restoration and long-term protection.",
+            "The economics strongly favour correction in most cases. A full two-stage paint correction at restoreLab starts at 549 euros for a sedan, while a professional respray of a single panel at a Barcelona body shop ranges from 300 to 600 euros — and a full-vehicle repaint runs between 2,000 and 5,000 euros depending on quality. Our most popular package, the Ceramic Coating 2Y at 649 euros, includes a full two-stage correction plus a 2-year Gyeon or Gtechniq ceramic coating — delivering both restoration and long-term protection.",
             "Beyond the direct cost, there are hidden expenses to repainting: rental car costs during the 3-7 days the car is in the shop, depreciation from a non-original paint job (which is recorded in vehicle history and visible under inspection), and the risk of colour mismatch, especially on metallic and pearl finishes. Our clients in Sant Cugat and Barcelona consistently find that correction preserves both the vehicle's original factory integrity and its resale value. Check our full pricing breakdown on the pricing page.",
             "There is also the time factor. A mobile paint correction takes 5-7 hours at your location — your garage in Sant Cugat, your office parking in Barcelona, or your driveway in Terrassa. No drop-off, no rental, no disruption. We bring everything: generator, Rupes polishers, Koch Chemie compounds, water supply and LED inspection lights."
           ]
@@ -2651,7 +2617,7 @@
           "paragraphs": [
             "At restoreLab, we use a straightforward framework for every assessment. First, we measure paint thickness on every panel with a digital gauge. If the clear coat reads above 80 microns in most areas, there is sufficient material for a full multi-stage correction. If readings are below 60 microns on certain panels, that indicates previous repainting or heavy correction — and we adjust our approach accordingly.",
             "Second, we perform the 'fingernail test' on the deepest scratches. If your fingernail catches firmly in a scratch, it likely extends through the clear coat, and that specific scratch may not be fully removable. However, we can typically reduce its visibility by 70-80% and make it unnoticeable under normal viewing conditions. Only when scratches have exposed bare metal or primer does repainting become the correct recommendation.",
-            "Third, we evaluate the overall condition against the vehicle's value and the owner's goals. A 15-year-old daily driver with moderate swirls benefits enormously from a single-stage correction at 289 euros — the ROI in terms of appearance is outstanding. A new BMW M4 in Sant Cugat deserves the Premium Ceramic 5Y at 1,049 euros for maximum long-term protection. And a vehicle headed for resale should consider our Pre-Sale Detail Pack at 249 euros for the best return on investment. You can see real results from all these scenarios in our before and after cases gallery."
+            "Third, we evaluate the overall condition against the vehicle's value and the owner's goals. A 15-year-old daily driver with moderate swirls benefits enormously from a single-stage correction at 289 euros — the ROI in terms of appearance is outstanding. A new BMW M4 in Sant Cugat deserves the Ceramic Coating 2Y at 649 euros for maximum long-term protection. And a vehicle headed for resale should consider our Pre-Sale Detail Pack at 249 euros for the best return on investment. You can see real results from all these scenarios in our before and after cases gallery."
           ]
         },
         {
@@ -2695,8 +2661,8 @@
           "title": "Ceramic Protection: Non-Negotiable for EVs",
           "paragraphs": [
             "For any Tesla or EV in the Barcelona area, we consider ceramic coating a necessity, not an option. The thin clear coat simply cannot withstand repeated cycles of UV exposure, salt air, pine resin and Saharan dust without degrading rapidly. A quality ceramic coating acts as a sacrificial shield, absorbing environmental damage that would otherwise attack the clear coat directly.",
-            "Our recommended minimum for Tesla owners is the Ceramic Coating 2Y package at 649 euros — which includes a careful two-stage correction followed by a certified Gyeon MOHS or Gtechniq Crystal Serum Light application. For Tesla owners who want maximum protection, our Premium Ceramic 5Y at 1,049 euros adds a graphene-infused top coat, windshield hydrophobic coating and wheel ceramic — creating a comprehensive barrier against Barcelona's environmental threats.",
-            "The numbers support this investment. A Tesla Model 3 full respray in Barcelona costs 3,500-5,000 euros. A correction and ceramic protection at 649-1,049 euros, renewed every 2-5 years, keeps the original factory paint intact for the life of the vehicle. The ceramic coating also makes weekly maintenance dramatically easier — a simple rinse removes most contamination, reducing the risk of wash-induced swirl marks. For more details on ceramic coating technology, see our protection and preservation protocols article in the Academy."
+            "Our recommended minimum for Tesla owners is the Ceramic Coating 2Y package at 649 euros — which includes a careful two-stage correction followed by a Gyeon MOHS or Gtechniq Crystal Serum Light application. As an optional add-on, a windshield hydrophobic coating completes the barrier against Barcelona's environmental threats.",
+            "The numbers support this investment. A Tesla Model 3 full respray in Barcelona costs 3,500-5,000 euros. A correction and ceramic protection at 649 euros, renewed every 2 years, keeps the original factory paint intact for the life of the vehicle. The ceramic coating also makes weekly maintenance dramatically easier — a simple rinse removes most contamination, reducing the risk of wash-induced swirl marks. For more details on ceramic coating technology, see our protection and preservation protocols article in the Academy."
           ]
         },
         {
@@ -3006,7 +2972,7 @@
           "paragraphs": [
             "Barcelona receives an average annual UV index that ranks among the highest in continental Europe. From May through September, the UV index regularly reaches 9-10 (classified as 'very high' to 'extreme' by the WHO), with peak surface temperatures on dark-coloured vehicles exceeding 65 degrees Celsius. This intense UV exposure drives photo-oxidation of the clear coat — the same chemical process that yellows headlights, but working more slowly on automotive clear coats.",
             "The visible effects of chronic UV exposure include progressive loss of gloss, chalking (a white powdery residue on the surface), colour fading on non-metallic finishes, and eventual clear coat failure. On a vehicle parked outdoors full-time in Sant Cugat or Barcelona, noticeable oxidation typically appears within 3-4 years without protection — compared to 6-8 years in a climate like northern Germany or the UK.",
-            "Professional ceramic coatings provide the most effective UV barrier available. Products like Gyeon MOHS and Gtechniq Crystal Serum Light contain UV-absorbing compounds that reduce the energy reaching the clear coat by up to 90%. Our Ceramic Coating 2Y package at 649 euros and Premium Ceramic 5Y at 1,049 euros both include these UV-protective coatings. For vehicles parked outdoors in Mediterranean conditions, we consider ceramic coating the single most important investment in paint longevity. For details on how these coatings work, see our protection and preservation protocols article."
+            "Professional ceramic coatings provide the most effective UV barrier available. Products like Gyeon MOHS and Gtechniq Crystal Serum Light contain UV-absorbing compounds that reduce the energy reaching the clear coat by up to 90%. Our Ceramic Coating 2Y package at 649 euros includes these UV-protective coatings. For vehicles parked outdoors in Mediterranean conditions, we consider ceramic coating the single most important investment in paint longevity. For details on how these coatings work, see our protection and preservation protocols article."
           ]
         },
         {
@@ -3015,7 +2981,7 @@
           "paragraphs": [
             "Living within 30 kilometres of the Mediterranean coastline means constant exposure to airborne salt particles. The Garbí (southwest onshore breeze) carries microscopic sea salt crystals far inland — reaching Sant Cugat, Bellaterra and even Terrassa during summer months. These chloride particles land on the paint surface, dissolve in morning dew or humidity, and create localised acidic points that etch the clear coat.",
             "The effect is most pronounced in stone chip sites where bare metal is exposed. Salt accelerates oxidation of exposed primer and metal at 3-5 times the rate of non-coastal environments. A small stone chip that would remain cosmetic for years in an inland location can develop visible rust rings within 6-12 months in Castelldefels or the Maresme coast. This is why we always recommend addressing stone chips promptly and protecting the surrounding paint.",
-            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Premium Ceramic 5Y package at 1,049 euros, which includes full-body graphene ceramic coating, windshield hydrophobic treatment and wheel ceramic. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching."
+            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Ceramic Coating 2Y package at 649 euros, which includes two-stage correction and ceramic coating, with windshield hydrophobic treatment as an add-on. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching."
           ]
         },
         {
@@ -3702,10 +3668,10 @@
         "id": "ev-premium",
         "name": "EV Premium Shield",
         "price": "1290",
-        "desc": "Full correction for daily-driven EVs + 5-year graphene ceramic. Maximum UV and chemical protection.",
+        "desc": "Full correction for daily-driven EVs + long-life ceramic. Maximum UV and chemical protection.",
         "includes": [
           "Two-stage paint correction",
-          "Gtechniq Crystal Serum Ultra 5Y",
+          "Long-life Gyeon or Gtechniq ceramic",
           "Full glass hydrophobic set",
           "Plastic trim restoration"
         ],
@@ -4472,13 +4438,13 @@
   },
   "ceramic_landing": {
     "title": "Ceramic Coating for Cars in Barcelona — Prices from €649",
-    "meta_description": "At-home ceramic coating in Barcelona: €649 (2-year) or €1,049 (graphene, 5-year) for a sedan — paint correction included. Certified Gyeon & Gtechniq products. Exact quote via WhatsApp.",
+    "meta_description": "At-home ceramic coating in Barcelona: €649 (2-year) for a sedan — paint correction included. Professional Gyeon & Gtechniq products. Exact quote via WhatsApp.",
     "h1": "Ceramic Coating for Your Car in Barcelona — from €649",
     "subtitle": "Fixed price with paint correction included. 100% at-home service: we apply the coating in your garage, anywhere in Barcelona.",
     "intro_label": "What the price includes",
     "intro_paragraphs": [
       "Unlike many Barcelona workshops, our price includes the preceding paint correction. A ceramic applied over swirls and scratches only seals them in permanently — so we correct the paint before protecting it, and state it in the price upfront.",
-      "We work exclusively with certified Gyeon and Gtechniq coatings, applied by an accredited installer. And the service is fully mobile: you never drop your car at a shop — we come to your garage or parking spot with self-contained equipment."
+      "We work exclusively with professional Gyeon and Gtechniq coatings, applied following the manufacturer's protocol. And the service is fully mobile: you never drop your car at a shop — we come to your garage or parking spot with self-contained equipment."
     ],
     "plans_label": "Ceramic coating prices",
     "plans_note": "Sedan pricing. Compact −10%, SUV +10–20%. Send photos via WhatsApp for an exact quote in ~30 minutes.",
@@ -4487,11 +4453,11 @@
     "faqs": [
       {
         "question": "How much does ceramic coating cost in Barcelona?",
-        "answer": "At restoreLab: €649 with 2-year protection or €1,049 with 5-year graphene ceramic, for a sedan and with paint correction included. Compact −10%, SUV +10–20%. When comparing quotes, note many advertised prices exclude paint preparation — always ask for the breakdown."
+        "answer": "At restoreLab: €649 with 2-year protection, for a sedan and with paint correction included. Compact −10%, SUV +10–20%. When comparing quotes, note many advertised prices exclude paint preparation — always ask for the breakdown."
       },
       {
         "question": "How long does a ceramic coating last?",
-        "answer": "The certified 2-year ceramic (Gyeon / Gtechniq) keeps its hydrophobic effect and gloss with correct washing. The premium graphene protects up to 5 years. In both cases we recommend an annual coating check-up."
+        "answer": "The 2-year ceramic (Gyeon / Gtechniq) keeps its hydrophobic effect and gloss with correct washing. We recommend an annual coating check-up."
       },
       {
         "question": "Do you apply ceramic coating at home in Barcelona?",

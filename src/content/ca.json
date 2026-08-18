@@ -24,7 +24,7 @@
     },
     "pricing": {
       "title": "Preus — Polit Auto i Restauració de Superfícies | restoreLab",
-      "description": "5 paquets de correcció de pintura i ceràmic des de 149€ fins a 1 049€. Preus base sedan amb multiplicadors per mida. Pressupost gratuït per WhatsApp."
+      "description": "4 paquets de correcció de pintura i ceràmic des de 149€ fins a 649€. Preus base sedan amb multiplicadors per mida. Pressupost gratuït per WhatsApp."
     },
     "cases": {
       "title": "Abans i Després — restoreLab",
@@ -36,7 +36,7 @@
     },
     "about": {
       "title": "Sobre restoreLab — La Nostra Història i Missió | restoreLab",
-      "description": "Coneix l'equip de restoreLab. Correcció de pintura mòbil i ceràmic a Sant Cugat i Barcelona. Certificats, assegurats, apassionats."
+      "description": "Coneix l'equip de restoreLab. Correcció de pintura mòbil i ceràmic a Sant Cugat i Barcelona. Assegurats, meticulosos, apassionats."
     },
     "business": {
       "title": "Detailing B2B Concessionaris i Flotes | restoreLab",
@@ -117,7 +117,7 @@
     "reply_time": "Resposta mitjana: ~30 minuts",
     "trust_pills": [
       "Assegurança RC 500.000 €",
-      "Certificats Gyeon & Gtechniq",
+      "Productes Gyeon & Gtechniq",
       "Servei mòbil — anem a tu"
     ],
     "cta_car": "Restauració Auto",
@@ -136,11 +136,11 @@
     "brands": [
       {
         "name": "Gyeon",
-        "status": "authorized"
+        "status": "coatings"
       },
       {
         "name": "Gtechniq",
-        "status": "authorized"
+        "status": "coatings"
       },
       {
         "name": "Rupes",
@@ -171,7 +171,7 @@
         "status": "products"
       }
     ],
-    "certifications_title": "Certificacions i equip",
+    "certifications_title": "Productes i equip",
     "founder": {
       "text": "Fundat a Sant Cugat. Servei mòbil des del primer dia.",
       "link_label": "Sobre nosaltres",
@@ -282,22 +282,22 @@
     "section_subtitle": "Procés senzill, sense complicacions. Anem a tu",
     "steps": [
       {
-        "number": "01",
+        "number": "1",
         "title": "Envies dues fotos",
         "description": "Una del cotxe sencer i una altra del defecte que més et molesta, per WhatsApp. Amb això valorem l'estat real i et diem què es pot aconseguir i què no."
       },
       {
-        "number": "02",
+        "number": "2",
         "title": "Et donem un preu tancat",
         "description": "Un dels paquets publicats, sense costos ocults. Si per les fotos no es pot decidir, t'ho diem en lloc d'inventar una xifra."
       },
       {
-        "number": "03",
+        "number": "3",
         "title": "Arribem amb tot l'equip",
         "description": "Generador, polidores professionals i subministrament d'aigua propis: no gastem el teu llum ni la teva aigua. Només necessitem una plaça d'aparcament estàndard amb un metre lliure a cada costat."
       },
       {
-        "number": "04",
+        "number": "4",
         "title": "Treballem i t'enviem l'informe",
         "description": "Corregim la pintura i segellem la superfície mentre tu continues amb el que estiguis fent. No cal que t'hi quedis: ens deixes accés al cotxe i un telèfon, i en acabar t'enviem fotos de l'abans i el després."
       }
@@ -401,7 +401,7 @@
             "slug": "ceramic-2y",
             "price": "649€",
             "duration": "6–8 hores",
-            "description": "Correcció de dues fases més recobriment ceràmic certificat de 2 anys (Gyeon / Gtechniq).",
+            "description": "Correcció de dues fases més recobriment ceràmic de 2 anys (Gyeon / Gtechniq).",
             "includes": [
               "Correcció completa de dues fases",
               "Mesurament del gruix de pintura",
@@ -411,23 +411,6 @@
             ],
             "best_for": "Qui busca protecció duradora amb acabat d'exposició",
             "highlight": true
-          },
-          {
-            "name": "Ceràmic Premium 5 Anys",
-            "slug": "premium-5y",
-            "price": "1 049€",
-            "duration": "8–10 hores",
-            "description": "Correcció multifase amb ceràmic grafè de 5 anys. Inclou parabrisa i llantes.",
-            "includes": [
-              "Correcció de pintura multifase",
-              "Ceràmic grafè de 5 anys",
-              "Recobriment hidrofòbic en parabrisa",
-              "Ceràmic en llantes",
-              "Restauració de plàstics i pneumàtics",
-              "Garantia de 2 anys sobre el recobriment"
-            ],
-            "best_for": "Vehicles de luxe i esportius, màxima protecció a llarg termini",
-            "highlight": false
           }
         ]
       },
@@ -544,12 +527,12 @@
         ]
       }
     ],
-    "anchor_text": "Correcció de pintura i ceràmic premium per detailers certificats. Preus per a sedan — consulteu els multiplicadors per mida.",
+    "anchor_text": "Correcció de pintura i ceràmic premium amb producte professional Gyeon i Gtechniq. Preus per a sedan — consulteu els multiplicadors per mida.",
     "ceramic_answer": {
       "id": "tratamiento-ceramico",
       "title": "Quant costa el tractament ceràmic per al cotxe?",
       "paragraphs": [
-        "El tractament ceràmic a restoreLab costa 649 € (protecció de 2 anys) o 1.049 € (protecció premium de 5 anys) per a un sedan, amb correcció de pintura completa inclosa. A diferència de molts tallers, el preu inclou la preparació de la pintura — un ceràmic aplicat sobre defectes només els segella per sempre.",
+        "El tractament ceràmic a restoreLab costa 649 € (protecció de 2 anys) per a un sedan, amb correcció de pintura completa inclosa. A diferència de molts tallers, el preu inclou la preparació de la pintura — un ceràmic aplicat sobre defectes només els segella per sempre.",
         "Els preus són per a sedan; s'aplica el multiplicador per mida (compacte −10%, SUV +10-20%). El servei és 100% mòbil: apliquem el ceràmic al teu garatge a Sant Cugat, Barcelona, Terrassa i rodalies. Demana pressupost exacte per WhatsApp amb fotos del teu cotxe."
       ],
       "landing_link_label": "Ceràmic a Barcelona: preus i detalls"
@@ -573,9 +556,6 @@
     "paint_help_label": "Com ho comprovo?",
     "paint_help": "Mira el cotxe a ple sol, o posa la llanterna del mòbil gairebé enganxada a la pintura: les marques circulars apareixen de seguida. Si notes una ratllada amb l'ungla, compta com a profunda.",
     "dark_toggle": "El meu cotxe és negre o d'un color fosc sòlid",
-    "q2_ceramic_title": "Quanta protecció vols?",
-    "ceramic_2y": "2 anys (Gyeon MOHS)",
-    "ceramic_5y": "5 anys (Gtechniq Crystal Serum Ultra)",
     "q2_glass_title": "Quins vidres?",
     "glass_windshield": "Només el parabrisa",
     "glass_rain": "Parabrisa + repel·lent de pluja",
@@ -591,7 +571,7 @@
     "see_package": "Veure el paquet complet",
     "honesty": "Preu públic, el mateix de la taula de dalt. La mida del cotxe canvia el temps, no el paquet. Tanquem el preu quan veiem dues fotos per WhatsApp.",
     "unsure_title": "Millor t'ho diem mirant-ho",
-    "unsure_body": "Envia'ns dues fotos per WhatsApp — una del cotxe sencer i una altra del defecte que més et molesta — i et donem preu tancat el mateix dia. Les nostres feines van de 79€ a 1 049€ i tots els preus són a dalt.",
+    "unsure_body": "Envia'ns dues fotos per WhatsApp — una del cotxe sencer i una altra del defecte que més et molesta — i et donem preu tancat el mateix dia. Les nostres feines van de 79€ a 649€ i tots els preus són a dalt.",
     "cta_whatsapp": "Enviar per WhatsApp",
     "cta_whatsapp_hint": "Et responem amb el preu confirmat, normalment en menys d’una hora.",
     "why_paint_light": "Amb marques lleus, un sol pas de poliment ja retorna la brillantor: no cal pagar correcció completa.",
@@ -601,7 +581,6 @@
     "why_paint_heavy": "Les ratllades profundes necessiten tall i després refinat: en una sola passada quedarien marques de poliment.",
     "why_paint_heavy_dark": "Ratllades profundes sobre pintura fosca és el cas més exigent: tall i refinat, sense dreceres.",
     "why_ceramic_2y": "Dos anys de protecció amb un poliment previ d'un pas: la relació protecció/preu més equilibrada.",
-    "why_ceramic_5y": "Cinc anys demana una base perfecta, així que va amb correcció completa abans del ceràmic.",
     "why_sale": "És el pack pensat per a l'anunci: correcció de pintura i fars restaurats en una sola visita.",
     "why_glass_windshield": "Les ratllades que molesten de nit són gairebé sempre al parabrisa: és on es nota el poliment.",
     "why_glass_rain": "Poliment més recobriment: treus les ratllades i a més l'aigua marxa sola en agafar velocitat.",
@@ -619,9 +598,6 @@
       },
       "ceramic-2y": {
         "desc": "Poliment d'una passada més una capa ceràmica que protegeix 2 anys i fa el rentat molt més fàcil."
-      },
-      "premium-5y": {
-        "desc": "Correcció completa més la capa ceràmica de 5 anys. El nostre màxim nivell d’acabat i protecció."
       },
       "windshield-polish": {
         "desc": "Treu les ratllades d'eixugaparabrises i el vel del parabrisa. Es nota sobretot de nit."
@@ -652,7 +628,7 @@
         "id": "money",
         "icon": "money",
         "question": "Quant costa la correcció de pintura a Barcelona?",
-        "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 1 049 € (Ceràmic Premium 5 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció de dues fases completa més recobriment certificat de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte i sense compromís. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+        "answer": "Els preus per a sedan van des de 149 € (Express Refresh) fins a 649 € (Ceràmic 2 Anys). El nostre paquet més popular és el <strong>Ceràmic 2 Anys a 649 €</strong> — correcció de dues fases completa més recobriment ceràmic de 2 anys. S'apliquen multiplicadors per mida (compacte −10%, SUV +20%). Envia'ns fotos per a un pressupost exacte i sense compromís. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
         "id": "swap",
@@ -682,7 +658,7 @@
         "id": "clock",
         "icon": "clock",
         "question": "Quant de temps dura el servei i el resultat?",
-        "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys, el Premium 5 Anys dura 5+ anys. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
+        "answer": "La correcció de pintura tarda entre 2 i 10 hores segons el paquet i la mida del vehicle. El polit de vidre, 1-2 hores. La correcció en si és permanent — aquests defectes no tornen sols. El nostre Ceràmic 2 Anys dura 2+ anys. Consulteu tots els <a href='/ca/pricing' class='text-brand-accent hover:underline'>paquets i preus</a>."
       },
       {
         "id": "car",
@@ -718,7 +694,7 @@
         "id": "shield",
         "icon": "shield",
         "question": "Quina és la vostra garantia de satisfacció?",
-        "answer": "Si no estàs satisfet amb el resultat, tornem i ho refem sense cost addicional. La garantia del recobriment és la del paquet que contractes: 2 anys amb Gyeon MOHS, 5 anys amb Gtechniq Crystal Serum Ultra. El preu que aproves és sempre el preu que pagues — sense sorpreses. Consulta els nostres <a href='/ca/pricing' class='text-brand-accent hover:underline'>preus</a> i <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."
+        "answer": "Si no estàs satisfet amb el resultat, tornem i ho refem sense cost addicional. Donem garantia pròpia per escrit de 2 anys sobre la funció hidròfuga del recobriment als panells tractats, subjecta al manteniment indicat. El preu que aproves és sempre el preu que pagues — sense sorpreses. Consulta els nostres <a href='/ca/pricing' class='text-brand-accent hover:underline'>preus</a> i <a href='/ca/cases' class='text-brand-accent hover:underline'>resultats abans i després</a>."
       }
     ]
   },
@@ -859,7 +835,7 @@
       {
         "icon": "warranty",
         "title": "Garantia de Protecció",
-        "description": "La garantia del recobriment és la del paquet contractat: 2 anys (Gyeon MOHS) o 5 anys (Gtechniq Crystal Serum Ultra)."
+        "description": "Garantia pròpia per escrit: 2 anys sobre la funció hidròfuga del recobriment als panells tractats. Si falla abans, el reapliquem sense cost. Subjecta al manteniment indicat."
       },
       {
         "icon": "price",
@@ -1072,10 +1048,10 @@
     "philosophy_title": "Restaurar, no reemplaçar",
     "philosophy_text": "Cada restauració allarga la vida dels materials existents. Sense residus de pintura, sense vidre a l'abocador, sense peces de recanvi innecessàries. És millor per a la teva butxaca i millor per al medi ambient. Creiem que la reparació més sostenible és la que no genera nous residus.",
     "equipment_title": "Equipament professional",
-    "equipment_text": "Treballem exclusivament amb polidores Rupes, ceràmics Gyeon i Gtechniq, i compostos Koch Chemie. Cada producte se selecciona pel seu rendiment, no pel màrqueting — i cada tècnic està format per utilitzar-los correctament.",
+    "equipment_text": "Treballem exclusivament amb polidores Rupes, ceràmics Gyeon i Gtechniq, i compostos Koch Chemie. Cada producte se selecciona pel seu rendiment, no pel màrqueting, i s'aplica seguint el protocol del fabricant.",
     "local_title": "Compromís local",
     "local_text": "Amb base a Sant Cugat del Vallès, servim tota l'àrea metropolitana de Barcelona — de Matadepera a Castelldefels, de Pedralbes a Terrassa. La nostra unitat mòbil va a casa teva, oficina o plaça d'aparcament. Sense necessitat de deixar el teu cotxe en un taller.",
-    "certifications_title": "Certificacions i Formació",
+    "certifications_title": "Productes i formació",
     "stats": [
       {
         "value": "500+",
@@ -2344,7 +2320,7 @@
       "seo_description": "Polir un cotxe costa entre 149 € i 549 € segons el nivell — i des de 649 € amb ceràmic inclòs. Tarifes reals 2026 a Barcelona, taula comparativa i què amaga el polit de 50 €.",
       "title": "Quant Costa Polir un Cotxe? Guia de Preus 2026 (Barcelona)",
       "description": "Un desglossament transparent del que costa la correcció professional de pintura a l'àrea metropolitana de Barcelona. Nivells de paquets, factors de preu, què amaguen les ofertes barates i com obtenir el millor valor per al teu vehicle.",
-      "intro": "Resposta ràpida: polir un cotxe costa entre 149 € (polit express) i 549 € (correcció de dues fases) segons l'estat de la pintura i la mida del vehicle; amb recobriment ceràmic inclòs, entre 649 € i 1 049 €. Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2026, ampliada amb el que realment amaguen les ofertes de polit a 50€, com comparar pressupostos entre tallers de l'àrea de Barcelona i les preguntes que separen un professional d'un aficionat amb polidora.",
+      "intro": "Resposta ràpida: polir un cotxe costa entre 149 € (polit express) i 549 € (correcció de dues fases) segons l'estat de la pintura i la mida del vehicle; amb recobriment ceràmic inclòs, 649 €. Una de les preguntes més freqüents que rebem és: quant costa la correcció de pintura? La resposta honesta és que depèn de diversos factors — però creiem en la transparència total. Aquí teniu la nostra guia completa de preus per al 2026, ampliada amb el que realment amaguen les ofertes de polit a 50€, com comparar pressupostos entre tallers de l'àrea de Barcelona i les preguntes que separen un professional d'un aficionat amb polidora.",
       "sections": [
         {
           "number": "1",
@@ -2383,11 +2359,7 @@
             },
             {
               "label": "Ceràmic 2 Anys",
-              "text": "649€. Correcció de dues fases + ceràmic certificat de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular."
-            },
-            {
-              "label": "Ceràmic Premium 5 Anys",
-              "text": "1 049€. Correcció multifase + ceràmic grafè 5 anys + parabrisa + llantes. 8-10 hores."
+              "text": "649€. Correcció de dues fases + ceràmic de 2 anys (Gyeon/Gtechniq). 6-8 hores. Més popular."
             }
           ],
           "table": {
@@ -2422,12 +2394,6 @@
                 "649€",
                 "6-8 h",
                 "Correcció + protecció duradora"
-              ],
-              [
-                "Ceràmic Premium 5 Anys",
-                "1 049€",
-                "8-10 h",
-                "Vehicles premium i de col·lecció"
               ]
             ]
           },
@@ -2641,7 +2607,7 @@
           "number": "2",
           "title": "Comparació de Costos: Correcció vs Repintat a Barcelona",
           "paragraphs": [
-            "L'economia afavoreix clarament la correcció en la majoria dels casos. Una correcció de pintura completa en dues fases a restoreLab comença en 549 euros per a un sedan, mentre que un repintat professional d'un sol panell en un taller de xapa de Barcelona oscil·la entre 300 i 600 euros — i un repintat complet del vehicle costa entre 2.000 i 5.000 euros segons la qualitat. El nostre paquet més popular, el Ceràmic 2Y a 649 euros, inclou una correcció completa en dues fases més un recobriment ceràmic certificat de 2 anys amb Gyeon o Gtechniq — oferint tant restauració com protecció a llarg termini.",
+            "L'economia afavoreix clarament la correcció en la majoria dels casos. Una correcció de pintura completa en dues fases a restoreLab comença en 549 euros per a un sedan, mentre que un repintat professional d'un sol panell en un taller de xapa de Barcelona oscil·la entre 300 i 600 euros — i un repintat complet del vehicle costa entre 2.000 i 5.000 euros segons la qualitat. El nostre paquet més popular, el Ceràmic 2Y a 649 euros, inclou una correcció completa en dues fases més un recobriment ceràmic de 2 anys amb Gyeon o Gtechniq — oferint tant restauració com protecció a llarg termini.",
             "Més enllà del cost directe, hi ha despeses ocultes del repintat: el cost del cotxe de lloguer durant els 3-7 dies que el cotxe és al taller, la depreciació per una pintura no original (que queda registrada a l'historial del vehicle i és visible sota inspecció), i el risc de desajust de color, especialment en acabats metal·litzats i perlats. Els nostres clients a Sant Cugat i Barcelona comproven sistemàticament que la correcció preserva tant la integritat original de fàbrica com el valor de revenda. Consulteu el nostre desglossament complet de preus a la pàgina de preus.",
             "També hi ha el factor temps. Una correcció de pintura mòbil dura 5-7 hores a la teva ubicació — el teu garatge a Sant Cugat, el teu aparcament d'oficina a Barcelona o la teva entrada a Terrassa. Sense deixar el cotxe, sense lloguer, sense interrupcions. Portem tot el necessari: generador, polidores Rupes, compostos Koch Chemie, subministrament d'aigua i llums d'inspecció LED."
           ]
@@ -2652,7 +2618,7 @@
           "paragraphs": [
             "A restoreLab, utilitzem un marc senzill per a cada avaluació. Primer, mesurem el gruix de pintura a cada panell amb un mesurador digital. Si el vernís marca per sobre de 80 micres a la majoria de zones, hi ha material suficient per a una correcció completa en múltiples fases. Si les lectures són inferiors a 60 micres en certs panells, això indica repintat previ o correcció intensiva — i ajustem el nostre enfocament en conseqüència.",
             "Segon, realitzem la 'prova de l'ungla' a les ratllades més profundes. Si la teva ungla s'enganxa fermament en una ratllada, probablement s'estén a través del vernís, i aquesta ratllada específica pot no ser completament eliminable. No obstant això, normalment podem reduir-ne la visibilitat en un 70-80% i fer-la imperceptible en condicions normals de visió. Només quan les ratllades han exposat el metall nu o la imprimació, el repintat es converteix en la recomanació correcta.",
-            "Tercer, avaluem l'estat general en relació amb el valor del vehicle i els objectius del propietari. Un cotxe d'ús diari de 15 anys amb marques circulars moderades es beneficia enormement d'una correcció en una fase a 289 euros — el retorn en termes d'aparença és excepcional. Un nou BMW M4 a Sant Cugat mereix el Ceràmic Premium 5Y a 1.049 euros per a màxima protecció a llarg termini. I un vehicle destinat a la revenda hauria de considerar el nostre Pack Pre-Venda a 289 euros per al millor retorn d'inversió. Podeu veure resultats reals de tots aquests escenaris a la nostra galeria d'abans i després."
+            "Tercer, avaluem l'estat general en relació amb el valor del vehicle i els objectius del propietari. Un cotxe d'ús diari de 15 anys amb marques circulars moderades es beneficia enormement d'una correcció en una fase a 289 euros — el retorn en termes d'aparença és excepcional. Un nou BMW M4 a Sant Cugat mereix el Ceràmic 2Y a 649 euros per a màxima protecció a llarg termini. I un vehicle destinat a la revenda hauria de considerar el nostre Pack Pre-Venda a 289 euros per al millor retorn d'inversió. Podeu veure resultats reals de tots aquests escenaris a la nostra galeria d'abans i després."
           ]
         },
         {
@@ -2696,8 +2662,8 @@
           "title": "Protecció Ceràmica: Imprescindible per a VE",
           "paragraphs": [
             "Per a qualsevol Tesla o VE a l'àrea de Barcelona, considerem el recobriment ceràmic una necessitat, no una opció. El vernís fi simplement no pot suportar cicles repetits d'exposició UV, aire salí, resina de pi i pols sahariana sense degradar-se ràpidament. Un recobriment ceràmic de qualitat actua com un escut sacrificial, absorbint el dany ambiental que d'altra manera atacaria directament el vernís.",
-            "El nostre mínim recomanat per a propietaris de Tesla és el paquet Ceràmic 2Y a 649 euros — que inclou una acurada correcció en dues fases seguida d'una aplicació certificada de Gyeon MOHS o Gtechniq Crystal Serum Light. Per a propietaris de Tesla que vulguin màxima protecció, el nostre Ceràmic Premium 5Y a 1.049 euros afegeix una capa superior infusionada amb grafè, tractament hidrofòbic del parabrisa i ceràmic a les llantes — creant una barrera integral contra les amenaces ambientals de Barcelona.",
-            "Els números avalen aquesta inversió. Un repintat complet de Tesla Model 3 a Barcelona costa entre 3.500 i 5.000 euros. Una correcció i protecció ceràmica a 649-1.049 euros, renovada cada 2-5 anys, manté la pintura original de fàbrica intacta durant tota la vida del vehicle. El recobriment ceràmic també facilita dràsticament el manteniment setmanal — un simple esbandida elimina la majoria de la contaminació, reduint el risc de marques circulars per rentat. Per a més detalls sobre la tecnologia de recobriment ceràmic, consulteu el nostre article sobre protocols de protecció i preservació a l'Acadèmia."
+            "El nostre mínim recomanat per a propietaris de Tesla és el paquet Ceràmic 2Y a 649 euros — que inclou una acurada correcció en dues fases seguida de l'aplicació de Gyeon MOHS o Gtechniq Crystal Serum Light. Com a afegit opcional, el tractament hidrofòbic del parabrisa completa la barrera contra les amenaces ambientals de Barcelona.",
+            "Els números avalen aquesta inversió. Un repintat complet de Tesla Model 3 a Barcelona costa entre 3.500 i 5.000 euros. Una correcció i protecció ceràmica a 649 euros, renovada cada 2 anys, manté la pintura original de fàbrica intacta durant tota la vida del vehicle. El recobriment ceràmic també facilita dràsticament el manteniment setmanal — un simple esbandida elimina la majoria de la contaminació, reduint el risc de marques circulars per rentat. Per a més detalls sobre la tecnologia de recobriment ceràmic, consulteu el nostre article sobre protocols de protecció i preservació a l'Acadèmia."
           ]
         },
         {
@@ -3331,7 +3297,7 @@
           "paragraphs": [
             "Barcelona rep un índex UV anual mitjà que se situa entre els més alts de l'Europa continental. De maig a setembre, l'índex UV assoleix regularment 9-10 (classificat com a 'molt alt' a 'extrem' per l'OMS), amb temperatures superficials màximes en vehicles de color fosc que superen els 65 graus Celsius. Aquesta intensa exposició UV impulsa la foto-oxidació del vernís — el mateix procés químic que grogeja els fars, però actuant més lentament sobre els vernissos automobilístics.",
             "Els efectes visibles de l'exposició crònica als UV inclouen pèrdua progressiva de brillantor, polvorització (un residu polsós blanc a la superfície), decoloració del color en acabats no metal·litzats i eventual fallada del vernís. En un vehicle aparcat a l'exterior permanentment a Sant Cugat o Barcelona, l'oxidació notable apareix típicament en 3-4 anys sense protecció — comparat amb 6-8 anys en un clima com el nord d'Alemanya o el Regne Unit.",
-            "Els recobriments ceràmics professionals proporcionen la barrera UV més efectiva disponible. Productes com Gyeon MOHS i Gtechniq Crystal Serum Light contenen compostos absorbents d'UV que redueixen l'energia que arriba al vernís fins a un 90%. El nostre paquet Ceràmic 2Y a 649 euros i el Ceràmic Premium 5Y a 1.049 euros inclouen ambdós aquests recobriments protectors UV. Per a vehicles aparcats a l'exterior en condicions mediterrànies, considerem el recobriment ceràmic la inversió més important per a la longevitat de la pintura. Per a detalls sobre com funcionen aquests recobriments, consulteu el nostre article sobre protocols de protecció i preservació."
+            "Els recobriments ceràmics professionals proporcionen la barrera UV més efectiva disponible. Productes com Gyeon MOHS i Gtechniq Crystal Serum Light contenen compostos absorbents d'UV que redueixen l'energia que arriba al vernís fins a un 90%. El nostre paquet Ceràmic 2Y a 649 euros inclou aquests recobriments protectors UV. Per a vehicles aparcats a l'exterior en condicions mediterrànies, considerem el recobriment ceràmic la inversió més important per a la longevitat de la pintura. Per a detalls sobre com funcionen aquests recobriments, consulteu el nostre article sobre protocols de protecció i preservació."
           ]
         },
         {
@@ -3340,7 +3306,7 @@
           "paragraphs": [
             "Viure a menys de 30 quilòmetres de la costa mediterrània significa exposició constant a partícules de sal a l'aire. El Garbí (brisa marina del sud-oest) transporta cristalls microscòpics de sal marina terra endins — arribant a Sant Cugat, Bellaterra i fins i tot Terrassa durant els mesos d'estiu. Aquestes partícules de clorur aterren sobre la superfície de la pintura, es dissolen en la rosada matinal o la humitat, i creen punts àcids localitzats que graven el vernís.",
             "L'efecte és més pronunciat en zones de descrostaments on el metall nu està exposat. La sal accelera l'oxidació de la imprimació i el metall exposats a 3-5 vegades la velocitat dels entorns no costaners. Un petit descrostament que romandria cosmètic durant anys en una ubicació interior pot desenvolupar anells d'òxid visibles en 6-12 mesos a Castelldefels o la costa del Maresme. Per això sempre recomanem tractar els descrostaments puntualment i protegir la pintura circumdant.",
-            "Per a vehicles costaners a Castelldefels, Gavà, Sitges i la zona del Maresme, la nostra recomanació és el paquet Ceràmic Premium 5Y a 1.049 euros, que inclou recobriment ceràmic de grafè per a tota la carrosseria, tractament hidrofòbic del parabrisa i ceràmic de llantes. L'efecte hidrofòbic fa que la humitat carregada de sal formi gotes i escorri en lloc de romandre sobre la superfície gravant-la."
+            "Per a vehicles costaners a Castelldefels, Gavà, Sitges i la zona del Maresme, la nostra recomanació és el paquet Ceràmic 2Y a 649 euros, que inclou correcció de dues fases i recobriment ceràmic, amb tractament hidrofòbic del parabrisa com a afegit. L'efecte hidrofòbic fa que la humitat carregada de sal formi gotes i escorri en lloc de romandre sobre la superfície gravant-la."
           ]
         },
         {
@@ -3703,10 +3669,10 @@
         "id": "ev-premium",
         "name": "Escut Premium VE",
         "price": "1290",
-        "desc": "Correcció completa per a VEs d'ús diari + ceràmic grafè 5 anys. Màxima protecció UV i química.",
+        "desc": "Correcció completa per a VEs d'ús diari + ceràmic de llarga durada. Màxima protecció UV i química.",
         "includes": [
           "Correcció de pintura en dues fases",
-          "Gtechniq Crystal Serum Ultra 5Y",
+          "Ceràmic de llarga durada Gyeon o Gtechniq",
           "Set complet hidrofòbic vidres",
           "Restauració motllures plàstiques"
         ],
@@ -4473,13 +4439,13 @@
   },
   "ceramic_landing": {
     "title": "Tractament Ceràmic Cotxe Barcelona — Preus des de 649 €",
-    "meta_description": "Tractament ceràmic a domicili a Barcelona: 649 € (2 anys) o 1 049 € (grafè, 5 anys) per a sedan — correcció de pintura inclosa. Productes certificats Gyeon i Gtechniq. Pressupost exacte per WhatsApp.",
+    "meta_description": "Tractament ceràmic a domicili a Barcelona: 649 € (2 anys) per a sedan — correcció de pintura inclosa. Productes professionals Gyeon i Gtechniq. Pressupost exacte per WhatsApp.",
     "h1": "Tractament Ceràmic per al Cotxe a Barcelona — des de 649 €",
     "subtitle": "Preu tancat amb correcció de pintura inclosa. Servei 100 % a domicili: apliquem el ceràmic al teu garatge, a qualsevol districte de Barcelona.",
     "intro_label": "Què inclou el preu",
     "intro_paragraphs": [
       "A diferència de molts tallers de Barcelona, el nostre preu inclou la correcció de pintura prèvia. Un ceràmic aplicat sobre remolins i ratllades només els segella de forma permanent — per això corregim la pintura abans de protegir-la, i ho indiquem al preu des del primer moment.",
-      "Treballem únicament amb recobriments certificats Gyeon i Gtechniq, amb instal·lador acreditat. I el servei és completament mòbil: no deixes el cotxe a cap taller — venim al teu garatge o pàrquing amb equip autònom."
+      "Treballem únicament amb recobriments professionals Gyeon i Gtechniq, aplicats seguint el protocol del fabricant. I el servei és completament mòbil: no deixes el cotxe a cap taller — venim al teu garatge o pàrquing amb equip autònom."
     ],
     "plans_label": "Preus del tractament ceràmic",
     "plans_note": "Preus per a sedan. Compacte −10 %, SUV +10–20 %. Envia'ns fotos per WhatsApp i rep el preu exacte en ~30 minuts.",
@@ -4488,11 +4454,11 @@
     "faqs": [
       {
         "question": "Quant costa un tractament ceràmic a Barcelona?",
-        "answer": "A restoreLab: 649 € amb protecció de 2 anys o 1 049 € amb ceràmic de grafè de 5 anys, per a un sedan i amb la correcció de pintura inclosa. Compacte −10 %, SUV +10–20 %. Atenció en comparar: molts preus anunciats no inclouen la preparació de la pintura — demana sempre el desglossament."
+        "answer": "A restoreLab: 649 € amb protecció de 2 anys, per a un sedan i amb la correcció de pintura inclosa. Compacte −10 %, SUV +10–20 %. Atenció en comparar: molts preus anunciats no inclouen la preparació de la pintura — demana sempre el desglossament."
       },
       {
         "question": "Quant dura el recobriment ceràmic?",
-        "answer": "El ceràmic certificat de 2 anys (Gyeon / Gtechniq) manté l'efecte hidrofòbic i la brillantor amb rentats correctes. El grafè premium protegeix fins a 5 anys. En tots dos casos recomanem una revisió anual del recobriment."
+        "answer": "El ceràmic de 2 anys (Gyeon / Gtechniq) manté l'efecte hidrofòbic i la brillantor amb rentats correctes. Recomanem una revisió anual del recobriment."
       },
       {
         "question": "Apliqueu el ceràmic a domicili a Barcelona?",

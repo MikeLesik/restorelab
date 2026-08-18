@@ -19,7 +19,7 @@ const cl = t.ceramic_landing;
 // Plan facts come from the pricing source of truth.
 const carCategory = t.pricing.categories.find((c: any) => c.id === 'car');
 const ceramicPlans = carCategory.packages.filter((p: any) =>
-  ['ceramic-2y', 'premium-5y'].includes(p.slug)
+  ['ceramic-2y'].includes(p.slug)
 );
 
 const wa = WHATSAPP_NUMBER;

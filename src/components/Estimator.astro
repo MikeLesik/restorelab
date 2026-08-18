@@ -51,8 +51,7 @@ const OUTCOMES: Record<string, any> = {
   'paint:medium:dark': O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_dark' }),
   'paint:heavy':       O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_heavy' }),
   'paint:heavy:dark':  O('two-stage',       {                      addon: 'headlight-restoration', why: 'why_paint_heavy_dark' }),
-  'ceramic:2y':        O('ceramic-2y',      { alt: 'premium-5y',   addon: 'windshield-hydrophobic', why: 'why_ceramic_2y' }),
-  'ceramic:5y':        O('premium-5y',      {                      addon: 'windshield-hydrophobic', why: 'why_ceramic_5y' }),
+  'ceramic':           O('ceramic-2y',      {                      addon: 'windshield-hydrophobic', why: 'why_ceramic_2y' }),
   'sale':              O('pre-sale-pack',   {                      addon: 'headlight-restoration', why: 'why_sale' }),
   'glass:windshield':  O('windshield-polish',      { alt: 'windshield-hydrophobic', why: 'why_glass_windshield' }),
   'glass:rain':        O('windshield-hydrophobic', { alt: 'full-glass-set',         why: 'why_glass_rain' }),
@@ -63,7 +62,7 @@ const OUTCOMES: Record<string, any> = {
 
 const NEEDS = [
   { v: 'paint',      label: ui.need_paint,      q2: 'paint' },
-  { v: 'ceramic',    label: ui.need_ceramic,    q2: 'ceramic' },
+  { v: 'ceramic',    label: ui.need_ceramic,    q2: '' },
   { v: 'sale',       label: ui.need_sale,       q2: '' },
   { v: 'glass',      label: ui.need_glass,      q2: 'glass' },
   { v: 'headlights', label: ui.need_headlights, q2: '' },
@@ -75,10 +74,6 @@ const Q2 = {
     { v: 'light',  label: ui.paint_light },
     { v: 'medium', label: ui.paint_medium },
     { v: 'heavy',  label: ui.paint_heavy },
-  ]},
-  ceramic: { title: ui.q2_ceramic_title, opts: [
-    { v: '2y', label: ui.ceramic_2y },
-    { v: '5y', label: ui.ceramic_5y },
   ]},
   glass: { title: ui.q2_glass_title, opts: [
     { v: 'windshield', label: ui.glass_windshield },
