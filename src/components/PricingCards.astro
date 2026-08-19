@@ -65,6 +65,12 @@ function getGridClass(count: number): string {
       </div>
     )}
 
+    {/* Minimum visit + tax basis. A published floor is what stops a EUR 79
+        call-out from consuming a full travel block at a loss. */}
+    {ui.min_visit && (
+      <p class="-mt-4 mb-8 text-center text-sm text-th-muted">{ui.min_visit}</p>
+    )}
+
     {categories.map((category: any) => (
         <div class="mb-8">
           {category.title && (

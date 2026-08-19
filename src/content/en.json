@@ -263,7 +263,7 @@
         "title": "Pre-Sale Detail Pack",
         "subtitle": "Maximise resale value before selling or trading in",
         "icon": "sale",
-        "starting_price": "€289",
+        "starting_price": "€449",
         "features": [
           "Single-stage paint correction",
           "Headlight restoration included"
@@ -346,7 +346,8 @@
           "modifier": "+25–40%"
         }
       ],
-      "sensitive_paint_surcharge": "+€60–100"
+      "sensitive_paint_surcharge": "+€60–100",
+      "min_visit": "Minimum visit €149 · VAT included in all prices"
     },
     "categories": [
       {
@@ -354,23 +355,9 @@
         "title": "Paint Correction & Ceramic Coating",
         "packages": [
           {
-            "name": "Express Refresh",
-            "slug": "express-refresh",
-            "price": "149€",
-            "duration": "~2 hours",
-            "description": "Quick decon wash and hand polish for light contamination. Ideal maintenance between full corrections.",
-            "includes": [
-              "Decontamination wash",
-              "Clay bar treatment",
-              "Light hand polish"
-            ],
-            "best_for": "New or well-maintained vehicles needing a refresh",
-            "highlight": false
-          },
-          {
             "name": "Single-Stage Correction",
             "slug": "single-stage",
-            "price": "289€",
+            "price": "349€",
             "duration": "3–4 hours",
             "description": "One-step machine correction removing up to 70% of swirl marks and light scratches.",
             "includes": [
@@ -382,9 +369,24 @@
             "highlight": false
           },
           {
+            "name": "Ceramic Coating 1Y",
+            "slug": "ceramic-1y",
+            "price": "499€",
+            "duration": "4–6 hours",
+            "description": "Single-stage correction topped with a 1-year ceramic coating (Gyeon / Gtechniq).",
+            "includes": [
+              "Full decontamination wash + clay bar",
+              "Single-step machine polishing",
+              "IPA wipedown & surface prep",
+              "1-year ceramic coating (Gyeon / Gtechniq)"
+            ],
+            "best_for": "Anyone wanting protection and gloss without a full correction",
+            "highlight": false
+          },
+          {
             "name": "Two-Stage Correction",
             "slug": "two-stage",
-            "price": "549€",
+            "price": "599€",
             "duration": "5–7 hours",
             "description": "Full two-step compound and polish. Removes 90%+ of defects with no ceramic — ideal if you already have a coating.",
             "includes": [
@@ -400,7 +402,7 @@
           {
             "name": "Ceramic Coating 2Y",
             "slug": "ceramic-2y",
-            "price": "649€",
+            "price": "849€",
             "duration": "6–8 hours",
             "description": "Two-stage correction topped with a 2-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
@@ -498,6 +500,20 @@
         "title": "Add-On Services",
         "packages": [
           {
+            "name": "Express Refresh",
+            "slug": "express-refresh",
+            "price": "149€",
+            "duration": "~2 hours",
+            "description": "Quick decon wash and hand polish for light contamination. Ideal maintenance between full corrections.",
+            "includes": [
+              "Decontamination wash",
+              "Clay bar treatment",
+              "Light hand polish"
+            ],
+            "best_for": "New or well-maintained vehicles needing a refresh",
+            "highlight": false
+          },
+          {
             "name": "Headlight Restoration",
             "slug": "headlight-restoration",
             "price": "79€ / pair",
@@ -514,7 +530,7 @@
           {
             "name": "Pre-Sale Detail Pack",
             "slug": "pre-sale-pack",
-            "price": "289€",
+            "price": "449€",
             "duration": "4–5 hours",
             "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [
@@ -570,7 +586,7 @@
     "see_package": "See the full package",
     "honesty": "Published price — the same one in the table above. Car size changes the time, not the package. We lock the price once we've seen two photos on WhatsApp.",
     "unsure_title": "Better if we take a look",
-    "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 649€ and every price is listed above.",
+    "unsure_body": "Send us two photos on WhatsApp — one of the whole car, one of the defect that bothers you most — and we'll give you a firm price the same day. Our work runs from 79€ to 849€ and every price is listed above.",
     "cta_whatsapp": "Send on WhatsApp",
     "cta_whatsapp_hint": "We reply with the confirmed price, usually within the hour.",
     "why_paint_light": "With light marks, a single polishing step already brings the gloss back — no need to pay for full correction.",
@@ -579,7 +595,7 @@
     "why_paint_dark": "On black, every pass shows. We step up to two-stage so it doesn't hologram.",
     "why_paint_heavy": "Deep scratches need cutting and then refining — a single pass would leave polishing marks.",
     "why_paint_heavy_dark": "Deep scratches on dark paint is the hardest case: cutting and refining, no shortcuts.",
-    "why_ceramic_2y": "Two years of protection with a single-stage polish first — the most balanced protection-per-euro.",
+    "why_ceramic_2y": "Two-stage correction and a two-year coating: the most complete finish and protection.",
     "why_sale": "This is the pack built for the listing: paint correction and restored headlights in one visit.",
     "why_glass_windshield": "The scratches that bother you at night are nearly always on the windscreen — that's where polishing shows.",
     "why_glass_rain": "Polish plus coating: the scratches go, and the water clears itself once you pick up speed.",
@@ -596,7 +612,7 @@
         "desc": "Two passes: cutting and refining. Show-car finish, with no polishing marks in sunlight."
       },
       "ceramic-2y": {
-        "desc": "A single-stage polish plus a ceramic layer that protects for 2 years and makes washing far easier."
+        "desc": "Two-stage correction plus a ceramic layer that protects for 2 years and makes washing much easier."
       },
       "windshield-polish": {
         "desc": "Removes wiper scratches and haze from the windscreen. Most noticeable at night."
@@ -612,8 +628,15 @@
       },
       "headlight-restoration": {
         "desc": "Progressive sanding and a UV seal. Clear again — and they stay clear."
+      },
+      "ceramic-1y": {
+        "desc": "One polishing pass plus a ceramic layer that protects for 1 year and makes washing much easier."
       }
-    }
+    },
+    "q2_ceramic_title": "How much protection do you want?",
+    "ceramic_1y": "1 year",
+    "ceramic_2y": "2 years",
+    "why_ceramic_1y": "One polishing pass and a one-year coating: the cheapest route to real protection."
   },
   "faq": {
     "section_title": "Before You Get in Touch",
@@ -2350,15 +2373,15 @@
             },
             {
               "label": "Single-Stage Correction",
-              "text": "289 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours."
+              "text": "349 EUR. One-step machine polish removing up to 70% of swirls. 3-4 hours."
             },
             {
               "label": "Two-Stage Correction",
-              "text": "549 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours."
+              "text": "599 EUR. Full compound + polish, 90%+ defect removal. 5-7 hours."
             },
             {
               "label": "Ceramic Coating 2Y",
-              "text": "649 EUR. Two-stage correction + 2-year ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular."
+              "text": "849 EUR. Two-stage correction + 2-year ceramic (Gyeon/Gtechniq). 6-8 hours. Most popular."
             }
           ],
           "table": {
@@ -2606,7 +2629,7 @@
           "number": "2",
           "title": "Cost Comparison: Correction vs Repaint in Barcelona",
           "paragraphs": [
-            "The economics strongly favour correction in most cases. A full two-stage paint correction at restoreLab starts at 549 euros for a sedan, while a professional respray of a single panel at a Barcelona body shop ranges from 300 to 600 euros — and a full-vehicle repaint runs between 2,000 and 5,000 euros depending on quality. Our most popular package, the Ceramic Coating 2Y at 649 euros, includes a full two-stage correction plus a 2-year Gyeon or Gtechniq ceramic coating — delivering both restoration and long-term protection.",
+            "The economics strongly favour correction in most cases. A full two-stage paint correction at restoreLab starts at 599 euros for a sedan, while a professional respray of a single panel at a Barcelona body shop ranges from 300 to 600 euros — and a full-vehicle repaint runs between 2,000 and 5,000 euros depending on quality. Our most popular package, the Ceramic Coating 2Y at 849 euros, includes a full two-stage correction plus a 2-year Gyeon or Gtechniq ceramic coating — delivering both restoration and long-term protection.",
             "Beyond the direct cost, there are hidden expenses to repainting: rental car costs during the 3-7 days the car is in the shop, depreciation from a non-original paint job (which is recorded in vehicle history and visible under inspection), and the risk of colour mismatch, especially on metallic and pearl finishes. Our clients in Sant Cugat and Barcelona consistently find that correction preserves both the vehicle's original factory integrity and its resale value. Check our full pricing breakdown on the pricing page.",
             "There is also the time factor. A mobile paint correction takes 5-7 hours at your location — your garage in Sant Cugat, your office parking in Barcelona, or your driveway in Terrassa. No drop-off, no rental, no disruption. We bring everything: generator, Rupes polishers, Koch Chemie compounds, water supply and LED inspection lights."
           ]
@@ -2617,7 +2640,7 @@
           "paragraphs": [
             "At restoreLab, we use a straightforward framework for every assessment. First, we measure paint thickness on every panel with a digital gauge. If the clear coat reads above 80 microns in most areas, there is sufficient material for a full multi-stage correction. If readings are below 60 microns on certain panels, that indicates previous repainting or heavy correction — and we adjust our approach accordingly.",
             "Second, we perform the 'fingernail test' on the deepest scratches. If your fingernail catches firmly in a scratch, it likely extends through the clear coat, and that specific scratch may not be fully removable. However, we can typically reduce its visibility by 70-80% and make it unnoticeable under normal viewing conditions. Only when scratches have exposed bare metal or primer does repainting become the correct recommendation.",
-            "Third, we evaluate the overall condition against the vehicle's value and the owner's goals. A 15-year-old daily driver with moderate swirls benefits enormously from a single-stage correction at 289 euros — the ROI in terms of appearance is outstanding. A new BMW M4 in Sant Cugat deserves the Ceramic Coating 2Y at 649 euros for maximum long-term protection. And a vehicle headed for resale should consider our Pre-Sale Detail Pack at 249 euros for the best return on investment. You can see real results from all these scenarios in our before and after cases gallery."
+            "Third, we evaluate the overall condition against the vehicle's value and the owner's goals. A 15-year-old daily driver with moderate swirls benefits enormously from a single-stage correction at 349 euros — the ROI in terms of appearance is outstanding. A new BMW M4 in Sant Cugat deserves the Ceramic Coating 2Y at 849 euros for maximum long-term protection. And a vehicle headed for resale should consider our Pre-Sale Detail Pack at 449 euros for the best return on investment. You can see real results from all these scenarios in our before and after cases gallery."
           ]
         },
         {
@@ -2626,7 +2649,7 @@
           "paragraphs": [
             "The Barcelona metropolitan area presents specific challenges that affect this decision. The UV index in summer reaches 9-10 (extreme), which accelerates clear coat oxidation — particularly on vehicles parked outdoors in Sant Cugat or the coastal areas of Castelldefels and Gavà. Mediterranean salt air carries chloride particles inland, especially during onshore Garbí winds, contributing to micro-corrosion in stone chip sites.",
             "Saharan dust events (calima) deposit fine abrasive particles that cause swirl marks during washing if not handled correctly. Pine resin from the trees lining many streets in Sant Cugat, Bellaterra and Matadepera etches into clear coat within 48 hours if not removed. All of these factors make regular paint protection — not repainting — the logical investment for Barcelona-area vehicles.",
-            "Our recommendation for most vehicles in the Barcelona area: a professional two-stage correction followed by a ceramic coating (from 649 euros) provides 2-5 years of active protection against these environmental threats. This is far more cost-effective than waiting for the damage to accumulate and then facing a full respray. Prevention is always cheaper than repair — especially in this climate. For specific pricing and package details, visit our pricing page or send photos via WhatsApp for a free assessment."
+            "Our recommendation for most vehicles in the Barcelona area: a professional two-stage correction followed by a ceramic coating (from 849 euros) provides 2-5 years of active protection against these environmental threats. This is far more cost-effective than waiting for the damage to accumulate and then facing a full respray. Prevention is always cheaper than repair — especially in this climate. For specific pricing and package details, visit our pricing page or send photos via WhatsApp for a free assessment."
           ]
         }
       ]
@@ -2661,8 +2684,8 @@
           "title": "Ceramic Protection: Non-Negotiable for EVs",
           "paragraphs": [
             "For any Tesla or EV in the Barcelona area, we consider ceramic coating a necessity, not an option. The thin clear coat simply cannot withstand repeated cycles of UV exposure, salt air, pine resin and Saharan dust without degrading rapidly. A quality ceramic coating acts as a sacrificial shield, absorbing environmental damage that would otherwise attack the clear coat directly.",
-            "Our recommended minimum for Tesla owners is the Ceramic Coating 2Y package at 649 euros — which includes a careful two-stage correction followed by a Gyeon MOHS or Gtechniq Crystal Serum Light application. As an optional add-on, a windshield hydrophobic coating completes the barrier against Barcelona's environmental threats.",
-            "The numbers support this investment. A Tesla Model 3 full respray in Barcelona costs 3,500-5,000 euros. A correction and ceramic protection at 649 euros, renewed every 2 years, keeps the original factory paint intact for the life of the vehicle. The ceramic coating also makes weekly maintenance dramatically easier — a simple rinse removes most contamination, reducing the risk of wash-induced swirl marks. For more details on ceramic coating technology, see our protection and preservation protocols article in the Academy."
+            "Our recommended minimum for Tesla owners is the Ceramic Coating 2Y package at 849 euros — which includes a careful two-stage correction followed by a Gyeon MOHS or Gtechniq Crystal Serum Light application. As an optional add-on, a windshield hydrophobic coating completes the barrier against Barcelona's environmental threats.",
+            "The numbers support this investment. A Tesla Model 3 full respray in Barcelona costs 3,500-5,000 euros. A correction and ceramic protection at 849 euros, renewed every 2 years, keeps the original factory paint intact for the life of the vehicle. The ceramic coating also makes weekly maintenance dramatically easier — a simple rinse removes most contamination, reducing the risk of wash-induced swirl marks. For more details on ceramic coating technology, see our protection and preservation protocols article in the Academy."
           ]
         },
         {
@@ -2743,8 +2766,8 @@
           "number": "2",
           "title": "The Pre-Sale Detailing Protocol",
           "paragraphs": [
-            "At restoreLab, our Pre-Sale Detail Pack is specifically designed to address the inspection points listed above in a single session at your location. The package at 249 euros for a sedan includes: single-stage paint correction to remove 60-70% of swirl marks and light scratches, full interior deep clean (vacuuming, leather or fabric cleaning, dashboard and trim dressing), and engine bay detailing (degrease, steam clean, plastic dressing).",
-            "For vehicles with more significant paint damage or those in the premium segment where buyers are even more demanding, we recommend upgrading to the Two-Stage Correction at 549 euros or the Ceramic Coating 2Y at 649 euros. The ceramic adds a visible wet-look gloss that photographs exceptionally well for online listings — and the hydrophobic effect impresses during test drives. A vehicle with fresh ceramic coating looks and feels notably different from one with just a wash and wax.",
+            "At restoreLab, our Pre-Sale Detail Pack is specifically designed to address the inspection points listed above in a single session at your location. The package at 349 euros for a sedan includes: single-stage paint correction to remove 60-70% of swirl marks and light scratches, full interior deep clean (vacuuming, leather or fabric cleaning, dashboard and trim dressing), and engine bay detailing (degrease, steam clean, plastic dressing).",
+            "For vehicles with more significant paint damage or those in the premium segment where buyers are even more demanding, we recommend upgrading to the Two-Stage Correction at 599 euros or the Ceramic Coating 2Y at 849 euros. The ceramic adds a visible wet-look gloss that photographs exceptionally well for online listings — and the hydrophobic effect impresses during test drives. A vehicle with fresh ceramic coating looks and feels notably different from one with just a wash and wax.",
             "The numbers work in the seller's favour. The average car in the 10,000-30,000 euro range in Barcelona loses 500-1,500 euros in negotiated discount due to visible paint defects. A 249 euro pre-sale detail eliminates this entirely, while a 649 euro correction plus ceramic can increase the sale price by 1,000-2,500 euros. That is a 2x to 5x return on investment — before accounting for the faster sale time that comes with a vehicle that shows well in photos. Check our pricing page for full package details."
           ]
         },
@@ -2763,7 +2786,7 @@
           "paragraphs": [
             "The ideal timing for pre-sale detailing is 1-2 weeks before listing the vehicle online. This gives the ceramic coating time to fully cure (12-24 hours) and allows you to photograph the vehicle in optimal conditions. Do not detail the car months before selling — the protection benefit is maximum when fresh, and the visual impact diminishes over time with normal use.",
             "For seasonal considerations in Barcelona: spring (March-May) and early autumn (September-October) are peak used-car buying seasons in Catalonia. If you are planning to sell during these windows, book your pre-sale detail 2-3 weeks in advance to ensure availability. Summer is slower for private sales (many potential buyers are on holiday), while January sees a spike in demand as people start the new year looking for a new vehicle.",
-            "The bottom line: professional pre-sale detailing is the single highest-ROI investment you can make when selling a vehicle in Catalonia. Our Pre-Sale Detail Pack at 249 euros typically pays for itself 2-5 times over in reduced buyer negotiation. For premium vehicles, the Two-Stage Correction at 549 euros or Ceramic 2Y at 649 euros delivers even greater returns. Send us photos of your vehicle via WhatsApp for an honest assessment of which package would maximise your specific resale value."
+            "The bottom line: professional pre-sale detailing is the single highest-ROI investment you can make when selling a vehicle in Catalonia. Our Pre-Sale Detail Pack at 449 euros typically pays for itself 2-5 times over in reduced buyer negotiation. For premium vehicles, the Two-Stage Correction at 599 euros or Ceramic 2Y at 849 euros delivers even greater returns. Send us photos of your vehicle via WhatsApp for an honest assessment of which package would maximise your specific resale value."
           ]
         }
       ]
@@ -2972,7 +2995,7 @@
           "paragraphs": [
             "Barcelona receives an average annual UV index that ranks among the highest in continental Europe. From May through September, the UV index regularly reaches 9-10 (classified as 'very high' to 'extreme' by the WHO), with peak surface temperatures on dark-coloured vehicles exceeding 65 degrees Celsius. This intense UV exposure drives photo-oxidation of the clear coat — the same chemical process that yellows headlights, but working more slowly on automotive clear coats.",
             "The visible effects of chronic UV exposure include progressive loss of gloss, chalking (a white powdery residue on the surface), colour fading on non-metallic finishes, and eventual clear coat failure. On a vehicle parked outdoors full-time in Sant Cugat or Barcelona, noticeable oxidation typically appears within 3-4 years without protection — compared to 6-8 years in a climate like northern Germany or the UK.",
-            "Professional ceramic coatings provide the most effective UV barrier available. Products like Gyeon MOHS and Gtechniq Crystal Serum Light contain UV-absorbing compounds that reduce the energy reaching the clear coat by up to 90%. Our Ceramic Coating 2Y package at 649 euros includes these UV-protective coatings. For vehicles parked outdoors in Mediterranean conditions, we consider ceramic coating the single most important investment in paint longevity. For details on how these coatings work, see our protection and preservation protocols article."
+            "Professional ceramic coatings provide the most effective UV barrier available. Products like Gyeon MOHS and Gtechniq Crystal Serum Light contain UV-absorbing compounds that reduce the energy reaching the clear coat by up to 90%. Our Ceramic Coating 2Y package at 849 euros includes these UV-protective coatings. For vehicles parked outdoors in Mediterranean conditions, we consider ceramic coating the single most important investment in paint longevity. For details on how these coatings work, see our protection and preservation protocols article."
           ]
         },
         {
@@ -2981,7 +3004,7 @@
           "paragraphs": [
             "Living within 30 kilometres of the Mediterranean coastline means constant exposure to airborne salt particles. The Garbí (southwest onshore breeze) carries microscopic sea salt crystals far inland — reaching Sant Cugat, Bellaterra and even Terrassa during summer months. These chloride particles land on the paint surface, dissolve in morning dew or humidity, and create localised acidic points that etch the clear coat.",
             "The effect is most pronounced in stone chip sites where bare metal is exposed. Salt accelerates oxidation of exposed primer and metal at 3-5 times the rate of non-coastal environments. A small stone chip that would remain cosmetic for years in an inland location can develop visible rust rings within 6-12 months in Castelldefels or the Maresme coast. This is why we always recommend addressing stone chips promptly and protecting the surrounding paint.",
-            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Ceramic Coating 2Y package at 649 euros, which includes two-stage correction and ceramic coating, with windshield hydrophobic treatment as an add-on. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching."
+            "For coastal vehicles in Castelldefels, Gavà, Sitges and the Maresme area, our recommendation is the Ceramic Coating 2Y package at 849 euros, which includes two-stage correction and ceramic coating, with windshield hydrophobic treatment as an add-on. The hydrophobic effect causes salt-laden moisture to bead and run off rather than sitting on the surface and etching."
           ]
         },
         {
@@ -3260,7 +3283,7 @@
           "title": "Pre-Sale Detail Tiers and ROI Math",
           "paragraphs": [
             "Not every vehicle needs the same level of preparation. The right tier depends on three variables: the listing price, the age and wear condition of the vehicle, and how much time you have before listing. The framework below matches tier to context and shows the expected ROI range based on conservative (5%) and optimistic (12%) uplift estimates for the Catalan mid-market.",
-            "The 4-hour pre-sale pack at €249 covers exterior machine polish with swirl correction to light-to-moderate paint defects, full interior detail (vacuum, dashboard and console cleaning, fabric or leather basic clean and condition, glass clean inside and out), exterior glass clean and headlight polish if yellowing is present, wheel and tyre clean, and final wipe-down. This tier is appropriate for cars under 7 years old, under 100,000 km, and priced at 8,000 EUR or above, where the paint has not suffered severe oxidation or deep scratches and the interior has normal wear. The €249 cost is the anchor for the ROI calculation — on a car listed at 12,000 EUR with a conservative 5% uplift, the detail returns 600 EUR against a 249 EUR cost: a 2.4x ROI in a single transaction.",
+            "The 4-hour pre-sale pack at €249 covers exterior machine polish with swirl correction to light-to-moderate paint defects, full interior detail (vacuum, dashboard and console cleaning, fabric or leather basic clean and condition, glass clean inside and out), exterior glass clean and headlight polish if yellowing is present, wheel and tyre clean, and final wipe-down. This tier is appropriate for cars under 7 years old, under 100,000 km, and priced at 8,000 EUR or above, where the paint has not suffered severe oxidation or deep scratches and the interior has normal wear. The €249 cost is the anchor for the ROI calculation — on a car listed at 12,000 EUR with a conservative 5% uplift, the detail returns 600 EUR against a 349 EUR cost: a 2.4x ROI in a single transaction.",
             "The 8-hour full preparation at approximately €399–499 covers everything in the pre-sale pack plus a full two-stage paint correction (cut and refine) to address moderate-to-heavy swirl marks, deeper paint defects, and surface oxidation; interior deep clean with hot-water extraction on fabrics; engine bay clean and dressing; headlight full restoration if yellowed or clouded; and paint sealant application for post-sale protection. This tier is appropriate for cars over 7 years old, over 100,000 km, or priced above 20,000 EUR where the paint has suffered visible oxidation or heavy swirling and the interior has significant wear. The higher cost is justified because the paint condition gap between prepared and un-prepared vehicles is larger in this tier, making the uplift percentage more reliably achievable.",
             "The table below shows the ROI framework across the four listing price brackets most common in the Catalan used-car market."
           ],
@@ -3310,7 +3333,7 @@
           "title": "When Detailing Won't Move the Needle",
           "paragraphs": [
             "Professional detailing is not a universal solution, and being honest about the cases where it does not deliver ROI is as important as the cases where it does. There are four situations where we tell sellers clearly that detailing is not the right investment for their specific vehicle.",
-            "Cars priced below 5,000 EUR on the Spanish used-car market attract a buyer segment that is primarily motivated by functional reliability and total cost. These buyers are experienced at the lower end of the market and are not deceived by clean paint — they know a car that needs work when they see one regardless of how it presents cosmetically. More importantly, the price ceiling in this bracket limits uplift potential: a 5% price premium on a 4,500 EUR car is 225 EUR, and the cost of a pre-sale detail is 249 EUR — a negative ROI before accounting for time. For cars in this bracket, a thorough self-wash, clean interior, and accurate honest listing description will outperform €249 of professional detailing. Save the detailing budget for mechanical issues or MOT equivalents.",
+            "Cars priced below 5,000 EUR on the Spanish used-car market attract a buyer segment that is primarily motivated by functional reliability and total cost. These buyers are experienced at the lower end of the market and are not deceived by clean paint — they know a car that needs work when they see one regardless of how it presents cosmetically. More importantly, the price ceiling in this bracket limits uplift potential: a 5% price premium on a 4,500 EUR car is 225 EUR, and the cost of a pre-sale detail is 449 EUR — a negative ROI before accounting for time. For cars in this bracket, a thorough self-wash, clean interior, and accurate honest listing description will outperform €249 of professional detailing. Save the detailing budget for mechanical issues or MOT equivalents.",
             "Cars with significant mechanical issues, accident history, or pending ITV failures face a different problem: informed buyers are protected by the DGT's public vehicle history database (informe de la DGT) and by pre-purchase inspection services that are now widely used by buyers on coches.net. A car with recorded accident repairs, a pending ITV defect, or a known mechanical fault will be negotiated down from its listed price regardless of how clean the paint is — and buyers who discover the gap between cosmetic presentation and underlying condition during inspection often walk away entirely, having formed a trust deficit. Detailing a car with known unresolved issues can make the selling process harder, not easier, by attracting more buyers who then discover the issues and become negative word-of-mouth.",
             "Cars where the vehicle history is the real obstacle — rental fleet cars, cars with more than 4 previous owners, cars with unusual odometer readings — are in a similar position. The presentation may be improved by detailing, but the buyer's concern is not cosmetic. In these cases the honest recommendation is to price accordingly from the start rather than invest in cosmetics that cannot address the buyer's actual objection.",
             "Finally, cars with structural damage that cannot be disclosed honestly alongside a freshly detailed presentation create a legal risk for the seller. Under Spanish consumer law (Ley de Garantías), private sellers have disclosure obligations for known defects. A car presented in excellent cosmetic condition with an undisclosed structural issue may be more likely to result in a post-sale dispute than the same car presented honestly in its actual condition. We do not detail cars that sellers tell us have undisclosed structural issues, and we will decline work in any case where the purpose is obscuring rather than presenting."

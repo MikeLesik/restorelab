@@ -62,7 +62,7 @@ export const areaProfiles: Record<string, AreaProfile> = {
     commonCarBrands: ['SEAT', 'Volkswagen', 'BMW', 'Audi', 'Tesla', 'Renault'], // VERIFY
     parkingContext: 'mixed — street, communal garages, paid lots',
     climateMicro: 'coastal Mediterranean — UV strong, occasional salt air in port-adjacent zones',
-    travelFee: 0,
+    travelFee: 39, // Vallvidrera toll + ~42 min vs a Sant Cugat job
     caseCount: '50+', // VERIFY
     landmarks: ['Sagrada Família', 'Parc de la Ciutadella', 'Diagonal'],
     tier: 'primary',
@@ -167,7 +167,7 @@ export const areaProfiles: Record<string, AreaProfile> = {
     commonCarBrands: ['BMW', 'Mercedes', 'Audi', 'Porsche', 'Tesla', 'Range Rover'], // VERIFY
     parkingContext: 'private garages, gated communities',
     climateMicro: 'upper Barcelona — slightly cooler than central',
-    travelFee: 0,
+    travelFee: 39,
     caseCount: '12+', // VERIFY
     landmarks: ['Monestir de Pedralbes', 'Palau Reial'],
     tier: 'secondary',
@@ -182,7 +182,7 @@ export const areaProfiles: Record<string, AreaProfile> = {
     commonCarBrands: ['BMW', 'Mercedes', 'Audi', 'Tesla', 'Mini'], // VERIFY
     parkingContext: 'mixed — mostly underground garages in apartment buildings',
     climateMicro: 'upper Barcelona — UV strong, less salt than waterfront',
-    travelFee: 0,
+    travelFee: 39,
     caseCount: '15+', // VERIFY
     landmarks: ['Tibidabo', 'Parc del Putxet'],
     tier: 'secondary',
