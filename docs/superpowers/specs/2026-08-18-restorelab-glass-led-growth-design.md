@@ -76,26 +76,31 @@ Positioning: **glass is the front door, detailing is the upsell.**
 
 ### 4.1 Repricing (zero cost, do before first job)
 
-| Item | Now | New | Reason |
+**Shipped 2026-08-19 (commit `a09b397`).** Final ladder:
+
+| Item | Was | Now | Reason |
 |---|---|---|---|
-| Ceramic 2Y | 649 | **849** | Nets EUR 17/h vs Two-Stage at EUR 26/h — the upsell is a margin downgrade. Barcelona market: EUR 640–1,040 for 3-year coatings |
-| Ceramic 5Y | 1,049 | **1,299** | Market for 5-year: EUR 1,080–1,760 |
-| Pre-Sale Pack | 289 | **449** | EUR 15/h on 7.5 h — worst item in the list |
-| Two-Stage | 549 | 599 | optional |
-| Single-Stage | 289 | 349 | optional |
+| Single-Stage | 289 | **349** | |
+| **Ceramic 1Y** (new) | — | **499** | Single-stage correction + 1-year coating. Makes the coating uplift consistent: +150 for one year, +250 for two |
+| Two-Stage | 549 | **599** | |
+| Ceramic 2Y | 649 | **849** | Netted ~EUR 17/h vs Two-Stage at ~26 — the upsell was a *margin downgrade*. Barcelona charges 640–1,040 for comparable coatings |
+| Pre-Sale Pack | 289 | **449** | EUR 15/h on 7.5 h — was the worst item in the list |
+| Express Refresh | 149 (car) | 149 (**extras**) | Moved out of the correction ladder: at EUR 22/h it collided with the EUR 110–160 mobile-wash tier and invited commodity comparison. It is maintenance, not correction — and the move leaves four car packages and three extras, so neither row orphans a card |
 | Full glass set | 289 | unchanged | already EUR 32/h |
 | Trim, full car | 189 | unchanged | already EUR 30/h |
 
-Expected effect: **+EUR 800–1,200/month at the same job count.**
+Ceramic 5Y was withdrawn entirely — see §4.6 and §10. Expected effect of the repricing: **+EUR 800–1,200/month at the same job count.**
 
 **Mandatory alongside:** display **"IVA incluido"** on every price. Under art. 60 RDL 1/2007 a B2C price must be the final price including taxes; the site states nothing today, so EUR 149 is legally the total. Against competitors who advertise "+IVA" the site currently reads 21% more expensive than it is. Budget from net: EUR 123 / 239 / 454.
 
 ### 4.2 Minimum ticket and travel
 
-- **Minimum visit EUR 149.** Below that, add-on only.
-- Headlights EUR 79 → **add-on EUR 69**; trim spot EUR 69 → **EUR 59**; hydrophobic-only EUR 89 → **EUR 49**. Standalone they net EUR 12–18/h and each consumes a full ~1.7 h travel block.
-- **Barcelona zone fee +EUR 39** (42 extra minutes, ~EUR 12 fuel plus Vallvidrera toll). Waived above a EUR 450 ticket, which turns it into an upsell lever.
-- **Fix `src/lib/areaProfiles.ts`:** Barcelona is currently EUR 0 and Terrassa EUR 15 — backwards.
+Shipped in the same commit:
+
+- **Minimum visit EUR 149, published on the pricing block**, with "IVA incluido" stated. This is the mechanism that stops a EUR 79 call-out from consuming a full ~1.7 h travel block at a loss.
+- **Headlight (EUR 79) and hydrophobic-only (EUR 89) prices were deliberately left unchanged.** The earlier draft cut them to 69/49 as add-ons, but the floor already prevents the loss-making solo trip, and cutting them would have meant rewriting ~18 SEO titles, H1s and meta descriptions per language across the area×service pages. The economics are fixed by the rule, not by the price.
+- **Barcelona zone fee EUR 39** in `areaProfiles.ts` — Barcelona, Pedralbes and Sant Gervasi were EUR 0 while Terrassa was EUR 15, exactly backwards. A Barcelona visit costs ~42 extra minutes plus fuel and the Vallvidrera toll.
+- Still open: the remaining `// VERIFY` travel fees, which the owner has never confirmed.
 
 ### 4.3 Home glass offer (new)
 
