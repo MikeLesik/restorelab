@@ -21,7 +21,7 @@ export const serviceProfiles: Record<string, ServiceProfile> = {
     id: 'car-paint-correction',
     active: true,
     englishLabel: 'Car Paint Correction',
-    startingPriceEur: 149,
+    startingPriceEur: 349,
     englishBrief: 'Multi-stage machine polishing for swirl marks, scratches, and oxidation removal.',
   },
   'glass-polishing': {
@@ -49,7 +49,7 @@ export const serviceProfiles: Record<string, ServiceProfile> = {
     id: 'pre-sale-pack',
     active: true,
     englishLabel: 'Pre-Sale Detailing Pack',
-    startingPriceEur: 249,
+    startingPriceEur: 449,
     englishBrief: 'Comprehensive detailing to maximize used-car listing photos and sale price.',
   },
   // Hidden services — present for cluster registry but not surfaced in llms.txt

@@ -19,8 +19,16 @@ const cl = t.ceramic_landing;
 // Plan facts come from the pricing source of truth.
 const carCategory = t.pricing.categories.find((c: any) => c.id === 'car');
 const ceramicPlans = carCategory.packages.filter((p: any) =>
-  ['ceramic-2y'].includes(p.slug)
+  ['ceramic-1y', 'ceramic-2y'].includes(p.slug)
 );
+
+// Schema prices are derived, never typed: the hardcoded pair here once
+// outlived the packages it described (it still quoted a withdrawn 1049).
+const ceramicPrices = ceramicPlans
+  .map((p: any) => Number(String(p.price).replace(/[^\d]/g, '')))
+  .filter((n: number) => Number.isFinite(n) && n > 0)
+  .sort((a: number, b: number) => a - b);
+const ceramicPriceRange = [ceramicPrices[0], ceramicPrices[ceramicPrices.length - 1]];
 
 const wa = WHATSAPP_NUMBER;
 const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.ceramic_landing)}`;
@@ -43,8 +51,8 @@ const serviceSchema = {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "EUR",
-    "lowPrice": 649,
-    "highPrice": 1049,
+    "lowPrice": ceramicPriceRange[0],
+    "highPrice": ceramicPriceRange[1],
     "offerCount": ceramicPlans.length,
   },
 };

@@ -55,16 +55,14 @@ async function loadAreaProfiles() {
   return out;
 }
 
-function pricingPackages() {
-  // Static — pricing tiers are defined in content JSON pricing section but
-  // we keep canonical EUR figures here for AI clarity. Keep in sync with pricing page.
-  return [
-    { name: 'Express Refresh', price: 149 },
-    { name: 'Single-Stage Correction', price: 289 },
-    { name: 'Two-Stage Correction', price: 549 },
-    { name: 'Ceramic Coating 2Y', price: 649 },
-    { name: 'Ceramic Coating 5Y', price: 1049 },
-  ];
+// Derived from the content JSON, never retyped. The previous static list
+// silently outlived the packages it described — it was still advertising a
+// withdrawn Ceramic 5Y at 1049 long after the package was removed.
+function pricingPackages(en) {
+  const cars = en.pricing?.categories?.find((c) => c.id === 'car')?.packages ?? [];
+  return cars
+    .map((p) => ({ name: p.name, price: Number(String(p.price).replace(/[^\d]/g, '')) }))
+    .filter((p) => Number.isFinite(p.price) && p.price > 0);
 }
 
 async function main() {
@@ -109,7 +107,7 @@ async function main() {
 
   out.push('## Pricing');
   out.push('');
-  for (const p of pricingPackages()) {
+  for (const p of pricingPackages(en)) {
     out.push(`- ${p.name}: €${p.price}`);
   }
   out.push(`- Full price list: ${SITE_URL}/es/pricing (EN: ${SITE_URL}/en/pricing)`);

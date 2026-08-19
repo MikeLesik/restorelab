@@ -30,11 +30,10 @@
 
 ## Pricing
 
-- Express Refresh: €149
-- Single-Stage Correction: €289
-- Two-Stage Correction: €549
-- Ceramic Coating 2Y: €649
-- Ceramic Coating 5Y: €1049
+- Single-Stage Correction: €349
+- Ceramic Coating 1Y: €499
+- Two-Stage Correction: €599
+- Ceramic Coating 2Y: €849
 - Full price list: https://restorelab.io/es/pricing (EN: https://restorelab.io/en/pricing)
 
 ## Knowledge base
