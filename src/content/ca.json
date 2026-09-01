@@ -7,7 +7,7 @@
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Serveis a Domicili — Restauració Auto, Vidre i Fars | restoreLab",
+      "title": "Serveis a Domicili: Auto, Vidre i Fars | restoreLab",
       "description": "Correcció de pintura d'automòbil, polit de vidre i restauració d'acrílic. Servei a domicili a Sant Cugat i Barcelona."
     },
     "car_paint": {
@@ -16,7 +16,7 @@
     },
     "glass": {
       "title": "Polir Vidres del Cotxe Ratllats a Barcelona | restoreLab",
-      "description": "Polit de vidres: elimina ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a domicili a Barcelona i Sant Cugat. Sense substitució."
+      "description": "Polit de vidres: ratllades del parabrisa, taques d'aigua i marques del neteja-parabrises. Servei mòbil a Barcelona i Sant Cugat. Sense substitució."
     },
     "acrylic": {
       "title": "Restauració d'Acrílic i Policarbonat Espanya | restoreLab",
@@ -60,7 +60,7 @@
     },
     "terms": {
       "title": "Termes i Condicions | restoreLab",
-      "description": "Termes i condicions del servei de restoreLab."
+      "description": "Termes i condicions del servei mòbil de restauració de restoreLab: pressupost, garantia de satisfacció, pagaments i cancel·lacions."
     },
     "academy": {
       "title": "Acadèmia: Excel·lència en Enginyeria | restoreLab",
@@ -71,7 +71,7 @@
       "description": "Per què el 99% del resultat depèn de la selecció d'eines. Rotativa vs doble acció — anàlisi, taula comparativa i recomanacions."
     },
     "headlight": {
-      "title": "Polit de Fars a Domicili — Barcelona i Sant Cugat | restoreLab",
+      "title": "Polit de Fars a Domicili a Barcelona | restoreLab",
       "description": "Polit i restauració professional de fars — elimina grogor, opacitat i oxidació UV. Des de 79€/parell. Servei mòbil a Sant Cugat i Barcelona."
     },
     "pre_sale": {

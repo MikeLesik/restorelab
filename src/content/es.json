@@ -7,7 +7,7 @@
       "og_image": "/images/og-home.jpg"
     },
     "services": {
-      "title": "Servicios a Domicilio — Restauración Auto, Vidrio y Faros | restoreLab",
+      "title": "Servicios a Domicilio: Auto, Vidrio y Faros | restoreLab",
       "description": "Corrección de pintura de automóvil, pulido de vidrio y restauración de acrílico. Servicio a domicilio en Sant Cugat y Barcelona."
     },
     "car_paint": {
@@ -16,14 +16,14 @@
     },
     "glass": {
       "title": "Pulir Cristales del Coche Rayados en Barcelona | restoreLab",
-      "description": "Pulido de cristales: elimina arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil a domicilio en Barcelona y Sant Cugat. Sin sustitución."
+      "description": "Pulido de cristales: arañazos del parabrisas, manchas de agua y marcas de limpiaparabrisas. Servicio móvil en Barcelona y Sant Cugat. Sin sustitución."
     },
     "acrylic": {
       "title": "Restauración de Acrílico y Policarbonato España | restoreLab",
       "description": "Restauración de paneles transparentes, ventanas y escotillas. Eliminación de oxidación UV. Alternativa económica a la sustitución."
     },
     "pricing": {
-      "title": "Precios — Pulido Auto y Restauración de Superficies | restoreLab",
+      "title": "Precios — Pulido y Restauración Auto | restoreLab",
       "description": "4 paquetes de corrección de pintura y cerámico desde 149€ hasta 849€. Precios base sedán con multiplicador por tamaño. Presupuesto gratis por WhatsApp."
     },
     "cases": {
@@ -60,7 +60,7 @@
     },
     "terms": {
       "title": "Términos y Condiciones | restoreLab",
-      "description": "Términos y condiciones del servicio de restoreLab."
+      "description": "Términos y condiciones del servicio móvil de restauración de restoreLab: presupuesto, garantía de satisfacción, pagos y cancelaciones."
     },
     "academy": {
       "title": "Academia: Excelencia en Ingeniería | restoreLab",
@@ -71,12 +71,12 @@
       "description": "Por qué el 99% del resultado depende de la selección de herramientas. Rotativa vs doble acción — análisis, tabla comparativa y recomendaciones."
     },
     "headlight": {
-      "title": "Pulido de Faros a Domicilio — Barcelona y Sant Cugat | restoreLab",
+      "title": "Pulido de Faros a Domicilio en Barcelona | restoreLab",
       "description": "Pulido y restauración profesional de faros — elimina amarilleo, opacidad y oxidación UV. Desde 79€/par. Servicio móvil en Sant Cugat y Barcelona."
     },
     "pre_sale": {
       "title": "Pack Pre-Venta — Maximiza el Valor de Reventa | restoreLab",
-      "description": "Corrección de pintura de una fase y restauración de faros en un paquete pensado para vender. 349€ para sedán, servicio móvil a domicilio en Sant Cugat y Barcelona."
+      "description": "Corrección de pintura de una fase y restauración de faros en un paquete pensado para vender. 349€ sedán, servicio móvil en Sant Cugat y Barcelona."
     },
     "legal": {
       "title": "Aviso Legal | restoreLab",

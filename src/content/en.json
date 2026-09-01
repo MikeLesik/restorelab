@@ -2,7 +2,7 @@
   "lang": "en",
   "meta": {
     "home": {
-      "title": "restoreLab — Mobile Detailing at Your Home | Sant Cugat & Barcelona",
+      "title": "restoreLab — Mobile Detailing | Sant Cugat & Barcelona",
       "description": "Premium mobile paint correction, glass scratch removal & acrylic restoration at your home in Sant Cugat & Barcelona. No repainting. No replacement.",
       "og_image": "/images/og-home.jpg"
     },
@@ -11,7 +11,7 @@
       "description": "Car paint correction, glass polishing and acrylic restoration. Mobile service across Sant Cugat & Barcelona."
     },
     "car_paint": {
-      "title": "Mobile Paint Correction at Your Home — Sant Cugat | restoreLab",
+      "title": "Mobile Paint Correction — Sant Cugat | restoreLab",
       "description": "Mobile paint correction in Sant Cugat & Barcelona. Remove swirl marks, scratches & restore deep gloss. Ceramic prep available. No repaint."
     },
     "glass": {
@@ -60,7 +60,7 @@
     },
     "terms": {
       "title": "Terms & Conditions | restoreLab",
-      "description": "restoreLab terms and conditions of service."
+      "description": "restoreLab terms and conditions: how quotes work, the satisfaction guarantee, payments and cancellations for our mobile restoration service."
     },
     "academy": {
       "title": "Academy: Engineering Excellence | restoreLab",
