@@ -21,6 +21,9 @@ export interface Props {
   currentPath?: string;
   /** Languages this page actually exists in — controls hreflang + language switcher. */
   availableLangs?: string[];
+  /** Emit a BreadcrumbList for pages that don't build their own richer one.
+   *  Home is prepended automatically; the last item needs no `item` URL. */
+  breadcrumbs?: { name: string; item?: string }[];
 }
 
 const {
@@ -32,6 +35,7 @@ const {
   t,
   currentPath = '',
   availableLangs = ['en', 'es', 'ca'],
+  breadcrumbs,
 } = Astro.props;
 
 const siteUrl = SITE_URL;
@@ -308,6 +312,23 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         "availableLanguage": ["Spanish", "English", "Catalan"]
       }
     })} />
+
+    <!-- BreadcrumbList (opt-in via the breadcrumbs prop) -->
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/${lang}` },
+          ...breadcrumbs.map((b, i) => ({
+            "@type": "ListItem",
+            "position": i + 2,
+            "name": b.name,
+            ...(b.item ? { "item": `${siteUrl}/${lang}${b.item}` } : {}),
+          })),
+        ]
+      })} />
+    )}
 
     <!-- WebSite Schema — names the site entity and its languages for search
          and AI engines; publisher links into the Organization node above. -->

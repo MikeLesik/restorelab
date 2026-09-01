@@ -23,6 +23,7 @@ const { t } = Astro.props;
   lang={lang}
   t={t}
   currentPath="/academy"
+  breadcrumbs={[{ name: t.nav.academy }]}
 >
   <div class="pt-24">
 
@@ -59,9 +60,13 @@ const { t } = Astro.props;
         <h2 class="section-title text-3xl mb-12 text-center">{t.academy.articles_title}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.academy.articles.map((article: { number: string; title: string; excerpt: string; slug?: string; status?: string }) => {
+          {t.academy.articles.map((article: { number: string; title: string; excerpt: string; slug?: string; status?: string; date?: string; updated?: string }) => {
             const isPublished = article.status === 'published' && article.slug;
             const Wrapper = isPublished ? 'a' : 'div';
+            const cardIso = article.updated || article.date;
+            const cardDate = isPublished && cardIso
+              ? new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang === 'ca' ? 'ca-ES' : 'es-ES', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(cardIso))
+              : null;
             return (
               <Wrapper
                 href={isPublished ? `/${lang}/academy/${article.slug}` : undefined}
@@ -81,6 +86,9 @@ const { t } = Astro.props;
                 </div>
                 <h3 class="font-display font-bold text-lg text-th-heading mb-3">{article.title}</h3>
                 <p class="text-sm text-th-muted leading-relaxed flex-1">{article.excerpt}</p>
+                {cardDate && (
+                  <time datetime={cardIso} class="text-xs text-th-faint mt-4">{cardDate}</time>
+                )}
               </Wrapper>
             );
           })}

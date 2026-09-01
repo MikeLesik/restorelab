@@ -25,6 +25,7 @@ const { t } = Astro.props;
   lang={lang}
   t={t}
   currentPath="/cases"
+  breadcrumbs={[{ name: t.nav.cases }]}
 >
   <!-- CollectionPage + ImageObject schema for the before/after gallery -->
   <script type="application/ld+json" set:html={JSON.stringify({

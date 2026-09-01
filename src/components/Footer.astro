@@ -1,5 +1,6 @@
 ---
 import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { areaProfiles } from '@/lib/areaProfiles';
 
 export interface Props {
   t: Record<string, any>;
@@ -86,6 +87,21 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
               {t.footer.plans_link}
             </a>
           </li>
+          <li>
+            <a href={`/${lang}/pricing`} class="hover:text-th-heading transition-colors">
+              {t.nav.pricing}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/cases`} class="hover:text-th-heading transition-colors">
+              {t.nav.cases}
+            </a>
+          </li>
+          <li>
+            <a href={`/${lang}/academy`} class="hover:text-th-heading transition-colors">
+              {t.nav.academy}
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -127,6 +143,21 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.foote
           </div>
         )}
       </div>
+    </div>
+
+    <!-- Service areas — the 12 geo landings' only site-wide internal links;
+         without this row they are reachable solely from /contact. -->
+    <div class="mt-12 pt-8 border-t border-th-border/10">
+      <h3 class="text-th-heading font-semibold mb-3 text-sm uppercase tracking-widest">{t.footer.areas_title}</h3>
+      <ul class="flex flex-wrap gap-x-4 gap-y-2">
+        {Object.entries(areaProfiles).map(([slug, area]: [string, any]) => (
+          <li>
+            <a href={`/${lang}/areas/${slug}`} class="text-th-muted hover:text-th-heading text-sm transition-colors">
+              {area.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
 
     <!-- Bottom bar -->
