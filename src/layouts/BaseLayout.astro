@@ -385,6 +385,99 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         });
       })();
 
+      // ── Attribution: first touch + visitor ref code (RL-301) ───────────────
+      // Schema + rationale documented in src/lib/attribution.ts. The ref is a
+      // first-party functional identifier, so it exists pre-consent; ad click
+      // ids (gclid/fbclid/msclkid) are held in memory and only persisted once
+      // marketing consent is granted — same split the Pixel/CAPI loaders use.
+
+      var RL_UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+      var RL_CLICK_ID_KEYS = ['gclid', 'fbclid', 'msclkid'];
+      var rlPendingClickIds = {};
+      var rlThisLoadIsFirstTouch = false;
+
+      function rlReadAttr() {
+        try { return JSON.parse(localStorage.getItem('rl_attr')) || {}; } catch (e) { return {}; }
+      }
+      function rlWriteAttr(a) {
+        try { localStorage.setItem('rl_attr', JSON.stringify(a)); } catch (e) {}
+      }
+      function rlMakeRef() {
+        // [A-HJ-NP-Z2-9]: no I/O/0/1, so the code survives handwriting and
+        // WhatsApp font ambiguity.
+        var alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        var code = '';
+        var rnd = new Uint8Array(4);
+        if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(rnd);
+        else for (var i = 0; i < 4; i++) rnd[i] = Math.floor(Math.random() * 256);
+        for (var j = 0; j < 4; j++) code += alphabet[rnd[j] % alphabet.length];
+        return 'RL-' + code;
+      }
+      function rlMarketingConsent() {
+        var cc = window.CookieConsent;
+        return !!(cc && typeof cc.acceptedCategory === 'function' && cc.acceptedCategory('marketing'));
+      }
+      // Called from the CookieConsent callbacks: click ids captured on this
+      // page load land in storage only after marketing consent.
+      function rlPersistClickIds() {
+        if (!rlMarketingConsent()) return;
+        var keys = Object.keys(rlPendingClickIds);
+        if (!keys.length) return;
+        var a = rlReadAttr();
+        keys.forEach(function (k) {
+          if (a.last) a.last[k] = rlPendingClickIds[k];
+          if (rlThisLoadIsFirstTouch && a.first) a.first[k] = rlPendingClickIds[k];
+        });
+        rlPendingClickIds = {};
+        rlWriteAttr(a);
+      }
+
+      (function initAttribution() {
+        var params = null;
+        try { params = new URLSearchParams(location.search); } catch (e) {}
+        var touch = { landing: location.pathname, ts: new Date().toISOString() };
+        var tagged = false;
+        RL_UTM_KEYS.forEach(function (k) {
+          var v = params && params.get(k);
+          if (v) { touch[k] = v.slice(0, 200); tagged = true; }
+        });
+        RL_CLICK_ID_KEYS.forEach(function (k) {
+          var v = params && params.get(k);
+          if (v) { rlPendingClickIds[k] = v.slice(0, 200); tagged = true; }
+        });
+        var a = rlReadAttr();
+        if (!a.ref) a.ref = rlMakeRef();
+        if (!a.first) { a.first = touch; rlThisLoadIsFirstTouch = true; }
+        if (tagged) a.last = touch;
+        rlWriteAttr(a);
+      })();
+
+      // Fields stamped onto contact-intent events by __rl_push.
+      function rlAttrFields() {
+        var a = rlReadAttr();
+        var f = a.first || {};
+        return {
+          ref: a.ref || '',
+          attr_source: f.utm_source || '(direct)',
+          attr_campaign: f.utm_campaign || '',
+          attr_landing: f.landing || '',
+        };
+      }
+
+      // Append "#ref RL-XXXX" to a wa.me prefill so the WhatsApp conversation
+      // carries the visitor's attribution code. Idempotent; all site wa.me
+      // links are `…?text=<encoded>` with text as the last param.
+      function rlWithRef(href) {
+        var a = rlReadAttr();
+        if (!a.ref || !href || href.indexOf('wa.me') === -1) return href;
+        var tag = encodeURIComponent('#ref ' + a.ref);
+        if (href.indexOf(tag) !== -1) return href;
+        if (/[?&]text=/.test(href)) {
+          return href.replace(/([?&]text=[^&#]*)/, '$1' + encodeURIComponent('\n\n') + tag);
+        }
+        return href + (href.indexOf('?') === -1 ? '?' : '&') + 'text=' + tag;
+      }
+
       // ── Loaders (called after consent) ──────────────────────────────────────
 
       function loadGTM() {
@@ -451,6 +544,47 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         var analyticsOk = !cc || (hasCat && cc.acceptedCategory('analytics'));
         var marketingOk = hasCat && cc.acceptedCategory('marketing');
         if (!analyticsOk && !marketingOk) return;
+
+        // ── Attribution enrichment (RL-301) ──
+        // Contact-intent events carry the visitor ref + first-touch source so
+        // GTM/Ads can attribute the WhatsApp conversation to the click. Like
+        // the Lead mapping below, contact intent is derived from the link's
+        // href too — descriptive data-event slugs (estimator_wa, b2b_hero_wa…)
+        // must not fall through the name-based net.
+        var rlClickUrl = (payload.click_url || '').toLowerCase();
+        var rlIsContactClick = rlClickUrl.indexOf('wa.me') !== -1
+          || rlClickUrl.indexOf('whatsapp.com') !== -1
+          || rlClickUrl.indexOf('tel:') === 0;
+        var RL_ENRICH = { wa_click: 1, phone_click: 1, lead_submitted: 1, b2b_inquiry: 1, commercial_glass_inquiry: 1, estimator_result: 1 };
+        if (RL_ENRICH[payload.event] || rlIsContactClick) {
+          var af = rlAttrFields();
+          payload.ref = af.ref;
+          payload.attr_source = af.attr_source;
+          payload.attr_campaign = af.attr_campaign;
+          payload.attr_landing = af.attr_landing;
+        }
+
+        // ── Server-side ref log (RL-301) ──
+        // Fire-and-forget copy of the contact moment into Cloudflare KV, so
+        // `#ref RL-XXXX` seen in WhatsApp can be looked up via /api/ref even
+        // weeks later. No-op server-side until the REF_LOG binding exists.
+        var RL_REF_LOG = { wa_click: 1, phone_click: 1, lead_submitted: 1 };
+        if ((RL_REF_LOG[payload.event] || rlIsContactClick) && payload.ref) {
+          try {
+            fetch('/api/ref', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              keepalive: true,
+              body: JSON.stringify({
+                ref: payload.ref,
+                attr: rlReadAttr(),
+                page: location.pathname,
+                event: payload.event,
+                ts: new Date().toISOString(),
+              }),
+            }).catch(function () {});
+          } catch (e) {}
+        }
 
         // Shared event id so the server-side Conversions API (CAPI) copy is
         // de-duplicated against this browser Pixel event — Meta matches on eventID.
@@ -557,6 +691,10 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       document.addEventListener('click', function(e) {
         var el = e.target.closest('[data-event]');
         if (!el) return;
+        // Re-stamp the ref at click time: dynamically assembled links (the
+        // Estimator rewrites its href on every render) would otherwise lose
+        // the DOM-ready injection. rlWithRef is idempotent.
+        if (el.href && el.href.indexOf('wa.me') !== -1) el.href = rlWithRef(el.href);
         var ev = el.getAttribute('data-event');
         window.__rl_push({
           event: ev,
@@ -570,9 +708,14 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         window.__rl_push({ event: 'estimate_submit' });
       });
 
-      // Auto-tag any wa.me / tel: links that don't already have data-event
+      // Auto-tag any wa.me / tel: links that don't already have data-event,
+      // and stamp the visitor ref into every static wa.me prefill (RL-301) —
+      // covers long-press "copy link" and middle-click, not just left clicks.
       document.querySelectorAll('a[href*="wa.me"]:not([data-event])').forEach(function(el){
         el.setAttribute('data-event','wa_click');
+      });
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+        el.href = rlWithRef(el.href);
       });
       document.querySelectorAll('a[href^="tel:"]:not([data-event])').forEach(function(el){
         el.setAttribute('data-event','phone_click');
@@ -601,11 +744,11 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
           },
           onConsent: function() {
             if (CookieConsent.acceptedCategory('analytics')) { loadGTM(); loadClarity(); }
-            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); }
+            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); rlPersistClickIds(); }
           },
           onChange: function() {
             if (CookieConsent.acceptedCategory('analytics')) { loadGTM(); loadClarity(); }
-            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); }
+            if (CookieConsent.acceptedCategory('marketing')) { loadMetaPixel(); rlPersistClickIds(); }
           },
           language: {
             default: pageLang,

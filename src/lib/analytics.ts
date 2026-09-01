@@ -3,22 +3,36 @@
 // Events push to GTM dataLayer, Microsoft Clarity, and Meta Pixel.
 // Events respect CookieConsent: analytics → GA/Clarity, marketing → Pixel/CAPI.
 
+// Attribution enrichment (RL-301): the __rl_push pipeline stamps these onto
+// contact-intent events from localStorage.rl_attr (see src/lib/attribution.ts).
+// Callers never set them — they exist in the types so GTM variable names have
+// a documented source of truth.
+type AttrFields = {
+  /** Visitor ref code, e.g. 'RL-K7F3' — same code appended to wa.me prefills. */
+  ref?: string;
+  /** first.utm_source, or '(direct)' when the first touch was untagged. */
+  attr_source?: string;
+  attr_campaign?: string;
+  /** Landing pathname of the first touch. */
+  attr_landing?: string;
+};
+
 export type RestoreLabEvent =
   | { event: 'estimator_started'; service?: string }
   | { event: 'estimator_completed'; tier: string; priceBand: string }
-  | { event: 'lead_submitted'; channel: 'whatsapp' | 'email' | 'phone' | 'calendar'; service?: string }
+  | ({ event: 'lead_submitted'; channel: 'whatsapp' | 'email' | 'phone' | 'calendar'; service?: string } & AttrFields)
   | { event: 'pricing_tier_clicked'; tier: string; locale: string }
   | { event: 'case_viewed'; caseId: string }
   | { event: 'service_viewed'; service: string }
   | { event: 'cta_clicked'; ctaId: string; location: string }
   | { event: 'language_switched'; from: string; to: string }
-  | { event: 'wa_click'; click_url: string; click_text: string }
-  | { event: 'phone_click'; click_url: string; click_text: string }
+  | ({ event: 'wa_click'; click_url: string; click_text: string } & AttrFields)
+  | ({ event: 'phone_click'; click_url: string; click_text: string } & AttrFields)
   | { event: 'estimate_submit' }
-  | { event: 'b2b_inquiry'; source: string }
+  | ({ event: 'b2b_inquiry'; source: string } & AttrFields)
   | { event: 'ev_inquiry'; package?: string }
-  | { event: 'commercial_glass_inquiry'; source: string }
-  | { event: 'estimator_result'; source?: string; need?: string; slug?: string | null; price?: string }
+  | ({ event: 'commercial_glass_inquiry'; source: string } & AttrFields)
+  | ({ event: 'estimator_result'; source?: string; need?: string; slug?: string | null; price?: string } & AttrFields)
   | { event: 'ai_referral'; ai_source: string; ai_referrer_url: string; landing_path: string; page_lang: string };
 
 /**
