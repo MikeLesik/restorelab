@@ -9,8 +9,11 @@ export interface AuthorBio {
   imageUrl?: string;
 }
 
+// Must match the founder identity on /about and the `legalName` in the
+// site-wide schema — a byline that names a different person than the entity
+// it links to reads as fake authorship to both Google and AI engines.
 export const defaultAuthor: AuthorBio = {
-  name: 'Miguel',
+  name: 'Mikhail Lesik',
   role: 'Founder & Lead Technician',
   city: 'Sant Cugat del Vallès',
   url: '/about',

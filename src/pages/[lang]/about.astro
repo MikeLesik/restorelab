@@ -41,6 +41,7 @@ const about = t.about;
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     "name": "restoreLab",
     "url": SITE_URL,
     "logo": {
@@ -57,7 +58,11 @@ const about = t.about;
     },
     "founder": {
       "@type": "Person",
-      "name": about.founder_name
+      "@id": `${SITE_URL}/#founder`,
+      "name": about.founder_name,
+      "jobTitle": about.founder_role,
+      "url": `${SITE_URL}/${lang}/about`,
+      "worksFor": { "@id": `${SITE_URL}/#organization` }
     }
   })} />
 

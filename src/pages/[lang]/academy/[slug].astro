@@ -63,6 +63,7 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
     "description": content.seo_description,
     "author": {
       "@type": "Person",
+      "@id": `${SITE_URL}/#founder`,
       "name": defaultAuthor.name,
       "jobTitle": t.academy.author_role,
       "url": `${SITE_URL}/${lang}${defaultAuthor.url}`,
