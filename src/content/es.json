@@ -3957,6 +3957,7 @@
     "plans_subtitle": "Todos los planes incluyen servicio a domicilio — vamos a tu casa u oficina.",
     "plans_toggle_monthly": "Mensual",
     "plans_toggle_annual": "Anual (ahorra 15%)",
+    "upsell": "Mantén el resultado: planes de cuidado desde {price}",
     "tiers": [
       {
         "id": "essential",

@@ -1,5 +1,6 @@
 ---
 import { WHATSAPP_NUMBER } from '@/lib/constants';
+import PlanUpsell from '@/components/PlanUpsell.astro';
 
 export interface Props {
   t: Record<string, any>;
@@ -262,6 +263,11 @@ const OPT = [
            class="hidden text-sm text-brand-accent hover:underline rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
           {ui.see_package}
         </a>
+      </div>
+
+      <!-- Plans cross-sell (RL-304) — shown with the result -->
+      <div class="mt-5">
+        <PlanUpsell t={t} lang={lang} source="estimator" />
       </div>
     </div>
   </div>

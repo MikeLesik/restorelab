@@ -3956,6 +3956,7 @@
     "plans_subtitle": "All plans include mobile service — we come to your home or office.",
     "plans_toggle_monthly": "Monthly",
     "plans_toggle_annual": "Annual (save 15%)",
+    "upsell": "Keep the result: care plans from {price}",
     "tiers": [
       {
         "id": "essential",

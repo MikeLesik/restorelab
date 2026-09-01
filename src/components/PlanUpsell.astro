@@ -1,0 +1,31 @@
+---
+// Plans cross-sell card (RL-304): one line, links /{lang}/plans. The price is
+// joined from t.plans.tiers at build time — the cheapest monthly tier — so it
+// can never drift from the plans page (same rule as the Estimator, which never
+// carries its own prices). Renders as a bare card: callers provide layout.
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+  /** Analytics dimension for plan_upsell_clicked (e.g. 'car-paint-correction', 'estimator'). */
+  source: string;
+}
+
+const { t, lang, source } = Astro.props;
+const tiers: any[] = t.plans?.tiers || [];
+if (!tiers.length) throw new Error(`PlanUpsell: t.plans.tiers is empty in ${lang}.json`);
+const cheapest = tiers.reduce((a, b) => (b.price_monthly < a.price_monthly ? b : a), tiers[0]);
+const price = `${cheapest.price_monthly}€${cheapest.period || ''}`;
+const text = String(t.plans?.upsell || '').replace('{price}', price);
+---
+
+<a
+  href={`/${lang}/plans`}
+  data-event="plan_upsell_clicked"
+  data-source={source}
+  class="card flex items-center justify-between gap-3 px-5 py-4 group transition-colors hover:border-brand-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+>
+  <p class="text-sm text-th-body">{text}</p>
+  <svg class="w-4 h-4 text-th-faint group-hover:text-brand-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+  </svg>
+</a>

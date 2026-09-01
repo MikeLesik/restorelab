@@ -3957,6 +3957,7 @@
     "plans_subtitle": "Tots els plans inclouen servei mòbil — venim a casa teva o a l'oficina.",
     "plans_toggle_monthly": "Mensual",
     "plans_toggle_annual": "Anual (estalvia un 15%)",
+    "upsell": "Mantén el resultat: plans de cura des de {price}",
     "tiers": [
       {
         "id": "essential",
