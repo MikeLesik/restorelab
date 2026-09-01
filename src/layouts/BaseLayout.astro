@@ -228,8 +228,13 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AutomotiveBusiness",
+      "@id": `${siteUrl}/#business`,
       "name": "restoreLab",
       "legalName": "Mikhail Lesik",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61592445322934"
+      ],
+      "parentOrganization": { "@id": `${siteUrl}/#organization` },
       "description": "Premium mobile surface restoration — car paint correction, ceramic coating, glass polishing and acrylic restoration in Barcelona metro area.",
       "url": siteUrl,
       "image": `${siteUrl}/images/og-home.jpg`,
@@ -283,6 +288,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "restoreLab",
       "legalName": "Mikhail Lesik",
       "url": siteUrl,
@@ -292,12 +298,27 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         "width": 512,
         "height": 512
       },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61592445322934"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": `+${WHATSAPP_NUMBER}`,
         "contactType": "customer service",
         "availableLanguage": ["Spanish", "English", "Catalan"]
       }
+    })} />
+
+    <!-- WebSite Schema — names the site entity and its languages for search
+         and AI engines; publisher links into the Organization node above. -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "restoreLab",
+      "inLanguage": ["es-ES", "en-GB", "ca-ES"],
+      "publisher": { "@id": `${siteUrl}/#organization` }
     })} />
   </head>
   <body class="bg-brand-dark">

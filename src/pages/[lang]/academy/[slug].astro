@@ -33,6 +33,14 @@ const contentKey = (slug as string).replace(/-/g, '_');
 const content = (t.academy_articles as Record<string, any>)[contentKey];
 const sections = content.sections as Array<Record<string, any>>;
 
+// Visible dates: AI engines and Google both weight fresh, dated content; a
+// schema-only date that never appears on the page is a weak signal.
+const dateLocale = lang === 'en' ? 'en-GB' : lang === 'ca' ? 'ca-ES' : 'es-ES';
+const fmtDate = (iso: string) =>
+  new Intl.DateTimeFormat(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
+const publishedDate = card.date ? fmtDate(card.date) : null;
+const updatedDate = card.updated && card.updated !== card.date ? fmtDate(card.updated) : null;
+
 // Determine the article's cluster hub for breadcrumb schema enrichment.
 const clusterFound = findClusterForSpoke(slug as string);
 const hubLabelKey = clusterFound?.cluster.hubLabelKey;
@@ -56,21 +64,15 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
     "author": {
       "@type": "Person",
       "name": defaultAuthor.name,
-      "url": `${SITE_URL}/${lang}${defaultAuthor.url}`
+      "jobTitle": t.academy.author_role,
+      "url": `${SITE_URL}/${lang}${defaultAuthor.url}`,
+      "worksFor": { "@id": `${SITE_URL}/#organization` }
     },
     "image": [`${SITE_URL}/images/og-home.jpg`],
-    "publisher": {
-      "@type": "Organization",
-      "name": "restoreLab",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${SITE_URL}/icon-512.png`,
-        "width": 512,
-        "height": 512
-      }
-    },
-    "datePublished": card.date || "2025-01-15",
-    "dateModified": card.updated || card.date || "2025-01-15",
+    "publisher": { "@id": `${SITE_URL}/#organization` },
+    "inLanguage": lang === 'en' ? 'en-GB' : lang === 'ca' ? 'ca-ES' : 'es-ES',
+    "datePublished": card.date,
+    "dateModified": card.updated || card.date,
     "mainEntityOfPage": `${SITE_URL}/${lang}/academy/${slug}`
   })} />
 
@@ -107,8 +109,27 @@ const hubUrl = clusterFound?.cluster.hubActive ? clusterFound.cluster.hub : unde
         <h1 class="text-4xl md:text-5xl font-display font-bold text-th-heading mb-4 leading-tight">
           {content.title}
         </h1>
-        <p class="text-xl text-th-muted mb-0 leading-relaxed">
+        <p class="text-xl text-th-muted mb-5 leading-relaxed">
           {content.description}
+        </p>
+
+        <!-- Byline + dates (E-E-A-T: visible author and freshness, not schema-only) -->
+        <p class="text-sm text-th-faint mb-0 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <a href={`/${lang}${defaultAuthor.url}`} class="text-th-muted font-medium hover:text-th-heading transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">{defaultAuthor.name}</a>
+          <span aria-hidden="true">·</span>
+          <span>{t.academy.author_role}</span>
+          {publishedDate && (
+            <>
+              <span aria-hidden="true">·</span>
+              <time datetime={card.date}>{publishedDate}</time>
+            </>
+          )}
+          {updatedDate && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>{t.academy.updated_label} <time datetime={card.updated}>{updatedDate}</time></span>
+            </>
+          )}
         </p>
       </div>
     </section>

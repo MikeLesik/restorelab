@@ -58,11 +58,18 @@ async function loadAreaProfiles() {
 // Derived from the content JSON, never retyped. The previous static list
 // silently outlived the packages it described — it was still advertising a
 // withdrawn Ceramic 5Y at 1049 long after the package was removed.
-function pricingPackages(en) {
-  const cars = en.pricing?.categories?.find((c) => c.id === 'car')?.packages ?? [];
-  return cars
-    .map((p) => ({ name: p.name, price: Number(String(p.price).replace(/[^\d]/g, '')) }))
-    .filter((p) => Number.isFinite(p.price) && p.price > 0);
+function pricingByCategory(en) {
+  return (en.pricing?.categories ?? []).map((c) => ({
+    id: c.id,
+    title: c.title,
+    packages: (c.packages ?? [])
+      .map((p) => ({
+        name: p.name,
+        price: Number(String(p.price).replace(/[^\d]/g, '')),
+        duration: p.duration || '',
+      }))
+      .filter((p) => Number.isFinite(p.price) && p.price > 0),
+  }));
 }
 
 async function main() {
@@ -105,12 +112,15 @@ async function main() {
   }
   out.push('');
 
-  out.push('## Pricing');
+  out.push('## Pricing (EUR, sedan baseline, IVA included)');
   out.push('');
-  for (const p of pricingPackages(en)) {
-    out.push(`- ${p.name}: €${p.price}`);
+  for (const cat of pricingByCategory(en)) {
+    for (const p of cat.packages) {
+      out.push(`- ${p.name}: €${p.price}${p.duration ? ` (${p.duration})` : ''}`);
+    }
   }
   out.push(`- Full price list: ${SITE_URL}/es/pricing (EN: ${SITE_URL}/en/pricing)`);
+  out.push(`- B2B / dealer rate card: ${SITE_URL}/es/business`);
   out.push('');
 
   out.push('## Knowledge base');
@@ -134,12 +144,23 @@ async function main() {
   out.push(`- [Commercial glass restoration](${SITE_URL}/es/commercial-glass)`);
   out.push('');
 
+  out.push('## Key facts');
+  out.push('');
+  out.push('- Fully mobile service: we come to the customer with our own generator, water and professional equipment — no workshop visit needed.');
+  out.push('- Based in Sant Cugat del Vallès; serving the Barcelona metropolitan area (Barcelona, Terrassa, Sabadell, Rubí and nearby towns).');
+  out.push('- Quotes are given from two photos over WhatsApp: one of the whole car, one of the worst defect. Fixed package price, no hidden extras.');
+  out.push('- Satisfaction promise: if the customer is not happy with the result, the work is redone at no extra cost.');
+  out.push('- Written own-brand warranty: 2 years on the hydrophobic function of ceramic-coated panels (subject to indicated maintenance).');
+  out.push('- Working hours: Monday–Saturday, 08:00–19:00.');
+  out.push('- Languages: Spanish, English, Catalan.');
+  out.push('');
+
   out.push('## Contact');
   out.push('');
-  out.push('- WhatsApp: +34 680 265 190');
+  out.push('- WhatsApp: +34 680 265 190 (primary channel — send photos for a quote)');
   out.push('- Email: support@restorelab.io');
+  out.push(`- Contact form: ${SITE_URL}/es/contact`);
   out.push('- Service area: Barcelona metropolitan area, Catalonia, Spain');
-  out.push('- Booking: ' + SITE_URL + '/es/booking');
   out.push('');
 
   const output = out.join('\n');

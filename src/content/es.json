@@ -1124,6 +1124,8 @@
     "coming_soon": "Próximamente",
     "read_article": "Leer Artículo",
     "back_label": "Volver a la Academia",
+    "author_role": "Fundador y técnico principal, restoreLab",
+    "updated_label": "Actualizado:",
     "articles": [
       {
         "number": "01",

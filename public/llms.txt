@@ -28,13 +28,21 @@
 - [Castelldefels](https://restorelab.io/es/areas/castelldefels)
 - [Alella · Tiana · Teià](https://restorelab.io/es/areas/alella-tiana-teia)
 
-## Pricing
+## Pricing (EUR, sedan baseline, IVA included)
 
-- Single-Stage Correction: €349
-- Ceramic Coating 1Y: €499
-- Two-Stage Correction: €599
-- Ceramic Coating 2Y: €849
+- Single-Stage Correction: €349 (3–4 hours)
+- Ceramic Coating 1Y: €499 (4–6 hours)
+- Two-Stage Correction: €599 (5–7 hours)
+- Ceramic Coating 2Y: €849 (6–8 hours)
+- Windshield Polish: €119 (1–2 hours)
+- Windshield + Hydrophobic: €179 (1.5–2.5 hours)
+- Full Glass Set: €289 (3–4 hours)
+- Hydrophobic Coating Only: €89 (30 min – 1 hour)
+- Express Refresh: €149 (~2 hours)
+- Headlight Restoration: €79 (45 min – 1 hour)
+- Pre-Sale Detail Pack: €449 (4–5 hours)
 - Full price list: https://restorelab.io/es/pricing (EN: https://restorelab.io/en/pricing)
+- B2B / dealer rate card: https://restorelab.io/es/business
 
 ## Knowledge base
 
@@ -65,9 +73,19 @@
 - [Care plans (subscription)](https://restorelab.io/es/plans)
 - [Commercial glass restoration](https://restorelab.io/es/commercial-glass)
 
+## Key facts
+
+- Fully mobile service: we come to the customer with our own generator, water and professional equipment — no workshop visit needed.
+- Based in Sant Cugat del Vallès; serving the Barcelona metropolitan area (Barcelona, Terrassa, Sabadell, Rubí and nearby towns).
+- Quotes are given from two photos over WhatsApp: one of the whole car, one of the worst defect. Fixed package price, no hidden extras.
+- Satisfaction promise: if the customer is not happy with the result, the work is redone at no extra cost.
+- Written own-brand warranty: 2 years on the hydrophobic function of ceramic-coated panels (subject to indicated maintenance).
+- Working hours: Monday–Saturday, 08:00–19:00.
+- Languages: Spanish, English, Catalan.
+
 ## Contact
 
-- WhatsApp: +34 680 265 190
+- WhatsApp: +34 680 265 190 (primary channel — send photos for a quote)
 - Email: support@restorelab.io
+- Contact form: https://restorelab.io/es/contact
 - Service area: Barcelona metropolitan area, Catalonia, Spain
-- Booking: https://restorelab.io/es/booking
