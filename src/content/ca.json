@@ -93,6 +93,8 @@
     "cases": "Portfolio",
     "contact": "Contacte",
     "academy": "Acadèmia",
+    "business": "Per a empreses",
+    "commercial_glass": "Vidre comercial",
     "cta": "Pressupost"
   },
   "ui": {
@@ -277,6 +279,26 @@
     "hero_guarantee": "Garantia de satisfacció: ho refem sense cost",
     "illustration_before": "Abans",
     "illustration_after": "Després"
+  },
+  "home_b2b": {
+    "title": "Per a empreses",
+    "items": [
+      {
+        "target": "business",
+        "title": "Concessionaris VO",
+        "desc": "Preparació estètica d'estoc amb lliurament 24–48h i informe fotogràfic."
+      },
+      {
+        "target": "commercial-glass",
+        "title": "Vidre comercial",
+        "desc": "Restauració de vidres ratllats de locals i edificis sense substituir-los."
+      },
+      {
+        "target": "plans",
+        "title": "Plans de cura",
+        "desc": "Manteniment periòdic perquè el resultat duri tot l'any."
+      }
+    ]
   },
   "how_it_works": {
     "section_title": "Com Funciona",
@@ -778,8 +800,8 @@
     "how_it_works": "Hola restoreLab! He vist com funciona i m'agradaria reservar una visita. Quins dies tens lliures per venir?",
     "plans": "Hola restoreLab! M'interessen els plans de manteniment per subscripció. Em pots explicar què inclou cadascun i quin em recomanaries per al meu cotxe?",
     "ev": "Hola restoreLab! Tinc un cotxe elèctric i m'interessa el tractament ceràmic per protegir la pintura. Voldria saber preu i disponibilitat.",
-    "business": "Hola restoreLab! T'escric de part d'una empresa i m'interessa el servei B2B per als nostres vehicles. Podem parlar de tarifes i de com organitzar-ho?",
-    "commercial_glass": "Hola restoreLab! Tenim vidres ratllats al negoci i voldria valorar la restauració in situ. Et van bé unes fotos i les mides per fer el pressupost?",
+    "business": "Hola restoreLab. Soc [nom] de [concessionari] a [població]. Venem ~[núm.] cotxes/mes. M'interessa el Pack VO Foto-Ready / preparació pre-venda. Quan podríeu fer una demo?",
+    "commercial_glass": "Hola restoreLab. Soc [nom] de [local/edifici] a [població]. Tenim [núm.] vidres ratllats que volem restaurar sense substituir. Quan podríeu venir a veure'ls?",
     "service_acrylic": "Hola restoreLab! M'interessa la restauració d'acrílic i policarbonat. Què necessites saber de la peça per fer-me un pressupost?",
     "service_car_paint": "Hola restoreLab! M'interessa la correcció de pintura a domicili per al meu cotxe. Voldria saber quin nivell necessita i quant costaria.",
     "service_glass_polishing": "Hola restoreLab! Tinc ratllades als vidres del cotxe i m'interessa el polit a domicili. Quant costa i quan podries venir?",
@@ -3574,6 +3596,17 @@
     "pricing_subtitle": "Preu base sedan. Descomptes per volum s'apliquen automàticament a la factura mensual.",
     "pricing_tiers": [
       {
+        "name": "Pack VO Foto-Ready",
+        "price": "99",
+        "price_label": "des de 99€/cotxe",
+        "desc": "Nivell d'entrada per volum (lots de 5+). Lliurament 24–48h, informe fotogràfic inclòs.",
+        "includes": [
+          "Interior profund",
+          "Exterior enhance",
+          "Polit de fars"
+        ]
+      },
+      {
         "name": "Lot-Ready Estàndard",
         "price": "169",
         "desc": "Rentat descontaminant + polit mecànic en una fase. Ideal per a estoc fins a 30.000€.",
@@ -3621,6 +3654,9 @@
         "discount": "Pressupost personalitzat"
       }
     ],
+    "tarifa_title": "Tarifa B2B restoreLab",
+    "tarifa_subtitle": "Preu base sedan, sense IVA. Descomptes per volum sobre tarifa. Servei mòbil a les vostres instal·lacions.",
+    "tarifa_print": "Imprimir / Desar PDF",
     "faq_title": "FAQ Concessionaris",
     "faq_items": [
       {

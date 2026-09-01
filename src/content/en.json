@@ -93,6 +93,8 @@
     "cases": "Cases",
     "contact": "Contact",
     "academy": "Academy",
+    "business": "For Business",
+    "commercial_glass": "Commercial Glass",
     "cta": "Get Estimate"
   },
   "ui": {
@@ -277,6 +279,26 @@
     "hero_guarantee": "Satisfaction guarantee: we redo it at no cost",
     "illustration_before": "Before",
     "illustration_after": "After"
+  },
+  "home_b2b": {
+    "title": "For business",
+    "items": [
+      {
+        "target": "business",
+        "title": "Used-car dealers",
+        "desc": "Lot-ready cosmetic prep with 24–48h turnaround and a photo report."
+      },
+      {
+        "target": "commercial-glass",
+        "title": "Commercial glass",
+        "desc": "Scratched storefront and building glass restored without replacement."
+      },
+      {
+        "target": "plans",
+        "title": "Care plans",
+        "desc": "Recurring upkeep so the result lasts all year."
+      }
+    ]
   },
   "how_it_works": {
     "section_title": "How It Works",
@@ -988,8 +1010,8 @@
     "how_it_works": "Hello restoreLab! I've read how the process works and I'd like to arrange a visit. What do you need from me first, and how's your availability looking?",
     "plans": "Hello restoreLab! I'm interested in your care plans for my car. Which one would you suggest, and could I start this month?",
     "ev": "Hello restoreLab! I drive an EV and I'm interested in paint protection. What would you recommend, and roughly what does it cost?",
-    "business": "Hello restoreLab! I'm interested in your B2B service — we've got a number of vehicles that need regular work. Could you send over your trade rates?",
-    "commercial_glass": "Hello restoreLab! I look after a commercial property and we've got scratched glass we'd rather restore than replace. Could you come and take a look?",
+    "business": "Hi restoreLab. I'm [name] from [dealership] in [town]. We sell ~[no.] cars/month. I'm interested in the Pack VO Foto-Ready / pre-sale prep. When could you run a demo?",
+    "commercial_glass": "Hi restoreLab. I'm [name] from [premises/building] in [town]. We have [no.] scratched glass panels we'd like restored without replacing them. When could you come take a look?",
     "service_acrylic": "Hello restoreLab! I'm after acrylic restoration — I've got a scratched panel I'd like polished up. Can I send photos for a quote?",
     "service_car_paint": "Hello restoreLab! I'm interested in paint correction for my car. Happy to send photos of the paintwork if that helps with the quote.",
     "service_glass_polishing": "Hello restoreLab! I'm after glass polishing — I've got a few scratches I'd like removed. Can I send you photos so you can tell me whether they'll come out?",
@@ -3573,6 +3595,17 @@
     "pricing_subtitle": "Sedan baseline. Volume discounts applied automatically on monthly invoice.",
     "pricing_tiers": [
       {
+        "name": "Pack VO Foto-Ready",
+        "price": "99",
+        "price_label": "from €99/car",
+        "desc": "Entry-level volume tier (batches of 5+). 24–48h turnaround, photo report included.",
+        "includes": [
+          "Deep interior clean",
+          "Exterior enhance",
+          "Headlight polish"
+        ]
+      },
+      {
         "name": "Lot-Ready Standard",
         "price": "169",
         "desc": "Decon wash + single-stage machine polish. Perfect for stock cars under €30K.",
@@ -3620,6 +3653,9 @@
         "discount": "Custom quote"
       }
     ],
+    "tarifa_title": "restoreLab B2B Rate Card",
+    "tarifa_subtitle": "Sedan baseline, ex. VAT. Volume discounts apply on top. Mobile service at your premises.",
+    "tarifa_print": "Print / Save as PDF",
     "faq_title": "Dealer FAQ",
     "faq_items": [
       {

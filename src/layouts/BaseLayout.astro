@@ -696,11 +696,20 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         // the DOM-ready injection. rlWithRef is idempotent.
         if (el.href && el.href.indexOf('wa.me') !== -1) el.href = rlWithRef(el.href);
         var ev = el.getAttribute('data-event');
-        window.__rl_push({
+        var payload = {
           event: ev,
           click_url: el.href || '',
           click_text: (el.innerText || '').trim().substring(0, 100)
-        });
+        };
+        // Optional typed dimensions: data-cta → ctaId (+ location), data-source
+        // → source. Lets declarative CTAs satisfy the RestoreLabEvent shapes
+        // (cta_clicked, b2b_inquiry…) without per-page inline scripts.
+        if (el.getAttribute('data-cta')) {
+          payload.ctaId = el.getAttribute('data-cta');
+          payload.location = location.pathname;
+        }
+        if (el.getAttribute('data-source')) payload.source = el.getAttribute('data-source');
+        window.__rl_push(payload);
       });
 
       document.addEventListener('submit', function(e) {

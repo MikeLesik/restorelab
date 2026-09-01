@@ -1,0 +1,36 @@
+---
+// Homepage B2B strip (RL-303): three compact cards routing dealer / commercial
+// glass / care-plan traffic to the money pages, which were previously reachable
+// only from the footer. Copy lives in t.home_b2b.
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+}
+
+const { t, lang } = Astro.props;
+const b2b = t.home_b2b || {};
+---
+
+<section class="py-14" aria-labelledby="b2b-strip-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="b2b-strip-title" class="section-title text-center mb-8">{b2b.title}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {b2b.items?.map((item: any) => (
+        <a
+          href={`/${lang}/${item.target}`}
+          data-event="cta_clicked"
+          data-cta={`home_b2b_${item.target.replace(/-/g, '_')}`}
+          class="card p-5 group transition-colors hover:border-brand-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        >
+          <h3 class="text-th-heading font-semibold mb-1 flex items-center justify-between gap-2">
+            {item.title}
+            <svg class="w-4 h-4 text-th-faint group-hover:text-brand-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </h3>
+          <p class="text-th-muted text-sm">{item.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -48,10 +48,11 @@ Variable** for each (Variables → New → Data Layer Variable, version 2):
 | `event_id` | `dlv - event_id` | uuid |
 
 Note: WhatsApp CTAs fire under several event names (`wa_click`,
-`estimator_wa`, `b2b_hero_wa`, …), but ALL of them carry `ref` + `attr_*`
-whenever `click_url` points at wa.me/tel:. For the conversion tag, trigger on
-`wa_click` **plus** the other `*_wa` slugs, or simplest: a Custom Event
-trigger with regex matching `.*wa.*` AND `dlv - click_url` contains `wa.me`.
+`estimator_wa`, `b2b_inquiry`, `commercial_glass_inquiry`, …), but ALL of
+them carry `ref` + `attr_*` whenever `click_url` points at wa.me/tel:. For
+the conversion tag, trigger on the regex
+`wa_click|estimator_wa|b2b_inquiry|commercial_glass_inquiry`, or simplest:
+any Custom Event where `dlv - click_url` contains `wa.me`.
 
 ### Step-by-step
 
@@ -62,7 +63,8 @@ trigger with regex matching `.*wa.*` AND `dlv - click_url` contains `wa.me`.
      `{{dlv - attr_source}}`, `attr_campaign` → `{{dlv - attr_campaign}}`,
      `attr_landing` → `{{dlv - attr_landing}}`.
    - Trigger: Custom Event, event name regex
-     `wa_click|estimator_wa|.*_wa$` (check "Use regex matching").
+     `wa_click|estimator_wa|b2b_inquiry|commercial_glass_inquiry`
+     (check "Use regex matching").
    - Repeat with a second tag for `lead_submitted` (trigger: custom event
      `lead_submitted`).
 2. **Mark as key event in GA4**: Admin → Events → wait for `wa_click` to

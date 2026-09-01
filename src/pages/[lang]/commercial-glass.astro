@@ -45,7 +45,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
           </h1>
           <p class="text-xl text-th-muted mb-10">{cg.hero_subtitle}</p>
 
-          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="comglass_hero_wa">
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="commercial_glass_inquiry" data-source="hero_wa">
             {cg.hero_cta}
           </a>
         </div>
@@ -199,10 +199,10 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
         <h2 class="section-title mb-3">{cg.cta_section_title}</h2>
         <p class="text-th-muted text-sm mb-8">{cg.cta_section_subtitle}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="comglass_cta_wa">
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp" data-event="commercial_glass_inquiry" data-source="cta_wa">
             {cg.cta_whatsapp}
           </a>
-          <a href={`mailto:support@restorelab.io?subject=Commercial%20Glass%20Inquiry`} class="btn-secondary" data-event="comglass_cta_email">
+          <a href={`mailto:support@restorelab.io?subject=Commercial%20Glass%20Inquiry`} class="btn-secondary" data-event="commercial_glass_inquiry" data-source="cta_email">
             {cg.cta_email}
           </a>
         </div>

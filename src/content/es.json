@@ -93,6 +93,8 @@
     "cases": "Portfolio",
     "contact": "Contacto",
     "academy": "Academia",
+    "business": "Empresas",
+    "commercial_glass": "Cristal comercial",
     "cta": "Presupuesto"
   },
   "ui": {
@@ -277,6 +279,26 @@
     "hero_guarantee": "Garantía de satisfacción: lo rehacemos sin coste",
     "illustration_before": "Antes",
     "illustration_after": "Después"
+  },
+  "home_b2b": {
+    "title": "Para empresas",
+    "items": [
+      {
+        "target": "business",
+        "title": "Concesionarios VO",
+        "desc": "Preparación estética de stock con entrega 24–48h e informe fotográfico."
+      },
+      {
+        "target": "commercial-glass",
+        "title": "Cristal comercial",
+        "desc": "Restauración de cristales rayados de locales y edificios sin sustituirlos."
+      },
+      {
+        "target": "plans",
+        "title": "Planes de cuidado",
+        "desc": "Mantenimiento periódico para que el resultado dure todo el año."
+      }
+    ]
   },
   "how_it_works": {
     "section_title": "Cómo Funciona",
@@ -778,8 +800,8 @@
     "how_it_works": "¡Hola restoreLab! He visto cómo funciona y quiero empezar. ¿Qué fotos del coche te mando para el presupuesto?",
     "plans": "¡Hola restoreLab! Me interesan los planes de cuidado por suscripción. ¿Cuál me recomiendas y qué incluye cada visita?",
     "ev": "¡Hola restoreLab! Tengo un coche eléctrico y me interesa el tratamiento cerámico para la pintura. ¿Me pasas precio y cuándo tendrías hueco?",
-    "business": "¡Hola restoreLab! Te escribo desde un concesionario y me interesa el detailing pre-venta en nuestras instalaciones. ¿Me pasas la tarifa y me confirmas los plazos de entrega?",
-    "commercial_glass": "¡Hola restoreLab! Tengo los cristales de mi local rayados y me gustaría restaurarlos sin tener que cambiarlos. ¿Puedes pasarte a verlo y hacerme un presupuesto?",
+    "business": "Hola restoreLab. Soy [nombre] de [concesionario] en [población]. Vendemos ~[nº] coches/mes. Me interesa el Pack VO Foto-Ready / preparación pre-venta. ¿Cuándo podéis hacer una demo?",
+    "commercial_glass": "Hola restoreLab. Soy [nombre] de [local/edificio] en [población]. Tenemos [nº] cristales rayados que queremos restaurar sin sustituir. ¿Cuándo podéis venir a verlo?",
     "service_acrylic": "¡Hola restoreLab! Me interesa la restauración de una pieza de acrílico o policarbonato que tengo rayada. ¿Qué fotos necesitas para decirme si tiene arreglo?",
     "service_car_paint": "¡Hola restoreLab! Me interesa la corrección de pintura a domicilio para quitar arañazos y marcas circulares en el barniz. ¿Qué fotos necesitas para pasarme precio?",
     "service_glass_polishing": "¡Hola restoreLab! Me interesa el pulido de cristales para quitar arañazos del parabrisas o de las ventanillas. ¿Qué fotos necesitas para valorarlo?",
@@ -3574,6 +3596,17 @@
     "pricing_subtitle": "Precio base sedán. Descuentos por volumen se aplican automáticamente en factura mensual.",
     "pricing_tiers": [
       {
+        "name": "Pack VO Foto-Ready",
+        "price": "99",
+        "price_label": "desde €99/coche",
+        "desc": "Nivel de entrada por volumen (lotes de 5+). Entrega 24–48h, informe fotográfico incluido.",
+        "includes": [
+          "Interior profundo",
+          "Exterior enhance",
+          "Pulido de faros"
+        ]
+      },
+      {
         "name": "Preparación Estándar",
         "price": "169",
         "desc": "Lavado descontaminante + pulido mecánico en una fase. Ideal para stock hasta 30.000€.",
@@ -3621,6 +3654,9 @@
         "discount": "Presupuesto personalizado"
       }
     ],
+    "tarifa_title": "Tarifa B2B restoreLab",
+    "tarifa_subtitle": "Precio base sedán, sin IVA. Descuentos por volumen sobre tarifa. Servicio móvil en vuestras instalaciones.",
+    "tarifa_print": "Imprimir / Guardar PDF",
     "faq_title": "FAQ Concesionarios",
     "faq_items": [
       {
