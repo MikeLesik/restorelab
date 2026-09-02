@@ -10,6 +10,7 @@ import '@/styles/global.css';
 import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
 import { areaProfiles } from '@/lib/areaProfiles';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
+import { DEPOSIT_MIN_QUOTE_EUR } from '@/lib/unitEconomics';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -403,7 +404,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
     </style>
 
-    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL }}>
+    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR }}>
       // ── Vocabulary ────────────────────────────────────────────────────────
       const STATUS_ES = {
         new: 'Por presupuestar', quoted: 'Presupuesto enviado', booked: 'Confirmado',
@@ -976,9 +977,17 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const paid = Number(o.paid_eur) || 0;
         const rest = Math.round((o.quote_eur - paid) * 100) / 100;
         const L = PRICING[o.lang] ? o.lang : 'es';
+        // Deposit rule (Order Flow v2 §1.6): big bookings hold the slot with
+        // a 30% senal sent together with the confirmation.
+        const senalHint = o.status === 'booked' && !paid
+          ? (o.quote_eur >= DEPOSIT_MIN
+            ? `<p class="text-xs text-brand-gold mb-2">Reserva de ${DEPOSIT_MIN}€ o más — envía «Señal 30%» junto con la confirmación. Sin pagar en 24h, el hueco no se aguanta.</p>`
+            : `<p class="text-xs text-th-faint mb-2">Por debajo de ${DEPOSIT_MIN}€ no hace falta señal — basta el recordatorio T-24h.</p>`)
+          : '';
         return `
           <div class="card p-4 sm:p-5 mt-4">
             <h3 class="font-display font-bold text-th-heading mb-1">Pagos</h3>
+            ${senalHint}
             <p class="text-sm text-th-muted mb-3">
               Presupuesto <b class="font-display font-bold text-base tabular-nums text-brand-accent">${o.quote_eur}€</b>
               ${paid ? ` · pagado <b class="font-display font-bold text-base tabular-nums text-green-400">${paid}€</b> · resto <b class="font-display tabular-nums">${rest}€</b>` : ''}
@@ -1299,7 +1308,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         } else if (['awaiting_payment', 'paid'].includes(o.status)) {
           blocks.push(o.quote_eur ? paymentHtml(o) : '', messagesHtml(o), actionsHtml(o), photoStrip(o));
         } else if (['booked', 'assigned', 'in_progress'].includes(o.status)) {
-          blocks.push(messagesHtml(o), actionsHtml(o), showComposer ? composerHtml(o) : '', o.quote_eur && !showComposer ? paymentHtml(o) : '', photoStrip(o));
+          // booked shows Pagos alongside the composer: the senal moment is HERE.
+          blocks.push(messagesHtml(o), actionsHtml(o), showComposer ? composerHtml(o) : '', o.quote_eur && (!showComposer || o.status === 'booked') ? paymentHtml(o) : '', photoStrip(o));
         } else { // new, quoted, done, cancelled
           blocks.push(photoStrip(o), showComposer ? composerHtml(o) : '', messagesHtml(o), actionsHtml(o), o.quote_eur && !showComposer ? paymentHtml(o) : '');
         }

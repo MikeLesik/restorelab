@@ -12,6 +12,10 @@ export const RESERVE_PCT = 0.04;
 /** Default partner payout share when a partner row has no payout_pct. */
 export const DEFAULT_PAYOUT_PCT = 70;
 
+/** Quotes at or above this many euros ask for a 30% deposit (senal) with the
+ *  booking confirmation; below it a reminder is enough (Order Flow v2 §1.6). */
+export const DEPOSIT_MIN_QUOTE_EUR = 549;
+
 // Kill criteria (verdict doc): if the October test crosses these, the paid
 // channel (or the partner) is killed, not scaled.
 export const KILL_CAC_EUR = 90;            // blended CAC ceiling
