@@ -123,7 +123,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       <!-- Detail overlay -->
       <div id="detail" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark">
-        <div class="sticky top-0 z-10 bg-brand-dark/95 backdrop-blur border-b border-th-border/10">
+        <div class="sticky top-0 z-10 bg-brand-dark/95 backdrop-blur border-b border-th-border/10 shadow-[0_12px_24px_-12px_rgba(0,0,0,0.6)]">
           <div class="max-w-3xl mx-auto px-4 py-2.5 flex items-center justify-between">
             <button id="d-back" class="btn-secondary text-sm px-4 min-h-[44px]">← Volver</button>
             <span id="d-status-chip" class="adm-badge text-sm"></span>
@@ -133,9 +133,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       </div>
 
       <!-- New order modal -->
-      <div id="modal-new" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
+      <div id="modal-new" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/80 backdrop-blur-md">
         <div class="max-w-lg mx-auto px-4 py-10">
-          <div class="card p-6">
+          <div class="card p-6 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.7)]">
             <h2 class="font-display font-bold text-th-heading text-xl mb-1">Nuevo pedido manual</h2>
             <p class="text-th-faint text-xs mb-5">Disciplina: el 100% de los pedidos (también los que entran por WhatsApp) viven aquí — solo así las métricas serán reales.</p>
             <div class="space-y-3">
@@ -174,9 +174,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       </div>
 
       <!-- New partner modal -->
-      <div id="modal-partner" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
+      <div id="modal-partner" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/80 backdrop-blur-md">
         <div class="max-w-lg mx-auto px-4 py-10">
-          <div class="card p-6">
+          <div class="card p-6 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.7)]">
             <h2 class="font-display font-bold text-th-heading text-xl mb-4">Nuevo partner</h2>
             <div class="space-y-3">
               <input id="p-name" type="text" placeholder="Nombre *" class="adm-input" />
@@ -195,33 +195,194 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       </div>
 
       <!-- Toast -->
-      <div id="toast" class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] max-w-[90vw] text-center rounded-full px-5 py-2.5 text-sm font-medium bg-brand-navy text-th-heading shadow-2xl border border-th-border/15"></div>
+      <div id="toast" class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] max-w-[90vw] adm-toast"></div>
     </div>
 
     <!-- FAB: the one creation action, always thumb-reachable -->
-    <button id="btn-new" class="fixed bottom-5 right-4 z-40 btn-primary rounded-full px-5 py-3.5 shadow-2xl text-sm">+ Nuevo pedido</button>
+    <button id="btn-new" class="fixed bottom-5 right-4 z-40 btn-primary rounded-full px-5 py-3.5 text-sm shadow-[0_8px_24px_-6px_rgba(42,127,255,0.45),0_4px_12px_rgba(0,0,0,0.6)]">+ Nuevo pedido</button>
 
     <style is:global>
+      /* ── The craftsman's cockpit — design tokens (art-direction spec) ── */
+      :root {
+        --adm-ease: cubic-bezier(.22,.61,.36,1);
+        /* 5-tone semantic status palette (AA on near-black) */
+        --tone-action-bg: rgba(42,127,255,.13); --tone-action-tx: #7EB1FF; --tone-action-bd: rgba(42,127,255,.32);
+        --tone-flight-bg: rgba(255,255,255,.05); --tone-flight-tx: rgba(255,255,255,.72); --tone-flight-bd: rgba(255,255,255,.14);
+        --tone-due-bg: transparent; --tone-due-tx: #4ADE80; --tone-due-bd: rgba(74,222,128,.45);
+        --tone-money-bg: rgba(74,222,128,.12); --tone-money-tx: #4ADE80; --tone-money-bd: rgba(74,222,128,.28);
+        --tone-closed-bg: rgba(139,147,163,.10); --tone-closed-tx: #8B93A3; --tone-closed-bd: rgba(139,147,163,.22);
+        --adm-red-breach: #DC2626; --adm-red-soft: #F87171; --adm-green: #4ADE80;
+        --adm-shadow-float: 0 12px 32px -8px rgb(0 0 0/.7);
+      }
+      /* Atmosphere — activates the glass, paints once */
+      body::before {
+        content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+        background-image:
+          radial-gradient(120% 65% at 50% -12%, rgb(13 27 42/.85) 0%, rgb(13 27 42/0) 60%),
+          radial-gradient(90% 60% at 108% 104%, rgb(27 58 92/.22) 0%, rgb(27 58 92/0) 55%);
+      }
+      .card { box-shadow: inset 0 1px 0 rgb(255 255 255/.06), 0 8px 24px -16px rgb(0 0 0/.6); }
+      #pipeline > div + div, #pipeline > details { border-top: 1px solid rgb(255 255 255/.06); padding-top: 1rem; }
+      button, a, summary { -webkit-tap-highlight-color: transparent; }
+      :where(button,a,summary):focus-visible { outline: 2px solid rgb(var(--brand-accent)); outline-offset: 2px; }
+      :where(button,a,summary):focus:not(:focus-visible) { outline: none; }
+
       .adm-input {
-        width: 100%;
-        border-radius: 0.75rem;
-        border: 1px solid rgb(255 255 255 / 0.12);
-        background: rgb(255 255 255 / 0.04);
-        padding: 0.55rem 0.9rem;
+        width: 100%; border-radius: .75rem;
+        border: 1px solid rgb(255 255 255/.1);
+        background: rgb(255 255 255/.05);
+        box-shadow: inset 0 1px 2px rgb(0 0 0/.3);
+        padding: .55rem .9rem;
         font-size: 16px; /* 16px kills the iOS focus zoom */
         min-height: 44px;
-        color: var(--th-heading);
+        color: rgb(var(--th-heading));
+        transition: border-color .15s ease, box-shadow .15s ease;
       }
-      .adm-input:focus { outline: 2px solid var(--brand-accent); outline-offset: 1px; }
+      .adm-input::placeholder { color: rgb(var(--th-faint)); }
+      .adm-input:focus {
+        outline: none; border-color: rgb(var(--brand-accent)/.7);
+        box-shadow: inset 0 1px 2px rgb(0 0 0/.3), 0 0 0 3px rgb(var(--brand-accent)/.22);
+      }
+
       .adm-badge {
-        display: inline-block; padding: 0.15rem 0.6rem; border-radius: 9999px;
-        font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
+        display: inline-flex; align-items: center; height: 1.5rem; gap: .35rem;
+        padding: 0 .6rem; border-radius: .45rem; border: 1px solid transparent;
+        font-size: .6875rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+        font-family: 'Space Grotesk Variable', sans-serif; font-variant-numeric: tabular-nums;
+        transition: background-color .25s ease, color .25s ease, border-color .25s ease;
       }
+
+      /* Action chips — count-first coins */
+      .adm-chip {
+        display: inline-flex; align-items: center; gap: .55rem; min-height: 44px;
+        padding: .25rem 1rem .25rem .3rem; border-radius: 9999px;
+        font-size: .8125rem; font-weight: 600; color: rgb(var(--th-heading));
+        background: linear-gradient(180deg, rgb(255 255 255/.08), rgb(255 255 255/.03));
+        border: 1px solid rgb(255 255 255/.12);
+        box-shadow: inset 0 1px 0 rgb(255 255 255/.06);
+        transition: transform .12s var(--adm-ease), border-color .15s ease;
+      }
+      .adm-chip:active { transform: scale(.96); }
+      .adm-chip b {
+        font-family: 'Space Grotesk Variable', sans-serif; font-size: 1.05rem; font-weight: 700;
+        min-width: 36px; height: 36px; display: grid; place-items: center; border-radius: 9999px;
+        background: rgb(var(--brand-accent)/.16); color: rgb(var(--brand-accent));
+        font-variant-numeric: tabular-nums;
+      }
+      .adm-chip--danger { border-color: rgb(220 38 38/.4); }
+      .adm-chip--danger b { background: rgb(220 38 38/.15); color: var(--adm-red-soft); }
+
+      /* THE money bar */
+      .adm-money {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 1.1rem; border-radius: .875rem; color: #04240F;
+        background: linear-gradient(180deg, #2EE07A 0%, #25D366 100%);
+        border: 1px solid rgb(255 255 255/.3);
+        box-shadow: 0 8px 24px -8px rgb(37 211 102/.55), inset 0 1px 0 rgb(255 255 255/.4);
+        transition: transform .1s, box-shadow .15s;
+      }
+      .adm-money:active { transform: translateY(1px); }
+      .adm-money-total { font-weight: 700; font-size: 1.3rem; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+      .adm-money-label { font-size: .8125rem; font-weight: 700; }
+
+      /* SLA pills — 3-tier red; solid fill exists in exactly one place */
+      .adm-sla {
+        display: inline-flex; align-items: center; gap: .3rem;
+        padding: .15rem .6rem; border-radius: 9999px;
+        font-size: .75rem; font-weight: 600; font-variant-numeric: tabular-nums;
+        transition: background-color .25s ease, color .25s ease;
+      }
+      .adm-sla--ok { color: rgb(var(--th-faint)); }
+      .adm-sla--warn { color: rgb(var(--brand-gold)); background: rgba(212,165,55,.12); border: 1px solid rgba(212,165,55,.25); }
+      .adm-sla--late { color: #fff; background: var(--adm-red-breach); animation: adm-sla-pulse 2s ease-in-out infinite; }
+
+      /* Detail status chip — the dot lives here only */
+      .adm-status {
+        display: inline-flex; align-items: center; gap: .45rem;
+        padding: .3rem .8rem; border-radius: 9999px;
+        font-size: .8125rem; font-weight: 600;
+        background: rgb(255 255 255/.05);
+        border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+      }
+      .adm-status::before {
+        content: ''; width: .5rem; height: .5rem; border-radius: 9999px;
+        background: currentColor; box-shadow: 0 0 6px currentColor;
+      }
+
+      .adm-toast {
+        display: flex; align-items: center; gap: .5rem;
+        padding: .65rem 1.1rem; border-radius: .875rem;
+        font-size: .875rem; font-weight: 500; color: rgb(var(--th-heading));
+        background: rgb(13 27 42/.85);
+        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgb(255 255 255/.12); border-left: 3px solid var(--adm-green);
+        box-shadow: var(--adm-shadow-float);
+      }
+      .adm-toast--err { border-left-color: var(--adm-red-soft); }
+
+      .adm-shimmer {
+        background-image: linear-gradient(100deg, rgb(255 255 255/.05) 40%, rgb(255 255 255/.13) 50%, rgb(255 255 255/.05) 60%);
+        background-size: 200% 100%;
+        animation: adm-shimmer 1.4s linear infinite;
+      }
+
+      .adm-timeline { position: relative; padding-left: 1.15rem; }
+      .adm-timeline::before {
+        content: ''; position: absolute; left: .3rem; top: .5rem; bottom: .5rem; width: 1px;
+        background: linear-gradient(rgb(255 255 255/.2), rgb(255 255 255/.04));
+      }
+      .adm-timeline li { position: relative; padding: .35rem 0; }
+      .adm-timeline li::before {
+        content: ''; position: absolute; left: -1.02rem; top: .55rem;
+        width: 7px; height: 7px; border-radius: 9999px; background: rgb(255 255 255/.25);
+      }
+      .adm-timeline li:first-child::before {
+        background: rgb(var(--brand-accent)); box-shadow: 0 0 0 3px rgb(var(--brand-accent)/.15);
+      }
+
+      #detail {
+        background-color: rgb(10 10 10);
+        background-image: radial-gradient(120% 65% at 50% -12%, rgb(13 27 42/.85) 0%, rgb(13 27 42/0) 60%);
+      }
+      .card { transition: transform .15s var(--adm-ease); }
+      .card:has(> [data-open]:active) { transform: scale(.985); }
+
       @media (pointer: coarse) {
         #detail-body .btn-primary, #detail-body .btn-secondary, #detail-body .btn-whatsapp { min-height: 44px; }
       }
+
+      /* ── Motion system: entrance-only, one easing, 120–320ms ── */
       @keyframes adm-spin { to { transform: rotate(360deg); } }
       .adm-spinning { animation: adm-spin 1s linear infinite; display: inline-block; }
+      @keyframes adm-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @keyframes adm-sheet-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+      @keyframes adm-modal-in { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes adm-card-in { from { opacity: 0; transform: translateY(10px) scale(.97); } to { opacity: 1; transform: none; } }
+      @keyframes adm-toast-in { from { opacity: 0; transform: translate(-50%, 10px) scale(.95); } to { opacity: 1; transform: translate(-50%, 0) scale(1); } }
+      @keyframes adm-toast-out { to { opacity: 0; transform: translate(-50%, 6px); } }
+      @keyframes adm-shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+      @keyframes adm-bar-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+      @keyframes adm-tick { 0% { transform: scale(1); } 40% { transform: scale(1.15); color: #fff; } 100% { transform: scale(1); } }
+      @keyframes adm-sla-pulse { 50% { box-shadow: 0 0 0 5px rgb(220 38 38/.16); } }
+      #detail:not(.hidden) { animation: adm-sheet-in .28s var(--adm-ease); }
+      #modal-new:not(.hidden), #modal-partner:not(.hidden) { animation: adm-modal-in .2s ease-out; }
+      #modal-new:not(.hidden) .card, #modal-partner:not(.hidden) .card { animation: adm-card-in .26s var(--adm-ease); }
+      #toast:not(.hidden) { animation: adm-toast-in .22s var(--adm-ease); }
+      #toast.adm-out { animation: adm-toast-out .18s ease-in forwards; }
+      #q-bar { animation: adm-bar-in .3s var(--adm-ease) .1s both; }
+      #q-total { display: inline-block; }
+      #q-total.adm-tick { animation: adm-tick .28s var(--adm-ease); }
+      #filters:not(.hidden) { animation: adm-rise .2s var(--adm-ease); }
+      .adm-stagger > * { animation: adm-rise .3s var(--adm-ease) both; }
+      .adm-stagger > *:nth-child(2) { animation-delay: 60ms; }
+      .adm-stagger > *:nth-child(3) { animation-delay: 120ms; }
+      .adm-stagger > *:nth-child(n+4) { animation-delay: 160ms; }
+      .btn-primary, .btn-secondary, .btn-whatsapp, #btn-new { transition: transform .12s var(--adm-ease), background-color .15s ease; }
+      .btn-primary:active, .btn-secondary:active, .btn-whatsapp:active, #btn-new:active { transform: scale(.97); }
+      [data-stop]:active { transform: scale(.9); transition: transform .1s var(--adm-ease); }
+      @media (prefers-reduced-motion: reduce) {
+        #detail, #toast, #q-bar, #q-total, .adm-stagger > *, .adm-sla--late, .adm-shimmer { animation: none !important; }
+      }
     </style>
 
     <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL }}>
@@ -237,11 +398,22 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         qc: 'Enviar a control de calidad', awaiting_payment: 'Solicitar pago',
         paid: 'Marcar pagado', done: 'Cerrar pedido',
       };
-      const STATUS_COLOR = {
-        new: '#2A7FFF', quoted: '#8b5cf6', booked: '#f59e0b', assigned: '#06b6d4',
-        in_progress: '#f97316', qc: '#eab308', awaiting_payment: '#ec4899',
-        paid: '#22c55e', done: '#64748b', cancelled: '#475569',
+      // 5-tone semantic palette: blue = needs me, neutral = in flight,
+      // hollow green = money pending, filled green = money landed, slate = closed.
+      const TONE = {
+        action: { bg: 'var(--tone-action-bg)', tx: 'var(--tone-action-tx)', bd: 'var(--tone-action-bd)' },
+        flight: { bg: 'var(--tone-flight-bg)', tx: 'var(--tone-flight-tx)', bd: 'var(--tone-flight-bd)' },
+        duePay: { bg: 'var(--tone-due-bg)', tx: 'var(--tone-due-tx)', bd: 'var(--tone-due-bd)' },
+        money: { bg: 'var(--tone-money-bg)', tx: 'var(--tone-money-tx)', bd: 'var(--tone-money-bd)' },
+        closed: { bg: 'var(--tone-closed-bg)', tx: 'var(--tone-closed-tx)', bd: 'var(--tone-closed-bd)' },
       };
+      const STATUS_TONE = {
+        new: TONE.action, qc: TONE.action, awaiting_payment: TONE.duePay,
+        quoted: TONE.flight, booked: TONE.flight, assigned: TONE.flight, in_progress: TONE.flight,
+        paid: TONE.money, done: TONE.closed, cancelled: TONE.closed,
+      };
+      const toneBadge = (s) =>
+        `background:${STATUS_TONE[s].bg};color:${STATUS_TONE[s].tx};border-color:${STATUS_TONE[s].bd}`;
       const CHANNEL_ES = { form: 'form', whatsapp: 'wa', phone: 'tel', b2b: 'b2b' };
       const EVENT_ES = {
         created: 'Pedido creado', status_changed: 'Cambio de estado', updated: 'Datos actualizados',
@@ -251,8 +423,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         partner_note: 'Nota del partner',
       };
       const BANDS = [
-        { id: 'accion', title: 'Requiere acción', color: '#f59e0b', statuses: ['new', 'qc', 'awaiting_payment'] },
-        { id: 'marcha', title: 'En marcha', color: '#2A7FFF', statuses: ['quoted', 'booked', 'assigned', 'in_progress'] },
+        { id: 'accion', title: 'Requiere acción', color: 'rgb(var(--brand-gold))', statuses: ['new', 'qc', 'awaiting_payment'] },
+        { id: 'marcha', title: 'En marcha', color: 'rgb(var(--brand-accent))', statuses: ['quoted', 'booked', 'assigned', 'in_progress'] },
       ];
       const CLOSED = ['paid', 'done', 'cancelled'];
 
@@ -276,10 +448,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       function toast(msg, ok = true) {
         const el = $('toast');
         el.textContent = msg;
-        el.style.borderColor = ok ? 'rgba(34,197,94,.4)' : 'rgba(239,68,68,.5)';
+        el.classList.toggle('adm-toast--err', !ok);
+        el.classList.remove('adm-out');
         el.classList.remove('hidden');
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => el.classList.add('hidden'), 2600);
+        toastTimer = setTimeout(() => {
+          el.classList.add('adm-out');
+          setTimeout(() => { el.classList.add('hidden'); el.classList.remove('adm-out'); }, 180);
+        }, 2600);
       }
       async function busy(btn, fn, label = 'Guardando…') {
         const old = btn.textContent;
@@ -342,11 +518,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       function skeleton() {
         $('pipeline').innerHTML = [1, 2, 3].map(() =>
-          '<div class="card p-4 animate-pulse"><div class="h-4 bg-th-surface/20 rounded w-1/3 mb-2"></div><div class="h-3 bg-th-surface/10 rounded w-2/3 mb-2"></div><div class="h-3 bg-th-surface/10 rounded w-1/2"></div></div>').join('');
+          '<div class="card p-4"><div class="h-4 adm-shimmer rounded w-1/3 mb-2"></div><div class="h-3 adm-shimmer rounded w-2/3 mb-2"></div><div class="h-3 adm-shimmer rounded w-1/2"></div></div>').join('');
       }
 
       async function loadOrders(silent) {
-        if (!silent) skeleton();
+        if (!silent) { skeleton(); $('pipeline').classList.add('adm-stagger'); }
+        else $('pipeline').classList.remove('adm-stagger');
         const icon = $('btn-refresh');
         icon.innerHTML = '<span class="adm-spinning">↻</span> Actualizar';
         const q = new URLSearchParams();
@@ -375,24 +552,25 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       function slaPill(o) {
         // The <=1h quote promise made visible: minutes on new leads.
+        // Solid red fill exists in exactly ONE place in the whole UI: here.
         if (o.status !== 'new') {
           if (o.status === 'awaiting_payment' && minutesOld(o.status_ts || o.created_at) > 48 * 60) {
-            return `<span class="adm-badge" style="background:#f59e0b22;color:#f59e0b">⏱ ${ageOf(o.status_ts || o.created_at)}</span>`;
+            return `<span class="adm-sla adm-sla--warn">⏱ ${ageOf(o.status_ts || o.created_at)}</span>`;
           }
-          return `<span class="text-th-faint text-xs">${ageOf(o.status_ts || o.created_at)}</span>`;
+          return `<span class="adm-sla adm-sla--ok">${ageOf(o.status_ts || o.created_at)}</span>`;
         }
         const m = minutesOld(o.created_at);
-        if (m > 60) return `<span class="adm-badge" style="background:#ef4444;color:#fff">⏱ ${ageOf(o.created_at)} sin presupuesto</span>`;
-        if (m > 45) return `<span class="adm-badge" style="background:#f59e0b22;color:#f59e0b">⏱ ${m}m</span>`;
-        if (m > 20) return `<span class="text-xs" style="color:#f59e0b">⏱ ${m}m</span>`;
-        return `<span class="text-th-faint text-xs">⏱ ${m}m</span>`;
+        if (m > 60) return `<span class="adm-sla adm-sla--late">⏱ ${ageOf(o.created_at)} sin presupuesto</span>`;
+        if (m > 45) return `<span class="adm-sla adm-sla--warn">⏱ ${m}m</span>`;
+        if (m > 20) return `<span class="adm-sla adm-sla--warn" style="background:none;border:none">⏱ ${m}m</span>`;
+        return `<span class="adm-sla adm-sla--ok">⏱ ${m}m</span>`;
       }
 
       function orderCard(o, showStatus) {
         const p = partners.find((x) => x.id === o.partner_id);
         const digits = digitsOf(o.phone);
         const m = o.status === 'new' ? minutesOld(o.created_at) : 0;
-        const ring = m > 60 ? 'ring-1 ring-red-400/60' : m > 45 ? 'border-brand-gold/50' : '';
+        const ring = m > 60 ? 'ring-1 ring-red-500/70' : m > 45 ? 'ring-1 ring-brand-gold/40' : '';
         const who = o.client_name || (o.phone ? o.phone : '—');
         const line2 = [svcName(o.service_slug), o.size ? sizeName(o.size) : '', AREAS[o.area_slug]?.name || '']
           .filter(Boolean).join(' · ');
@@ -400,13 +578,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <div class="card relative p-4 ${ring}">
             <button data-open="${esc(o.id)}" class="text-left w-full">
               <div class="flex items-baseline justify-between gap-2 pr-24">
-                <span class="font-semibold text-th-heading truncate">${esc(who)}</span>
-                <span class="text-xs text-th-faint shrink-0">${esc(o.code)}</span>
+                <span class="font-display font-semibold text-[15px] tracking-tight text-th-heading truncate">${esc(who)}</span>
+                <span class="text-[11px] tabular-nums text-th-faint shrink-0">${esc(o.code)}</span>
               </div>
-              <div class="text-sm text-th-body/80 mt-0.5 truncate">${esc(line2 || '—')}</div>
+              <div class="text-[13px] text-th-muted mt-0.5 truncate pr-20">${esc(line2 || '—')}</div>
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
-                ${showStatus ? `<span class="adm-badge" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>` : ''}
-                ${o.quote_eur ? `<span class="text-brand-accent font-semibold">${o.quote_eur}€</span>` : ''}
+                ${showStatus ? `<span class="adm-badge" style="${toneBadge(o.status)}">${STATUS_ES[o.status]}</span>` : ''}
+                ${o.quote_eur ? `<span class="font-display font-bold text-sm tabular-nums tracking-tight text-brand-accent">${o.quote_eur}€</span>` : ''}
                 ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}</span>` : ''}
                 ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
                 ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
@@ -432,14 +610,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const hoy = orders.filter((o) => (o.scheduled_at || '').slice(0, 10) === today &&
           !['done', 'cancelled', 'paid'].includes(o.status));
         const chip = (label, n, anchor, danger) => n === 0 ? '' :
-          `<button data-chip="${anchor}" class="adm-badge min-h-[40px] px-4 flex items-center gap-1.5 text-sm"
-             style="background:${danger ? '#ef444422' : 'rgb(255 255 255 / .06)'};color:${danger ? '#ef4444' : 'var(--th-heading)'};border:1px solid ${danger ? '#ef444455' : 'rgb(255 255 255 / .1)'}">
-             ${label} <b>${n}</b></button>`;
+          `<button data-chip="${anchor}" class="adm-chip${danger ? ' adm-chip--danger' : ''}"><b>${n}</b>${label}</button>`;
         $('chips').innerHTML =
           chip('Presupuestar', newN, 'st-new', newLate > 0) +
           chip('QC', qcN, 'st-qc', false) +
           chip('Cobrar', cobrarN, 'st-awaiting_payment', false) +
-          (hoy.length ? `<button data-chip="band-marcha" class="adm-badge min-h-[40px] px-4 flex items-center gap-1.5 text-sm" style="background:rgb(255 255 255 / .06);color:var(--th-heading);border:1px solid rgb(255 255 255 / .1)">Hoy <b>${hoy.length}</b> · ${esc(hoy.map((o) => (fmtDate(o.scheduled_at).split(',')[1] || '').trim()).filter(Boolean).slice(0, 2).join(', '))}</button>` : '');
+          (hoy.length ? `<button data-chip="band-marcha" class="adm-chip"><b>${hoy.length}</b>Hoy · ${esc(hoy.map((o) => (fmtDate(o.scheduled_at).split(',')[1] || '').trim()).filter(Boolean).slice(0, 2).join(', '))}</button>` : '');
         document.querySelectorAll('[data-chip]').forEach((el) =>
           el.addEventListener('click', () => document.getElementById(el.dataset.chip)?.scrollIntoView({ behavior: 'smooth', block: 'start' })));
 
@@ -451,10 +627,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         // Empty states
         if (orders.length === 0) {
           $('pipeline').innerHTML = filtersActive()
-            ? '<div class="card p-6 text-center"><p class="text-th-muted text-sm mb-3">Sin pedidos con estos filtros.</p><button id="empty-clear" class="btn-secondary text-sm px-4 min-h-[44px]">Quitar filtros</button></div>'
-            : `<div class="card p-6 text-center">
+            ? `<div class="card p-8 text-center">
+                 <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-th-surface/10 border border-th-border/10 grid place-items-center text-2xl">🔍</div>
+                 <p class="text-th-muted text-sm mb-4">Sin pedidos con estos filtros.</p>
+                 <button id="empty-clear" class="btn-secondary text-sm px-4 min-h-[44px]">Quitar filtros</button>
+               </div>`
+            : `<div class="card p-8 text-center">
+                 <div class="w-14 h-14 mx-auto mb-3 rounded-2xl grid place-items-center text-2xl"
+                      style="background:rgb(var(--brand-accent)/.12);border:1px solid rgb(var(--brand-accent)/.25);box-shadow:0 0 24px rgb(var(--brand-accent)/.2)">✨</div>
                  <p class="font-display font-bold text-th-heading text-lg mb-1.5">Todavía no hay pedidos</p>
-                 <p class="text-th-muted text-sm mb-4">Cuando alguien escriba por WhatsApp, créalo aquí a mano — así el 100% de los pedidos vive en el mismo sitio y las métricas son reales.</p>
+                 <p class="text-th-muted text-sm mb-4 max-w-sm mx-auto">Cuando alguien escriba por WhatsApp, créalo aquí a mano — así el 100% de los pedidos vive en el mismo sitio y las métricas son reales.</p>
                  <button id="empty-new" class="btn-primary text-sm px-5 min-h-[48px]">+ Crear el primer pedido</button>
                </div>`;
           $('empty-clear')?.addEventListener('click', clearFilters);
@@ -464,9 +646,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
         const section = (s, list, showStatus) => list.length === 0 ? '' : `
           <section id="st-${s}">
-            <h3 class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:${STATUS_COLOR[s]}">
-              ${STATUS_ES[s]} · ${list.length}
-              ${s === 'new' && newLate ? `<span class="text-red-400 normal-case tracking-normal font-normal">· ${newLate} fuera de plazo</span>` : ''}
+            <h3 class="font-display text-sm font-semibold tracking-tight text-th-muted mb-2 flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full shrink-0" style="background:${STATUS_TONE[s].tx}"></span>
+              ${STATUS_ES[s]} <span class="text-th-faint font-normal tabular-nums">· ${list.length}</span>
+              ${s === 'new' && newLate ? `<span class="text-sm font-normal" style="color:var(--adm-red-soft)">· ${newLate} fuera de plazo</span>` : ''}
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${list.map((o) => orderCard(o, showStatus)).join('')}</div>
           </section>`;
@@ -479,7 +662,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           }).filter(Boolean);
           if (!parts.length) return '';
           return `<div id="band-${band.id}">
-            <h2 class="text-sm font-bold uppercase tracking-widest mb-3" style="color:${band.color}">${band.title}</h2>
+            <h2 class="font-display text-xs font-bold uppercase tracking-[0.18em] text-th-heading mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:${band.color};box-shadow:0 0 8px ${band.color}"></span>
+              ${band.title}
+            </h2>
             <div class="space-y-5">${parts.join('')}</div>
           </div>`;
         };
@@ -628,17 +814,18 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             </div>
             ${warns.length ? `<div class="mt-3 space-y-1">${warns.map((w) => `<p class="text-xs text-brand-gold">${esc(w)}</p>`).join('')}</div>` : ''}
             <div class="mt-3">
-              <textarea id="q-msg" rows="9" class="adm-input font-mono text-xs" style="font-size:13px">${esc(q.customMsg ?? quoteMessage(o))}</textarea>
+              <textarea id="q-msg" rows="8" class="adm-input leading-relaxed">${esc(q.customMsg ?? quoteMessage(o))}</textarea>
               <button id="q-regen" class="${q.customMsg == null ? 'hidden' : ''} text-xs text-brand-accent mt-1">✎ texto editado a mano · regenerar</button>
             </div>
           </div>
-          <!-- Sticky money bar: save + send in ONE tap -->
-          <div id="q-bar" class="sticky bottom-0 z-20 -mx-4 px-4 py-3 mt-3 bg-brand-dark/95 backdrop-blur border-t border-th-border/15">
+          <!-- THE money bar: save + send in ONE tap -->
+          <div id="q-bar" class="sticky bottom-0 z-20 -mx-4 px-4 py-3 mt-3 bg-brand-dark/95 backdrop-blur border-t border-th-border/15 shadow-[0_-12px_24px_-12px_rgba(0,0,0,0.6)]">
             <div class="flex gap-2 items-stretch">
-              <button id="q-send" class="btn-whatsapp flex-1 min-h-[48px] text-sm font-bold">
-                Total <span id="q-total">${quoteTotal(o)}</span>€ · Enviar por WhatsApp
+              <button id="q-send" class="adm-money flex-1 min-h-[52px]">
+                <span class="adm-money-total font-display">€<span id="q-total">${quoteTotal(o)}</span></span>
+                <span class="adm-money-label">Enviar por WhatsApp →</span>
               </button>
-              <button id="q-copy" class="btn-secondary min-h-[48px] px-4 text-sm" aria-label="Copiar mensaje">⧉</button>
+              <button id="q-copy" class="btn-secondary min-h-[52px] px-4 text-sm" aria-label="Copiar mensaje">⧉</button>
             </div>
             <button id="q-save-only" class="w-full text-center text-xs text-th-faint mt-2 min-h-[32px]">Guardar sin enviar</button>
           </div>`;
@@ -646,7 +833,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       function syncComposer(o) {
         // Targeted updates — never nuke the textarea while Mike is editing.
-        $('q-total') && ($('q-total').textContent = quoteTotal(o));
+        const tot = $('q-total');
+        if (tot) {
+          const next = String(quoteTotal(o));
+          if (tot.textContent !== next) {
+            tot.textContent = next;
+            tot.classList.remove('adm-tick');
+            void tot.offsetWidth;
+            tot.classList.add('adm-tick');
+          }
+        }
         q.items.forEach((it, i) => {
           const el = document.querySelector(`[data-qprice="${i}"]`);
           if (el) {
@@ -740,8 +936,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <div class="card p-4 sm:p-5 mt-4">
             <h3 class="font-display font-bold text-th-heading mb-1">Pagos</h3>
             <p class="text-sm text-th-muted mb-3">
-              Presupuesto <b class="text-brand-accent">${o.quote_eur}€</b>
-              ${paid ? ` · pagado <b class="text-green-400">${paid}€</b> · resto <b>${rest}€</b>` : ''}
+              Presupuesto <b class="font-display font-bold text-base tabular-nums text-brand-accent">${o.quote_eur}€</b>
+              ${paid ? ` · pagado <b class="font-display font-bold text-base tabular-nums text-green-400">${paid}€</b> · resto <b class="font-display tabular-nums">${rest}€</b>` : ''}
             </p>
             <div class="flex flex-wrap gap-2 mb-3">
               <button data-pay="full" class="btn-secondary text-sm px-4">Enlace 100%</button>
@@ -844,7 +1040,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         if (o.status === 'qc') {
           // QC: the decision screen — bigger 2-up tiles.
           return `<div class="card p-4 mt-4 space-y-3">${groups.map((g) => `
-            <div><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${g.k}</p>
+            <div><p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-1.5">${g.k}</p>
               <div class="grid grid-cols-2 gap-2">${g.keys.map((k) =>
                 `<a href="/api/photo/${k}" target="_blank"><img src="/api/photo/${k}" loading="lazy" class="rounded-lg w-full aspect-[4/3] object-cover border border-th-border/10" /></a>`).join('')}
               </div></div>`).join('')}</div>`;
@@ -856,11 +1052,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
 
       function historyHtml() {
+        // Newest first on a timeline rail — the accent dot marks the latest event.
+        const events = [...current._events].reverse();
         return `
           <div class="card p-4 sm:p-5 mt-4 mb-16">
             <h3 class="font-display font-bold text-th-heading mb-3">Historial</h3>
-            <ul class="space-y-2 text-xs">
-              ${current._events.map((e) => {
+            <ol class="adm-timeline text-xs">
+              ${events.map((e) => {
                 const label = EVENT_ES[e.type] || e.type;
                 let extra = '';
                 if (e.type === 'status_changed' && e.data?.status) extra = `${STATUS_ES[e.data.status.from] || e.data.status.from} → <b>${STATUS_ES[e.data.status.to] || e.data.status.to}</b>`;
@@ -868,10 +1066,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 else if (e.data?.note) extra = esc(e.data.note);
                 else if (e.data?.partner_notes) extra = esc(e.data.partner_notes);
                 else if (e.data?.kind) extra = esc(e.data.kind);
-                return `<li class="text-th-muted"><span class="text-th-faint">${fmtDate(e.ts)}</span> · ${label}${extra ? ' · ' + extra : ''}
-                  ${e.data && !extra ? `<details class="inline"><summary class="inline cursor-pointer text-th-faint">·…</summary><span class="text-th-faint">${esc(JSON.stringify(e.data))}</span></details>` : ''}</li>`;
+                return `<li>
+                  <span class="block text-th-faint tabular-nums">${fmtDate(e.ts)}</span>
+                  <span class="text-th-body font-medium">${label}</span>${extra ? ` <span class="text-th-muted">· ${extra}</span>` : ''}
+                  ${e.data && !extra ? `<details class="inline"><summary class="inline cursor-pointer text-th-faint"> …</summary><span class="text-th-faint">${esc(JSON.stringify(e.data))}</span></details>` : ''}
+                </li>`;
               }).join('')}
-            </ul>
+            </ol>
           </div>`;
       }
 
@@ -891,13 +1092,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <button id="qc-approve" class="btn-primary w-full min-h-[48px] text-sm mb-2">✓ Aprobar → cobrar</button>
               <div class="flex gap-2">
                 <input id="qc-note" type="text" placeholder="nota de rework para el partner" class="adm-input flex-1" />
-                <button id="qc-rework" class="btn-secondary text-sm px-4" style="color:#ef4444">↩ Rework</button>
+                <button id="qc-rework" class="btn-secondary text-sm px-4 text-red-400/80 hover:text-red-400">↩ Rework</button>
               </div>
             </div>` : `
             ${primary && o.status !== 'new' ? `<button data-st="${primary}" class="btn-primary w-full min-h-[48px] text-sm mb-2">${ACTION_ES[primary] || '→ ' + STATUS_ES[primary]}</button>` : ''}
             ${trans.slice(o.status === 'new' ? 0 : 1).map((s) =>
               o.status === 'new' && s === 'quoted' ? '' :
-              `<button data-st="${s}" class="btn-secondary w-full min-h-[44px] text-sm mb-2" style="color:${STATUS_COLOR[s]}">${ACTION_ES[s] || '→ ' + STATUS_ES[s]}</button>`).join('')}
+              `<button data-st="${s}" class="btn-secondary w-full min-h-[44px] text-sm mb-2">${ACTION_ES[s] || '→ ' + STATUS_ES[s]}</button>`).join('')}
             `}
             ${['assigned', 'in_progress', 'qc'].includes(o.status) && o.partner_id ? `
               <button id="d-partner-msg" class="btn-secondary w-full min-h-[44px] text-sm mb-2">📤 Mensaje para partner <span class="text-th-faint">(nuevo enlace)</span></button>` : ''}
@@ -928,11 +1129,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             </div>
             ${(TRANSITIONS[o.status] || []).includes('cancelled') ? `
               <div class="mt-4 pt-3 border-t border-th-border/10 text-center">
-                <button data-st="cancelled" class="text-sm text-red-400 min-h-[44px]">Cancelar pedido</button>
+                <button data-st="cancelled" class="text-sm text-red-400/80 hover:text-red-400 min-h-[44px]">Cancelar pedido</button>
               </div>` : ''}
             ${o.status === 'cancelled' ? `
               <div class="mt-4 pt-3 border-t border-th-border/10 text-center">
-                <button id="d-delete" class="text-sm text-red-400 min-h-[44px]">🗑 Eliminar definitivamente (solo test)</button>
+                <button id="d-delete" class="text-sm text-red-400/80 hover:text-red-400 min-h-[44px]">🗑 Eliminar definitivamente (solo test)</button>
               </div>` : ''}
           </div>`;
       }
@@ -979,9 +1180,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       function renderDetail() {
         const o = current;
+        $('d-status-chip').className = 'adm-status';
         $('d-status-chip').textContent = STATUS_ES[o.status];
-        $('d-status-chip').style.background = STATUS_COLOR[o.status] + '22';
-        $('d-status-chip').style.color = STATUS_COLOR[o.status];
+        $('d-status-chip').style.color = STATUS_TONE[o.status].tx;
 
         const showComposer = ['new', 'quoted', 'booked'].includes(o.status);
         // Status-aware block order: what Mike needs next comes first.
@@ -1162,14 +1363,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       const badge = (value, limit, higherIsBad, unit) => {
         if (value == null) return '<span class="text-th-faint">—</span>';
         const bad = higherIsBad ? value > limit : value < limit;
-        const color = bad ? '#ef4444' : '#22c55e';
+        const color = bad ? '#F87171' : '#4ADE80';
         return `<span class="font-bold" style="color:${color}">${value}${unit}</span>
           <span class="text-th-faint text-xs">límite ${higherIsBad ? '≤' : '≥'}${limit}${unit}</span>`;
       };
       const bar = (n, max) =>
         `<span class="inline-block h-2 rounded bg-brand-accent/60 align-middle" style="width:${max ? Math.max(4, Math.round((n / max) * 120)) : 4}px"></span>`;
       function metricCard(title, html) {
-        return `<div class="card p-4"><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${title}</p><div class="text-th-body text-sm">${html}</div></div>`;
+        return `<div class="card p-4"><p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-1.5">${title}</p><div class="text-th-body text-sm">${html}</div></div>`;
       }
       function breakdownRows(obj, labelFn) {
         const entries = Object.entries(obj).sort((a, b) => b[1] - a[1]);
@@ -1199,13 +1400,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
         $('m-body').innerHTML = `
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            ${metricCard('Pedidos', `<b class="text-th-heading text-xl">${f.created}</b> creados<br/>${f.quoted} presupuestados · ${f.booked} reservados · ${f.done} cerrados`)}
+            ${metricCard('Pedidos', `<b class="font-display font-bold text-2xl tabular-nums tracking-tight text-th-heading">${f.created}</b> creados<br/>${f.quoted} presupuestados · ${f.booked} reservados · ${f.done} cerrados`)}
             ${metricCard('Presupuesto → Reserva', badge(f.quote_to_booked_pct, T.quote_to_booked_pct, false, '%'))}
-            ${metricCard('Tiempo hasta presupuesto', d.time_to_quote_median_h == null ? '—' : `<b class="text-th-heading text-xl">${d.time_to_quote_median_h}h</b> mediana`)}
-            ${metricCard('Ingresos cobrados', `<b class="text-th-heading text-xl">${d.revenue.paid_total}€</b><br/>${d.revenue.paid_orders} pagos · ticket medio ${d.revenue.avg_ticket ?? '—'}€`)}
+            ${metricCard('Tiempo hasta presupuesto', d.time_to_quote_median_h == null ? '—' : `<b class="font-display font-bold text-2xl tabular-nums tracking-tight text-th-heading">${d.time_to_quote_median_h}h</b> mediana`)}
+            ${metricCard('Ingresos cobrados', `<b class="font-display font-bold text-2xl tabular-nums tracking-tight text-th-heading">${d.revenue.paid_total}€</b><br/>${d.revenue.paid_orders} pagos · ticket medio ${d.revenue.avg_ticket ?? '—'}€`)}
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            ${metricCard('Contribución estimada', `<b class="text-th-heading text-xl">${d.revenue.contribution_total}€</b> total · ${d.revenue.contribution_avg ?? '—'}€/pedido
+            ${metricCard('Contribución estimada', `<b class="font-display font-bold text-2xl tabular-nums tracking-tight text-th-heading">${d.revenue.contribution_total}€</b> total · ${d.revenue.contribution_avg ?? '—'}€/pedido
               <p class="text-th-faint text-xs mt-1">pagado − payout partner − 1,5% Stripe − 4% reserva</p>`)}
             ${metricCard('CAC blended', `${badge(d.cac.blended, T.cac_eur, true, '€')}
               <span class="text-th-faint text-xs">· gasto ${d.cac.spend_total}€ / ${f.booked} reservas</span>`)}
@@ -1216,9 +1417,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>
 
           <div class="card p-4">
-            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Partners</p>
+            <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Partners</p>
             ${d.partners.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
-            <table class="w-full text-sm">
+            <table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Partner</th><th>Trabajos</th><th>Rework</th><th>Media en curso</th></tr></thead>
               <tbody>${d.partners.map((p) => `
@@ -1233,7 +1434,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>
 
           <div class="card p-4">
-            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">CAC por fuente · gasto del mes</p>
+            <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">CAC por fuente · gasto del mes</p>
             <div id="m-spend-rows" class="space-y-2 mb-2">
               ${spendRows.map(([src, val]) => `
                 <div class="flex gap-2 items-center" data-spend-row>
@@ -1245,7 +1446,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <button id="m-spend-add" class="text-sm text-brand-accent min-h-[44px]">+ fuente</button>
               <button id="m-spend-save" class="btn-secondary text-sm px-4 min-h-[44px]">Guardar gasto</button>
             </div>
-            <table class="w-full text-sm">
+            <table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Fuente</th><th>Creados</th><th>Reservados</th><th>CAC</th></tr></thead>
               <tbody>${Object.keys({ ...d.cac.created_by_source, ...d.cac.by_source }).map((src) => `
@@ -1324,9 +1525,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const ledger = d.partners;
         $('pt-body').innerHTML = `
           <div class="card p-4">
-            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados)</span></p>
+            <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados)</span></p>
             ${ledger.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
-            <table class="w-full text-sm">
+            <table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Partner</th><th>Trabajos</th><th>Aceptados</th><th>GMV</th><th>%</th><th>Payout</th><th>Reworks</th></tr></thead>
               <tbody>${ledger.map((p) => `
@@ -1334,14 +1535,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <td class="py-1.5 text-th-heading">${esc(p.name)}</td>
                   <td>${p.jobs}</td><td>${p.accepted}</td>
                   <td>${p.gmv_eur}€</td><td>${p.payout_pct}%</td>
-                  <td class="text-brand-accent font-semibold">${p.payout_eur}€</td>
+                  <td class="font-display font-bold tabular-nums text-brand-accent">${p.payout_eur}€</td>
                   <td>${p.rework_count}</td>
                 </tr>`).join('')}
               </tbody>
             </table>`}
           </div>
           <div class="card p-4">
-            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Partners</p>
+            <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Partners</p>
             ${partners.length === 0 ? '<p class="text-th-faint text-sm">Sin partners todavía. Crea el primero con «+ Partner».</p>' : `
             <div class="space-y-3">
               ${partners.map((p) => `
@@ -1402,7 +1603,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const views = { pipeline: 'view-pipeline', metrics: 'view-metrics', partners: 'view-partners' };
         for (const [k, id] of Object.entries(views)) {
           $(id).classList.toggle('hidden', k !== which);
-          $('tab-' + k).className = 'flex-1 text-center py-2.5 min-h-[44px] ' +
+          $('tab-' + k).className = 'flex-1 text-center py-2.5 min-h-[44px] transition-colors duration-150 ' +
             (k === which ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted');
         }
         $('btn-new').classList.toggle('hidden', which !== 'pipeline');
