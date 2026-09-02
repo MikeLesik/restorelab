@@ -118,10 +118,16 @@ export async function onRequestGet(context: {
   const contributionTotal = r2(contribution.reduce((s, x) => s + x, 0));
   const contributionAvg = contribution.length ? r2(contributionTotal / contribution.length) : null;
 
-  // ── Partner quality ──
+  // ── Partner quality + payout ledger (RL-430) ──
+  // Payout accrues on ACCEPTED work: orders past QC (awaiting_payment/paid/
+  // done). The partner invoices restoreLab against this statement.
+  const ACCEPTED = ['awaiting_payment', 'paid', 'done'];
   const partnerStats = partners.map((p) => {
     const jobs = orders.filter((o) => o.partner_id === p.id);
+    const accepted = jobs.filter((o) => ACCEPTED.includes(o.status as string));
     const reworks = jobs.filter((o) => Number(o.rework) > 0).length;
+    const pct = (Number(p.payout_pct) || DEFAULT_PAYOUT_PCT) / 100;
+    const gmv = r2(accepted.reduce((s, o) => s + (Number(o.quote_eur) || 0), 0));
     const ipHours = jobs
       .map((o) => {
         const a = reached(o, 'in_progress');
@@ -130,8 +136,10 @@ export async function onRequestGet(context: {
       })
       .filter((x): x is number => x !== null && x >= 0);
     return {
-      id: p.id, name: p.name,
-      jobs: jobs.length,
+      id: p.id, name: p.name, payout_pct: Number(p.payout_pct) || DEFAULT_PAYOUT_PCT,
+      jobs: jobs.length, accepted: accepted.length,
+      gmv_eur: gmv, payout_eur: r2(gmv * pct),
+      rework_count: reworks,
       rework_pct: jobs.length ? r2((reworks / jobs.length) * 100) : null,
       avg_in_progress_h: ipHours.length ? r2(ipHours.reduce((s, x) => s + x, 0) / ipHours.length) : null,
     };

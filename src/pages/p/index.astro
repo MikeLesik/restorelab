@@ -1,0 +1,217 @@
+---
+// Partner job card (RL-430). ES-only by design, noindex (meta + X-Robots-Tag
+// via _headers /p/*), reached ONLY through /p/<token> links the admin sends —
+// public/_redirects rewrites /p/* to this static shell and the client JS reads
+// the token from the path. No login, no app: the token IS the authorization.
+import '@/styles/global.css';
+import { PARTNER_CHECKLISTS, HOUSE_RULES } from '@/lib/partnerChecklists';
+import { areaProfiles } from '@/lib/areaProfiles';
+
+import es from '@/content/es.json';
+
+// Package + size display names come from the same pricing data as everywhere.
+const PKG_NAMES = Object.fromEntries(
+  es.pricing.categories.flatMap((c: any) => c.packages).map((p: any) => [p.slug, p.name])
+);
+const SIZE_NAMES = Object.fromEntries(
+  (es.pricing.ui.size_categories || []).map((s: any) => [s.id, s.name])
+);
+const AREA_NAMES = Object.fromEntries(
+  Object.entries(areaProfiles).map(([slug, a]: [string, any]) => [slug, a.name])
+);
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>restoreLab — Trabajo</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  </head>
+  <body class="bg-brand-dark min-h-screen text-th-body">
+    <div class="max-w-lg mx-auto px-4 py-8">
+      <p class="font-display font-bold text-th-heading text-xl mb-6">
+        restore<span class="text-brand-accent">Lab</span> <span class="text-th-muted font-normal text-base">· Ficha de trabajo</span>
+      </p>
+
+      <div id="job-error" class="hidden card p-6 text-center">
+        <p class="text-th-body">Este enlace ya no es válido. Si crees que es un error, escribe a Mike.</p>
+      </div>
+
+      <div id="job" class="hidden space-y-4">
+        <div class="card p-5">
+          <div class="flex items-baseline justify-between gap-2 mb-2">
+            <h1 id="j-code" class="font-display font-bold text-th-heading text-2xl"></h1>
+            <span id="j-status" class="text-xs font-semibold text-brand-accent"></span>
+          </div>
+          <p id="j-service" class="text-th-heading font-medium"></p>
+          <p id="j-when" class="text-sm text-th-muted mt-1"></p>
+          <p id="j-where" class="text-sm text-th-muted mt-1"></p>
+          <a id="j-maps" href="#" target="_blank" rel="noopener" class="hidden inline-block text-sm text-brand-accent hover:underline mt-1.5">Abrir en Google Maps</a>
+          <p id="j-client" class="text-sm text-th-muted mt-1"></p>
+          <p id="j-notes" class="hidden text-sm text-th-body border-l-2 border-brand-gold pl-3 mt-3"></p>
+          <p id="j-rework" class="hidden text-sm text-red-400 font-medium mt-2"></p>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-3">Checklist</h2>
+          <ul id="j-checklist" class="space-y-2 text-sm"></ul>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">Fotos ANTES <span class="text-th-faint font-normal text-sm">(mín. 2)</span></h2>
+          <div id="j-before-grid" class="grid grid-cols-3 gap-2 my-2"></div>
+          <button data-upload="before" class="btn-secondary text-sm w-full py-2.5">+ Subir foto ANTES</button>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">Fotos DESPUÉS <span class="text-th-faint font-normal text-sm">(mín. 2)</span></h2>
+          <div id="j-after-grid" class="grid grid-cols-3 gap-2 my-2"></div>
+          <button data-upload="after" class="btn-secondary text-sm w-full py-2.5">+ Subir foto DESPUÉS</button>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-2">Notas para Mike</h2>
+          <textarea id="j-partner-notes" rows="3" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="Incidencias, espesores, lo que Mike deba saber…"></textarea>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-2">Normas</h2>
+          <ul class="space-y-1.5 text-xs text-th-muted list-disc pl-4">
+            {HOUSE_RULES.map((r) => <li>{r}</li>)}
+          </ul>
+        </div>
+
+        <p id="j-msg" class="hidden text-sm text-red-400" role="alert"></p>
+        <button id="j-done" class="btn-primary w-full">Trabajo terminado ✓</button>
+        <p class="text-th-faint text-xs text-center pb-8">Al terminar, Mike revisa las fotos (control de calidad) y cierra el trabajo.</p>
+      </div>
+
+      <div id="j-finished" class="hidden card p-6 text-center">
+        <p class="font-display font-bold text-th-heading text-xl mb-2">¡Enviado a control de calidad!</p>
+        <p class="text-th-muted text-sm">Mike revisará las fotos. Si todo está bien, no tienes que hacer nada más.</p>
+      </div>
+    </div>
+
+    <input id="j-file" type="file" accept="image/*" capture="environment" class="hidden" />
+
+    <script define:vars={{ PKG_NAMES, SIZE_NAMES, AREA_NAMES, CHECKLISTS: PARTNER_CHECKLISTS }}>
+      const $ = (id) => document.getElementById(id);
+      const token = (location.pathname.match(/^\/p\/([a-f0-9]{32})$/) || [])[1];
+      let uploadKind = null;
+
+      async function load() {
+        if (!token) { $('job-error').classList.remove('hidden'); return; }
+        let d;
+        try {
+          d = await (await fetch('/api/job/' + token)).json();
+        } catch (e) { d = { ok: false }; }
+        if (!d.ok) { $('job-error').classList.remove('hidden'); return; }
+        const j = d.job;
+
+        $('j-code').textContent = j.code;
+        $('j-status').textContent = j.status === 'qc' ? 'En control de calidad' : j.status === 'in_progress' ? 'En curso' : 'Asignado';
+        $('j-service').textContent = (PKG_NAMES[j.service_slug] || j.service_slug || 'Servicio') +
+          (j.size && SIZE_NAMES[j.size] ? ' · ' + SIZE_NAMES[j.size] : '');
+        $('j-when').textContent = j.scheduled_at
+          ? 'Cuándo: ' + new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' })
+          : 'Cuándo: por confirmar con Mike';
+        const where = [AREA_NAMES[j.area_slug] || j.area_slug, j.address].filter(Boolean).join(' · ');
+        $('j-where').textContent = where ? 'Dónde: ' + where : '';
+        if (j.address) {
+          $('j-maps').href = 'https://maps.google.com/?q=' + encodeURIComponent(j.address + ', ' + (AREA_NAMES[j.area_slug] || ''));
+          $('j-maps').classList.remove('hidden');
+        }
+        $('j-client').textContent = j.client_first_name ? 'Cliente: ' + j.client_first_name + ' (contacto solo vía Mike)' : '';
+        if (j.notes) { $('j-notes').textContent = j.notes; $('j-notes').classList.remove('hidden'); }
+        if (j.rework > 0) {
+          $('j-rework').textContent = '⚠ Rework solicitado — revisa las notas y repite las fotos DESPUÉS.';
+          $('j-rework').classList.remove('hidden');
+        }
+
+        const list = CHECKLISTS[j.service_slug] || CHECKLISTS.default;
+        $('j-checklist').innerHTML = list.map((item, i) =>
+          `<li class="flex items-start gap-2.5">
+            <input id="chk${i}" type="checkbox" class="mt-0.5 w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0" />
+            <label for="chk${i}" class="text-th-body cursor-pointer">${item}</label>
+          </li>`).join('');
+
+        renderPhotos('before', j.photos_before);
+        renderPhotos('after', j.photos_after);
+        $('job').classList.remove('hidden');
+      }
+
+      function renderPhotos(kind, keys) {
+        $('j-' + kind + '-grid').innerHTML = (keys || []).map((k) =>
+          `<img src="/api/photo/${k}" loading="lazy" class="rounded-lg w-full h-20 object-cover border border-th-border/10" />`).join('');
+      }
+
+      document.querySelectorAll('[data-upload]').forEach((btn) =>
+        btn.addEventListener('click', () => { uploadKind = btn.dataset.upload; $('j-file').click(); }));
+
+      $('j-file').addEventListener('change', async function () {
+        const file = this.files[0];
+        this.value = '';
+        if (!file || !uploadKind) return;
+        const btn = document.querySelector(`[data-upload="${uploadKind}"]`);
+        btn.disabled = true;
+        btn.textContent = 'Subiendo…';
+        let blob = file, type = file.type;
+        // Same compression approach as the intake form: JPEG ≤2MB via canvas,
+        // raw fallback for formats the browser can't decode (HEIC off-Safari).
+        if (file.size > 2 * 1024 * 1024 || !/^image\/(jpeg|png|webp)$/.test(file.type)) {
+          try {
+            const bmp = await createImageBitmap(file);
+            const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.round(bmp.width * scale);
+            canvas.height = Math.round(bmp.height * scale);
+            canvas.getContext('2d').drawImage(bmp, 0, 0, canvas.width, canvas.height);
+            bmp.close();
+            const out = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', 0.8));
+            if (out) { blob = out; type = 'image/jpeg'; }
+          } catch (e) { /* raw upload below */ }
+        }
+        try {
+          const d = await (await fetch(`/api/orders/x/photos?kind=${uploadKind}&token=${token}`, {
+            method: 'POST', headers: { 'Content-Type': type }, body: blob,
+          })).json();
+          if (!d.ok) throw new Error(d.reason || 'upload');
+        } catch (e) {
+          $('j-msg').textContent = 'No se pudo subir la foto (' + e.message + '). Inténtalo otra vez.';
+          $('j-msg').classList.remove('hidden');
+        }
+        btn.disabled = false;
+        btn.textContent = uploadKind === 'before' ? '+ Subir foto ANTES' : '+ Subir foto DESPUÉS';
+        load();
+      });
+
+      $('j-done').addEventListener('click', async () => {
+        $('j-msg').classList.add('hidden');
+        $('j-done').disabled = true;
+        let d;
+        try {
+          d = await (await fetch('/api/job/' + token, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'done', notes: $('j-partner-notes').value.trim() }),
+          })).json();
+        } catch (e) { d = { ok: false, reason: 'red' }; }
+        $('j-done').disabled = false;
+        if (!d.ok) {
+          $('j-msg').textContent = d.reason === 'photos_required'
+            ? `Faltan fotos: mínimo 2 ANTES y 2 DESPUÉS (tienes ${d.before}/${d.after}).`
+            : 'No se pudo enviar (' + (d.reason || '') + ').';
+          $('j-msg').classList.remove('hidden');
+          return;
+        }
+        $('job').classList.add('hidden');
+        $('j-finished').classList.remove('hidden');
+      });
+
+      load();
+    </script>
+  </body>
+</html>

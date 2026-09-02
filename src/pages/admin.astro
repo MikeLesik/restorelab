@@ -61,6 +61,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <span class="ml-3 inline-flex rounded-xl border border-th-border/15 overflow-hidden align-middle text-sm font-normal">
             <button id="tab-pipeline" class="px-4 py-1.5 bg-brand-accent/15 text-brand-accent">Pedidos</button>
             <button id="tab-metrics" class="px-4 py-1.5 text-th-muted hover:text-th-heading">Métricas</button>
+            <button id="tab-partners" class="px-4 py-1.5 text-th-muted hover:text-th-heading">Partners</button>
           </span>
         </h1>
         <div class="flex flex-wrap gap-2">
@@ -102,6 +103,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <button id="m-csv" class="btn-secondary text-sm px-4 py-2 ml-auto">Exportar CSV</button>
         </div>
         <div id="m-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
+      </div>
+
+      <!-- Partners: CRUD + payout ledger (RL-430) -->
+      <div id="view-partners" class="hidden">
+        <div class="flex flex-wrap gap-2 mb-6 items-center">
+          <input id="pt-month" type="month" class="adm-input w-auto" />
+          <button id="pt-load" class="btn-secondary text-sm px-4 py-2">Cargar</button>
+          <button id="pt-csv" class="btn-secondary text-sm px-4 py-2 ml-auto">Exportar liquidación CSV</button>
+        </div>
+        <div id="pt-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
       </div>
 
       <!-- Detail overlay -->
@@ -617,6 +628,20 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               ${(TRANSITIONS[o.status] || []).map((s) =>
                 `<button data-st="${s}" class="btn-secondary text-sm px-4 py-2" style="color:${STATUS_COLOR[s]}">→ ${STATUS_ES[s]}</button>`).join('') || '<span class="text-th-faint text-sm">Estado final.</span>'}
             </div>
+            ${o.status === 'qc' ? `
+            <div class="rounded-xl border border-brand-gold/30 bg-brand-gold/5 p-4 mb-4">
+              <p class="text-sm font-semibold text-brand-gold mb-2">Control de calidad</p>
+              <div class="flex flex-wrap gap-2 items-center">
+                <button id="qc-approve" class="btn-primary text-sm px-4 py-2">✓ Aprobar → cobrar</button>
+                <input id="qc-note" type="text" placeholder="nota de rework para el partner" class="adm-input flex-1 min-w-40 py-1.5" />
+                <button id="qc-rework" class="btn-secondary text-sm px-4 py-2" style="color:#ef4444">↩ Pedir rework</button>
+              </div>
+            </div>` : ''}
+            ${['assigned', 'in_progress', 'qc'].includes(o.status) && o.partner_id ? `
+            <div class="flex flex-wrap gap-2 items-center mb-4">
+              <button id="d-partner-msg" class="btn-secondary text-sm px-4 py-2">📤 Mensaje para partner</button>
+              <span id="d-partner-msg-hint" class="text-th-faint text-xs">genera un enlace /p/ nuevo (invalida el anterior)</span>
+            </div>` : ''}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="text-xs text-th-faint block mb-1">Partner ${p ? '(actual: ' + esc(p.name) + ')' : ''}</label>
@@ -675,6 +700,39 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         });
         if (showComposer) bindComposer(o);
         if (o.quote_eur) bindPayments();
+
+        // QC (RL-430)
+        $('qc-approve')?.addEventListener('click', async () => {
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ status: 'awaiting_payment' }) });
+          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
+        });
+        $('qc-rework')?.addEventListener('click', async () => {
+          const note = $('qc-note').value.trim();
+          const d = await api('/api/orders/' + current.id, {
+            method: 'PATCH',
+            body: JSON.stringify({ status: 'in_progress', ...(note ? { event_note: 'rework: ' + note } : {}) }),
+          });
+          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
+        });
+
+        // Partner dispatch message (RL-430): fresh token → prefilled wa.me
+        $('d-partner-msg')?.addEventListener('click', async () => {
+          const d = await api('/api/orders/' + current.id + '/job-token', { method: 'POST' });
+          if (!d.ok) { alert('Error: ' + (d.reason || '')); return; }
+          const pt = partners.find((x) => x.id === current.partner_id);
+          const svc = (PRICING.es.packages[current.service_slug]?.name || current.service_slug || 'trabajo');
+          const size = current.size && PRICING.es.sizes[current.size] ? ' (' + PRICING.es.sizes[current.size] + ')' : '';
+          const when = current.scheduled_at ? new Date(current.scheduled_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' }) : 'por confirmar';
+          const area = AREAS[current.area_slug]?.name || '';
+          const msg = 'Hola' + (pt ? ' ' + pt.name.split(' ')[0] : '') + ', trabajo ' + current.code + ':\n' +
+            '• ' + svc + size + '\n' +
+            (area ? '• Zona: ' + area + '\n' : '') +
+            '• Cuándo: ' + when + '\n\n' +
+            'Ficha completa, checklist y fotos aquí:\n' + location.origin + d.url;
+          const digits = String(pt?.phone || '').replace(/\D/g, '');
+          if (digits) window.open('https://wa.me/' + digits + '?text=' + encodeURIComponent(msg), '_blank');
+          else { navigator.clipboard.writeText(msg); alert('Partner sin teléfono — mensaje copiado al portapapeles.'); }
+        });
       }
 
       // ── Modals ────────────────────────────────────────────────────────────
@@ -891,22 +949,122 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         URL.revokeObjectURL(a.href);
       }
 
+      // ── Partners tab: CRUD + payout ledger (RL-430) ───────────────────────
+      let PT = null; // last ledger payload (metrics of the chosen month)
+
+      async function loadPartnersTab() {
+        const month = $('pt-month').value || new Date().toISOString().slice(0, 7);
+        await loadPartners();
+        let d;
+        try {
+          d = await api('/api/metrics?month=' + month);
+        } catch (e) {
+          $('pt-body').innerHTML = `<p class="text-red-400 text-sm">${esc(e.message)}</p>`;
+          return;
+        }
+        if (!d.ok) {
+          $('pt-body').innerHTML = `<p class="text-brand-gold text-sm">API no configurada (${esc(d.reason || '')}).</p>`;
+          return;
+        }
+        PT = d;
+        const ledger = d.partners;
+        $('pt-body').innerHTML = `
+          <div class="card p-4">
+            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados: QC aprobado o pagados)</span></p>
+            ${ledger.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
+            <table class="w-full text-sm">
+              <thead><tr class="text-left text-th-faint border-b border-th-border/10">
+                <th class="py-1.5">Partner</th><th>Trabajos</th><th>Aceptados</th><th>GMV</th><th>%</th><th>Payout</th><th>Reworks</th></tr></thead>
+              <tbody>${ledger.map((p) => `
+                <tr class="border-b border-th-border/5">
+                  <td class="py-1.5 text-th-heading">${esc(p.name)}</td>
+                  <td>${p.jobs}</td><td>${p.accepted}</td>
+                  <td>${p.gmv_eur}€</td><td>${p.payout_pct}%</td>
+                  <td class="text-brand-accent font-semibold">${p.payout_eur}€</td>
+                  <td>${p.rework_count}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>`}
+          </div>
+          <div class="card p-4">
+            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Partners</p>
+            <div class="space-y-3">
+              ${partners.map((p) => `
+                <div class="rounded-xl border border-th-border/10 p-3" data-pt="${esc(p.id)}">
+                  <div class="flex flex-wrap gap-2 items-center">
+                    <input data-f="name" value="${esc(p.name)}" class="adm-input w-40 py-1.5" />
+                    <input data-f="phone" value="${esc(p.phone || '')}" placeholder="teléfono" class="adm-input w-40 py-1.5" />
+                    <input data-f="payout_pct" type="number" value="${p.payout_pct}" min="0" max="100" class="adm-input w-20 py-1.5" />%
+                    <label class="flex items-center gap-1.5 text-sm text-th-muted ml-2">
+                      <input data-f="active" type="checkbox" ${p.active ? 'checked' : ''} class="accent-brand-accent" /> activo
+                    </label>
+                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-xs px-3 py-1.5 ml-auto">Guardar</button>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="zonas (slugs, coma)" class="adm-input flex-1 min-w-48 py-1.5 text-xs" />
+                    <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="servicios (slugs, coma)" class="adm-input flex-1 min-w-48 py-1.5 text-xs" />
+                  </div>
+                </div>`).join('')}
+            </div>
+          </div>`;
+        document.querySelectorAll('[data-pt-save]').forEach((btn) =>
+          btn.addEventListener('click', async () => {
+            const box = document.querySelector(`[data-pt="${btn.dataset.ptSave}"]`);
+            const get = (f) => box.querySelector(`[data-f="${f}"]`);
+            const csv = (v) => v.split(',').map((s) => s.trim()).filter(Boolean);
+            const d2 = await api('/api/partners/' + btn.dataset.ptSave, {
+              method: 'PATCH',
+              body: JSON.stringify({
+                name: get('name').value.trim(),
+                phone: get('phone').value.trim(),
+                payout_pct: Number(get('payout_pct').value),
+                active: get('active').checked,
+                zones: csv(get('zones').value),
+                skills: csv(get('skills').value),
+              }),
+            });
+            if (d2.ok) { btn.textContent = '✓'; setTimeout(() => loadPartnersTab(), 600); }
+            else alert('Error: ' + (d2.reason || ''));
+          }));
+      }
+
+      function exportLedgerCsv() {
+        if (!PT) return;
+        const cols = ['name', 'jobs', 'accepted', 'gmv_eur', 'payout_pct', 'payout_eur', 'rework_count'];
+        const csv = ['partner;trabajos;aceptados;gmv_eur;payout_pct;payout_eur;reworks']
+          .concat(PT.partners.map((p) => cols.map((c) => p[c]).join(';')))
+          .join('\n');
+        const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'restorelab-partners-' + PT.month + '.csv';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+
       // ── Tabs ──────────────────────────────────────────────────────────────
       function showTab(which) {
-        const pipe = which === 'pipeline';
-        $('view-pipeline').classList.toggle('hidden', !pipe);
-        $('view-metrics').classList.toggle('hidden', pipe);
-        $('tab-pipeline').className = 'px-4 py-1.5 ' + (pipe ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
-        $('tab-metrics').className = 'px-4 py-1.5 ' + (!pipe ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
-        if (!pipe) {
+        const views = { pipeline: 'view-pipeline', metrics: 'view-metrics', partners: 'view-partners' };
+        for (const [k, id] of Object.entries(views)) {
+          $(id).classList.toggle('hidden', k !== which);
+          $('tab-' + k).className = 'px-4 py-1.5 ' + (k === which ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
+        }
+        if (which === 'metrics') {
           if (!$('m-month').value) $('m-month').value = new Date().toISOString().slice(0, 7);
           loadMetrics();
+        }
+        if (which === 'partners') {
+          if (!$('pt-month').value) $('pt-month').value = new Date().toISOString().slice(0, 7);
+          loadPartnersTab();
         }
       }
       $('tab-pipeline').addEventListener('click', () => showTab('pipeline'));
       $('tab-metrics').addEventListener('click', () => showTab('metrics'));
+      $('tab-partners').addEventListener('click', () => showTab('partners'));
       $('m-load').addEventListener('click', loadMetrics);
       $('m-csv').addEventListener('click', exportCsv);
+      $('pt-load').addEventListener('click', loadPartnersTab);
+      $('pt-csv').addEventListener('click', exportLedgerCsv);
 
       // ── Init ──────────────────────────────────────────────────────────────
       $('f-status').innerHTML = '<option value="">Estado: todos</option>' +

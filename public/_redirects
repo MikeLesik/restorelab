@@ -1,6 +1,10 @@
 # Redirect root to Spanish version (default market)
 /  /es  302
 
+# Partner job cards (RL-430): /p/<token> rewrites (200) to the static shell,
+# which reads the token from the path client-side.
+/p/*  /p  200
+
 # Portugal-era URLs (business relocated Lisbon/Cascais -> Sant Cugat/Barcelona).
 # Specific rules must precede the /pt/* wildcard — first match wins.
 /pt/services/yacht-gelcoat  /es/services/acrylic-restoration  301

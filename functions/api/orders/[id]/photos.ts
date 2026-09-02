@@ -33,15 +33,23 @@ export async function onRequestPost(context: {
   const kind = url.searchParams.get('kind') || '';
   if (!PHOTO_KINDS.includes(kind as any)) return json({ ok: false, reason: 'bad_kind' }, 400);
 
-  const row = await db
+  const token = url.searchParams.get('token') || '';
+  let row = await db
     .prepare('SELECT * FROM orders WHERE id = ? OR code = ?')
     .bind(params.id, params.id)
     .first<Record<string, unknown>>();
+  // The partner job card knows only its token, not the order id — resolve
+  // before/after uploads through job_token_hash (path id is a placeholder).
+  if (!row && token && /^[a-f0-9]{32}$/.test(token) && kind !== 'intake') {
+    row = await db
+      .prepare('SELECT * FROM orders WHERE job_token_hash = ?')
+      .bind(await sha256hex(token))
+      .first<Record<string, unknown>>();
+  }
   if (!row) return notFound();
   const orderId = row.id as string;
 
   // ── Authorization ──
-  const token = url.searchParams.get('token') || '';
   const isAdmin = adminOk(request, env);
   if (!isAdmin) {
     if (kind === 'intake') {
@@ -49,9 +57,8 @@ export async function onRequestPost(context: {
     } else {
       const hash = row.job_token_hash as string | null;
       if (!token || !hash || (await sha256hex(token)) !== hash) return notFound();
-      if (!ACTIVE_PARTNER_STATUSES.includes(row.status as string)) {
-        return json({ ok: false, reason: 'order_not_active' }, 409);
-      }
+      // A token on a closed order is DEAD — indistinguishable from invalid.
+      if (!ACTIVE_PARTNER_STATUSES.includes(row.status as string)) return notFound();
     }
   }
 

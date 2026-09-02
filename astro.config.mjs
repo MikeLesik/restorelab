@@ -16,6 +16,7 @@ export default defineConfig({
         page !== site &&
         page !== `${site}/` &&
         !page.startsWith(`${site}/admin`) &&
+        page !== `${site}/p` &&
         !page.startsWith(`${site}/p/`),
     }),
   ],
