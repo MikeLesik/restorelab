@@ -159,8 +159,16 @@ export async function onRequestGet(context: {
   const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit') || '100', 10) || 100, 1), 200);
 
   const where = conds.length ? ` WHERE ${conds.join(' AND ')}` : '';
+  // status_ts = when the order entered its current status (age-in-status on
+  // the admin pipeline cards); falls back to created_at for never-moved orders.
   const res = await env.ORDERS_DB
-    .prepare(`SELECT * FROM orders${where} ORDER BY created_at DESC LIMIT ${limit}`)
+    .prepare(
+      `SELECT orders.*, COALESCE((
+         SELECT MAX(ts) FROM order_events
+         WHERE order_id = orders.id AND type = 'status_changed'
+       ), orders.created_at) AS status_ts
+       FROM orders${where} ORDER BY created_at DESC LIMIT ${limit}`,
+    )
     .bind(...binds)
     .all();
 

@@ -1178,7 +1178,14 @@
     "estimator_line_addon": "• I'd like to add: {addon} — {addonPrice}",
     "estimator_outro": "Can you confirm the price and a slot this week? Sending two photos of the car now.",
     "estimator_unsure": "Hi restoreLab! I came from the estimator on your site and I'm not sure what my car needs. I'm sending two photos now — one of the whole car and one of the most visible defect — so you can tell me which package applies and what it costs.",
-    "intake_success": "Hello restoreLab! I've just sent a photo request through the website. Could you confirm my quote?\n\n#pedido {code}"
+    "intake_success": "Hello restoreLab! I've just sent a photo request through the website. Could you confirm my quote?\n\n#pedido {code}",
+    "quote_greeting": "Hi{name}! Mike from restoreLab here. Your quote:",
+    "quote_line": "• {item}: €{price}",
+    "quote_travel": "• Travel ({area}): €{fee}",
+    "quote_travel_included": "• Travel: included",
+    "quote_total": "Total: €{total} (VAT included)",
+    "quote_validity": "Valid for 7 days. Fixed price — no surprises.",
+    "quote_link": "Full price list: {url}"
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

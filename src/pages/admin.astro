@@ -1,0 +1,659 @@
+---
+// Admin pipeline + quote composer (RL-420). ES-only by design (see CLAUDE.md),
+// noindex (meta + X-Robots-Tag in _headers), excluded from the sitemap, no
+// internal links from public pages. Standalone shell: no BaseLayout — no
+// GTM/consent/schema on an internal tool. Token prompt once → localStorage →
+// x-admin-token on every call (404 = wrong token → re-prompt).
+import '@/styles/global.css';
+import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
+import { areaProfiles } from '@/lib/areaProfiles';
+import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+
+// Per-lang pricing + quote templates: the composer computes every number from
+// the SAME structured pricing data the public site renders (RL-401 guardrails)
+// and renders the message in the ORDER's language.
+const CONTENT: Record<string, any> = { es, en, ca };
+const PRICING: Record<string, any> = {};
+for (const [lang, t] of Object.entries(CONTENT)) {
+  PRICING[lang] = {
+    packages: Object.fromEntries(
+      t.pricing.categories.flatMap((c: any) => c.packages).map((p: any) => [
+        p.slug,
+        { name: p.name, price: p.price, price_eur: p.price_eur, size_pricing: p.size_pricing || null },
+      ])
+    ),
+    sizes: Object.fromEntries((t.pricing.ui.size_categories || []).map((s: any) => [s.id, s.name])),
+    quote: Object.fromEntries(
+      Object.entries(t.wa_messages).filter(([k]) => k.startsWith('quote_'))
+    ),
+  };
+}
+const AREAS = Object.fromEntries(
+  Object.entries(areaProfiles).map(([slug, a]: [string, any]) => [slug, { name: a.name, fee: a.travelFee }])
+);
+const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
+  title: c.title,
+  options: c.packages.map((p: any) => ({ slug: p.slug, name: p.name })),
+}));
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>restoreLab — Admin</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  </head>
+  <body class="bg-brand-dark min-h-screen text-th-body">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+
+      <!-- Header -->
+      <header class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <h1 class="font-display font-bold text-th-heading text-2xl">
+          restore<span class="text-brand-accent">Lab</span> <span class="text-th-muted font-normal text-lg">· Pedidos</span>
+        </h1>
+        <div class="flex flex-wrap gap-2">
+          <button id="btn-new" class="btn-primary text-sm px-4 py-2">+ Nuevo pedido</button>
+          <button id="btn-partner" class="btn-secondary text-sm px-4 py-2">+ Partner</button>
+          <button id="btn-refresh" class="btn-secondary text-sm px-4 py-2">↻</button>
+        </div>
+      </header>
+
+      <!-- Filters -->
+      <div id="filters" class="flex flex-wrap gap-2 mb-6 items-center">
+        <select id="f-status" class="adm-input w-auto">
+          <option value="">Estado: todos</option>
+        </select>
+        <select id="f-channel" class="adm-input w-auto">
+          <option value="">Canal: todos</option>
+          <option value="form">Formulario</option>
+          <option value="whatsapp">WhatsApp</option>
+          <option value="phone">Teléfono</option>
+          <option value="b2b">B2B</option>
+        </select>
+        <select id="f-partner" class="adm-input w-auto">
+          <option value="">Partner: todos</option>
+        </select>
+        <input id="f-month" type="month" class="adm-input w-auto" />
+        <span id="pipeline-count" class="text-th-faint text-sm ml-auto"></span>
+      </div>
+
+      <!-- Pipeline -->
+      <main id="pipeline" class="space-y-8"></main>
+
+      <!-- Detail overlay -->
+      <div id="detail" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
+        <div class="max-w-3xl mx-auto px-4 py-8" id="detail-body"></div>
+      </div>
+
+      <!-- New order modal -->
+      <div id="modal-new" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
+        <div class="max-w-lg mx-auto px-4 py-10">
+          <div class="card p-6">
+            <h2 class="font-display font-bold text-th-heading text-xl mb-1">Nuevo pedido manual</h2>
+            <p class="text-th-faint text-xs mb-5">Disciplina: el 100% de los pedidos (también los que entran por WhatsApp) viven aquí — solo así las métricas serán reales.</p>
+            <div class="space-y-3">
+              <input id="n-phone" type="tel" placeholder="Teléfono * (+34 …)" class="adm-input" />
+              <input id="n-name" type="text" placeholder="Nombre" class="adm-input" />
+              <select id="n-service" class="adm-input">
+                <option value="">Servicio…</option>
+                {SERVICE_OPTIONS.map((g: any) => (
+                  <optgroup label={g.title}>
+                    {g.options.map((o: any) => <option value={o.slug}>{o.name}</option>)}
+                  </optgroup>
+                ))}
+              </select>
+              <div class="grid grid-cols-2 gap-3">
+                <select id="n-size" class="adm-input"><option value="">Tamaño…</option></select>
+                <select id="n-area" class="adm-input"><option value="">Zona…</option></select>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <select id="n-channel" class="adm-input">
+                  <option value="whatsapp" selected>WhatsApp</option>
+                  <option value="phone">Teléfono</option>
+                  <option value="b2b">B2B</option>
+                  <option value="form">Formulario</option>
+                </select>
+                <select id="n-lang" class="adm-input">
+                  <option value="es" selected>ES</option><option value="en">EN</option><option value="ca">CA</option>
+                </select>
+              </div>
+              <textarea id="n-notes" rows="2" placeholder="Notas" class="adm-input"></textarea>
+              <p id="n-error" class="hidden text-sm text-red-400"></p>
+              <div class="flex gap-2">
+                <button id="n-save" class="btn-primary flex-1 py-2.5 text-sm">Crear</button>
+                <button data-close class="btn-secondary py-2.5 px-5 text-sm">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New partner modal -->
+      <div id="modal-partner" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
+        <div class="max-w-lg mx-auto px-4 py-10">
+          <div class="card p-6">
+            <h2 class="font-display font-bold text-th-heading text-xl mb-4">Nuevo partner</h2>
+            <div class="space-y-3">
+              <input id="p-name" type="text" placeholder="Nombre *" class="adm-input" />
+              <input id="p-phone" type="tel" placeholder="Teléfono" class="adm-input" />
+              <input id="p-zones" type="text" placeholder="Zonas (slugs, coma): sant-cugat, terrassa" class="adm-input" />
+              <input id="p-skills" type="text" placeholder="Servicios (slugs, coma): single-stage, headlight-restoration" class="adm-input" />
+              <input id="p-payout" type="number" value="70" min="0" max="100" placeholder="% payout" class="adm-input" />
+              <p id="p-error" class="hidden text-sm text-red-400"></p>
+              <div class="flex gap-2">
+                <button id="p-save" class="btn-primary flex-1 py-2.5 text-sm">Crear</button>
+                <button data-close class="btn-secondary py-2.5 px-5 text-sm">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <style is:global>
+      .adm-input {
+        width: 100%;
+        border-radius: 0.75rem;
+        border: 1px solid rgb(255 255 255 / 0.12);
+        background: rgb(255 255 255 / 0.04);
+        padding: 0.55rem 0.9rem;
+        font-size: 0.875rem;
+        color: var(--th-heading);
+      }
+      .adm-input:focus { outline: 2px solid var(--brand-accent); outline-offset: 1px; }
+      .adm-badge {
+        display: inline-block; padding: 0.1rem 0.55rem; border-radius: 9999px;
+        font-size: 0.68rem; font-weight: 600; letter-spacing: 0.03em;
+      }
+    </style>
+
+    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL }}>
+      // ── Constants ─────────────────────────────────────────────────────────
+      const STATUS_ES = {
+        new: 'Nuevo', quoted: 'Presupuestado', booked: 'Reservado', assigned: 'Asignado',
+        in_progress: 'En curso', qc: 'Control calidad', awaiting_payment: 'Esperando pago',
+        paid: 'Pagado', done: 'Cerrado', cancelled: 'Cancelado',
+      };
+      const STATUS_COLOR = {
+        new: '#2A7FFF', quoted: '#8b5cf6', booked: '#f59e0b', assigned: '#06b6d4',
+        in_progress: '#f97316', qc: '#eab308', awaiting_payment: '#ec4899',
+        paid: '#22c55e', done: '#64748b', cancelled: '#475569',
+      };
+      const CHANNEL_ES = { form: 'Form', whatsapp: 'WA', phone: 'Tel', b2b: 'B2B' };
+      const $ = (id) => document.getElementById(id);
+      const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+      // ── Token gate ────────────────────────────────────────────────────────
+      function token() {
+        let t = localStorage.getItem('rl_admin_token');
+        if (!t) {
+          t = prompt('Admin token:') || '';
+          if (t) localStorage.setItem('rl_admin_token', t);
+        }
+        return t;
+      }
+      async function api(path, opts = {}) {
+        const res = await fetch(path, {
+          ...opts,
+          headers: { 'Content-Type': 'application/json', 'x-admin-token': token(), ...(opts.headers || {}) },
+        });
+        if (res.status === 404 && !path.includes('/api/orders/')) {
+          // Collection 404 = bad token (single-order 404 can be a real miss).
+          localStorage.removeItem('rl_admin_token');
+          throw new Error('Token incorrecto — recarga la página.');
+        }
+        return res.json();
+      }
+
+      let partners = [];
+      let orders = [];
+
+      // ── Pipeline ──────────────────────────────────────────────────────────
+      const ageOf = (iso) => {
+        const h = Math.floor((Date.now() - new Date(iso).getTime()) / 3600000);
+        return h < 1 ? '<1h' : h < 48 ? h + 'h' : Math.floor(h / 24) + 'd';
+      };
+
+      async function loadPartners() {
+        try {
+          const d = await api('/api/partners');
+          partners = d.partners || [];
+          const sel = $('f-partner');
+          sel.innerHTML = '<option value="">Partner: todos</option>' +
+            partners.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
+        } catch (e) { /* surfaced by loadOrders */ }
+      }
+
+      async function loadOrders() {
+        const q = new URLSearchParams();
+        if ($('f-status').value) q.set('status', $('f-status').value);
+        if ($('f-channel').value) q.set('channel', $('f-channel').value);
+        if ($('f-partner').value) q.set('partner_id', $('f-partner').value);
+        if ($('f-month').value) q.set('month', $('f-month').value);
+        q.set('limit', '200');
+        let d;
+        try {
+          d = await api('/api/orders?' + q);
+        } catch (e) {
+          $('pipeline').innerHTML = `<p class="text-red-400 text-sm">${esc(e.message)}</p>`;
+          return;
+        }
+        if (!d.ok) {
+          $('pipeline').innerHTML = `<p class="text-brand-gold text-sm">API no configurada todavía (${esc(d.reason || '')}). Sigue los pasos de docs/setup-cloudflare-bindings.md.</p>`;
+          return;
+        }
+        orders = d.orders || [];
+        renderPipeline();
+      }
+
+      function orderCard(o) {
+        const p = partners.find((x) => x.id === o.partner_id);
+        const attrSrc = o.attr?.first?.utm_source || '';
+        return `
+          <button data-open="${esc(o.id)}" class="card text-left p-4 w-full hover:border-brand-accent/40 transition-colors">
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-display font-bold text-th-heading">${esc(o.code)}</span>
+              <span class="adm-badge" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>
+            </div>
+            <div class="text-sm text-th-body">${esc(o.service_slug || '—')}${o.size ? ' · ' + esc(o.size) : ''}</div>
+            <div class="text-xs text-th-muted mt-0.5">${esc(o.client_name || '')} ${o.area_slug ? '· ' + esc(AREAS[o.area_slug]?.name || o.area_slug) : ''}</div>
+            <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
+              <span class="adm-badge bg-th-surface/10 text-th-muted">${CHANNEL_ES[o.channel] || o.channel}</span>
+              ${o.quote_eur ? `<span class="text-brand-accent font-semibold">${o.quote_eur}€</span>` : ''}
+              ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}</span>` : ''}
+              ${o.ref_code ? `<span class="text-th-faint">${esc(o.ref_code)}${attrSrc ? ' · ' + esc(attrSrc) : ''}</span>` : ''}
+              <span class="text-th-faint ml-auto" title="tiempo en este estado">${ageOf(o.status_ts || o.created_at)}</span>
+            </div>
+          </button>`;
+      }
+
+      function renderPipeline() {
+        const groups = STATUSES.map((s) => ({ s, list: orders.filter((o) => o.status === s) }))
+          .filter((g) => g.list.length > 0);
+        $('pipeline-count').textContent = orders.length + ' pedido' + (orders.length === 1 ? '' : 's');
+        $('pipeline').innerHTML = groups.length === 0
+          ? '<p class="text-th-muted text-sm">Sin pedidos con estos filtros.</p>'
+          : groups.map((g) => `
+            <section>
+              <h2 class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:${STATUS_COLOR[g.s]}">
+                ${STATUS_ES[g.s]} <span class="text-th-faint font-normal">· ${g.list.length}</span>
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                ${g.list.map(orderCard).join('')}
+              </div>
+            </section>`).join('');
+        document.querySelectorAll('[data-open]').forEach((el) =>
+          el.addEventListener('click', () => openDetail(el.getAttribute('data-open'))));
+      }
+
+      // ── Quote composer ────────────────────────────────────────────────────
+      const priceOf = (lang, slug, size) => {
+        const p = PRICING[lang]?.packages[slug];
+        if (!p) return null;
+        if (size && p.size_pricing && p.size_pricing[size] != null) return p.size_pricing[size];
+        return p.price_eur; // null = quote-only
+      };
+
+      function quoteState(o) {
+        return {
+          items: [{ slug: o.service_slug || 'single-stage', size: o.size || '' }],
+          travel: true,
+          surcharge: false,
+          surchargeAmount: 60,
+          override: '',
+          overrideReason: '',
+        };
+      }
+      let q = null; // active composer state
+      let current = null; // active order
+
+      function quoteTotal(o) {
+        if (q.override !== '' && Number.isFinite(Number(q.override))) return Number(q.override);
+        let total = 0;
+        for (const it of q.items) {
+          const v = priceOf(o.lang, it.slug, it.size);
+          if (v != null) total += v;
+        }
+        const fee = AREAS[o.area_slug]?.fee || 0;
+        if (q.travel && fee > 0) total += fee;
+        if (q.surcharge) total += Number(q.surchargeAmount) || 0;
+        return total;
+      }
+
+      function quoteMessage(o) {
+        const L = PRICING[o.lang] ? o.lang : 'es';
+        const T = PRICING[L].quote;
+        const name = o.client_name ? ' ' + o.client_name.split(' ')[0] : '';
+        const lines = [T.quote_greeting.replace('{name}', name), ''];
+        for (const it of q.items) {
+          const p = PRICING[L].packages[it.slug];
+          if (!p) continue;
+          const v = priceOf(L, it.slug, it.size);
+          const label = p.name + (it.size && PRICING[L].sizes[it.size] ? ` (${PRICING[L].sizes[it.size]})` : '');
+          if (v != null) lines.push(T.quote_line.replace('{item}', label).replace('{price}', v));
+        }
+        const fee = AREAS[o.area_slug]?.fee || 0;
+        if (q.travel) lines.push(fee > 0
+          ? T.quote_travel.replace('{area}', AREAS[o.area_slug]?.name || '').replace('{fee}', fee)
+          : T.quote_travel_included);
+        if (q.surcharge) lines.push(T.quote_line.replace('{item}', 'Pintura sensible').replace('{price}', Number(q.surchargeAmount) || 0));
+        lines.push('', T.quote_total.replace('{total}', quoteTotal(o)), T.quote_validity,
+          T.quote_link.replace('{url}', `${SITE_URL}/${L}/pricing`));
+        return lines.join('\n');
+      }
+
+      function composerHtml(o) {
+        const itemRow = (it, i) => `
+          <div class="flex gap-2 items-center">
+            <select data-qi="${i}" data-k="slug" class="adm-input flex-1">
+              ${Object.entries(PRICING.es.packages).map(([slug, p]) =>
+                `<option value="${slug}" ${slug === it.slug ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}
+            </select>
+            <select data-qi="${i}" data-k="size" class="adm-input w-36">
+              <option value="">tamaño…</option>
+              ${Object.entries(PRICING.es.sizes).map(([id, n]) =>
+                `<option value="${id}" ${id === it.size ? 'selected' : ''}>${esc(n)}</option>`).join('')}
+            </select>
+            <span class="text-sm text-brand-accent font-semibold w-16 text-right">${priceOf(o.lang, it.slug, it.size) ?? '—'}€</span>
+            ${q.items.length > 1 ? `<button data-qdel="${i}" class="text-th-faint hover:text-red-400">✕</button>` : ''}
+          </div>`;
+        const fee = AREAS[o.area_slug]?.fee ?? null;
+        return `
+          <div class="card p-5 mt-4">
+            <h3 class="font-display font-bold text-th-heading mb-3">Presupuesto</h3>
+            <div class="space-y-2">${q.items.map(itemRow).join('')}</div>
+            <button id="q-add" class="text-sm text-brand-accent hover:underline mt-2">+ añadir línea</button>
+            <div class="flex flex-wrap gap-4 mt-3 text-sm">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input id="q-travel" type="checkbox" ${q.travel ? 'checked' : ''} class="accent-brand-accent" />
+                Desplazamiento ${fee == null ? '(sin zona)' : fee > 0 ? '+' + fee + '€ (' + esc(AREAS[o.area_slug].name) + ')' : 'incluido'}
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input id="q-sur" type="checkbox" ${q.surcharge ? 'checked' : ''} class="accent-brand-accent" />
+                Pintura sensible
+                <input id="q-sur-amt" type="number" value="${q.surchargeAmount}" min="60" max="100" step="10" class="adm-input w-20 py-1" ${q.surcharge ? '' : 'disabled'} />€ (60–100)
+              </label>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 mt-3 text-sm">
+              <label class="text-th-muted">Override manual:
+                <input id="q-override" type="number" value="${esc(q.override)}" placeholder="—" class="adm-input w-24 py-1 ml-1" />€
+              </label>
+              <input id="q-override-reason" type="text" value="${esc(q.overrideReason)}" placeholder="motivo del override" class="adm-input flex-1 py-1 ${q.override === '' ? 'hidden' : ''}" />
+            </div>
+            <div class="text-right font-display font-bold text-brand-accent text-2xl mt-3">Total: <span id="q-total">${quoteTotal(o)}</span>€</div>
+            <textarea id="q-msg" rows="9" class="adm-input mt-3 font-mono text-xs">${esc(quoteMessage(o))}</textarea>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button id="q-copy" class="btn-secondary text-sm px-4 py-2">Copiar</button>
+              <a id="q-wa" class="btn-whatsapp text-sm px-4 py-2" target="_blank" rel="noopener">Abrir en WhatsApp</a>
+              <button id="q-save" class="btn-primary text-sm px-4 py-2 ml-auto">Guardar presupuesto${o.status === 'new' ? ' → Presupuestado' : ''}</button>
+            </div>
+          </div>`;
+      }
+
+      function bindComposer(o) {
+        document.querySelectorAll('[data-qi]').forEach((el) =>
+          el.addEventListener('change', () => {
+            q.items[+el.dataset.qi][el.dataset.k] = el.value;
+            refreshDetail();
+          }));
+        document.querySelectorAll('[data-qdel]').forEach((el) =>
+          el.addEventListener('click', () => { q.items.splice(+el.dataset.qdel, 1); refreshDetail(); }));
+        $('q-add')?.addEventListener('click', () => {
+          q.items.push({ slug: 'headlight-restoration', size: q.items[0]?.size || '' });
+          refreshDetail();
+        });
+        $('q-travel')?.addEventListener('change', (e) => { q.travel = e.target.checked; refreshDetail(); });
+        $('q-sur')?.addEventListener('change', (e) => { q.surcharge = e.target.checked; refreshDetail(); });
+        $('q-sur-amt')?.addEventListener('change', (e) => { q.surchargeAmount = e.target.value; refreshDetail(); });
+        $('q-override')?.addEventListener('change', (e) => { q.override = e.target.value; refreshDetail(); });
+        $('q-override-reason')?.addEventListener('change', (e) => { q.overrideReason = e.target.value; });
+        $('q-copy')?.addEventListener('click', () => {
+          navigator.clipboard.writeText($('q-msg').value);
+          $('q-copy').textContent = '✓ Copiado';
+          setTimeout(() => { if ($('q-copy')) $('q-copy').textContent = 'Copiar'; }, 1500);
+        });
+        const waHref = () => 'https://wa.me/' + String(current.phone || '').replace(/\D/g, '') + '?text=' + encodeURIComponent($('q-msg').value);
+        $('q-wa')?.addEventListener('click', (e) => { e.target.href = waHref(); });
+        if ($('q-wa')) $('q-wa').href = waHref();
+        $('q-save')?.addEventListener('click', async () => {
+          if (q.override !== '' && !q.overrideReason.trim()) { alert('Indica el motivo del override.'); return; }
+          const body = {
+            quote_eur: quoteTotal(current),
+            quote_breakdown: {
+              items: q.items.map((it) => ({ ...it, price: priceOf(current.lang, it.slug, it.size) })),
+              travel: q.travel ? (AREAS[current.area_slug]?.fee || 0) : null,
+              sensitive_paint: q.surcharge ? Number(q.surchargeAmount) || 0 : null,
+              ...(q.override !== '' ? { custom_override: Number(q.override), override_reason: q.overrideReason.trim() } : {}),
+            },
+          };
+          if (current.status === 'new') body.status = 'quoted';
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
+          if (d.ok) { current = d.order; q = null; await loadOrders(); openDetail(current.id); }
+          else alert('Error: ' + (d.reason || ''));
+        });
+      }
+
+      // ── Detail ────────────────────────────────────────────────────────────
+      async function openDetail(id) {
+        const d = await api('/api/orders/' + id);
+        if (!d.ok) { alert('Pedido no encontrado'); return; }
+        current = d.order;
+        current._events = d.events || [];
+        if (!q) q = quoteState(current);
+        renderDetail();
+        $('detail').classList.remove('hidden');
+      }
+      function refreshDetail() { if (current) renderDetail(); }
+
+      function photoGroup(o, kind) {
+        const keys = (o.photos || []).filter((k) => k.includes('/' + kind + '/'));
+        if (!keys.length) return '';
+        return `<div><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${kind}</p>
+          <div class="grid grid-cols-3 gap-2">${keys.map((k) =>
+            `<a href="/api/photo/${k}" target="_blank"><img src="/api/photo/${k}" loading="lazy" class="rounded-lg w-full h-24 object-cover border border-th-border/10" /></a>`).join('')}
+          </div></div>`;
+      }
+
+      function renderDetail() {
+        const o = current;
+        const digits = String(o.phone || '').replace(/\D/g, '');
+        const p = partners.find((x) => x.id === o.partner_id);
+        const activeP = partners.filter((x) => x.active);
+        const match = (x) =>
+          (!o.service_slug || !x.skills?.length || x.skills.includes(o.service_slug)) &&
+          (!o.area_slug || !x.zones?.length || x.zones.includes(o.area_slug));
+        const attr = o.attr || {};
+        const refToken = localStorage.getItem('rl_ref_token');
+        const showComposer = ['new', 'quoted', 'booked'].includes(o.status);
+
+        $('detail-body').innerHTML = `
+          <div class="flex items-center justify-between mb-4">
+            <button id="d-back" class="btn-secondary text-sm px-4 py-2">← Volver</button>
+            <span class="adm-badge text-sm" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>
+          </div>
+
+          <div class="card p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-3">
+              <h2 class="font-display font-bold text-th-heading text-2xl">${esc(o.code)}</h2>
+              <span class="text-th-faint text-xs">${new Date(o.created_at).toLocaleString('es-ES')} · ${CHANNEL_ES[o.channel]}</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
+              <div><span class="text-th-faint">Servicio:</span> ${esc(o.service_slug || '—')}${o.size ? ' · ' + esc(PRICING.es.sizes[o.size] || o.size) : ''}</div>
+              <div><span class="text-th-faint">Zona:</span> ${esc(AREAS[o.area_slug]?.name || o.area_slug || '—')}</div>
+              <div><span class="text-th-faint">Cliente:</span> ${esc(o.client_name || '—')}</div>
+              <div class="flex gap-3">
+                <span><span class="text-th-faint">Tel:</span> ${esc(o.phone || '—')}</span>
+                ${digits ? `<a class="text-brand-accent hover:underline" href="tel:+${digits}">llamar</a>
+                <a class="text-brand-whatsapp hover:underline" target="_blank" href="https://wa.me/${digits}">wa.me</a>` : ''}
+              </div>
+              ${o.quote_eur ? `<div><span class="text-th-faint">Presupuesto:</span> <b class="text-brand-accent">${o.quote_eur}€</b></div>` : ''}
+              ${o.paid_eur ? `<div><span class="text-th-faint">Pagado:</span> <b class="text-green-400">${o.paid_eur}€</b></div>` : ''}
+              ${o.scheduled_at ? `<div><span class="text-th-faint">Agendado:</span> ${new Date(o.scheduled_at).toLocaleString('es-ES')}</div>` : ''}
+              ${o.rework ? `<div><span class="text-th-faint">Reworks:</span> ${o.rework}</div>` : ''}
+            </div>
+
+            ${o.ref_code || attr.first ? `
+            <div class="mt-3 pt-3 border-t border-th-border/10 text-xs text-th-muted">
+              <span class="text-th-faint uppercase tracking-widest">Atribución</span> ·
+              ${o.ref_code ? `ref <b>${esc(o.ref_code)}</b> · ` : ''}
+              fuente: ${esc(attr.first?.utm_source || '(directo)')}
+              ${attr.first?.utm_campaign ? ` · campaña: ${esc(attr.first.utm_campaign)}` : ''}
+              ${attr.first?.landing ? ` · landing: ${esc(attr.first.landing)}` : ''}
+              ${o.ref_code && refToken ? ` · <a class="text-brand-accent hover:underline" target="_blank" href="/api/ref?code=${esc(o.ref_code)}&token=${encodeURIComponent(refToken)}">historial ref</a>` : ''}
+            </div>` : ''}
+          </div>
+
+          ${(o.photos || []).length ? `<div class="card p-5 mt-4 space-y-3">${photoGroup(o, 'intake')}${photoGroup(o, 'before')}${photoGroup(o, 'after')}</div>` : ''}
+
+          ${showComposer ? composerHtml(o) : ''}
+
+          <div class="card p-5 mt-4">
+            <h3 class="font-display font-bold text-th-heading mb-3">Acciones</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              ${(TRANSITIONS[o.status] || []).map((s) =>
+                `<button data-st="${s}" class="btn-secondary text-sm px-4 py-2" style="color:${STATUS_COLOR[s]}">→ ${STATUS_ES[s]}</button>`).join('') || '<span class="text-th-faint text-sm">Estado final.</span>'}
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-th-faint block mb-1">Partner ${p ? '(actual: ' + esc(p.name) + ')' : ''}</label>
+                <div class="flex gap-2">
+                  <select id="d-partner" class="adm-input">
+                    <option value="">—</option>
+                    ${activeP.map((x) => `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${match(x) ? '' : ' ⚠ fuera de skill/zona'}</option>`).join('')}
+                  </select>
+                  <button id="d-assign" class="btn-secondary text-sm px-3">${o.status === 'booked' ? 'Asignar' : 'Guardar'}</button>
+                </div>
+              </div>
+              <div>
+                <label class="text-xs text-th-faint block mb-1">Agendar</label>
+                <div class="flex gap-2">
+                  <input id="d-sched" type="datetime-local" value="${o.scheduled_at ? o.scheduled_at.slice(0, 16) : ''}" class="adm-input" />
+                  <button id="d-sched-save" class="btn-secondary text-sm px-3">Guardar</button>
+                </div>
+              </div>
+            </div>
+            <label class="text-xs text-th-faint block mt-3 mb-1">Notas</label>
+            <div class="flex gap-2">
+              <textarea id="d-notes" rows="2" class="adm-input">${esc(o.notes || '')}</textarea>
+              <button id="d-notes-save" class="btn-secondary text-sm px-3 self-start">Guardar</button>
+            </div>
+          </div>
+
+          <div class="card p-5 mt-4 mb-10">
+            <h3 class="font-display font-bold text-th-heading mb-3">Historial</h3>
+            <ul class="space-y-1.5 text-xs text-th-muted">
+              ${current._events.map((e) => `<li><span class="text-th-faint">${new Date(e.ts).toLocaleString('es-ES')}</span> · <b>${esc(e.type)}</b>${e.data ? ' · ' + esc(JSON.stringify(e.data)) : ''}</li>`).join('')}
+            </ul>
+          </div>`;
+
+        $('d-back').addEventListener('click', () => { $('detail').classList.add('hidden'); q = null; current = null; loadOrders(); });
+        document.querySelectorAll('[data-st]').forEach((el) =>
+          el.addEventListener('click', async () => {
+            const to = el.getAttribute('data-st');
+            if (to === 'cancelled' && !confirm('¿Cancelar el pedido ' + current.code + '?')) return;
+            const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ status: to }) });
+            if (d.ok) openDetail(current.id); else alert('Transición no permitida: ' + (d.reason || ''));
+          }));
+        $('d-assign').addEventListener('click', async () => {
+          const body = { partner_id: $('d-partner').value || null };
+          if ($('d-partner').value && current.status === 'booked') body.status = 'assigned';
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
+          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
+        });
+        $('d-sched-save').addEventListener('click', async () => {
+          const v = $('d-sched').value;
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ scheduled_at: v ? new Date(v).toISOString() : null }) });
+          if (d.ok) openDetail(current.id);
+        });
+        $('d-notes-save').addEventListener('click', async () => {
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ notes: $('d-notes').value }) });
+          if (d.ok) openDetail(current.id);
+        });
+        if (showComposer) bindComposer(o);
+      }
+
+      // ── Modals ────────────────────────────────────────────────────────────
+      document.querySelectorAll('[data-close]').forEach((el) =>
+        el.addEventListener('click', () => el.closest('.fixed').classList.add('hidden')));
+
+      $('btn-new').addEventListener('click', () => $('modal-new').classList.remove('hidden'));
+      $('btn-partner').addEventListener('click', () => $('modal-partner').classList.remove('hidden'));
+      $('btn-refresh').addEventListener('click', () => { loadPartners(); loadOrders(); });
+
+      // populate size/area selects in the new-order modal
+      $('n-size').innerHTML = '<option value="">Tamaño…</option>' +
+        Object.entries(PRICING.es.sizes).map(([id, n]) => `<option value="${id}">${esc(n)}</option>`).join('');
+      $('n-area').innerHTML = '<option value="">Zona…</option>' +
+        Object.entries(AREAS).map(([slug, a]) => `<option value="${slug}">${esc(a.name)}</option>`).join('');
+
+      $('n-save').addEventListener('click', async () => {
+        $('n-error').classList.add('hidden');
+        const d = await api('/api/orders', {
+          method: 'POST',
+          body: JSON.stringify({
+            phone: $('n-phone').value.trim(),
+            client_name: $('n-name').value.trim(),
+            service_slug: $('n-service').value || undefined,
+            size: $('n-size').value || undefined,
+            area_slug: $('n-area').value || undefined,
+            channel: $('n-channel').value,
+            lang: $('n-lang').value,
+            notes: $('n-notes').value.trim() || undefined,
+            website: '',
+          }),
+        });
+        if (!d.ok) {
+          $('n-error').textContent = 'Error: ' + (d.reason || '');
+          $('n-error').classList.remove('hidden');
+          return;
+        }
+        $('modal-new').classList.add('hidden');
+        ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area'].forEach((id) => { $(id).value = ''; });
+        $('n-channel').value = 'whatsapp';
+        $('n-lang').value = 'es';
+        await loadOrders();
+        openDetail(d.id);
+      });
+
+      $('p-save').addEventListener('click', async () => {
+        $('p-error').classList.add('hidden');
+        const csv = (v) => v.split(',').map((s) => s.trim()).filter(Boolean);
+        const d = await api('/api/partners', {
+          method: 'POST',
+          body: JSON.stringify({
+            name: $('p-name').value.trim(),
+            phone: $('p-phone').value.trim(),
+            zones: csv($('p-zones').value),
+            skills: csv($('p-skills').value),
+            payout_pct: Number($('p-payout').value) || 70,
+          }),
+        });
+        if (!d.ok) {
+          $('p-error').textContent = 'Error: ' + (d.reason || '');
+          $('p-error').classList.remove('hidden');
+          return;
+        }
+        $('modal-partner').classList.add('hidden');
+        $('p-name').value = ''; $('p-phone').value = '';
+        loadPartners();
+      });
+
+      // ── Init ──────────────────────────────────────────────────────────────
+      $('f-status').innerHTML = '<option value="">Estado: todos</option>' +
+        STATUSES.map((s) => `<option value="${s}">${STATUS_ES[s]}</option>`).join('');
+      ['f-status', 'f-channel', 'f-partner', 'f-month'].forEach((id) =>
+        $(id).addEventListener('change', loadOrders));
+
+      token();
+      loadPartners().then(loadOrders);
+    </script>
+  </body>
+</html>

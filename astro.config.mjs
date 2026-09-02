@@ -10,8 +10,13 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      // Exclude the root redirect page (/) — it is a redirect, not real content.
-      filter: (page) => page !== site && page !== `${site}/`,
+      // Exclude the root redirect page (/) — it is a redirect, not real
+      // content — and the internal admin/partner surfaces (RL-420/430).
+      filter: (page) =>
+        page !== site &&
+        page !== `${site}/` &&
+        !page.startsWith(`${site}/admin`) &&
+        !page.startsWith(`${site}/p/`),
     }),
   ],
   output: 'static',

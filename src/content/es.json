@@ -968,7 +968,14 @@
     "estimator_line_addon": "• Me interesa añadir: {addon} — {addonPrice}",
     "estimator_outro": "¿Me confirmáis precio y un hueco esta semana? Os mando ahora dos fotos del coche.",
     "estimator_unsure": "¡Hola restoreLab! Vengo del estimador de la web y no tengo claro qué necesita mi coche. Os mando ahora dos fotos — una del coche entero y otra del defecto que más se nota — para que me digáis qué paquete me toca y el precio.",
-    "intake_success": "¡Hola restoreLab! Acabo de enviar una solicitud con fotos desde la web. ¿Me confirmas el presupuesto?\n\n#pedido {code}"
+    "intake_success": "¡Hola restoreLab! Acabo de enviar una solicitud con fotos desde la web. ¿Me confirmas el presupuesto?\n\n#pedido {code}",
+    "quote_greeting": "¡Hola{name}! Soy Mike de restoreLab. Tu presupuesto:",
+    "quote_line": "• {item}: {price}€",
+    "quote_travel": "• Desplazamiento ({area}): {fee}€",
+    "quote_travel_included": "• Desplazamiento: incluido",
+    "quote_total": "Total: {total}€ (IVA incluido)",
+    "quote_validity": "Válido 7 días. Precio cerrado — sin sorpresas.",
+    "quote_link": "Precios completos: {url}"
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",

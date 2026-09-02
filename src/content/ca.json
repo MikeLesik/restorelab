@@ -968,7 +968,14 @@
     "estimator_line_addon": "• M'interessa afegir: {addon} — {addonPrice}",
     "estimator_outro": "Em confirmeu el preu i un forat aquesta setmana? Ara us envio dues fotos del cotxe.",
     "estimator_unsure": "Hola restoreLab! Vinc de l'estimador del web i no tinc clar què necessita el meu cotxe. Ara us envio dues fotos — una del cotxe sencer i una altra del defecte que més es nota — perquè em digueu quin paquet em toca i el preu.",
-    "intake_success": "Hola restoreLab! Acabo d'enviar una sol·licitud amb fotos des del web. Em confirmes el pressupost?\n\n#pedido {code}"
+    "intake_success": "Hola restoreLab! Acabo d'enviar una sol·licitud amb fotos des del web. Em confirmes el pressupost?\n\n#pedido {code}",
+    "quote_greeting": "Hola{name}! Soc en Mike de restoreLab. El teu pressupost:",
+    "quote_line": "• {item}: {price}€",
+    "quote_travel": "• Desplaçament ({area}): {fee}€",
+    "quote_travel_included": "• Desplaçament: inclòs",
+    "quote_total": "Total: {total}€ (IVA inclòs)",
+    "quote_validity": "Vàlid 7 dies. Preu tancat — sense sorpreses.",
+    "quote_link": "Preus complets: {url}"
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",

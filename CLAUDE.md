@@ -36,6 +36,7 @@ src/
   layouts/BaseLayout.astro          — <html>, <head>, SEO, hreflang, JSON-LD, tracking, cookie consent, theme init
   pages/
     index.astro                     — root redirect / client fallback → /es
+    admin.astro                     — Orders OS admin: pipeline + quote composer (ES-only, noindex, no BaseLayout/tracking; x-admin-token from localStorage)
     [lang]/
       index.astro                   — homepage
       about.astro                   — about page
@@ -88,7 +89,8 @@ functions/
     schema.ts                       — Orders schema statements (mirror of migrations/0001_init.sql)
   api/capi.ts                       — Meta Conversions API forwarder (inert until env vars set)
   api/ref.ts                        — WhatsApp ref-code attribution log (KV REF_LOG; inert until bound)
-  api/orders/index.ts               — POST public intake (+admin manual entry) / GET list (admin)
+  api/orders/index.ts               — POST public intake (+admin manual entry) / GET list (admin; includes status_ts)
+  api/partners/index.ts             — GET list / POST create (admin; full CRUD lands with RL-430)
   api/orders/[id].ts                — GET detail+timeline / PATCH fields+status (admin; state machine)
   api/orders/[id]/photos.ts         — POST photo upload (intake token / job token / admin)
   api/photo/[[key]].ts              — GET photo stream from R2 (unguessable keys)
@@ -199,6 +201,7 @@ npm run gen:llms   # regenerate public/llms.txt
 - **Photos**: raw-bytes POST, jpeg/png/webp/heic ≤6MB, per-kind limits (intake 6 / before 8 / after 8), R2 keys `orders/<id>/<kind>/<rand128>.<ext>` — the key IS the capability; `/api/photo/<key>` streams, no listing. Intake uploads use the `intake_token` from order creation; before/after use the RL-430 job token (sha256 vs `job_token_hash`).
 - Public intake: honeypot field `website`, per-IP D1 rate limit (5/h, hashed IPs), same-origin only, order code `RL-O-XXXX`.
 - Schema changes: edit BOTH `migrations/0001_init.sql` and `functions/_lib/schema.ts` (mirror for `/api/admin/migrate`).
+- **State machine source of truth**: `src/lib/orderPipeline.ts` — imported by the Functions AND `/admin`, so buttons and API can never disagree. Admin/partner surfaces are **ES-only by design**; they are `noindex` (meta + `X-Robots-Tag` in `_headers`), excluded from the sitemap (astro.config filter on `/admin` + `/p/`), and never linked from public pages. The quote composer computes every number from the pricing JSON (RL-401); a manual price requires the explicit override field + reason, recorded in `quote_breakdown`. Quote WhatsApp copy lives in `wa_messages.quote_*` ×3 langs (message renders in the ORDER's lang).
 
 ## Security
 - CSP + HSTS (with preload) in `public/_headers`. CSP whitelists: self, GTM, Clarity, Meta Pixel.
