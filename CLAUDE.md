@@ -91,6 +91,8 @@ functions/
   api/ref.ts                        — WhatsApp ref-code attribution log (KV REF_LOG; inert until bound)
   api/orders/index.ts               — POST public intake (+admin manual entry) / GET list (admin; includes status_ts)
   api/partners/index.ts             — GET list / POST create (admin; full CRUD lands with RL-430)
+  api/stripe/create-link.ts         — POST Checkout link, card+Bizum, amount computed server-side (admin; inert w/o STRIPE_SECRET_KEY)
+  api/stripe/webhook.ts             — Stripe webhook, HMAC-verified, accumulates paid_eur (inert w/o STRIPE_WEBHOOK_SECRET)
   api/orders/[id].ts                — GET detail+timeline / PATCH fields+status (admin; state machine)
   api/orders/[id]/photos.ts         — POST photo upload (intake token / job token / admin)
   api/photo/[[key]].ts              — GET photo stream from R2 (unguessable keys)
@@ -201,6 +203,7 @@ npm run gen:llms   # regenerate public/llms.txt
 - **Photos**: raw-bytes POST, jpeg/png/webp/heic ≤6MB, per-kind limits (intake 6 / before 8 / after 8), R2 keys `orders/<id>/<kind>/<rand128>.<ext>` — the key IS the capability; `/api/photo/<key>` streams, no listing. Intake uploads use the `intake_token` from order creation; before/after use the RL-430 job token (sha256 vs `job_token_hash`).
 - Public intake: honeypot field `website`, per-IP D1 rate limit (5/h, hashed IPs), same-origin only, order code `RL-O-XXXX`.
 - Schema changes: edit BOTH `migrations/0001_init.sql` and `functions/_lib/schema.ts` (mirror for `/api/admin/migrate`).
+- **Payments (RL-440)**: Stripe via raw REST (no SDK). Amounts are ALWAYS computed server-side from `quote_eur` (deposit = 30%, rest = quote − paid); link creation advances to `awaiting_payment` only when legal from the current status; the webhook accumulates `paid_eur` across deposit+rest, is idempotent by session id, and moves to `paid` only when covered AND legal. Manual payments go through the admin "Marcar pagado" (method recorded via PATCH `event_note`). Env: `STRIPE_SECRET_KEY` (restricted key), `STRIPE_WEBHOOK_SECRET`; setup in `docs/setup-stripe.md`. `STRIPE_API_BASE` exists only as a test hook.
 - **State machine source of truth**: `src/lib/orderPipeline.ts` — imported by the Functions AND `/admin`, so buttons and API can never disagree. Admin/partner surfaces are **ES-only by design**; they are `noindex` (meta + `X-Robots-Tag` in `_headers`), excluded from the sitemap (astro.config filter on `/admin` + `/p/`), and never linked from public pages. The quote composer computes every number from the pricing JSON (RL-401); a manual price requires the explicit override field + reason, recorded in `quote_breakdown`. Quote WhatsApp copy lives in `wa_messages.quote_*` ×3 langs (message renders in the ORDER's lang).
 
 ## Security

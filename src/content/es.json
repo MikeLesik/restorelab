@@ -975,7 +975,8 @@
     "quote_travel_included": "• Desplazamiento: incluido",
     "quote_total": "Total: {total}€ (IVA incluido)",
     "quote_validity": "Válido 7 días. Precio cerrado — sin sorpresas.",
-    "quote_link": "Precios completos: {url}"
+    "quote_link": "Precios completos: {url}",
+    "payment_link": "Enlace de pago seguro (tarjeta o Bizum): {link}"
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",

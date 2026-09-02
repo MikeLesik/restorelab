@@ -30,6 +30,7 @@ for (const [lang, t] of Object.entries(CONTENT)) {
     quote: Object.fromEntries(
       Object.entries(t.wa_messages).filter(([k]) => k.startsWith('quote_'))
     ),
+    payment_link: t.wa_messages.payment_link,
   };
 }
 const AREAS = Object.fromEntries(
@@ -441,6 +442,83 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         });
       }
 
+      // ── Payments (RL-440) ─────────────────────────────────────────────────
+      function paymentHtml(o) {
+        const paid = Number(o.paid_eur) || 0;
+        const rest = Math.round((o.quote_eur - paid) * 100) / 100;
+        const L = PRICING[o.lang] ? o.lang : 'es';
+        return `
+          <div class="card p-5 mt-4">
+            <h3 class="font-display font-bold text-th-heading mb-1">Pagos</h3>
+            <p class="text-sm text-th-muted mb-3">
+              Presupuesto <b class="text-brand-accent">${o.quote_eur}€</b>
+              ${paid ? ` · pagado <b class="text-green-400">${paid}€</b> · resto <b>${rest}€</b>` : ''}
+            </p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <button data-pay="full" class="btn-secondary text-sm px-4 py-2">Enlace 100%</button>
+              <button data-pay="deposit" class="btn-secondary text-sm px-4 py-2">Señal 30%</button>
+              ${paid > 0 && rest > 0 ? '<button data-pay="rest" class="btn-secondary text-sm px-4 py-2">Enlace resto</button>' : ''}
+            </div>
+            <p id="pay-status" class="hidden text-sm mb-3"></p>
+            ${o.payment_link ? `
+              <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
+                <a href="${esc(o.payment_link)}" target="_blank" rel="noopener" class="text-brand-accent hover:underline truncate max-w-[16rem]">${esc(o.payment_link)}</a>
+                <button id="pay-copy" class="btn-secondary text-xs px-3 py-1.5">Copiar enlace</button>
+                <a class="btn-whatsapp text-xs px-3 py-1.5" target="_blank" rel="noopener"
+                   href="https://wa.me/${String(o.phone || '').replace(/\D/g, '')}?text=${encodeURIComponent(PRICING[L].payment_link.replace('{link}', o.payment_link))}">Enviar por WhatsApp</a>
+              </div>` : ''}
+            <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-th-border/10 text-sm">
+              <span class="text-th-muted">Marcar pagado:</span>
+              <input id="pay-amount" type="number" value="${rest > 0 ? rest : ''}" min="0" step="0.01" class="adm-input w-28 py-1.5" />€
+              <select id="pay-method" class="adm-input w-auto py-1.5">
+                <option value="efectivo">efectivo</option>
+                <option value="bizum personal">Bizum personal</option>
+                <option value="otro">otro</option>
+              </select>
+              <button id="pay-manual" class="btn-secondary text-sm px-4 py-2">Registrar</button>
+            </div>
+          </div>`;
+      }
+
+      function bindPayments() {
+        const say = (msg, ok) => {
+          const el = $('pay-status');
+          if (!el) return;
+          el.textContent = msg;
+          el.className = 'text-sm mb-3 ' + (ok ? 'text-green-400' : 'text-red-400');
+        };
+        document.querySelectorAll('[data-pay]').forEach((el) =>
+          el.addEventListener('click', async () => {
+            el.disabled = true;
+            const d = await api('/api/stripe/create-link', {
+              method: 'POST',
+              body: JSON.stringify({ order_id: current.id, kind: el.dataset.pay }),
+            });
+            el.disabled = false;
+            if (d.ok) { say('Enlace creado: ' + d.amount_eur + '€', true); openDetail(current.id); }
+            else say('Stripe: ' + (d.reason || '') + (d.detail ? ' — ' + d.detail : ''), false);
+          }));
+        $('pay-copy')?.addEventListener('click', () => {
+          navigator.clipboard.writeText(current.payment_link || '');
+          $('pay-copy').textContent = '✓';
+          setTimeout(() => { if ($('pay-copy')) $('pay-copy').textContent = 'Copiar enlace'; }, 1500);
+        });
+        $('pay-manual')?.addEventListener('click', async () => {
+          const amount = Number($('pay-amount').value);
+          if (!(amount > 0)) { say('Importe inválido', false); return; }
+          const newPaid = Math.round(((Number(current.paid_eur) || 0) + amount) * 100) / 100;
+          const covered = newPaid >= (Number(current.quote_eur) || 0) - 0.01;
+          const body = {
+            paid_eur: newPaid,
+            paid_at: new Date().toISOString(),
+            event_note: 'pago manual (' + $('pay-method').value + '): ' + amount + '€',
+          };
+          if (covered && (TRANSITIONS[current.status] || []).includes('paid')) body.status = 'paid';
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
+          if (d.ok) openDetail(current.id); else say('Error: ' + (d.reason || ''), false);
+        });
+      }
+
       // ── Detail ────────────────────────────────────────────────────────────
       async function openDetail(id) {
         const d = await api('/api/orders/' + id);
@@ -515,6 +593,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
           ${showComposer ? composerHtml(o) : ''}
 
+          ${o.quote_eur ? paymentHtml(o) : ''}
+
           <div class="card p-5 mt-4">
             <h3 class="font-display font-bold text-th-heading mb-3">Acciones</h3>
             <div class="flex flex-wrap gap-2 mb-4">
@@ -578,6 +658,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (d.ok) openDetail(current.id);
         });
         if (showComposer) bindComposer(o);
+        if (o.quote_eur) bindPayments();
       }
 
       // ── Modals ────────────────────────────────────────────────────────────

@@ -137,6 +137,12 @@ export async function onRequestPatch(context: {
     if (field !== 'status') changed[field] = value;
   }
 
+  // Free-text annotation that lands ONLY in the audit event (e.g. the manual
+  // "marcar pagado" method: efectivo / Bizum personal) — never a column.
+  if (typeof b.event_note === 'string' && b.event_note.trim()) {
+    changed.note = b.event_note.trim().slice(0, 300);
+  }
+
   if (!sets.length) return json({ ok: false, reason: 'nothing_to_update' }, 400);
 
   await db.prepare(`UPDATE orders SET ${sets.join(', ')} WHERE id = ?`).bind(...binds, orderId).run();
