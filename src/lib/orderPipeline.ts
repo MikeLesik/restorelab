@@ -10,7 +10,9 @@ export const STATUSES = [
 export type OrderStatus = (typeof STATUSES)[number];
 
 /** Legal transitions. booked→in_progress covers jobs Mike does himself
- *  (no partner assignment); qc→in_progress is the rework path. */
+ *  (no partner assignment); qc→in_progress is the rework path;
+ *  paid→cancelled is the refund path (also the only way a paid test
+ *  order can ever reach the cancelled-only DELETE). */
 export const TRANSITIONS: Record<OrderStatus, OrderStatus[]> = {
   new: ['quoted', 'cancelled'],
   quoted: ['booked', 'cancelled'],
@@ -19,7 +21,7 @@ export const TRANSITIONS: Record<OrderStatus, OrderStatus[]> = {
   in_progress: ['qc', 'cancelled'],
   qc: ['awaiting_payment', 'in_progress'],
   awaiting_payment: ['paid', 'cancelled'],
-  paid: ['done'],
+  paid: ['done', 'cancelled'],
   done: [],
   cancelled: [],
 };
