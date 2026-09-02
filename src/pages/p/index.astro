@@ -87,6 +87,14 @@ const AREA_NAMES = Object.fromEntries(
         </div>
 
         <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">¿Hace falta más trabajo?</h2>
+          <p class="text-xs text-th-muted mb-2">Si ves que el coche necesita algo más de lo previsto, descríbelo aquí. Mike lo revisa, habla con el cliente y lo añade al presupuesto. No cierres precios ni trabajos extra con el cliente directamente.</p>
+          <textarea id="j-extra" rows="2" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="p. ej. el paragolpes trasero necesita una pasada más de pulido"></textarea>
+          <button id="j-extra-send" class="btn-secondary w-full mt-2 py-2.5 text-sm">Proponer trabajo adicional a Mike</button>
+          <p id="j-extra-ok" class="hidden text-sm text-brand-whatsapp mt-2">Enviado a Mike. Te dirá cómo seguir.</p>
+        </div>
+
+        <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-2">Normas</h2>
           <ul class="space-y-1.5 text-xs text-th-muted list-disc pl-4">
             {HOUSE_RULES.map((r) => <li>{r}</li>)}
@@ -217,6 +225,24 @@ const AREA_NAMES = Object.fromEntries(
           if (d.ok) { $('j-accept-card').classList.add('hidden'); }
         } catch (e) { /* stays visible for retry */ }
         $('j-accept').disabled = false;
+      });
+
+      $('j-extra-send').addEventListener('click', async () => {
+        const text = $('j-extra').value.trim();
+        if (!text) return;
+        $('j-extra-send').disabled = true;
+        try {
+          const d = await (await fetch('/api/job/' + token, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'suggest_extra', text }),
+          })).json();
+          if (d.ok) {
+            $('j-extra').value = '';
+            $('j-extra-ok').classList.remove('hidden');
+          }
+        } catch (e) { /* retry silently */ }
+        $('j-extra-send').disabled = false;
       });
 
       $('j-done').addEventListener('click', async () => {

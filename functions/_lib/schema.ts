@@ -32,6 +32,7 @@ export const SCHEMA_STATEMENTS: string[] = [
     ref_code TEXT,
     attr TEXT,
     payment_link TEXT,
+    payment_pref TEXT,
     paid_eur REAL,
     paid_at TEXT,
     qc_status TEXT,
@@ -87,4 +88,5 @@ export const SCHEMA_ALTERS: string[] = [
   `ALTER TABLE orders ADD COLUMN payout_pct REAL`,
   `ALTER TABLE orders ADD COLUMN accepted_at TEXT`,
   `ALTER TABLE partners ADD COLUMN rc_expiry TEXT`,
+  `ALTER TABLE orders ADD COLUMN payment_pref TEXT`,
 ];

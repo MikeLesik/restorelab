@@ -68,6 +68,7 @@ const EDITABLE: Record<string, 'text' | 'number' | 'json'> = {
   scheduled_at: 'text',
   notes: 'text',
   payment_link: 'text',
+  payment_pref: 'text',
   paid_eur: 'number',
   paid_at: 'text',
   qc_status: 'text',

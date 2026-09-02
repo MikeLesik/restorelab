@@ -120,6 +120,15 @@ export async function onRequestPost(context: {
     }
     return json({ ok: true, accepted_at: order.accepted_at || new Date().toISOString() });
   }
+  // Partner proposes additional work found on site. Never a price and never
+  // a direct deal with the client — it lands as a note for Mike, who calls
+  // the client, re-quotes and adds it (design: the partner doesn't set prices).
+  if (b.action === 'suggest_extra') {
+    const text = typeof b.text === 'string' ? b.text.trim().slice(0, 800) : '';
+    if (!text) return json({ ok: false, reason: 'empty' }, 400);
+    await logEvent(db, order.id as string, 'partner_suggested_extra', { text, by: 'partner' });
+    return json({ ok: true });
+  }
   if (b.action !== 'done') return json({ ok: false, reason: 'bad_action' }, 400);
 
   const photos: string[] = JSON.parse((order.photos as string) || '[]');

@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS orders (
   ref_code TEXT,                      -- RL-XXXX visitor ref (RL-301)
   attr TEXT,                          -- JSON attribution snapshot
   payment_link TEXT,
+  payment_pref TEXT,                  -- 'online' | 'cash' — how the client pays (0003)
   paid_eur REAL,
   paid_at TEXT,
   qc_status TEXT,

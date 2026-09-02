@@ -606,6 +606,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         return `<span class="adm-sla adm-sla--ok">⏱ ${m}m</span>`;
       }
 
+      // Payment fact at a glance on the pipeline card: paid in full, partial
+      // deposit, or the client's chosen method when nothing's collected yet.
+      function payBadge(o) {
+        const paid = Number(o.paid_eur) || 0;
+        if (o.quote_eur > 0 && paid >= o.quote_eur - 0.01) return '<span class="adm-badge bg-green-500/15 text-green-400">✓ pagado</span>';
+        if (paid > 0) return `<span class="adm-badge bg-brand-gold/15 text-brand-gold">señal ${paid}€</span>`;
+        if (o.payment_pref === 'cash') return '<span class="adm-badge text-th-faint">efectivo</span>';
+        return '';
+      }
+
       function orderCard(o, showStatus) {
         const p = partners.find((x) => x.id === o.partner_id);
         const digits = digitsOf(o.phone);
@@ -625,6 +635,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
                 ${showStatus ? `<span class="adm-badge" style="${toneBadge(o.status)}">${STATUS_ES[o.status]}</span>` : ''}
                 ${o.quote_eur ? `<span class="font-display font-bold text-sm tabular-nums tracking-tight text-brand-accent">${o.quote_eur}€</span>` : ''}
+                ${payBadge(o)}
                 ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}${o.status === 'assigned' ? (o.accepted_at ? ' ✔' : ' ⏳') : ''}</span>` : ''}
                 ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
                 ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
@@ -980,19 +991,29 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const L = PRICING[o.lang] ? o.lang : 'es';
         // Deposit rule (Order Flow v2 §1.6): big bookings hold the slot with
         // a 30% senal sent together with the confirmation.
-        const senalHint = o.status === 'booked' && !paid
+        const senalHint = o.status === 'booked' && !paid && (o.payment_pref || '') !== 'cash'
           ? (o.quote_eur >= DEPOSIT_MIN
             ? `<p class="text-xs text-brand-gold mb-2">Reserva de ${DEPOSIT_MIN}€ o más — envía «Señal 30%» junto con la confirmación. Sin pagar en 24h, el hueco no se aguanta.</p>`
             : `<p class="text-xs text-th-faint mb-2">Por debajo de ${DEPOSIT_MIN}€ no hace falta señal — basta el recordatorio T-24h.</p>`)
           : '';
-        return `
-          <div class="card p-4 sm:p-5 mt-4">
-            <h3 class="font-display font-bold text-th-heading mb-1">Pagos</h3>
-            ${senalHint}
-            <p class="text-sm text-th-muted mb-3">
-              Presupuesto <b class="font-display font-bold text-base tabular-nums text-brand-accent">${o.quote_eur}€</b>
-              ${paid ? ` · pagado <b class="font-display font-bold text-base tabular-nums text-green-400">${paid}€</b> · resto <b class="font-display tabular-nums">${rest}€</b>` : ''}
-            </p>
+        const pref = o.payment_pref || '';
+        const covered = o.quote_eur > 0 && paid >= o.quote_eur - 0.01;
+        // Prominent, unmissable payment status at the top of the card.
+        const statusBanner = covered
+          ? `<div class="rounded-xl bg-green-500/15 border border-green-500/30 px-3 py-2.5 mb-3"><span class="text-green-300 font-semibold text-sm">✓ Cobrado por completo</span> <span class="font-display font-bold tabular-nums text-green-300">${paid}€</span></div>`
+          : paid > 0
+          ? `<div class="rounded-xl bg-brand-gold/15 border border-brand-gold/30 px-3 py-2.5 mb-3"><span class="text-brand-gold font-semibold text-sm">Señal recibida</span> <span class="font-display font-bold tabular-nums text-brand-gold">${paid}€</span> <span class="text-th-muted text-sm">· falta</span> <span class="font-display font-bold tabular-nums text-th-heading">${rest}€</span></div>`
+          : `<div class="rounded-xl bg-th-surface/[0.06] border border-th-border/10 px-3 py-2.5 mb-3"><span class="text-th-muted text-sm">Sin cobrar todavía · presupuesto</span> <span class="font-display font-bold tabular-nums text-brand-accent">${o.quote_eur}€</span></div>`;
+        // How the client pays — asked once, drives the rest of the card.
+        const methodRow = `
+          <label class="text-xs text-th-faint block mb-1">¿Cómo paga el cliente?</label>
+          <select id="d-paypref" class="adm-input mb-3">
+            <option value="" ${pref === '' ? 'selected' : ''}>Preguntar al cliente…</option>
+            <option value="online" ${pref === 'online' ? 'selected' : ''}>Online — tarjeta o Bizum (enlace)</option>
+            <option value="cash" ${pref === 'cash' ? 'selected' : ''}>En efectivo, al terminar</option>
+          </select>`;
+        const onlineBlock = pref === 'cash' ? '' : `
+            ${pref === '' ? '<p class="text-xs text-th-faint mb-2">Pregunta al cliente cómo prefiere pagar y márcalo arriba.</p>' : ''}
             <div class="flex flex-wrap gap-2 mb-3">
               <button data-pay="full" class="btn-secondary text-sm px-4">Enlace 100%</button>
               <button data-pay="deposit" class="btn-secondary text-sm px-4">Señal 30%</button>
@@ -1005,9 +1026,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 <button id="pay-copy" class="btn-secondary text-xs px-3 min-h-[40px]">Copiar</button>
                 <a class="btn-whatsapp text-xs px-3 min-h-[40px] flex items-center" target="_blank" rel="noopener"
                    href="https://wa.me/${digitsOf(o.phone)}?text=${encodeURIComponent(PRICING[L].payment_link.replace('{link}', o.payment_link))}">Enviar por WhatsApp</a>
-              </div>` : ''}
-            <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-th-border/10 text-sm">
-              <span class="text-th-muted">Pago manual:</span>
+              </div>` : ''}`;
+        return `
+          <div class="card p-4 sm:p-5 mt-4">
+            <h3 class="font-display font-bold text-th-heading mb-3">Pagos</h3>
+            ${statusBanner}
+            ${methodRow}
+            ${senalHint}
+            ${onlineBlock}
+            <div class="flex flex-wrap items-center gap-2 ${pref === 'cash' ? '' : 'pt-3 border-t border-th-border/10'} text-sm">
+              <span class="text-th-muted">${pref === 'cash' ? 'Registrar cobro en efectivo:' : 'Pago en mano:'}</span>
               <input id="pay-amount" type="number" inputmode="decimal" value="${rest > 0 ? rest : ''}" min="0" step="0.01" class="adm-input w-28 inline-block" />€
               <select id="pay-method" class="adm-input w-auto inline-block">
                 <option value="efectivo">efectivo</option>
@@ -1026,6 +1054,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           el.textContent = msg;
           el.className = 'text-sm mb-3 ' + (ok ? 'text-green-400' : 'text-red-400');
         };
+        $('d-paypref')?.addEventListener('change', async () => {
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ payment_pref: $('d-paypref').value || null }) });
+          if (d.ok) { toast('Método de pago guardado ✓'); openDetail(current.id, false); }
+          else toast('Error al guardar el método', false);
+        });
         document.querySelectorAll('[data-pay]').forEach((el) =>
           el.addEventListener('click', () => busy(el, async () => {
             const d = await api('/api/stripe/create-link', {
@@ -1304,6 +1337,17 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>`;
       }
 
+      function extraWorkBanner() {
+        const extras = current._events.filter((e) => e.type === 'partner_suggested_extra');
+        if (!extras.length) return '';
+        return extras.map((e) => `
+          <div class="rounded-xl border border-brand-gold/40 bg-brand-gold/10 p-3 mt-4">
+            <p class="text-sm font-semibold text-brand-gold mb-1">🔧 El partner propone trabajo adicional</p>
+            <p class="text-sm text-th-body">${esc(e.data?.text || '')}</p>
+            <p class="text-xs text-th-faint mt-1">${fmtDate(e.ts)} · llama al cliente, re-presupuesta y añádelo si acepta.</p>
+          </div>`).join('');
+      }
+
       function waFailBanner() {
         const fails = current._events.filter((e) => e.type === 'wa_send_failed');
         const oks = current._events.filter((e) => e.type === 'wa_sent');
@@ -1324,7 +1368,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
         const showComposer = ['new', 'quoted', 'booked'].includes(o.status);
         // Status-aware block order: what Mike needs next comes first.
-        const blocks = [headerHtml(o), waFailBanner()];
+        const blocks = [headerHtml(o), extraWorkBanner(), waFailBanner()];
         if (o.status === 'qc') {
           blocks.push(photoStrip(o), actionsHtml(o), o.quote_eur ? paymentHtml(o) : '');
         } else if (['awaiting_payment', 'paid'].includes(o.status)) {
