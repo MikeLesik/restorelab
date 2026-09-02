@@ -629,6 +629,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
                 ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
                 <span class="text-th-faint">${CHANNEL_ES[o.channel] || ''}</span>
+                <span class="adm-badge ${o.lang !== 'es' ? 'bg-brand-accent/20 text-brand-accent' : 'text-th-faint'}">${(o.lang || 'es').toUpperCase()}</span>
                 <span class="ml-auto">${slaPill(o)}</span>
               </div>
             </button>
@@ -1190,6 +1191,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 ${o.status === 'booked' && !o.scheduled_at ? '<p class="text-xs text-brand-gold mt-1">Sin fecha el pedido no sale en la vista de hoy.</p>' : ''}
               </div>
             </div>
+            <label class="text-xs text-th-faint block mt-3 mb-1">Idioma del cliente <span class="text-th-faint">(los mensajes automáticos salen en este idioma)</span></label>
+            <select id="d-lang" class="adm-input">
+              <option value="es" ${(o.lang || 'es') === 'es' ? 'selected' : ''}>Español</option>
+              <option value="en" ${o.lang === 'en' ? 'selected' : ''}>English</option>
+              <option value="ca" ${o.lang === 'ca' ? 'selected' : ''}>Català</option>
+            </select>
             <label class="text-xs text-th-faint block mt-3 mb-1">Dirección (día de trabajo)</label>
             <div class="flex gap-2">
               <input id="d-addr" type="text" maxlength="300" value="${esc(o.address || '')}" placeholder="calle y número, población" class="adm-input flex-1" />
@@ -1274,7 +1281,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         return `
           <div class="card p-4 sm:p-5">
             <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-              <h2 class="font-display font-bold text-th-heading text-xl">${esc(o.client_name || o.phone || o.code)}</h2>
+              <h2 class="font-display font-bold text-th-heading text-xl">${esc(o.client_name || o.phone || o.code)} <span class="adm-badge align-middle ${o.lang !== 'es' ? 'bg-brand-accent/20 text-brand-accent' : 'text-th-faint'}">${(o.lang || 'es').toUpperCase()}</span></h2>
               <span class="text-th-faint text-xs">${esc(o.code)} · ${fmtDate(o.created_at)}</span>
             </div>
             <p class="text-sm text-th-body/85">${esc([svcName(o.service_slug), o.size ? sizeName(o.size) : '', AREAS[o.area_slug]?.name || ''].filter(Boolean).join(' · ') || '—')}</p>
@@ -1379,6 +1386,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (d.ok) { toast('Partner guardado ✓'); openDetail(current.id, false); }
           else toast('Error: ' + (d.reason || ''), false);
         }));
+        $('d-lang')?.addEventListener('change', async () => {
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ lang: $('d-lang').value }) });
+          if (d.ok) { toast('Idioma: ' + $('d-lang').value.toUpperCase() + ' ✓'); openDetail(current.id, false); }
+          else toast('Error al cambiar el idioma', false);
+        });
         $('d-addr-save')?.addEventListener('click', () => busy($('d-addr-save'), async () => {
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ address: $('d-addr').value.trim() || null }) });
           if (d.ok) { toast('Dirección guardada ✓'); openDetail(current.id, false); }
