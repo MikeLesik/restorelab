@@ -14,6 +14,9 @@
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
 
+/es/socios
+  X-Robots-Tag: noindex, nofollow
+
 /en/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 

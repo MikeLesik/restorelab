@@ -1,0 +1,131 @@
+---
+// Partner recruiting page (Order Flow v2 §3) — ES-only by design (partner
+// surface, same family as /admin and /p/). noindex (meta + X-Robots-Tag in
+// _headers), excluded from the sitemap, never linked from public pages:
+// candidates arrive via direct outreach with this URL.
+// Every euro figure is COMPUTED from the pricing JSON × DEFAULT_PAYOUT_PCT —
+// nothing retyped (check-pricing guardrail).
+import '@/styles/global.css';
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { DEFAULT_PAYOUT_PCT } from '@/lib/unitEconomics';
+import es from '@/content/es.json';
+
+const pkgs = Object.fromEntries(
+  es.pricing.categories.flatMap((c: any) => c.packages).map((p: any) => [p.slug, p])
+);
+const payout = (slug: string, size: string): number => {
+  const p = pkgs[slug];
+  const base = p?.size_pricing?.[size] ?? p?.price_eur;
+  return Math.round(((Number(base) || 0) * DEFAULT_PAYOUT_PCT) / 100);
+};
+const EXAMPLES = [
+  { slug: 'headlight-restoration', size: 'sedan', hours: '~1,5 h' },
+  { slug: 'single-stage', size: 'sedan', hours: '~4 h' },
+  { slug: 'two-stage', size: 'suv', hours: '~1 día' },
+].map((e) => ({
+  name: pkgs[e.slug]?.name || e.slug,
+  size: (es.pricing.ui.size_categories || []).find((s: any) => s.id === e.size)?.name || '',
+  hours: e.hours,
+  eur: payout(e.slug, e.size),
+}));
+
+const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(es.wa_messages.socios_apply)}`;
+
+const STEPS = [
+  ['Escríbenos por WhatsApp', 'Zona, años de experiencia, productos y herramientas que usas, disponibilidad.'],
+  ['Enséñanos tu trabajo', '5–10 fotos de antes/después tuyos + un vídeo corto (60 seg) de tu equipo: máquina, pads, iluminación.'],
+  ['Documentación', 'DNI/NIE, alta de autónomo (RETA) y póliza de RC con cobertura de daños a los bienes trabajados. Sin póliza no hay primer trabajo con cliente.'],
+  ['Trabajo de prueba — pagado', `Un servicio real (faros o un panel) con Mike presente, pagado al ${DEFAULT_PAYOUT_PCT}% como cualquier otro. Valoramos técnica, seguridad y disciplina de fotos.`],
+  ['Activación', 'Firmamos el acuerdo marco, repasamos el estándar restoreLab (30 min) y empiezas. Los 3 primeros trabajos llevan control de calidad reforzado.'],
+];
+
+const OFRECEMOS = [
+  ['Clientes y precio cerrado', 'Nosotros traemos el cliente, el presupuesto y la agenda. Tú pones las manos y las herramientas.'],
+  [`${DEFAULT_PAYOUT_PCT}% del presupuesto`, 'De los porcentajes más altos del sector cuando el profesional pone herramientas y productos.'],
+  ['Pago en 48 h', 'Por Bizum o transferencia tras el cobro al cliente, trabajo a trabajo. Sin esperar a fin de mes.'],
+  ['Ficha digital por trabajo', 'Dirección, checklist, fotos y tu importe — todo en un enlace, sin apps que instalar.'],
+];
+
+const REGLAS = [
+  'Eres autónomo con tus propios clientes: cada trabajo es una oferta que puedes aceptar o rechazar libremente.',
+  'Las fotos antes/después son obligatorias — son tu protección y la condición del pago.',
+  'El cliente es de restoreLab: la comunicación y todos los cobros pasan por nosotros.',
+  'Si el control de calidad detecta algo, se corrige sin coste antes de cobrar.',
+];
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>restoreLab — Trabaja con nosotros (detailers)</title>
+    <meta name="description" content="Colaboración para detailers autónomos en el área de Barcelona." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  </head>
+  <body class="bg-brand-dark min-h-screen text-th-body">
+    <div class="max-w-2xl mx-auto px-4 py-10">
+      <p class="font-display font-bold text-th-heading text-xl mb-8">
+        restore<span class="text-brand-accent">Lab</span>
+        <span class="text-th-muted font-normal text-base">· Para detailers</span>
+      </p>
+
+      <h1 class="font-display font-bold text-th-heading text-3xl sm:text-4xl mb-3 leading-tight">
+        Trabajos de detailing listos para hacer. Tú pones las manos.
+      </h1>
+      <p class="text-th-muted mb-8">
+        restoreLab lleva corrección de pintura, cerámicos, faros y cristales a domicilio en
+        Sant Cugat y el área de Barcelona. Buscamos 1–3 detailers autónomos para cubrir la
+        demanda — con el {DEFAULT_PAYOUT_PCT}% del presupuesto y pago en 48&nbsp;h.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+        {EXAMPLES.map((e) => (
+          <div class="card p-4">
+            <p class="text-sm text-th-heading font-medium">{e.name}</p>
+            <p class="text-xs text-th-faint mb-2">{e.size} · {e.hours}</p>
+            <p class="font-display font-bold text-2xl text-brand-whatsapp tabular-nums">{e.eur}€</p>
+            <p class="text-[11px] text-th-faint">para ti</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-display font-bold text-th-heading text-xl mb-4">Cómo entrar</h2>
+      <ol class="space-y-3 mb-10">
+        {STEPS.map(([t, d], i) => (
+          <li class="card p-4 flex gap-3">
+            <span class="font-display font-bold text-brand-accent text-lg shrink-0">{i + 1}</span>
+            <span><b class="text-th-heading">{t}.</b> <span class="text-sm text-th-muted">{d}</span></span>
+          </li>
+        ))}
+      </ol>
+
+      <h2 class="font-display font-bold text-th-heading text-xl mb-4">Qué ponemos nosotros</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        {OFRECEMOS.map(([t, d]) => (
+          <div class="card p-4">
+            <p class="text-th-heading font-medium mb-1">{t}</p>
+            <p class="text-sm text-th-muted">{d}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-display font-bold text-th-heading text-xl mb-4">Reglas claras desde el día uno</h2>
+      <ul class="space-y-2 mb-10">
+        {REGLAS.map((r) => (
+          <li class="text-sm text-th-body flex gap-2.5">
+            <span class="text-brand-accent shrink-0">—</span>{r}
+          </li>
+        ))}
+      </ul>
+
+      <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full text-base">
+        Escribir a Mike por WhatsApp →
+      </a>
+      <p class="text-th-faint text-xs text-center mt-3 pb-8">
+        Respondemos en menos de 48 h. Si ahora no hay hueco en tu zona, te guardamos para la siguiente ola.
+      </p>
+    </div>
+  </body>
+</html>

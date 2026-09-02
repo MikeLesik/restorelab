@@ -1203,7 +1203,8 @@
     "lc_followup_2": "Hi{name}! I have a free slot in your area this week — if it suits you, I'll book it with the quote I sent (same price still stands).",
     "lc_followup_3": "Hi{name}! I don't want to keep insisting — shall we park it for now? Whenever suits you, message me and I'll refresh the quote in a minute.",
     "lc_review_request": "Hi{name}! How does the car look in daylight?\nIf you're happy with the result, a Google review would help me enormously — it takes a minute:\n{review_url}",
-    "lc_checkin_48h": "Hi{name}! Everything still good with the car? If you notice anything, tell me and I'll take a look — that's what the guarantee is for. 👌"
+    "lc_checkin_48h": "Hi{name}! Everything still good with the car? If you notice anything, tell me and I'll take a look — that's what the guarantee is for. 👌",
+    "socios_apply": "Hi Mike, I'm a detailer and I'd like to collaborate with restoreLab. I'll tell you my area, experience, the products and tools I use, and my availability — and I'm sending 5–10 photos of my work plus a short video of my kit."
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

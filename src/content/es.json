@@ -993,7 +993,8 @@
     "lc_followup_2": "¡Hola{name}! Esta semana me queda un hueco libre por tu zona — si te encaja, te lo reservo con el presupuesto que te pasé (sigue al mismo precio).",
     "lc_followup_3": "¡Hola{name}! No quiero insistir más — ¿lo aparcamos por ahora? Cuando te venga bien, me escribes y te actualizo el presupuesto en un minuto.",
     "lc_review_request": "¡Hola{name}! ¿Qué tal ves el coche con la luz del día?\nSi estás contento con el resultado, me ayudarías muchísimo con una reseña en Google — es un minuto:\n{review_url}",
-    "lc_checkin_48h": "¡Hola{name}! ¿Todo bien con el coche? Si notas cualquier cosa, dímelo y lo miro — para eso está la garantía. 👌"
+    "lc_checkin_48h": "¡Hola{name}! ¿Todo bien con el coche? Si notas cualquier cosa, dímelo y lo miro — para eso está la garantía. 👌",
+    "socios_apply": "Hola Mike, soy detailer y me interesa colaborar con restoreLab. Te cuento mi zona, experiencia, productos y herramientas que uso, y mi disponibilidad — y ahora te mando 5–10 fotos de trabajos míos y un vídeo corto de mi equipo."
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",
