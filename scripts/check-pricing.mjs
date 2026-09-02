@@ -82,6 +82,33 @@ for (const slug of refSlugs) {
   }
 }
 
+// ── 4a. size_pricing must equal the APPROVED matrix exactly ─────────────────
+// Approved by Mike 2026-09-02 (docs/pricing-strategy.md): multipliers
+// ×0.9/×1.0/×1.2/×1.35 with deliberate overrides — Express compact floored at
+// the €149 minimum visit, Ceramic 2Y SUV capped at 999, Pre-Sale van capped
+// at 599. The matrix below IS the source the check enforces, not the formula.
+const APPROVED_MATRIX = {
+  'express-refresh':  { compact: 149, sedan: 149, suv: 179, van: 199 },
+  'single-stage':     { compact: 309, sedan: 349, suv: 419, van: 469 },
+  'ceramic-1y':       { compact: 449, sedan: 499, suv: 599, van: 669 },
+  'two-stage':        { compact: 539, sedan: 599, suv: 719, van: 809 },
+  'ceramic-2y':       { compact: 759, sedan: 849, suv: 999, van: 1149 },
+  'full-glass-set':   { compact: 259, sedan: 289, suv: 349, van: 389 },
+  'pre-sale-pack':    { compact: 399, sedan: 449, suv: 539, van: 599 },
+};
+for (const lang of LANGS) {
+  for (const [slug, pkg] of pkgs[lang]) {
+    const expected = APPROVED_MATRIX[slug];
+    if (expected) {
+      if (JSON.stringify(pkg.size_pricing) !== JSON.stringify(expected)) {
+        fail(`${lang}.json: "${slug}".size_pricing deviates from the approved matrix\n    expected ${JSON.stringify(expected)}\n    got      ${JSON.stringify(pkg.size_pricing)}`);
+      }
+    } else if (pkg.size_pricing) {
+      fail(`${lang}.json: "${slug}" carries size_pricing but is not in the approved matrix`);
+    }
+  }
+}
+
 // ── 4. size_pricing keys are valid size_categories ids ──────────────────────
 for (const lang of LANGS) {
   const ids = sizeIds[lang];

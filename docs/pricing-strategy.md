@@ -1,10 +1,8 @@
 # restoreLab — Pricing Strategy (RL-401)
 
-> Status: size matrix below is a **PROPOSAL — pending Mike's approval**
-> (RL-401 checkpoint). Structured fields (`price_eur`, `price_unit`, `from`)
-> are already in the JSONs, mirroring the published display prices.
-> `size_pricing` will be written into the JSONs only after approval, and the
-> public UI switches to it in RL-402.
+> Status: **APPROVED by Mike 2026-09-02** — the matrix below is live in the
+> JSONs (`size_pricing`) and enforced verbatim by `scripts/check-pricing.mjs`.
+> The public UI switches to it in RL-402.
 
 ## Competitor landscape (Barcelona, researched Sep 2026)
 
@@ -51,24 +49,40 @@ ceramic-2y €849, ceramic-1y €499) has been LIVE on restorelab.io since the
 **Confirm in this checkpoint that the €349/€599/€849 ladder is the intended
 baseline for the size matrix below.**
 
-## PROPOSED size matrix (APPROVAL CHECKPOINT)
+## APPROVED size matrix (Mike, 2026-09-02)
 
-Multipliers per the Phase-4 spec: compact ×0.9 · sedan ×1.0 (base) ·
-SUV ×1.15 · van/7-seater ×1.3 — rounded to the nearest €10 with psychological
-endings. All amounts EUR, IVA included, per job.
+Multipliers — the ones already published on the site: compact ×0.9 ·
+sedán ×1.0 (base) · SUV ×1.2 (+20%) · SUV grande/7pl ×1.35 (+35%).
+Rounding rule: nearest €10 minus 1 (9-endings). All amounts EUR, IVA
+included, per job.
 
 | Package (base) | Compact | Sedán | SUV / Crossover | SUV grande / 7 plazas |
 |---|---|---|---|---|
-| Express Refresh (€149) | **€149**¹ | €149 | €169 | €189 |
-| Single-Stage (€349) | €309 | €349 | €399 | €449 |
-| Ceramic 1Y (€499) | €449 | €499 | €569 | €649 |
-| Two-Stage (€599) | €539 | €599 | €689 | €779 |
-| Ceramic 2Y (€849) | €759 | €849 | €979 | €1,099 |
-| Full Glass Set (€289) | €259 | €289 | €329 | €379 |
-| Pre-Sale Pack (€449) | €399 | €449 | €519 | €579 |
+| Express Refresh (€149) | **€149**¹ | €149 | €179 | €199 |
+| Single-Stage (€349) | €309 | €349 | €419 | €469 |
+| Ceramic 1Y (€499) | €449 | €499 | €599 | €669 |
+| Two-Stage (€599) | €539 | €599 | €719 | €809 |
+| Ceramic 2Y (€849) | €759 | €849 | **€999**² | €1,149 |
+| Full Glass Set (€289) | €259 | €289 | €349 | €389 |
+| Pre-Sale Pack (€449) | €399 | €449 | €539 | **€599**³ |
 
-¹ ×0.9 would give €129, below the published €149 minimum visit — floored at
-the minimum. (Alternative: lower the minimum; not recommended.)
+**Deliberate overrides** (the check script enforces THIS matrix, not the
+raw formula):
+- ¹ Express compact: ×0.9 gives €129, below the published €149 minimum
+  visit — floored at the minimum.
+- ² Ceramic 2Y SUV: capped at €999 vs computed €1,019 (psychological
+  4-digit threshold).
+- ³ Pre-Sale van: capped at €599 vs computed €609.
+
+Package composition (confirmed — do not change):
+- Single-Stage = 1-phase correction, no ceramic
+- Two-Stage = 2-phase correction (corte + refinado), NO ceramic
+- Ceramic 1Y = 1-phase correction + 1-year ceramic
+- Ceramic 2Y = 2-phase correction + 2-year ceramic
+- Premium Ceramic 5Y (Gtechniq, was €1,049 on the old site) is DELIBERATELY
+  out of the standard matrix: shown only as a no-price mention
+  (`pricing.ui.ceramic_5y_note` — "Gtechniq 5 años — bajo pedido,
+  presupuesto por fotos").
 
 Not in the matrix (size-independent or quote-only):
 - Windshield Polish €119, Windshield Hydrophobic €179, Hydrophobic standalone
@@ -77,15 +91,11 @@ Not in the matrix (size-independent or quote-only):
 - **Deportivo / Superdeportivo** (5th size category): stays photo-quote with
   the existing "+25–40%" guidance — too variable for a fixed public matrix.
 
-### Open questions for Mike (answer = approval)
-
-1. **Multipliers**: the spec's ×1.15 (SUV) / ×1.3 (van) vs the currently
-   displayed modifiers "+20%" / "+35%" (`pricing.ui.size_categories`). The
-   matrix above uses the spec's; the displayed modifier strings get replaced
-   by exact numbers in RL-402. Confirm the spec multipliers (or name others).
-2. **Express compact floor** at €149 (see ¹).
-3. **Baseline ladder** €349/€599/€849/€499 confirmed as intended (see above).
-4. Rounding style: 9-endings (€399/€979) used throughout — OK?
+RL-402 display requirements (from the same approval): each car package shows
+its composition in one line ("Incluye corrección: 1 fase / 2 fases /
+sin cerámico") plus upsell captions on the ceramic tiers ("+150€ sobre
+Single-Stage → protección 1 año", "+250€ sobre Two-Stage → protección
+2 años" — differences computed from price_eur, never hardcoded).
 
 ## Guardrails (live since RL-401)
 

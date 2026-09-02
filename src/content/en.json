@@ -375,7 +375,8 @@
         }
       ],
       "sensitive_paint_surcharge": "+€60–100",
-      "min_visit": "Minimum visit €149 · VAT included in all prices"
+      "min_visit": "Minimum visit €149 · VAT included in all prices",
+      "ceramic_5y_note": "Gtechniq 5-year — on request, quote from photos"
     },
     "categories": [
       {
@@ -389,6 +390,12 @@
             "price_eur": 349,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 309,
+              "sedan": 349,
+              "suv": 419,
+              "van": 469
+            },
             "duration": "3–4 hours",
             "description": "One-step machine correction removing up to 70% of swirl marks and light scratches.",
             "includes": [
@@ -406,6 +413,12 @@
             "price_eur": 499,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 449,
+              "sedan": 499,
+              "suv": 599,
+              "van": 669
+            },
             "duration": "4–6 hours",
             "description": "Single-stage correction topped with a 1-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
@@ -424,6 +437,12 @@
             "price_eur": 599,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 539,
+              "sedan": 599,
+              "suv": 719,
+              "van": 809
+            },
             "duration": "5–7 hours",
             "description": "Full two-step compound and polish. Removes 90%+ of defects with no ceramic — ideal if you already have a coating.",
             "includes": [
@@ -443,6 +462,12 @@
             "price_eur": 849,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 759,
+              "sedan": 849,
+              "suv": 999,
+              "van": 1149
+            },
             "duration": "6–8 hours",
             "description": "Two-stage correction topped with a 2-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
@@ -502,6 +527,12 @@
             "price_eur": 289,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 259,
+              "sedan": 289,
+              "suv": 349,
+              "van": 389
+            },
             "duration": "3–4 hours",
             "description": "All windows polished and treated — windshield, side windows and rear glass.",
             "includes": [
@@ -561,6 +592,12 @@
             "price_eur": 149,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 149,
+              "sedan": 149,
+              "suv": 179,
+              "van": 199
+            },
             "duration": "~2 hours",
             "description": "Quick decon wash and hand polish for light contamination. Ideal maintenance between full corrections.",
             "includes": [
@@ -595,6 +632,12 @@
             "price_eur": 449,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 399,
+              "sedan": 449,
+              "suv": 539,
+              "van": 599
+            },
             "duration": "4–5 hours",
             "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [

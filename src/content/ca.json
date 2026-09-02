@@ -374,7 +374,8 @@
         }
       ],
       "sensitive_paint_surcharge": "+60–100 €",
-      "min_visit": "Servei mínim 149 € · IVA inclòs en tots els preus"
+      "min_visit": "Servei mínim 149 € · IVA inclòs en tots els preus",
+      "ceramic_5y_note": "Gtechniq 5 anys — sota comanda, pressupost per fotos"
     },
     "categories": [
       {
@@ -388,6 +389,12 @@
             "price_eur": 349,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 309,
+              "sedan": 349,
+              "suv": 419,
+              "van": 469
+            },
             "duration": "3–4 hores",
             "description": "Correcció mecànica en un pas que elimina fins al 70% de marques circulars i ratllades lleus.",
             "includes": [
@@ -405,6 +412,12 @@
             "price_eur": 499,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 449,
+              "sedan": 499,
+              "suv": 599,
+              "van": 669
+            },
             "duration": "4–6 hores",
             "description": "Correcció d'una fase més recobriment ceràmic d'1 any (Gyeon / Gtechniq).",
             "includes": [
@@ -423,6 +436,12 @@
             "price_eur": 599,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 539,
+              "sedan": 599,
+              "suv": 719,
+              "van": 809
+            },
             "duration": "5–7 hores",
             "description": "Correcció completa en dos passos (compost de tall + polit). Elimina el 90%+ de defectes sense ceràmic — ideal si ja teniu recobriment.",
             "includes": [
@@ -442,6 +461,12 @@
             "price_eur": 849,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 759,
+              "sedan": 849,
+              "suv": 999,
+              "van": 1149
+            },
             "duration": "6–8 hores",
             "description": "Correcció de dues fases més recobriment ceràmic de 2 anys (Gyeon / Gtechniq).",
             "includes": [
@@ -502,6 +527,12 @@
             "price_eur": 289,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 259,
+              "sedan": 289,
+              "suv": 349,
+              "van": 389
+            },
             "duration": "3–4 hores",
             "description": "Tots els vidres polits i tractats — parabrisa, laterals i luneta posterior.",
             "includes": [
@@ -561,6 +592,12 @@
             "price_eur": 149,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 149,
+              "sedan": 149,
+              "suv": 179,
+              "van": 199
+            },
             "duration": "~2 hores",
             "description": "Rentat descontaminant ràpid i polit a mà per a contaminació lleu. Manteniment ideal entre correccions completes.",
             "includes": [
@@ -595,6 +632,12 @@
             "price_eur": 449,
             "price_unit": "job",
             "from": false,
+            "size_pricing": {
+              "compact": 399,
+              "sedan": 449,
+              "suv": 539,
+              "van": 599
+            },
             "duration": "4–5 hores",
             "description": "Correcció de pintura d'una fase i restauració de fars — l'exterior surt a les fotos de l'anunci com toca.",
             "includes": [
