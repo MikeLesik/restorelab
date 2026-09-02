@@ -167,6 +167,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <option value="es" selected>ES</option><option value="en">EN</option><option value="ca">CA</option>
                 </select>
               </div>
+              <input id="n-ref" type="text" maxlength="7" placeholder="Ref del mensaje (RL-XXXX)" class="adm-input" style="text-transform:uppercase" />
+              <p class="text-th-faint text-xs -mt-1">Última línea «#ref RL-…» del WhatsApp del cliente — sin ella el CAC no ve este pedido.</p>
               <textarea id="n-notes" rows="2" placeholder="Notas" class="adm-input"></textarea>
               <p id="n-error" class="hidden text-sm text-red-400"></p>
               <div class="flex gap-2">
@@ -1404,6 +1406,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             area_slug: $('n-area').value || undefined,
             channel: $('n-channel').value,
             lang: $('n-lang').value,
+            ref: $('n-ref').value.trim().toUpperCase() || undefined,
             notes: $('n-notes').value.trim() || undefined,
             website: '',
           }),
@@ -1416,7 +1419,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         $('modal-new').classList.add('hidden');
         lockScroll(false);
         if (history.state?.admModal) history.back();
-        ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area'].forEach((id) => { $(id).value = ''; });
+        ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area', 'n-ref'].forEach((id) => { $(id).value = ''; });
         $('n-channel').value = 'whatsapp';
         $('n-lang').value = 'es';
         toast('Pedido ' + d.code + ' creado ✓');
