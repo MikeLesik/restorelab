@@ -51,8 +51,17 @@ const AREA_NAMES = Object.fromEntries(
           <p id="j-where" class="text-sm text-th-muted mt-1"></p>
           <a id="j-maps" href="#" target="_blank" rel="noopener" class="hidden inline-block text-sm text-brand-accent hover:underline mt-1.5">Abrir en Google Maps</a>
           <p id="j-client" class="text-sm text-th-muted mt-1"></p>
+          <p id="j-payout" class="hidden text-sm font-semibold text-brand-whatsapp mt-2"></p>
           <p id="j-notes" class="hidden text-sm text-th-body border-l-2 border-brand-gold pl-3 mt-3"></p>
-          <p id="j-rework" class="hidden text-sm text-red-400 font-medium mt-2"></p>
+          <div id="j-rework" class="hidden border-l-2 border-red-400 pl-3 mt-3">
+            <p class="text-sm text-red-400 font-medium">⚠ Rework solicitado — corrige y repite las fotos DESPUÉS.</p>
+            <p id="j-rework-note" class="hidden text-sm text-th-body mt-1"></p>
+          </div>
+        </div>
+
+        <div id="j-accept-card" class="hidden card p-5 border border-brand-whatsapp/40">
+          <p class="text-sm text-th-body mb-3">¿Tomas este trabajo? Eres libre de rechazarlo sin consecuencias — si no te encaja, dile a Mike y lo reasigna.</p>
+          <button id="j-accept" class="btn-whatsapp w-full">Acepto este trabajo ✓</button>
         </div>
 
         <div class="card p-5">
@@ -125,11 +134,20 @@ const AREA_NAMES = Object.fromEntries(
           $('j-maps').classList.remove('hidden');
         }
         $('j-client').textContent = j.client_first_name ? 'Cliente: ' + j.client_first_name + ' (contacto solo vía Mike)' : '';
+        if (j.payout_eur != null) {
+          $('j-payout').textContent = 'Tu pago por este trabajo: ' + j.payout_eur + '€ (' + j.payout_pct + '% del presupuesto)';
+          $('j-payout').classList.remove('hidden');
+        }
         if (j.notes) { $('j-notes').textContent = j.notes; $('j-notes').classList.remove('hidden'); }
         if (j.rework > 0) {
-          $('j-rework').textContent = '⚠ Rework solicitado — revisa las notas y repite las fotos DESPUÉS.';
           $('j-rework').classList.remove('hidden');
+          if (j.rework_note) {
+            $('j-rework-note').textContent = 'Qué corregir: ' + j.rework_note;
+            $('j-rework-note').classList.remove('hidden');
+          }
         }
+        // Offer-accept: the job is an offer until the partner takes it.
+        $('j-accept-card').classList.toggle('hidden', !(j.status === 'assigned' && !j.accepted_at));
 
         const list = CHECKLISTS[j.service_slug] || CHECKLISTS.default;
         $('j-checklist').innerHTML = list.map((item, i) =>
@@ -186,6 +204,19 @@ const AREA_NAMES = Object.fromEntries(
         btn.disabled = false;
         btn.textContent = uploadKind === 'before' ? '+ Subir foto ANTES' : '+ Subir foto DESPUÉS';
         load();
+      });
+
+      $('j-accept').addEventListener('click', async () => {
+        $('j-accept').disabled = true;
+        try {
+          const d = await (await fetch('/api/job/' + token, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'accept' }),
+          })).json();
+          if (d.ok) { $('j-accept-card').classList.add('hidden'); }
+        } catch (e) { /* stays visible for retry */ }
+        $('j-accept').disabled = false;
       });
 
       $('j-done').addEventListener('click', async () => {

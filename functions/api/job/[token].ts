@@ -4,8 +4,14 @@
  * the token dies the moment the order leaves assigned/in_progress/qc.
  *
  * GET  /api/job/<token>            — sanitized job card data (client FIRST
- *                                    NAME only, no phone in v1).
- * POST /api/job/<token>            — { action: 'done', notes? }:
+ *                                    NAME only, no phone in v1) + the
+ *                                    partner's payout for THIS job, accept
+ *                                    state and the latest rework note.
+ * POST /api/job/<token>            — { action: 'accept' }: records the
+ *                                    partner's explicit acceptance (offer-
+ *                                    accept mechanic; also the falso-autonomo
+ *                                    "right to decline" evidence), or
+ *                                    { action: 'done', notes? }:
  *                                    walks assigned→in_progress→qc (partner
  *                                    finished; every hop logged), stores
  *                                    partner notes in the event.
@@ -35,6 +41,36 @@ export async function onRequestGet(context: {
   if (!order || !ACTIVE.includes(order.status as string)) return notFound();
 
   const photos: string[] = JSON.parse((order.photos as string) || '[]');
+
+  // The partner must never work blind on their own money: payout for THIS
+  // job from the % snapshotted at assignment (partners table as fallback
+  // for orders assigned before the snapshot existed).
+  let pct = Number(order.payout_pct) || 0;
+  if (!pct && order.partner_id) {
+    const p = await env.ORDERS_DB!
+      .prepare('SELECT payout_pct FROM partners WHERE id = ?')
+      .bind(order.partner_id)
+      .first<{ payout_pct: number }>();
+    pct = Number(p?.payout_pct) || 0;
+  }
+  const quote = Number(order.quote_eur) || 0;
+  const payoutEur = pct && quote ? Math.round(quote * pct) / 100 : null;
+
+  // Latest rework instruction — the counter alone tells the partner nothing.
+  let reworkNote: string | null = null;
+  if (Number(order.rework) > 0) {
+    const ev = await env.ORDERS_DB!
+      .prepare(`SELECT data FROM order_events WHERE order_id = ? AND type = 'status_changed' ORDER BY id DESC`)
+      .bind(order.id)
+      .all();
+    for (const e of ev.results || []) {
+      try {
+        const d = JSON.parse((e.data as string) || '{}');
+        if (d.status?.from === 'qc' && d.status?.to === 'in_progress') { reworkNote = d.note || null; break; }
+      } catch { /* skip */ }
+    }
+  }
+
   return json({
     ok: true,
     job: {
@@ -48,6 +84,10 @@ export async function onRequestGet(context: {
       client_first_name: String(order.client_name || '').split(' ')[0] || null,
       notes: order.notes,
       rework: order.rework,
+      rework_note: reworkNote,
+      accepted_at: order.accepted_at || null,
+      payout_pct: pct || null,
+      payout_eur: payoutEur,
       // Partner's own uploads so the card reflects progress after reload.
       photos_before: photos.filter((k) => k.includes('/before/')),
       photos_after: photos.filter((k) => k.includes('/after/')),
@@ -71,6 +111,14 @@ export async function onRequestPost(context: {
     b = await request.json();
   } catch {
     return json({ ok: false, reason: 'bad_json' }, 400);
+  }
+  if (b.action === 'accept') {
+    if (!order.accepted_at) {
+      const ts = new Date().toISOString();
+      await db.prepare('UPDATE orders SET accepted_at = ? WHERE id = ?').bind(ts, order.id).run();
+      await logEvent(db, order.id as string, 'partner_accepted', {});
+    }
+    return json({ ok: true, accepted_at: order.accepted_at || new Date().toISOString() });
   }
   if (b.action !== 'done') return json({ ok: false, reason: 'bad_action' }, 400);
 

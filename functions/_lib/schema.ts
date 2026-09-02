@@ -26,6 +26,8 @@ export const SCHEMA_STATEMENTS: string[] = [
     quote_eur REAL,
     quote_breakdown TEXT,
     partner_id TEXT,
+    payout_pct REAL,
+    accepted_at TEXT,
     scheduled_at TEXT,
     ref_code TEXT,
     attr TEXT,
@@ -52,6 +54,7 @@ export const SCHEMA_STATEMENTS: string[] = [
     skills TEXT NOT NULL DEFAULT '[]',
     payout_pct REAL NOT NULL DEFAULT 70,
     active INTEGER NOT NULL DEFAULT 1,
+    rc_expiry TEXT,
     created_at TEXT NOT NULL
   )`,
   `CREATE TABLE IF NOT EXISTS order_events (
@@ -71,4 +74,17 @@ export const SCHEMA_STATEMENTS: string[] = [
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL
   )`,
+];
+
+/**
+ * Column additions for databases created before their migration file
+ * (mirror of migrations/0002_*.sql). SQLite has no ADD COLUMN IF NOT
+ * EXISTS, so /api/admin/migrate runs these tolerating the "duplicate
+ * column" error — the CREATEs above already carry the columns for
+ * fresh installs.
+ */
+export const SCHEMA_ALTERS: string[] = [
+  `ALTER TABLE orders ADD COLUMN payout_pct REAL`,
+  `ALTER TABLE orders ADD COLUMN accepted_at TEXT`,
+  `ALTER TABLE partners ADD COLUMN rc_expiry TEXT`,
 ];

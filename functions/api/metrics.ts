@@ -111,12 +111,16 @@ export async function onRequestGet(context: {
   const paidOrders = orders.filter((o) => Number(o.paid_eur) > 0);
   const paidTotal = r2(paidOrders.reduce((s, o) => s + Number(o.paid_eur), 0));
   const avgTicket = paidOrders.length ? r2(paidTotal / paidOrders.length) : null;
+  // Payout % comes from the snapshot taken at assignment (orders.payout_pct);
+  // the partner's live rate is only a fallback for pre-snapshot orders.
+  const payoutPctOf = (o: Row): number => {
+    if (!o.partner_id) return 0;
+    const partner = partnerById[o.partner_id as string];
+    return Number(o.payout_pct) || Number(partner?.payout_pct) || DEFAULT_PAYOUT_PCT;
+  };
   const contribution = paidOrders.map((o) => {
     const paid = Number(o.paid_eur);
-    const partner = o.partner_id ? partnerById[o.partner_id as string] : null;
-    const payout = partner
-      ? r2((Number(partner.payout_pct) || DEFAULT_PAYOUT_PCT) / 100 * (Number(o.quote_eur) || paid))
-      : 0;
+    const payout = r2((payoutPctOf(o) / 100) * (Number(o.quote_eur) || paid));
     return r2(paid - payout - STRIPE_FEE_PCT * paid - RESERVE_PCT * paid);
   });
   const contributionTotal = r2(contribution.reduce((s, x) => s + x, 0));
@@ -130,8 +134,9 @@ export async function onRequestGet(context: {
     const jobs = orders.filter((o) => o.partner_id === p.id);
     const accepted = jobs.filter((o) => ACCEPTED.includes(o.status as string));
     const reworks = jobs.filter((o) => Number(o.rework) > 0).length;
-    const pct = (Number(p.payout_pct) || DEFAULT_PAYOUT_PCT) / 100;
     const gmv = r2(accepted.reduce((s, o) => s + (Number(o.quote_eur) || 0), 0));
+    const payoutEur = r2(accepted.reduce(
+      (s, o) => s + (payoutPctOf(o) / 100) * (Number(o.quote_eur) || 0), 0));
     const ipHours = jobs
       .map((o) => {
         const a = reached(o, 'in_progress');
@@ -142,7 +147,7 @@ export async function onRequestGet(context: {
     return {
       id: p.id, name: p.name, payout_pct: Number(p.payout_pct) || DEFAULT_PAYOUT_PCT,
       jobs: jobs.length, accepted: accepted.length,
-      gmv_eur: gmv, payout_eur: r2(gmv * pct),
+      gmv_eur: gmv, payout_eur: payoutEur,
       rework_count: reworks,
       rework_pct: jobs.length ? r2((reworks / jobs.length) * 100) : null,
       avg_in_progress_h: ipHours.length ? r2(ipHours.reduce((s, x) => s + x, 0) / ipHours.length) : null,

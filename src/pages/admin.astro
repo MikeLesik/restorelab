@@ -567,6 +567,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (o.status === 'awaiting_payment' && minutesOld(o.status_ts || o.created_at) > 48 * 60) {
             return `<span class="adm-sla adm-sla--warn">⏱ ${ageOf(o.status_ts || o.created_at)}</span>`;
           }
+          // An unaccepted assignment is an offer hanging in the air.
+          if (o.status === 'assigned' && !o.accepted_at && minutesOld(o.status_ts || o.created_at) > 4 * 60) {
+            return `<span class="adm-sla adm-sla--warn">⏱ partner sin aceptar</span>`;
+          }
           return `<span class="adm-sla adm-sla--ok">${ageOf(o.status_ts || o.created_at)}</span>`;
         }
         const m = minutesOld(o.created_at);
@@ -595,7 +599,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
                 ${showStatus ? `<span class="adm-badge" style="${toneBadge(o.status)}">${STATUS_ES[o.status]}</span>` : ''}
                 ${o.quote_eur ? `<span class="font-display font-bold text-sm tabular-nums tracking-tight text-brand-accent">${o.quote_eur}€</span>` : ''}
-                ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}</span>` : ''}
+                ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}${o.status === 'assigned' ? (o.accepted_at ? ' ✔' : ' ⏳') : ''}</span>` : ''}
                 ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
                 ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
                 <span class="text-th-faint">${CHANNEL_ES[o.channel] || ''}</span>
@@ -1230,6 +1234,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               ${o.scheduled_at ? `<span class="min-h-[44px] flex items-center text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
               ${o.address ? `<span class="min-h-[44px] flex items-center text-th-muted">📍 ${esc(o.address)}</span>` : ''}
               ${o.rework ? `<span class="min-h-[44px] flex items-center text-th-muted">Reworks: ${o.rework}</span>` : ''}
+              ${o.status === 'assigned' ? `<span class="min-h-[44px] flex items-center ${o.accepted_at ? 'text-green-400' : 'text-brand-gold'}">${o.accepted_at ? '✔ partner aceptó' : '⏳ partner sin aceptar'}</span>` : ''}
             </div>
             ${o.ref_code || attr.first ? `
             <div class="mt-2 pt-2 border-t border-th-border/10 text-xs text-th-faint">
@@ -1350,10 +1355,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           const d = await api('/api/orders/' + current.id + '/job-token', { method: 'POST' });
           if (!d.ok) { toast('Error: ' + (d.reason || ''), false); return; }
           const pt = partners.find((x) => x.id === current.partner_id);
+          const payoutPct = current.payout_pct || pt?.payout_pct || 70;
+          const payout = current.quote_eur ? Math.round(current.quote_eur * payoutPct) / 100 : null;
           const msg = 'Hola' + (pt ? ' ' + pt.name.split(' ')[0] : '') + ', trabajo ' + current.code + ':\n' +
             '• ' + svcName(current.service_slug) + (current.size ? ' (' + sizeName(current.size) + ')' : '') + '\n' +
             (AREAS[current.area_slug]?.name ? '• Zona: ' + AREAS[current.area_slug].name + '\n' : '') +
-            '• Cuándo: ' + (current.scheduled_at ? fmtDate(current.scheduled_at) : 'por confirmar') + '\n\n' +
+            '• Cuándo: ' + (current.scheduled_at ? fmtDate(current.scheduled_at) : 'por confirmar') + '\n' +
+            (payout ? '• Tu pago: ' + payout + '€ (' + payoutPct + '%)\n' : '') +
+            '\n¿Lo tomas? Confirma con el botón «Acepto» de la ficha — si no te encaja, dímelo y lo reasigno sin problema.\n' +
             'Ficha completa, checklist y fotos aquí:\n' + location.origin + d.url;
           const digits = digitsOf(pt?.phone);
           if (digits) window.open('https://wa.me/' + digits + '?text=' + encodeURIComponent(msg), '_blank');

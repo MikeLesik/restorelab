@@ -177,6 +177,25 @@ export async function onRequestPatch(context: {
     if (field !== 'status') changed[field] = value;
   }
 
+  // Assigning a partner snapshots their CURRENT payout % onto the order:
+  // renegotiating a partner's rate later must never rewrite statements for
+  // work already accepted at the old rate.
+  if (typeof b.partner_id === 'string' && b.partner_id) {
+    const partner = await db
+      .prepare('SELECT payout_pct FROM partners WHERE id = ?')
+      .bind(b.partner_id)
+      .first<{ payout_pct: number }>();
+    if (!partner) return json({ ok: false, reason: 'partner_not_found' }, 400);
+    sets.push('payout_pct = ?');
+    binds.push(Number(partner.payout_pct) || 70);
+    changed.payout_pct = Number(partner.payout_pct) || 70;
+    // A (re)assignment is a fresh offer — acceptance starts over.
+    if (b.partner_id !== row.partner_id) {
+      sets.push('accepted_at = NULL');
+      changed.accepted_at = 'reset';
+    }
+  }
+
   // Free-text annotation that lands ONLY in the audit event (e.g. the manual
   // "marcar pagado" method: efectivo / Bizum personal) — never a column.
   if (typeof b.event_note === 'string' && b.event_note.trim()) {

@@ -22,6 +22,8 @@ CREATE TABLE IF NOT EXISTS orders (
   quote_eur REAL,
   quote_breakdown TEXT,               -- JSON
   partner_id TEXT,
+  payout_pct REAL,                    -- snapshot of the partner's % at assignment (0002)
+  accepted_at TEXT,                   -- partner's job acceptance timestamp (0002)
   scheduled_at TEXT,
   ref_code TEXT,                      -- RL-XXXX visitor ref (RL-301)
   attr TEXT,                          -- JSON attribution snapshot
@@ -50,6 +52,7 @@ CREATE TABLE IF NOT EXISTS partners (
   skills TEXT NOT NULL DEFAULT '[]',  -- JSON array of service slugs
   payout_pct REAL NOT NULL DEFAULT 70,
   active INTEGER NOT NULL DEFAULT 1,
+  rc_expiry TEXT,                     -- RC insurance policy expiry (0002)
   created_at TEXT NOT NULL
 );
 

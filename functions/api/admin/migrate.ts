@@ -10,7 +10,7 @@
 
 import { json, inert, notFound, adminOk } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
-import { SCHEMA_STATEMENTS } from '../../_lib/schema';
+import { SCHEMA_STATEMENTS, SCHEMA_ALTERS } from '../../_lib/schema';
 
 export async function onRequestPost(context: {
   request: Request;
@@ -24,6 +24,16 @@ export async function onRequestPost(context: {
   for (const sql of SCHEMA_STATEMENTS) {
     await env.ORDERS_DB.prepare(sql).run();
     applied.push(sql.trim().split(/\s+/).slice(0, 6).join(' '));
+  }
+  // Column additions for pre-existing databases; "duplicate column" means
+  // the column is already there — that keeps the endpoint idempotent.
+  for (const sql of SCHEMA_ALTERS) {
+    try {
+      await env.ORDERS_DB.prepare(sql).run();
+      applied.push(sql.trim());
+    } catch (e) {
+      if (!/duplicate column/i.test(String(e))) throw e;
+    }
   }
   return json({ ok: true, statements: applied.length, applied });
 }
