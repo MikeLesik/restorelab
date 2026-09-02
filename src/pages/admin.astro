@@ -582,6 +582,20 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (o.status === 'assigned' && !o.accepted_at && minutesOld(o.status_ts || o.created_at) > 4 * 60) {
             return `<span class="adm-sla adm-sla--warn">⏱ partner sin aceptar</span>`;
           }
+          // quoted was a black hole: escalate through the follow-up cadence
+          // (24h case-photo nudge → 3d slot offer → 7d soft close → lost).
+          if (o.status === 'quoted') {
+            const h = minutesOld(o.status_ts || o.created_at) / 60;
+            if (h > 24 * 14) return `<span class="adm-sla adm-sla--warn">💬 14d — ¿marcar perdido?</span>`;
+            if (h > 24 * 7) return `<span class="adm-sla adm-sla--warn">💬 cierre suave (7d)</span>`;
+            if (h > 72) return `<span class="adm-sla adm-sla--warn">💬 seguimiento 3d</span>`;
+            if (h > 24) return `<span class="adm-sla adm-sla--warn" style="background:none;border:none">💬 seguimiento 24h</span>`;
+          }
+          // A date in the past with the job not started is a broken promise.
+          if (['booked', 'assigned'].includes(o.status) && o.scheduled_at &&
+              new Date(o.scheduled_at).getTime() < Date.now() - 2 * 36e5) {
+            return `<span class="adm-sla adm-sla--warn">📅 fecha vencida</span>`;
+          }
           return `<span class="adm-sla adm-sla--ok">${ageOf(o.status_ts || o.created_at)}</span>`;
         }
         const m = minutesOld(o.created_at);
@@ -636,8 +650,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           !['done', 'cancelled', 'paid'].includes(o.status));
         const chip = (label, n, anchor, danger) => n === 0 ? '' :
           `<button data-chip="${anchor}" class="adm-chip${danger ? ' adm-chip--danger' : ''}"><b>${n}</b>${label}</button>`;
+        const seguimientoN = orders.filter((o) => o.status === 'quoted' &&
+          minutesOld(o.status_ts || o.created_at) > 24 * 60).length;
         $('chips').innerHTML =
           chip('Presupuestar', newN, 'st-new', newLate > 0) +
+          chip('Seguimiento', seguimientoN, 'st-quoted', false) +
           chip('QC', qcN, 'st-qc', false) +
           chip('Cobrar', cobrarN, 'st-awaiting_payment', false) +
           (hoy.length ? `<button data-chip="band-marcha" class="adm-chip"><b>${hoy.length}</b>Hoy · ${esc(hoy.map((o) => (fmtDate(o.scheduled_at).split(',')[1] || '').trim()).filter(Boolean).slice(0, 2).join(', '))}</button>` : '');
