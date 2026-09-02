@@ -1187,7 +1187,8 @@
     "quote_total": "Total: €{total} (VAT included)",
     "quote_validity": "Valid for 7 days. Fixed price — no surprises.",
     "quote_link": "Full price list: {url}",
-    "payment_link": "Secure payment link (card or Bizum): {link}"
+    "payment_link": "Secure payment link (card or Bizum): {link}",
+    "quote_sensitive_paint": "Sensitive paint surcharge"
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

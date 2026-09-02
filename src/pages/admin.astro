@@ -1,9 +1,11 @@
 ---
-// Admin pipeline + quote composer (RL-420). ES-only by design (see CLAUDE.md),
-// noindex (meta + X-Robots-Tag in _headers), excluded from the sitemap, no
-// internal links from public pages. Standalone shell: no BaseLayout — no
-// GTM/consent/schema on an internal tool. Token prompt once → localStorage →
-// x-admin-token on every call (404 = wrong token → re-prompt).
+// Admin pipeline + quote composer (RL-420, UX rework per the 6-lens audit).
+// ES-only by design (see CLAUDE.md), noindex, standalone shell — no
+// BaseLayout/GTM/consent on an internal tool. Token prompt once →
+// localStorage → x-admin-token on every call (collection 404 = wrong token).
+//
+// North star: opens on a phone between jobs and answers "what needs me RIGHT
+// NOW" in two seconds, then quote-and-send-to-WhatsApp in one tap.
 import '@/styles/global.css';
 import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
 import { areaProfiles } from '@/lib/areaProfiles';
@@ -52,55 +54,58 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
   </head>
   <body class="bg-brand-dark min-h-screen text-th-body">
-    <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="max-w-6xl mx-auto px-4 py-4 sm:py-6 pb-24">
 
-      <!-- Header -->
-      <header class="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <h1 class="font-display font-bold text-th-heading text-2xl">
-          restore<span class="text-brand-accent">Lab</span>
-          <span class="ml-3 inline-flex rounded-xl border border-th-border/15 overflow-hidden align-middle text-sm font-normal">
-            <button id="tab-pipeline" class="px-4 py-1.5 bg-brand-accent/15 text-brand-accent">Pedidos</button>
-            <button id="tab-metrics" class="px-4 py-1.5 text-th-muted hover:text-th-heading">Métricas</button>
-            <button id="tab-partners" class="px-4 py-1.5 text-th-muted hover:text-th-heading">Partners</button>
-          </span>
-        </h1>
-        <div class="flex flex-wrap gap-2">
-          <button id="btn-new" class="btn-primary text-sm px-4 py-2">+ Nuevo pedido</button>
-          <button id="btn-partner" class="btn-secondary text-sm px-4 py-2">+ Partner</button>
-          <button id="btn-refresh" class="btn-secondary text-sm px-4 py-2">↻</button>
+      <!-- Header: brand + refresh; tabs on their own row (thumb-sized) -->
+      <header class="mb-4">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <p class="font-display font-bold text-th-heading text-xl">
+            restore<span class="text-brand-accent">Lab</span>
+          </p>
+          <button id="btn-refresh" class="btn-secondary text-sm px-4 min-h-[44px]">↻ Actualizar</button>
+        </div>
+        <div class="flex rounded-xl border border-th-border/15 overflow-hidden text-sm">
+          <button id="tab-pipeline" class="flex-1 text-center py-2.5 min-h-[44px] bg-brand-accent/15 text-brand-accent">Pedidos</button>
+          <button id="tab-metrics" class="flex-1 text-center py-2.5 min-h-[44px] text-th-muted">Métricas</button>
+          <button id="tab-partners" class="flex-1 text-center py-2.5 min-h-[44px] text-th-muted">Partners</button>
         </div>
       </header>
 
       <div id="view-pipeline">
-      <!-- Filters -->
-      <div id="filters" class="flex flex-wrap gap-2 mb-6 items-center">
-        <select id="f-status" class="adm-input w-auto">
-          <option value="">Estado: todos</option>
-        </select>
-        <select id="f-channel" class="adm-input w-auto">
-          <option value="">Canal: todos</option>
-          <option value="form">Formulario</option>
-          <option value="whatsapp">WhatsApp</option>
-          <option value="phone">Teléfono</option>
-          <option value="b2b">B2B</option>
-        </select>
-        <select id="f-partner" class="adm-input w-auto">
-          <option value="">Partner: todos</option>
-        </select>
-        <input id="f-month" type="month" class="adm-input w-auto" />
-        <span id="pipeline-count" class="text-th-faint text-sm ml-auto"></span>
-      </div>
+        <!-- Action chips: what needs me right now (rendered from data) -->
+        <div id="chips" class="flex flex-wrap gap-2 mb-3"></div>
 
-      <!-- Pipeline -->
-      <main id="pipeline" class="space-y-8"></main>
+        <!-- Filters: collapsed on mobile behind a toggle -->
+        <div class="mb-1">
+          <button id="filters-toggle" class="sm:hidden text-sm text-th-muted min-h-[44px] flex items-center gap-1.5">
+            <span>Filtros</span><span id="filters-dot" class="hidden w-2 h-2 rounded-full bg-brand-accent"></span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="filters" class="hidden sm:flex flex-wrap gap-2 items-center pt-1">
+            <select id="f-status" class="adm-input w-full sm:w-auto"><option value="">Estado: todos</option></select>
+            <select id="f-channel" class="adm-input w-full sm:w-auto">
+              <option value="">Canal: todos</option>
+              <option value="form">Formulario</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="phone">Teléfono</option>
+              <option value="b2b">B2B</option>
+            </select>
+            <select id="f-partner" class="adm-input w-full sm:w-auto"><option value="">Partner: todos</option></select>
+            <input id="f-month" type="month" class="adm-input w-full sm:w-auto" />
+            <button id="f-clear" class="hidden text-sm text-brand-accent min-h-[44px]">Quitar filtros</button>
+          </div>
+        </div>
+        <p class="text-th-faint text-xs mb-4"><span id="pipeline-count"></span> <span id="pipeline-updated"></span></p>
+
+        <main id="pipeline" class="space-y-6"></main>
       </div>
 
       <!-- Métricas (RL-460) -->
       <div id="view-metrics" class="hidden">
         <div class="flex flex-wrap gap-2 mb-6 items-center">
           <input id="m-month" type="month" class="adm-input w-auto" />
-          <button id="m-load" class="btn-secondary text-sm px-4 py-2">Cargar</button>
-          <button id="m-csv" class="btn-secondary text-sm px-4 py-2 ml-auto">Exportar CSV</button>
+          <button id="m-load" class="btn-secondary text-sm px-4 min-h-[44px]">Cargar</button>
+          <button id="m-csv" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Exportar CSV</button>
         </div>
         <div id="m-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
       </div>
@@ -109,15 +114,22 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       <div id="view-partners" class="hidden">
         <div class="flex flex-wrap gap-2 mb-6 items-center">
           <input id="pt-month" type="month" class="adm-input w-auto" />
-          <button id="pt-load" class="btn-secondary text-sm px-4 py-2">Cargar</button>
-          <button id="pt-csv" class="btn-secondary text-sm px-4 py-2 ml-auto">Exportar liquidación CSV</button>
+          <button id="pt-load" class="btn-secondary text-sm px-4 min-h-[44px]">Cargar</button>
+          <button id="btn-partner" class="btn-secondary text-sm px-4 min-h-[44px]">+ Partner</button>
+          <button id="pt-csv" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Liquidación CSV</button>
         </div>
         <div id="pt-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
       </div>
 
       <!-- Detail overlay -->
-      <div id="detail" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
-        <div class="max-w-3xl mx-auto px-4 py-8" id="detail-body"></div>
+      <div id="detail" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark">
+        <div class="sticky top-0 z-10 bg-brand-dark/95 backdrop-blur border-b border-th-border/10">
+          <div class="max-w-3xl mx-auto px-4 py-2.5 flex items-center justify-between">
+            <button id="d-back" class="btn-secondary text-sm px-4 min-h-[44px]">← Volver</button>
+            <span id="d-status-chip" class="adm-badge text-sm"></span>
+          </div>
+        </div>
+        <div class="max-w-3xl mx-auto px-4 py-4" id="detail-body"></div>
       </div>
 
       <!-- New order modal -->
@@ -127,7 +139,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <h2 class="font-display font-bold text-th-heading text-xl mb-1">Nuevo pedido manual</h2>
             <p class="text-th-faint text-xs mb-5">Disciplina: el 100% de los pedidos (también los que entran por WhatsApp) viven aquí — solo así las métricas serán reales.</p>
             <div class="space-y-3">
-              <input id="n-phone" type="tel" placeholder="Teléfono * (+34 …)" class="adm-input" />
+              <input id="n-phone" type="tel" inputmode="tel" placeholder="Teléfono * (+34 …)" class="adm-input" />
               <input id="n-name" type="text" placeholder="Nombre" class="adm-input" />
               <select id="n-service" class="adm-input">
                 <option value="">Servicio…</option>
@@ -137,10 +149,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   </optgroup>
                 ))}
               </select>
-              <div class="grid grid-cols-2 gap-3">
-                <select id="n-size" class="adm-input"><option value="">Tamaño…</option></select>
-                <select id="n-area" class="adm-input"><option value="">Zona…</option></select>
-              </div>
+              <select id="n-size" class="adm-input"><option value="">Tamaño…</option></select>
+              <select id="n-area" class="adm-input"><option value="">Zona…</option></select>
               <div class="grid grid-cols-2 gap-3">
                 <select id="n-channel" class="adm-input">
                   <option value="whatsapp" selected>WhatsApp</option>
@@ -155,8 +165,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <textarea id="n-notes" rows="2" placeholder="Notas" class="adm-input"></textarea>
               <p id="n-error" class="hidden text-sm text-red-400"></p>
               <div class="flex gap-2">
-                <button id="n-save" class="btn-primary flex-1 py-2.5 text-sm">Crear</button>
-                <button data-close class="btn-secondary py-2.5 px-5 text-sm">Cerrar</button>
+                <button id="n-save" class="btn-primary flex-1 min-h-[48px] text-sm">Crear pedido</button>
+                <button data-close class="btn-secondary min-h-[48px] px-5 text-sm">Cancelar</button>
               </div>
             </div>
           </div>
@@ -170,21 +180,26 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <h2 class="font-display font-bold text-th-heading text-xl mb-4">Nuevo partner</h2>
             <div class="space-y-3">
               <input id="p-name" type="text" placeholder="Nombre *" class="adm-input" />
-              <input id="p-phone" type="tel" placeholder="Teléfono" class="adm-input" />
+              <input id="p-phone" type="tel" inputmode="tel" placeholder="Teléfono" class="adm-input" />
               <input id="p-zones" type="text" placeholder="Zonas (slugs, coma): sant-cugat, terrassa" class="adm-input" />
               <input id="p-skills" type="text" placeholder="Servicios (slugs, coma): single-stage, headlight-restoration" class="adm-input" />
-              <input id="p-payout" type="number" value="70" min="0" max="100" placeholder="% payout" class="adm-input" />
+              <input id="p-payout" type="number" inputmode="numeric" value="70" min="0" max="100" placeholder="% payout" class="adm-input" />
               <p id="p-error" class="hidden text-sm text-red-400"></p>
               <div class="flex gap-2">
-                <button id="p-save" class="btn-primary flex-1 py-2.5 text-sm">Crear</button>
-                <button data-close class="btn-secondary py-2.5 px-5 text-sm">Cerrar</button>
+                <button id="p-save" class="btn-primary flex-1 min-h-[48px] text-sm">Crear</button>
+                <button data-close class="btn-secondary min-h-[48px] px-5 text-sm">Cancelar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Toast -->
+      <div id="toast" class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] max-w-[90vw] text-center rounded-full px-5 py-2.5 text-sm font-medium bg-brand-navy text-th-heading shadow-2xl border border-th-border/15"></div>
     </div>
+
+    <!-- FAB: the one creation action, always thumb-reachable -->
+    <button id="btn-new" class="fixed bottom-5 right-4 z-40 btn-primary rounded-full px-5 py-3.5 shadow-2xl text-sm">+ Nuevo pedido</button>
 
     <style is:global>
       .adm-input {
@@ -193,58 +208,120 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         border: 1px solid rgb(255 255 255 / 0.12);
         background: rgb(255 255 255 / 0.04);
         padding: 0.55rem 0.9rem;
-        font-size: 0.875rem;
+        font-size: 16px; /* 16px kills the iOS focus zoom */
+        min-height: 44px;
         color: var(--th-heading);
       }
       .adm-input:focus { outline: 2px solid var(--brand-accent); outline-offset: 1px; }
       .adm-badge {
-        display: inline-block; padding: 0.1rem 0.55rem; border-radius: 9999px;
-        font-size: 0.68rem; font-weight: 600; letter-spacing: 0.03em;
+        display: inline-block; padding: 0.15rem 0.6rem; border-radius: 9999px;
+        font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
       }
+      @media (pointer: coarse) {
+        #detail-body .btn-primary, #detail-body .btn-secondary, #detail-body .btn-whatsapp { min-height: 44px; }
+      }
+      @keyframes adm-spin { to { transform: rotate(360deg); } }
+      .adm-spinning { animation: adm-spin 1s linear infinite; display: inline-block; }
     </style>
 
     <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL }}>
-      // ── Constants ─────────────────────────────────────────────────────────
+      // ── Vocabulary ────────────────────────────────────────────────────────
       const STATUS_ES = {
-        new: 'Nuevo', quoted: 'Presupuestado', booked: 'Reservado', assigned: 'Asignado',
-        in_progress: 'En curso', qc: 'Control calidad', awaiting_payment: 'Esperando pago',
-        paid: 'Pagado', done: 'Cerrado', cancelled: 'Cancelado',
+        new: 'Por presupuestar', quoted: 'Presupuesto enviado', booked: 'Confirmado',
+        assigned: 'Asignado', in_progress: 'En curso', qc: 'Control calidad',
+        awaiting_payment: 'Por cobrar', paid: 'Pagado', done: 'Cerrado', cancelled: 'Cancelado',
+      };
+      const ACTION_ES = { // verb for the happy-path transition button
+        quoted: 'Marcar presupuesto enviado', booked: 'Confirmar reserva',
+        assigned: 'Asignar a partner', in_progress: 'Empezar trabajo',
+        qc: 'Enviar a control de calidad', awaiting_payment: 'Solicitar pago',
+        paid: 'Marcar pagado', done: 'Cerrar pedido',
       };
       const STATUS_COLOR = {
         new: '#2A7FFF', quoted: '#8b5cf6', booked: '#f59e0b', assigned: '#06b6d4',
         in_progress: '#f97316', qc: '#eab308', awaiting_payment: '#ec4899',
         paid: '#22c55e', done: '#64748b', cancelled: '#475569',
       };
-      const CHANNEL_ES = { form: 'Form', whatsapp: 'WA', phone: 'Tel', b2b: 'B2B' };
+      const CHANNEL_ES = { form: 'form', whatsapp: 'wa', phone: 'tel', b2b: 'b2b' };
+      const EVENT_ES = {
+        created: 'Pedido creado', status_changed: 'Cambio de estado', updated: 'Datos actualizados',
+        photo_uploaded: 'Foto subida', payment_link_created: 'Enlace de pago creado',
+        stripe_paid: 'Pago recibido (Stripe)', job_token_issued: 'Enlace de partner generado',
+        wa_sent: 'WhatsApp automático enviado', wa_send_failed: 'WhatsApp automático FALLÓ',
+        partner_note: 'Nota del partner',
+      };
+      const BANDS = [
+        { id: 'accion', title: 'Requiere acción', color: '#f59e0b', statuses: ['new', 'qc', 'awaiting_payment'] },
+        { id: 'marcha', title: 'En marcha', color: '#2A7FFF', statuses: ['quoted', 'booked', 'assigned', 'in_progress'] },
+      ];
+      const CLOSED = ['paid', 'done', 'cancelled'];
+
       const $ = (id) => document.getElementById(id);
       const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const digitsOf = (p) => String(p || '').replace(/\D/g, '');
+      const svcName = (slug) => PRICING.es.packages[slug]?.name || slug || '';
+      const sizeName = (id) => PRICING.es.sizes[id] || id || '';
+      const fmtDate = (iso, withTime = true) => {
+        if (!iso) return '';
+        try {
+          return new Intl.DateTimeFormat('es-ES', {
+            weekday: 'short', day: 'numeric', month: 'short',
+            ...(withTime ? { hour: '2-digit', minute: '2-digit' } : {}),
+          }).format(new Date(iso));
+        } catch (e) { return iso; }
+      };
 
-      // ── Token gate ────────────────────────────────────────────────────────
-      function token() {
-        let t = localStorage.getItem('rl_admin_token');
-        if (!t) {
-          t = prompt('Admin token:') || '';
-          if (t) localStorage.setItem('rl_admin_token', t);
-        }
-        return t;
+      // ── Feedback layer ────────────────────────────────────────────────────
+      let toastTimer;
+      function toast(msg, ok = true) {
+        const el = $('toast');
+        el.textContent = msg;
+        el.style.borderColor = ok ? 'rgba(34,197,94,.4)' : 'rgba(239,68,68,.5)';
+        el.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.add('hidden'), 2600);
       }
+      async function busy(btn, fn, label = 'Guardando…') {
+        const old = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = label;
+        try { await fn(); } finally { btn.disabled = false; btn.textContent = old; }
+      }
+
+      // ── Token + API ───────────────────────────────────────────────────────
+      function token(force) {
+        let t = localStorage.getItem('rl_admin_token');
+        if (!t || force) {
+          t = prompt('Admin token:') || '';
+          if (t) localStorage.setItem('rl_admin_token', t.trim());
+        }
+        return (t || '').trim();
+      }
+      let retriedToken = false;
       async function api(path, opts = {}) {
         const res = await fetch(path, {
           ...opts,
           headers: { 'Content-Type': 'application/json', 'x-admin-token': token(), ...(opts.headers || {}) },
         });
         if (res.status === 404 && !path.includes('/api/orders/')) {
-          // Collection 404 = bad token (single-order 404 can be a real miss).
           localStorage.removeItem('rl_admin_token');
-          throw new Error('Token incorrecto — recarga la página.');
+          if (!retriedToken) {
+            retriedToken = true;
+            token(true); // re-prompt inline once instead of "recarga la página"
+            return api(path, opts);
+          }
+          throw new Error('Token incorrecto.');
         }
+        retriedToken = false;
         return res.json();
       }
 
       let partners = [];
       let orders = [];
+      let lastLoaded = null;
 
       // ── Pipeline ──────────────────────────────────────────────────────────
+      const minutesOld = (iso) => Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
       const ageOf = (iso) => {
         const h = Math.floor((Date.now() - new Date(iso).getTime()) / 3600000);
         return h < 1 ? '<1h' : h < 48 ? h + 'h' : Math.floor(h / 24) + 'd';
@@ -254,13 +331,24 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         try {
           const d = await api('/api/partners');
           partners = d.partners || [];
-          const sel = $('f-partner');
-          sel.innerHTML = '<option value="">Partner: todos</option>' +
+          $('f-partner').innerHTML = '<option value="">Partner: todos</option>' +
             partners.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
         } catch (e) { /* surfaced by loadOrders */ }
       }
 
-      async function loadOrders() {
+      function filtersActive() {
+        return !!($('f-status').value || $('f-channel').value || $('f-partner').value || $('f-month').value);
+      }
+
+      function skeleton() {
+        $('pipeline').innerHTML = [1, 2, 3].map(() =>
+          '<div class="card p-4 animate-pulse"><div class="h-4 bg-th-surface/20 rounded w-1/3 mb-2"></div><div class="h-3 bg-th-surface/10 rounded w-2/3 mb-2"></div><div class="h-3 bg-th-surface/10 rounded w-1/2"></div></div>').join('');
+      }
+
+      async function loadOrders(silent) {
+        if (!silent) skeleton();
+        const icon = $('btn-refresh');
+        icon.innerHTML = '<span class="adm-spinning">↻</span> Actualizar';
         const q = new URLSearchParams();
         if ($('f-status').value) q.set('status', $('f-status').value);
         if ($('f-channel').value) q.set('channel', $('f-channel').value);
@@ -272,54 +360,149 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           d = await api('/api/orders?' + q);
         } catch (e) {
           $('pipeline').innerHTML = `<p class="text-red-400 text-sm">${esc(e.message)}</p>`;
+          icon.textContent = '↻ Actualizar';
           return;
         }
+        icon.textContent = '↻ Actualizar';
         if (!d.ok) {
-          $('pipeline').innerHTML = `<p class="text-brand-gold text-sm">API no configurada todavía (${esc(d.reason || '')}). Sigue los pasos de docs/setup-cloudflare-bindings.md.</p>`;
+          $('pipeline').innerHTML = `<p class="text-brand-gold text-sm">API no configurada todavía (${esc(d.reason || '')}). Sigue docs/setup-cloudflare-bindings.md.</p>`;
           return;
         }
         orders = d.orders || [];
+        lastLoaded = Date.now();
         renderPipeline();
       }
 
-      function orderCard(o) {
+      function slaPill(o) {
+        // The <=1h quote promise made visible: minutes on new leads.
+        if (o.status !== 'new') {
+          if (o.status === 'awaiting_payment' && minutesOld(o.status_ts || o.created_at) > 48 * 60) {
+            return `<span class="adm-badge" style="background:#f59e0b22;color:#f59e0b">⏱ ${ageOf(o.status_ts || o.created_at)}</span>`;
+          }
+          return `<span class="text-th-faint text-xs">${ageOf(o.status_ts || o.created_at)}</span>`;
+        }
+        const m = minutesOld(o.created_at);
+        if (m > 60) return `<span class="adm-badge" style="background:#ef4444;color:#fff">⏱ ${ageOf(o.created_at)} sin presupuesto</span>`;
+        if (m > 45) return `<span class="adm-badge" style="background:#f59e0b22;color:#f59e0b">⏱ ${m}m</span>`;
+        if (m > 20) return `<span class="text-xs" style="color:#f59e0b">⏱ ${m}m</span>`;
+        return `<span class="text-th-faint text-xs">⏱ ${m}m</span>`;
+      }
+
+      function orderCard(o, showStatus) {
         const p = partners.find((x) => x.id === o.partner_id);
-        const attrSrc = o.attr?.first?.utm_source || '';
+        const digits = digitsOf(o.phone);
+        const m = o.status === 'new' ? minutesOld(o.created_at) : 0;
+        const ring = m > 60 ? 'ring-1 ring-red-400/60' : m > 45 ? 'border-brand-gold/50' : '';
+        const who = o.client_name || (o.phone ? o.phone : '—');
+        const line2 = [svcName(o.service_slug), o.size ? sizeName(o.size) : '', AREAS[o.area_slug]?.name || '']
+          .filter(Boolean).join(' · ');
         return `
-          <button data-open="${esc(o.id)}" class="card text-left p-4 w-full hover:border-brand-accent/40 transition-colors">
-            <div class="flex items-center justify-between gap-2 mb-1.5">
-              <span class="font-display font-bold text-th-heading">${esc(o.code)}</span>
-              <span class="adm-badge" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>
-            </div>
-            <div class="text-sm text-th-body">${esc(o.service_slug || '—')}${o.size ? ' · ' + esc(o.size) : ''}</div>
-            <div class="text-xs text-th-muted mt-0.5">${esc(o.client_name || '')} ${o.area_slug ? '· ' + esc(AREAS[o.area_slug]?.name || o.area_slug) : ''}</div>
-            <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
-              <span class="adm-badge bg-th-surface/10 text-th-muted">${CHANNEL_ES[o.channel] || o.channel}</span>
-              ${o.quote_eur ? `<span class="text-brand-accent font-semibold">${o.quote_eur}€</span>` : ''}
-              ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}</span>` : ''}
-              ${o.ref_code ? `<span class="text-th-faint">${esc(o.ref_code)}${attrSrc ? ' · ' + esc(attrSrc) : ''}</span>` : ''}
-              <span class="text-th-faint ml-auto" title="tiempo en este estado">${ageOf(o.status_ts || o.created_at)}</span>
-            </div>
-          </button>`;
+          <div class="card relative p-4 ${ring}">
+            <button data-open="${esc(o.id)}" class="text-left w-full">
+              <div class="flex items-baseline justify-between gap-2 pr-24">
+                <span class="font-semibold text-th-heading truncate">${esc(who)}</span>
+                <span class="text-xs text-th-faint shrink-0">${esc(o.code)}</span>
+              </div>
+              <div class="text-sm text-th-body/80 mt-0.5 truncate">${esc(line2 || '—')}</div>
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
+                ${showStatus ? `<span class="adm-badge" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>` : ''}
+                ${o.quote_eur ? `<span class="text-brand-accent font-semibold">${o.quote_eur}€</span>` : ''}
+                ${p ? `<span class="adm-badge bg-brand-gold/15 text-brand-gold">${esc(p.name)}</span>` : ''}
+                ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
+                ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
+                <span class="text-th-faint">${CHANNEL_ES[o.channel] || ''}</span>
+                <span class="ml-auto">${slaPill(o)}</span>
+              </div>
+            </button>
+            ${digits ? `
+            <div class="absolute top-3 right-3 flex gap-1.5">
+              <a href="tel:+${digits}" data-stop class="w-11 h-11 -m-1.5 flex items-center justify-center rounded-lg text-th-muted hover:text-th-heading" aria-label="Llamar">📞</a>
+              <a href="https://wa.me/${digits}" target="_blank" rel="noopener" data-stop class="w-11 h-11 -m-1.5 flex items-center justify-center rounded-lg text-brand-whatsapp" aria-label="WhatsApp">💬</a>
+            </div>` : ''}
+          </div>`;
       }
 
       function renderPipeline() {
-        const groups = STATUSES.map((s) => ({ s, list: orders.filter((o) => o.status === s) }))
-          .filter((g) => g.list.length > 0);
+        // Action chips
+        const newN = orders.filter((o) => o.status === 'new').length;
+        const newLate = orders.filter((o) => o.status === 'new' && minutesOld(o.created_at) > 60).length;
+        const qcN = orders.filter((o) => o.status === 'qc').length;
+        const cobrarN = orders.filter((o) => o.status === 'awaiting_payment').length;
+        const today = new Date().toISOString().slice(0, 10);
+        const hoy = orders.filter((o) => (o.scheduled_at || '').slice(0, 10) === today &&
+          !['done', 'cancelled', 'paid'].includes(o.status));
+        const chip = (label, n, anchor, danger) => n === 0 ? '' :
+          `<button data-chip="${anchor}" class="adm-badge min-h-[40px] px-4 flex items-center gap-1.5 text-sm"
+             style="background:${danger ? '#ef444422' : 'rgb(255 255 255 / .06)'};color:${danger ? '#ef4444' : 'var(--th-heading)'};border:1px solid ${danger ? '#ef444455' : 'rgb(255 255 255 / .1)'}">
+             ${label} <b>${n}</b></button>`;
+        $('chips').innerHTML =
+          chip('Presupuestar', newN, 'st-new', newLate > 0) +
+          chip('QC', qcN, 'st-qc', false) +
+          chip('Cobrar', cobrarN, 'st-awaiting_payment', false) +
+          (hoy.length ? `<button data-chip="band-marcha" class="adm-badge min-h-[40px] px-4 flex items-center gap-1.5 text-sm" style="background:rgb(255 255 255 / .06);color:var(--th-heading);border:1px solid rgb(255 255 255 / .1)">Hoy <b>${hoy.length}</b> · ${esc(hoy.map((o) => (fmtDate(o.scheduled_at).split(',')[1] || '').trim()).filter(Boolean).slice(0, 2).join(', '))}</button>` : '');
+        document.querySelectorAll('[data-chip]').forEach((el) =>
+          el.addEventListener('click', () => document.getElementById(el.dataset.chip)?.scrollIntoView({ behavior: 'smooth', block: 'start' })));
+
         $('pipeline-count').textContent = orders.length + ' pedido' + (orders.length === 1 ? '' : 's');
-        $('pipeline').innerHTML = groups.length === 0
-          ? '<p class="text-th-muted text-sm">Sin pedidos con estos filtros.</p>'
-          : groups.map((g) => `
-            <section>
-              <h2 class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:${STATUS_COLOR[g.s]}">
-                ${STATUS_ES[g.s]} <span class="text-th-faint font-normal">· ${g.list.length}</span>
-              </h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                ${g.list.map(orderCard).join('')}
-              </div>
-            </section>`).join('');
+        $('pipeline-updated').textContent = '';
+        $('filters-dot').classList.toggle('hidden', !filtersActive());
+        $('f-clear').classList.toggle('hidden', !filtersActive());
+
+        // Empty states
+        if (orders.length === 0) {
+          $('pipeline').innerHTML = filtersActive()
+            ? '<div class="card p-6 text-center"><p class="text-th-muted text-sm mb-3">Sin pedidos con estos filtros.</p><button id="empty-clear" class="btn-secondary text-sm px-4 min-h-[44px]">Quitar filtros</button></div>'
+            : `<div class="card p-6 text-center">
+                 <p class="font-display font-bold text-th-heading text-lg mb-1.5">Todavía no hay pedidos</p>
+                 <p class="text-th-muted text-sm mb-4">Cuando alguien escriba por WhatsApp, créalo aquí a mano — así el 100% de los pedidos vive en el mismo sitio y las métricas son reales.</p>
+                 <button id="empty-new" class="btn-primary text-sm px-5 min-h-[48px]">+ Crear el primer pedido</button>
+               </div>`;
+          $('empty-clear')?.addEventListener('click', clearFilters);
+          $('empty-new')?.addEventListener('click', () => openModal('modal-new'));
+          return;
+        }
+
+        const section = (s, list, showStatus) => list.length === 0 ? '' : `
+          <section id="st-${s}">
+            <h3 class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:${STATUS_COLOR[s]}">
+              ${STATUS_ES[s]} · ${list.length}
+              ${s === 'new' && newLate ? `<span class="text-red-400 normal-case tracking-normal font-normal">· ${newLate} fuera de plazo</span>` : ''}
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${list.map((o) => orderCard(o, showStatus)).join('')}</div>
+          </section>`;
+
+        const bandHtml = (band) => {
+          const parts = band.statuses.map((s) => {
+            let list = orders.filter((o) => o.status === s);
+            if (s === 'new') list = [...list].sort((a, b) => a.created_at < b.created_at ? -1 : 1); // oldest first
+            return section(s, list, false);
+          }).filter(Boolean);
+          if (!parts.length) return '';
+          return `<div id="band-${band.id}">
+            <h2 class="text-sm font-bold uppercase tracking-widest mb-3" style="color:${band.color}">${band.title}</h2>
+            <div class="space-y-5">${parts.join('')}</div>
+          </div>`;
+        };
+
+        const closed = orders.filter((o) => CLOSED.includes(o.status));
+        const closedHtml = closed.length === 0 ? '' : `
+          <details class="pt-1">
+            <summary class="text-sm text-th-muted cursor-pointer min-h-[44px] flex items-center">Cerrados · ${closed.length}</summary>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
+              ${closed.map((o) => orderCard(o, true)).join('')}
+            </div>
+          </details>`;
+
+        $('pipeline').innerHTML = BANDS.map(bandHtml).filter(Boolean).join('') + closedHtml;
         document.querySelectorAll('[data-open]').forEach((el) =>
           el.addEventListener('click', () => openDetail(el.getAttribute('data-open'))));
+        document.querySelectorAll('[data-stop]').forEach((el) =>
+          el.addEventListener('click', (e) => e.stopPropagation()));
+      }
+
+      function clearFilters() {
+        ['f-status', 'f-channel', 'f-partner', 'f-month'].forEach((id) => { $(id).value = ''; });
+        loadOrders();
       }
 
       // ── Quote composer ────────────────────────────────────────────────────
@@ -331,17 +514,28 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       };
 
       function quoteState(o) {
+        // Hydrate from a previously saved breakdown so re-opening a quoted
+        // order shows what was actually quoted, not defaults.
+        const b = o.quote_breakdown;
+        if (b && Array.isArray(b.items) && b.items.length) {
+          return {
+            items: b.items.map((it) => ({ slug: it.slug, size: it.size || '' })),
+            travel: b.travel !== null && b.travel !== undefined,
+            surcharge: b.sensitive_paint != null,
+            surchargeAmount: b.sensitive_paint || 60,
+            override: b.custom_override != null ? String(b.custom_override) : '',
+            overrideReason: b.override_reason || '',
+            customMsg: null,
+          };
+        }
         return {
           items: [{ slug: o.service_slug || 'single-stage', size: o.size || '' }],
-          travel: true,
-          surcharge: false,
-          surchargeAmount: 60,
-          override: '',
-          overrideReason: '',
+          travel: true, surcharge: false, surchargeAmount: 60,
+          override: '', overrideReason: '', customMsg: null,
         };
       }
-      let q = null; // active composer state
-      let current = null; // active order
+      let q = null;
+      let current = null;
 
       function quoteTotal(o) {
         if (q.override !== '' && Number.isFinite(Number(q.override))) return Number(q.override);
@@ -372,65 +566,117 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         if (q.travel) lines.push(fee > 0
           ? T.quote_travel.replace('{area}', AREAS[o.area_slug]?.name || '').replace('{fee}', fee)
           : T.quote_travel_included);
-        if (q.surcharge) lines.push(T.quote_line.replace('{item}', 'Pintura sensible').replace('{price}', Number(q.surchargeAmount) || 0));
+        if (q.surcharge) lines.push(T.quote_line.replace('{item}', T.quote_sensitive_paint || 'Pintura sensible').replace('{price}', Number(q.surchargeAmount) || 0));
         lines.push('', T.quote_total.replace('{total}', quoteTotal(o)), T.quote_validity,
           T.quote_link.replace('{url}', `${SITE_URL}/${L}/pricing`));
         return lines.join('\n');
       }
 
+      function composerWarnings(o) {
+        const warns = [];
+        if (!o.service_slug) warns.push('⚠ Pedido sin servicio — verifica el paquete elegido.');
+        for (const it of q.items) {
+          const p = PRICING.es.packages[it.slug];
+          if (p?.size_pricing && !it.size) warns.push(`⚠ «${p.name}»: precio base — elige tamaño para el precio exacto.`);
+          if (p && p.price_eur === null) warns.push(`«${p.name}»: a consultar (sin precio fijo).`);
+        }
+        return warns;
+      }
+
       function composerHtml(o) {
         const itemRow = (it, i) => `
-          <div class="flex gap-2 items-center">
-            <select data-qi="${i}" data-k="slug" class="adm-input flex-1">
+          <div class="rounded-xl border border-th-border/10 p-2.5 space-y-2">
+            <select data-qi="${i}" data-k="slug" class="adm-input">
               ${Object.entries(PRICING.es.packages).map(([slug, p]) =>
                 `<option value="${slug}" ${slug === it.slug ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}
             </select>
-            <select data-qi="${i}" data-k="size" class="adm-input w-36">
-              <option value="">tamaño…</option>
-              ${Object.entries(PRICING.es.sizes).map(([id, n]) =>
-                `<option value="${id}" ${id === it.size ? 'selected' : ''}>${esc(n)}</option>`).join('')}
-            </select>
-            <span class="text-sm text-brand-accent font-semibold w-16 text-right">${priceOf(o.lang, it.slug, it.size) ?? '—'}€</span>
-            ${q.items.length > 1 ? `<button data-qdel="${i}" class="text-th-faint hover:text-red-400">✕</button>` : ''}
+            <div class="flex gap-2 items-center">
+              <select data-qi="${i}" data-k="size" class="adm-input flex-1 ${PRICING.es.packages[it.slug]?.size_pricing && !it.size ? 'border-brand-gold/60' : ''}">
+                <option value="">Tamaño…</option>
+                ${Object.entries(PRICING.es.sizes).map(([id, n]) =>
+                  `<option value="${id}" ${id === it.size ? 'selected' : ''}>${esc(n)}</option>`).join('')}
+              </select>
+              <span data-qprice="${i}" class="text-brand-accent font-semibold w-20 text-right">${priceOf(o.lang, it.slug, it.size) ?? 'a consultar'}${priceOf(o.lang, it.slug, it.size) != null ? '€' : ''}</span>
+              ${q.items.length > 1 ? `<button data-qdel="${i}" class="w-11 h-11 flex items-center justify-center rounded-lg text-th-faint hover:text-red-400" aria-label="Quitar línea">✕</button>` : ''}
+            </div>
           </div>`;
         const fee = AREAS[o.area_slug]?.fee ?? null;
+        const warns = composerWarnings(o);
         return `
-          <div class="card p-5 mt-4">
+          <div class="card p-4 sm:p-5 mt-4" id="composer">
             <h3 class="font-display font-bold text-th-heading mb-3">Presupuesto</h3>
-            <div class="space-y-2">${q.items.map(itemRow).join('')}</div>
-            <button id="q-add" class="text-sm text-brand-accent hover:underline mt-2">+ añadir línea</button>
-            <div class="flex flex-wrap gap-4 mt-3 text-sm">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input id="q-travel" type="checkbox" ${q.travel ? 'checked' : ''} class="accent-brand-accent" />
+            <div class="space-y-2" id="q-items">${q.items.map(itemRow).join('')}</div>
+            <button id="q-add" class="btn-secondary w-full text-sm min-h-[44px] mt-2">+ Añadir línea</button>
+            <div class="space-y-2 mt-3 text-sm">
+              <label class="flex items-center gap-2.5 min-h-[44px] cursor-pointer">
+                <input id="q-travel" type="checkbox" ${q.travel ? 'checked' : ''} class="w-5 h-5 accent-brand-accent" />
                 Desplazamiento ${fee == null ? '(sin zona)' : fee > 0 ? '+' + fee + '€ (' + esc(AREAS[o.area_slug].name) + ')' : 'incluido'}
               </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input id="q-sur" type="checkbox" ${q.surcharge ? 'checked' : ''} class="accent-brand-accent" />
+              <label class="flex items-center gap-2.5 min-h-[44px] cursor-pointer flex-wrap">
+                <input id="q-sur" type="checkbox" ${q.surcharge ? 'checked' : ''} class="w-5 h-5 accent-brand-accent" />
                 Pintura sensible
-                <input id="q-sur-amt" type="number" value="${q.surchargeAmount}" min="60" max="100" step="10" class="adm-input w-20 py-1" ${q.surcharge ? '' : 'disabled'} />€ (60–100)
+                <span id="q-sur-wrap" class="${q.surcharge ? '' : 'hidden'}">
+                  <input id="q-sur-amt" type="number" inputmode="numeric" value="${q.surchargeAmount}" min="60" max="100" step="10" class="adm-input w-24 inline-block" />€ <span class="text-th-faint">(60–100)</span>
+                </span>
               </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <label class="text-th-muted min-h-[44px] flex items-center gap-1.5">Precio manual:
+                  <input id="q-override" type="number" inputmode="decimal" value="${esc(q.override)}" placeholder="—" class="adm-input w-28 inline-block" />€
+                </label>
+                <input id="q-override-reason" type="text" value="${esc(q.overrideReason)}" placeholder="motivo del precio manual" class="adm-input flex-1 min-w-40 ${q.override === '' ? 'hidden' : ''}" />
+              </div>
             </div>
-            <div class="flex flex-wrap items-center gap-3 mt-3 text-sm">
-              <label class="text-th-muted">Override manual:
-                <input id="q-override" type="number" value="${esc(q.override)}" placeholder="—" class="adm-input w-24 py-1 ml-1" />€
-              </label>
-              <input id="q-override-reason" type="text" value="${esc(q.overrideReason)}" placeholder="motivo del override" class="adm-input flex-1 py-1 ${q.override === '' ? 'hidden' : ''}" />
+            ${warns.length ? `<div class="mt-3 space-y-1">${warns.map((w) => `<p class="text-xs text-brand-gold">${esc(w)}</p>`).join('')}</div>` : ''}
+            <div class="mt-3">
+              <textarea id="q-msg" rows="9" class="adm-input font-mono text-xs" style="font-size:13px">${esc(q.customMsg ?? quoteMessage(o))}</textarea>
+              <button id="q-regen" class="${q.customMsg == null ? 'hidden' : ''} text-xs text-brand-accent mt-1">✎ texto editado a mano · regenerar</button>
             </div>
-            <div class="text-right font-display font-bold text-brand-accent text-2xl mt-3">Total: <span id="q-total">${quoteTotal(o)}</span>€</div>
-            <textarea id="q-msg" rows="9" class="adm-input mt-3 font-mono text-xs">${esc(quoteMessage(o))}</textarea>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <button id="q-copy" class="btn-secondary text-sm px-4 py-2">Copiar</button>
-              <a id="q-wa" class="btn-whatsapp text-sm px-4 py-2" target="_blank" rel="noopener">Abrir en WhatsApp</a>
-              <button id="q-save" class="btn-primary text-sm px-4 py-2 ml-auto">Guardar presupuesto${o.status === 'new' ? ' → Presupuestado' : ''}</button>
+          </div>
+          <!-- Sticky money bar: save + send in ONE tap -->
+          <div id="q-bar" class="sticky bottom-0 z-20 -mx-4 px-4 py-3 mt-3 bg-brand-dark/95 backdrop-blur border-t border-th-border/15">
+            <div class="flex gap-2 items-stretch">
+              <button id="q-send" class="btn-whatsapp flex-1 min-h-[48px] text-sm font-bold">
+                Total <span id="q-total">${quoteTotal(o)}</span>€ · Enviar por WhatsApp
+              </button>
+              <button id="q-copy" class="btn-secondary min-h-[48px] px-4 text-sm" aria-label="Copiar mensaje">⧉</button>
             </div>
+            <button id="q-save-only" class="w-full text-center text-xs text-th-faint mt-2 min-h-[32px]">Guardar sin enviar</button>
           </div>`;
+      }
+
+      function syncComposer(o) {
+        // Targeted updates — never nuke the textarea while Mike is editing.
+        $('q-total') && ($('q-total').textContent = quoteTotal(o));
+        q.items.forEach((it, i) => {
+          const el = document.querySelector(`[data-qprice="${i}"]`);
+          if (el) {
+            const v = priceOf(o.lang, it.slug, it.size);
+            el.textContent = v != null ? v + '€' : 'a consultar';
+          }
+        });
+        $('q-sur-wrap')?.classList.toggle('hidden', !q.surcharge);
+        $('q-override-reason')?.classList.toggle('hidden', q.override === '');
+        if (q.customMsg == null && $('q-msg')) $('q-msg').value = quoteMessage(o);
+        $('q-regen')?.classList.toggle('hidden', q.customMsg == null);
+      }
+
+      function currentQuoteBody() {
+        return {
+          quote_eur: quoteTotal(current),
+          quote_breakdown: {
+            items: q.items.map((it) => ({ ...it, price: priceOf(current.lang, it.slug, it.size) })),
+            travel: q.travel ? (AREAS[current.area_slug]?.fee || 0) : null,
+            sensitive_paint: q.surcharge ? Number(q.surchargeAmount) || 0 : null,
+            ...(q.override !== '' ? { custom_override: Number(q.override), override_reason: q.overrideReason.trim() } : {}),
+          },
+        };
       }
 
       function bindComposer(o) {
         document.querySelectorAll('[data-qi]').forEach((el) =>
           el.addEventListener('change', () => {
             q.items[+el.dataset.qi][el.dataset.k] = el.value;
-            refreshDetail();
+            if (el.dataset.k === 'slug') refreshDetail(); else syncComposer(o);
           }));
         document.querySelectorAll('[data-qdel]').forEach((el) =>
           el.addEventListener('click', () => { q.items.splice(+el.dataset.qdel, 1); refreshDetail(); }));
@@ -438,34 +684,50 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           q.items.push({ slug: 'headlight-restoration', size: q.items[0]?.size || '' });
           refreshDetail();
         });
-        $('q-travel')?.addEventListener('change', (e) => { q.travel = e.target.checked; refreshDetail(); });
-        $('q-sur')?.addEventListener('change', (e) => { q.surcharge = e.target.checked; refreshDetail(); });
-        $('q-sur-amt')?.addEventListener('change', (e) => { q.surchargeAmount = e.target.value; refreshDetail(); });
-        $('q-override')?.addEventListener('change', (e) => { q.override = e.target.value; refreshDetail(); });
+        $('q-travel')?.addEventListener('change', (e) => { q.travel = e.target.checked; syncComposer(o); });
+        $('q-sur')?.addEventListener('change', (e) => { q.surcharge = e.target.checked; syncComposer(o); });
+        $('q-sur-amt')?.addEventListener('change', (e) => { q.surchargeAmount = e.target.value; syncComposer(o); });
+        $('q-override')?.addEventListener('input', (e) => { q.override = e.target.value; syncComposer(o); });
         $('q-override-reason')?.addEventListener('change', (e) => { q.overrideReason = e.target.value; });
+        $('q-msg')?.addEventListener('input', () => { q.customMsg = $('q-msg').value; $('q-regen').classList.remove('hidden'); });
+        $('q-regen')?.addEventListener('click', () => { q.customMsg = null; syncComposer(o); });
         $('q-copy')?.addEventListener('click', () => {
           navigator.clipboard.writeText($('q-msg').value);
-          $('q-copy').textContent = '✓ Copiado';
-          setTimeout(() => { if ($('q-copy')) $('q-copy').textContent = 'Copiar'; }, 1500);
+          toast('Mensaje copiado');
         });
-        const waHref = () => 'https://wa.me/' + String(current.phone || '').replace(/\D/g, '') + '?text=' + encodeURIComponent($('q-msg').value);
-        $('q-wa')?.addEventListener('click', (e) => { e.target.href = waHref(); });
-        if ($('q-wa')) $('q-wa').href = waHref();
-        $('q-save')?.addEventListener('click', async () => {
-          if (q.override !== '' && !q.overrideReason.trim()) { alert('Indica el motivo del override.'); return; }
-          const body = {
-            quote_eur: quoteTotal(current),
-            quote_breakdown: {
-              items: q.items.map((it) => ({ ...it, price: priceOf(current.lang, it.slug, it.size) })),
-              travel: q.travel ? (AREAS[current.area_slug]?.fee || 0) : null,
-              sensitive_paint: q.surcharge ? Number(q.surchargeAmount) || 0 : null,
-              ...(q.override !== '' ? { custom_override: Number(q.override), override_reason: q.overrideReason.trim() } : {}),
-            },
-          };
-          if (current.status === 'new') body.status = 'quoted';
+
+        const saveQuote = async (advance) => {
+          if (q.override !== '' && !q.overrideReason.trim()) { toast('Indica el motivo del precio manual', false); return false; }
+          const body = currentQuoteBody();
+          if (advance && current.status === 'new') body.status = 'quoted';
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
-          if (d.ok) { current = d.order; q = null; await loadOrders(); openDetail(current.id); }
-          else alert('Error: ' + (d.reason || ''));
+          if (!d.ok) { toast('Error al guardar: ' + (d.reason || ''), false); return false; }
+          current = d.order;
+          return true;
+        };
+
+        $('q-send')?.addEventListener('click', async () => {
+          // Open the window synchronously so iOS Safari doesn't block it,
+          // then point it at wa.me only after the PATCH lands.
+          const digits = digitsOf(current.phone);
+          const msg = $('q-msg').value;
+          const w = digits ? window.open('', '_blank') : null;
+          const ok = await saveQuote(true);
+          if (!ok) { w?.close(); return; }
+          if (w) w.location = 'https://wa.me/' + digits + '?text=' + encodeURIComponent(msg);
+          else { navigator.clipboard.writeText(msg); toast('Sin teléfono — mensaje copiado'); }
+          toast('Presupuesto guardado ✓');
+          q = null;
+          await loadOrders(true);
+          openDetail(current.id);
+        });
+        $('q-save-only')?.addEventListener('click', async () => {
+          if (await saveQuote(true)) {
+            toast('Presupuesto guardado ✓');
+            q = null;
+            await loadOrders(true);
+            openDetail(current.id);
+          }
         });
       }
 
@@ -475,34 +737,34 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const rest = Math.round((o.quote_eur - paid) * 100) / 100;
         const L = PRICING[o.lang] ? o.lang : 'es';
         return `
-          <div class="card p-5 mt-4">
+          <div class="card p-4 sm:p-5 mt-4">
             <h3 class="font-display font-bold text-th-heading mb-1">Pagos</h3>
             <p class="text-sm text-th-muted mb-3">
               Presupuesto <b class="text-brand-accent">${o.quote_eur}€</b>
               ${paid ? ` · pagado <b class="text-green-400">${paid}€</b> · resto <b>${rest}€</b>` : ''}
             </p>
             <div class="flex flex-wrap gap-2 mb-3">
-              <button data-pay="full" class="btn-secondary text-sm px-4 py-2">Enlace 100%</button>
-              <button data-pay="deposit" class="btn-secondary text-sm px-4 py-2">Señal 30%</button>
-              ${paid > 0 && rest > 0 ? '<button data-pay="rest" class="btn-secondary text-sm px-4 py-2">Enlace resto</button>' : ''}
+              <button data-pay="full" class="btn-secondary text-sm px-4">Enlace 100%</button>
+              <button data-pay="deposit" class="btn-secondary text-sm px-4">Señal 30%</button>
+              ${paid > 0 && rest > 0 ? '<button data-pay="rest" class="btn-secondary text-sm px-4">Enlace resto</button>' : ''}
             </div>
             <p id="pay-status" class="hidden text-sm mb-3"></p>
             ${o.payment_link ? `
               <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
-                <a href="${esc(o.payment_link)}" target="_blank" rel="noopener" class="text-brand-accent hover:underline truncate max-w-[16rem]">${esc(o.payment_link)}</a>
-                <button id="pay-copy" class="btn-secondary text-xs px-3 py-1.5">Copiar enlace</button>
-                <a class="btn-whatsapp text-xs px-3 py-1.5" target="_blank" rel="noopener"
-                   href="https://wa.me/${String(o.phone || '').replace(/\D/g, '')}?text=${encodeURIComponent(PRICING[L].payment_link.replace('{link}', o.payment_link))}">Enviar por WhatsApp</a>
+                <a href="${esc(o.payment_link)}" target="_blank" rel="noopener" class="text-brand-accent hover:underline truncate max-w-[14rem]">${esc(o.payment_link)}</a>
+                <button id="pay-copy" class="btn-secondary text-xs px-3 min-h-[40px]">Copiar</button>
+                <a class="btn-whatsapp text-xs px-3 min-h-[40px] flex items-center" target="_blank" rel="noopener"
+                   href="https://wa.me/${digitsOf(o.phone)}?text=${encodeURIComponent(PRICING[L].payment_link.replace('{link}', o.payment_link))}">Enviar por WhatsApp</a>
               </div>` : ''}
             <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-th-border/10 text-sm">
-              <span class="text-th-muted">Marcar pagado:</span>
-              <input id="pay-amount" type="number" value="${rest > 0 ? rest : ''}" min="0" step="0.01" class="adm-input w-28 py-1.5" />€
-              <select id="pay-method" class="adm-input w-auto py-1.5">
+              <span class="text-th-muted">Pago manual:</span>
+              <input id="pay-amount" type="number" inputmode="decimal" value="${rest > 0 ? rest : ''}" min="0" step="0.01" class="adm-input w-28 inline-block" />€
+              <select id="pay-method" class="adm-input w-auto inline-block">
                 <option value="efectivo">efectivo</option>
                 <option value="bizum personal">Bizum personal</option>
                 <option value="otro">otro</option>
               </select>
-              <button id="pay-manual" class="btn-secondary text-sm px-4 py-2">Registrar</button>
+              <button id="pay-manual" class="btn-secondary text-sm px-4">Registrar</button>
             </div>
           </div>`;
       }
@@ -515,22 +777,19 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           el.className = 'text-sm mb-3 ' + (ok ? 'text-green-400' : 'text-red-400');
         };
         document.querySelectorAll('[data-pay]').forEach((el) =>
-          el.addEventListener('click', async () => {
-            el.disabled = true;
+          el.addEventListener('click', () => busy(el, async () => {
             const d = await api('/api/stripe/create-link', {
               method: 'POST',
               body: JSON.stringify({ order_id: current.id, kind: el.dataset.pay }),
             });
-            el.disabled = false;
-            if (d.ok) { say('Enlace creado: ' + d.amount_eur + '€', true); openDetail(current.id); }
+            if (d.ok) { toast('Enlace creado: ' + d.amount_eur + '€'); openDetail(current.id); }
             else say('Stripe: ' + (d.reason || '') + (d.detail ? ' — ' + d.detail : ''), false);
-          }));
+          }, 'Creando…')));
         $('pay-copy')?.addEventListener('click', () => {
           navigator.clipboard.writeText(current.payment_link || '');
-          $('pay-copy').textContent = '✓';
-          setTimeout(() => { if ($('pay-copy')) $('pay-copy').textContent = 'Copiar enlace'; }, 1500);
+          toast('Enlace copiado');
         });
-        $('pay-manual')?.addEventListener('click', async () => {
+        $('pay-manual')?.addEventListener('click', () => busy($('pay-manual'), async () => {
           const amount = Number($('pay-amount').value);
           if (!(amount > 0)) { say('Importe inválido', false); return; }
           const newPaid = Math.round(((Number(current.paid_eur) || 0) + amount) * 100) / 100;
@@ -542,122 +801,107 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           };
           if (covered && (TRANSITIONS[current.status] || []).includes('paid')) body.status = 'paid';
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
-          if (d.ok) openDetail(current.id); else say('Error: ' + (d.reason || ''), false);
-        });
+          if (d.ok) { toast('Pago registrado ✓'); openDetail(current.id); }
+          else say('Error: ' + (d.reason || ''), false);
+        }));
       }
 
       // ── Detail ────────────────────────────────────────────────────────────
-      async function openDetail(id) {
+      function lockScroll(on) { document.body.style.overflow = on ? 'hidden' : ''; }
+
+      async function openDetail(id, pushHistory = true) {
         const d = await api('/api/orders/' + id);
-        if (!d.ok) { alert('Pedido no encontrado'); return; }
+        if (!d.ok) { toast('Pedido no encontrado', false); return; }
         current = d.order;
         current._events = d.events || [];
         if (!q) q = quoteState(current);
         renderDetail();
-        $('detail').classList.remove('hidden');
+        if ($('detail').classList.contains('hidden')) {
+          $('detail').classList.remove('hidden');
+          lockScroll(true);
+          if (pushHistory) history.pushState({ admOrder: id }, '');
+        }
+        $('detail').scrollTop = 0;
       }
+      function closeDetail(fromPop) {
+        $('detail').classList.add('hidden');
+        lockScroll(false);
+        q = null; current = null;
+        loadOrders(true);
+        if (!fromPop && history.state?.admOrder) history.back();
+      }
+      window.addEventListener('popstate', () => {
+        if (!$('detail').classList.contains('hidden')) closeDetail(true);
+        else ['modal-new', 'modal-partner'].forEach((m) => $(m).classList.add('hidden'));
+      });
       function refreshDetail() { if (current) renderDetail(); }
 
-      function photoGroup(o, kind) {
-        const keys = (o.photos || []).filter((k) => k.includes('/' + kind + '/'));
-        if (!keys.length) return '';
-        return `<div><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${kind}</p>
-          <div class="grid grid-cols-3 gap-2">${keys.map((k) =>
-            `<a href="/api/photo/${k}" target="_blank"><img src="/api/photo/${k}" loading="lazy" class="rounded-lg w-full h-24 object-cover border border-th-border/10" /></a>`).join('')}
+      function photoStrip(o) {
+        const groups = ['intake', 'before', 'after']
+          .map((k) => ({ k, keys: (o.photos || []).filter((key) => key.includes('/' + k + '/')) }))
+          .filter((g) => g.keys.length);
+        if (!groups.length) return '';
+        if (o.status === 'qc') {
+          // QC: the decision screen — bigger 2-up tiles.
+          return `<div class="card p-4 mt-4 space-y-3">${groups.map((g) => `
+            <div><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${g.k}</p>
+              <div class="grid grid-cols-2 gap-2">${g.keys.map((k) =>
+                `<a href="/api/photo/${k}" target="_blank"><img src="/api/photo/${k}" loading="lazy" class="rounded-lg w-full aspect-[4/3] object-cover border border-th-border/10" /></a>`).join('')}
+              </div></div>`).join('')}</div>`;
+        }
+        return `<div class="card p-3 mt-4">
+          <div class="flex gap-2 overflow-x-auto">${groups.flatMap((g) => g.keys).map((k) =>
+            `<a href="/api/photo/${k}" target="_blank" class="shrink-0"><img src="/api/photo/${k}" loading="lazy" class="rounded-lg h-20 w-24 object-cover border border-th-border/10" /></a>`).join('')}
           </div></div>`;
       }
 
-      function renderDetail() {
-        const o = current;
-        const digits = String(o.phone || '').replace(/\D/g, '');
+      function historyHtml() {
+        return `
+          <div class="card p-4 sm:p-5 mt-4 mb-16">
+            <h3 class="font-display font-bold text-th-heading mb-3">Historial</h3>
+            <ul class="space-y-2 text-xs">
+              ${current._events.map((e) => {
+                const label = EVENT_ES[e.type] || e.type;
+                let extra = '';
+                if (e.type === 'status_changed' && e.data?.status) extra = `${STATUS_ES[e.data.status.from] || e.data.status.from} → <b>${STATUS_ES[e.data.status.to] || e.data.status.to}</b>`;
+                else if (e.data?.amount_eur) extra = e.data.amount_eur + '€';
+                else if (e.data?.note) extra = esc(e.data.note);
+                else if (e.data?.partner_notes) extra = esc(e.data.partner_notes);
+                else if (e.data?.kind) extra = esc(e.data.kind);
+                return `<li class="text-th-muted"><span class="text-th-faint">${fmtDate(e.ts)}</span> · ${label}${extra ? ' · ' + extra : ''}
+                  ${e.data && !extra ? `<details class="inline"><summary class="inline cursor-pointer text-th-faint">·…</summary><span class="text-th-faint">${esc(JSON.stringify(e.data))}</span></details>` : ''}</li>`;
+              }).join('')}
+            </ul>
+          </div>`;
+      }
+
+      function actionsHtml(o) {
         const p = partners.find((x) => x.id === o.partner_id);
         const activeP = partners.filter((x) => x.active);
         const match = (x) =>
           (!o.service_slug || !x.skills?.length || x.skills.includes(o.service_slug)) &&
           (!o.area_slug || !x.zones?.length || x.zones.includes(o.area_slug));
-        const attr = o.attr || {};
-        const refToken = localStorage.getItem('rl_ref_token');
-        const showComposer = ['new', 'quoted', 'booked'].includes(o.status);
-
-        $('detail-body').innerHTML = `
-          <div class="flex items-center justify-between mb-4">
-            <button id="d-back" class="btn-secondary text-sm px-4 py-2">← Volver</button>
-            <span class="adm-badge text-sm" style="background:${STATUS_COLOR[o.status]}22;color:${STATUS_COLOR[o.status]}">${STATUS_ES[o.status]}</span>
-          </div>
-
-          <div class="card p-5">
-            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-              <h2 class="font-display font-bold text-th-heading text-2xl">${esc(o.code)}</h2>
-              <span class="text-th-faint text-xs">${new Date(o.created_at).toLocaleString('es-ES')} · ${CHANNEL_ES[o.channel]}</span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
-              <div><span class="text-th-faint">Servicio:</span> ${esc(o.service_slug || '—')}${o.size ? ' · ' + esc(PRICING.es.sizes[o.size] || o.size) : ''}</div>
-              <div><span class="text-th-faint">Zona:</span> ${esc(AREAS[o.area_slug]?.name || o.area_slug || '—')}</div>
-              <div><span class="text-th-faint">Cliente:</span> ${esc(o.client_name || '—')}</div>
-              <div class="flex gap-3">
-                <span><span class="text-th-faint">Tel:</span> ${esc(o.phone || '—')}</span>
-                ${digits ? `<a class="text-brand-accent hover:underline" href="tel:+${digits}">llamar</a>
-                <a class="text-brand-whatsapp hover:underline" target="_blank" href="https://wa.me/${digits}">wa.me</a>` : ''}
-              </div>
-              ${o.quote_eur ? `<div><span class="text-th-faint">Presupuesto:</span> <b class="text-brand-accent">${o.quote_eur}€</b></div>` : ''}
-              ${o.paid_eur ? `<div><span class="text-th-faint">Pagado:</span> <b class="text-green-400">${o.paid_eur}€</b></div>` : ''}
-              ${o.scheduled_at ? `<div><span class="text-th-faint">Agendado:</span> ${new Date(o.scheduled_at).toLocaleString('es-ES')}</div>` : ''}
-              ${o.rework ? `<div><span class="text-th-faint">Reworks:</span> ${o.rework}</div>` : ''}
-            </div>
-
-            ${o.ref_code || attr.first ? `
-            <div class="mt-3 pt-3 border-t border-th-border/10 text-xs text-th-muted">
-              <span class="text-th-faint uppercase tracking-widest">Atribución</span> ·
-              ${o.ref_code ? `ref <b>${esc(o.ref_code)}</b> · ` : ''}
-              fuente: ${esc(attr.first?.utm_source || '(directo)')}
-              ${attr.first?.utm_campaign ? ` · campaña: ${esc(attr.first.utm_campaign)}` : ''}
-              ${attr.first?.landing ? ` · landing: ${esc(attr.first.landing)}` : ''}
-              ${o.ref_code && refToken ? ` · <a class="text-brand-accent hover:underline" target="_blank" href="/api/ref?code=${esc(o.ref_code)}&token=${encodeURIComponent(refToken)}">historial ref</a>` : ''}
-            </div>` : ''}
-          </div>
-
-          ${(o.photos || []).length ? `<div class="card p-5 mt-4 space-y-3">${photoGroup(o, 'intake')}${photoGroup(o, 'before')}${photoGroup(o, 'after')}</div>` : ''}
-
-          ${showComposer ? composerHtml(o) : ''}
-
-          ${o.quote_eur ? paymentHtml(o) : ''}
-
-          ${(() => {
-            // RL-450: a failed WhatsApp Cloud send without a later success
-            // means Mike must send by hand (the copy-buttons above).
-            const fails = current._events.filter((e) => e.type === 'wa_send_failed');
-            const oks = current._events.filter((e) => e.type === 'wa_sent');
-            const lastFail = fails[fails.length - 1];
-            const lastOk = oks[oks.length - 1];
-            return lastFail && (!lastOk || lastFail.ts > lastOk.ts)
-              ? `<div class="rounded-xl border border-red-400/40 bg-red-400/10 p-3 mt-4 text-sm text-red-300">
-                   ⚠ Envío automático de WhatsApp falló (${esc(lastFail.data?.template || '')}) — envío manual necesario (usa los botones de copiar).
-                 </div>`
-              : '';
-          })()}
-
-          <div class="card p-5 mt-4">
-            <h3 class="font-display font-bold text-th-heading mb-3">Acciones</h3>
-            <div class="flex flex-wrap gap-2 mb-4">
-              ${(TRANSITIONS[o.status] || []).map((s) =>
-                `<button data-st="${s}" class="btn-secondary text-sm px-4 py-2" style="color:${STATUS_COLOR[s]}">→ ${STATUS_ES[s]}</button>`).join('') || '<span class="text-th-faint text-sm">Estado final.</span>'}
-              ${o.status === 'cancelled' ? '<button id="d-delete" class="btn-secondary text-sm px-4 py-2" style="color:#ef4444">🗑 Eliminar (solo test)</button>' : ''}
-            </div>
+        const trans = (TRANSITIONS[o.status] || []).filter((s) => s !== 'cancelled');
+        const primary = trans[0];
+        return `
+          <div class="card p-4 sm:p-5 mt-4">
             ${o.status === 'qc' ? `
-            <div class="rounded-xl border border-brand-gold/30 bg-brand-gold/5 p-4 mb-4">
+            <div class="rounded-xl border border-brand-gold/30 bg-brand-gold/5 p-3 mb-4">
               <p class="text-sm font-semibold text-brand-gold mb-2">Control de calidad</p>
-              <div class="flex flex-wrap gap-2 items-center">
-                <button id="qc-approve" class="btn-primary text-sm px-4 py-2">✓ Aprobar → cobrar</button>
-                <input id="qc-note" type="text" placeholder="nota de rework para el partner" class="adm-input flex-1 min-w-40 py-1.5" />
-                <button id="qc-rework" class="btn-secondary text-sm px-4 py-2" style="color:#ef4444">↩ Pedir rework</button>
+              <button id="qc-approve" class="btn-primary w-full min-h-[48px] text-sm mb-2">✓ Aprobar → cobrar</button>
+              <div class="flex gap-2">
+                <input id="qc-note" type="text" placeholder="nota de rework para el partner" class="adm-input flex-1" />
+                <button id="qc-rework" class="btn-secondary text-sm px-4" style="color:#ef4444">↩ Rework</button>
               </div>
-            </div>` : ''}
+            </div>` : `
+            ${primary && o.status !== 'new' ? `<button data-st="${primary}" class="btn-primary w-full min-h-[48px] text-sm mb-2">${ACTION_ES[primary] || '→ ' + STATUS_ES[primary]}</button>` : ''}
+            ${trans.slice(o.status === 'new' ? 0 : 1).map((s) =>
+              o.status === 'new' && s === 'quoted' ? '' :
+              `<button data-st="${s}" class="btn-secondary w-full min-h-[44px] text-sm mb-2" style="color:${STATUS_COLOR[s]}">${ACTION_ES[s] || '→ ' + STATUS_ES[s]}</button>`).join('')}
+            `}
             ${['assigned', 'in_progress', 'qc'].includes(o.status) && o.partner_id ? `
-            <div class="flex flex-wrap gap-2 items-center mb-4">
-              <button id="d-partner-msg" class="btn-secondary text-sm px-4 py-2">📤 Mensaje para partner</button>
-              <span id="d-partner-msg-hint" class="text-th-faint text-xs">genera un enlace /p/ nuevo (invalida el anterior)</span>
-            </div>` : ''}
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button id="d-partner-msg" class="btn-secondary w-full min-h-[44px] text-sm mb-2">📤 Mensaje para partner <span class="text-th-faint">(nuevo enlace)</span></button>` : ''}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
               <div>
                 <label class="text-xs text-th-faint block mb-1">Partner ${p ? '(actual: ' + esc(p.name) + ')' : ''}</label>
                 <div class="flex gap-2">
@@ -674,6 +918,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <input id="d-sched" type="datetime-local" value="${o.scheduled_at ? o.scheduled_at.slice(0, 16) : ''}" class="adm-input" />
                   <button id="d-sched-save" class="btn-secondary text-sm px-3">Guardar</button>
                 </div>
+                ${o.status === 'booked' && !o.scheduled_at ? '<p class="text-xs text-brand-gold mt-1">Sin fecha el pedido no sale en la vista de hoy.</p>' : ''}
               </div>
             </div>
             <label class="text-xs text-th-faint block mt-3 mb-1">Notas</label>
@@ -681,96 +926,178 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <textarea id="d-notes" rows="2" class="adm-input">${esc(o.notes || '')}</textarea>
               <button id="d-notes-save" class="btn-secondary text-sm px-3 self-start">Guardar</button>
             </div>
-          </div>
-
-          <div class="card p-5 mt-4 mb-10">
-            <h3 class="font-display font-bold text-th-heading mb-3">Historial</h3>
-            <ul class="space-y-1.5 text-xs text-th-muted">
-              ${current._events.map((e) => `<li><span class="text-th-faint">${new Date(e.ts).toLocaleString('es-ES')}</span> · <b>${esc(e.type)}</b>${e.data ? ' · ' + esc(JSON.stringify(e.data)) : ''}</li>`).join('')}
-            </ul>
+            ${(TRANSITIONS[o.status] || []).includes('cancelled') ? `
+              <div class="mt-4 pt-3 border-t border-th-border/10 text-center">
+                <button data-st="cancelled" class="text-sm text-red-400 min-h-[44px]">Cancelar pedido</button>
+              </div>` : ''}
+            ${o.status === 'cancelled' ? `
+              <div class="mt-4 pt-3 border-t border-th-border/10 text-center">
+                <button id="d-delete" class="text-sm text-red-400 min-h-[44px]">🗑 Eliminar definitivamente (solo test)</button>
+              </div>` : ''}
           </div>`;
+      }
 
-        $('d-back').addEventListener('click', () => { $('detail').classList.add('hidden'); q = null; current = null; loadOrders(); });
-        $('d-delete')?.addEventListener('click', async () => {
-          if (!confirm('Eliminar DEFINITIVAMENTE el pedido ' + current.code + ' y sus fotos? Solo para datos de prueba.')) return;
-          const d = await api('/api/orders/' + current.id, { method: 'DELETE' });
-          if (d.ok) { $('detail').classList.add('hidden'); q = null; current = null; loadOrders(); }
-          else alert('Error: ' + (d.reason || ''));
-        });
+      function headerHtml(o) {
+        const digits = digitsOf(o.phone);
+        const attr = o.attr || {};
+        const refToken = localStorage.getItem('rl_ref_token');
+        return `
+          <div class="card p-4 sm:p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h2 class="font-display font-bold text-th-heading text-xl">${esc(o.client_name || o.phone || o.code)}</h2>
+              <span class="text-th-faint text-xs">${esc(o.code)} · ${fmtDate(o.created_at)}</span>
+            </div>
+            <p class="text-sm text-th-body/85">${esc([svcName(o.service_slug), o.size ? sizeName(o.size) : '', AREAS[o.area_slug]?.name || ''].filter(Boolean).join(' · ') || '—')}</p>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm mt-2">
+              ${digits ? `<a class="text-brand-accent min-h-[44px] flex items-center" href="tel:+${digits}">📞 Llamar</a>
+              <a class="text-brand-whatsapp min-h-[44px] flex items-center" target="_blank" href="https://wa.me/${digits}">💬 WhatsApp</a>` : ''}
+              ${o.quote_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Presupuesto:</span><b class="text-brand-accent">${o.quote_eur}€</b></span>` : ''}
+              ${o.paid_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Pagado:</span><b class="text-green-400">${o.paid_eur}€</b></span>` : ''}
+              ${o.scheduled_at ? `<span class="min-h-[44px] flex items-center text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
+              ${o.rework ? `<span class="min-h-[44px] flex items-center text-th-muted">Reworks: ${o.rework}</span>` : ''}
+            </div>
+            ${o.ref_code || attr.first ? `
+            <div class="mt-2 pt-2 border-t border-th-border/10 text-xs text-th-faint">
+              ${o.ref_code ? `ref <b>${esc(o.ref_code)}</b> · ` : ''}fuente: ${esc(attr.first?.utm_source || '(directo)')}
+              ${attr.first?.utm_campaign ? ` · ${esc(attr.first.utm_campaign)}` : ''}
+              ${o.ref_code && refToken ? ` · <a class="text-brand-accent" target="_blank" href="/api/ref?code=${esc(o.ref_code)}&token=${encodeURIComponent(refToken)}">historial</a>` : ''}
+            </div>` : ''}
+          </div>`;
+      }
+
+      function waFailBanner() {
+        const fails = current._events.filter((e) => e.type === 'wa_send_failed');
+        const oks = current._events.filter((e) => e.type === 'wa_sent');
+        const lastFail = fails[fails.length - 1];
+        const lastOk = oks[oks.length - 1];
+        return lastFail && (!lastOk || lastFail.ts > lastOk.ts)
+          ? `<div class="rounded-xl border border-red-400/40 bg-red-400/10 p-3 mt-4 text-sm text-red-300">
+               ⚠ Envío automático de WhatsApp falló (${esc(lastFail.data?.template || '')}) — envío manual necesario.
+             </div>`
+          : '';
+      }
+
+      function renderDetail() {
+        const o = current;
+        $('d-status-chip').textContent = STATUS_ES[o.status];
+        $('d-status-chip').style.background = STATUS_COLOR[o.status] + '22';
+        $('d-status-chip').style.color = STATUS_COLOR[o.status];
+
+        const showComposer = ['new', 'quoted', 'booked'].includes(o.status);
+        // Status-aware block order: what Mike needs next comes first.
+        const blocks = [headerHtml(o), waFailBanner()];
+        if (o.status === 'qc') {
+          blocks.push(photoStrip(o), actionsHtml(o), o.quote_eur ? paymentHtml(o) : '');
+        } else if (['awaiting_payment', 'paid'].includes(o.status)) {
+          blocks.push(o.quote_eur ? paymentHtml(o) : '', actionsHtml(o), photoStrip(o));
+        } else if (['booked', 'assigned', 'in_progress'].includes(o.status)) {
+          blocks.push(actionsHtml(o), showComposer ? composerHtml(o) : '', o.quote_eur && !showComposer ? paymentHtml(o) : '', photoStrip(o));
+        } else { // new, quoted, done, cancelled
+          blocks.push(photoStrip(o), showComposer ? composerHtml(o) : '', actionsHtml(o), o.quote_eur && !showComposer ? paymentHtml(o) : '');
+        }
+        blocks.push(historyHtml());
+        $('detail-body').innerHTML = blocks.filter(Boolean).join('');
+
         document.querySelectorAll('[data-st]').forEach((el) =>
-          el.addEventListener('click', async () => {
+          el.addEventListener('click', () => busy(el, async () => {
             const to = el.getAttribute('data-st');
             if (to === 'cancelled' && !confirm('¿Cancelar el pedido ' + current.code + '?')) return;
             const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ status: to }) });
-            if (d.ok) openDetail(current.id); else alert('Transición no permitida: ' + (d.reason || ''));
-          }));
-        $('d-assign').addEventListener('click', async () => {
+            if (!d.ok) { toast('No se puede pasar a ese estado', false); return; }
+            toast(STATUS_ES[to] + ' ✓');
+            await openDetail(current.id, false);
+            if (to === 'booked') {
+              const s = $('d-sched');
+              if (s && !current.scheduled_at) { s.focus(); s.style.outline = '2px solid var(--brand-gold)'; }
+            }
+          })));
+        $('d-delete')?.addEventListener('click', () => busy($('d-delete'), async () => {
+          if (!confirm('¿Eliminar DEFINITIVAMENTE el pedido ' + current.code + ' y sus fotos? Solo para datos de prueba.')) return;
+          const d = await api('/api/orders/' + current.id, { method: 'DELETE' });
+          if (d.ok) { toast('Pedido eliminado'); closeDetail(); }
+          else toast('Error: ' + (d.reason || ''), false);
+        }));
+        $('d-assign')?.addEventListener('click', () => busy($('d-assign'), async () => {
           const body = { partner_id: $('d-partner').value || null };
           if ($('d-partner').value && current.status === 'booked') body.status = 'assigned';
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
-          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
-        });
-        $('d-sched-save').addEventListener('click', async () => {
+          if (d.ok) { toast('Partner guardado ✓'); openDetail(current.id, false); }
+          else toast('Error: ' + (d.reason || ''), false);
+        }));
+        $('d-sched-save')?.addEventListener('click', () => busy($('d-sched-save'), async () => {
           const v = $('d-sched').value;
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ scheduled_at: v ? new Date(v).toISOString() : null }) });
-          if (d.ok) openDetail(current.id);
-        });
-        $('d-notes-save').addEventListener('click', async () => {
+          if (d.ok) { toast('Fecha guardada ✓'); openDetail(current.id, false); }
+          else toast('Error al guardar la fecha', false);
+        }));
+        $('d-notes-save')?.addEventListener('click', () => busy($('d-notes-save'), async () => {
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ notes: $('d-notes').value }) });
-          if (d.ok) openDetail(current.id);
-        });
-        if (showComposer) bindComposer(o);
-        if (o.quote_eur) bindPayments();
-
-        // QC (RL-430)
-        $('qc-approve')?.addEventListener('click', async () => {
+          if (d.ok) toast('Notas guardadas ✓');
+          else toast('Error al guardar las notas', false);
+        }));
+        $('qc-approve')?.addEventListener('click', () => busy($('qc-approve'), async () => {
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ status: 'awaiting_payment' }) });
-          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
-        });
-        $('qc-rework')?.addEventListener('click', async () => {
+          if (d.ok) { toast('QC aprobado ✓'); openDetail(current.id, false); }
+          else toast('Error: ' + (d.reason || ''), false);
+        }));
+        $('qc-rework')?.addEventListener('click', () => busy($('qc-rework'), async () => {
           const note = $('qc-note').value.trim();
           const d = await api('/api/orders/' + current.id, {
             method: 'PATCH',
             body: JSON.stringify({ status: 'in_progress', ...(note ? { event_note: 'rework: ' + note } : {}) }),
           });
-          if (d.ok) openDetail(current.id); else alert('Error: ' + (d.reason || ''));
-        });
-
-        // Partner dispatch message (RL-430): fresh token → prefilled wa.me
-        $('d-partner-msg')?.addEventListener('click', async () => {
+          if (d.ok) { toast('Rework solicitado'); openDetail(current.id, false); }
+          else toast('Error: ' + (d.reason || ''), false);
+        }));
+        $('d-partner-msg')?.addEventListener('click', () => busy($('d-partner-msg'), async () => {
           const d = await api('/api/orders/' + current.id + '/job-token', { method: 'POST' });
-          if (!d.ok) { alert('Error: ' + (d.reason || '')); return; }
+          if (!d.ok) { toast('Error: ' + (d.reason || ''), false); return; }
           const pt = partners.find((x) => x.id === current.partner_id);
-          const svc = (PRICING.es.packages[current.service_slug]?.name || current.service_slug || 'trabajo');
-          const size = current.size && PRICING.es.sizes[current.size] ? ' (' + PRICING.es.sizes[current.size] + ')' : '';
-          const when = current.scheduled_at ? new Date(current.scheduled_at).toLocaleString('es-ES', { dateStyle: 'short', timeStyle: 'short' }) : 'por confirmar';
-          const area = AREAS[current.area_slug]?.name || '';
           const msg = 'Hola' + (pt ? ' ' + pt.name.split(' ')[0] : '') + ', trabajo ' + current.code + ':\n' +
-            '• ' + svc + size + '\n' +
-            (area ? '• Zona: ' + area + '\n' : '') +
-            '• Cuándo: ' + when + '\n\n' +
+            '• ' + svcName(current.service_slug) + (current.size ? ' (' + sizeName(current.size) + ')' : '') + '\n' +
+            (AREAS[current.area_slug]?.name ? '• Zona: ' + AREAS[current.area_slug].name + '\n' : '') +
+            '• Cuándo: ' + (current.scheduled_at ? fmtDate(current.scheduled_at) : 'por confirmar') + '\n\n' +
             'Ficha completa, checklist y fotos aquí:\n' + location.origin + d.url;
-          const digits = String(pt?.phone || '').replace(/\D/g, '');
+          const digits = digitsOf(pt?.phone);
           if (digits) window.open('https://wa.me/' + digits + '?text=' + encodeURIComponent(msg), '_blank');
-          else { navigator.clipboard.writeText(msg); alert('Partner sin teléfono — mensaje copiado al portapapeles.'); }
-        });
+          else { navigator.clipboard.writeText(msg); toast('Partner sin teléfono — mensaje copiado'); }
+        }, 'Generando…'));
+        if (showComposer) bindComposer(o);
+        if (o.quote_eur) bindPayments();
       }
 
-      // ── Modals ────────────────────────────────────────────────────────────
-      document.querySelectorAll('[data-close]').forEach((el) =>
-        el.addEventListener('click', () => el.closest('.fixed').classList.add('hidden')));
+      // Back button: guard an unsaved quote.
+      $('d-back').addEventListener('click', () => {
+        if (q && current && ['new'].includes(current.status) && quoteTotal(current) > 0 && !current.quote_eur) {
+          if (!confirm('El presupuesto no está guardado. ¿Salir igualmente?')) return;
+        }
+        closeDetail();
+      });
 
-      $('btn-new').addEventListener('click', () => $('modal-new').classList.remove('hidden'));
-      $('btn-partner').addEventListener('click', () => $('modal-partner').classList.remove('hidden'));
+      // ── Modals ────────────────────────────────────────────────────────────
+      function openModal(id) {
+        $(id).classList.remove('hidden');
+        lockScroll(true);
+        history.pushState({ admModal: id }, '');
+        if (id === 'modal-new') setTimeout(() => $('n-phone').focus(), 50);
+      }
+      document.querySelectorAll('[data-close]').forEach((el) =>
+        el.addEventListener('click', () => {
+          el.closest('.fixed').classList.add('hidden');
+          lockScroll(false);
+          if (history.state?.admModal) history.back();
+        }));
+
+      $('btn-new').addEventListener('click', () => openModal('modal-new'));
+      $('btn-partner').addEventListener('click', () => openModal('modal-partner'));
       $('btn-refresh').addEventListener('click', () => { loadPartners(); loadOrders(); });
 
-      // populate size/area selects in the new-order modal
       $('n-size').innerHTML = '<option value="">Tamaño…</option>' +
         Object.entries(PRICING.es.sizes).map(([id, n]) => `<option value="${id}">${esc(n)}</option>`).join('');
       $('n-area').innerHTML = '<option value="">Zona…</option>' +
         Object.entries(AREAS).map(([slug, a]) => `<option value="${slug}">${esc(a.name)}</option>`).join('');
 
-      $('n-save').addEventListener('click', async () => {
+      $('n-save').addEventListener('click', () => busy($('n-save'), async () => {
         $('n-error').classList.add('hidden');
         const d = await api('/api/orders', {
           method: 'POST',
@@ -787,19 +1114,22 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           }),
         });
         if (!d.ok) {
-          $('n-error').textContent = 'Error: ' + (d.reason || '');
+          $('n-error').textContent = d.reason === 'bad_phone' ? 'Revisa el teléfono' : 'Error: ' + (d.reason || '');
           $('n-error').classList.remove('hidden');
           return;
         }
         $('modal-new').classList.add('hidden');
+        lockScroll(false);
+        if (history.state?.admModal) history.back();
         ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area'].forEach((id) => { $(id).value = ''; });
         $('n-channel').value = 'whatsapp';
         $('n-lang').value = 'es';
-        await loadOrders();
+        toast('Pedido ' + d.code + ' creado ✓');
+        await loadOrders(true);
         openDetail(d.id);
-      });
+      }, 'Creando…'));
 
-      $('p-save').addEventListener('click', async () => {
+      $('p-save').addEventListener('click', () => busy($('p-save'), async () => {
         $('p-error').classList.add('hidden');
         const csv = (v) => v.split(',').map((s) => s.trim()).filter(Boolean);
         const d = await api('/api/partners', {
@@ -818,12 +1148,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           return;
         }
         $('modal-partner').classList.add('hidden');
+        lockScroll(false);
+        if (history.state?.admModal) history.back();
         $('p-name').value = ''; $('p-phone').value = '';
+        toast('Partner creado ✓');
         loadPartners();
-      });
+        loadPartnersTab();
+      }, 'Creando…'));
 
       // ── Métricas (RL-460) ─────────────────────────────────────────────────
-      let M = null; // last metrics payload
+      let M = null;
 
       const badge = (value, limit, higherIsBad, unit) => {
         if (value == null) return '<span class="text-th-faint">—</span>';
@@ -834,16 +1168,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       };
       const bar = (n, max) =>
         `<span class="inline-block h-2 rounded bg-brand-accent/60 align-middle" style="width:${max ? Math.max(4, Math.round((n / max) * 120)) : 4}px"></span>`;
-
       function metricCard(title, html) {
         return `<div class="card p-4"><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${title}</p><div class="text-th-body text-sm">${html}</div></div>`;
       }
-
-      function breakdownRows(obj) {
+      function breakdownRows(obj, labelFn) {
         const entries = Object.entries(obj).sort((a, b) => b[1] - a[1]);
         const max = entries[0]?.[1] || 0;
         return entries.map(([k, v]) =>
-          `<div class="flex items-center gap-2 py-0.5"><span class="w-44 truncate text-th-muted">${esc(k)}</span>${bar(v, max)}<span class="text-th-heading font-medium">${v}</span></div>`).join('') || '<span class="text-th-faint">—</span>';
+          `<div class="flex items-center gap-2 py-0.5"><span class="w-44 truncate text-th-muted">${esc(labelFn ? labelFn(k) : k)}</span>${bar(v, max)}<span class="text-th-heading font-medium">${v}</span></div>`).join('') || '<span class="text-th-faint">—</span>';
       }
 
       async function loadMetrics() {
@@ -874,13 +1206,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             ${metricCard('Contribución estimada', `<b class="text-th-heading text-xl">${d.revenue.contribution_total}€</b> total · ${d.revenue.contribution_avg ?? '—'}€/pedido
-              <p class="text-th-faint text-xs mt-1">pagado − payout partner − 1,5% Stripe − 4% reserva (src/lib/unitEconomics.ts)</p>`)}
+              <p class="text-th-faint text-xs mt-1">pagado − payout partner − 1,5% Stripe − 4% reserva</p>`)}
             ${metricCard('CAC blended', `${badge(d.cac.blended, T.cac_eur, true, '€')}
               <span class="text-th-faint text-xs">· gasto ${d.cac.spend_total}€ / ${f.booked} reservas</span>`)}
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             ${metricCard('Por canal', breakdownRows(f.by_channel))}
-            ${metricCard('Por servicio', breakdownRows(f.by_service))}
+            ${metricCard('Por servicio', breakdownRows(f.by_service, (k) => svcName(k) || k))}
           </div>
 
           <div class="card p-4">
@@ -905,13 +1237,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <div id="m-spend-rows" class="space-y-2 mb-2">
               ${spendRows.map(([src, val]) => `
                 <div class="flex gap-2 items-center" data-spend-row>
-                  <input type="text" value="${esc(src)}" placeholder="fuente (google, meta…)" class="adm-input w-40 py-1.5" data-spend-src />
-                  <input type="number" value="${esc(val)}" min="0" step="1" placeholder="€" class="adm-input w-28 py-1.5" data-spend-amt />€
+                  <input type="text" value="${esc(src)}" placeholder="fuente (google, meta…)" class="adm-input w-40" data-spend-src />
+                  <input type="number" inputmode="numeric" value="${esc(val)}" min="0" step="1" placeholder="€" class="adm-input w-28" data-spend-amt />€
                 </div>`).join('')}
             </div>
             <div class="flex gap-2 mb-4">
-              <button id="m-spend-add" class="text-sm text-brand-accent hover:underline">+ fuente</button>
-              <button id="m-spend-save" class="btn-secondary text-sm px-4 py-1.5">Guardar gasto</button>
+              <button id="m-spend-add" class="text-sm text-brand-accent min-h-[44px]">+ fuente</button>
+              <button id="m-spend-save" class="btn-secondary text-sm px-4 min-h-[44px]">Guardar gasto</button>
             </div>
             <table class="w-full text-sm">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
@@ -931,11 +1263,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           const div = document.createElement('div');
           div.className = 'flex gap-2 items-center';
           div.setAttribute('data-spend-row', '');
-          div.innerHTML = '<input type="text" placeholder="fuente" class="adm-input w-40 py-1.5" data-spend-src />' +
-            '<input type="number" min="0" step="1" placeholder="€" class="adm-input w-28 py-1.5" data-spend-amt />€';
+          div.innerHTML = '<input type="text" placeholder="fuente" class="adm-input w-40" data-spend-src />' +
+            '<input type="number" inputmode="numeric" min="0" step="1" placeholder="€" class="adm-input w-28" data-spend-amt />€';
           $('m-spend-rows').appendChild(div);
         });
-        $('m-spend-save').addEventListener('click', async () => {
+        $('m-spend-save').addEventListener('click', () => busy($('m-spend-save'), async () => {
           const value = {};
           document.querySelectorAll('[data-spend-row]').forEach((row) => {
             const src = row.querySelector('[data-spend-src]').value.trim();
@@ -946,8 +1278,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             method: 'PUT',
             body: JSON.stringify({ key: 'ad_spend:' + (M?.month || ''), value }),
           });
-          if (d2.ok) loadMetrics(); else alert('Error: ' + (d2.reason || ''));
-        });
+          if (d2.ok) { toast('Gasto guardado ✓'); loadMetrics(); } else toast('Error: ' + (d2.reason || ''), false);
+        }));
       }
 
       function exportCsv() {
@@ -970,10 +1302,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         URL.revokeObjectURL(a.href);
       }
 
-      // ── Partners tab: CRUD + payout ledger (RL-430) ───────────────────────
-      let PT = null; // last ledger payload (metrics of the chosen month)
+      // ── Partners tab (RL-430) ─────────────────────────────────────────────
+      let PT = null;
 
       async function loadPartnersTab() {
+        if ($('view-partners').classList.contains('hidden')) return;
         const month = $('pt-month').value || new Date().toISOString().slice(0, 7);
         await loadPartners();
         let d;
@@ -991,7 +1324,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const ledger = d.partners;
         $('pt-body').innerHTML = `
           <div class="card p-4">
-            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados: QC aprobado o pagados)</span></p>
+            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados)</span></p>
             ${ledger.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
             <table class="w-full text-sm">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
@@ -1009,27 +1342,28 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>
           <div class="card p-4">
             <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Partners</p>
+            ${partners.length === 0 ? '<p class="text-th-faint text-sm">Sin partners todavía. Crea el primero con «+ Partner».</p>' : `
             <div class="space-y-3">
               ${partners.map((p) => `
                 <div class="rounded-xl border border-th-border/10 p-3" data-pt="${esc(p.id)}">
                   <div class="flex flex-wrap gap-2 items-center">
-                    <input data-f="name" value="${esc(p.name)}" class="adm-input w-40 py-1.5" />
-                    <input data-f="phone" value="${esc(p.phone || '')}" placeholder="teléfono" class="adm-input w-40 py-1.5" />
-                    <input data-f="payout_pct" type="number" value="${p.payout_pct}" min="0" max="100" class="adm-input w-20 py-1.5" />%
-                    <label class="flex items-center gap-1.5 text-sm text-th-muted ml-2">
-                      <input data-f="active" type="checkbox" ${p.active ? 'checked' : ''} class="accent-brand-accent" /> activo
+                    <input data-f="name" value="${esc(p.name)}" class="adm-input w-40" />
+                    <input data-f="phone" value="${esc(p.phone || '')}" placeholder="teléfono" class="adm-input w-40" />
+                    <input data-f="payout_pct" type="number" inputmode="numeric" value="${p.payout_pct}" min="0" max="100" class="adm-input w-20" />%
+                    <label class="flex items-center gap-1.5 text-sm text-th-muted ml-2 min-h-[44px]">
+                      <input data-f="active" type="checkbox" ${p.active ? 'checked' : ''} class="w-5 h-5 accent-brand-accent" /> activo
                     </label>
-                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-xs px-3 py-1.5 ml-auto">Guardar</button>
+                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-xs px-3 min-h-[40px] ml-auto">Guardar</button>
                   </div>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="zonas (slugs, coma)" class="adm-input flex-1 min-w-48 py-1.5 text-xs" />
-                    <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="servicios (slugs, coma)" class="adm-input flex-1 min-w-48 py-1.5 text-xs" />
+                    <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="zonas (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
+                    <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="servicios (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
                   </div>
                 </div>`).join('')}
-            </div>
+            </div>`}
           </div>`;
         document.querySelectorAll('[data-pt-save]').forEach((btn) =>
-          btn.addEventListener('click', async () => {
+          btn.addEventListener('click', () => busy(btn, async () => {
             const box = document.querySelector(`[data-pt="${btn.dataset.ptSave}"]`);
             const get = (f) => box.querySelector(`[data-f="${f}"]`);
             const csv = (v) => v.split(',').map((s) => s.trim()).filter(Boolean);
@@ -1044,9 +1378,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 skills: csv(get('skills').value),
               }),
             });
-            if (d2.ok) { btn.textContent = '✓'; setTimeout(() => loadPartnersTab(), 600); }
-            else alert('Error: ' + (d2.reason || ''));
-          }));
+            if (d2.ok) { toast('Partner guardado ✓'); loadPartnersTab(); }
+            else toast('Error: ' + (d2.reason || ''), false);
+          })));
       }
 
       function exportLedgerCsv() {
@@ -1063,13 +1397,15 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         URL.revokeObjectURL(a.href);
       }
 
-      // ── Tabs ──────────────────────────────────────────────────────────────
+      // ── Tabs + init ───────────────────────────────────────────────────────
       function showTab(which) {
         const views = { pipeline: 'view-pipeline', metrics: 'view-metrics', partners: 'view-partners' };
         for (const [k, id] of Object.entries(views)) {
           $(id).classList.toggle('hidden', k !== which);
-          $('tab-' + k).className = 'px-4 py-1.5 ' + (k === which ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
+          $('tab-' + k).className = 'flex-1 text-center py-2.5 min-h-[44px] ' +
+            (k === which ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted');
         }
+        $('btn-new').classList.toggle('hidden', which !== 'pipeline');
         if (which === 'metrics') {
           if (!$('m-month').value) $('m-month').value = new Date().toISOString().slice(0, 7);
           loadMetrics();
@@ -1086,15 +1422,31 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       $('m-csv').addEventListener('click', exportCsv);
       $('pt-load').addEventListener('click', loadPartnersTab);
       $('pt-csv').addEventListener('click', exportLedgerCsv);
+      $('filters-toggle').addEventListener('click', () => $('filters').classList.toggle('hidden'));
+      $('f-clear').addEventListener('click', clearFilters);
 
-      // ── Init ──────────────────────────────────────────────────────────────
       $('f-status').innerHTML = '<option value="">Estado: todos</option>' +
         STATUSES.map((s) => `<option value="${s}">${STATUS_ES[s]}</option>`).join('');
       ['f-status', 'f-channel', 'f-partner', 'f-month'].forEach((id) =>
-        $(id).addEventListener('change', loadOrders));
+        $(id).addEventListener('change', () => loadOrders()));
+
+      // Freshness: reload when Mike returns to the tab (no polling needed at
+      // this volume), and show how stale the list is.
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && $('detail').classList.contains('hidden') &&
+            !$('view-pipeline').classList.contains('hidden')) {
+          loadOrders(true);
+        }
+      });
+      setInterval(() => {
+        if (lastLoaded) {
+          const m = Math.floor((Date.now() - lastLoaded) / 60000);
+          $('pipeline-updated').textContent = m >= 1 ? `· actualizado hace ${m}m` : '';
+        }
+      }, 30000);
 
       token();
-      loadPartners().then(loadOrders);
+      loadPartners().then(() => loadOrders());
     </script>
   </body>
 </html>

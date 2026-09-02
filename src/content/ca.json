@@ -977,7 +977,8 @@
     "quote_total": "Total: {total}€ (IVA inclòs)",
     "quote_validity": "Vàlid 7 dies. Preu tancat — sense sorpreses.",
     "quote_link": "Preus complets: {url}",
-    "payment_link": "Enllaç de pagament segur (targeta o Bizum): {link}"
+    "payment_link": "Enllaç de pagament segur (targeta o Bizum): {link}",
+    "quote_sensitive_paint": "Recàrrec pintura sensible"
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",
