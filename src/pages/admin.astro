@@ -622,6 +622,20 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
           ${o.quote_eur ? paymentHtml(o) : ''}
 
+          ${(() => {
+            // RL-450: a failed WhatsApp Cloud send without a later success
+            // means Mike must send by hand (the copy-buttons above).
+            const fails = current._events.filter((e) => e.type === 'wa_send_failed');
+            const oks = current._events.filter((e) => e.type === 'wa_sent');
+            const lastFail = fails[fails.length - 1];
+            const lastOk = oks[oks.length - 1];
+            return lastFail && (!lastOk || lastFail.ts > lastOk.ts)
+              ? `<div class="rounded-xl border border-red-400/40 bg-red-400/10 p-3 mt-4 text-sm text-red-300">
+                   ⚠ Envío automático de WhatsApp falló (${esc(lastFail.data?.template || '')}) — envío manual necesario (usa los botones de copiar).
+                 </div>`
+              : '';
+          })()}
+
           <div class="card p-5 mt-4">
             <h3 class="font-display font-bold text-th-heading mb-3">Acciones</h3>
             <div class="flex flex-wrap gap-2 mb-4">

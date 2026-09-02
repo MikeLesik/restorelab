@@ -11,6 +11,7 @@ import {
   json, inert, notFound, adminOk, shapeOrder, logEvent, TRANSITIONS,
 } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
+import { fireStatusHooks } from '../../_lib/wa';
 
 /** Columns the admin may set directly. Status is handled separately. */
 const EDITABLE: Record<string, 'text' | 'number' | 'json'> = {
@@ -149,5 +150,11 @@ export async function onRequestPatch(context: {
   await logEvent(db, orderId, changed.status ? 'status_changed' : 'updated', changed);
 
   const updated = await db.prepare('SELECT * FROM orders WHERE id = ?').bind(orderId).first();
+
+  // WhatsApp Cloud automation hooks (RL-450) — no-op until configured.
+  if (changed.status) {
+    await fireStatusHooks(db, env, updated as Record<string, unknown>, (changed.status as any).to);
+  }
+
   return json({ ok: true, order: shapeOrder(updated as Record<string, unknown>) });
 }

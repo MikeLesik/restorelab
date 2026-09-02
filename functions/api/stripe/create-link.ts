@@ -14,6 +14,7 @@
 
 import { json, inert, notFound, adminOk, logEvent, TRANSITIONS } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
+import { fireStatusHooks } from '../../_lib/wa';
 
 interface StripeEnv extends OrdersEnv {
   STRIPE_SECRET_KEY?: string;
@@ -110,6 +111,15 @@ export async function onRequestPost(context: {
     kind, amount_eur: amountEur, session_id: session.id,
     ...(advance ? { status: { from, to: 'awaiting_payment' } } : {}),
   });
+
+  // WA hook (RL-450): the payment_link template needs a link AND the
+  // awaiting_payment state — that pairing happens HERE, whether this call
+  // advanced the status or the order was already awaiting (QC-approved
+  // first, link created after).
+  if (advance || from === 'awaiting_payment') {
+    const fresh = await db.prepare('SELECT * FROM orders WHERE id = ?').bind(order.id).first();
+    await fireStatusHooks(db, env, fresh as Record<string, unknown>, 'awaiting_payment');
+  }
 
   return json({ ok: true, url: session.url, amount_eur: amountEur, kind, advanced: !!advance });
 }
