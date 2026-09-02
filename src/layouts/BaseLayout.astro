@@ -30,7 +30,7 @@ const {
   title,
   description,
   lang,
-  ogImage = '/images/og-home.jpg',
+  ogImage = '/images/og-cover.jpg',
   canonicalURL,
   t,
   currentPath = '',
@@ -173,6 +173,10 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="restoreLab — corrección de pintura y cerámico a domicilio en Barcelona" />
     <meta property="og:locale" content={lang === 'en' ? 'en_GB' : lang === 'ca' ? 'ca_ES' : 'es_ES'} />
     <meta property="og:site_name" content="restoreLab" />
 
@@ -241,7 +245,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
       "parentOrganization": { "@id": `${siteUrl}/#organization` },
       "description": "Premium mobile surface restoration — car paint correction, ceramic coating, glass polishing and acrylic restoration in Barcelona metro area.",
       "url": siteUrl,
-      "image": `${siteUrl}/images/og-home.jpg`,
+      "image": `${siteUrl}/images/og-cover.jpg`,
       "telephone": `+${WHATSAPP_NUMBER}`,
       "address": {
         "@type": "PostalAddress",
