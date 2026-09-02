@@ -34,6 +34,7 @@ export type RestoreLabEvent =
   | ({ event: 'commercial_glass_inquiry'; source: string } & AttrFields)
   | ({ event: 'estimator_result'; source?: string; need?: string; slug?: string | null; price?: string } & AttrFields)
   | { event: 'plan_upsell_clicked'; source: string }
+  | { event: 'order_created'; channel: 'form' | 'whatsapp' | 'phone' | 'b2b'; service?: string }
   | { event: 'ai_referral'; ai_source: string; ai_referrer_url: string; landing_path: string; page_lang: string };
 
 /**

@@ -82,8 +82,18 @@ public/
   images/                           — static images
 functions/
   index.ts                          — Cloudflare edge function (root locale redirect)
+  _lib/                             — shared Function helpers (underscore = never routed)
+    orders.ts                       — Orders OS helpers: ULID, order codes, state machine, auth, D1/R2 types
+    schema.ts                       — Orders schema statements (mirror of migrations/0001_init.sql)
   api/capi.ts                       — Meta Conversions API forwarder (inert until env vars set)
   api/ref.ts                        — WhatsApp ref-code attribution log (KV REF_LOG; inert until bound)
+  api/orders/index.ts               — POST public intake (+admin manual entry) / GET list (admin)
+  api/orders/[id].ts                — GET detail+timeline / PATCH fields+status (admin; state machine)
+  api/orders/[id]/photos.ts         — POST photo upload (intake token / job token / admin)
+  api/photo/[[key]].ts              — GET photo stream from R2 (unguessable keys)
+  api/admin/migrate.ts              — POST apply schema (admin; idempotent)
+migrations/
+  0001_init.sql                     — Orders OS D1 schema (orders, partners, order_events, rate_limits)
 scripts/
   new-case.mjs, new-post.mjs, generate-llms-txt.mjs
 ```
@@ -181,6 +191,13 @@ npm run gen:llms   # regenerate public/llms.txt
 - **Event enrichment**: contact-intent events (`wa_click`, `phone_click`, `lead_submitted`, `b2b_inquiry`, `commercial_glass_inquiry`, `estimator_result`, plus any click whose href is wa.me/tel:) carry `ref`, `attr_source`, `attr_campaign`, `attr_landing`.
 - **Server log**: `functions/api/ref.ts` — POST (fire-and-forget from the pipeline) stores contact moments in KV binding `REF_LOG` (180d TTL); `GET /api/ref?code=RL-XXXX&token=<REF_ADMIN_TOKEN>` returns them (wrong token → 404). Inert until the KV binding + env var are configured in the Cloudflare dashboard.
 - Runtime lives ONLY in the BaseLayout tracking block (same rule as `__rl_push`). Setup + GTM/Ads wiring + weekly CAC ritual: `docs/ads-measurement.md`.
+
+## Orders OS (RL-410, Phase 4)
+- **Bindings** (all inert until configured — capi.ts philosophy; setup: `docs/setup-cloudflare-bindings.md`): D1 `ORDERS_DB` (db `restorelab-orders`), R2 `PHOTOS` (bucket `restorelab-photos`), env `ADMIN_TOKEN` (guards list/detail/PATCH/migrate; wrong → 404).
+- **State machine** (enforced in PATCH): `new→quoted→booked→(assigned→)in_progress→qc→awaiting_payment→paid→done`; `qc→in_progress` = rework (auto-increments the counter); most states → `cancelled`; `booked→in_progress` legal (Mike works the job himself). Every mutation writes an `order_events` row.
+- **Photos**: raw-bytes POST, jpeg/png/webp/heic ≤6MB, per-kind limits (intake 6 / before 8 / after 8), R2 keys `orders/<id>/<kind>/<rand128>.<ext>` — the key IS the capability; `/api/photo/<key>` streams, no listing. Intake uploads use the `intake_token` from order creation; before/after use the RL-430 job token (sha256 vs `job_token_hash`).
+- Public intake: honeypot field `website`, per-IP D1 rate limit (5/h, hashed IPs), same-origin only, order code `RL-O-XXXX`.
+- Schema changes: edit BOTH `migrations/0001_init.sql` and `functions/_lib/schema.ts` (mirror for `/api/admin/migrate`).
 
 ## Security
 - CSP + HSTS (with preload) in `public/_headers`. CSP whitelists: self, GTM, Clarity, Meta Pixel.
