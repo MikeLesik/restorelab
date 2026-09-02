@@ -641,6 +641,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <div class="flex flex-wrap gap-2 mb-4">
               ${(TRANSITIONS[o.status] || []).map((s) =>
                 `<button data-st="${s}" class="btn-secondary text-sm px-4 py-2" style="color:${STATUS_COLOR[s]}">→ ${STATUS_ES[s]}</button>`).join('') || '<span class="text-th-faint text-sm">Estado final.</span>'}
+              ${o.status === 'cancelled' ? '<button id="d-delete" class="btn-secondary text-sm px-4 py-2" style="color:#ef4444">🗑 Eliminar (solo test)</button>' : ''}
             </div>
             ${o.status === 'qc' ? `
             <div class="rounded-xl border border-brand-gold/30 bg-brand-gold/5 p-4 mb-4">
@@ -690,6 +691,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>`;
 
         $('d-back').addEventListener('click', () => { $('detail').classList.add('hidden'); q = null; current = null; loadOrders(); });
+        $('d-delete')?.addEventListener('click', async () => {
+          if (!confirm('Eliminar DEFINITIVAMENTE el pedido ' + current.code + ' y sus fotos? Solo para datos de prueba.')) return;
+          const d = await api('/api/orders/' + current.id, { method: 'DELETE' });
+          if (d.ok) { $('detail').classList.add('hidden'); q = null; current = null; loadOrders(); }
+          else alert('Error: ' + (d.reason || ''));
+        });
         document.querySelectorAll('[data-st]').forEach((el) =>
           el.addEventListener('click', async () => {
             const to = el.getAttribute('data-st');

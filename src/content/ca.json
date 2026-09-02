@@ -810,7 +810,8 @@
     "err_generic": "Alguna cosa ha fallat. Torna-ho a provar o escriu-nos per WhatsApp.",
     "err_photo_type": "Format no suportat. Fes servir fotos JPG, PNG, WebP o HEIC.",
     "cta_question": "Prefereixes no fer servir WhatsApp ara?",
-    "cta_action": "Envia fotos i t'enviem un preu tancat en ≤1h"
+    "cta_action": "Envia fotos i t'enviem un preu tancat en ≤1h",
+    "rgpd_note": "Les teves dades i fotos s'usen només per elaborar el pressupost i gestionar la comanda. Les fotos s'eliminen als 12 mesos. Encarregats: Cloudflare (allotjament) i Stripe (pagaments)."
   },
   "faq": {
     "section_title": "Abans de Contactar-nos",
@@ -4476,7 +4477,7 @@
   },
   "privacy_page": {
     "title": "Política de Privacitat",
-    "updated": "Darrera actualització: 17 de juliol de 2026",
+    "updated": "Última actualització: 2 de setembre de 2026",
     "sections": [
       {
         "title": "1. Responsable del tractament",
@@ -4519,13 +4520,15 @@
         "paragraphs": [
           "Formulari de contacte i WhatsApp: nom, telèfon, localitat, dades del vehicle o l'embarcació i, si escau, fotografies que ens enviïs.",
           "Reserva de cita (Cal.com): nom i adreça de correu electrònic.",
-          "Cookies analítiques i de màrqueting: únicament si les acceptes al bàner de consentiment."
+          "Cookies analítiques i de màrqueting: únicament si les acceptes al bàner de consentiment.",
+          "Formulari «Envia fotos» (/solicitud): nom, telèfon, zona i les fotografies del vehicle que pugis."
         ]
       },
       {
         "title": "3. Finalitats i base jurídica",
         "paragraphs": [
-          "Tractem les teves dades amb les finalitats i bases jurídiques següents de l'art. 6 RGPD:"
+          "Tractem les teves dades amb les finalitats i bases jurídiques següents de l'art. 6 RGPD:",
+          "Les dades del formulari /solicitud (nom, telèfon i fotos del vehicle) s'utilitzen exclusivament per elaborar el teu pressupost i gestionar la comanda — art. 6.1.b RGPD."
         ],
         "details": [
           [
@@ -4549,7 +4552,8 @@
       {
         "title": "4. Destinataris i encarregats del tractament",
         "paragraphs": [
-          "Per prestar el servei utilitzem proveïdors que actuen com a encarregats del tractament: Cloudflare (allotjament web), Google (Tag Manager / Analytics), Cal.com (agenda de cites) i Meta/WhatsApp (missatgeria). Les teves dades no es venen ni se cedeixen a tercers amb finalitats comercials."
+          "Per prestar el servei utilitzem proveïdors que actuen com a encarregats del tractament: Cloudflare (allotjament web), Google (Tag Manager / Analytics), Cal.com (agenda de cites) i Meta/WhatsApp (missatgeria). Les teves dades no es venen ni se cedeixen a tercers amb finalitats comercials.",
+          "A més, per a la gestió de comandes i pagaments actuen com a encarregats del tractament: Cloudflare, Inc. (allotjament web, base de dades D1 i emmagatzematge de fotografies R2) i Stripe Payments Europe, Ltd. (processament de pagaments amb targeta i Bizum)."
         ]
       },
       {
@@ -4561,7 +4565,8 @@
       {
         "title": "6. Termini de conservació",
         "paragraphs": [
-          "Conservem les teves dades mentre es tramita la teva consulta i durant la vigència de la garantia del servei. Les dades de facturació es conserven durant els terminis exigits per la normativa fiscal."
+          "Conservem les teves dades mentre es tramita la teva consulta i durant la vigència de la garantia del servei. Les dades de facturació es conserven durant els terminis exigits per la normativa fiscal.",
+          "Les fotografies associades a una comanda es conserven un màxim de 12 mesos des de la seva finalització i després s'eliminen."
         ]
       },
       {

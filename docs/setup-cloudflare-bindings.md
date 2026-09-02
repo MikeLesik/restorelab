@@ -106,6 +106,30 @@ new → quoted → booked → assigned → in_progress → qc → awaiting_payme
 awaiting_payment → cancelled
 ```
 
+## Backups (RL-470)
+
+**D1 only** — R2 photos are deliberately not backed up (12-month retention,
+replaceable evidence; the SQL dump keeps the photo keys anyway).
+
+Manual weekly (works today, no setup):
+
+```bash
+npx wrangler d1 export restorelab-orders --remote \
+  --output "restorelab-orders-$(date +%F).sql"
+```
+
+Automatic: `.github/workflows/d1-backup.yml` runs Mondays 04:00 UTC and
+keeps dumps as workflow artifacts for 90 days. Enable it by adding two
+repo secrets (GitHub → Settings → Secrets and variables → Actions):
+`CLOUDFLARE_API_TOKEN` (permission: D1 Edit) and `CLOUDFLARE_ACCOUNT_ID`.
+Without them the job exits green doing nothing (inert by design).
+It can also be run on demand: Actions → d1-backup → Run workflow.
+
+**Photo retention (12 months, RGPD)**: dashboard → R2 → `restorelab-photos`
+→ Settings → **Object lifecycle rules** → add rule: delete objects **365
+days** after upload. This is what makes the privacy-policy promise true —
+set it when configuring the bucket.
+
 ## Optional hardening
 
 For `/admin` (RL-420) put Cloudflare Access in front of the path in addition

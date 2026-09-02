@@ -11,7 +11,7 @@
  * order's event log). Inert until STRIPE_WEBHOOK_SECRET is set.
  */
 
-import { json, inert, logEvent, TRANSITIONS } from '../../_lib/orders';
+import { json, inert, logEvent, safeEqual, TRANSITIONS } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus, D1Database } from '../../_lib/orders';
 
 interface StripeEnv extends OrdersEnv {
@@ -27,14 +27,6 @@ async function hmacHex(secret: string, payload: string): Promise<string> {
   );
   const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
   return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('');
-}
-
-/** Constant-time-ish hex comparison. */
-function safeEqual(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
 }
 
 async function alreadyProcessed(db: D1Database, orderId: string, sessionId: string): Promise<boolean> {

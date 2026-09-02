@@ -810,7 +810,8 @@
     "err_generic": "Algo ha fallado. Inténtalo de nuevo o escríbenos por WhatsApp.",
     "err_photo_type": "Formato no soportado. Usa fotos JPG, PNG, WebP o HEIC.",
     "cta_question": "¿Prefieres no usar WhatsApp ahora?",
-    "cta_action": "Envía fotos y te mandamos un precio cerrado en ≤1h"
+    "cta_action": "Envía fotos y te mandamos un precio cerrado en ≤1h",
+    "rgpd_note": "Tus datos y fotos se usan solo para elaborar el presupuesto y gestionar el pedido. Las fotos se eliminan a los 12 meses. Encargados: Cloudflare (alojamiento) y Stripe (pagos)."
   },
   "faq": {
     "section_title": "Antes de Contactarnos",
@@ -4476,7 +4477,7 @@
   },
   "privacy_page": {
     "title": "Política de Privacidad",
-    "updated": "Última actualización: 17 de julio de 2026",
+    "updated": "Última actualización: 2 de septiembre de 2026",
     "sections": [
       {
         "title": "1. Responsable del tratamiento",
@@ -4519,13 +4520,15 @@
         "paragraphs": [
           "Formulario de contacto y WhatsApp: nombre, teléfono, localidad, datos del vehículo o embarcación y, en su caso, fotografías que nos envíes.",
           "Reserva de cita (Cal.com): nombre y dirección de email.",
-          "Cookies analíticas y de marketing: únicamente si las aceptas en el banner de consentimiento."
+          "Cookies analíticas y de marketing: únicamente si las aceptas en el banner de consentimiento.",
+          "Formulario «Envía fotos» (/solicitud): nombre, teléfono, zona y fotografías del vehículo que subas."
         ]
       },
       {
         "title": "3. Finalidades y base jurídica",
         "paragraphs": [
-          "Tratamos tus datos con las siguientes finalidades y bases jurídicas del art. 6 RGPD:"
+          "Tratamos tus datos con las siguientes finalidades y bases jurídicas del art. 6 RGPD:",
+          "Los datos del formulario /solicitud (nombre, teléfono y fotos del vehículo) se utilizan exclusivamente para elaborar tu presupuesto y gestionar el pedido — art. 6.1.b RGPD."
         ],
         "details": [
           [
@@ -4549,7 +4552,8 @@
       {
         "title": "4. Destinatarios y encargados del tratamiento",
         "paragraphs": [
-          "Para prestar el servicio utilizamos proveedores que actúan como encargados del tratamiento: Cloudflare (alojamiento web), Google (Tag Manager / Analytics), Cal.com (agenda de citas) y Meta/WhatsApp (mensajería). Tus datos no se venden ni se ceden a terceros con fines comerciales."
+          "Para prestar el servicio utilizamos proveedores que actúan como encargados del tratamiento: Cloudflare (alojamiento web), Google (Tag Manager / Analytics), Cal.com (agenda de citas) y Meta/WhatsApp (mensajería). Tus datos no se venden ni se ceden a terceros con fines comerciales.",
+          "Además, para la gestión de pedidos y pagos actúan como encargados del tratamiento: Cloudflare, Inc. (alojamiento web, base de datos D1 y almacenamiento de fotografías R2) y Stripe Payments Europe, Ltd. (procesamiento de pagos con tarjeta y Bizum)."
         ]
       },
       {
@@ -4561,7 +4565,8 @@
       {
         "title": "6. Plazo de conservación",
         "paragraphs": [
-          "Conservamos tus datos mientras se tramita tu consulta y durante la vigencia de la garantía del servicio. Los datos de facturación se conservan durante los plazos exigidos por la normativa fiscal."
+          "Conservamos tus datos mientras se tramita tu consulta y durante la vigencia de la garantía del servicio. Los datos de facturación se conservan durante los plazos exigidos por la normativa fiscal.",
+          "Las fotografías asociadas a un pedido se conservan un máximo de 12 meses desde su finalización y después se eliminan."
         ]
       },
       {

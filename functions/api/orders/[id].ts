@@ -13,6 +13,45 @@ import {
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
 
+/**
+ * DELETE /api/orders/:id (admin) — test-data cleanup ONLY.
+ * Refuses anything not in `cancelled`: real history is never deletable,
+ * cancel first (that alone already removes the order from every metric).
+ * Removes the row, its event trail and its R2 photos.
+ */
+export async function onRequestDelete(context: {
+  request: Request;
+  env: OrdersEnv;
+  params: { id: string };
+}): Promise<Response> {
+  const { request, env, params } = context;
+  if (!adminOk(request, env)) return notFound();
+  if (!env.ORDERS_DB) return inert('orders_db_not_configured');
+  const db = env.ORDERS_DB;
+
+  const row = await db
+    .prepare('SELECT id, status, photos FROM orders WHERE id = ? OR code = ?')
+    .bind(params.id, params.id)
+    .first<Record<string, unknown>>();
+  if (!row) return json({ ok: false, reason: 'not_found' }, 404);
+  if (row.status !== 'cancelled') {
+    return json({ ok: false, reason: 'only_cancelled_deletable', status: row.status }, 409);
+  }
+
+  let photosDeleted = 0;
+  if (env.PHOTOS) {
+    for (const key of JSON.parse((row.photos as string) || '[]')) {
+      try {
+        await (env.PHOTOS as any).delete(key);
+        photosDeleted++;
+      } catch { /* best-effort */ }
+    }
+  }
+  await db.prepare('DELETE FROM order_events WHERE order_id = ?').bind(row.id).run();
+  await db.prepare('DELETE FROM orders WHERE id = ?').bind(row.id).run();
+  return json({ ok: true, deleted: row.id, photos_deleted: photosDeleted });
+}
+
 /** Columns the admin may set directly. Status is handled separately. */
 const EDITABLE: Record<string, 'text' | 'number' | 'json'> = {
   client_name: 'text',

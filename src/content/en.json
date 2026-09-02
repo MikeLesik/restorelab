@@ -809,7 +809,8 @@
     "err_generic": "Something went wrong. Try again or message us on WhatsApp.",
     "err_photo_type": "Unsupported format. Use JPG, PNG, WebP or HEIC photos.",
     "cta_question": "Prefer not to use WhatsApp right now?",
-    "cta_action": "Send photos and get a fixed price in ≤1h"
+    "cta_action": "Send photos and get a fixed price in ≤1h",
+    "rgpd_note": "Your data and photos are used only to prepare your quote and manage the order. Photos are deleted after 12 months. Processors: Cloudflare (hosting) and Stripe (payments)."
   },
   "faq": {
     "section_title": "Before You Get in Touch",
@@ -4475,7 +4476,7 @@
   },
   "privacy_page": {
     "title": "Privacy Policy",
-    "updated": "Last updated: 17 July 2026",
+    "updated": "Last updated: 2 September 2026",
     "sections": [
       {
         "title": "1. Data controller",
@@ -4518,13 +4519,15 @@
         "paragraphs": [
           "Contact form and WhatsApp: name, phone number, town, details of your vehicle or boat and any photos you send us.",
           "Appointment booking (Cal.com): name and email address.",
-          "Analytics and marketing cookies: only if you accept them in the consent banner."
+          "Analytics and marketing cookies: only if you accept them in the consent banner.",
+          "\"Send photos\" form (/solicitud): name, phone, area and the vehicle photos you upload."
         ]
       },
       {
         "title": "3. Purposes and legal basis",
         "paragraphs": [
-          "We process your data for the following purposes under art. 6 GDPR:"
+          "We process your data for the following purposes under art. 6 GDPR:",
+          "Data from the /solicitud form (name, phone and vehicle photos) is used exclusively to prepare your quote and manage the order — art. 6.1.b GDPR."
         ],
         "details": [
           [
@@ -4548,7 +4551,8 @@
       {
         "title": "4. Recipients and processors",
         "paragraphs": [
-          "We rely on providers acting as data processors: Cloudflare (hosting), Google (Tag Manager / Analytics), Cal.com (appointment scheduling) and Meta/WhatsApp (messaging). Your data is never sold or shared with third parties for commercial purposes."
+          "We rely on providers acting as data processors: Cloudflare (hosting), Google (Tag Manager / Analytics), Cal.com (appointment scheduling) and Meta/WhatsApp (messaging). Your data is never sold or shared with third parties for commercial purposes.",
+          "In addition, for order and payment management the following act as data processors: Cloudflare, Inc. (web hosting, D1 database and R2 photo storage) and Stripe Payments Europe, Ltd. (card and Bizum payment processing)."
         ]
       },
       {
@@ -4560,7 +4564,8 @@
       {
         "title": "6. Retention",
         "paragraphs": [
-          "We keep your data while your enquiry is being handled and for the duration of the service warranty. Invoicing data is kept for the periods required by tax law."
+          "We keep your data while your enquiry is being handled and for the duration of the service warranty. Invoicing data is kept for the periods required by tax law.",
+          "Photographs linked to an order are kept for a maximum of 12 months after completion and then deleted."
         ]
       },
       {

@@ -59,7 +59,11 @@ export async function onRequestGet(context: {
     .prepare(`SELECT * FROM orders WHERE substr(created_at, 1, 7) = ? ORDER BY created_at ASC`)
     .bind(month)
     .all();
-  const orders = (ordersRes.results || []) as Row[];
+  const allOrders = (ordersRes.results || []) as Row[];
+  // Cancelled orders are excluded from EVERY aggregate and from CAC (RL-470):
+  // cancelling a test order removes it from the numbers; the CSV/records
+  // still list it (status column tells the story).
+  const orders = allOrders.filter((o) => o.status !== 'cancelled');
   const ids = orders.map((o) => o.id as string);
   const events = ids.length ? await eventsFor(db, ids) : [];
 
@@ -195,6 +199,6 @@ export async function onRequestGet(context: {
       spend, spend_total: spendTotal, blended: cacBlended,
       by_source: cacBySource, booked_by_source: bookedBySource, created_by_source: createdBySource,
     },
-    orders: orders.map(shapeOrder),
+    orders: allOrders.map(shapeOrder),
   });
 }

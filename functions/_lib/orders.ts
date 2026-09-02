@@ -29,6 +29,7 @@ export interface R2Object {
 export interface R2Bucket {
   put(key: string, value: ArrayBuffer, options?: { httpMetadata?: { contentType?: string } }): Promise<unknown>;
   get(key: string): Promise<R2Object | null>;
+  delete(key: string): Promise<void>;
 }
 
 export interface OrdersEnv {
@@ -50,8 +51,16 @@ export const inert = (reason: string): Response => json({ ok: false, reason });
 /** Wrong/missing admin token → 404 (endpoint existence stays invisible). */
 export const notFound = (): Response => new Response('Not found', { status: 404 });
 
+/** Constant-time-ish string comparison (token/signature checks). */
+export function safeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
 export const adminOk = (request: Request, env: OrdersEnv): boolean =>
-  !!env.ADMIN_TOKEN && request.headers.get('x-admin-token') === env.ADMIN_TOKEN;
+  !!env.ADMIN_TOKEN && safeEqual(request.headers.get('x-admin-token') || '', env.ADMIN_TOKEN);
 
 /** Public write endpoints are same-origin only (no CORS headers are ever
  *  emitted; this additionally rejects cross-site form posts). */
