@@ -24,6 +24,8 @@ export interface Props {
   /** Emit a BreadcrumbList for pages that don't build their own richer one.
    *  Home is prepended automatically; the last item needs no `item` URL. */
   breadcrumbs?: { name: string; item?: string }[];
+  /** Keep the page out of search — transactional pages like /gracias. */
+  noindex?: boolean;
 }
 
 const {
@@ -36,6 +38,7 @@ const {
   currentPath = '',
   availableLangs = ['en', 'es', 'ca'],
   breadcrumbs,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = SITE_URL;
@@ -165,6 +168,7 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <!-- OpenGraph -->

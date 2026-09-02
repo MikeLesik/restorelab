@@ -75,7 +75,7 @@ export async function onRequestPost(context: {
   form.set('line_items[0][quantity]', '1');
   form.set('metadata[order_id]', String(order.id));
   form.set('metadata[kind]', kind);
-  form.set('success_url', `${site}/${lang}?pago=ok`);
+  form.set('success_url', `${site}/${lang}/gracias?pedido=${order.code}`);
   form.set('cancel_url', `${site}/${lang}/contact`);
 
   let session: Record<string, unknown>;

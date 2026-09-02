@@ -89,6 +89,10 @@
     "cookies": {
       "title": "Política de Cookies | restoreLab",
       "description": "Información sobre las cookies utilizadas en restorelab.io, su finalidad y cómo gestionar tu consentimiento."
+    },
+    "gracias": {
+      "title": "¡Gracias por tu pago! — restoreLab",
+      "description": "Hemos recibido tu pago. Te confirmamos los detalles por WhatsApp."
     }
   },
   "nav": {
@@ -981,7 +985,7 @@
     "payment_link": "Enlace de pago seguro (tarjeta o Bizum): {link}",
     "quote_sensitive_paint": "Recargo pintura sensible",
     "quote_cta": "¿Qué día te va bien y a qué dirección voy? Con eso te dejo el hueco reservado.",
-    "lc_booking_confirmation": "¡Reserva confirmada{name}! 🗓\n• {service}\n• {date}, llegada entre {window}\n• Dirección: {address}\n• Total: {total}€ (IVA incluido)\n• Señal recibida: {deposit}€ — el resto al terminar\nPara ese día: coche accesible y sin objetos de valor a la vista. Cambios sin coste hasta 24h antes; con menos de 24h, la señal se guarda para la nueva fecha.",
+    "lc_booking_confirmation": "¡Reserva confirmada{name}! ✅\n• {service}\n• {date}, llegada entre {window}\n• Dirección: {address}\n• Total: {total}€ (IVA incluido)\n• Señal recibida: {deposit}€ — el resto al terminar\nPara ese día: coche accesible y sin objetos de valor a la vista. Cambios sin coste hasta 24h antes; con menos de 24h, la señal se guarda para la nueva fecha.",
     "lc_reminder_24h": "¡Hola{name}! Te recuerdo: mañana, {date}, entre {window} en {address}. ¿Todo sigue en pie? 👍",
     "lc_on_my_way": "¡Hola{name}! Salgo hacia ti — llego aprox. a las {time}. 🚗",
     "lc_on_my_way_partner": "¡Hola{name}! Hoy te atiende {partner}, especialista de restoreLab — llega aprox. a las {time}. Cualquier cosa, escríbeme por aquí como siempre.",
@@ -4716,5 +4720,13 @@
     "cta_subtitle": "Envíanos fotos de tu coche por WhatsApp y te confirmamos precio y fecha — sin compromiso.",
     "back_to_area": "Barcelona",
     "see_pricing": "Ver todos los precios"
+  },
+  "gracias": {
+    "title": "¡Gracias por tu pago!",
+    "subtitle": "Hemos recibido tu pago correctamente.",
+    "order_prefix": "Tu pedido:",
+    "note": "Te confirmamos los detalles por WhatsApp. Si tienes cualquier duda, escríbenos y te respondemos enseguida.",
+    "cta_wa": "Escríbenos por WhatsApp",
+    "back": "Volver al inicio"
   }
 }

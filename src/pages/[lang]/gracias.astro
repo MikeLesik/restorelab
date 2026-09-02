@@ -1,0 +1,82 @@
+---
+// Payment thank-you page (RL-440). Stripe's success_url redirects here after a
+// paid Checkout session, with ?pedido=<order code>. Transactional → noindex,
+// excluded from the sitemap. The order code is read + validated client-side.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const g = t.gracias;
+const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.wa_messages.contact)}`;
+---
+
+<BaseLayout
+  title={t.meta.gracias.title}
+  description={t.meta.gracias.description}
+  lang={lang}
+  t={t}
+  currentPath="/gracias"
+  noindex={true}
+>
+  <div class="pt-24">
+    <section class="py-16">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+        <div class="card p-8 sm:p-10">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-brand-whatsapp/15 flex items-center justify-center">
+            <svg class="w-8 h-8 text-brand-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </div>
+
+          <h1 class="section-title text-3xl sm:text-4xl mb-3">{g.title}</h1>
+          <p class="text-th-muted mb-4">{g.subtitle}</p>
+
+          <p id="gracias-order" class="hidden mb-4 text-sm">
+            <span class="text-th-faint">{g.order_prefix}</span>
+            <span id="gracias-code" class="font-display font-bold text-brand-accent"></span>
+          </p>
+
+          <p class="text-th-body text-sm mb-8">{g.note}</p>
+
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" data-event="wa_click" class="btn-whatsapp w-full">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <use href="#icon-whatsapp" />
+            </svg>
+            {g.cta_wa}
+          </a>
+          <a href={`/${lang}`} class="inline-block mt-4 text-sm text-th-muted hover:text-th-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
+            {g.back}
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Show the order code only when it matches the public code format — never
+    // inject raw query text into the DOM.
+    try {
+      const code = new URLSearchParams(location.search).get('pedido') || '';
+      const codeEl = document.getElementById('gracias-code');
+      const wrapEl = document.getElementById('gracias-order');
+      if (codeEl && wrapEl && /^RL-O-[A-Z0-9]{4}$/.test(code)) {
+        codeEl.textContent = code;
+        wrapEl.classList.remove('hidden');
+      }
+    } catch (e) {}
+  </script>
+</BaseLayout>

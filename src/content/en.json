@@ -89,6 +89,10 @@
     "cookies": {
       "title": "Cookie Policy | restoreLab",
       "description": "Information about the cookies used on restorelab.io, their purpose and how to manage your consent."
+    },
+    "gracias": {
+      "title": "Thank you for your payment — restoreLab",
+      "description": "We've received your payment. We'll confirm the details by WhatsApp."
     }
   },
   "nav": {
@@ -1191,7 +1195,7 @@
     "payment_link": "Secure payment link (card or Bizum): {link}",
     "quote_sensitive_paint": "Sensitive paint surcharge",
     "quote_cta": "What day works for you, and what address should I come to? With that I'll hold the slot for you.",
-    "lc_booking_confirmation": "Booking confirmed{name}! 🗓\n• {service}\n• {date}, arrival between {window}\n• Address: {address}\n• Total: {total}€ (VAT included)\n• Deposit received: {deposit}€ — the rest when the job is done\nFor the day: please have the car accessible, with no valuables in sight. Changes are free up to 24h before; within 24h, the deposit carries over to the new date.",
+    "lc_booking_confirmation": "Booking confirmed{name}! ✅\n• {service}\n• {date}, arrival between {window}\n• Address: {address}\n• Total: {total}€ (VAT included)\n• Deposit received: {deposit}€ — the rest when the job is done\nFor the day: please have the car accessible, with no valuables in sight. Changes are free up to 24h before; within 24h, the deposit carries over to the new date.",
     "lc_reminder_24h": "Hi{name}! Quick reminder: tomorrow, {date}, between {window} at {address}. Still good? 👍",
     "lc_on_my_way": "Hi{name}! On my way — arriving around {time}. 🚗",
     "lc_on_my_way_partner": "Hi{name}! Today {partner}, a restoreLab specialist, will take care of your car — arriving around {time}. Anything at all, message me here as usual.",
@@ -4715,5 +4719,13 @@
     "cta_subtitle": "Send us photos of your car via WhatsApp and we'll confirm price and date — no obligation.",
     "back_to_area": "Barcelona",
     "see_pricing": "See all prices"
+  },
+  "gracias": {
+    "title": "Thank you for your payment!",
+    "subtitle": "Your payment went through successfully.",
+    "order_prefix": "Your order:",
+    "note": "We'll confirm the details by WhatsApp. Any questions, just message us and we'll reply right away.",
+    "cta_wa": "Message us on WhatsApp",
+    "back": "Back to home"
   }
 }

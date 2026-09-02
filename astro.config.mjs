@@ -18,7 +18,8 @@ export default defineConfig({
         !page.startsWith(`${site}/admin`) &&
         page !== `${site}/p` &&
         !page.startsWith(`${site}/p/`) &&
-        page !== `${site}/es/socios`,
+        page !== `${site}/es/socios` &&
+        !/\/gracias$/.test(page),
     }),
   ],
   output: 'static',

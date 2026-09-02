@@ -89,6 +89,10 @@
     "cookies": {
       "title": "Política de Cookies | restoreLab",
       "description": "Informació sobre les cookies utilitzades a restorelab.io, la seva finalitat i com gestionar el teu consentiment."
+    },
+    "gracias": {
+      "title": "Gràcies pel teu pagament — restoreLab",
+      "description": "Hem rebut el teu pagament. Et confirmem els detalls per WhatsApp."
     }
   },
   "nav": {
@@ -981,7 +985,7 @@
     "payment_link": "Enllaç de pagament segur (targeta o Bizum): {link}",
     "quote_sensitive_paint": "Recàrrec pintura sensible",
     "quote_cta": "Quin dia et va bé i a quina adreça vinc? Amb això et deixo l'hora reservada.",
-    "lc_booking_confirmation": "Reserva confirmada{name}! 🗓\n• {service}\n• {date}, arribada entre {window}\n• Adreça: {address}\n• Total: {total}€ (IVA inclòs)\n• Paga i senyal rebuda: {deposit}€ — la resta en acabar\nPer a aquell dia: cotxe accessible i sense objectes de valor a la vista. Canvis sense cost fins a 24h abans; amb menys de 24h, la senyal es guarda per a la nova data.",
+    "lc_booking_confirmation": "Reserva confirmada{name}! ✅\n• {service}\n• {date}, arribada entre {window}\n• Adreça: {address}\n• Total: {total}€ (IVA inclòs)\n• Paga i senyal rebuda: {deposit}€ — la resta en acabar\nPer a aquell dia: cotxe accessible i sense objectes de valor a la vista. Canvis sense cost fins a 24h abans; amb menys de 24h, la senyal es guarda per a la nova data.",
     "lc_reminder_24h": "Hola{name}! Et recordo: demà, {date}, entre {window} a {address}. Tot segueix en peu? 👍",
     "lc_on_my_way": "Hola{name}! Surto cap a tu — arribo aprox. a les {time}. 🚗",
     "lc_on_my_way_partner": "Hola{name}! Avui t'atén {partner}, especialista de restoreLab — arriba aprox. a les {time}. Qualsevol cosa, escriu-me per aquí com sempre.",
@@ -4716,5 +4720,13 @@
     "cta_subtitle": "Envia'ns fotos del teu cotxe per WhatsApp i et confirmem preu i data — sense compromís.",
     "back_to_area": "Barcelona",
     "see_pricing": "Veure tots els preus"
+  },
+  "gracias": {
+    "title": "Gràcies pel teu pagament!",
+    "subtitle": "Hem rebut el teu pagament correctament.",
+    "order_prefix": "La teva comanda:",
+    "note": "Et confirmem els detalls per WhatsApp. Si tens qualsevol dubte, escriu-nos i et responem de seguida.",
+    "cta_wa": "Escriu-nos per WhatsApp",
+    "back": "Tornar a l'inici"
   }
 }
