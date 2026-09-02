@@ -57,6 +57,16 @@ export async function onRequestPatch(context: {
     sets.push('active = ?');
     binds.push(b.active ? 1 : 0);
   }
+  if (b.status !== undefined) {
+    const s = String(b.status);
+    if (!['invited', 'pending', 'active', 'paused'].includes(s)) return json({ ok: false, reason: 'bad_status' }, 400);
+    sets.push('status = ?');
+    binds.push(s);
+    // Activation is the gate that lets the partner be assigned; keep the
+    // legacy `active` flag (used by the assign dropdown) in lock-step.
+    sets.push('active = ?');
+    binds.push(s === 'active' ? 1 : 0);
+  }
   if (!sets.length) return json({ ok: false, reason: 'nothing_to_update' }, 400);
 
   const res = await env.ORDERS_DB

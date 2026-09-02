@@ -151,6 +151,16 @@ export const PHOTO_TYPES: Record<string, string> = {
   'image/heif': 'heif',
 };
 
+// Partner-registration uploads (RL-431): work photos, a kit video, and
+// document scans (DNI/NIE, alta RETA, RC policy). Images + PDF + video.
+export const DOC_KINDS = ['work', 'kit', 'dni', 'reta', 'rc'] as const;
+export const DOC_TYPES: Record<string, string> = {
+  'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp',
+  'image/heic': 'heic', 'image/heif': 'heif', 'application/pdf': 'pdf',
+  'video/mp4': 'mp4', 'video/quicktime': 'mov', 'video/webm': 'webm',
+};
+export const DOC_MAX_BYTES = 30 * 1024 * 1024;
+
 // ── Order row (de)serialisation ──────────────────────────────────────────────
 
 const JSON_COLUMNS = ['photos', 'quote_breakdown', 'attr'] as const;

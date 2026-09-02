@@ -18,6 +18,8 @@ export default defineConfig({
         !page.startsWith(`${site}/admin`) &&
         page !== `${site}/p` &&
         !page.startsWith(`${site}/p/`) &&
+        page !== `${site}/socio` &&
+        !page.startsWith(`${site}/socio/`) &&
         page !== `${site}/es/socios` &&
         !/\/gracias$/.test(page),
     }),

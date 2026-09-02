@@ -1,0 +1,305 @@
+---
+// Partner registration + magic-link cabinet (RL-431). ES-only by design
+// (partner surface, like /p/ and /admin), noindex, reached ONLY through the
+// /socio/<token> link Mike sends. public/_redirects rewrites /socio/* here;
+// the client JS reads the token from the path. The token IS the authorization
+// and the persistent cabinet key — no login.
+import '@/styles/global.css';
+import { areaProfiles } from '@/lib/areaProfiles';
+import es from '@/content/es.json';
+
+const ZONES = Object.entries(areaProfiles).map(([slug, a]: [string, any]) => ({ slug, name: a.name }));
+const SKILLS = es.pricing.categories
+  .flatMap((c: any) => c.packages)
+  .map((p: any) => ({ slug: p.slug, name: p.name }));
+
+const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading placeholder:text-th-faint focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent';
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>restoreLab — Socios</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  </head>
+  <body class="bg-brand-dark min-h-screen text-th-body">
+    <div class="max-w-lg mx-auto px-4 py-8">
+      <p class="font-display font-bold text-th-heading text-xl mb-6">
+        restore<span class="text-brand-accent">Lab</span>
+        <span class="text-th-muted font-normal text-base">· Socios</span>
+      </p>
+
+      <div id="s-error" class="hidden card p-6 text-center">
+        <p class="text-th-body">Este enlace no es válido. Si crees que es un error, escribe a Mike.</p>
+      </div>
+
+      <!-- ── Registration form (invited / pending) ── -->
+      <div id="s-form" class="hidden space-y-5">
+        <div id="s-pending" class="hidden card p-4 border border-brand-gold/30 bg-brand-gold/5">
+          <p class="text-sm text-brand-gold font-semibold">Registro enviado. Mike lo está revisando.</p>
+          <p class="text-xs text-th-muted mt-1">Puedes seguir editando y subiendo lo que falte. Te avisará por WhatsApp cuando esté todo listo.</p>
+        </div>
+
+        <div>
+          <h1 class="section-title text-2xl mb-1">Únete como detailer</h1>
+          <p class="text-th-muted text-sm">Rellena tus datos y sube tus trabajos. Mike lo revisa y te activa.</p>
+        </div>
+
+        <div class="card p-5 space-y-4">
+          <p class="text-th-heading font-semibold">Tus datos</p>
+          <input id="f-name" type="text" maxlength="100" placeholder="Nombre y apellidos *" class={inputCls} />
+          <input id="f-phone" type="tel" maxlength="20" placeholder="Teléfono (WhatsApp) *" class={inputCls} />
+          <input id="f-email" type="email" maxlength="100" placeholder="Email (para las facturas)" class={inputCls} />
+          <input id="f-nif" type="text" maxlength="20" placeholder="NIF / NIE" class={inputCls} />
+          <label class="flex items-center gap-3 text-sm text-th-body cursor-pointer">
+            <input id="f-alta" type="checkbox" class="w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0" />
+            Estoy dado de alta como autónomo (RETA)
+          </label>
+          <div>
+            <label for="f-rc" class="text-xs text-th-faint block mb-1">Póliza de RC — fecha de vencimiento</label>
+            <input id="f-rc" type="date" class={inputCls} />
+          </div>
+        </div>
+
+        <div class="card p-5 space-y-4">
+          <p class="text-th-heading font-semibold">Tu experiencia</p>
+          <input id="f-years" type="text" maxlength="20" placeholder="Años haciendo detailing" class={inputCls} />
+          <textarea id="f-products" rows="2" maxlength="500" placeholder="Productos y herramientas que usas (marcas de pulido, máquina, cerámicos…)" class={inputCls}></textarea>
+          <textarea id="f-availability" rows="2" maxlength="500" placeholder="Tu disponibilidad (días, horas, si tienes coche propio…)" class={inputCls}></textarea>
+          <input id="f-portfolio" type="url" maxlength="300" placeholder="Instagram o web con tus trabajos" class={inputCls} />
+        </div>
+
+        <div class="card p-5">
+          <p class="text-th-heading font-semibold mb-1">Zonas que cubres</p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            {ZONES.map((z) => (
+              <label class="block">
+                <input type="checkbox" name="f-zone" value={z.slug} class="peer sr-only" />
+                <span class="inline-flex items-center rounded-full border border-th-border/15 bg-th-surface/[0.04] px-3.5 py-1.5 text-sm text-th-body cursor-pointer peer-checked:border-brand-accent peer-checked:bg-brand-accent/10 peer-checked:text-brand-accent peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent">{z.name}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div class="card p-5">
+          <p class="text-th-heading font-semibold mb-1">Servicios que dominas</p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            {SKILLS.map((s) => (
+              <label class="block">
+                <input type="checkbox" name="f-skill" value={s.slug} class="peer sr-only" />
+                <span class="inline-flex items-center rounded-full border border-th-border/15 bg-th-surface/[0.04] px-3.5 py-1.5 text-sm text-th-body cursor-pointer peer-checked:border-brand-accent peer-checked:bg-brand-accent/10 peer-checked:text-brand-accent peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent">{s.name}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div class="card p-5 space-y-4">
+          <p class="text-th-heading font-semibold">Fotos, vídeo y documentos</p>
+          <div data-up="work" data-accept="image/*" data-multi="1" data-label="Fotos de tus trabajos (antes/después)"></div>
+          <div data-up="kit" data-accept="video/*" data-multi="" data-label="Vídeo corto de tu equipo (máquina, pads, iluminación)"></div>
+          <div data-up="dni" data-accept="image/*,application/pdf" data-multi="" data-label="DNI / NIE"></div>
+          <div data-up="reta" data-accept="image/*,application/pdf" data-multi="" data-label="Alta de autónomo (RETA)"></div>
+          <div data-up="rc" data-accept="image/*,application/pdf" data-multi="" data-label="Póliza de RC"></div>
+        </div>
+
+        <div class="card p-5">
+          <label class="flex items-start gap-3 text-sm text-th-body cursor-pointer">
+            <input id="f-agree" type="checkbox" class="mt-0.5 w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0" />
+            <span>He leído y acepto las condiciones de colaboración de restoreLab (contrato marco, estándar de calidad, protección de datos). Mike me pasará el documento para firmar antes del primer trabajo.</span>
+          </label>
+        </div>
+
+        <p id="s-msg" class="hidden text-sm text-red-400" role="alert"></p>
+        <button id="s-submit" class="btn-primary w-full">Enviar mi registro</button>
+      </div>
+
+      <!-- ── Cabinet (active) ── -->
+      <div id="s-cabinet" class="hidden space-y-4">
+        <div class="card p-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h1 id="c-name" class="font-display font-bold text-th-heading text-2xl"></h1>
+            <span class="adm-badge bg-green-500/15 text-green-400">Activo</span>
+          </div>
+          <p class="text-sm text-th-muted mt-1">Tu porcentaje: <b id="c-pct" class="text-th-heading"></b></p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="card p-4 text-center">
+            <p id="c-payout" class="font-display font-bold text-2xl text-brand-whatsapp tabular-nums"></p>
+            <p class="text-[11px] text-th-faint">tu pago este mes</p>
+          </div>
+          <div class="card p-4 text-center">
+            <p id="c-done" class="font-display font-bold text-2xl text-th-heading tabular-nums"></p>
+            <p class="text-[11px] text-th-faint">trabajos cerrados este mes</p>
+          </div>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-2">Trabajos activos</h2>
+          <div id="c-jobs" class="space-y-2"></div>
+          <p class="text-xs text-th-faint mt-3">Cada trabajo te llega por WhatsApp con su enlace propio para el checklist y las fotos.</p>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-2">Tu disponibilidad</h2>
+          <textarea id="c-availability" rows="2" class={inputCls}></textarea>
+          <button id="c-avail-save" class="btn-secondary text-sm px-4 mt-2">Guardar</button>
+        </div>
+      </div>
+
+      <div id="s-paused" class="hidden card p-6 text-center">
+        <p class="text-th-body">Tu cuenta está en pausa ahora mismo. Escríbele a Mike por WhatsApp para reactivarla.</p>
+      </div>
+    </div>
+
+    <input id="s-file" type="file" class="hidden" />
+
+    <script define:vars={{ SKILL_NAMES: Object.fromEntries(SKILLS.map((s) => [s.slug, s.name])), ZONE_NAMES: Object.fromEntries(ZONES.map((z) => [z.slug, z.name])) }}>
+      const $ = (id) => document.getElementById(id);
+      const token = (location.pathname.match(/^\/socio\/([a-f0-9]{32})$/) || [])[1];
+      let uploadKind = null, uploadMulti = false;
+
+      async function load() {
+        if (!token) return $('s-error').classList.remove('hidden');
+        let d;
+        try { d = await (await fetch('/api/socio/' + token)).json(); } catch (e) { d = { ok: false }; }
+        if (!d.ok) return $('s-error').classList.remove('hidden');
+        const p = d.partner;
+        if (p.status === 'active') return renderCabinet(p, d.cabinet);
+        if (p.status === 'paused') return $('s-paused').classList.remove('hidden');
+        renderForm(p);
+      }
+
+      // ── Registration form ──
+      function renderForm(p) {
+        $('f-name').value = p.name || '';
+        $('f-phone').value = p.phone || '';
+        $('f-email').value = p.email || '';
+        $('f-nif').value = p.nif || '';
+        $('f-rc').value = p.rc_expiry || '';
+        const pr = p.profile || {};
+        $('f-alta').checked = !!pr.alta_autonomo;
+        $('f-years').value = pr.years || '';
+        $('f-products').value = pr.products || '';
+        $('f-availability').value = pr.availability || '';
+        $('f-portfolio').value = pr.portfolio_url || '';
+        (p.zones || []).forEach((z) => { const el = document.querySelector(`input[name="f-zone"][value="${z}"]`); if (el) el.checked = true; });
+        (p.skills || []).forEach((s) => { const el = document.querySelector(`input[name="f-skill"][value="${s}"]`); if (el) el.checked = true; });
+        if (pr.agreement_accepted_at) $('f-agree').checked = true;
+        buildUploaders(p.docs || []);
+        if (p.status === 'pending') $('s-pending').classList.remove('hidden');
+        $('s-form').classList.remove('hidden');
+      }
+
+      function buildUploaders(docs) {
+        document.querySelectorAll('[data-up]').forEach((box) => {
+          const kind = box.dataset.up;
+          const have = docs.filter((x) => x.kind === kind);
+          box.innerHTML = `
+            <p class="text-sm text-th-body mb-1">${box.dataset.label}</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" data-pick="${kind}" data-accept="${box.dataset.accept}" data-multi="${box.dataset.multi}" class="btn-secondary text-xs px-3 py-2">+ Subir</button>
+              <span class="text-xs text-th-muted">${have.length ? have.length + ' archivo(s) ✓' : 'sin subir'}</span>
+            </div>`;
+        });
+        document.querySelectorAll('[data-pick]').forEach((btn) =>
+          btn.addEventListener('click', () => {
+            uploadKind = btn.dataset.pick; uploadMulti = btn.dataset.multi === '1';
+            const f = $('s-file'); f.accept = btn.dataset.accept; f.multiple = uploadMulti; f.value = ''; f.click();
+          }));
+      }
+
+      $('s-file').addEventListener('change', async function () {
+        const files = [...this.files];
+        if (!files.length || !uploadKind) return;
+        const box = document.querySelector(`[data-pick="${uploadKind}"]`)?.closest('[data-up]');
+        for (const file of files) {
+          let blob = file, type = file.type;
+          // Compress images (canvas → JPEG ≤2MB); videos/PDFs go raw.
+          if (/^image\//.test(file.type) && file.size > 2 * 1024 * 1024) {
+            try {
+              const bmp = await createImageBitmap(file);
+              const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+              const c = document.createElement('canvas');
+              c.width = Math.round(bmp.width * scale); c.height = Math.round(bmp.height * scale);
+              c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height); bmp.close();
+              const out = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.8));
+              if (out) { blob = out; type = 'image/jpeg'; }
+            } catch (e) {}
+          }
+          try {
+            await fetch('/api/socio/' + token + '/upload?kind=' + uploadKind, { method: 'POST', headers: { 'Content-Type': type }, body: blob });
+          } catch (e) {}
+        }
+        // Refresh doc counts.
+        const d = await (await fetch('/api/socio/' + token)).json();
+        if (d.ok) buildUploaders(d.partner.docs || []);
+      });
+
+      function showMsg(m) { $('s-msg').textContent = m; $('s-msg').classList.remove('hidden'); $('s-msg').scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+
+      $('s-submit').addEventListener('click', async () => {
+        $('s-msg').classList.add('hidden');
+        const name = $('f-name').value.trim(), phone = $('f-phone').value.trim();
+        if (!name || !phone) return showMsg('Pon al menos tu nombre y tu teléfono.');
+        if (!$('f-agree').checked) return showMsg('Marca la casilla de condiciones para enviar.');
+        const zones = [...document.querySelectorAll('input[name="f-zone"]:checked')].map((e) => e.value);
+        const skills = [...document.querySelectorAll('input[name="f-skill"]:checked')].map((e) => e.value);
+        const btn = $('s-submit'); btn.disabled = true; btn.textContent = 'Enviando…';
+        let d;
+        try {
+          d = await (await fetch('/api/socio/' + token, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name, phone, email: $('f-email').value.trim(), nif: $('f-nif').value.trim(),
+              rc_expiry: $('f-rc').value || null, alta_autonomo: $('f-alta').checked,
+              years: $('f-years').value.trim(), products: $('f-products').value.trim(),
+              availability: $('f-availability').value.trim(), portfolio_url: $('f-portfolio').value.trim(),
+              zones, skills, agreement: true,
+            }),
+          })).json();
+        } catch (e) { d = { ok: false }; }
+        btn.disabled = false; btn.textContent = 'Enviar mi registro';
+        if (!d.ok) return showMsg('No se pudo enviar. Inténtalo otra vez.');
+        $('s-pending').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ── Cabinet ──
+      function renderCabinet(p, cab) {
+        $('c-name').textContent = p.name || 'Tu cuenta';
+        $('c-pct').textContent = p.payout_pct + '%';
+        $('c-payout').textContent = (cab?.payout_month ?? 0) + '€';
+        $('c-done').textContent = cab?.jobs_done_month ?? 0;
+        $('c-availability').value = (p.profile || {}).availability || '';
+        const jobs = cab?.active_jobs || [];
+        $('c-jobs').innerHTML = jobs.length ? jobs.map((j) => `
+          <div class="rounded-xl border border-th-border/10 p-3">
+            <div class="flex items-baseline justify-between gap-2">
+              <span class="font-medium text-th-heading text-sm">${SKILL_NAMES[j.service_slug] || j.service_slug || 'Servicio'}</span>
+              <span class="font-display font-bold text-brand-whatsapp text-sm">${j.payout_eur}€</span>
+            </div>
+            <p class="text-xs text-th-muted mt-0.5">${[j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ')}</p>
+          </div>`).join('') : '<p class="text-sm text-th-faint">Ahora mismo no tienes trabajos activos.</p>';
+        $('s-cabinet').classList.remove('hidden');
+      }
+
+      $('c-avail-save').addEventListener('click', async () => {
+        const btn = $('c-avail-save'); btn.disabled = true;
+        try {
+          await fetch('/api/socio/' + token, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: $('c-name').textContent, availability: $('c-availability').value.trim() }),
+          });
+          btn.textContent = 'Guardado ✓';
+          setTimeout(() => { btn.textContent = 'Guardar'; btn.disabled = false; }, 1500);
+        } catch (e) { btn.disabled = false; }
+      });
+
+      load();
+    </script>
+  </body>
+</html>

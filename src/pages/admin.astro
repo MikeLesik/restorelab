@@ -122,6 +122,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <input id="pt-month" type="month" class="adm-input w-auto" />
           <button id="pt-load" class="btn-secondary text-sm px-4 min-h-[44px]">Cargar</button>
           <button id="btn-partner" class="btn-secondary text-sm px-4 min-h-[44px]">+ Partner</button>
+          <button id="btn-invite" class="btn-primary text-sm px-4 min-h-[44px]">🔗 Enlace de registro</button>
           <button id="pt-csv" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Liquidación CSV</button>
         </div>
         <div id="pt-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
@@ -1510,6 +1511,21 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       $('btn-new').addEventListener('click', () => openModal('modal-new'));
       $('btn-partner').addEventListener('click', () => openModal('modal-partner'));
+      $('btn-invite').addEventListener('click', () => busy($('btn-invite'), async () => {
+        const d = await api('/api/partners/invite', { method: 'POST' });
+        if (!d.ok) { toast('Error: ' + (d.reason || ''), false); return; }
+        const link = location.origin + d.url;
+        try { await navigator.clipboard.writeText(link); } catch (e) {}
+        const wa = 'https://wa.me/?text=' + encodeURIComponent('Hola, para colaborar con restoreLab rellena tu registro aquí: ' + link);
+        $('pt-body').insertAdjacentHTML('afterbegin', `
+          <div class="card p-4 border border-brand-accent/40">
+            <p class="text-sm text-th-heading font-semibold mb-1">Enlace de registro generado (copiado)</p>
+            <p class="text-xs text-th-faint break-all mb-2">${link}</p>
+            <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex">Enviar por WhatsApp</a>
+          </div>`);
+        toast('Enlace copiado ✓');
+        loadPartners();
+      }, 'Generando…'));
       $('btn-refresh').addEventListener('click', () => { loadPartners(); loadOrders(); });
 
       $('n-size').innerHTML = '<option value="">Tamaño…</option>' +
@@ -1729,6 +1745,42 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       // ── Partners tab (RL-430) ─────────────────────────────────────────────
       let PT = null;
 
+      const PT_STATUS = {
+        invited: ['Invitado · sin rellenar', 'text-th-faint'],
+        pending: ['Pendiente de revisión', 'bg-brand-gold/20 text-brand-gold'],
+        active: ['Activo', 'bg-green-500/15 text-green-400'],
+        paused: ['Pausado', 'bg-th-surface/10 text-th-muted'],
+      };
+      const DOC_LABEL = { work: 'Trabajos', kit: 'Vídeo equipo', dni: 'DNI/NIE', reta: 'Alta autónomo', rc: 'Póliza RC' };
+      function partnerStatusRow(p) {
+        const st = p.status || 'active';
+        const [label, cls] = PT_STATUS[st] || PT_STATUS.active;
+        // Registration review — only meaningful before activation.
+        let review = '';
+        if (st === 'pending') {
+          const pr = p.profile || {};
+          const docs = p.docs || [];
+          const docChip = (d) => /^image\//.test(d.ct || '')
+            ? `<a href="/api/photo/${d.key}" target="_blank"><img src="/api/photo/${d.key}" class="w-14 h-14 object-cover rounded-lg border border-th-border/10" /></a>`
+            : `<a href="/api/photo/${d.key}" target="_blank" class="text-brand-accent text-xs underline">${DOC_LABEL[d.kind] || d.kind} ↗</a>`;
+          const facts = [
+            pr.years ? 'Experiencia: ' + esc(pr.years) : '',
+            pr.alta_autonomo ? 'Alta autónomo: sí' : 'Alta autónomo: no',
+            pr.agreement_accepted_at ? 'Condiciones aceptadas ✓' : 'Condiciones sin aceptar',
+            pr.availability ? 'Disponibilidad: ' + esc(pr.availability) : '',
+            pr.products ? 'Productos: ' + esc(pr.products) : '',
+            pr.portfolio_url ? `Portfolio: <a href="${esc(pr.portfolio_url)}" target="_blank" class="text-brand-accent underline">${esc(pr.portfolio_url)}</a>` : '',
+          ].filter(Boolean);
+          review = `
+            <div class="rounded-lg bg-th-surface/[0.04] border border-th-border/10 p-2.5 mb-2 text-xs text-th-body space-y-1">
+              ${facts.map((f) => `<p>${f}</p>`).join('')}
+              ${docs.length ? `<div class="flex flex-wrap gap-2 items-center pt-1">${docs.map(docChip).join('')}</div>` : '<p class="text-th-faint">Sin documentos subidos.</p>'}
+              <button data-activate="${esc(p.id)}" class="btn-primary text-xs px-4 py-2 mt-1">✓ Activar partner</button>
+            </div>`;
+        }
+        return `<div class="flex items-center gap-2 mb-2"><span class="adm-badge ${cls}">${label}</span>${p.registered_at ? `<span class="text-[11px] text-th-faint">registrado ${fmtDate(p.registered_at)}</span>` : ''}</div>${review}`;
+      }
+
       async function loadPartnersTab() {
         if ($('view-partners').classList.contains('hidden')) return;
         const month = $('pt-month').value || new Date().toISOString().slice(0, 7);
@@ -1769,7 +1821,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             ${partners.length === 0 ? '<p class="text-th-faint text-sm">Sin partners todavía. Crea el primero con «+ Partner».</p>' : `
             <div class="space-y-3">
               ${partners.map((p) => `
-                <div class="rounded-xl border border-th-border/10 p-3" data-pt="${esc(p.id)}">
+                <div class="rounded-xl border ${(p.status || 'active') === 'pending' ? 'border-brand-gold/40 bg-brand-gold/5' : 'border-th-border/10'} p-3" data-pt="${esc(p.id)}">
+                  ${partnerStatusRow(p)}
                   <div class="flex flex-wrap gap-2 items-center">
                     <input data-f="name" value="${esc(p.name)}" class="adm-input w-40" />
                     <input data-f="phone" value="${esc(p.phone || '')}" placeholder="teléfono" class="adm-input w-40" />
@@ -1813,6 +1866,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               }),
             });
             if (d2.ok) { toast('Partner guardado ✓'); loadPartnersTab(); }
+            else toast('Error: ' + (d2.reason || ''), false);
+          })));
+        document.querySelectorAll('[data-activate]').forEach((btn) =>
+          btn.addEventListener('click', () => busy(btn, async () => {
+            const d2 = await api('/api/partners/' + btn.dataset.activate, { method: 'PATCH', body: JSON.stringify({ status: 'active' }) });
+            if (d2.ok) { toast('Partner activado ✓'); loadPartners(); loadPartnersTab(); }
             else toast('Error: ' + (d2.reason || ''), false);
           })));
       }

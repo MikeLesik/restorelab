@@ -10,11 +10,21 @@
 import { json, inert, notFound, adminOk, ulid } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
-const parseJsonCols = (row: Record<string, unknown>) => ({
-  ...row,
-  zones: typeof row.zones === 'string' ? JSON.parse(row.zones as string) : row.zones,
-  skills: typeof row.skills === 'string' ? JSON.parse(row.skills as string) : row.skills,
-});
+const j = (v: unknown, fb: unknown) => {
+  if (typeof v !== 'string') return v ?? fb;
+  try { return JSON.parse(v); } catch { return fb; }
+};
+const parseJsonCols = (row: Record<string, unknown>) => {
+  const { token_hash, ...rest } = row; // never expose the cabinet token hash
+  return {
+    ...rest,
+    status: (row.status as string) || 'active',
+    zones: j(row.zones, []),
+    skills: j(row.skills, []),
+    docs: j(row.docs, []),
+    profile: j(row.profile, {}),
+  };
+};
 
 export async function onRequestGet(context: {
   request: Request;

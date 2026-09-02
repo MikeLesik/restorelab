@@ -9,7 +9,9 @@
 import { inert, notFound } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
-const KEY_RE = /^orders\/[0-9A-Z]+\/(intake|before|after)\/[a-f0-9]{32}\.(jpg|png|webp|heic|heif)$/;
+// Order photos and partner-registration docs (RL-431). The key's 128 bits of
+// randomness are the capability; there is no listing endpoint.
+const KEY_RE = /^(orders\/[0-9A-Z]+\/(intake|before|after)\/[a-f0-9]{32}\.(jpg|png|webp|heic|heif)|partners\/[0-9A-Z]+\/(work|kit|dni|reta|rc)\/[a-f0-9]{32}\.(jpg|png|webp|heic|heif|pdf|mp4|mov|webm))$/;
 
 export async function onRequestGet(context: {
   env: OrdersEnv;

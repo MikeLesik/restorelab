@@ -17,6 +17,10 @@
 /es/socios
   X-Robots-Tag: noindex, nofollow
 
+/socio/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
 /en/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 

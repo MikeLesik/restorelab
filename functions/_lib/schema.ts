@@ -56,6 +56,11 @@ export const SCHEMA_STATEMENTS: string[] = [
     payout_pct REAL NOT NULL DEFAULT 70,
     active INTEGER NOT NULL DEFAULT 1,
     rc_expiry TEXT,
+    token_hash TEXT,
+    status TEXT,
+    registered_at TEXT,
+    docs TEXT,
+    profile TEXT,
     created_at TEXT NOT NULL
   )`,
   `CREATE TABLE IF NOT EXISTS order_events (
@@ -89,4 +94,9 @@ export const SCHEMA_ALTERS: string[] = [
   `ALTER TABLE orders ADD COLUMN accepted_at TEXT`,
   `ALTER TABLE partners ADD COLUMN rc_expiry TEXT`,
   `ALTER TABLE orders ADD COLUMN payment_pref TEXT`,
+  `ALTER TABLE partners ADD COLUMN token_hash TEXT`,
+  `ALTER TABLE partners ADD COLUMN status TEXT`,
+  `ALTER TABLE partners ADD COLUMN registered_at TEXT`,
+  `ALTER TABLE partners ADD COLUMN docs TEXT`,
+  `ALTER TABLE partners ADD COLUMN profile TEXT`,
 ];

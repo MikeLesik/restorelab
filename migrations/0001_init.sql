@@ -54,6 +54,11 @@ CREATE TABLE IF NOT EXISTS partners (
   payout_pct REAL NOT NULL DEFAULT 70,
   active INTEGER NOT NULL DEFAULT 1,
   rc_expiry TEXT,                     -- RC insurance policy expiry (0002)
+  token_hash TEXT,                    -- magic-link cabinet token, sha256 (0004)
+  status TEXT,                        -- invited|pending|active|paused (0004)
+  registered_at TEXT,                 -- (0004)
+  docs TEXT,                          -- JSON R2 upload keys (0004)
+  profile TEXT,                       -- JSON profile bag (0004)
   created_at TEXT NOT NULL
 );
 
