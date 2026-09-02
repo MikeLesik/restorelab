@@ -30,9 +30,13 @@ async function hmacHex(secret: string, payload: string): Promise<string> {
 }
 
 async function alreadyProcessed(db: D1Database, orderId: string, sessionId: string): Promise<boolean> {
+  // instr(), not LIKE: production D1 caps LIKE pattern length far below a
+  // 66-char session id and throws "pattern too complex" — and only once a
+  // stripe_paid row exists to evaluate against, so it passes every first
+  // payment and 500s every second one. Discovered live (2026-09-02).
   const row = await db
-    .prepare(`SELECT id FROM order_events WHERE order_id = ? AND type = 'stripe_paid' AND data LIKE ? LIMIT 1`)
-    .bind(orderId, `%${sessionId}%`)
+    .prepare(`SELECT id FROM order_events WHERE order_id = ? AND type = 'stripe_paid' AND instr(data, ?) > 0 LIMIT 1`)
+    .bind(orderId, sessionId)
     .first();
   return !!row;
 }
