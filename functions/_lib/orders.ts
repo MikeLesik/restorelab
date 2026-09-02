@@ -36,6 +36,26 @@ export interface OrdersEnv {
   ORDERS_DB?: D1Database;
   PHOTOS?: R2Bucket;
   ADMIN_TOKEN?: string;
+  /** Push-notification URL for new public orders (ntfy.sh topic or any
+   *  endpoint accepting a plain-text POST). Inert until set. */
+  NOTIFY_WEBHOOK?: string;
+}
+
+/**
+ * Owner push for events that must not sit unseen (a new public order backs
+ * the "precio en ≤1h" promise). Plain-text POST; the Title/Priority/Tags
+ * headers are ntfy.sh conventions, harmlessly ignored by generic endpoints.
+ * Never throws — notification failure must not fail the order.
+ */
+export async function notifyOwner(env: OrdersEnv, title: string, text: string): Promise<void> {
+  if (!env.NOTIFY_WEBHOOK) return;
+  try {
+    await fetch(env.NOTIFY_WEBHOOK, {
+      method: 'POST',
+      headers: { Title: title, Priority: 'high', Tags: 'car' },
+      body: text,
+    });
+  } catch { /* best-effort */ }
 }
 
 // ── Responses ────────────────────────────────────────────────────────────────

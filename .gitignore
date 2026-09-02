@@ -30,3 +30,6 @@ yarn-error.log*
 
 # Local working folder for source before/after photos (optimised copies live in public/images/cases)
 real_foto/
+
+# Local marketing assets (ad creatives) — not part of the site build
+marketing/

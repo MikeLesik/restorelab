@@ -13,7 +13,7 @@
 
 import {
   json, inert, notFound, adminOk, sameOrigin, ulid, orderCode, randomHex128,
-  sha256hex, shapeOrder, logEvent, CHANNELS, LANGS, SIZES, STATUSES,
+  sha256hex, shapeOrder, logEvent, notifyOwner, CHANNELS, LANGS, SIZES, STATUSES,
 } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
@@ -26,6 +26,7 @@ const str = (v: unknown, max: number): string | null =>
 export async function onRequestPost(context: {
   request: Request;
   env: OrdersEnv;
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
@@ -117,6 +118,17 @@ export async function onRequestPost(context: {
   }
 
   await logEvent(db, id, 'created', { channel, service: serviceSlug, via: isAdmin ? 'admin' : 'public' });
+
+  // The "precio en ≤1h" promise needs a trigger: ping the owner about every
+  // public order (admin manual entries are the owner acting — no self-ping).
+  if (!isAdmin) {
+    context.waitUntil(notifyOwner(
+      env,
+      `Nuevo pedido ${code}`,
+      [serviceSlug, size, areaSlug, phone].filter(Boolean).join(' · ')
+      + ' — responder en menos de 1h',
+    ));
+  }
 
   return json({ ok: true, id, code, intake_token: intakeToken });
 }

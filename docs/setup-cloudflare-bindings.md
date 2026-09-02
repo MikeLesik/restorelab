@@ -36,6 +36,21 @@ openssl rand -hex 32
 This guards the orders list/detail/PATCH API and `/api/admin/migrate`.
 A wrong or missing token returns 404 (endpoints stay invisible).
 
+## 3b. New-order push (NOTIFY_WEBHOOK, optional but strongly recommended)
+
+Without this, public `/solicitud` orders sit unseen — the "precio en ≤1h"
+promise has no trigger. Cheapest reliable rail is [ntfy.sh](https://ntfy.sh)
+(free, no account):
+
+1. Install the **ntfy** app (iOS/Android), subscribe to a SECRET topic name
+   nobody can guess, e.g. `restorelab-pedidos-8f3k2m`.
+2. Pages → Settings → Environment variables → add **`NOTIFY_WEBHOOK`**
+   (Production) = `https://ntfy.sh/restorelab-pedidos-8f3k2m`.
+
+Every new public order then pushes "Nuevo pedido RL-O-XXXX" to the phone.
+Any endpoint accepting a plain-text POST works too (Slack/Telegram bridges).
+Admin-created orders don't ping (the owner is the one creating them).
+
 ## 4. Apply the schema (pick ONE path)
 
 **Path A — from the deployed site (no local tools):** after the bindings
