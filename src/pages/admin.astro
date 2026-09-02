@@ -1129,6 +1129,20 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>`;
       }
 
+      // Repeat clients get the same hands: continuity is free retention.
+      function prevPartnerHint(o) {
+        const d = digitsOf(o.phone);
+        if (!d) return '';
+        const prev = orders
+          .filter((x) => x.id !== o.id && x.partner_id && digitsOf(x.phone) === d &&
+            !['cancelled'].includes(x.status))
+          .sort((a, b) => (a.created_at < b.created_at ? 1 : -1))[0];
+        const pp = prev ? partners.find((x) => x.id === prev.partner_id) : null;
+        return pp && pp.id !== o.partner_id
+          ? `<p class="text-xs text-brand-gold mb-1.5">↻ Cliente repetido — la otra vez lo atendió <b>${esc(pp.name)}</b>. Mismo partner = confianza.</p>`
+          : '';
+      }
+
       function actionsHtml(o) {
         const p = partners.find((x) => x.id === o.partner_id);
         const activeP = partners.filter((x) => x.active);
@@ -1158,6 +1172,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
               <div>
                 <label class="text-xs text-th-faint block mb-1">Partner ${p ? '(actual: ' + esc(p.name) + ')' : ''}</label>
+                ${prevPartnerHint(o)}
                 <div class="flex gap-2">
                   <select id="d-partner" class="adm-input">
                     <option value="">—</option>
