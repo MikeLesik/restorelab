@@ -33,6 +33,13 @@ export async function onRequestPatch(context: {
   };
   text('name', 100); text('company', 100); text('nif', 20);
   text('phone', 20); text('email', 100);
+  if (b.rc_expiry !== undefined) {
+    if (b.rc_expiry !== null && !/^\d{4}-\d{2}-\d{2}$/.test(String(b.rc_expiry))) {
+      return json({ ok: false, reason: 'bad_rc_expiry' }, 400);
+    }
+    sets.push('rc_expiry = ?');
+    binds.push(b.rc_expiry);
+  }
   for (const field of ['zones', 'skills']) {
     if (b[field] !== undefined) {
       if (!Array.isArray(b[field])) return json({ ok: false, reason: `bad_${field}` }, 400);

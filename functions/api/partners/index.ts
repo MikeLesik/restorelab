@@ -50,8 +50,8 @@ export async function onRequestPost(context: {
   const payout = Number.isFinite(Number(b.payout_pct)) ? Number(b.payout_pct) : 70;
   await env.ORDERS_DB
     .prepare(
-      `INSERT INTO partners (id, name, company, nif, phone, email, zones, skills, payout_pct, active, created_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)`,
+      `INSERT INTO partners (id, name, company, nif, phone, email, zones, skills, payout_pct, active, rc_expiry, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)`,
     )
     .bind(
       id, name,
@@ -61,7 +61,9 @@ export async function onRequestPost(context: {
       typeof b.email === 'string' ? b.email.slice(0, 100) : null,
       JSON.stringify(Array.isArray(b.zones) ? b.zones.slice(0, 30) : []),
       JSON.stringify(Array.isArray(b.skills) ? b.skills.slice(0, 30) : []),
-      payout, new Date().toISOString(),
+      payout,
+      typeof b.rc_expiry === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(b.rc_expiry) ? b.rc_expiry : null,
+      new Date().toISOString(),
     )
     .run();
   return json({ ok: true, id });

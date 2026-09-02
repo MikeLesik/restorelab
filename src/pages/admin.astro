@@ -188,6 +188,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <div class="space-y-3">
               <input id="p-name" type="text" placeholder="Nombre *" class="adm-input" />
               <input id="p-phone" type="tel" inputmode="tel" placeholder="Teléfono" class="adm-input" />
+              <div class="grid grid-cols-2 gap-3">
+                <input id="p-nif" type="text" maxlength="20" placeholder="NIF/NIE" class="adm-input" />
+                <input id="p-email" type="email" maxlength="100" placeholder="Email (facturas)" class="adm-input" />
+              </div>
+              <div>
+                <label for="p-rc" class="text-xs text-th-faint block mb-1">Póliza RC — fecha de vencimiento (gate de asignación)</label>
+                <input id="p-rc" type="date" class="adm-input" />
+              </div>
               <input id="p-zones" type="text" placeholder="Zonas (slugs, coma): sant-cugat, terrassa" class="adm-input" />
               <input id="p-skills" type="text" placeholder="Servicios (slugs, coma): single-stage, headlight-restoration" class="adm-input" />
               <input id="p-payout" type="number" inputmode="numeric" value="70" min="0" max="100" placeholder="% payout" class="adm-input" />
@@ -559,6 +567,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         lastLoaded = Date.now();
         renderPipeline();
       }
+
+      // Working uninsured is the one partner risk with no recovery path.
+      const rcExpired = (p) => !!p?.rc_expiry && p.rc_expiry < new Date().toISOString().slice(0, 10);
 
       function slaPill(o) {
         // The <=1h quote promise made visible: minutes on new leads.
@@ -1124,7 +1135,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 <div class="flex gap-2">
                   <select id="d-partner" class="adm-input">
                     <option value="">—</option>
-                    ${activeP.map((x) => `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${match(x) ? '' : ' ⚠ fuera de skill/zona'}</option>`).join('')}
+                    ${activeP.map((x) => `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${match(x) ? '' : ' ⚠ fuera de skill/zona'}${rcExpired(x) ? ' ⛔ póliza vencida' : ''}</option>`).join('')}
                   </select>
                   <button id="d-assign" class="btn-secondary text-sm px-3">${o.status === 'booked' ? 'Asignar' : 'Guardar'}</button>
                 </div>
@@ -1306,6 +1317,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         }));
         $('d-assign')?.addEventListener('click', () => busy($('d-assign'), async () => {
           const body = { partner_id: $('d-partner').value || null };
+          const chosen = partners.find((x) => x.id === $('d-partner').value);
+          if (chosen && rcExpired(chosen)) {
+            toast('Póliza RC de ' + chosen.name.split(' ')[0] + ' vencida — renueva antes de asignar', false);
+            return;
+          }
           if ($('d-partner').value && current.status === 'booked') {
             // A mobile job without address+date is undispatchable — hard gate.
             const missing = !current.address ? 'd-addr' : !current.scheduled_at ? 'd-sched' : null;
@@ -1444,6 +1460,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           body: JSON.stringify({
             name: $('p-name').value.trim(),
             phone: $('p-phone').value.trim(),
+            nif: $('p-nif').value.trim() || undefined,
+            email: $('p-email').value.trim() || undefined,
+            rc_expiry: $('p-rc').value || undefined,
             zones: csv($('p-zones').value),
             skills: csv($('p-skills').value),
             payout_pct: Number($('p-payout').value) || 70,
@@ -1457,7 +1476,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         $('modal-partner').classList.add('hidden');
         lockScroll(false);
         if (history.state?.admModal) history.back();
-        $('p-name').value = ''; $('p-phone').value = '';
+        ['p-name', 'p-phone', 'p-nif', 'p-email', 'p-rc', 'p-zones', 'p-skills'].forEach((id) => { $(id).value = ''; });
         toast('Partner creado ✓');
         loadPartners();
         loadPartnersTab();
@@ -1666,6 +1685,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                     <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="zonas (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
                     <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="servicios (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
                   </div>
+                  <div class="flex flex-wrap gap-2 items-center mt-2">
+                    <input data-f="nif" value="${esc(p.nif || '')}" placeholder="NIF/NIE" class="adm-input w-32 text-xs" />
+                    <input data-f="email" value="${esc(p.email || '')}" placeholder="email (facturas)" class="adm-input flex-1 min-w-40 text-xs" />
+                    <label class="text-xs text-th-faint">RC hasta <input data-f="rc_expiry" type="date" value="${esc(p.rc_expiry || '')}" class="adm-input text-xs" /></label>
+                    ${rcExpired(p) ? '<span class="adm-badge bg-red-500/15 text-red-400">⚠ póliza vencida — no asignable</span>' : ''}
+                    ${!p.rc_expiry ? '<span class="text-xs text-brand-gold">sin póliza RC registrada</span>' : ''}
+                  </div>
                 </div>`).join('')}
             </div>`}
           </div>`;
@@ -1679,6 +1705,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               body: JSON.stringify({
                 name: get('name').value.trim(),
                 phone: get('phone').value.trim(),
+                nif: get('nif').value.trim() || null,
+                email: get('email').value.trim() || null,
+                rc_expiry: get('rc_expiry').value || null,
                 payout_pct: Number(get('payout_pct').value),
                 active: get('active').checked,
                 zones: csv(get('zones').value),
