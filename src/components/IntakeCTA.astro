@@ -1,0 +1,30 @@
+---
+// Secondary intake CTA (RL-411): routes visitors who prefer not to open
+// WhatsApp right now to /{lang}/solicitud. Never replaces a WhatsApp button —
+// always rendered as the quieter, second option.
+export interface Props {
+  t: Record<string, any>;
+  lang: string;
+  /** Optional package slug to preselect in the form (?service=…). */
+  service?: string;
+}
+
+const { t, lang, service } = Astro.props;
+const ui = t.intake;
+const href = `/${lang}/solicitud${service ? `?service=${service}` : ''}`;
+---
+
+<a
+  href={href}
+  data-event="cta_clicked"
+  data-cta="intake_cta"
+  class="card flex items-center justify-between gap-3 px-5 py-4 group transition-colors hover:border-brand-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+>
+  <span class="text-sm">
+    <span class="text-th-muted">{ui.cta_question}</span>
+    <span class="text-th-heading font-medium block sm:inline sm:ml-1">{ui.cta_action}</span>
+  </span>
+  <svg class="w-4 h-4 text-th-faint group-hover:text-brand-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+  </svg>
+</a>

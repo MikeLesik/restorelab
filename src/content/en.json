@@ -34,6 +34,10 @@
       "title": "Contact restoreLab — Get a Free Quote",
       "description": "Contact restoreLab for a free estimate. Send photos via WhatsApp and receive a quote within hours. Mobile service in Sant Cugat, Barcelona and Terrassa."
     },
+    "intake": {
+      "title": "Send Photos, Price in ≤1h — Online Request | restoreLab",
+      "description": "Upload 1–6 photos of your car, pick a service and area, and get a fixed quote by WhatsApp within 1 working hour. No calls, no commitment."
+    },
     "about": {
       "title": "About restoreLab — Our Story & Mission | restoreLab",
       "description": "Meet the team behind restoreLab. Mobile paint correction & ceramic coating in Sant Cugat and Barcelona. Insured, meticulous, passion-driven."
@@ -765,6 +769,48 @@
     "ceramic_2y": "2 years",
     "why_ceramic_1y": "One polishing pass and a one-year coating: the cheapest route to real protection."
   },
+  "intake": {
+    "title": "Send photos, price in ≤1h",
+    "subtitle": "No calls. Upload the photos and we send a fixed quote by WhatsApp within 1 working hour (9:00–19:00).",
+    "step_service": "What do you need?",
+    "service_placeholder": "Choose a service…",
+    "step_size": "Vehicle size",
+    "size_hint": "Optional — locks the exact matrix price.",
+    "price_hint": "Guide price:",
+    "price_quote_only": "quote from photos",
+    "step_area": "Where is the car?",
+    "area_placeholder": "Choose your area…",
+    "travel_included": "travel included",
+    "travel_fee": "travel +{fee}€",
+    "step_photos": "Photos (1–6)",
+    "photos_hint": "One of the whole car, one close-up of the defect. Compressed on your phone before upload — light on data.",
+    "photos_button": "Add photos",
+    "photos_selected": "{n} of 6",
+    "photo_remove": "Remove",
+    "step_contact": "Your details",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "phone_label": "Phone (WhatsApp)",
+    "phone_placeholder": "+34 600 000 000",
+    "rgpd_text": "I accept the processing of my data as per the",
+    "rgpd_link": "privacy policy",
+    "submit": "Send & get my price",
+    "submitting": "Sending…",
+    "uploading": "Uploading photos… {n}/{total}",
+    "success_title": "Request received!",
+    "success_code": "Your order:",
+    "success_promise": "We'll send your fixed quote by WhatsApp within 1 working hour (9:00–19:00). Keep your order code.",
+    "success_wa": "Open WhatsApp",
+    "err_photos": "Add at least 1 photo.",
+    "err_rgpd": "Tick the privacy checkbox to continue.",
+    "err_rate": "Too many requests from this connection. Try again in an hour or message us on WhatsApp.",
+    "err_unavailable": "The form is unavailable right now. Message us on WhatsApp — we reply just as fast.",
+    "err_upload": "Request created, but some photos failed to upload. Send them via WhatsApp with your order code.",
+    "err_generic": "Something went wrong. Try again or message us on WhatsApp.",
+    "err_photo_type": "Unsupported format. Use JPG, PNG, WebP or HEIC photos.",
+    "cta_question": "Prefer not to use WhatsApp right now?",
+    "cta_action": "Send photos and get a fixed price in ≤1h"
+  },
   "faq": {
     "section_title": "Before You Get in Touch",
     "section_subtitle": "Practical answers about our mobile service — so you know exactly what to expect",
@@ -1131,7 +1177,8 @@
     "estimator_line_pkg": "• Your recommendation: {tierName} — {price} ({duration})",
     "estimator_line_addon": "• I'd like to add: {addon} — {addonPrice}",
     "estimator_outro": "Can you confirm the price and a slot this week? Sending two photos of the car now.",
-    "estimator_unsure": "Hi restoreLab! I came from the estimator on your site and I'm not sure what my car needs. I'm sending two photos now — one of the whole car and one of the most visible defect — so you can tell me which package applies and what it costs."
+    "estimator_unsure": "Hi restoreLab! I came from the estimator on your site and I'm not sure what my car needs. I'm sending two photos now — one of the whole car and one of the most visible defect — so you can tell me which package applies and what it costs.",
+    "intake_success": "Hello restoreLab! I've just sent a photo request through the website. Could you confirm my quote?\n\n#pedido {code}"
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

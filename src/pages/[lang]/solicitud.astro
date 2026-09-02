@@ -1,0 +1,387 @@
+---
+// Public intake form (RL-411): "Envía fotos, precio en ≤1h".
+// SECOND path next to WhatsApp-first, never a replacement. Static shell +
+// client JS calling POST /api/orders and the photo upload endpoint (RL-410).
+// Photos are compressed client-side (canvas → JPEG ≤2MB) before upload;
+// HEIC that the browser can't decode is uploaded as-is (server accepts it).
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { areaProfiles } from '@/lib/areaProfiles';
+
+import en from '@/content/en.json';
+import es from '@/content/es.json';
+import ca from '@/content/ca.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { t: en } },
+    { params: { lang: 'es' }, props: { t: es } },
+    { params: { lang: 'ca' }, props: { t: ca } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { t } = Astro.props;
+const ui = t.intake;
+const wa = WHATSAPP_NUMBER;
+
+// Packages grouped by category for the service <select> (same slugs the
+// pricing page, Estimator and the RL-420 quote composer use).
+const serviceGroups = t.pricing.categories.map((c: any) => ({
+  title: c.title,
+  options: c.packages.map((p: any) => ({ slug: p.slug, name: p.name })),
+}));
+
+// Client-side data: price hints + travel fees, straight from the sources of
+// truth (pricing JSON / areaProfiles) — nothing retyped.
+const PKG = Object.fromEntries(
+  t.pricing.categories.flatMap((c: any) => c.packages).map((p: any) => [
+    p.slug,
+    { price: p.price, price_eur: p.price_eur, size_pricing: p.size_pricing || null },
+  ])
+);
+const SIZES_DATA = (t.pricing.ui.size_categories || []).map((c: any) => ({ id: c.id, name: c.name, examples: c.examples }));
+const AREAS = Object.entries(areaProfiles).map(([slug, a]: [string, any]) => ({ slug, name: a.name, fee: a.travelFee }));
+
+const waFallbackUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.contact ?? t.wa_messages.header)}`;
+
+const OPT = [
+  'flex items-center gap-2 rounded-full border border-th-border/15 bg-th-surface/[0.04]',
+  'px-4 py-2 text-sm text-th-body transition-colors cursor-pointer',
+  'hover:border-brand-accent/50',
+  'peer-checked:border-brand-accent peer-checked:bg-brand-accent/10 peer-checked:text-brand-accent',
+  'peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent',
+].join(' ');
+
+const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading placeholder:text-th-faint focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent';
+---
+
+<BaseLayout
+  title={t.meta.intake.title}
+  description={t.meta.intake.description}
+  lang={lang}
+  t={t}
+  currentPath="/solicitud"
+  breadcrumbs={[{ name: ui.title }]}
+>
+  <div class="pt-24">
+    <section class="py-10">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h1 class="section-title text-4xl mb-3">{ui.title}</h1>
+          <p class="text-th-muted">{ui.subtitle}</p>
+        </div>
+
+        <form id="intake-form" class="space-y-8" novalidate>
+          <!-- Honeypot: bots fill it, humans never see it -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <!-- 1. Service -->
+          <div>
+            <label for="intake-service" class="block text-th-heading font-semibold text-lg mb-3">{ui.step_service}</label>
+            <select id="intake-service" name="service" required class={inputCls}>
+              <option value="">{ui.service_placeholder}</option>
+              {serviceGroups.map((g: any) => (
+                <optgroup label={g.title}>
+                  {g.options.map((o: any) => <option value={o.slug}>{o.name}</option>)}
+                </optgroup>
+              ))}
+            </select>
+            <p id="intake-price-hint" class="hidden text-sm text-brand-accent font-medium mt-2"></p>
+          </div>
+
+          <!-- 2. Size -->
+          <fieldset>
+            <legend class="text-th-heading font-semibold text-lg mb-1">{ui.step_size}</legend>
+            <p class="text-th-faint text-xs mb-3">{ui.size_hint}</p>
+            <div class="flex flex-wrap gap-2">
+              {SIZES_DATA.filter((s: any) => s.id !== 'sports').map((s: any) => (
+                <label class="block">
+                  <input type="radio" name="intake-size" value={s.id} class="peer sr-only" />
+                  <span class={OPT}>{s.name}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <!-- 3. Area -->
+          <div>
+            <label for="intake-area" class="block text-th-heading font-semibold text-lg mb-3">{ui.step_area}</label>
+            <select id="intake-area" name="area" class={inputCls}>
+              <option value="">{ui.area_placeholder}</option>
+              {AREAS.map((a) => <option value={a.slug}>{a.name}</option>)}
+            </select>
+            <p id="intake-travel-hint" class="hidden text-sm text-th-muted mt-2"></p>
+          </div>
+
+          <!-- 4. Photos -->
+          <div>
+            <p class="text-th-heading font-semibold text-lg mb-1">{ui.step_photos}</p>
+            <p class="text-th-faint text-xs mb-3">{ui.photos_hint}</p>
+            <input id="intake-photos" type="file" accept="image/*,.heic,.heif" multiple class="hidden" />
+            <div class="flex items-center gap-3 flex-wrap">
+              <button type="button" id="intake-photos-btn"
+                class="btn-secondary text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+                {ui.photos_button}
+              </button>
+              <span id="intake-photos-count" class="text-sm text-th-muted"></span>
+            </div>
+            <ul id="intake-photo-list" class="mt-3 grid grid-cols-3 gap-2"></ul>
+          </div>
+
+          <!-- 5. Contact -->
+          <fieldset class="space-y-4">
+            <legend class="text-th-heading font-semibold text-lg mb-1">{ui.step_contact}</legend>
+            <div>
+              <label for="intake-name" class="block text-sm font-medium text-th-body/80 mb-2">{ui.name_label}</label>
+              <input id="intake-name" type="text" maxlength="100" placeholder={ui.name_placeholder} class={inputCls} />
+            </div>
+            <div>
+              <label for="intake-phone" class="block text-sm font-medium text-th-body/80 mb-2">{ui.phone_label} <span class="text-brand-accent">*</span></label>
+              <input id="intake-phone" type="tel" required maxlength="20" placeholder={ui.phone_placeholder} class={inputCls} />
+            </div>
+            <label class="flex items-start gap-3 text-sm text-th-muted cursor-pointer">
+              <input id="intake-rgpd" type="checkbox" required
+                class="mt-0.5 w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" />
+              <span>
+                {ui.rgpd_text}
+                <a href={`/${lang}/privacy`} target="_blank" class="text-brand-accent hover:underline">{ui.rgpd_link}</a>.
+              </span>
+            </label>
+          </fieldset>
+
+          <p id="intake-error" class="hidden text-sm text-red-400 border-l-2 border-red-400 pl-3" role="alert"></p>
+
+          <button type="submit" id="intake-submit" class="btn-primary w-full">
+            {ui.submit}
+          </button>
+        </form>
+
+        <!-- Success screen (replaces the form) -->
+        <div id="intake-success" class="hidden card p-6 sm:p-8 text-center" role="status" aria-live="polite">
+          <h2 class="font-display font-bold text-th-heading text-2xl mb-3">{ui.success_title}</h2>
+          <p class="text-th-muted text-sm mb-1">{ui.success_code}</p>
+          <p id="intake-success-code" class="font-display font-bold text-brand-accent text-3xl mb-4"></p>
+          <p class="text-th-body text-sm mb-6">{ui.success_promise}</p>
+          <a id="intake-success-wa" href="#" target="_blank" rel="noopener noreferrer"
+             data-event="wa_click" class="btn-whatsapp w-full">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <use href="#icon-whatsapp" />
+            </svg>
+            {ui.success_wa}
+          </a>
+          <p id="intake-success-warn" class="hidden text-sm text-brand-gold mt-4"></p>
+        </div>
+
+        <!-- Unavailable fallback: WhatsApp stays the path that always works -->
+        <div id="intake-fallback" class="hidden card p-6 text-center">
+          <p class="text-th-body text-sm mb-4" id="intake-fallback-text"></p>
+          <a href={waFallbackUrl} target="_blank" rel="noopener noreferrer" data-event="wa_click" class="btn-whatsapp w-full">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <use href="#icon-whatsapp" />
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script define:vars={{ wa, PKG, AREAS, SIZES_DATA, UI: ui, WA_TEMPLATE: t.wa_messages.intake_success, LANG: lang }}>
+    const $ = (id) => document.getElementById(id);
+    const form = $('intake-form');
+    const files = []; // {file, name}
+
+    // ── Price hint: exact matrix price when service+size resolve ──
+    const sel = $('intake-service');
+    function updateHint() {
+      const pkg = PKG[sel.value];
+      const hint = $('intake-price-hint');
+      if (!pkg) { hint.classList.add('hidden'); return; }
+      const size = document.querySelector('input[name="intake-size"]:checked')?.value;
+      let text;
+      if (pkg.price_eur === null) text = UI.price_quote_only;
+      else if (size && pkg.size_pricing && pkg.size_pricing[size] != null) text = pkg.size_pricing[size] + '€';
+      else text = pkg.price;
+      hint.textContent = UI.price_hint + ' ' + text;
+      hint.classList.remove('hidden');
+    }
+    sel.addEventListener('change', updateHint);
+    document.querySelectorAll('input[name="intake-size"]').forEach((r) => r.addEventListener('change', updateHint));
+
+    // Preselect via ?service=<slug> (used by the service-page CTAs)
+    try {
+      const pre = new URLSearchParams(location.search).get('service');
+      if (pre && PKG[pre]) { sel.value = pre; updateHint(); }
+    } catch (e) {}
+
+    // ── Travel fee live hint ──
+    $('intake-area').addEventListener('change', function () {
+      const area = AREAS.find((a) => a.slug === this.value);
+      const hint = $('intake-travel-hint');
+      if (!area) { hint.classList.add('hidden'); return; }
+      hint.textContent = area.fee === 0 ? UI.travel_included : UI.travel_fee.replace('{fee}', area.fee);
+      hint.classList.remove('hidden');
+    });
+
+    // ── Photos: pick, preview, client-side compression ──
+    const MAX_PHOTOS = 6;
+    const TARGET_BYTES = 2 * 1024 * 1024;
+    const HARD_LIMIT = 6 * 1024 * 1024;
+
+    $('intake-photos-btn').addEventListener('click', () => $('intake-photos').click());
+    $('intake-photos').addEventListener('change', function () {
+      for (const f of this.files) {
+        if (files.length >= MAX_PHOTOS) break;
+        files.push(f);
+      }
+      this.value = '';
+      renderPhotoList();
+    });
+
+    function renderPhotoList() {
+      const list = $('intake-photo-list');
+      list.innerHTML = '';
+      files.forEach((f, i) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between gap-2 rounded-lg border border-th-border/10 bg-th-surface/[0.04] px-2.5 py-1.5 text-xs text-th-muted col-span-3 sm:col-span-1';
+        const span = document.createElement('span');
+        span.className = 'truncate';
+        span.textContent = f.name;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'text-brand-accent hover:underline shrink-0';
+        btn.textContent = UI.photo_remove;
+        btn.addEventListener('click', () => { files.splice(i, 1); renderPhotoList(); });
+        li.append(span, btn);
+        list.appendChild(li);
+      });
+      $('intake-photos-count').textContent = files.length ? UI.photos_selected.replace('{n}', files.length) : '';
+    }
+
+    // Canvas compression to JPEG ≤2MB (max side 1600px). HEIC decodes fine on
+    // iOS Safari; where the browser can't decode, the original file is
+    // uploaded as-is (the API accepts heic ≤6MB).
+    async function compress(file) {
+      if (file.size <= TARGET_BYTES && /^image\/(jpeg|png|webp)$/.test(file.type)) {
+        return { blob: file, type: file.type };
+      }
+      try {
+        const bmp = await createImageBitmap(file);
+        const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(bmp.width * scale);
+        canvas.height = Math.round(bmp.height * scale);
+        canvas.getContext('2d').drawImage(bmp, 0, 0, canvas.width, canvas.height);
+        bmp.close();
+        for (const q of [0.8, 0.6, 0.45]) {
+          const blob = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', q));
+          if (blob && blob.size <= TARGET_BYTES) return { blob, type: 'image/jpeg' };
+        }
+        return null;
+      } catch (e) {
+        // Browser can't decode (e.g. HEIC outside Safari) — send the original.
+        if (file.size <= HARD_LIMIT && /^image\/(heic|heif|jpeg|png|webp)$/.test(file.type)) {
+          return { blob: file, type: file.type };
+        }
+        return null;
+      }
+    }
+
+    // ── Submit ──
+    function showError(msg) {
+      const el = $('intake-error');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    function showFallback(msg) {
+      form.classList.add('hidden');
+      $('intake-fallback-text').textContent = msg;
+      $('intake-fallback').classList.remove('hidden');
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      $('intake-error').classList.add('hidden');
+
+      const phone = $('intake-phone').value.trim();
+      if (!sel.value || !phone) { form.reportValidity(); return; }
+      if (!$('intake-rgpd').checked) { showError(UI.err_rgpd); return; }
+      if (files.length === 0) { showError(UI.err_photos); return; }
+
+      const btn = $('intake-submit');
+      btn.disabled = true;
+      btn.textContent = UI.submitting;
+
+      let attr = {}, ref = '';
+      try {
+        attr = JSON.parse(localStorage.getItem('rl_attr')) || {};
+        ref = attr.ref || '';
+      } catch (e2) {}
+
+      let created;
+      try {
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            phone,
+            client_name: $('intake-name').value.trim(),
+            service_slug: sel.value,
+            size: document.querySelector('input[name="intake-size"]:checked')?.value || undefined,
+            area_slug: $('intake-area').value || undefined,
+            lang: LANG,
+            ref,
+            attr,
+            website: form.elements.website.value,
+          }),
+        });
+        created = await res.json();
+        if (!created.ok) {
+          btn.disabled = false;
+          btn.textContent = UI.submit;
+          if (created.reason === 'rate_limited') return showError(UI.err_rate);
+          if (String(created.reason || '').includes('not_configured')) return showFallback(UI.err_unavailable);
+          return showError(UI.err_generic);
+        }
+      } catch (e3) {
+        btn.disabled = false;
+        btn.textContent = UI.submit;
+        return showError(UI.err_generic);
+      }
+
+      // Photo uploads — sequential, with progress; failures don't lose the order.
+      let uploaded = 0;
+      for (let i = 0; i < files.length; i++) {
+        btn.textContent = UI.uploading.replace('{n}', i + 1).replace('{total}', files.length);
+        const prepared = await compress(files[i]);
+        if (!prepared) continue;
+        try {
+          const up = await fetch(
+            `/api/orders/${created.id}/photos?kind=intake&token=${created.intake_token}`,
+            { method: 'POST', headers: { 'Content-Type': prepared.type }, body: prepared.blob },
+          );
+          if ((await up.json()).ok) uploaded++;
+        } catch (e4) {}
+      }
+
+      // Analytics (RL-301 enrichment + ref-log happen in the pipeline).
+      window.__rl_push?.({ event: 'lead_submitted', channel: 'form', service: sel.value });
+      window.__rl_push?.({ event: 'order_created', channel: 'form', service: sel.value });
+
+      // Success screen
+      form.classList.add('hidden');
+      $('intake-success-code').textContent = created.code;
+      const waText = WA_TEMPLATE.replace(/\{code\}/g, created.code);
+      $('intake-success-wa').href = `https://wa.me/${wa}?text=${encodeURIComponent(waText)}`;
+      if (uploaded < files.length) {
+        const warn = $('intake-success-warn');
+        warn.textContent = UI.err_upload;
+        warn.classList.remove('hidden');
+      }
+      $('intake-success').classList.remove('hidden');
+      $('intake-success').scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  </script>
+</BaseLayout>

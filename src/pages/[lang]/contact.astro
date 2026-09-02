@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import FAQ from '@/components/FAQ.astro';
 import AreaServedSection from '@/components/AreaServedSection.astro';
 import AvailabilityBanner from '@/components/AvailabilityBanner.astro';
+import IntakeCTA from '@/components/IntakeCTA.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -92,6 +93,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.conta
                 <div class="text-sm text-th-muted">support@restorelab.io · {t.ui.email_sub}</div>
               </div>
             </a>
+
+            <!-- Intake form — the no-WhatsApp path (RL-411) -->
+            <IntakeCTA t={t} lang={lang} />
           </div>
 
           <!-- Areas -->

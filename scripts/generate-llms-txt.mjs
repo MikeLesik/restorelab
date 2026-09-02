@@ -160,6 +160,7 @@ async function main() {
   out.push('- WhatsApp: +34 680 265 190 (primary channel — send photos for a quote)');
   out.push('- Email: support@restorelab.io');
   out.push(`- Contact form: ${SITE_URL}/es/contact`);
+  out.push(`- Online photo request (fixed quote in ≤1 working hour): ${SITE_URL}/es/solicitud`);
   out.push('- Service area: Barcelona metropolitan area, Catalonia, Spain');
   out.push('');
 

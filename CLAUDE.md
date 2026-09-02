@@ -42,6 +42,7 @@ src/
       pricing.astro                 — pricing page
       cases.astro                   — before/after gallery
       contact.astro                 — contact / lead form
+      solicitud.astro               — public intake form ("Envía fotos, precio en ≤1h" → POST /api/orders)
       plans.astro                   — care plans (subscription tiers)
       business.astro                — B2B / fleet vertical
       ev.astro                      — EV vertical
@@ -101,20 +102,20 @@ scripts/
 ### Components (25, in `src/components/`)
 `AreaServedSection`, `AvailabilityBanner`, `B2BStrip`, `BeforeAfterCarousel`, `CasesGallery`,
 `CertificationsRow`, `Estimator`, `FAQ`, `Footer`, `GuaranteeBlock`, `Header`, `Hero`,
-`HowItWorks`, `HubSpokeList`, `LeadForm`, `LegalSections`, `PlanUpsell`, `PreFooterCTA`,
+`HowItWorks`, `HubSpokeList`, `IntakeCTA`, `LegalSections`, `PlanUpsell`, `PreFooterCTA`,
 `PricingCards`, `PricingMatrix`, `RelatedGuides`, `ServiceCTA`, `ServicesGrid`, `StickyCTA`,
 `TransparencyBlock`.
-(`ArticleSchema` and `BrandsStrip` were removed.)
+(`ArticleSchema`, `BrandsStrip` and `LeadForm` were removed.)
 
 - **`Estimator.astro`** is the interactive package picker (replaced the old `Calculator`; there is no `Calculator.astro` / `calculatorConfig.ts`). It asks one question, plus a second only where the answer branches, and resolves to a single package via a 13-row `OUTCOMES` lookup — no scoring. It **never carries its own prices**: name, price and duration are joined from `t.pricing` by package slug, and a missing slug throws at build time. It renders *below* `PricingCards` on `/[lang]` and `/[lang]/pricing`, and takes a `source` prop used only as an analytics dimension.
-- `LeadForm.astro` is **not rendered anywhere** — its `<section>` is unconditionally `hidden` and the component exposes no prop to unhide it. Kept for reuse only. The visible form lives on `/contact`.
+- `LeadForm.astro` was **deleted** (RL-411) — it was never rendered. The visible contact form lives on `/contact` (uses the `lead_form` JSON keys); the photo-intake path is `/solicitud` + `IntakeCTA` (secondary CTA on the three paid service pages + contact; supports `?service=<package-slug>` preselect).
 - **`PlanUpsell.astro`** is the one-line care-plans cross-sell card (4 car-service pages + the Estimator result). Its "from …" price is joined at build time from the cheapest `t.plans.tiers` monthly price — never hardcode it. Fires `plan_upsell_clicked { source }`.
 - **`B2BStrip.astro`** is the homepage "Para empresas" section (3 cards → /business, /commercial-glass, /plans); fires `cta_clicked` with `ctaId: home_b2b_<target>`.
 
 ## Content JSON Structure
 Each `{lang}.json` has these top-level keys:
 `lang`, `meta`, `nav`, `ui`, `hero`, `availability`, `trust`, `services`, `home_b2b`,
-`how_it_works`, `pricing`, `estimator`, `faq`, `area`, `wa_messages`, `lead_form`, `footer`,
+`how_it_works`, `pricing`, `estimator`, `intake`, `faq`, `area`, `wa_messages`, `lead_form`, `footer`,
 `guarantee`, `cases_section`, `cases_gallery`, `pre_footer_cta`, `about`, `academy`,
 `academy_articles`, `area_pages`, `business`, `ev`, `commercial_glass`, `plans`,
 `area_service_pages`, `booking` (stale — page removed), `cluster_ui`, `legal_notice`,

@@ -34,6 +34,10 @@
       "title": "Contacte restoreLab — Pressupost Gratuït",
       "description": "Contacteu restoreLab per a un pressupost gratuït. Envieu fotos per WhatsApp i rebreu resposta en hores. Servei mòbil a Sant Cugat, Barcelona i Terrassa."
     },
+    "intake": {
+      "title": "Envia Fotos, Preu en ≤1h — Sol·licitud Online | restoreLab",
+      "description": "Puja 1–6 fotos del teu cotxe, tria servei i zona, i rep un pressupost tancat per WhatsApp en menys d'1 hora laboral. Sense trucades ni compromís."
+    },
     "about": {
       "title": "Sobre restoreLab — La Nostra Història i Missió | restoreLab",
       "description": "Coneix l'equip de restoreLab. Correcció de pintura mòbil i ceràmic a Sant Cugat i Barcelona. Assegurats, meticulosos, apassionats."
@@ -766,6 +770,48 @@
     "ceramic_2y": "2 anys",
     "why_ceramic_1y": "Un pas de polit i ceràmic d'un any: la via més barata per tenir protecció real."
   },
+  "intake": {
+    "title": "Envia fotos, preu en ≤1h",
+    "subtitle": "Sense trucades. Puja les fotos i t'enviem un pressupost tancat per WhatsApp en menys d'1 hora laboral (9–19h).",
+    "step_service": "Què necessites?",
+    "service_placeholder": "Tria un servei…",
+    "step_size": "Mida del vehicle",
+    "size_hint": "Opcional — fixa el preu exacte de la matriu.",
+    "price_hint": "Preu orientatiu:",
+    "price_quote_only": "pressupost per fotos",
+    "step_area": "On és el cotxe?",
+    "area_placeholder": "Tria la teva zona…",
+    "travel_included": "desplaçament inclòs",
+    "travel_fee": "desplaçament +{fee}€",
+    "step_photos": "Fotos (1–6)",
+    "photos_hint": "Una del cotxe sencer i una del defecte de prop. Es comprimeixen al teu mòbil abans de pujar — gasten poques dades.",
+    "photos_button": "Afegir fotos",
+    "photos_selected": "{n} de 6",
+    "photo_remove": "Treure",
+    "step_contact": "Les teves dades",
+    "name_label": "Nom",
+    "name_placeholder": "El teu nom",
+    "phone_label": "Telèfon (WhatsApp)",
+    "phone_placeholder": "+34 600 000 000",
+    "rgpd_text": "Accepto el tractament de les meves dades segons la",
+    "rgpd_link": "política de privacitat",
+    "submit": "Enviar i rebre preu",
+    "submitting": "Enviant…",
+    "uploading": "Pujant fotos… {n}/{total}",
+    "success_title": "Sol·licitud rebuda!",
+    "success_code": "La teva comanda:",
+    "success_promise": "T'enviem el pressupost tancat per WhatsApp en ≤1h laboral (9–19h). Guarda el teu codi de comanda.",
+    "success_wa": "Obrir WhatsApp",
+    "err_photos": "Afegeix almenys 1 foto.",
+    "err_rgpd": "Marca la casella de privacitat per continuar.",
+    "err_rate": "Massa sol·licituds des d'aquesta connexió. Prova-ho d'aquí una hora o escriu-nos per WhatsApp.",
+    "err_unavailable": "El formulari no està disponible ara mateix. Escriu-nos per WhatsApp — responem igual de ràpid.",
+    "err_upload": "Sol·licitud creada, però alguna foto no s'ha pogut pujar. Envia-la per WhatsApp amb el teu codi de comanda.",
+    "err_generic": "Alguna cosa ha fallat. Torna-ho a provar o escriu-nos per WhatsApp.",
+    "err_photo_type": "Format no suportat. Fes servir fotos JPG, PNG, WebP o HEIC.",
+    "cta_question": "Prefereixes no fer servir WhatsApp ara?",
+    "cta_action": "Envia fotos i t'enviem un preu tancat en ≤1h"
+  },
   "faq": {
     "section_title": "Abans de Contactar-nos",
     "section_subtitle": "Respostes pràctiques sobre el nostre servei mòbil — perquè sàpigues exactament què esperar",
@@ -921,7 +967,8 @@
     "estimator_line_pkg": "• La vostra recomanació: {tierName} — {price} ({duration})",
     "estimator_line_addon": "• M'interessa afegir: {addon} — {addonPrice}",
     "estimator_outro": "Em confirmeu el preu i un forat aquesta setmana? Ara us envio dues fotos del cotxe.",
-    "estimator_unsure": "Hola restoreLab! Vinc de l'estimador del web i no tinc clar què necessita el meu cotxe. Ara us envio dues fotos — una del cotxe sencer i una altra del defecte que més es nota — perquè em digueu quin paquet em toca i el preu."
+    "estimator_unsure": "Hola restoreLab! Vinc de l'estimador del web i no tinc clar què necessita el meu cotxe. Ara us envio dues fotos — una del cotxe sencer i una altra del defecte que més es nota — perquè em digueu quin paquet em toca i el preu.",
+    "intake_success": "Hola restoreLab! Acabo d'enviar una sol·licitud amb fotos des del web. Em confirmes el pressupost?\n\n#pedido {code}"
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",
