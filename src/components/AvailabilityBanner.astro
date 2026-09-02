@@ -1,8 +1,8 @@
 ---
-// Availability notice — shows the schedule is fully booked and the first free slot.
-// Content comes from t.availability (per-language). Gated on t.availability.active,
-// so the whole banner disappears site-wide by flipping `active` to false (or bumping
-// first_slot_date) in the three content JSON files — no component/markup changes.
+// Availability notice — shows the schedule is fully booked (no specific date,
+// so it never goes stale). Content comes from t.availability (per-language).
+// Gated on t.availability.active, so the whole banner disappears site-wide by
+// flipping `active` to false in the three content JSON files — no markup changes.
 export interface Props {
   t: Record<string, any>;
   variant?: 'hero' | 'page';
@@ -24,8 +24,6 @@ const a = t.availability;
       <span class="font-semibold text-brand-gold">{a.badge}</span>
       <span class="text-th-muted hidden sm:inline" aria-hidden="true">·</span>
       <span>{a.line}.</span>
-      <span class="text-th-muted" aria-hidden="true">·</span>
-      <span>{a.first_slot_label}: <strong class="text-th-heading font-semibold">{a.first_slot_date}</strong></span>
     </div>
     {variant === 'page' && a.note && (
       <p class="text-sm text-th-muted max-w-md">{a.note}</p>

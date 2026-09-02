@@ -134,8 +134,6 @@
     "active": true,
     "badge": "Agenda completa",
     "line": "Próximas 2 semanas sin huecos",
-    "first_slot_label": "Primera plaza libre",
-    "first_slot_date": "29 de agosto",
     "note": "Escríbenos y te reservamos hueco para la próxima apertura."
   },
   "trust": {

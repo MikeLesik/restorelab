@@ -134,8 +134,6 @@
     "active": true,
     "badge": "Fully booked",
     "line": "No slots for the next 2 weeks",
-    "first_slot_label": "First free slot",
-    "first_slot_date": "29 August",
     "note": "Message us and we'll hold a spot for the next opening."
   },
   "trust": {
