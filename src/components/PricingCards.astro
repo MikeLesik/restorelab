@@ -17,13 +17,39 @@ export interface Props {
   serviceType?: string;
   serviceDescription?: string;
   serviceAreaServed?: string[];
+  /** Render the vehicle-size selector that switches every card carrying
+   *  size_pricing to that size's exact matrix price. Pricing page only. */
+  sizeSelector?: boolean;
 }
 
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 
-const { t, lang, categoryId, only, title, serviceType, serviceDescription, serviceAreaServed } = Astro.props;
+const { t, lang, categoryId, only, title, serviceType, serviceDescription, serviceAreaServed, sizeSelector = false } = Astro.props;
 const wa = WHATSAPP_NUMBER;
 const ui = t.pricing.ui || {};
+
+// The four matrix sizes (the 5th, sports, is photo-quote only).
+const matrixSizes = (ui.size_categories || []).filter((c: any) => c.id !== 'sports');
+
+// Upsell caption: the +N€ delta is COMPUTED from price_eur / size_pricing,
+// never typed into copy — the JSON carries a {diff} template (see
+// docs/pricing-strategy.md). With the size selector active the delta follows
+// the selected size (e.g. ceramic-1y over single-stage: 150 sedan, 180 SUV).
+const allPackages = t.pricing.categories.flatMap((c: any) => c.packages);
+const upsellData = (pkg: any): { text: string; note: string; diffs: Record<string, number> } | null => {
+  if (!pkg.upsell_base || !pkg.upsell_note) return null;
+  const base = allPackages.find((p: any) => p.slug === pkg.upsell_base);
+  if (!base?.price_eur || !pkg.price_eur) throw new Error(`PricingCards: upsell_base "${pkg.upsell_base}" of "${pkg.slug}" has no price_eur`);
+  const diffs: Record<string, number> = {};
+  if (pkg.size_pricing && base.size_pricing) {
+    for (const key of Object.keys(pkg.size_pricing)) diffs[key] = pkg.size_pricing[key] - base.size_pricing[key];
+  }
+  return {
+    text: pkg.upsell_note.replace('{diff}', String(pkg.price_eur - base.price_eur)),
+    note: pkg.upsell_note,
+    diffs,
+  };
+};
 
 const flat = Array.isArray(only) && only.length > 0;
 
@@ -71,6 +97,24 @@ function getGridClass(count: number): string {
       <p class="-mt-4 mb-8 text-center text-sm text-th-muted">{ui.min_visit}</p>
     )}
 
+    {/* Size selector — swaps every size_pricing card to the exact matrix price */}
+    {sizeSelector && matrixSizes.length > 0 && (
+      <fieldset class="mb-8 text-center" id="size-selector">
+        <legend class="text-th-heading font-semibold text-sm mb-3 mx-auto">{ui.size_selector_label}</legend>
+        <div class="inline-flex flex-wrap justify-center gap-2">
+          {matrixSizes.map((cat: any) => (
+            <label class="block">
+              <input type="radio" name="pricing-size" value={cat.id} checked={cat.id === 'sedan'} class="peer sr-only" />
+              <span class="inline-block rounded-full border border-th-border/15 bg-th-surface/[0.04] px-4 py-2 text-sm text-th-body cursor-pointer transition-colors hover:border-brand-accent/50 peer-checked:border-brand-accent peer-checked:text-brand-accent peer-checked:bg-brand-accent/10 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent">
+                {cat.name}
+              </span>
+            </label>
+          ))}
+        </div>
+        <p class="text-th-faint text-xs mt-2">{ui.sports_note}</p>
+      </fieldset>
+    )}
+
     {categories.map((category: any) => (
         <div class="mb-8">
           {category.title && (
@@ -97,9 +141,24 @@ function getGridClass(count: number): string {
 
                 <div class="mb-4">
                   <h4 class="font-display font-bold text-th-heading text-lg mb-1.5">{pkg.name}</h4>
-                  <div class="text-2xl font-display font-bold text-brand-accent mb-0.5">{pkg.price}</div>
+                  <div
+                    class="text-2xl font-display font-bold text-brand-accent mb-0.5"
+                    data-size-prices={sizeSelector && pkg.size_pricing ? JSON.stringify(pkg.size_pricing) : undefined}
+                  >{pkg.price}</div>
                   <div class="text-xs text-th-faint">{pkg.duration}</div>
                 </div>
+
+                {pkg.composition && (
+                  <p class="text-xs text-th-body/70 border-l-2 border-brand-accent/40 pl-2.5 mb-3">{pkg.composition}</p>
+                )}
+                {upsellData(pkg) && (
+                  <p
+                    class="text-xs text-brand-gold mb-3"
+                    data-upsell={sizeSelector && Object.keys(upsellData(pkg)!.diffs).length > 0
+                      ? JSON.stringify({ note: upsellData(pkg)!.note, diffs: upsellData(pkg)!.diffs })
+                      : undefined}
+                  >{upsellData(pkg)!.text}</p>
+                )}
 
                 <p class="text-sm text-th-muted mb-4 leading-snug">{pkg.description}</p>
 
@@ -146,8 +205,36 @@ function getGridClass(count: number): string {
               </div>
             ))}
           </div>
+
+          {/* Ceramic 5Y is deliberately out of the matrix (approved 2026-09-02) —
+              shown as a no-price mention next to the car packages only. */}
+          {ui.ceramic_5y_note && category.packages.some((p: any) => p.slug === 'ceramic-2y') && (
+            <p class="mt-4 text-center text-sm text-th-faint">{ui.ceramic_5y_note}</p>
+          )}
         </div>
     ))}
+
+    {sizeSelector && (
+      <script is:inline>
+        (function () {
+          var priceEls = document.querySelectorAll('[data-size-prices]');
+          var upsellEls = document.querySelectorAll('[data-upsell]');
+          if (!priceEls.length) return;
+          document.querySelectorAll('input[name="pricing-size"]').forEach(function (r) {
+            r.addEventListener('change', function () {
+              priceEls.forEach(function (el) {
+                var prices = JSON.parse(el.getAttribute('data-size-prices'));
+                if (prices[r.value] != null) el.textContent = prices[r.value] + '€';
+              });
+              upsellEls.forEach(function (el) {
+                var u = JSON.parse(el.getAttribute('data-upsell'));
+                if (u.diffs[r.value] != null) el.textContent = u.note.replace('{diff}', u.diffs[r.value]);
+              });
+            });
+          });
+        })();
+      </script>
+    )}
 
     <!-- Vehicle Size Multipliers -->
     {showMultipliers && (

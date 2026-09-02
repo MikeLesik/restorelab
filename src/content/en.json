@@ -216,7 +216,8 @@
         ],
         "cta_label": "Get Glass Estimate",
         "tag": null,
-        "h1": "Polishing Scratched Car Glass at Your Home in Barcelona"
+        "h1": "Polishing Scratched Car Glass at Your Home in Barcelona",
+        "vs_price": "vs new windscreen €300–900"
       },
       {
         "id": "acrylic-restoration",
@@ -244,7 +245,8 @@
         ],
         "cta_label": "Get Headlight Estimate",
         "tag": null,
-        "h1": "Headlight Polishing & Restoration at Your Home in Barcelona"
+        "h1": "Headlight Polishing & Restoration at Your Home in Barcelona",
+        "vs_price": "vs headlight replacement €200–600"
       },
       {
         "id": "trim-restoration",
@@ -376,7 +378,14 @@
       ],
       "sensitive_paint_surcharge": "+€60–100",
       "min_visit": "Minimum visit €149 · VAT included in all prices",
-      "ceramic_5y_note": "Gtechniq 5-year — on request, quote from photos"
+      "ceramic_5y_note": "Gtechniq 5-year — on request, quote from photos",
+      "size_selector_label": "Your car size",
+      "matrix_title": "Full price matrix",
+      "matrix_package": "Package",
+      "matrix_quote_only": "Quote from photos",
+      "matrix_single": "single price",
+      "matrix_print": "Print / Save as PDF",
+      "sports_note": "Sports / Supercar: quote from photos (+25–40%)"
     },
     "categories": [
       {
@@ -404,7 +413,8 @@
               "Swirl mark & light scratch removal"
             ],
             "best_for": "Daily drivers with moderate swirl marks",
-            "highlight": false
+            "highlight": false,
+            "composition": "Includes correction: 1 stage · no ceramic"
           },
           {
             "name": "Ceramic Coating 1Y",
@@ -428,7 +438,10 @@
               "1-year ceramic coating (Gyeon / Gtechniq)"
             ],
             "best_for": "Anyone wanting protection and gloss without a full correction",
-            "highlight": false
+            "highlight": false,
+            "composition": "Includes correction: 1 stage + 1-year ceramic",
+            "upsell_base": "single-stage",
+            "upsell_note": "+€{diff} over Single-Stage → 1-year protection"
           },
           {
             "name": "Two-Stage Correction",
@@ -453,7 +466,8 @@
               "Short-term sealant finish"
             ],
             "best_for": "Heavily swirled vehicles or pre-coating prep",
-            "highlight": false
+            "highlight": false,
+            "composition": "Includes correction: 2 stages (cut + refine) · no ceramic"
           },
           {
             "name": "Ceramic Coating 2Y",
@@ -477,7 +491,10 @@
               "2-year ceramic coating (Gyeon / Gtechniq)"
             ],
             "best_for": "Anyone wanting long-term protection with a showroom finish",
-            "highlight": true
+            "highlight": true,
+            "composition": "Includes correction: 2 stages + 2-year ceramic",
+            "upsell_base": "two-stage",
+            "upsell_note": "+€{diff} over Two-Stage → 2-year protection"
           }
         ]
       },
@@ -659,7 +676,13 @@
       ],
       "landing_link_label": "Ceramic coating in Barcelona: prices & details"
     },
-    "home_title": "Published prices, no surprises"
+    "home_title": "Published prices, no surprises",
+    "transparency": {
+      "title": "Price transparency",
+      "promise": "Fixed quote from photos in ≤1h — never above the published maximum for your size.",
+      "travel_title": "Travel fee by area",
+      "travel_included": "included"
+    }
   },
   "estimator": {
     "title": "Which package is yours?",
@@ -682,11 +705,8 @@
     "glass_windshield": "Windscreen only",
     "glass_rain": "Windscreen + rain repellent",
     "glass_all": "All the glass",
-    "size_small": "Small",
-    "size_medium": "Medium",
-    "size_large": "Large",
-    "size_label": "So we can book the hours (optional)",
-    "size_hint": "It does not change the price. It only tells us how long to book in your garage.",
+    "size_label": "Vehicle size",
+    "size_hint": "Locks the exact price from the published matrix.",
     "result_label": "Your package",
     "alt_label": "If you want the very best finish:",
     "addon_label": "Usually added:",

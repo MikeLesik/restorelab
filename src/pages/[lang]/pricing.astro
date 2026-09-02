@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PricingCards from '@/components/PricingCards.astro';
+import PricingMatrix from '@/components/PricingMatrix.astro';
+import TransparencyBlock from '@/components/TransparencyBlock.astro';
 import Estimator from '@/components/Estimator.astro';
 import FAQ from '@/components/FAQ.astro';
 
@@ -34,7 +36,9 @@ const { t } = Astro.props;
       <p class="section-subtitle mx-auto">{t.pricing.section_subtitle}</p>
     </div>
 
-    <PricingCards t={t} lang={lang} />
+    <PricingCards t={t} lang={lang} sizeSelector />
+    <PricingMatrix t={t} />
+    <TransparencyBlock t={t} />
     <Estimator t={t} lang={lang} source="pricing" />
 
     <!-- Direct answer for "precio tratamiento cerámico coche" queries -->

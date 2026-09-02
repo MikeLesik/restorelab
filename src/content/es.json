@@ -216,7 +216,8 @@
         ],
         "cta_label": "Presupuesto Vidrio",
         "tag": null,
-        "h1": "Pulido de Cristales Rayados a Domicilio en Barcelona"
+        "h1": "Pulido de Cristales Rayados a Domicilio en Barcelona",
+        "vs_price": "vs luna nueva 300–900€"
       },
       {
         "id": "acrylic-restoration",
@@ -244,7 +245,8 @@
         ],
         "cta_label": "Presupuesto Faros",
         "tag": null,
-        "h1": "Pulido y Restauración de Faros a Domicilio en Barcelona"
+        "h1": "Pulido y Restauración de Faros a Domicilio en Barcelona",
+        "vs_price": "vs cambio de faros 200–600€"
       },
       {
         "id": "trim-restoration",
@@ -375,7 +377,14 @@
       ],
       "sensitive_paint_surcharge": "+60–100 €",
       "min_visit": "Servicio mínimo 149 € · IVA incluido en todos los precios",
-      "ceramic_5y_note": "Gtechniq 5 años — bajo pedido, presupuesto por fotos"
+      "ceramic_5y_note": "Gtechniq 5 años — bajo pedido, presupuesto por fotos",
+      "size_selector_label": "Tamaño de tu coche",
+      "matrix_title": "Matriz completa de precios",
+      "matrix_package": "Paquete",
+      "matrix_quote_only": "Presupuesto por fotos",
+      "matrix_single": "precio único",
+      "matrix_print": "Imprimir / Guardar PDF",
+      "sports_note": "Deportivo / Superdeportivo: presupuesto por fotos (+25–40%)"
     },
     "categories": [
       {
@@ -403,7 +412,8 @@
               "Eliminación de marcas circulares y arañazos leves"
             ],
             "best_for": "Vehículos de uso diario con marcas circulares moderadas",
-            "highlight": false
+            "highlight": false,
+            "composition": "Incluye corrección: 1 fase · sin cerámico"
           },
           {
             "name": "Cerámico 1 Año",
@@ -427,7 +437,10 @@
               "Cerámico de 1 año (Gyeon / Gtechniq)"
             ],
             "best_for": "Quien quiere protección y brillo sin la corrección completa",
-            "highlight": false
+            "highlight": false,
+            "composition": "Incluye corrección: 1 fase + cerámico 1 año",
+            "upsell_base": "single-stage",
+            "upsell_note": "+{diff}€ sobre Single-Stage → protección 1 año"
           },
           {
             "name": "Corrección de Dos Fases",
@@ -452,7 +465,8 @@
               "Acabado con sellante temporal"
             ],
             "best_for": "Vehículos muy dañados o preparación pre-cerámico",
-            "highlight": false
+            "highlight": false,
+            "composition": "Incluye corrección: 2 fases (corte + refinado) · sin cerámico"
           },
           {
             "name": "Cerámico 2 Años",
@@ -477,7 +491,10 @@
               "Tratamiento de neumáticos y plásticos"
             ],
             "best_for": "Quien busca protección duradera con acabado de exposición",
-            "highlight": true
+            "highlight": true,
+            "composition": "Incluye corrección: 2 fases + cerámico 2 años",
+            "upsell_base": "two-stage",
+            "upsell_note": "+{diff}€ sobre Two-Stage → protección 2 años"
           }
         ]
       },
@@ -660,7 +677,13 @@
       ],
       "landing_link_label": "Cerámico en Barcelona: precios y detalles"
     },
-    "home_title": "Precios publicados, sin sorpresas"
+    "home_title": "Precios publicados, sin sorpresas",
+    "transparency": {
+      "title": "Transparencia de precios",
+      "promise": "Precio cerrado por fotos en ≤1h — nunca por encima del máximo publicado para tu tamaño.",
+      "travel_title": "Desplazamiento por zona",
+      "travel_included": "incluido"
+    }
   },
   "estimator": {
     "title": "¿Qué paquete te toca?",
@@ -683,11 +706,8 @@
     "glass_windshield": "Solo el parabrisas",
     "glass_rain": "Parabrisas + repelente de lluvia",
     "glass_all": "Todos los cristales",
-    "size_small": "Pequeño",
-    "size_medium": "Mediano",
-    "size_large": "Grande",
-    "size_label": "Para reservar las horas (opcional)",
-    "size_hint": "No cambia el precio. Solo nos dice cuánto tiempo reservar en tu garaje.",
+    "size_label": "Tamaño del vehículo",
+    "size_hint": "Fija el precio exacto según la matriz publicada.",
     "result_label": "Tu paquete",
     "alt_label": "Si buscas el máximo acabado:",
     "addon_label": "Se suele añadir:",

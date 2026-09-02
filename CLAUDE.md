@@ -88,11 +88,12 @@ scripts/
   new-case.mjs, new-post.mjs, generate-llms-txt.mjs
 ```
 
-### Components (23, in `src/components/`)
+### Components (25, in `src/components/`)
 `AreaServedSection`, `AvailabilityBanner`, `B2BStrip`, `BeforeAfterCarousel`, `CasesGallery`,
 `CertificationsRow`, `Estimator`, `FAQ`, `Footer`, `GuaranteeBlock`, `Header`, `Hero`,
 `HowItWorks`, `HubSpokeList`, `LeadForm`, `LegalSections`, `PlanUpsell`, `PreFooterCTA`,
-`PricingCards`, `RelatedGuides`, `ServiceCTA`, `ServicesGrid`, `StickyCTA`.
+`PricingCards`, `PricingMatrix`, `RelatedGuides`, `ServiceCTA`, `ServicesGrid`, `StickyCTA`,
+`TransparencyBlock`.
 (`ArticleSchema` and `BrandsStrip` were removed.)
 
 - **`Estimator.astro`** is the interactive package picker (replaced the old `Calculator`; there is no `Calculator.astro` / `calculatorConfig.ts`). It asks one question, plus a second only where the answer branches, and resolves to a single package via a 13-row `OUTCOMES` lookup — no scoring. It **never carries its own prices**: name, price and duration are joined from `t.pricing` by package slug, and a missing slug throws at build time. It renders *below* `PricingCards` on `/[lang]` and `/[lang]/pricing`, and takes a `source` prop used only as an analytics dimension.
@@ -113,6 +114,7 @@ Notable substructures:
 - `meta` — per-page SEO (title/description) keyed by: `home`, `services`, `car_paint`, `glass`, `acrylic`, `pricing`, `cases`, `contact`, `about`, `business`, `ev`, `commercial_glass`, `plans`, `privacy`, `terms`, `academy`, `academy_equipment`, `headlight`, `pre_sale`, `legal`, `cookies`
 - `services.items[]` — each: `id`, `title`, `subtitle`, `icon`, `features[]`, `tag`, `starting_price`, `vs_price` (6 items; 5 have dedicated pages)
 - `pricing.categories[]` (`car`, `glass`, `extras`) each with `packages[]` (each carrying a `slug`); `pricing.ui.*` holds pricing UI strings; `pricing.home_title` is the homepage-only `PricingCards` heading
+- **Pricing single source of truth (RL-401/402)**: every package carries structured fields `price_eur` (null = quote-only), `price_unit` (`job`|`pair`), `from`, and (7 size-dependent packages) `size_pricing {compact,sedan,suv,van}` — the approved matrix in `docs/pricing-strategy.md`. `scripts/check-pricing.mjs` runs as `prebuild` and FAILS the build on cross-lang drift, deviation from the approved matrix, or hardcoded euro amounts in `src/` (allowlist: `areaProfiles.ts`). Upsell captions use a `{diff}` template — deltas are computed from `price_eur`/`size_pricing`, never typed. `pricing.transparency` holds the TransparencyBlock copy; travel fees come from `areaProfiles.travelFee`.
 - `estimator` — estimator UI, the 13 `why_*` rationale lines, and `estimator.tiers` **keyed by pricing slug** carrying `desc` only. Never put a package `name` or `price` here: they come from `t.pricing`, so drift is structurally impossible. Estimator WhatsApp copy lives in `t.wa_messages.estimator_*` (Critical Rule 3), assembled line by line so empty fields are omitted rather than sent blank.
 - `wa_messages` — **all WhatsApp message templates** (keys such as `header`, `hero`, `pricing_plan`, `pricing_custom`, `sticky_cta`, `prefooter_cta`, `footer`, `contact`)
 - `academy_articles` — keyed by article slug (underscored)

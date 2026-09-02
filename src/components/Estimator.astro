@@ -30,6 +30,9 @@ const pkg = (slug: string) => {
     slug,
     name: p.name,
     price: p.price,
+    // Exact per-size matrix prices (RL-402) — joined from the same pricing
+    // data, so the Estimator can never disagree with the pricing page.
+    size_pricing: p.size_pricing || null,
     duration: p.duration,
     desc: ui.tiers?.[slug]?.desc || '',
     href: `${pricingPath}#${slug}`,
@@ -88,17 +91,17 @@ const Q2 = {
   ]},
 };
 
-const SIZES = [
-  { v: 'small',  label: ui.size_small },
-  { v: 'medium', label: ui.size_medium },
-  { v: 'large',  label: ui.size_large },
-];
+// The four matrix sizes from pricing.ui.size_categories (sports is
+// photo-quote only) — same ids the size_pricing matrix uses.
+const SIZES = (t.pricing?.ui?.size_categories ?? [])
+  .filter((c: any) => c.id !== 'sports')
+  .map((c: any) => ({ v: c.id, label: c.name }));
 
 // Labels for the WhatsApp summary, so the message never carries a raw token.
 const LABELS: Record<string, string> = Object.fromEntries([
   ...NEEDS.map((n) => [n.v, n.label]),
   ...Object.values(Q2).flatMap((g) => g.opts.map((o) => [o.v, o.label])),
-  ...SIZES.map((s) => [`size_${s.v}`, s.label]),
+  ...SIZES.map((s: any) => [`size_${s.v}`, s.label]),
 ]);
 
 // WhatsApp copy lives only in t.wa_messages (Critical Rule 3).
@@ -229,7 +232,7 @@ const OPT = [
         <fieldset class="mb-4">
           <legend class="text-th-muted text-xs mb-2">{ui.size_label}</legend>
           <div class="flex flex-wrap gap-2">
-            {SIZES.map((s) => (
+            {SIZES.map((s: any) => (
               <label class="block">
                 <input type="radio" name="est-size" value={s.v} class="peer sr-only" />
                 <span class="inline-block rounded-full border border-th-border/15 bg-th-surface/[0.04] px-3 py-1 text-xs text-th-body cursor-pointer transition-colors hover:border-brand-accent/50 peer-checked:border-brand-accent peer-checked:text-brand-accent peer-focus-visible:ring-2 peer-focus-visible:ring-brand-accent">
@@ -289,6 +292,15 @@ const OPT = [
     return k;
   }
 
+  // Exact matrix price once a size is chosen; the localized display string
+  // ("desde…") until then. Same join the pricing page uses.
+  function displayPrice(o) {
+    if (state.size && o.main.size_pricing && o.main.size_pricing[state.size] != null) {
+      return o.main.size_pricing[state.size] + '€';
+    }
+    return o.main.price;
+  }
+
   // Assemble the WhatsApp message from t.wa_messages line keys, omitting any
   // line whose value is empty — no "• Estado: " blanks reach the technician.
   function buildMessage(o) {
@@ -300,7 +312,7 @@ const OPT = [
     lines.push(
       WA.pkgLine
         .replace('{tierName}', o.main.name)
-        .replace('{price}', o.main.price)
+        .replace('{price}', displayPrice(o))
         .replace('{duration}', o.main.duration)
     );
     if (o.addon) {
@@ -330,7 +342,7 @@ const OPT = [
 
       $('est-name').textContent  = o.main.name;
       $('est-desc').textContent  = o.main.desc;
-      $('est-price').textContent = o.main.price;
+      $('est-price').textContent = displayPrice(o);
       $('est-eta').textContent   = o.main.duration;
 
       $('est-why').textContent = o.why;

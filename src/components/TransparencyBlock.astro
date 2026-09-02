@@ -1,0 +1,44 @@
+---
+// Price-transparency block (RL-402): the never-above-published-max promise,
+// IVA/minimum-visit line, sensitive-paint disclosure and the travel-fee table.
+// Travel fees come from areaProfiles.travelFee — their single source of truth.
+import { areaProfiles } from '@/lib/areaProfiles';
+
+export interface Props {
+  t: Record<string, any>;
+}
+
+const { t } = Astro.props;
+const ui = t.pricing.ui || {};
+const tr = t.pricing.transparency || {};
+const areas = Object.values(areaProfiles) as any[];
+---
+
+<section class="py-10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-6 sm:p-8">
+      <h2 class="section-title text-2xl mb-4">{tr.title}</h2>
+
+      <p class="text-th-body font-medium border-l-2 border-brand-accent pl-3 mb-3">{tr.promise}</p>
+      <p class="text-th-muted text-sm mb-2">{ui.min_visit}</p>
+      {ui.sensitive_paint && (
+        <p class="text-th-muted text-sm mb-6">
+          {ui.sensitive_paint}: <span class="text-th-heading font-medium">{ui.sensitive_paint_surcharge}</span>
+          <span class="text-th-faint text-xs ml-1">({ui.sensitive_paint_note})</span>
+        </p>
+      )}
+
+      <h3 class="text-th-heading font-semibold text-sm uppercase tracking-widest mb-3">{tr.travel_title}</h3>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
+        {areas.map((a: any) => (
+          <li class="flex items-baseline justify-between gap-3 border-b border-th-border/5 pb-1.5">
+            <span class="text-th-body">{a.name}</span>
+            <span class:list={['whitespace-nowrap font-medium', a.travelFee === 0 ? 'text-brand-accent' : 'text-th-heading']}>
+              {a.travelFee === 0 ? tr.travel_included : `+${a.travelFee}€`}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

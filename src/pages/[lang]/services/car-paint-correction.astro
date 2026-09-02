@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PricingCards from '@/components/PricingCards.astro';
+import TransparencyBlock from '@/components/TransparencyBlock.astro';
 import PlanUpsell from '@/components/PlanUpsell.astro';
 import FAQ from '@/components/FAQ.astro';
 import HubSpokeList from '@/components/HubSpokeList.astro';
@@ -59,6 +60,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
             {/* Ads message-match (RL-302): price-from + guarantee above the fold */}
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8">
               <span class="text-brand-accent font-display font-bold text-lg whitespace-nowrap">{service?.starting_price}</span>
+              {service?.vs_price && (
+                <span class="text-th-faint text-sm whitespace-nowrap">{service.vs_price}</span>
+              )}
               <span class="inline-flex items-center gap-1.5 text-sm text-th-muted">
                 <svg class="w-4 h-4 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -122,6 +126,8 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.servi
       serviceDescription={t.meta.car_paint.description}
       serviceAreaServed={["Sant Cugat del Vallès", "Barcelona", "Terrassa", "Sabadell"]}
     />
+
+    <TransparencyBlock t={t} />
 
     <!-- Plans cross-sell (RL-304) -->
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">

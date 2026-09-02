@@ -216,7 +216,8 @@
         ],
         "cta_label": "Pressupost Vidre",
         "tag": null,
-        "h1": "Polit de Vidres Ratllats a Domicili a Barcelona"
+        "h1": "Polit de Vidres Ratllats a Domicili a Barcelona",
+        "vs_price": "vs parabrisa nou 300–900€"
       },
       {
         "id": "acrylic-restoration",
@@ -244,7 +245,8 @@
         ],
         "cta_label": "Pressupost Fars",
         "tag": null,
-        "h1": "Polit i Restauració de Fars a Domicili a Barcelona"
+        "h1": "Polit i Restauració de Fars a Domicili a Barcelona",
+        "vs_price": "vs canvi de fars 200–600€"
       },
       {
         "id": "trim-restoration",
@@ -375,7 +377,14 @@
       ],
       "sensitive_paint_surcharge": "+60–100 €",
       "min_visit": "Servei mínim 149 € · IVA inclòs en tots els preus",
-      "ceramic_5y_note": "Gtechniq 5 anys — sota comanda, pressupost per fotos"
+      "ceramic_5y_note": "Gtechniq 5 anys — sota comanda, pressupost per fotos",
+      "size_selector_label": "Mida del teu cotxe",
+      "matrix_title": "Matriu completa de preus",
+      "matrix_package": "Paquet",
+      "matrix_quote_only": "Pressupost per fotos",
+      "matrix_single": "preu únic",
+      "matrix_print": "Imprimir / Desar PDF",
+      "sports_note": "Esportiu / Superesportiu: pressupost per fotos (+25–40%)"
     },
     "categories": [
       {
@@ -403,7 +412,8 @@
               "Eliminació de marques circulars i ratllades lleus"
             ],
             "best_for": "Vehicles d'ús diari amb marques circulars moderats",
-            "highlight": false
+            "highlight": false,
+            "composition": "Inclou correcció: 1 fase · sense ceràmic"
           },
           {
             "name": "Ceràmic 1 Any",
@@ -427,7 +437,10 @@
               "Ceràmic d'1 any (Gyeon / Gtechniq)"
             ],
             "best_for": "Qui vol protecció i brillantor sense la correcció completa",
-            "highlight": false
+            "highlight": false,
+            "composition": "Inclou correcció: 1 fase + ceràmic 1 any",
+            "upsell_base": "single-stage",
+            "upsell_note": "+{diff}€ sobre Single-Stage → protecció 1 any"
           },
           {
             "name": "Correcció de Dues Fases",
@@ -452,7 +465,8 @@
               "Acabat amb segellant temporal"
             ],
             "best_for": "Vehicles molt danyats o preparació pre-ceràmic",
-            "highlight": false
+            "highlight": false,
+            "composition": "Inclou correcció: 2 fases (tall + refinat) · sense ceràmic"
           },
           {
             "name": "Ceràmic 2 Anys",
@@ -477,7 +491,10 @@
               "Tractament de pneumàtics i plàstics"
             ],
             "best_for": "Qui busca protecció duradora amb acabat d'exposició",
-            "highlight": true
+            "highlight": true,
+            "composition": "Inclou correcció: 2 fases + ceràmic 2 anys",
+            "upsell_base": "two-stage",
+            "upsell_note": "+{diff}€ sobre Two-Stage → protecció 2 anys"
           }
         ]
       },
@@ -660,7 +677,13 @@
       ],
       "landing_link_label": "Ceràmic a Barcelona: preus i detalls"
     },
-    "home_title": "Preus publicats, sense sorpreses"
+    "home_title": "Preus publicats, sense sorpreses",
+    "transparency": {
+      "title": "Transparència de preus",
+      "promise": "Preu tancat per fotos en ≤1h — mai per sobre del màxim publicat per a la teva mida.",
+      "travel_title": "Desplaçament per zona",
+      "travel_included": "inclòs"
+    }
   },
   "estimator": {
     "title": "Quin paquet et toca?",
@@ -683,11 +706,8 @@
     "glass_windshield": "Només el parabrisa",
     "glass_rain": "Parabrisa + repel·lent de pluja",
     "glass_all": "Tots els vidres",
-    "size_small": "Petit",
-    "size_medium": "Mitjà",
-    "size_large": "Gran",
-    "size_label": "Per reservar les hores (opcional)",
-    "size_hint": "No canvia el preu. Només ens diu quanta estona reservar al teu garatge.",
+    "size_label": "Mida del vehicle",
+    "size_hint": "Fixa el preu exacte segons la matriu publicada.",
     "result_label": "El teu paquet",
     "alt_label": "Si busques el màxim acabat:",
     "addon_label": "S'hi sol afegir:",
