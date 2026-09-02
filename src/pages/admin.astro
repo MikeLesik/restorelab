@@ -1125,6 +1125,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 ${o.status === 'booked' && !o.scheduled_at ? '<p class="text-xs text-brand-gold mt-1">Sin fecha el pedido no sale en la vista de hoy.</p>' : ''}
               </div>
             </div>
+            <label class="text-xs text-th-faint block mt-3 mb-1">Dirección (día de trabajo)</label>
+            <div class="flex gap-2">
+              <input id="d-addr" type="text" maxlength="300" value="${esc(o.address || '')}" placeholder="calle y número, población" class="adm-input flex-1" />
+              <button id="d-addr-save" class="btn-secondary text-sm px-3">Guardar</button>
+            </div>
+            ${o.status === 'booked' && !o.address ? '<p class="text-xs text-brand-gold mt-1">Sin dirección no se puede asignar — pídela al confirmar la reserva.</p>' : ''}
             <label class="text-xs text-th-faint block mt-3 mb-1">Notas</label>
             <div class="flex gap-2">
               <textarea id="d-notes" rows="2" class="adm-input">${esc(o.notes || '')}</textarea>
@@ -1158,6 +1164,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               ${o.quote_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Presupuesto:</span><b class="text-brand-accent">${o.quote_eur}€</b></span>` : ''}
               ${o.paid_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Pagado:</span><b class="text-green-400">${o.paid_eur}€</b></span>` : ''}
               ${o.scheduled_at ? `<span class="min-h-[44px] flex items-center text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
+              ${o.address ? `<span class="min-h-[44px] flex items-center text-th-muted">📍 ${esc(o.address)}</span>` : ''}
               ${o.rework ? `<span class="min-h-[44px] flex items-center text-th-muted">Reworks: ${o.rework}</span>` : ''}
             </div>
             ${o.ref_code || attr.first ? `
@@ -1223,10 +1230,25 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         }));
         $('d-assign')?.addEventListener('click', () => busy($('d-assign'), async () => {
           const body = { partner_id: $('d-partner').value || null };
-          if ($('d-partner').value && current.status === 'booked') body.status = 'assigned';
+          if ($('d-partner').value && current.status === 'booked') {
+            // A mobile job without address+date is undispatchable — hard gate.
+            const missing = !current.address ? 'd-addr' : !current.scheduled_at ? 'd-sched' : null;
+            if (missing) {
+              toast(missing === 'd-addr' ? 'Falta la dirección — el partner necesita saber dónde ir' : 'Falta la fecha — agenda antes de asignar', false);
+              const f = $(missing);
+              if (f) { f.focus(); f.style.outline = '2px solid var(--brand-gold)'; }
+              return;
+            }
+            body.status = 'assigned';
+          }
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
           if (d.ok) { toast('Partner guardado ✓'); openDetail(current.id, false); }
           else toast('Error: ' + (d.reason || ''), false);
+        }));
+        $('d-addr-save')?.addEventListener('click', () => busy($('d-addr-save'), async () => {
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ address: $('d-addr').value.trim() || null }) });
+          if (d.ok) { toast('Dirección guardada ✓'); openDetail(current.id, false); }
+          else toast('Error al guardar la dirección', false);
         }));
         $('d-sched-save')?.addEventListener('click', () => busy($('d-sched-save'), async () => {
           const v = $('d-sched').value;
