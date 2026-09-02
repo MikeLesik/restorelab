@@ -32,6 +32,11 @@ for (const [lang, t] of Object.entries(CONTENT)) {
     quote: Object.fromEntries(
       Object.entries(t.wa_messages).filter(([k]) => k.startsWith('quote_'))
     ),
+    // Lifecycle copy-buttons (booking confirmation, reminders, follow-ups…) —
+    // rendered in the ORDER's language, same rule as the quote.
+    lifecycle: Object.fromEntries(
+      Object.entries(t.wa_messages).filter(([k]) => k.startsWith('lc_'))
+    ),
     payment_link: t.wa_messages.payment_link,
   };
 }
@@ -758,6 +763,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         if (q.surcharge) lines.push(T.quote_line.replace('{item}', T.quote_sensitive_paint || 'Pintura sensible').replace('{price}', Number(q.surchargeAmount) || 0));
         lines.push('', T.quote_total.replace('{total}', quoteTotal(o)), T.quote_validity,
           T.quote_link.replace('{url}', `${SITE_URL}/${L}/pricing`));
+        // The quote must hand the client a next step, not just a number.
+        if (T.quote_cta) lines.push('', T.quote_cta);
         return lines.join('\n');
       }
 
@@ -1147,6 +1154,61 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>`;
       }
 
+      // ── Lifecycle messages (copy-buttons per status) ──────────────────────
+      // Templates live in wa_messages.lc_* ×3 langs; placeholders are filled
+      // from the order and any line left with an unfilled {placeholder} is
+      // dropped whole — messages stay self-sufficient, never blanks.
+      function lcMessage(o, key) {
+        const L = PRICING[o.lang] ? o.lang : 'es';
+        const T = PRICING[L].lifecycle[key] || PRICING.es.lifecycle[key] || '';
+        const partner = partners.find((x) => x.id === o.partner_id);
+        const t0 = o.scheduled_at ? new Date(o.scheduled_at) : null;
+        const locale = L === 'en' ? 'en-GB' : L === 'ca' ? 'ca-ES' : 'es-ES';
+        const hm = (d) => d.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
+        const vals = {
+          name: o.client_name ? ' ' + o.client_name.split(' ')[0] : '',
+          service: o.service_slug ? svcName(o.service_slug) : null,
+          date: t0 ? t0.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long' }) : null,
+          window: t0 ? `${hm(t0)}–${hm(new Date(t0.getTime() + 36e5))}` : null,
+          time: t0 ? hm(t0) : null,
+          address: o.address || null,
+          total: o.quote_eur != null ? o.quote_eur : null,
+          deposit: o.paid_eur ? o.paid_eur : null,
+          partner: partner ? partner.name.split(' ')[0] : null,
+          url: `${SITE_URL}/${L}/cases`,
+          review_url: localStorage.getItem('rl_review_url') || null,
+        };
+        return T.split('\n').map((line) => {
+          let out = line;
+          for (const [k, v] of Object.entries(vals)) {
+            if (v !== null) out = out.split(`{${k}}`).join(v);
+          }
+          return out;
+        }).filter((line) => !/\{[a-z0-9_]+\}/.test(line)).join('\n').trim();
+      }
+
+      const LC_BUTTONS = {
+        quoted: [['lc_followup_1', 'Seguimiento +24h'], ['lc_followup_2', 'Seguimiento +3 días'], ['lc_followup_3', 'Cierre suave +7 días']],
+        booked: [['lc_booking_confirmation', 'Confirmación de reserva'], ['lc_reminder_24h', 'Recordatorio T-24h'], ['lc_on_my_way', 'En camino']],
+        assigned: [['lc_booking_confirmation', 'Confirmación de reserva'], ['lc_reminder_24h', 'Recordatorio T-24h'], ['lc_on_my_way_partner', 'En camino (partner)']],
+        in_progress: [['lc_work_started', 'Empezamos + fotos']],
+        awaiting_payment: [['lc_work_done', 'Terminado + fotos']],
+        paid: [['lc_review_request', 'Pedir reseña'], ['lc_checkin_48h', 'Check-in 48h']],
+        done: [['lc_review_request', 'Pedir reseña'], ['lc_checkin_48h', 'Check-in 48h']],
+      };
+      function messagesHtml(o) {
+        const defs = LC_BUTTONS[o.status];
+        if (!defs) return '';
+        return `
+          <div class="card p-4 sm:p-5 mt-4">
+            <h3 class="font-display font-bold text-th-heading mb-1">Mensajes al cliente</h3>
+            <p class="text-xs text-th-faint mb-3">Se abren en WhatsApp ya escritos — revisa y envía.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              ${defs.map(([k, label]) => `<button data-lc="${k}" class="btn-secondary text-sm min-h-[44px]">💬 ${label}</button>`).join('')}
+            </div>
+          </div>`;
+      }
+
       function headerHtml(o) {
         const digits = digitsOf(o.phone);
         const attr = o.attr || {};
@@ -1200,15 +1262,22 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         if (o.status === 'qc') {
           blocks.push(photoStrip(o), actionsHtml(o), o.quote_eur ? paymentHtml(o) : '');
         } else if (['awaiting_payment', 'paid'].includes(o.status)) {
-          blocks.push(o.quote_eur ? paymentHtml(o) : '', actionsHtml(o), photoStrip(o));
+          blocks.push(o.quote_eur ? paymentHtml(o) : '', messagesHtml(o), actionsHtml(o), photoStrip(o));
         } else if (['booked', 'assigned', 'in_progress'].includes(o.status)) {
-          blocks.push(actionsHtml(o), showComposer ? composerHtml(o) : '', o.quote_eur && !showComposer ? paymentHtml(o) : '', photoStrip(o));
+          blocks.push(messagesHtml(o), actionsHtml(o), showComposer ? composerHtml(o) : '', o.quote_eur && !showComposer ? paymentHtml(o) : '', photoStrip(o));
         } else { // new, quoted, done, cancelled
-          blocks.push(photoStrip(o), showComposer ? composerHtml(o) : '', actionsHtml(o), o.quote_eur && !showComposer ? paymentHtml(o) : '');
+          blocks.push(photoStrip(o), showComposer ? composerHtml(o) : '', messagesHtml(o), actionsHtml(o), o.quote_eur && !showComposer ? paymentHtml(o) : '');
         }
         blocks.push(historyHtml());
         $('detail-body').innerHTML = blocks.filter(Boolean).join('');
 
+        document.querySelectorAll('[data-lc]').forEach((el) =>
+          el.addEventListener('click', () => {
+            const msg = lcMessage(current, el.getAttribute('data-lc'));
+            const digits = digitsOf(current.phone);
+            if (digits) window.open('https://wa.me/' + digits + '?text=' + encodeURIComponent(msg), '_blank');
+            else { navigator.clipboard.writeText(msg); toast('Sin teléfono — mensaje copiado'); }
+          }));
         document.querySelectorAll('[data-st]').forEach((el) =>
           el.addEventListener('click', () => busy(el, async () => {
             const to = el.getAttribute('data-st');

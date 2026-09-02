@@ -981,7 +981,19 @@
     "quote_validity": "Válido 7 días. Precio cerrado — sin sorpresas.",
     "quote_link": "Precios completos: {url}",
     "payment_link": "Enlace de pago seguro (tarjeta o Bizum): {link}",
-    "quote_sensitive_paint": "Recargo pintura sensible"
+    "quote_sensitive_paint": "Recargo pintura sensible",
+    "quote_cta": "¿Qué día te va bien y a qué dirección voy? Con eso te dejo el hueco reservado.",
+    "lc_booking_confirmation": "¡Reserva confirmada{name}! 🗓\n• {service}\n• {date}, llegada entre {window}\n• Dirección: {address}\n• Total: {total}€ (IVA incluido)\n• Señal recibida: {deposit}€ — el resto al terminar\nPara ese día: coche accesible y sin objetos de valor a la vista. Cambios sin coste hasta 24h antes; con menos de 24h, la señal se guarda para la nueva fecha.",
+    "lc_reminder_24h": "¡Hola{name}! Te recuerdo: mañana, {date}, entre {window} en {address}. ¿Todo sigue en pie? 👍",
+    "lc_on_my_way": "¡Hola{name}! Salgo hacia ti — llego aprox. a las {time}. 🚗",
+    "lc_on_my_way_partner": "¡Hola{name}! Hoy te atiende {partner}, especialista de restoreLab — llega aprox. a las {time}. Cualquier cosa, escríbeme por aquí como siempre.",
+    "lc_work_started": "Empezamos 👍 Antes de tocar nada te paso las fotos del estado inicial — así luego comparas el antes y el después.",
+    "lc_work_done": "¡Listo{name}! 🎉 Así ha quedado — te paso las mejores fotos del antes y después. Dale una vuelta al coche con calma y me dices qué te parece.",
+    "lc_followup_1": "¡Hola{name}! ¿Pudiste ver el presupuesto? Si tienes cualquier duda, te la resuelvo por aquí. Ejemplos reales de este mismo trabajo: {url}",
+    "lc_followup_2": "¡Hola{name}! Esta semana me queda un hueco libre por tu zona — si te encaja, te lo reservo con el presupuesto que te pasé (sigue al mismo precio).",
+    "lc_followup_3": "¡Hola{name}! No quiero insistir más — ¿lo aparcamos por ahora? Cuando te venga bien, me escribes y te actualizo el presupuesto en un minuto.",
+    "lc_review_request": "¡Hola{name}! ¿Qué tal ves el coche con la luz del día?\nSi estás contento con el resultado, me ayudarías muchísimo con una reseña en Google — es un minuto:\n{review_url}",
+    "lc_checkin_48h": "¡Hola{name}! ¿Todo bien con el coche? Si notas cualquier cosa, dímelo y lo miro — para eso está la garantía. 👌"
   },
   "lead_form": {
     "section_title": "Obtén tu Presupuesto Gratuito",

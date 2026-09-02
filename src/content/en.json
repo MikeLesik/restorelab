@@ -1191,7 +1191,19 @@
     "quote_validity": "Valid for 7 days. Fixed price — no surprises.",
     "quote_link": "Full price list: {url}",
     "payment_link": "Secure payment link (card or Bizum): {link}",
-    "quote_sensitive_paint": "Sensitive paint surcharge"
+    "quote_sensitive_paint": "Sensitive paint surcharge",
+    "quote_cta": "What day works for you, and what address should I come to? With that I'll hold the slot for you.",
+    "lc_booking_confirmation": "Booking confirmed{name}! 🗓\n• {service}\n• {date}, arrival between {window}\n• Address: {address}\n• Total: {total}€ (VAT included)\n• Deposit received: {deposit}€ — the rest when the job is done\nFor the day: please have the car accessible, with no valuables in sight. Changes are free up to 24h before; within 24h, the deposit carries over to the new date.",
+    "lc_reminder_24h": "Hi{name}! Quick reminder: tomorrow, {date}, between {window} at {address}. Still good? 👍",
+    "lc_on_my_way": "Hi{name}! On my way — arriving around {time}. 🚗",
+    "lc_on_my_way_partner": "Hi{name}! Today {partner}, a restoreLab specialist, will take care of your car — arriving around {time}. Anything at all, message me here as usual.",
+    "lc_work_started": "Starting now 👍 Before touching anything I'm sending you photos of the initial condition — so you can compare before and after later.",
+    "lc_work_done": "All done{name}! 🎉 Here's how it turned out — sending you the best before/after photos. Take a calm look around the car and tell me what you think.",
+    "lc_followup_1": "Hi{name}! Did you get a chance to look at the quote? Happy to answer any questions here. Real examples of this exact job: {url}",
+    "lc_followup_2": "Hi{name}! I have a free slot in your area this week — if it suits you, I'll book it with the quote I sent (same price still stands).",
+    "lc_followup_3": "Hi{name}! I don't want to keep insisting — shall we park it for now? Whenever suits you, message me and I'll refresh the quote in a minute.",
+    "lc_review_request": "Hi{name}! How does the car look in daylight?\nIf you're happy with the result, a Google review would help me enormously — it takes a minute:\n{review_url}",
+    "lc_checkin_48h": "Hi{name}! Everything still good with the car? If you notice anything, tell me and I'll take a look — that's what the guarantee is for. 👌"
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

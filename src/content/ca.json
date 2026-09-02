@@ -981,7 +981,19 @@
     "quote_validity": "Vàlid 7 dies. Preu tancat — sense sorpreses.",
     "quote_link": "Preus complets: {url}",
     "payment_link": "Enllaç de pagament segur (targeta o Bizum): {link}",
-    "quote_sensitive_paint": "Recàrrec pintura sensible"
+    "quote_sensitive_paint": "Recàrrec pintura sensible",
+    "quote_cta": "Quin dia et va bé i a quina adreça vinc? Amb això et deixo l'hora reservada.",
+    "lc_booking_confirmation": "Reserva confirmada{name}! 🗓\n• {service}\n• {date}, arribada entre {window}\n• Adreça: {address}\n• Total: {total}€ (IVA inclòs)\n• Paga i senyal rebuda: {deposit}€ — la resta en acabar\nPer a aquell dia: cotxe accessible i sense objectes de valor a la vista. Canvis sense cost fins a 24h abans; amb menys de 24h, la senyal es guarda per a la nova data.",
+    "lc_reminder_24h": "Hola{name}! Et recordo: demà, {date}, entre {window} a {address}. Tot segueix en peu? 👍",
+    "lc_on_my_way": "Hola{name}! Surto cap a tu — arribo aprox. a les {time}. 🚗",
+    "lc_on_my_way_partner": "Hola{name}! Avui t'atén {partner}, especialista de restoreLab — arriba aprox. a les {time}. Qualsevol cosa, escriu-me per aquí com sempre.",
+    "lc_work_started": "Comencem 👍 Abans de tocar res t'envio les fotos de l'estat inicial — així després compares l'abans i el després.",
+    "lc_work_done": "Llest{name}! 🎉 Així ha quedat — t'envio les millors fotos de l'abans i el després. Fes una volta al cotxe amb calma i em dius què et sembla.",
+    "lc_followup_1": "Hola{name}! Vas poder veure el pressupost? Si tens qualsevol dubte, te'l resolc per aquí. Exemples reals d'aquesta mateixa feina: {url}",
+    "lc_followup_2": "Hola{name}! Aquesta setmana em queda un forat lliure per la teva zona — si t'encaixa, te'l reservo amb el pressupost que et vaig passar (segueix al mateix preu).",
+    "lc_followup_3": "Hola{name}! No vull insistir més — ho aparquem per ara? Quan et vagi bé, m'escrius i t'actualitzo el pressupost en un minut.",
+    "lc_review_request": "Hola{name}! Com veus el cotxe amb la llum del dia?\nSi estàs content amb el resultat, m'ajudaries moltíssim amb una ressenya a Google — és un minut:\n{review_url}",
+    "lc_checkin_48h": "Hola{name}! Tot bé amb el cotxe? Si notes qualsevol cosa, digue-m'ho i ho miro — per això hi ha la garantia. 👌"
   },
   "lead_form": {
     "section_title": "Obtén el teu Pressupost Gratuït",
