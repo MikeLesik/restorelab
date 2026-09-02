@@ -57,7 +57,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       <!-- Header -->
       <header class="flex flex-wrap items-center justify-between gap-3 mb-6">
         <h1 class="font-display font-bold text-th-heading text-2xl">
-          restore<span class="text-brand-accent">Lab</span> <span class="text-th-muted font-normal text-lg">· Pedidos</span>
+          restore<span class="text-brand-accent">Lab</span>
+          <span class="ml-3 inline-flex rounded-xl border border-th-border/15 overflow-hidden align-middle text-sm font-normal">
+            <button id="tab-pipeline" class="px-4 py-1.5 bg-brand-accent/15 text-brand-accent">Pedidos</button>
+            <button id="tab-metrics" class="px-4 py-1.5 text-th-muted hover:text-th-heading">Métricas</button>
+          </span>
         </h1>
         <div class="flex flex-wrap gap-2">
           <button id="btn-new" class="btn-primary text-sm px-4 py-2">+ Nuevo pedido</button>
@@ -66,6 +70,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         </div>
       </header>
 
+      <div id="view-pipeline">
       <!-- Filters -->
       <div id="filters" class="flex flex-wrap gap-2 mb-6 items-center">
         <select id="f-status" class="adm-input w-auto">
@@ -87,6 +92,17 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       <!-- Pipeline -->
       <main id="pipeline" class="space-y-8"></main>
+      </div>
+
+      <!-- Métricas (RL-460) -->
+      <div id="view-metrics" class="hidden">
+        <div class="flex flex-wrap gap-2 mb-6 items-center">
+          <input id="m-month" type="month" class="adm-input w-auto" />
+          <button id="m-load" class="btn-secondary text-sm px-4 py-2">Cargar</button>
+          <button id="m-csv" class="btn-secondary text-sm px-4 py-2 ml-auto">Exportar CSV</button>
+        </div>
+        <div id="m-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
+      </div>
 
       <!-- Detail overlay -->
       <div id="detail" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/95 backdrop-blur-sm">
@@ -726,6 +742,171 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         $('p-name').value = ''; $('p-phone').value = '';
         loadPartners();
       });
+
+      // ── Métricas (RL-460) ─────────────────────────────────────────────────
+      let M = null; // last metrics payload
+
+      const badge = (value, limit, higherIsBad, unit) => {
+        if (value == null) return '<span class="text-th-faint">—</span>';
+        const bad = higherIsBad ? value > limit : value < limit;
+        const color = bad ? '#ef4444' : '#22c55e';
+        return `<span class="font-bold" style="color:${color}">${value}${unit}</span>
+          <span class="text-th-faint text-xs">límite ${higherIsBad ? '≤' : '≥'}${limit}${unit}</span>`;
+      };
+      const bar = (n, max) =>
+        `<span class="inline-block h-2 rounded bg-brand-accent/60 align-middle" style="width:${max ? Math.max(4, Math.round((n / max) * 120)) : 4}px"></span>`;
+
+      function metricCard(title, html) {
+        return `<div class="card p-4"><p class="text-xs text-th-faint uppercase tracking-widest mb-1.5">${title}</p><div class="text-th-body text-sm">${html}</div></div>`;
+      }
+
+      function breakdownRows(obj) {
+        const entries = Object.entries(obj).sort((a, b) => b[1] - a[1]);
+        const max = entries[0]?.[1] || 0;
+        return entries.map(([k, v]) =>
+          `<div class="flex items-center gap-2 py-0.5"><span class="w-44 truncate text-th-muted">${esc(k)}</span>${bar(v, max)}<span class="text-th-heading font-medium">${v}</span></div>`).join('') || '<span class="text-th-faint">—</span>';
+      }
+
+      async function loadMetrics() {
+        const month = $('m-month').value || new Date().toISOString().slice(0, 7);
+        let d;
+        try {
+          d = await api('/api/metrics?month=' + month);
+        } catch (e) {
+          $('m-body').innerHTML = `<p class="text-red-400 text-sm">${esc(e.message)}</p>`;
+          return;
+        }
+        if (!d.ok) {
+          $('m-body').innerHTML = `<p class="text-brand-gold text-sm">API no configurada (${esc(d.reason || '')}).</p>`;
+          return;
+        }
+        M = d;
+        const T = d.thresholds;
+        const f = d.funnel;
+        const spendRows = Object.entries(d.cac.spend);
+        if (!spendRows.length) spendRows.push(['google', '']);
+
+        $('m-body').innerHTML = `
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            ${metricCard('Pedidos', `<b class="text-th-heading text-xl">${f.created}</b> creados<br/>${f.quoted} presupuestados · ${f.booked} reservados · ${f.done} cerrados`)}
+            ${metricCard('Presupuesto → Reserva', badge(f.quote_to_booked_pct, T.quote_to_booked_pct, false, '%'))}
+            ${metricCard('Tiempo hasta presupuesto', d.time_to_quote_median_h == null ? '—' : `<b class="text-th-heading text-xl">${d.time_to_quote_median_h}h</b> mediana`)}
+            ${metricCard('Ingresos cobrados', `<b class="text-th-heading text-xl">${d.revenue.paid_total}€</b><br/>${d.revenue.paid_orders} pagos · ticket medio ${d.revenue.avg_ticket ?? '—'}€`)}
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            ${metricCard('Contribución estimada', `<b class="text-th-heading text-xl">${d.revenue.contribution_total}€</b> total · ${d.revenue.contribution_avg ?? '—'}€/pedido
+              <p class="text-th-faint text-xs mt-1">pagado − payout partner − 1,5% Stripe − 4% reserva (src/lib/unitEconomics.ts)</p>`)}
+            ${metricCard('CAC blended', `${badge(d.cac.blended, T.cac_eur, true, '€')}
+              <span class="text-th-faint text-xs">· gasto ${d.cac.spend_total}€ / ${f.booked} reservas</span>`)}
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            ${metricCard('Por canal', breakdownRows(f.by_channel))}
+            ${metricCard('Por servicio', breakdownRows(f.by_service))}
+          </div>
+
+          <div class="card p-4">
+            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">Partners</p>
+            ${d.partners.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
+            <table class="w-full text-sm">
+              <thead><tr class="text-left text-th-faint border-b border-th-border/10">
+                <th class="py-1.5">Partner</th><th>Trabajos</th><th>Rework</th><th>Media en curso</th></tr></thead>
+              <tbody>${d.partners.map((p) => `
+                <tr class="border-b border-th-border/5">
+                  <td class="py-1.5 text-th-heading">${esc(p.name)}</td>
+                  <td>${p.jobs}</td>
+                  <td>${badge(p.rework_pct, T.rework_pct, true, '%')}</td>
+                  <td>${p.avg_in_progress_h == null ? '—' : p.avg_in_progress_h + 'h'}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>`}
+          </div>
+
+          <div class="card p-4">
+            <p class="text-xs text-th-faint uppercase tracking-widest mb-2">CAC por fuente · gasto del mes</p>
+            <div id="m-spend-rows" class="space-y-2 mb-2">
+              ${spendRows.map(([src, val]) => `
+                <div class="flex gap-2 items-center" data-spend-row>
+                  <input type="text" value="${esc(src)}" placeholder="fuente (google, meta…)" class="adm-input w-40 py-1.5" data-spend-src />
+                  <input type="number" value="${esc(val)}" min="0" step="1" placeholder="€" class="adm-input w-28 py-1.5" data-spend-amt />€
+                </div>`).join('')}
+            </div>
+            <div class="flex gap-2 mb-4">
+              <button id="m-spend-add" class="text-sm text-brand-accent hover:underline">+ fuente</button>
+              <button id="m-spend-save" class="btn-secondary text-sm px-4 py-1.5">Guardar gasto</button>
+            </div>
+            <table class="w-full text-sm">
+              <thead><tr class="text-left text-th-faint border-b border-th-border/10">
+                <th class="py-1.5">Fuente</th><th>Creados</th><th>Reservados</th><th>CAC</th></tr></thead>
+              <tbody>${Object.keys({ ...d.cac.created_by_source, ...d.cac.by_source }).map((src) => `
+                <tr class="border-b border-th-border/5">
+                  <td class="py-1.5 text-th-heading">${esc(src)}</td>
+                  <td>${d.cac.created_by_source[src] || 0}</td>
+                  <td>${d.cac.booked_by_source[src] || 0}</td>
+                  <td>${d.cac.by_source[src] != null ? badge(d.cac.by_source[src], T.cac_eur, true, '€') : '<span class="text-th-faint">—</span>'}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>`;
+
+        $('m-spend-add').addEventListener('click', () => {
+          const div = document.createElement('div');
+          div.className = 'flex gap-2 items-center';
+          div.setAttribute('data-spend-row', '');
+          div.innerHTML = '<input type="text" placeholder="fuente" class="adm-input w-40 py-1.5" data-spend-src />' +
+            '<input type="number" min="0" step="1" placeholder="€" class="adm-input w-28 py-1.5" data-spend-amt />€';
+          $('m-spend-rows').appendChild(div);
+        });
+        $('m-spend-save').addEventListener('click', async () => {
+          const value = {};
+          document.querySelectorAll('[data-spend-row]').forEach((row) => {
+            const src = row.querySelector('[data-spend-src]').value.trim();
+            const amt = Number(row.querySelector('[data-spend-amt]').value);
+            if (src && amt > 0) value[src] = amt;
+          });
+          const d2 = await api('/api/settings', {
+            method: 'PUT',
+            body: JSON.stringify({ key: 'ad_spend:' + (M?.month || ''), value }),
+          });
+          if (d2.ok) loadMetrics(); else alert('Error: ' + (d2.reason || ''));
+        });
+      }
+
+      function exportCsv() {
+        if (!M) return;
+        const cols = ['code', 'created_at', 'status', 'channel', 'lang', 'service_slug', 'size',
+          'client_name', 'phone', 'area_slug', 'quote_eur', 'paid_eur', 'paid_at',
+          'partner_id', 'ref_code', 'rework', 'scheduled_at'];
+        const cell = (v) => {
+          const s = v == null ? '' : String(v);
+          return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+        };
+        const csv = [cols.join(';')]
+          .concat(M.orders.map((o) => cols.map((c) => cell(o[c])).join(';')))
+          .join('\n');
+        const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'restorelab-pedidos-' + M.month + '.csv';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+
+      // ── Tabs ──────────────────────────────────────────────────────────────
+      function showTab(which) {
+        const pipe = which === 'pipeline';
+        $('view-pipeline').classList.toggle('hidden', !pipe);
+        $('view-metrics').classList.toggle('hidden', pipe);
+        $('tab-pipeline').className = 'px-4 py-1.5 ' + (pipe ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
+        $('tab-metrics').className = 'px-4 py-1.5 ' + (!pipe ? 'bg-brand-accent/15 text-brand-accent' : 'text-th-muted hover:text-th-heading');
+        if (!pipe) {
+          if (!$('m-month').value) $('m-month').value = new Date().toISOString().slice(0, 7);
+          loadMetrics();
+        }
+      }
+      $('tab-pipeline').addEventListener('click', () => showTab('pipeline'));
+      $('tab-metrics').addEventListener('click', () => showTab('metrics'));
+      $('m-load').addEventListener('click', loadMetrics);
+      $('m-csv').addEventListener('click', exportCsv);
 
       // ── Init ──────────────────────────────────────────────────────────────
       $('f-status').innerHTML = '<option value="">Estado: todos</option>' +

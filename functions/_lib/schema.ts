@@ -67,4 +67,8 @@ export const SCHEMA_STATEMENTS: string[] = [
     count INTEGER NOT NULL,
     reset_at INTEGER NOT NULL
   )`,
+  `CREATE TABLE IF NOT EXISTS settings (
+    key TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  )`,
 ];

@@ -69,3 +69,9 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   count INTEGER NOT NULL,
   reset_at INTEGER NOT NULL
 );
+
+-- Admin settings (RL-460): monthly ad-spend inputs etc. Key-value JSON.
+CREATE TABLE IF NOT EXISTS settings (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL
+);
