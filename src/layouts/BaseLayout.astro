@@ -506,13 +506,14 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
         };
       }
 
-      // Append "#ref RL-XXXX" to a wa.me prefill so the WhatsApp conversation
-      // carries the visitor's attribution code. Idempotent; all site wa.me
-      // links are `…?text=<encoded>` with text as the last param.
+      // Append "Ref: RL-XXXX" to a wa.me prefill so the WhatsApp conversation
+      // carries the visitor's attribution code (reads to the client as an
+      // ordinary reference number). Idempotent; all site wa.me links are
+      // `…?text=<encoded>` with text as the last param.
       function rlWithRef(href) {
         var a = rlReadAttr();
         if (!a.ref || !href || href.indexOf('wa.me') === -1) return href;
-        var tag = encodeURIComponent('#ref ' + a.ref);
+        var tag = encodeURIComponent('Ref: ' + a.ref);
         if (href.indexOf(tag) !== -1) return href;
         if (/[?&]text=/.test(href)) {
           return href.replace(/([?&]text=[^&#]*)/, '$1' + encodeURIComponent('\n\n') + tag);
@@ -608,8 +609,8 @@ const ccTranslation = ccI18n[lang as keyof typeof ccI18n] || ccI18n.es;
 
         // ── Server-side ref log (RL-301) ──
         // Fire-and-forget copy of the contact moment into Cloudflare KV, so
-        // `#ref RL-XXXX` seen in WhatsApp can be looked up via /api/ref even
-        // weeks later. No-op server-side until the REF_LOG binding exists.
+        // the `Ref: RL-XXXX` seen in WhatsApp can be looked up via /api/ref
+        // even weeks later. No-op server-side until the REF_LOG binding exists.
         var RL_REF_LOG = { wa_click: 1, phone_click: 1, lead_submitted: 1 };
         if ((RL_REF_LOG[payload.event] || rlIsContactClick) && payload.ref) {
           try {
