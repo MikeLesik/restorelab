@@ -343,26 +343,31 @@
       "sensitive_paint_note": "Negro azabache, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
         {
+          "id": "compact",
           "name": "Compacto",
           "examples": "Polo, Yaris, i20",
           "modifier": "−10%"
         },
         {
+          "id": "sedan",
           "name": "Sedán",
           "examples": "Serie 3, Clase C, A4",
           "modifier": "Base"
         },
         {
+          "id": "suv",
           "name": "SUV / Crossover",
           "examples": "X3, GLC, Q5, Tucson",
           "modifier": "+20%"
         },
         {
+          "id": "van",
           "name": "SUV grande / 7 plazas",
           "examples": "X7, GLE, Q7, Cayenne",
           "modifier": "+35%"
         },
         {
+          "id": "sports",
           "name": "Deportivo / Superdeportivo",
           "examples": "911, AMG GT, M4",
           "modifier": "+25–40%"
@@ -380,6 +385,9 @@
             "name": "Corrección de Una Fase",
             "slug": "single-stage",
             "price": "349€",
+            "price_eur": 349,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 horas",
             "description": "Corrección mecánica en un paso que elimina hasta el 70% de marcas circulares y arañazos leves.",
             "includes": [
@@ -394,6 +402,9 @@
             "name": "Cerámico 1 Año",
             "slug": "ceramic-1y",
             "price": "499€",
+            "price_eur": 499,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–6 horas",
             "description": "Corrección de una fase más recubrimiento cerámico de 1 año (Gyeon / Gtechniq).",
             "includes": [
@@ -409,6 +420,9 @@
             "name": "Corrección de Dos Fases",
             "slug": "two-stage",
             "price": "599€",
+            "price_eur": 599,
+            "price_unit": "job",
+            "from": false,
             "duration": "5–7 horas",
             "description": "Corrección completa en dos pasos (compuesto de corte + pulido). Elimina el 90%+ de defectos sin cerámico — ideal si ya tienes recubrimiento.",
             "includes": [
@@ -425,6 +439,9 @@
             "name": "Cerámico 2 Años",
             "slug": "ceramic-2y",
             "price": "849€",
+            "price_eur": 849,
+            "price_unit": "job",
+            "from": false,
             "duration": "6–8 horas",
             "description": "Corrección de dos fases más recubrimiento cerámico de 2 años (Gyeon / Gtechniq).",
             "includes": [
@@ -447,6 +464,9 @@
             "name": "Pulido de Parabrisas",
             "slug": "windshield-polish",
             "price": "119€",
+            "price_eur": 119,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–2 horas",
             "description": "Elimina arañazos de limpiaparabrisas, manchas de agua y opacidad leve. Los arañazos profundos requieren lijado + pulido; se valora por foto.",
             "includes": [
@@ -461,6 +481,9 @@
             "name": "Parabrisas + Hidrofóbico",
             "slug": "windshield-hydrophobic",
             "price": "179€",
+            "price_eur": 179,
+            "price_unit": "job",
+            "from": false,
             "duration": "1,5–2,5 horas",
             "description": "Pulido de parabrisas más recubrimiento hidrofóbico repelente de lluvia para mejor visibilidad.",
             "includes": [
@@ -476,6 +499,9 @@
             "name": "Set Completo de Vidrios",
             "slug": "full-glass-set",
             "price": "289€",
+            "price_eur": 289,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 horas",
             "description": "Todos los vidrios pulidos y tratados — parabrisas, laterales y luneta trasera.",
             "includes": [
@@ -491,6 +517,9 @@
             "name": "Solo Recubrimiento Hidrofóbico",
             "slug": "hydrophobic-standalone",
             "price": "desde 89€",
+            "price_eur": 89,
+            "price_unit": "job",
+            "from": true,
             "duration": "30 min – 1 hora",
             "description": "Recubrimiento repelente de lluvia sobre vidrio limpio. Parabrisas 89€, set completo 159€.",
             "includes": [
@@ -505,6 +534,9 @@
             "name": "Restauración de Acrílico",
             "slug": "acrylic-restoration",
             "price": "Presupuesto personalizado",
+            "price_eur": null,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–4 horas",
             "description": "Precio basado en el tamaño de la superficie y la gravedad de los daños. Paneles acrílicos y policarbonato.",
             "includes": [
@@ -526,6 +558,9 @@
             "name": "Express Refresh",
             "slug": "express-refresh",
             "price": "149€",
+            "price_eur": 149,
+            "price_unit": "job",
+            "from": false,
             "duration": "~2 horas",
             "description": "Lavado descontaminante rápido y pulido a mano para contaminación ligera. Mantenimiento ideal entre correcciones completas.",
             "includes": [
@@ -540,6 +575,9 @@
             "name": "Restauración de Faros",
             "slug": "headlight-restoration",
             "price": "79€ / par",
+            "price_eur": 79,
+            "price_unit": "pair",
+            "from": false,
             "duration": "45 min – 1 hora",
             "description": "Restaura faros amarillentos u opacos a claridad cristalina. Sellante UV opcional por 119€.",
             "includes": [
@@ -554,6 +592,9 @@
             "name": "Pack Pre-Venta",
             "slug": "pre-sale-pack",
             "price": "449€",
+            "price_eur": 449,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–5 horas",
             "description": "Corrección de pintura de una fase y restauración de faros — el exterior entra en las fotos del anuncio como debe.",
             "includes": [

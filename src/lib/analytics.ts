@@ -41,7 +41,7 @@ export type RestoreLabEvent =
  * Respects CookieConsent — only fires when analytics consent is granted.
  *
  * Usage (in inline <script>):
- *   window.__rl_push({ event: 'estimator_completed', tier: 'ceramic_2y', priceBand: '€649–710' });
+ *   window.__rl_push({ event: 'estimator_completed', tier: 'ceramic_2y', priceBand: 'mid' });
  *
  * Usage (in Astro component frontmatter — for build-time reference only):
  *   import type { RestoreLabEvent } from '@/lib/analytics';

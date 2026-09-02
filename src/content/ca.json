@@ -343,26 +343,31 @@
       "sensitive_paint_note": "Negre atzabeja, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
         {
+          "id": "compact",
           "name": "Compacte",
           "examples": "Polo, Yaris, i20",
           "modifier": "−10%"
         },
         {
+          "id": "sedan",
           "name": "Sedan",
           "examples": "Serie 3, Classe C, A4",
           "modifier": "Base"
         },
         {
+          "id": "suv",
           "name": "SUV / Crossover",
           "examples": "X3, GLC, Q5, Tucson",
           "modifier": "+20%"
         },
         {
+          "id": "van",
           "name": "SUV gran / 7 places",
           "examples": "X7, GLE, Q7, Cayenne",
           "modifier": "+35%"
         },
         {
+          "id": "sports",
           "name": "Esportiu / Superesportiu",
           "examples": "911, AMG GT, M4",
           "modifier": "+25–40%"
@@ -380,6 +385,9 @@
             "name": "Correcció d'Una Fase",
             "slug": "single-stage",
             "price": "349€",
+            "price_eur": 349,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 hores",
             "description": "Correcció mecànica en un pas que elimina fins al 70% de marques circulars i ratllades lleus.",
             "includes": [
@@ -394,6 +402,9 @@
             "name": "Ceràmic 1 Any",
             "slug": "ceramic-1y",
             "price": "499€",
+            "price_eur": 499,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–6 hores",
             "description": "Correcció d'una fase més recobriment ceràmic d'1 any (Gyeon / Gtechniq).",
             "includes": [
@@ -409,6 +420,9 @@
             "name": "Correcció de Dues Fases",
             "slug": "two-stage",
             "price": "599€",
+            "price_eur": 599,
+            "price_unit": "job",
+            "from": false,
             "duration": "5–7 hores",
             "description": "Correcció completa en dos passos (compost de tall + polit). Elimina el 90%+ de defectes sense ceràmic — ideal si ja teniu recobriment.",
             "includes": [
@@ -425,6 +439,9 @@
             "name": "Ceràmic 2 Anys",
             "slug": "ceramic-2y",
             "price": "849€",
+            "price_eur": 849,
+            "price_unit": "job",
+            "from": false,
             "duration": "6–8 hores",
             "description": "Correcció de dues fases més recobriment ceràmic de 2 anys (Gyeon / Gtechniq).",
             "includes": [
@@ -447,6 +464,9 @@
             "name": "Polit de Parabrisa",
             "slug": "windshield-polish",
             "price": "119€",
+            "price_eur": 119,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–2 hores",
             "description": "Elimina ratllades d'eixugaparabrises, taques d'aigua i opacitat lleu. Les ratllades profundes requereixen escatat + polit; es valora per foto.",
             "includes": [
@@ -461,6 +481,9 @@
             "name": "Parabrisa + Hidrofòbic",
             "slug": "windshield-hydrophobic",
             "price": "179€",
+            "price_eur": 179,
+            "price_unit": "job",
+            "from": false,
             "duration": "1,5–2,5 hores",
             "description": "Polit de parabrisa més recobriment hidrofòbic repel·lent de pluja per a millor visibilitat.",
             "includes": [
@@ -476,6 +499,9 @@
             "name": "Set Complet de Vidres",
             "slug": "full-glass-set",
             "price": "289€",
+            "price_eur": 289,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 hores",
             "description": "Tots els vidres polits i tractats — parabrisa, laterals i luneta posterior.",
             "includes": [
@@ -491,6 +517,9 @@
             "name": "Només Recobriment Hidrofòbic",
             "slug": "hydrophobic-standalone",
             "price": "des de 89€",
+            "price_eur": 89,
+            "price_unit": "job",
+            "from": true,
             "duration": "30 min – 1 hora",
             "description": "Recobriment repel·lent de pluja sobre vidre net. Parabrisa 89€, set complet 159€.",
             "includes": [
@@ -505,6 +534,9 @@
             "name": "Restauració d'Acrílic",
             "slug": "acrylic-restoration",
             "price": "Pressupost personalitzat",
+            "price_eur": null,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–4 hores",
             "description": "Preu basat en la mida de la superfície i la gravetat dels danys. Panells acrílics i policarbonat.",
             "includes": [
@@ -526,6 +558,9 @@
             "name": "Express Refresh",
             "slug": "express-refresh",
             "price": "149€",
+            "price_eur": 149,
+            "price_unit": "job",
+            "from": false,
             "duration": "~2 hores",
             "description": "Rentat descontaminant ràpid i polit a mà per a contaminació lleu. Manteniment ideal entre correccions completes.",
             "includes": [
@@ -540,6 +575,9 @@
             "name": "Restauració de Fars",
             "slug": "headlight-restoration",
             "price": "79€ / parell",
+            "price_eur": 79,
+            "price_unit": "pair",
+            "from": false,
             "duration": "45 min – 1 hora",
             "description": "Restaura fars groguencs o opacs a claredat cristal·lina. Segellant UV opcional per 119€.",
             "includes": [
@@ -554,6 +592,9 @@
             "name": "Pack Pre-Venda",
             "slug": "pre-sale-pack",
             "price": "449€",
+            "price_eur": 449,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–5 hores",
             "description": "Correcció de pintura d'una fase i restauració de fars — l'exterior surt a les fotos de l'anunci com toca.",
             "includes": [

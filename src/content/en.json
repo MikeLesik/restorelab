@@ -344,26 +344,31 @@
       "sensitive_paint_note": "Jet black, Audi Brilliant Black, Porsche Carrara White, etc.",
       "size_categories": [
         {
+          "id": "compact",
           "name": "Compact",
           "examples": "Polo, Yaris, i20",
           "modifier": "−10%"
         },
         {
+          "id": "sedan",
           "name": "Sedan",
           "examples": "3 Series, C-Class, A4",
           "modifier": "Baseline"
         },
         {
+          "id": "suv",
           "name": "SUV / Crossover",
           "examples": "X3, GLC, Q5, Tucson",
           "modifier": "+20%"
         },
         {
+          "id": "van",
           "name": "Large SUV / 7-seater",
           "examples": "X7, GLE, Q7, Cayenne",
           "modifier": "+35%"
         },
         {
+          "id": "sports",
           "name": "Sports / Supercar",
           "examples": "911, AMG GT, M4",
           "modifier": "+25–40%"
@@ -381,6 +386,9 @@
             "name": "Single-Stage Correction",
             "slug": "single-stage",
             "price": "349€",
+            "price_eur": 349,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 hours",
             "description": "One-step machine correction removing up to 70% of swirl marks and light scratches.",
             "includes": [
@@ -395,6 +403,9 @@
             "name": "Ceramic Coating 1Y",
             "slug": "ceramic-1y",
             "price": "499€",
+            "price_eur": 499,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–6 hours",
             "description": "Single-stage correction topped with a 1-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
@@ -410,6 +421,9 @@
             "name": "Two-Stage Correction",
             "slug": "two-stage",
             "price": "599€",
+            "price_eur": 599,
+            "price_unit": "job",
+            "from": false,
             "duration": "5–7 hours",
             "description": "Full two-step compound and polish. Removes 90%+ of defects with no ceramic — ideal if you already have a coating.",
             "includes": [
@@ -426,6 +440,9 @@
             "name": "Ceramic Coating 2Y",
             "slug": "ceramic-2y",
             "price": "849€",
+            "price_eur": 849,
+            "price_unit": "job",
+            "from": false,
             "duration": "6–8 hours",
             "description": "Two-stage correction topped with a 2-year ceramic coating (Gyeon / Gtechniq).",
             "includes": [
@@ -447,6 +464,9 @@
             "name": "Windshield Polish",
             "slug": "windshield-polish",
             "price": "119€",
+            "price_eur": 119,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–2 hours",
             "description": "Removes wiper scratches, water spots and light haze. Deep scratches need sanding + polishing, quoted from a photo.",
             "includes": [
@@ -461,6 +481,9 @@
             "name": "Windshield + Hydrophobic",
             "slug": "windshield-hydrophobic",
             "price": "179€",
+            "price_eur": 179,
+            "price_unit": "job",
+            "from": false,
             "duration": "1.5–2.5 hours",
             "description": "Windshield polish plus rain-repellent hydrophobic coating for improved visibility.",
             "includes": [
@@ -476,6 +499,9 @@
             "name": "Full Glass Set",
             "slug": "full-glass-set",
             "price": "289€",
+            "price_eur": 289,
+            "price_unit": "job",
+            "from": false,
             "duration": "3–4 hours",
             "description": "All windows polished and treated — windshield, side windows and rear glass.",
             "includes": [
@@ -491,6 +517,9 @@
             "name": "Hydrophobic Coating Only",
             "slug": "hydrophobic-standalone",
             "price": "from 89€",
+            "price_eur": 89,
+            "price_unit": "job",
+            "from": true,
             "duration": "30 min – 1 hour",
             "description": "Rain-repellent coating applied to clean glass. Windshield €89, full set €159.",
             "includes": [
@@ -505,6 +534,9 @@
             "name": "Acrylic Restoration",
             "slug": "acrylic-restoration",
             "price": "Custom quote",
+            "price_eur": null,
+            "price_unit": "job",
+            "from": false,
             "duration": "1–4 hours",
             "description": "Price based on surface size and damage severity. Acrylic & polycarbonate panels.",
             "includes": [
@@ -526,6 +558,9 @@
             "name": "Express Refresh",
             "slug": "express-refresh",
             "price": "149€",
+            "price_eur": 149,
+            "price_unit": "job",
+            "from": false,
             "duration": "~2 hours",
             "description": "Quick decon wash and hand polish for light contamination. Ideal maintenance between full corrections.",
             "includes": [
@@ -540,6 +575,9 @@
             "name": "Headlight Restoration",
             "slug": "headlight-restoration",
             "price": "79€ / pair",
+            "price_eur": 79,
+            "price_unit": "pair",
+            "from": false,
             "duration": "45 min – 1 hour",
             "description": "Restore yellowed or hazy lenses to crystal clarity. Optional UV sealant for €119.",
             "includes": [
@@ -554,6 +592,9 @@
             "name": "Pre-Sale Detail Pack",
             "slug": "pre-sale-pack",
             "price": "449€",
+            "price_eur": 449,
+            "price_unit": "job",
+            "from": false,
             "duration": "4–5 hours",
             "description": "Single-stage paint correction and headlight restoration — the exterior photographs the way the listing needs.",
             "includes": [
