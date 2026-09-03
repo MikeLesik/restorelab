@@ -37,33 +37,17 @@ const about = t.about;
     ]
   })} />
 
-  <!-- Organization Schema -->
+  <!-- Founder Person node — the canonical #founder anchor (same person as the
+       academy author). Links to the Organization defined once in BaseLayout;
+       we do NOT redeclare #organization here to avoid a conflicting second node. -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${SITE_URL}/#organization`,
-    "name": "restoreLab",
-    "url": SITE_URL,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${SITE_URL}/favicon.svg`
-    },
-    "description": t.meta.about.description,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sant Cugat del Vallès",
-      "addressRegion": "Catalonia",
-      "postalCode": "08195",
-      "addressCountry": "ES"
-    },
-    "founder": {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#founder`,
-      "name": about.founder_name,
-      "jobTitle": about.founder_role,
-      "url": `${SITE_URL}/${lang}/about`,
-      "worksFor": { "@id": `${SITE_URL}/#organization` }
-    }
+    "@type": "Person",
+    "@id": `${SITE_URL}/#founder`,
+    "name": about.founder_name,
+    "jobTitle": about.founder_role,
+    "url": `${SITE_URL}/${lang}/about`,
+    "worksFor": { "@id": `${SITE_URL}/#organization` }
   })} />
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -67,6 +67,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": t.meta.ev?.title,
       "serviceType": "Electric Vehicle Paint Protection",
       "provider": {
         "@type": "AutomotiveBusiness",

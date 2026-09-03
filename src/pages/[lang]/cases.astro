@@ -33,20 +33,33 @@ const { t } = Astro.props;
     "@type": "CollectionPage",
     "name": t.cases_section.section_title,
     "url": `${SITE_URL}/${lang}/cases`,
-    "mainEntity": (t.cases_gallery?.items || []).flatMap((item: any) => [
-      {
-        "@type": "ImageObject",
-        "contentUrl": `${SITE_URL}${item.before}`,
-        "name": `${item.title} — before`,
-        "caption": item.title
-      },
-      {
-        "@type": "ImageObject",
-        "contentUrl": `${SITE_URL}${item.after}`,
-        "name": `${item.title} — after`,
-        "caption": `${item.title} · ${item.result}`
-      }
-    ])
+    "mainEntity": (t.cases_gallery?.items || []).flatMap((item: any) =>
+      item.before && item.after
+        ? [
+            {
+              "@type": "ImageObject",
+              "contentUrl": `${SITE_URL}${item.before}`,
+              "name": `${item.title} — before`,
+              "caption": item.title
+            },
+            {
+              "@type": "ImageObject",
+              "contentUrl": `${SITE_URL}${item.after}`,
+              "name": `${item.title} — after`,
+              "caption": `${item.title} · ${item.result}`
+            }
+          ]
+        : item.image
+          ? [
+              {
+                "@type": "ImageObject",
+                "contentUrl": `${SITE_URL}${item.image}`,
+                "name": item.title,
+                "caption": item.result ? `${item.title} · ${item.result}` : item.title
+              }
+            ]
+          : []
+    )
   })} />
 
   <div class="pt-24">

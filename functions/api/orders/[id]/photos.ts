@@ -17,7 +17,10 @@ import {
 } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
 
-const ACTIVE_PARTNER_STATUSES = ['assigned', 'in_progress', 'qc'];
+// 'booked' included so a partner opening a still-booked job from the cabinet
+// can upload before/after photos and reach 'done' — matches the ACTIVE set in
+// job/[token].ts, addon.ts, pay-link.ts and the socio open flow.
+const ACTIVE_PARTNER_STATUSES = ['booked', 'assigned', 'in_progress', 'qc'];
 
 export async function onRequestPost(context: {
   request: Request;

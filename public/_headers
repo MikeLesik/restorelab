@@ -10,12 +10,20 @@
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
 
+/p
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
 /p/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
 
 /es/socios
   X-Robots-Tag: noindex, nofollow
+
+/socio
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
 
 /socio/*
   X-Robots-Tag: noindex, nofollow

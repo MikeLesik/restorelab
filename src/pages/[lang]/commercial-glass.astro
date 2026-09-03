@@ -66,6 +66,7 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(waMsg)}`;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": t.meta.commercial_glass?.title,
       "serviceType": "Commercial Glass Scratch Restoration",
       "provider": {
         "@type": "AutomotiveBusiness",

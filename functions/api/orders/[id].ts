@@ -183,10 +183,20 @@ export async function onRequestPatch(context: {
   // work already accepted at the old rate.
   if (typeof b.partner_id === 'string' && b.partner_id) {
     const partner = await db
-      .prepare('SELECT payout_pct FROM partners WHERE id = ?')
+      .prepare('SELECT payout_pct, rc_expiry FROM partners WHERE id = ?')
       .bind(b.partner_id)
-      .first<{ payout_pct: number }>();
+      .first<{ payout_pct: number; rc_expiry: string | null }>();
     if (!partner) return json({ ok: false, reason: 'partner_not_found' }, 400);
+    // Hard-gate assignment server-side (mirrors the admin UI): the job needs an
+    // address + a scheduled time, and the partner's RC insurance must not be
+    // expired — so a direct PATCH can't dispatch an uninsured/unscheduled job.
+    const addr = changed.address !== undefined ? changed.address : row.address;
+    const when = changed.scheduled_at !== undefined ? changed.scheduled_at : row.scheduled_at;
+    if (!addr || !when) return json({ ok: false, reason: 'need_address_and_schedule' }, 409);
+    if (partner.rc_expiry) {
+      const exp = Date.parse(partner.rc_expiry);
+      if (!Number.isNaN(exp) && exp < Date.now()) return json({ ok: false, reason: 'partner_rc_expired' }, 409);
+    }
     sets.push('payout_pct = ?');
     binds.push(Number(partner.payout_pct) || 70);
     changed.payout_pct = Number(partner.payout_pct) || 70;

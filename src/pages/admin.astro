@@ -523,7 +523,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           throw new Error('Token incorrecto.');
         }
         retriedToken = false;
-        return res.json();
+        // A wrong-token 404 on /api/orders/* returns a plaintext body (not JSON);
+        // never let res.json() throw an uncaught SyntaxError that dead-ends the UI.
+        try { return await res.json(); }
+        catch { return { ok: false, reason: res.ok ? 'bad_response' : 'unauthorized', status: res.status }; }
       }
 
       let partners = [];
@@ -1101,7 +1104,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           const amount = Number($('pay-amount').value);
           if (!(amount > 0)) { say('Importe inválido', false); return; }
           const newPaid = Math.round(((Number(current.paid_eur) || 0) + amount) * 100) / 100;
-          const covered = newPaid >= (Number(current.quote_eur) || 0) - 0.01;
+          // Cover the full amount owed (quote + on-site add-ons), matching the
+          // Pagos banner and the server-side Stripe total — not quote alone.
+          const covered = newPaid >= orderTotal(current) - 0.01;
           const body = {
             paid_eur: newPaid,
             paid_at: new Date().toISOString(),
