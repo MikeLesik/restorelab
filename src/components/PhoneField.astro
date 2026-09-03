@@ -14,7 +14,7 @@ interface Props {
 const { id, required = false, placeholder = '600 000 000', inputClass = '', selectClass = '' } = Astro.props;
 ---
 <div class="flex gap-2">
-  <select id={`${id}-cc`} aria-label="Código de país" class={`shrink-0 ${selectClass}`}>
+  <select id={`${id}-cc`} aria-label="Código de país" class={`grow-0 shrink-0 basis-2/5 min-w-0 ${selectClass}`}>
     {COUNTRIES.map((c) => (
       <option value={c.dial} selected={c.iso === 'ES'}>{c.flag} {c.name} (+{c.dial})</option>
     ))}

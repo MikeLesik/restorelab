@@ -1673,8 +1673,22 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }, 'Generando…'));
       $('btn-refresh').addEventListener('click', () => { loadPartners(); loadOrders(); });
 
-      $('n-size').innerHTML = '<option value="">Tamaño…</option>' +
+      const N_SIZE_OPTS = '<option value="">Tamaño…</option>' +
         Object.entries(PRICING.es.sizes).map(([id, n]) => `<option value="${id}">${esc(n)}</option>`).join('');
+      // Size only applies to size-priced services (paint correction, ceramic).
+      // Glass, headlights, acrylic, panels, etc. are flat-priced → no size.
+      function syncNSize() {
+        const slug = $('n-service').value;
+        const p = slug ? PRICING.es.packages[slug] : null;
+        if (slug && !(p && p.size_pricing)) {
+          $('n-size').innerHTML = '<option value="">No aplica a este servicio</option>';
+          $('n-size').value = ''; $('n-size').disabled = true; $('n-size').classList.add('opacity-50');
+        } else {
+          $('n-size').innerHTML = N_SIZE_OPTS; $('n-size').disabled = false; $('n-size').classList.remove('opacity-50');
+        }
+      }
+      $('n-service').addEventListener('change', syncNSize);
+      syncNSize();
       $('n-area').innerHTML = '<option value="">Zona…</option>' +
         Object.entries(AREAS).map(([slug, a]) => `<option value="${slug}">${esc(a.name)}</option>`).join('');
 
@@ -1710,6 +1724,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         if (history.state?.admModal) history.back();
         ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area', 'n-ref'].forEach((id) => { $(id).value = ''; });
         $('n-phone-cc').value = '34';
+        syncNSize();
         $('n-channel').value = 'whatsapp';
         $('n-lang').value = 'es';
         toast('Pedido ' + d.code + ' creado ✓');
