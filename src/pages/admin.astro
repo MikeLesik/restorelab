@@ -2077,7 +2077,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         }
       }, 30000);
 
-      if (token()) boot(); else showLogin();
+      // Try to load straight away: behind Cloudflare Access the CF_Authorization
+      // cookie authorises the API with no token, so no prompt is shown. If the
+      // API answers 401/404 (no Access session and no token) the login gate
+      // appears (see api()'s handler) — the x-admin-token stays as a fallback.
+      boot();
     </script>
   </body>
 </html>

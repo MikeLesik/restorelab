@@ -12,7 +12,7 @@
  */
 
 import {
-  json, inert, notFound, adminOk, sameOrigin, ulid, orderCode, randomHex128,
+  json, inert, notFound, adminAuthed, sameOrigin, ulid, orderCode, randomHex128,
   sha256hex, shapeOrder, logEvent, notifyOwner, CHANNELS, LANGS, SIZES, STATUSES,
 } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
@@ -43,7 +43,7 @@ export async function onRequestPost(context: {
   // Honeypot: a visible-to-bots-only field. Real clients always send it empty.
   if (str(b.website, 200)) return json({ ok: true, id: null });
 
-  const isAdmin = adminOk(request, env);
+  const isAdmin = await adminAuthed(request, env);
 
   // Per-IP rate limit for the public path (admin manual entry is exempt).
   if (!isAdmin) {
@@ -138,7 +138,7 @@ export async function onRequestGet(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   const url = new URL(request.url);

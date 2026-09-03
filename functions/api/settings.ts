@@ -6,7 +6,7 @@
  * PUT /api/settings   body { key, value }  → stored as JSON
  */
 
-import { json, inert, notFound, adminOk } from '../_lib/orders';
+import { json, inert, notFound, adminAuthed } from '../_lib/orders';
 import type { OrdersEnv } from '../_lib/orders';
 
 const KEY_RE = /^[a-z0-9_:-]{2,60}$/;
@@ -16,7 +16,7 @@ export async function onRequestGet(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const key = new URL(request.url).searchParams.get('key') || '';
   if (!KEY_RE.test(key)) return json({ ok: false, reason: 'bad_key' }, 400);
@@ -32,7 +32,7 @@ export async function onRequestPut(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   let b: Record<string, unknown>;
   try {

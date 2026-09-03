@@ -7,7 +7,7 @@
  *                                zones?: string[], skills?: string[], payout_pct? }
  */
 
-import { json, inert, notFound, adminOk, ulid } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed, ulid } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
 const j = (v: unknown, fb: unknown) => {
@@ -31,7 +31,7 @@ export async function onRequestGet(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const res = await env.ORDERS_DB
     .prepare('SELECT * FROM partners ORDER BY active DESC, name ASC')
@@ -44,7 +44,7 @@ export async function onRequestPost(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   let b: Record<string, unknown>;

@@ -12,7 +12,7 @@
  * booking must not yank the order out of the working pipeline).
  */
 
-import { json, inert, notFound, adminOk, logEvent, addonsTotal, TRANSITIONS } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed, logEvent, addonsTotal, TRANSITIONS } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
 
@@ -31,7 +31,7 @@ export async function onRequestPost(context: {
   env: StripeEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   if (!env.STRIPE_SECRET_KEY) return inert('stripe_not_configured');
   const db = env.ORDERS_DB;

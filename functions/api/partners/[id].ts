@@ -5,7 +5,7 @@
  * keeps history intact.
  */
 
-import { json, inert, notFound, adminOk } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
 export async function onRequestPatch(context: {
@@ -14,7 +14,7 @@ export async function onRequestPatch(context: {
   params: { id: string };
 }): Promise<Response> {
   const { request, env, params } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   let b: Record<string, unknown>;

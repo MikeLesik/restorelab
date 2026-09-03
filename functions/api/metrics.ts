@@ -9,7 +9,7 @@
  * Unit-economics constants live in src/lib/unitEconomics.ts (verdict doc).
  */
 
-import { json, inert, notFound, adminOk, shapeOrder, addonsTotal } from '../_lib/orders';
+import { json, inert, notFound, adminAuthed, shapeOrder, addonsTotal } from '../_lib/orders';
 import type { OrdersEnv, D1Database } from '../_lib/orders';
 import {
   STRIPE_FEE_PCT, RESERVE_PCT, DEFAULT_PAYOUT_PCT, ADDON_PARTNER_PCT,
@@ -47,7 +47,7 @@ export async function onRequestGet(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const db = env.ORDERS_DB;
 

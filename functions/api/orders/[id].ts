@@ -8,7 +8,7 @@
  */
 
 import {
-  json, inert, notFound, adminOk, shapeOrder, logEvent, TRANSITIONS,
+  json, inert, notFound, adminAuthed, shapeOrder, logEvent, TRANSITIONS,
 } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
@@ -25,7 +25,7 @@ export async function onRequestDelete(context: {
   params: { id: string };
 }): Promise<Response> {
   const { request, env, params } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const db = env.ORDERS_DB;
 
@@ -84,7 +84,7 @@ export async function onRequestGet(context: {
   params: { id: string };
 }): Promise<Response> {
   const { request, env, params } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   const row = await env.ORDERS_DB
@@ -114,7 +114,7 @@ export async function onRequestPatch(context: {
   params: { id: string };
 }): Promise<Response> {
   const { request, env, params } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const db = env.ORDERS_DB;
 

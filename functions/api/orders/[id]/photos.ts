@@ -12,7 +12,7 @@
  */
 
 import {
-  json, inert, notFound, adminOk, randomHex128, sha256hex, logEvent,
+  json, inert, notFound, adminAuthed, randomHex128, sha256hex, logEvent,
   PHOTO_KINDS, PHOTO_LIMITS, PHOTO_MAX_BYTES, PHOTO_TYPES,
 } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
@@ -53,7 +53,7 @@ export async function onRequestPost(context: {
   const orderId = row.id as string;
 
   // ── Authorization ──
-  const isAdmin = adminOk(request, env);
+  const isAdmin = await adminAuthed(request, env);
   if (!isAdmin) {
     if (kind === 'intake') {
       if (!token || token !== row.intake_token) return notFound();

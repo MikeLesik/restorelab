@@ -82,6 +82,81 @@ export function safeEqual(a: string, b: string): boolean {
 export const adminOk = (request: Request, env: OrdersEnv): boolean =>
   !!env.ADMIN_TOKEN && safeEqual(request.headers.get('x-admin-token') || '', env.ADMIN_TOKEN);
 
+// ── Cloudflare Access (Zero Trust) email-OTP auth for the admin ───────────────
+// The /admin page is gated by a Cloudflare Access self-hosted app; after the
+// One-time PIN the CF_Authorization cookie rides along (domain-wide) to /api/*.
+// These are PUBLIC identifiers (the team domain is the OTP login host, the AUD
+// only names the app) — knowing them grants nothing without a signed JWT.
+const ACCESS_TEAM_DOMAIN = 'dark-poetry-2789.cloudflareaccess.com';
+const ACCESS_AUD = '614b16fa94c2245f6fa2c529433dda2be91cd24490cde80c3257bab31a691d28';
+const ACCESS_EMAIL = 'lesikom@gmail.com';
+const ACCESS_ISSUER = `https://${ACCESS_TEAM_DOMAIN}`;
+
+let _jwksKeys: any[] | null = null;
+let _jwksAt = 0;
+async function accessJwks(): Promise<any[]> {
+  if (_jwksKeys && Date.now() - _jwksAt < 3_600_000) return _jwksKeys;
+  const res = await fetch(`${ACCESS_ISSUER}/cdn-cgi/access/certs`);
+  const body = (await res.json()) as { keys?: any[] };
+  const keys = body.keys || [];
+  _jwksKeys = keys;
+  _jwksAt = Date.now();
+  return keys;
+}
+function b64urlBytes(s: string): ArrayBuffer {
+  s = s.replace(/-/g, '+').replace(/_/g, '/');
+  while (s.length % 4) s += '=';
+  const bin = atob(s);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out.buffer;
+}
+function b64urlJson(s: string): any {
+  return JSON.parse(new TextDecoder().decode(b64urlBytes(s)));
+}
+
+/** Verify a Cloudflare Access JWT (RS256) against the team's JWKS. Returns the
+ *  payload on success, null on any failure — never throws. */
+async function verifyAccessJwt(token: string): Promise<Record<string, any> | null> {
+  try {
+    const [h, p, s] = token.split('.');
+    if (!h || !p || !s) return null;
+    const header = b64urlJson(h);
+    const payload = b64urlJson(p);
+    if (payload.iss !== ACCESS_ISSUER) return null;
+    const aud = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+    if (!aud.includes(ACCESS_AUD)) return null;
+    if (!payload.exp || payload.exp * 1000 < Date.now()) return null;
+    const jwk = (await accessJwks()).find((k) => k.kid === header.kid);
+    if (!jwk) return null;
+    const key = await crypto.subtle.importKey(
+      'jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify'],
+    );
+    const ok = await crypto.subtle.verify(
+      'RSASSA-PKCS1-v1_5', key, b64urlBytes(s), new TextEncoder().encode(`${h}.${p}`),
+    );
+    return ok ? payload : null;
+  } catch {
+    return null;
+  }
+}
+
+/** True if the request carries a valid Access session for the admin email. */
+export async function accessOk(request: Request): Promise<boolean> {
+  const cookie = request.headers.get('Cookie') || '';
+  const m = cookie.match(/(?:^|;\s*)CF_Authorization=([^;]+)/);
+  const token = request.headers.get('Cf-Access-Jwt-Assertion') || (m ? m[1] : '');
+  if (!token) return false;
+  const payload = await verifyAccessJwt(token);
+  return !!payload && String(payload.email || '').toLowerCase() === ACCESS_EMAIL;
+}
+
+/** Admin auth: a valid Access email-OTP session OR the x-admin-token fallback
+ *  (kept so a missed Access verification can never lock the owner out). */
+export async function adminAuthed(request: Request, env: OrdersEnv): Promise<boolean> {
+  return adminOk(request, env) || (await accessOk(request));
+}
+
 /** Public write endpoints are same-origin only (no CORS headers are ever
  *  emitted; this additionally rejects cross-site form posts). */
 export const sameOrigin = (request: Request): boolean => {

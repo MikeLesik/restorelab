@@ -8,7 +8,7 @@
  * re-run at any time.
  */
 
-import { json, inert, notFound, adminOk } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 import { SCHEMA_STATEMENTS, SCHEMA_ALTERS } from '../../_lib/schema';
 
@@ -17,7 +17,7 @@ export async function onRequestPost(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   const applied: string[] = [];

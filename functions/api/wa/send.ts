@@ -7,7 +7,7 @@
  * until then the admin copy-buttons are the path.
  */
 
-import { json, inert, notFound, adminOk, logEvent } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed, logEvent } from '../../_lib/orders';
 import { sendTemplate, waConfigured } from '../../_lib/wa';
 import type { WaEnv } from '../../_lib/wa';
 
@@ -18,7 +18,7 @@ export async function onRequestPost(context: {
   env: WaEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   if (!waConfigured(env)) return inert('wa_cloud_not_configured');
 

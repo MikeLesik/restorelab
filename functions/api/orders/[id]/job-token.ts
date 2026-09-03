@@ -8,7 +8,7 @@
  * and "Trabajo terminado". It dies with the order (active statuses only).
  */
 
-import { json, inert, notFound, adminOk, randomHex128, sha256hex, logEvent } from '../../../_lib/orders';
+import { json, inert, notFound, adminAuthed, randomHex128, sha256hex, logEvent } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
 
 export async function onRequestPost(context: {
@@ -17,7 +17,7 @@ export async function onRequestPost(context: {
   params: { id: string };
 }): Promise<Response> {
   const { request, env, params } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const db = env.ORDERS_DB;
 

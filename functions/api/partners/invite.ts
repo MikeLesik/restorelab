@@ -8,7 +8,7 @@
  * Re-issuing is a fresh row — one link per invite.
  */
 
-import { json, inert, notFound, adminOk, ulid, randomHex128, sha256hex } from '../../_lib/orders';
+import { json, inert, notFound, adminAuthed, ulid, randomHex128, sha256hex } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 
 export async function onRequestPost(context: {
@@ -16,7 +16,7 @@ export async function onRequestPost(context: {
   env: OrdersEnv;
 }): Promise<Response> {
   const { request, env } = context;
-  if (!adminOk(request, env)) return notFound();
+  if (!(await adminAuthed(request, env))) return notFound();
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
 
   const id = ulid();
