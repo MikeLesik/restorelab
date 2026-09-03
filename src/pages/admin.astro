@@ -10,7 +10,7 @@ import '@/styles/global.css';
 import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
 import { areaProfiles } from '@/lib/areaProfiles';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
-import { DEPOSIT_MIN_QUOTE_EUR } from '@/lib/unitEconomics';
+import { DEPOSIT_MIN_QUOTE_EUR, ADDON_PARTNER_PCT } from '@/lib/unitEconomics';
 import PhoneField from '@/components/PhoneField.astro';
 
 import en from '@/content/en.json';
@@ -406,7 +406,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
     </style>
 
-    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR }}>
+    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT }}>
       // ── Vocabulary ────────────────────────────────────────────────────────
       const STATUS_ES = {
         new: 'Por presupuestar', quoted: 'Presupuesto enviado', booked: 'Confirmado',
@@ -614,7 +614,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       // deposit, or the client's chosen method when nothing's collected yet.
       function payBadge(o) {
         const paid = Number(o.paid_eur) || 0;
-        if (o.quote_eur > 0 && paid >= o.quote_eur - 0.01) return '<span class="adm-badge bg-green-500/15 text-green-400">✓ pagado</span>';
+        const tot = (Number(o.quote_eur) || 0) + (o.addons || []).reduce((s, a) => s + (Number(a.price_eur) || 0), 0);
+        if (tot > 0 && paid >= tot - 0.01) return '<span class="adm-badge bg-green-500/15 text-green-400">✓ pagado</span>';
         if (paid > 0) return `<span class="adm-badge bg-brand-gold/15 text-brand-gold">señal ${paid}€</span>`;
         if (o.payment_pref === 'cash') return '<span class="adm-badge text-th-faint">efectivo</span>';
         return '';
@@ -989,9 +990,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
 
       // ── Payments (RL-440) ─────────────────────────────────────────────────
+      // Add-ons the partner upsold on-site raise what the client pays.
+      const addonsTotal = (o) => Math.round((o.addons || []).reduce((s, a) => s + (Number(a.price_eur) || 0), 0) * 100) / 100;
+      const orderTotal = (o) => Math.round(((Number(o.quote_eur) || 0) + addonsTotal(o)) * 100) / 100;
+
       function paymentHtml(o) {
         const paid = Number(o.paid_eur) || 0;
-        const rest = Math.round((o.quote_eur - paid) * 100) / 100;
+        const total = orderTotal(o);
+        const rest = Math.round((total - paid) * 100) / 100;
         const L = PRICING[o.lang] ? o.lang : 'es';
         // Deposit rule (Order Flow v2 §1.6): big bookings hold the slot with
         // a 30% senal sent together with the confirmation.
@@ -1001,13 +1007,15 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             : `<p class="text-xs text-th-faint mb-2">Por debajo de ${DEPOSIT_MIN}€ no hace falta señal — basta el recordatorio T-24h.</p>`)
           : '';
         const pref = o.payment_pref || '';
-        const covered = o.quote_eur > 0 && paid >= o.quote_eur - 0.01;
+        const addT = addonsTotal(o);
+        const covered = total > 0 && paid >= total - 0.01;
+        const addLine = addT > 0 ? ` <span class="text-th-faint text-xs">(base ${o.quote_eur}€ + extras ${addT}€)</span>` : '';
         // Prominent, unmissable payment status at the top of the card.
         const statusBanner = covered
           ? `<div class="rounded-xl bg-green-500/15 border border-green-500/30 px-3 py-2.5 mb-3"><span class="text-green-300 font-semibold text-sm">✓ Cobrado por completo</span> <span class="font-display font-bold tabular-nums text-green-300">${paid}€</span></div>`
           : paid > 0
-          ? `<div class="rounded-xl bg-brand-gold/15 border border-brand-gold/30 px-3 py-2.5 mb-3"><span class="text-brand-gold font-semibold text-sm">Señal recibida</span> <span class="font-display font-bold tabular-nums text-brand-gold">${paid}€</span> <span class="text-th-muted text-sm">· falta</span> <span class="font-display font-bold tabular-nums text-th-heading">${rest}€</span></div>`
-          : `<div class="rounded-xl bg-th-surface/[0.06] border border-th-border/10 px-3 py-2.5 mb-3"><span class="text-th-muted text-sm">Sin cobrar todavía · presupuesto</span> <span class="font-display font-bold tabular-nums text-brand-accent">${o.quote_eur}€</span></div>`;
+          ? `<div class="rounded-xl bg-brand-gold/15 border border-brand-gold/30 px-3 py-2.5 mb-3"><span class="text-brand-gold font-semibold text-sm">Señal recibida</span> <span class="font-display font-bold tabular-nums text-brand-gold">${paid}€</span> <span class="text-th-muted text-sm">· falta</span> <span class="font-display font-bold tabular-nums text-th-heading">${rest}€</span>${addLine}</div>`
+          : `<div class="rounded-xl bg-th-surface/[0.06] border border-th-border/10 px-3 py-2.5 mb-3"><span class="text-th-muted text-sm">Sin cobrar todavía · total</span> <span class="font-display font-bold tabular-nums text-brand-accent">${total}€</span>${addLine}</div>`;
         // How the client pays — asked once, drives the rest of the card.
         const methodRow = `
           <label class="text-xs text-th-faint block mb-1">¿Cómo paga el cliente?</label>
@@ -1337,6 +1345,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               ${digits ? `<a class="text-brand-accent min-h-[44px] flex items-center" href="tel:+${digits}">📞 Llamar</a>
               <a class="text-brand-whatsapp min-h-[44px] flex items-center" target="_blank" href="https://wa.me/${digits}">💬 WhatsApp</a>` : ''}
               ${o.quote_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Presupuesto:</span><b class="text-brand-accent">${o.quote_eur}€</b></span>` : ''}
+              ${addonsTotal(o) > 0 ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Extras:</span><b class="text-brand-whatsapp">+${addonsTotal(o)}€</b></span><span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Total:</span><b class="text-th-heading">${orderTotal(o)}€</b></span>` : ''}
               ${o.paid_eur ? `<span class="min-h-[44px] flex items-center"><span class="text-th-faint mr-1">Pagado:</span><b class="text-green-400">${o.paid_eur}€</b></span>` : ''}
               ${o.scheduled_at ? `<span class="min-h-[44px] flex items-center text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
               ${o.address ? `<span class="min-h-[44px] flex items-center text-th-muted">📍 ${esc(o.address)}</span>` : ''}
@@ -1494,7 +1503,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (!d.ok) { toast('Error: ' + (d.reason || ''), false); return; }
           const pt = partners.find((x) => x.id === current.partner_id);
           const payoutPct = current.payout_pct || pt?.payout_pct || 70;
-          const payout = current.quote_eur ? Math.round(current.quote_eur * payoutPct) / 100 : null;
+          const base = current.quote_eur ? current.quote_eur * payoutPct / 100 : 0;
+          const payoutN = Math.round((base + addonsTotal(current) * ADDON_PCT / 100) * 100) / 100;
+          const payout = payoutN > 0 ? payoutN : null;
           const msg = 'Hola' + (pt ? ' ' + pt.name.split(' ')[0] : '') + ', trabajo ' + current.code + ':\n' +
             '• ' + svcName(current.service_slug) + (current.size ? ' (' + sizeName(current.size) + ')' : '') + '\n' +
             (AREAS[current.area_slug]?.name ? '• Zona: ' + AREAS[current.area_slug].name + '\n' : '') +

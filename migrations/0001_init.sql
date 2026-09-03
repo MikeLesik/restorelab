@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS orders (
   photos TEXT NOT NULL DEFAULT '[]',  -- JSON array of R2 keys (kind encoded in the key path)
   quote_eur REAL,
   quote_breakdown TEXT,               -- JSON
+  addons TEXT,                        -- JSON [{slug,name,price_eur}] partner upsell (0005)
   partner_id TEXT,
   payout_pct REAL,                    -- snapshot of the partner's % at assignment (0002)
   accepted_at TEXT,                   -- partner's job acceptance timestamp (0002)

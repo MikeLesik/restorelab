@@ -12,7 +12,7 @@
  * booking must not yank the order out of the working pipeline).
  */
 
-import { json, inert, notFound, adminOk, logEvent, TRANSITIONS } from '../../_lib/orders';
+import { json, inert, notFound, adminOk, logEvent, addonsTotal, TRANSITIONS } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
 
@@ -53,11 +53,14 @@ export async function onRequestPost(context: {
   const quote = Number(order.quote_eur);
   if (!Number.isFinite(quote) || quote <= 0) return json({ ok: false, reason: 'no_quote' }, 409);
   const paid = Number(order.paid_eur) || 0;
+  // What the client owes = base quote + on-site add-ons. The deposit is 30%
+  // of the base only (it's taken at booking, before any on-site upsell).
+  const total = Math.round((quote + addonsTotal(order)) * 100) / 100;
 
   let amountEur: number;
   if (kind === 'deposit') amountEur = Math.round(quote * DEPOSIT_PCT * 100) / 100;
-  else if (kind === 'rest') amountEur = Math.round((quote - paid) * 100) / 100;
-  else amountEur = quote;
+  else if (kind === 'rest') amountEur = Math.round((total - paid) * 100) / 100;
+  else amountEur = total;
   const amountCents = Math.round(amountEur * 100);
   if (amountCents <= 0) return json({ ok: false, reason: 'nothing_to_charge' }, 409);
 

@@ -6,8 +6,11 @@
 import '@/styles/global.css';
 import { PARTNER_CHECKLISTS, HOUSE_RULES } from '@/lib/partnerChecklists';
 import { areaProfiles } from '@/lib/areaProfiles';
+import { ADDON_PARTNER_PCT } from '@/lib/unitEconomics';
 
 import es from '@/content/es.json';
+
+const ADDONS = (es as any).addons || [];
 
 // Package + size display names come from the same pricing data as everywhere.
 const PKG_NAMES = Object.fromEntries(
@@ -87,7 +90,14 @@ const AREA_NAMES = Object.fromEntries(
         </div>
 
         <div class="card p-5">
-          <h2 class="font-display font-bold text-th-heading mb-1">¿Hace falta más trabajo?</h2>
+          <h2 class="font-display font-bold text-th-heading mb-1">Extras para ofrecer al cliente</h2>
+          <p class="text-xs text-th-muted mb-3">Ofrécelos en persona. Si el cliente dice que sí, márcalos aquí: se añaden al total y tú ganas el {ADDON_PARTNER_PCT}% de cada extra (más que en el trabajo base). Precio cerrado, no negocies.</p>
+          <div id="j-addons" class="space-y-2"></div>
+          <p id="j-addons-earn" class="hidden text-sm text-brand-whatsapp font-semibold mt-3"></p>
+        </div>
+
+        <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">¿Hace falta algo fuera de la lista?</h2>
           <p class="text-xs text-th-muted mb-2">Si ves que el coche necesita algo más de lo previsto, descríbelo aquí. Lo revisamos, hablamos con el cliente y lo añadimos al presupuesto. No cierres precios ni trabajos extra con el cliente directamente.</p>
           <textarea id="j-extra" rows="2" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="p. ej. el paragolpes trasero necesita una pasada más de pulido"></textarea>
           <button id="j-extra-send" class="btn-secondary w-full mt-2 py-2.5 text-sm">Proponer trabajo adicional</button>
@@ -114,7 +124,7 @@ const AREA_NAMES = Object.fromEntries(
 
     <input id="j-file" type="file" accept="image/*" capture="environment" class="hidden" />
 
-    <script define:vars={{ PKG_NAMES, SIZE_NAMES, AREA_NAMES, CHECKLISTS: PARTNER_CHECKLISTS }}>
+    <script define:vars={{ PKG_NAMES, SIZE_NAMES, AREA_NAMES, CHECKLISTS: PARTNER_CHECKLISTS, ADDONS, ADDON_PCT: ADDON_PARTNER_PCT }}>
       const $ = (id) => document.getElementById(id);
       const token = (location.pathname.match(/^\/p\/([a-f0-9]{32})$/) || [])[1];
       let uploadKind = null;
@@ -166,7 +176,41 @@ const AREA_NAMES = Object.fromEntries(
 
         renderPhotos('before', j.photos_before);
         renderPhotos('after', j.photos_after);
+        renderAddons(j.addons || []);
         $('job').classList.remove('hidden');
+      }
+
+      function renderAddons(current) {
+        const has = new Set(current.map((a) => a.slug));
+        $('j-addons').innerHTML = ADDONS.map((a) => {
+          const on = has.has(a.slug);
+          const earn = Math.round(a.price_eur * ADDON_PCT) / 100;
+          return `<div class="flex items-center justify-between gap-2 rounded-lg border ${on ? 'border-brand-whatsapp/50 bg-brand-whatsapp/5' : 'border-th-border/10'} px-3 py-2">
+            <div class="min-w-0">
+              <p class="text-sm text-th-heading truncate">${a.name}</p>
+              <p class="text-[11px] text-th-faint">${a.price_eur}€ · tú ganas ${earn}€</p>
+            </div>
+            <button type="button" data-addon="${a.slug}" data-on="${on ? '1' : ''}" class="shrink-0 text-xs px-3 py-2 rounded-lg ${on ? 'bg-brand-whatsapp text-white' : 'border border-th-border/20 text-th-body'}">${on ? '✓ Añadido' : '+ Añadir'}</button>
+          </div>`;
+        }).join('');
+        const total = current.reduce((s, a) => s + (Number(a.price_eur) || 0), 0);
+        const earn = Math.round(total * ADDON_PCT) / 100;
+        const el = $('j-addons-earn');
+        if (total > 0) { el.textContent = `Extras: +${total}€ para el cliente · +${earn}€ para ti`; el.classList.remove('hidden'); }
+        else el.classList.add('hidden');
+        document.querySelectorAll('[data-addon]').forEach((btn) =>
+          btn.addEventListener('click', async () => {
+            btn.disabled = true;
+            const action = btn.dataset.on ? 'remove' : 'add';
+            try {
+              const d = await (await fetch('/api/job/' + token + '/addon', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action, slug: btn.dataset.addon }),
+              })).json();
+              if (d.ok) { renderAddons(d.addons); return; }
+            } catch (e) {}
+            btn.disabled = false;
+          }));
       }
 
       function renderPhotos(kind, keys) {

@@ -163,7 +163,15 @@ export const DOC_MAX_BYTES = 30 * 1024 * 1024;
 
 // ── Order row (de)serialisation ──────────────────────────────────────────────
 
-const JSON_COLUMNS = ['photos', 'quote_breakdown', 'attr'] as const;
+const JSON_COLUMNS = ['photos', 'quote_breakdown', 'attr', 'addons'] as const;
+
+/** Sum of add-on prices on an order (raw row or shaped). */
+export function addonsTotal(order: Record<string, unknown>): number {
+  const raw = order.addons;
+  const list = typeof raw === 'string' ? (() => { try { return JSON.parse(raw); } catch { return []; } })() : raw;
+  if (!Array.isArray(list)) return 0;
+  return Math.round(list.reduce((s: number, a: any) => s + (Number(a?.price_eur) || 0), 0) * 100) / 100;
+}
 const PRIVATE_COLUMNS = ['intake_token', 'job_token_hash'] as const;
 
 /** Parse JSON columns and strip secrets before returning a row to a client. */

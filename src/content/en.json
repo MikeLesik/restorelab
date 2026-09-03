@@ -4727,5 +4727,47 @@
     "note": "We'll confirm the details by WhatsApp. Any questions, just message us and we'll reply right away.",
     "cta_wa": "Message us on WhatsApp",
     "back": "Back to home"
-  }
+  },
+  "addons": [
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Iron fallout decontamination",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-tapiceria",
+      "name": "Upholstery cleaning (seats)",
+      "price_eur": 45
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Ceramic wheel sealant",
+      "price_eur": 30
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Hydrophobic glass treatment",
+      "price_eur": 25
+    },
+    {
+      "slug": "restauracion-plasticos",
+      "name": "Exterior plastic restoration",
+      "price_eur": 25
+    },
+    {
+      "slug": "higienizacion-ozono",
+      "name": "Interior ozone sanitisation",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-motor",
+      "name": "Engine bay cleaning",
+      "price_eur": 35
+    },
+    {
+      "slug": "acondicionado-cuero",
+      "name": "Leather conditioning & protection",
+      "price_eur": 40
+    }
+  ]
 }

@@ -17,8 +17,9 @@
  *                                    partner notes in the event.
  */
 
-import { json, inert, notFound, sha256hex, logEvent } from '../../_lib/orders';
+import { json, inert, notFound, sha256hex, logEvent, addonsTotal } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
+import { ADDON_PARTNER_PCT } from '../../../src/lib/unitEconomics';
 
 // 'booked' included so a job assigned but not yet flipped to 'assigned' still
 // opens (the partner can work it straight from their cabinet).
@@ -56,7 +57,10 @@ export async function onRequestGet(context: {
     pct = Number(p?.payout_pct) || 0;
   }
   const quote = Number(order.quote_eur) || 0;
-  const payoutEur = pct && quote ? Math.round(quote * pct) / 100 : null;
+  // Base % on the quote + the higher add-on % on the partner's own upsells.
+  const base = pct && quote ? (quote * pct) / 100 : 0;
+  const addonPay = (ADDON_PARTNER_PCT / 100) * addonsTotal(order);
+  const payoutEur = base + addonPay > 0 ? Math.round((base + addonPay) * 100) / 100 : null;
 
   // Latest rework instruction — the counter alone tells the partner nothing.
   let reworkNote: string | null = null;
@@ -85,6 +89,7 @@ export async function onRequestGet(context: {
       scheduled_at: order.scheduled_at,
       client_first_name: String(order.client_name || '').split(' ')[0] || null,
       notes: order.notes,
+      addons: (() => { try { return JSON.parse((order.addons as string) || '[]'); } catch { return []; } })(),
       rework: order.rework,
       rework_note: reworkNote,
       accepted_at: order.accepted_at || null,

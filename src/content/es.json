@@ -4728,5 +4728,47 @@
     "note": "Te confirmamos los detalles por WhatsApp. Si tienes cualquier duda, escríbenos y te respondemos enseguida.",
     "cta_wa": "Escríbenos por WhatsApp",
     "back": "Volver al inicio"
-  }
+  },
+  "addons": [
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Descontaminación ferrosa",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-tapiceria",
+      "name": "Limpieza de tapicería (asientos)",
+      "price_eur": 45
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Sellado cerámico de llantas",
+      "price_eur": 30
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Tratamiento hidrófobo en cristales",
+      "price_eur": 25
+    },
+    {
+      "slug": "restauracion-plasticos",
+      "name": "Restauración de plásticos exteriores",
+      "price_eur": 25
+    },
+    {
+      "slug": "higienizacion-ozono",
+      "name": "Higienización interior con ozono",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-motor",
+      "name": "Limpieza de motor",
+      "price_eur": 35
+    },
+    {
+      "slug": "acondicionado-cuero",
+      "name": "Acondicionado y protección de cuero",
+      "price_eur": 40
+    }
+  ]
 }

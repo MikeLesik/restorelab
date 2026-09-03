@@ -11,7 +11,7 @@
  * order's event log). Inert until STRIPE_WEBHOOK_SECRET is set.
  */
 
-import { json, inert, logEvent, safeEqual, TRANSITIONS } from '../../_lib/orders';
+import { json, inert, logEvent, safeEqual, addonsTotal, TRANSITIONS } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus, D1Database } from '../../_lib/orders';
 
 interface StripeEnv extends OrdersEnv {
@@ -94,8 +94,8 @@ export async function onRequestPost(context: {
   }
 
   const newPaid = Math.round(((Number(order.paid_eur) || 0) + amountEur) * 100) / 100;
-  const quote = Number(order.quote_eur) || 0;
-  const covered = quote > 0 && newPaid >= quote - 0.01;
+  const total = (Number(order.quote_eur) || 0) + addonsTotal(order);
+  const covered = total > 0 && newPaid >= total - 0.01;
   const from = order.status as OrderStatus;
   const advance = covered && TRANSITIONS[from]?.includes('paid');
 

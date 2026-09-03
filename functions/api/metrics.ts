@@ -9,10 +9,10 @@
  * Unit-economics constants live in src/lib/unitEconomics.ts (verdict doc).
  */
 
-import { json, inert, notFound, adminOk, shapeOrder } from '../_lib/orders';
+import { json, inert, notFound, adminOk, shapeOrder, addonsTotal } from '../_lib/orders';
 import type { OrdersEnv, D1Database } from '../_lib/orders';
 import {
-  STRIPE_FEE_PCT, RESERVE_PCT, DEFAULT_PAYOUT_PCT,
+  STRIPE_FEE_PCT, RESERVE_PCT, DEFAULT_PAYOUT_PCT, ADDON_PARTNER_PCT,
   KILL_CAC_EUR, KILL_REWORK_PCT, KILL_QUOTE_TO_BOOKED_PCT,
 } from '../../src/lib/unitEconomics';
 
@@ -118,9 +118,13 @@ export async function onRequestGet(context: {
     const partner = partnerById[o.partner_id as string];
     return Number(o.payout_pct) || Number(partner?.payout_pct) || DEFAULT_PAYOUT_PCT;
   };
+  // Partner earns their % on the base quote plus the higher add-on % on
+  // whatever they upsold on-site.
+  const partnerPayout = (o: Row): number =>
+    r2((payoutPctOf(o) / 100) * (Number(o.quote_eur) || 0) + (ADDON_PARTNER_PCT / 100) * addonsTotal(o));
   const contribution = paidOrders.map((o) => {
     const paid = Number(o.paid_eur);
-    const payout = r2((payoutPctOf(o) / 100) * (Number(o.quote_eur) || paid));
+    const payout = o.partner_id ? partnerPayout(o) : 0;
     return r2(paid - payout - STRIPE_FEE_PCT * paid - RESERVE_PCT * paid);
   });
   const contributionTotal = r2(contribution.reduce((s, x) => s + x, 0));
@@ -134,9 +138,8 @@ export async function onRequestGet(context: {
     const jobs = orders.filter((o) => o.partner_id === p.id);
     const accepted = jobs.filter((o) => ACCEPTED.includes(o.status as string));
     const reworks = jobs.filter((o) => Number(o.rework) > 0).length;
-    const gmv = r2(accepted.reduce((s, o) => s + (Number(o.quote_eur) || 0), 0));
-    const payoutEur = r2(accepted.reduce(
-      (s, o) => s + (payoutPctOf(o) / 100) * (Number(o.quote_eur) || 0), 0));
+    const gmv = r2(accepted.reduce((s, o) => s + (Number(o.quote_eur) || 0) + addonsTotal(o), 0));
+    const payoutEur = r2(accepted.reduce((s, o) => s + partnerPayout(o), 0));
     const ipHours = jobs
       .map((o) => {
         const a = reached(o, 'in_progress');

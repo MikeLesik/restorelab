@@ -10,9 +10,9 @@
  *                            Mike's activation); active partners can edit.
  */
 
-import { json, inert, notFound, sha256hex } from '../../_lib/orders';
+import { json, inert, notFound, sha256hex, addonsTotal } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
-import { DEFAULT_PAYOUT_PCT } from '../../../src/lib/unitEconomics';
+import { DEFAULT_PAYOUT_PCT, ADDON_PARTNER_PCT } from '../../../src/lib/unitEconomics';
 
 async function findPartner(env: OrdersEnv, token: string) {
   if (!/^[a-f0-9]{32}$/.test(token)) return null;
@@ -71,12 +71,13 @@ export async function onRequestGet(context: {
     const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc'];
     const pctOf = (o: Record<string, unknown>) =>
       (Number(o.payout_pct) || Number(p.payout_pct) || DEFAULT_PAYOUT_PCT) / 100;
+    // Base % on the quote + the higher add-on % on on-site upsells.
+    const jobPayout = (o: Record<string, unknown>) =>
+      Math.round((pctOf(o) * (Number(o.quote_eur) || 0) + (ADDON_PARTNER_PCT / 100) * addonsTotal(o)) * 100) / 100;
     const monthAccepted = orders.filter(
       (o) => ACCEPTED.includes(o.status as string) && String(o.created_at).slice(0, 7) === month,
     );
-    const payoutMonth = Math.round(
-      monthAccepted.reduce((s, o) => s + pctOf(o) * (Number(o.quote_eur) || 0), 0) * 100,
-    ) / 100;
+    const payoutMonth = Math.round(monthAccepted.reduce((s, o) => s + jobPayout(o), 0) * 100) / 100;
     const activeJobs = orders
       .filter((o) => ACTIVE.includes(o.status as string))
       .map((o) => ({
@@ -84,7 +85,7 @@ export async function onRequestGet(context: {
         area_slug: o.area_slug, address: o.address, scheduled_at: o.scheduled_at,
         accepted_at: o.accepted_at || null,
         client_first_name: String(o.client_name || '').split(' ')[0] || null,
-        payout_eur: Math.round((Number(o.quote_eur) || 0) * pctOf(o) * 100) / 100,
+        payout_eur: jobPayout(o),
       }));
     cabinet = { month, payout_month: payoutMonth, jobs_done_month: monthAccepted.length, active_jobs: activeJobs };
   }

@@ -4728,5 +4728,47 @@
     "note": "Et confirmem els detalls per WhatsApp. Si tens qualsevol dubte, escriu-nos i et responem de seguida.",
     "cta_wa": "Escriu-nos per WhatsApp",
     "back": "Tornar a l'inici"
-  }
+  },
+  "addons": [
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Descontaminació ferrosa",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-tapiceria",
+      "name": "Neteja de tapisseria (seients)",
+      "price_eur": 45
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Segellat ceràmic de llantes",
+      "price_eur": 30
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Tractament hidròfob als vidres",
+      "price_eur": 25
+    },
+    {
+      "slug": "restauracion-plasticos",
+      "name": "Restauració de plàstics exteriors",
+      "price_eur": 25
+    },
+    {
+      "slug": "higienizacion-ozono",
+      "name": "Higienització interior amb ozó",
+      "price_eur": 30
+    },
+    {
+      "slug": "limpieza-motor",
+      "name": "Neteja de motor",
+      "price_eur": 35
+    },
+    {
+      "slug": "acondicionado-cuero",
+      "name": "Condicionament i protecció de cuir",
+      "price_eur": 40
+    }
+  ]
 }

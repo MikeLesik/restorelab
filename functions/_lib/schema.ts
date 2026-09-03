@@ -25,6 +25,7 @@ export const SCHEMA_STATEMENTS: string[] = [
     photos TEXT NOT NULL DEFAULT '[]',
     quote_eur REAL,
     quote_breakdown TEXT,
+    addons TEXT,
     partner_id TEXT,
     payout_pct REAL,
     accepted_at TEXT,
@@ -99,4 +100,5 @@ export const SCHEMA_ALTERS: string[] = [
   `ALTER TABLE partners ADD COLUMN registered_at TEXT`,
   `ALTER TABLE partners ADD COLUMN docs TEXT`,
   `ALTER TABLE partners ADD COLUMN profile TEXT`,
+  `ALTER TABLE orders ADD COLUMN addons TEXT`,
 ];
