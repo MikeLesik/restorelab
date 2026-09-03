@@ -11,6 +11,7 @@ import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
 import { areaProfiles } from '@/lib/areaProfiles';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 import { DEPOSIT_MIN_QUOTE_EUR } from '@/lib/unitEconomics';
+import PhoneField from '@/components/PhoneField.astro';
 
 import en from '@/content/en.json';
 import es from '@/content/es.json';
@@ -146,7 +147,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <h2 class="font-display font-bold text-th-heading text-xl mb-1">Nuevo pedido manual</h2>
             <p class="text-th-faint text-xs mb-5">Disciplina: el 100% de los pedidos (también los que entran por WhatsApp) viven aquí — solo así las métricas serán reales.</p>
             <div class="space-y-3">
-              <input id="n-phone" type="tel" inputmode="tel" placeholder="Teléfono * (+34 …)" class="adm-input" />
+              <PhoneField id="n-phone" required placeholder="Teléfono * (600 000 000)" inputClass="adm-input" selectClass="adm-input" />
               <input id="n-name" type="text" placeholder="Nombre" class="adm-input" />
               <select id="n-service" class="adm-input">
                 <option value="">Servicio…</option>
@@ -189,7 +190,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <h2 class="font-display font-bold text-th-heading text-xl mb-4">Nuevo partner</h2>
             <div class="space-y-3">
               <input id="p-name" type="text" placeholder="Nombre *" class="adm-input" />
-              <input id="p-phone" type="tel" inputmode="tel" placeholder="Teléfono" class="adm-input" />
+              <PhoneField id="p-phone" placeholder="Teléfono (600 000 000)" inputClass="adm-input" selectClass="adm-input" />
               <div class="grid grid-cols-2 gap-3">
                 <input id="p-nif" type="text" maxlength="20" placeholder="NIF/NIE" class="adm-input" />
                 <input id="p-email" type="email" maxlength="100" placeholder="Email (facturas)" class="adm-input" />
@@ -1533,12 +1534,17 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       $('n-area').innerHTML = '<option value="">Zona…</option>' +
         Object.entries(AREAS).map(([slug, a]) => `<option value="${slug}">${esc(a.name)}</option>`).join('');
 
+      // Combine the country-code selector + local digits into +<dial><local>.
+      function phoneVal(id) {
+        const local = $(id).value.replace(/\D/g, '');
+        return local ? '+' + $(id + '-cc').value + local : '';
+      }
       $('n-save').addEventListener('click', () => busy($('n-save'), async () => {
         $('n-error').classList.add('hidden');
         const d = await api('/api/orders', {
           method: 'POST',
           body: JSON.stringify({
-            phone: $('n-phone').value.trim(),
+            phone: phoneVal('n-phone'),
             client_name: $('n-name').value.trim(),
             service_slug: $('n-service').value || undefined,
             size: $('n-size').value || undefined,
@@ -1559,6 +1565,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         lockScroll(false);
         if (history.state?.admModal) history.back();
         ['n-phone', 'n-name', 'n-notes', 'n-service', 'n-size', 'n-area', 'n-ref'].forEach((id) => { $(id).value = ''; });
+        $('n-phone-cc').value = '34';
         $('n-channel').value = 'whatsapp';
         $('n-lang').value = 'es';
         toast('Pedido ' + d.code + ' creado ✓');
@@ -1573,7 +1580,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           method: 'POST',
           body: JSON.stringify({
             name: $('p-name').value.trim(),
-            phone: $('p-phone').value.trim(),
+            phone: phoneVal('p-phone'),
             nif: $('p-nif').value.trim() || undefined,
             email: $('p-email').value.trim() || undefined,
             rc_expiry: $('p-rc').value || undefined,
@@ -1591,6 +1598,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         lockScroll(false);
         if (history.state?.admModal) history.back();
         ['p-name', 'p-phone', 'p-nif', 'p-email', 'p-rc', 'p-zones', 'p-skills'].forEach((id) => { $(id).value = ''; });
+        $('p-phone-cc').value = '34';
         toast('Partner creado ✓');
         loadPartners();
         loadPartnersTab();

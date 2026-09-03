@@ -5,8 +5,14 @@
 // the client JS reads the token from the path. The token IS the authorization
 // and the persistent cabinet key — no login.
 import '@/styles/global.css';
+import PhoneField from '@/components/PhoneField.astro';
 import { areaProfiles } from '@/lib/areaProfiles';
+import { COUNTRIES } from '@/lib/countries';
 import es from '@/content/es.json';
+
+// Dial codes longest-first, so the cabinet can split a stored +<dial><local>
+// number back into the selector + local input when the partner re-edits.
+const DIALS = [...new Set(COUNTRIES.map((c) => c.dial))].sort((a, b) => b.length - a.length);
 
 const ZONES = Object.entries(areaProfiles).map(([slug, a]: [string, any]) => ({ slug, name: a.name }));
 const SKILLS = es.pricing.categories
@@ -64,7 +70,10 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         <div class="card p-5 space-y-4">
           <p class="text-th-heading font-semibold">Tus datos</p>
           <input id="f-name" type="text" maxlength="100" placeholder="Nombre y apellidos *" class={inputCls} />
-          <input id="f-phone" type="tel" maxlength="20" placeholder="Teléfono (WhatsApp) *" class={inputCls} />
+          <div>
+            <label for="f-phone" class="text-xs text-th-faint block mb-1">Teléfono (WhatsApp) *</label>
+            <PhoneField id="f-phone" required placeholder="600 000 000" inputClass={inputCls} selectClass={inputCls} />
+          </div>
           <input id="f-email" type="email" maxlength="100" placeholder="Email (para las facturas)" class={inputCls} />
           <input id="f-nif" type="text" maxlength="20" placeholder="NIF / NIE" class={inputCls} />
           <label class="flex items-center gap-3 text-sm text-th-body cursor-pointer">
@@ -170,8 +179,23 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
 
     <input id="s-file" type="file" class="hidden" />
 
-    <script define:vars={{ SKILL_NAMES: Object.fromEntries(SKILLS.map((s) => [s.slug, s.name])), ZONE_NAMES: Object.fromEntries(ZONES.map((z) => [z.slug, z.name])) }}>
+    <script define:vars={{ SKILL_NAMES: Object.fromEntries(SKILLS.map((s) => [s.slug, s.name])), ZONE_NAMES: Object.fromEntries(ZONES.map((z) => [z.slug, z.name])), DIALS }}>
       const $ = (id) => document.getElementById(id);
+      // Split a stored +<dial><local> number into the selector + local input.
+      function setPhone(fullId, full) {
+        const cc = $(fullId + '-cc'), inp = $(fullId);
+        const digits = String(full || '').replace(/[^\d+]/g, '');
+        if (digits.startsWith('+')) {
+          const rest = digits.slice(1);
+          const dial = DIALS.find((d) => rest.startsWith(d));
+          if (dial) { cc.value = dial; inp.value = rest.slice(dial.length); return; }
+        }
+        inp.value = digits.replace(/^\+/, '');
+      }
+      function getPhone(fullId) {
+        const local = $(fullId).value.replace(/\D/g, '');
+        return local ? '+' + $(fullId + '-cc').value + local : '';
+      }
       const token = (location.pathname.match(/^\/socio\/([a-f0-9]{32})$/) || [])[1];
       let uploadKind = null, uploadMulti = false;
 
@@ -200,7 +224,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       // ── Registration form ──
       function populateForm(p) {
         $('f-name').value = p.name || '';
-        $('f-phone').value = p.phone || '';
+        setPhone('f-phone', p.phone || '');
         $('f-email').value = p.email || '';
         $('f-nif').value = p.nif || '';
         $('f-rc').value = p.rc_expiry || '';
@@ -265,7 +289,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
 
       $('s-submit').addEventListener('click', async () => {
         $('s-msg').classList.add('hidden');
-        const name = $('f-name').value.trim(), phone = $('f-phone').value.trim();
+        const name = $('f-name').value.trim(), phone = getPhone('f-phone');
         if (!name || !phone) return showMsg('Pon al menos tu nombre y tu teléfono.');
         if (!$('f-agree').checked) return showMsg('Marca la casilla de condiciones para enviar.');
         const zones = [...document.querySelectorAll('input[name="f-zone"]:checked')].map((e) => e.value);

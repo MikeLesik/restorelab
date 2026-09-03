@@ -5,6 +5,7 @@
 // Photos are compressed client-side (canvas → JPEG ≤2MB) before upload;
 // HEIC that the browser can't decode is uploaded as-is (server accepts it).
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PhoneField from '@/components/PhoneField.astro';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import { areaProfiles } from '@/lib/areaProfiles';
 
@@ -145,7 +146,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
             </div>
             <div>
               <label for="intake-phone" class="block text-sm font-medium text-th-body/80 mb-2">{ui.phone_label} <span class="text-brand-accent">*</span></label>
-              <input id="intake-phone" type="tel" required maxlength="20" placeholder={ui.phone_placeholder} class={inputCls} />
+              <PhoneField id="intake-phone" required placeholder="600 000 000" inputClass={inputCls} selectClass={inputCls} />
             </div>
             <label class="flex items-start gap-3 text-sm text-th-muted cursor-pointer">
               <input id="intake-rgpd" type="checkbox" required
@@ -313,7 +314,8 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       e.preventDefault();
       $('intake-error').classList.add('hidden');
 
-      const phone = $('intake-phone').value.trim();
+      const phoneLocal = $('intake-phone').value.replace(/\D/g, '');
+      const phone = phoneLocal ? '+' + $('intake-phone-cc').value + phoneLocal : '';
       if (!sel.value || !phone) { form.reportValidity(); return; }
       if (!$('intake-rgpd').checked) { showError(UI.err_rgpd); return; }
       if (files.length === 0) { showError(UI.err_photos); return; }

@@ -1,0 +1,23 @@
+---
+// Phone input with a country-code selector (default Spain +34, all countries
+// selectable). The visitor types only the local number; combine at submit with
+// `rlPhone(id)` from the inline helper below, which returns `+<dial><digits>`.
+import { COUNTRIES } from '@/lib/countries';
+
+interface Props {
+  id: string;
+  required?: boolean;
+  placeholder?: string;
+  inputClass?: string;
+  selectClass?: string;
+}
+const { id, required = false, placeholder = '600 000 000', inputClass = '', selectClass = '' } = Astro.props;
+---
+<div class="flex gap-2">
+  <select id={`${id}-cc`} aria-label="Código de país" class={`shrink-0 ${selectClass}`}>
+    {COUNTRIES.map((c) => (
+      <option value={c.dial} selected={c.iso === 'ES'}>{c.flag} {c.name} (+{c.dial})</option>
+    ))}
+  </select>
+  <input id={id} type="tel" inputmode="tel" maxlength="15" required={required} placeholder={placeholder} class={`flex-1 min-w-0 ${inputClass}`} />
+</div>

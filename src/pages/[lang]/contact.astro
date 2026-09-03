@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PhoneField from '@/components/PhoneField.astro';
 import FAQ from '@/components/FAQ.astro';
 import AreaServedSection from '@/components/AreaServedSection.astro';
 import AvailabilityBanner from '@/components/AvailabilityBanner.astro';
@@ -129,8 +130,9 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.conta
               <label for="contact-phone" class="block text-sm font-medium text-th-body/80 mb-2">
                 {t.lead_form.fields.phone} <span class="text-brand-accent">*</span>
               </label>
-              <input id="contact-phone" type="tel" name="phone" required maxlength="20" placeholder={t.lead_form.fields.phone_placeholder}
-                class="w-full px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm" />
+              <PhoneField id="contact-phone" required placeholder="600 000 000"
+                inputClass="px-4 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading placeholder:text-th-faint focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors text-sm"
+                selectClass="px-3 py-3 bg-th-surface/5 border border-th-border/15 rounded-lg text-th-heading focus:outline-none focus:border-brand-accent transition-colors text-sm" />
             </div>
 
             <div>
@@ -178,7 +180,8 @@ const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent(t.wa_messages.conta
     const data = new FormData(form);
 
     const name     = data.get('name')     || '';
-    const phone    = data.get('phone')    || '';
+    const phoneLocal = (document.getElementById('contact-phone').value || '').replace(/\D/g, '');
+    const phone    = phoneLocal ? '+' + document.getElementById('contact-phone-cc').value + phoneLocal : '';
     const service  = data.get('service')  || notSpecified;
     const location = data.get('location') || notSpecified;
     const message  = data.get('message')  || noInfo;
