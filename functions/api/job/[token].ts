@@ -95,6 +95,13 @@ export async function onRequestGet(context: {
       accepted_at: order.accepted_at || null,
       payout_pct: pct || null,
       payout_eur: payoutEur,
+      // Client-side amounts so the partner can charge on site.
+      quote_eur: quote || null,
+      addons_total: addonsTotal(order),
+      total_eur: Math.round((quote + addonsTotal(order)) * 100) / 100,
+      paid_eur: Number(order.paid_eur) || 0,
+      outstanding_eur: Math.round(((quote + addonsTotal(order)) - (Number(order.paid_eur) || 0)) * 100) / 100,
+      payment_link: order.payment_link || null,
       // Partner's own uploads so the card reflects progress after reload.
       photos_before: photos.filter((k) => k.includes('/before/')),
       photos_after: photos.filter((k) => k.includes('/after/')),

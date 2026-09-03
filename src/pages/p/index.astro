@@ -105,6 +105,18 @@ const AREA_NAMES = Object.fromEntries(
         </div>
 
         <div class="card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">Cobrar al cliente</h2>
+          <p id="j-pay-amount" class="text-sm text-th-muted mb-3"></p>
+          <button id="j-pay-gen" class="btn-primary w-full">Generar enlace de pago</button>
+          <div id="j-pay-link" class="hidden mt-3">
+            <p class="text-xs text-th-muted mb-2">Muéstrale el enlace al cliente o ábrelo para que pague aquí (tarjeta o Bizum):</p>
+            <a id="j-pay-open" href="#" target="_blank" rel="noopener" class="btn-whatsapp w-full mb-2">Abrir para pagar →</a>
+            <button id="j-pay-copy" class="btn-secondary w-full text-sm">Copiar enlace</button>
+          </div>
+          <p id="j-pay-done" class="hidden text-sm text-brand-whatsapp font-semibold">✓ Ya está pagado. Nada más que cobrar.</p>
+        </div>
+
+        <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-2">Normas</h2>
           <ul class="space-y-1.5 text-xs text-th-muted list-disc pl-4">
             {HOUSE_RULES.map((r) => <li>{r}</li>)}
@@ -177,8 +189,43 @@ const AREA_NAMES = Object.fromEntries(
         renderPhotos('before', j.photos_before);
         renderPhotos('after', j.photos_after);
         renderAddons(j.addons || []);
+        renderPay(j);
         $('job').classList.remove('hidden');
       }
+
+      function renderPay(j) {
+        const out = Number(j.outstanding_eur) || 0;
+        if (!(Number(j.quote_eur) > 0)) { $('j-pay-amount').textContent = 'Aún no hay presupuesto para cobrar.'; $('j-pay-gen').disabled = true; return; }
+        if (out <= 0) { $('j-pay-gen').classList.add('hidden'); $('j-pay-done').classList.remove('hidden'); return; }
+        const paid = Number(j.paid_eur) || 0;
+        $('j-pay-amount').textContent = paid > 0
+          ? `Total ${j.total_eur}€ · ya pagó ${paid}€ · falta cobrar ${out}€`
+          : `El cliente paga ${out}€ (incluye extras).`;
+        // If a link already exists, offer it straight away.
+        if (j.payment_link) showPayLink(j.payment_link);
+      }
+
+      function showPayLink(url) {
+        $('j-pay-open').href = url;
+        $('j-pay-link').classList.remove('hidden');
+      }
+
+      $('j-pay-gen').addEventListener('click', async () => {
+        $('j-pay-gen').disabled = true;
+        const old = $('j-pay-gen').textContent; $('j-pay-gen').textContent = 'Generando…';
+        try {
+          const d = await (await fetch('/api/job/' + token + '/pay-link', { method: 'POST' })).json();
+          if (d.ok) { showPayLink(d.url); }
+          else { $('j-pay-amount').textContent = 'No se pudo generar el cobro (' + (d.reason || '') + ').'; }
+        } catch (e) {}
+        $('j-pay-gen').disabled = false; $('j-pay-gen').textContent = old;
+      });
+
+      $('j-pay-copy').addEventListener('click', () => {
+        navigator.clipboard.writeText($('j-pay-open').href);
+        $('j-pay-copy').textContent = 'Copiado ✓';
+        setTimeout(() => { $('j-pay-copy').textContent = 'Copiar enlace'; }, 1500);
+      });
 
       function renderAddons(current) {
         const has = new Set(current.map((a) => a.slug));
