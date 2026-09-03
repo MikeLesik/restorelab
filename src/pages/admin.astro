@@ -227,6 +227,20 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       </div>
 
       <!-- Toast -->
+      <!-- Login gate — in-page (never window.prompt, which is dead in an
+           installed standalone PWA on iOS). Shown when there is no valid token. -->
+      <div id="login" class="hidden fixed inset-0 z-[70] bg-brand-dark flex items-center justify-center px-4" style="padding-top:max(1rem,env(safe-area-inset-top));padding-bottom:max(1rem,env(safe-area-inset-bottom))">
+        <div class="card p-6 w-full max-w-xs text-center">
+          <p class="font-display font-bold text-th-heading text-xl mb-1">restore<span class="text-brand-accent">Lab</span></p>
+          <p class="text-th-muted text-sm mb-4">Introduce tu token de acceso</p>
+          <form id="login-form">
+            <input id="login-token" type="password" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Admin token" placeholder="Admin token" class="adm-input text-center mb-3" />
+            <p id="login-error" class="hidden text-sm text-red-400 mb-3"></p>
+            <button type="submit" class="btn-primary w-full min-h-[48px] focus-visible:ring-2">Entrar</button>
+          </form>
+        </div>
+      </div>
+
       <div id="toast" class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] max-w-[90vw] adm-toast"></div>
     </div>
 
@@ -513,15 +527,29 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
 
       // ── Token + API ───────────────────────────────────────────────────────
-      function token(force) {
-        let t = localStorage.getItem('rl_admin_token');
-        if (!t || force) {
-          t = prompt('Admin token:') || '';
-          if (t) localStorage.setItem('rl_admin_token', t.trim());
-        }
-        return (t || '').trim();
+      function token() { return (localStorage.getItem('rl_admin_token') || '').trim(); }
+
+      // In-page login gate. window.prompt() is unreliable inside an installed
+      // standalone PWA on iOS (it can silently return null), so we never use it
+      // — this overlay works the same in a browser tab and the home-screen app.
+      function showLogin(msg) {
+        const err = $('login-error');
+        if (msg) { err.textContent = msg; err.classList.remove('hidden'); } else { err.classList.add('hidden'); }
+        $('login').classList.remove('hidden');
+        const inp = $('login-token'); inp.value = '';
+        setTimeout(() => { try { inp.focus(); } catch (e) {} }, 60);
       }
-      let retriedToken = false;
+      function hideLogin() { $('login').classList.add('hidden'); }
+      function boot() { return loadPartners().then(() => loadOrders()).catch(() => {}); }
+      $('login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const t = $('login-token').value.trim();
+        if (!t) return;
+        localStorage.setItem('rl_admin_token', t);
+        hideLogin();
+        boot();
+      });
+
       async function api(path, opts = {}) {
         const res = await fetch(path, {
           ...opts,
@@ -529,14 +557,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         });
         if (res.status === 404 && !path.includes('/api/orders/')) {
           localStorage.removeItem('rl_admin_token');
-          if (!retriedToken) {
-            retriedToken = true;
-            token(true); // re-prompt inline once instead of "recarga la página"
-            return api(path, opts);
-          }
-          throw new Error('Token incorrecto.');
+          showLogin('Token incorrecto');
+          throw new Error('unauthorized');
         }
-        retriedToken = false;
         // A wrong-token 404 on /api/orders/* returns a plaintext body (not JSON);
         // never let res.json() throw an uncaught SyntaxError that dead-ends the UI.
         try { return await res.json(); }
@@ -2011,8 +2034,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         }
       }, 30000);
 
-      token();
-      loadPartners().then(() => loadOrders());
+      if (token()) boot(); else showLogin();
     </script>
   </body>
 </html>
