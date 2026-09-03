@@ -4731,44 +4731,94 @@
   },
   "addons": [
     {
-      "slug": "descontaminacion-ferrosa",
-      "name": "Descontaminación ferrosa",
-      "price_eur": 30
-    },
-    {
       "slug": "limpieza-tapiceria",
-      "name": "Limpieza de tapicería (asientos)",
+      "name": "Limpieza de tapicería (asientos delanteros)",
       "price_eur": 45
     },
     {
-      "slug": "sellado-llantas",
-      "name": "Sellado cerámico de llantas",
-      "price_eur": 30
+      "slug": "tapiceria-completa",
+      "name": "Tapicería completa (todos los asientos)",
+      "price_eur": 99
     },
     {
-      "slug": "hidrofobo-cristales",
-      "name": "Tratamiento hidrófobo en cristales",
+      "slug": "acondicionado-cuero",
+      "name": "Limpieza e hidratación de cuero",
+      "price_eur": 45
+    },
+    {
+      "slug": "higienizacion-ozono",
+      "name": "Higienización con ozono",
+      "price_eur": 39
+    },
+    {
+      "slug": "eliminacion-olores",
+      "name": "Eliminación de olores (tabaco/mascota)",
+      "price_eur": 69
+    },
+    {
+      "slug": "pelo-mascota",
+      "name": "Eliminación de pelo de mascota",
+      "price_eur": 29
+    },
+    {
+      "slug": "dressing-salpicadero",
+      "name": "Acondicionado de salpicadero y plásticos",
       "price_eur": 25
+    },
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Descontaminación ferrosa + alquitrán",
+      "price_eur": 39
     },
     {
       "slug": "restauracion-plasticos",
       "name": "Restauración de plásticos exteriores",
-      "price_eur": 25
+      "price_eur": 39
     },
     {
-      "slug": "higienizacion-ozono",
-      "name": "Higienización interior con ozono",
-      "price_eur": 30
+      "slug": "restauracion-faros",
+      "name": "Restauración de faros (par)",
+      "price_eur": 59
+    },
+    {
+      "slug": "correccion-localizada",
+      "name": "Corrección localizada (un panel)",
+      "price_eur": 59
     },
     {
       "slug": "limpieza-motor",
-      "name": "Limpieza de motor",
+      "name": "Limpieza del vano motor",
+      "price_eur": 49
+    },
+    {
+      "slug": "abrillantado-escape",
+      "name": "Abrillantado de colas de escape",
+      "price_eur": 25
+    },
+    {
+      "slug": "dressing-neumaticos",
+      "name": "Dressing de neumáticos y gomas",
+      "price_eur": 19
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Sellado protector de llantas",
+      "price_eur": 39
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Tratamiento hidrófobo de cristales",
       "price_eur": 35
     },
     {
-      "slug": "acondicionado-cuero",
-      "name": "Acondicionado y protección de cuero",
-      "price_eur": 40
+      "slug": "pulido-cristales",
+      "name": "Pulido de cristales (manchas de agua)",
+      "price_eur": 69
+    },
+    {
+      "slug": "booster-ceramico",
+      "name": "Booster cerámico (mantenimiento)",
+      "price_eur": 39
     }
   ]
 }

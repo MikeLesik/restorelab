@@ -4730,44 +4730,94 @@
   },
   "addons": [
     {
-      "slug": "descontaminacion-ferrosa",
-      "name": "Iron fallout decontamination",
-      "price_eur": 30
-    },
-    {
       "slug": "limpieza-tapiceria",
-      "name": "Upholstery cleaning (seats)",
+      "name": "Upholstery cleaning (front seats)",
       "price_eur": 45
     },
     {
-      "slug": "sellado-llantas",
-      "name": "Ceramic wheel sealant",
-      "price_eur": 30
+      "slug": "tapiceria-completa",
+      "name": "Full upholstery deep-clean",
+      "price_eur": 99
     },
     {
-      "slug": "hidrofobo-cristales",
-      "name": "Hydrophobic glass treatment",
-      "price_eur": 25
-    },
-    {
-      "slug": "restauracion-plasticos",
-      "name": "Exterior plastic restoration",
-      "price_eur": 25
+      "slug": "acondicionado-cuero",
+      "name": "Leather clean & condition",
+      "price_eur": 45
     },
     {
       "slug": "higienizacion-ozono",
-      "name": "Interior ozone sanitisation",
-      "price_eur": 30
+      "name": "Ozone sanitisation",
+      "price_eur": 39
+    },
+    {
+      "slug": "eliminacion-olores",
+      "name": "Odour removal (smoke/pet)",
+      "price_eur": 69
+    },
+    {
+      "slug": "pelo-mascota",
+      "name": "Pet hair removal",
+      "price_eur": 29
+    },
+    {
+      "slug": "dressing-salpicadero",
+      "name": "Dashboard & trim dressing",
+      "price_eur": 25
+    },
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Iron fallout & tar decontamination",
+      "price_eur": 39
+    },
+    {
+      "slug": "restauracion-plasticos",
+      "name": "Exterior plastic & trim restoration",
+      "price_eur": 39
+    },
+    {
+      "slug": "restauracion-faros",
+      "name": "Headlight restoration (pair)",
+      "price_eur": 59
+    },
+    {
+      "slug": "correccion-localizada",
+      "name": "Single-panel correction",
+      "price_eur": 59
     },
     {
       "slug": "limpieza-motor",
       "name": "Engine bay cleaning",
+      "price_eur": 49
+    },
+    {
+      "slug": "abrillantado-escape",
+      "name": "Exhaust tip polishing",
+      "price_eur": 25
+    },
+    {
+      "slug": "dressing-neumaticos",
+      "name": "Tyre & rubber dressing",
+      "price_eur": 19
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Wheel protective sealant",
+      "price_eur": 39
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Hydrophobic glass treatment",
       "price_eur": 35
     },
     {
-      "slug": "acondicionado-cuero",
-      "name": "Leather conditioning & protection",
-      "price_eur": 40
+      "slug": "pulido-cristales",
+      "name": "Glass polishing (water-spot removal)",
+      "price_eur": 69
+    },
+    {
+      "slug": "booster-ceramico",
+      "name": "Ceramic booster top-up",
+      "price_eur": 39
     }
   ]
 }

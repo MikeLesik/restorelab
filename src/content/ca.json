@@ -4731,44 +4731,94 @@
   },
   "addons": [
     {
-      "slug": "descontaminacion-ferrosa",
-      "name": "Descontaminació ferrosa",
-      "price_eur": 30
-    },
-    {
       "slug": "limpieza-tapiceria",
-      "name": "Neteja de tapisseria (seients)",
+      "name": "Neteja de tapisseria (seients davanters)",
       "price_eur": 45
     },
     {
-      "slug": "sellado-llantas",
-      "name": "Segellat ceràmic de llantes",
-      "price_eur": 30
+      "slug": "tapiceria-completa",
+      "name": "Tapisseria completa (tots els seients)",
+      "price_eur": 99
     },
     {
-      "slug": "hidrofobo-cristales",
-      "name": "Tractament hidròfob als vidres",
+      "slug": "acondicionado-cuero",
+      "name": "Neteja i hidratació de cuir",
+      "price_eur": 45
+    },
+    {
+      "slug": "higienizacion-ozono",
+      "name": "Higienització amb ozó",
+      "price_eur": 39
+    },
+    {
+      "slug": "eliminacion-olores",
+      "name": "Eliminació d'olors (tabac/mascota)",
+      "price_eur": 69
+    },
+    {
+      "slug": "pelo-mascota",
+      "name": "Eliminació de pèl de mascota",
+      "price_eur": 29
+    },
+    {
+      "slug": "dressing-salpicadero",
+      "name": "Condicionament de tauler i plàstics",
       "price_eur": 25
+    },
+    {
+      "slug": "descontaminacion-ferrosa",
+      "name": "Descontaminació ferrosa i quitrà",
+      "price_eur": 39
     },
     {
       "slug": "restauracion-plasticos",
       "name": "Restauració de plàstics exteriors",
-      "price_eur": 25
+      "price_eur": 39
     },
     {
-      "slug": "higienizacion-ozono",
-      "name": "Higienització interior amb ozó",
-      "price_eur": 30
+      "slug": "restauracion-faros",
+      "name": "Restauració de fars (parell)",
+      "price_eur": 59
+    },
+    {
+      "slug": "correccion-localizada",
+      "name": "Correcció localitzada (un panell)",
+      "price_eur": 59
     },
     {
       "slug": "limpieza-motor",
-      "name": "Neteja de motor",
+      "name": "Neteja del compartiment del motor",
+      "price_eur": 49
+    },
+    {
+      "slug": "abrillantado-escape",
+      "name": "Abrillantament de sortides d'escapament",
+      "price_eur": 25
+    },
+    {
+      "slug": "dressing-neumaticos",
+      "name": "Dressing de pneumàtics i gomes",
+      "price_eur": 19
+    },
+    {
+      "slug": "sellado-llantas",
+      "name": "Segellat protector de llantes",
+      "price_eur": 39
+    },
+    {
+      "slug": "hidrofobo-cristales",
+      "name": "Tractament hidròfob de vidres",
       "price_eur": 35
     },
     {
-      "slug": "acondicionado-cuero",
-      "name": "Condicionament i protecció de cuir",
-      "price_eur": 40
+      "slug": "pulido-cristales",
+      "name": "Poliment de vidres (taques d'aigua)",
+      "price_eur": 69
+    },
+    {
+      "slug": "booster-ceramico",
+      "name": "Booster ceràmic (manteniment)",
+      "price_eur": 39
     }
   ]
 }
