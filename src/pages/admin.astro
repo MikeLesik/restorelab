@@ -1978,7 +1978,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                     </label>
                     ${rcExpired(p) ? '<span class="adm-badge bg-red-500/15 text-red-400">póliza vencida — no asignable</span>' : ''}
                     ${!p.rc_expiry ? '<span class="text-xs text-brand-gold">sin póliza RC registrada</span>' : ''}
-                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Guardar</button>
+                    <button data-pt-link="${esc(p.id)}" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto" title="Generar un enlace nuevo del panel (el anterior deja de servir)">🔗 Enlace del panel</button>
+                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-sm px-4 min-h-[44px]">Guardar</button>
                   </div>
                 </div>`).join('')}
             </div>`}
@@ -2005,6 +2006,24 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             if (d2.ok) { toast('Partner guardado ✓'); loadPartnersTab(); }
             else toast('Error: ' + (d2.reason || ''), false);
           })));
+        // Re-issue the partner's cabinet magic link (they lost it). The raw
+        // token isn't stored, so this rotates it — the old link stops working.
+        document.querySelectorAll('[data-pt-link]').forEach((btn) =>
+          btn.addEventListener('click', () => busy(btn, async () => {
+            const d2 = await api('/api/partners/invite', { method: 'POST', body: JSON.stringify({ id: btn.dataset.ptLink }) });
+            if (!d2.ok) { toast('Error: ' + (d2.reason || ''), false); return; }
+            const link = location.origin + d2.url;
+            try { await navigator.clipboard.writeText(link); } catch (e) {}
+            const wa = 'https://wa.me/?text=' + encodeURIComponent('Aquí tienes tu panel de restoreLab: ' + link);
+            $('pt-body').insertAdjacentHTML('afterbegin', `
+              <div class="card p-4 border border-brand-accent/40">
+                <p class="text-sm text-th-heading font-semibold mb-1">Nuevo enlace del panel (copiado)</p>
+                <p class="text-xs text-th-faint mb-2">El enlace anterior ya no funciona.</p>
+                <p class="text-xs text-th-faint break-all mb-2">${link}</p>
+                <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex min-h-[44px]">Enviar por WhatsApp</a>
+              </div>`);
+            toast('Enlace copiado ✓');
+          }, 'Generando…')));
         document.querySelectorAll('[data-activate]').forEach((btn) =>
           btn.addEventListener('click', () => busy(btn, async () => {
             const d2 = await api('/api/partners/' + btn.dataset.activate, { method: 'PATCH', body: JSON.stringify({ status: 'active' }) });
