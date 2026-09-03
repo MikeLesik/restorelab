@@ -33,19 +33,32 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       </p>
 
       <div id="s-error" class="hidden card p-6 text-center">
-        <p class="text-th-body">Este enlace no es válido. Si crees que es un error, escribe a Mike.</p>
+        <p class="text-th-body">Este enlace no es válido. Si crees que es un error, escríbenos.</p>
+      </div>
+
+      <!-- ── Registration received (after submit / on return while pending) ── -->
+      <div id="s-done" class="hidden card p-6 sm:p-8">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-brand-whatsapp/15 flex items-center justify-center">
+          <svg class="w-7 h-7 text-brand-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+        </div>
+        <h1 class="section-title text-2xl text-center mb-2">¡Registro recibido!</h1>
+        <p class="text-th-muted text-sm text-center mb-6">Gracias, ya tenemos tus datos.</p>
+        <p class="text-th-heading font-semibold text-sm mb-2">Qué pasa ahora</p>
+        <ol class="space-y-2.5 mb-6">
+          <li class="flex gap-3 text-sm"><span class="font-display font-bold text-brand-accent shrink-0">1</span><span class="text-th-body">Revisamos tu perfil y tus trabajos. Te escribimos por WhatsApp en menos de 48 horas.</span></li>
+          <li class="flex gap-3 text-sm"><span class="font-display font-bold text-brand-accent shrink-0">2</span><span class="text-th-body">Si encajas, te proponemos un trabajo de prueba pagado al mismo porcentaje que cualquier otro.</span></li>
+          <li class="flex gap-3 text-sm"><span class="font-display font-bold text-brand-accent shrink-0">3</span><span class="text-th-body">Firmamos el acuerdo de colaboración y activamos tu cuenta. A partir de ahí, este mismo enlace es tu panel.</span></li>
+        </ol>
+        <button id="s-edit" class="btn-secondary w-full">Añadir o cambiar algo de mi registro</button>
+        <p class="text-th-faint text-xs text-center mt-3">¿Te falta subir algún documento? Puedes hacerlo desde aquí cuando quieras.</p>
       </div>
 
       <!-- ── Registration form (invited / pending) ── -->
       <div id="s-form" class="hidden space-y-5">
-        <div id="s-pending" class="hidden card p-4 border border-brand-gold/30 bg-brand-gold/5">
-          <p class="text-sm text-brand-gold font-semibold">Registro enviado. Mike lo está revisando.</p>
-          <p class="text-xs text-th-muted mt-1">Puedes seguir editando y subiendo lo que falte. Te avisará por WhatsApp cuando esté todo listo.</p>
-        </div>
 
         <div>
           <h1 class="section-title text-2xl mb-1">Únete como detailer</h1>
-          <p class="text-th-muted text-sm">Rellena tus datos y sube tus trabajos. Mike lo revisa y te activa.</p>
+          <p class="text-th-muted text-sm">Rellena tus datos y sube tus trabajos. Lo revisamos y te activamos.</p>
         </div>
 
         <div class="card p-5 space-y-4">
@@ -108,7 +121,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         <div class="card p-5">
           <label class="flex items-start gap-3 text-sm text-th-body cursor-pointer">
             <input id="f-agree" type="checkbox" class="mt-0.5 w-5 h-5 rounded border-2 border-th-border/40 accent-brand-accent shrink-0" />
-            <span>He leído y acepto las condiciones de colaboración de restoreLab (contrato marco, estándar de calidad, protección de datos). Mike me pasará el documento para firmar antes del primer trabajo.</span>
+            <span>He leído y acepto las condiciones de colaboración de restoreLab (contrato marco, estándar de calidad, protección de datos). restoreLab me pasará el documento para firmar antes del primer trabajo.</span>
           </label>
         </div>
 
@@ -151,7 +164,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       </div>
 
       <div id="s-paused" class="hidden card p-6 text-center">
-        <p class="text-th-body">Tu cuenta está en pausa ahora mismo. Escríbele a Mike por WhatsApp para reactivarla.</p>
+        <p class="text-th-body">Tu cuenta está en pausa ahora mismo. Escríbenos por WhatsApp para reactivarla.</p>
       </div>
     </div>
 
@@ -170,11 +183,22 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         const p = d.partner;
         if (p.status === 'active') return renderCabinet(p, d.cabinet);
         if (p.status === 'paused') return $('s-paused').classList.remove('hidden');
-        renderForm(p);
+        populateForm(p);
+        // Already submitted → confirmation + next steps (form stays available
+        // behind the "add/change" button so they can still upload docs).
+        if (p.status === 'pending') $('s-done').classList.remove('hidden');
+        else $('s-form').classList.remove('hidden');
       }
 
+      $('s-edit').addEventListener('click', () => {
+        $('s-done').classList.add('hidden');
+        $('s-pending').classList.remove('hidden');
+        $('s-form').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
       // ── Registration form ──
-      function renderForm(p) {
+      function populateForm(p) {
         $('f-name').value = p.name || '';
         $('f-phone').value = p.phone || '';
         $('f-email').value = p.email || '';
@@ -190,8 +214,6 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         (p.skills || []).forEach((s) => { const el = document.querySelector(`input[name="f-skill"][value="${s}"]`); if (el) el.checked = true; });
         if (pr.agreement_accepted_at) $('f-agree').checked = true;
         buildUploaders(p.docs || []);
-        if (p.status === 'pending') $('s-pending').classList.remove('hidden');
-        $('s-form').classList.remove('hidden');
       }
 
       function buildUploaders(docs) {
@@ -264,7 +286,9 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         } catch (e) { d = { ok: false }; }
         btn.disabled = false; btn.textContent = 'Enviar mi registro';
         if (!d.ok) return showMsg('No se pudo enviar. Inténtalo otra vez.');
-        $('s-pending').classList.remove('hidden');
+        // Close the form and show the confirmation + next steps.
+        $('s-form').classList.add('hidden');
+        $('s-done').classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 

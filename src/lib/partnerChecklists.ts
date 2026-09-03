@@ -9,7 +9,7 @@
 const WALKAROUND: string[] = [
   'WALKAROUND con el cliente ANTES de empezar: vuelta al coche juntos, 4–6 fotos de TODO defecto previo (también los que no se van a tocar)',
   'Decir en voz alta qué se va y qué NO se va («rayado profundo: mejorará, no desaparece»)',
-  'Cualquier cambio de precio o alcance: llamar a Mike — el partner NO renegocia en sitio',
+  'Cualquier cambio de precio o alcance: avísanos antes de seguir; el partner NO renegocia en sitio con el cliente',
 ];
 
 export const PARTNER_CHECKLISTS: Record<string, string[]> = {
@@ -84,8 +84,8 @@ export const PARTNER_CHECKLISTS: Record<string, string[]> = {
 export const HOUSE_RULES: string[] = [
   'Uniforme o ropa de trabajo neutra, sin marcas de otra empresa.',
   'Las fotos antes/después son OBLIGATORIAS — sin fotos no hay QC ni pago.',
-  'Nada de contacto directo con el cliente: cualquier tema, a Mike por WhatsApp.',
-  'Cualquier daño o imprevisto: parar y avisar a Mike ANTES de continuar.',
+  'Nada de contacto directo con el cliente: cualquier tema, escríbenos por WhatsApp.',
+  'Cualquier daño o imprevisto: parar y avisar a restoreLab ANTES de continuar.',
   'Nunca cobrar al cliente en mano — todos los pagos pasan por restoreLab.',
   'No usar rotativa en lacas desconocidas sin medir espesor primero.',
 ];

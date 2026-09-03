@@ -1206,7 +1206,7 @@
     "lc_followup_3": "Hi{name}! I won't keep pestering you. Shall we leave it for now? Whenever it suits you, drop me a message and I'll update the quote in a moment.",
     "lc_review_request": "Hi{name}! How's the car looking in daylight? If you're happy with it, a Google review would really help me out. It only takes a minute:\n{review_url}",
     "lc_checkin_48h": "Hi{name}! Everything still good with the car? If you notice anything, let me know and I'll take a look. That's what the guarantee is for.",
-    "socios_apply": "Hi Mike, I'm a detailer and I'd like to work with restoreLab. I'll tell you my area, experience, the products and tools I use, and my availability. I'm sending some photos of my work and a short video of my kit now."
+    "socios_apply": "Hi restoreLab, I'm a detailer and I'd like to work with you. I'll tell you my area, experience, the products and tools I use, and my availability. I'm sending some photos of my work and a short video of my kit now."
   },
   "lead_form": {
     "section_title": "Get Your Free Estimate",

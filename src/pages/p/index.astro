@@ -37,7 +37,7 @@ const AREA_NAMES = Object.fromEntries(
       </p>
 
       <div id="job-error" class="hidden card p-6 text-center">
-        <p class="text-th-body">Este enlace ya no es válido. Si crees que es un error, escribe a Mike.</p>
+        <p class="text-th-body">Este enlace ya no es válido. Si crees que es un error, escríbenos.</p>
       </div>
 
       <div id="job" class="hidden space-y-4">
@@ -60,7 +60,7 @@ const AREA_NAMES = Object.fromEntries(
         </div>
 
         <div id="j-accept-card" class="hidden card p-5 border border-brand-whatsapp/40">
-          <p class="text-sm text-th-body mb-3">¿Tomas este trabajo? Eres libre de rechazarlo sin consecuencias — si no te encaja, dile a Mike y lo reasigna.</p>
+          <p class="text-sm text-th-body mb-3">¿Tomas este trabajo? Eres libre de rechazarlo sin consecuencias. Si no te encaja, avísanos y lo reasignamos.</p>
           <button id="j-accept" class="btn-whatsapp w-full">Acepto este trabajo ✓</button>
         </div>
 
@@ -82,16 +82,16 @@ const AREA_NAMES = Object.fromEntries(
         </div>
 
         <div class="card p-5">
-          <h2 class="font-display font-bold text-th-heading mb-2">Notas para Mike</h2>
-          <textarea id="j-partner-notes" rows="3" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="Incidencias, espesores, lo que Mike deba saber…"></textarea>
+          <h2 class="font-display font-bold text-th-heading mb-2">Notas para restoreLab</h2>
+          <textarea id="j-partner-notes" rows="3" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="Incidencias, espesores, lo que debamos saber…"></textarea>
         </div>
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">¿Hace falta más trabajo?</h2>
-          <p class="text-xs text-th-muted mb-2">Si ves que el coche necesita algo más de lo previsto, descríbelo aquí. Mike lo revisa, habla con el cliente y lo añade al presupuesto. No cierres precios ni trabajos extra con el cliente directamente.</p>
+          <p class="text-xs text-th-muted mb-2">Si ves que el coche necesita algo más de lo previsto, descríbelo aquí. Lo revisamos, hablamos con el cliente y lo añadimos al presupuesto. No cierres precios ni trabajos extra con el cliente directamente.</p>
           <textarea id="j-extra" rows="2" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="p. ej. el paragolpes trasero necesita una pasada más de pulido"></textarea>
-          <button id="j-extra-send" class="btn-secondary w-full mt-2 py-2.5 text-sm">Proponer trabajo adicional a Mike</button>
-          <p id="j-extra-ok" class="hidden text-sm text-brand-whatsapp mt-2">Enviado a Mike. Te dirá cómo seguir.</p>
+          <button id="j-extra-send" class="btn-secondary w-full mt-2 py-2.5 text-sm">Proponer trabajo adicional</button>
+          <p id="j-extra-ok" class="hidden text-sm text-brand-whatsapp mt-2">Enviado. Te diremos cómo seguir.</p>
         </div>
 
         <div class="card p-5">
@@ -103,12 +103,12 @@ const AREA_NAMES = Object.fromEntries(
 
         <p id="j-msg" class="hidden text-sm text-red-400" role="alert"></p>
         <button id="j-done" class="btn-primary w-full">Trabajo terminado ✓</button>
-        <p class="text-th-faint text-xs text-center pb-8">Al terminar, Mike revisa las fotos (control de calidad) y cierra el trabajo.</p>
+        <p class="text-th-faint text-xs text-center pb-8">Al terminar, restoreLab revisa las fotos (control de calidad) y cierra el trabajo.</p>
       </div>
 
       <div id="j-finished" class="hidden card p-6 text-center">
         <p class="font-display font-bold text-th-heading text-xl mb-2">¡Enviado a control de calidad!</p>
-        <p class="text-th-muted text-sm">Mike revisará las fotos. Si todo está bien, no tienes que hacer nada más.</p>
+        <p class="text-th-muted text-sm">Revisaremos las fotos. Si todo está bien, no tienes que hacer nada más.</p>
       </div>
     </div>
 
@@ -134,14 +134,14 @@ const AREA_NAMES = Object.fromEntries(
           (j.size && SIZE_NAMES[j.size] ? ' · ' + SIZE_NAMES[j.size] : '');
         $('j-when').textContent = j.scheduled_at
           ? 'Cuándo: ' + new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' })
-          : 'Cuándo: por confirmar con Mike';
+          : 'Cuándo: por confirmar';
         const where = [AREA_NAMES[j.area_slug] || j.area_slug, j.address].filter(Boolean).join(' · ');
         $('j-where').textContent = where ? 'Dónde: ' + where : '';
         if (j.address) {
           $('j-maps').href = 'https://maps.google.com/?q=' + encodeURIComponent(j.address + ', ' + (AREA_NAMES[j.area_slug] || ''));
           $('j-maps').classList.remove('hidden');
         }
-        $('j-client').textContent = j.client_first_name ? 'Cliente: ' + j.client_first_name + ' (contacto solo vía Mike)' : '';
+        $('j-client').textContent = j.client_first_name ? 'Cliente: ' + j.client_first_name + ' (contacto solo vía restoreLab)' : '';
         if (j.payout_eur != null) {
           $('j-payout').textContent = 'Tu pago por este trabajo: ' + j.payout_eur + '€ (' + j.payout_pct + '% del presupuesto)';
           $('j-payout').classList.remove('hidden');
