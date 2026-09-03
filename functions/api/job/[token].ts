@@ -20,7 +20,9 @@
 import { json, inert, notFound, sha256hex, logEvent } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 
-const ACTIVE = ['assigned', 'in_progress', 'qc'];
+// 'booked' included so a job assigned but not yet flipped to 'assigned' still
+// opens (the partner can work it straight from their cabinet).
+const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc'];
 
 async function findByToken(env: OrdersEnv, token: string) {
   if (!/^[a-f0-9]{32}$/.test(token)) return null;
@@ -141,7 +143,7 @@ export async function onRequestPost(context: {
   const notes = typeof b.notes === 'string' ? b.notes.trim().slice(0, 1000) : '';
   // Walk the legal chain to qc, logging every hop.
   let status = order.status as OrderStatus;
-  const hops: OrderStatus[] = status === 'assigned' ? ['in_progress', 'qc'] : status === 'in_progress' ? ['qc'] : [];
+  const hops: OrderStatus[] = (status === 'booked' || status === 'assigned') ? ['in_progress', 'qc'] : status === 'in_progress' ? ['qc'] : [];
   for (const to of hops) {
     await db.prepare('UPDATE orders SET status = ? WHERE id = ?').bind(to, order.id).run();
     await logEvent(db, order.id as string, 'status_changed', {

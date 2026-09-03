@@ -129,7 +129,7 @@ const AREA_NAMES = Object.fromEntries(
         const j = d.job;
 
         $('j-code').textContent = j.code;
-        $('j-status').textContent = j.status === 'qc' ? 'En control de calidad' : j.status === 'in_progress' ? 'En curso' : 'Asignado';
+        $('j-status').textContent = j.status === 'qc' ? 'En control de calidad' : j.status === 'in_progress' ? 'En curso' : j.status === 'booked' ? 'Confirmado' : 'Asignado';
         $('j-service').textContent = (PKG_NAMES[j.service_slug] || j.service_slug || 'Servicio') +
           (j.size && SIZE_NAMES[j.size] ? ' · ' + SIZE_NAMES[j.size] : '');
         $('j-when').textContent = j.scheduled_at
@@ -155,7 +155,7 @@ const AREA_NAMES = Object.fromEntries(
           }
         }
         // Offer-accept: the job is an offer until the partner takes it.
-        $('j-accept-card').classList.toggle('hidden', !(j.status === 'assigned' && !j.accepted_at));
+        $('j-accept-card').classList.toggle('hidden', !((j.status === 'assigned' || j.status === 'booked') && !j.accepted_at));
 
         const list = CHECKLISTS[j.service_slug] || CHECKLISTS.default;
         $('j-checklist').innerHTML = list.map((item, i) =>
