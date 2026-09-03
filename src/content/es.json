@@ -4819,6 +4819,18 @@
       "slug": "booster-ceramico",
       "name": "Booster cerámico (mantenimiento)",
       "price_eur": 39
+    },
+    {
+      "slug": "sellado-ceramico-1y",
+      "name": "Sellado cerámico 1 año (sobre el pulido)",
+      "price_eur": 150,
+      "size_pricing": { "compact": 140, "sedan": 150, "suv": 180, "van": 200 }
+    },
+    {
+      "slug": "sellado-ceramico-2y",
+      "name": "Sellado cerámico 2 años (sobre el pulido)",
+      "price_eur": 250,
+      "size_pricing": { "compact": 220, "sedan": 250, "suv": 280, "van": 340 }
     }
   ]
 }

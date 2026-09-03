@@ -13,7 +13,17 @@ import type { OrdersEnv } from '../../../_lib/orders';
 import es from '../../../../src/content/es.json';
 
 const WORKABLE = ['booked', 'assigned', 'in_progress', 'qc'];
-const CATALOG: { slug: string; name: string; price_eur: number }[] = (es as any).addons || [];
+type Addon = { slug: string; name: string; price_eur: number; size_pricing?: Record<string, number> };
+const CATALOG: Addon[] = (es as any).addons || [];
+
+// Some add-ons (e.g. the ceramic coatings) scale with the vehicle size, exactly
+// like the main packages. Resolve the price server-side from the order's size so
+// the partner can never set it and a van never gets charged a compact price.
+function addonPrice(item: Addon, size: unknown): number {
+  const s = typeof size === 'string' ? size : '';
+  if (item.size_pricing && item.size_pricing[s] != null) return item.size_pricing[s];
+  return Number(item.price_eur) || 0;
+}
 
 export async function onRequestPost(context: {
   request: Request;
@@ -43,8 +53,9 @@ export async function onRequestPost(context: {
 
   if (b.action === 'add') {
     if (!list.some((a) => a.slug === slug)) {
-      list.push({ slug: item.slug, name: item.name, price_eur: item.price_eur });
-      await logEvent(db, order.id as string, 'addon_added', { slug, price_eur: item.price_eur, by: 'partner' });
+      const price = addonPrice(item, order.size);
+      list.push({ slug: item.slug, name: item.name, price_eur: price });
+      await logEvent(db, order.id as string, 'addon_added', { slug, price_eur: price, by: 'partner' });
     }
   } else if (b.action === 'remove') {
     const before = list.length;

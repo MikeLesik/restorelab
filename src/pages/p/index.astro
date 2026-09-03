@@ -236,13 +236,18 @@ const AREA_NAMES = Object.fromEntries(
 
       function renderAddons(current) {
         const has = new Set(current.map((a) => a.slug));
+        // Size-dependent add-ons (ceramic coatings) price by the order's vehicle
+        // size, matching the main packages; the server enforces the same on add.
+        const sz = JOB && JOB.size;
+        const priceOf = (a) => (a.size_pricing && a.size_pricing[sz] != null) ? a.size_pricing[sz] : a.price_eur;
         $('j-addons').innerHTML = ADDONS.map((a) => {
           const on = has.has(a.slug);
-          const earn = Math.round(a.price_eur * ADDON_PCT) / 100;
+          const price = priceOf(a);
+          const earn = Math.round(price * ADDON_PCT) / 100;
           return `<div class="flex items-center justify-between gap-2 rounded-lg border ${on ? 'border-brand-whatsapp/50 bg-brand-whatsapp/5' : 'border-th-border/10'} px-3 py-2">
             <div class="min-w-0">
               <p class="text-sm text-th-heading truncate">${a.name}</p>
-              <p class="text-[11px] text-th-faint">${a.price_eur}€ · tú ganas ${earn}€</p>
+              <p class="text-[11px] text-th-faint">${price}€ · tú ganas ${earn}€</p>
             </div>
             <button type="button" data-addon="${a.slug}" data-on="${on ? '1' : ''}" class="shrink-0 text-xs px-3 py-2 rounded-lg ${on ? 'bg-brand-whatsapp text-white' : 'border border-th-border/20 text-th-body'}">${on ? '✓ Añadido' : '+ Añadir'}</button>
           </div>`;
