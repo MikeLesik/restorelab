@@ -115,7 +115,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <option value="b2b">B2B</option>
             </select>
             <select id="f-partner" class="adm-input w-full sm:w-auto"><option value="">Partner: todos</option></select>
-            <input id="f-month" type="month" class="adm-input w-full sm:w-auto" />
+            <label class="flex items-center gap-2 text-sm text-th-muted w-full sm:w-auto">
+              <span class="shrink-0">Mes:</span>
+              <input id="f-month" type="month" class="adm-input flex-1 sm:flex-none" />
+            </label>
             <button id="f-clear" class="hidden text-sm text-brand-accent min-h-[44px]">Quitar filtros</button>
           </div>
         </div>
@@ -453,6 +456,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       #detail > .sticky { padding-top: env(safe-area-inset-top); }
       /* The sticky quote/pay money bar must clear the home indicator too */
       #q-bar { padding-bottom: max(0.75rem, calc(env(safe-area-inset-bottom) + 0.35rem)); }
+      /* Filters sit inline at content width on desktop (.adm-input's 100% would
+         otherwise stack them full-width, one per row). */
+      @media (min-width: 640px) { #filters .adm-input { width: auto; } }
     </style>
 
     <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT }}>
