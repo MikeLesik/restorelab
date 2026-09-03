@@ -1635,19 +1635,40 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       $('btn-new').addEventListener('click', () => openModal('modal-new'));
       $('btn-partner').addEventListener('click', () => openModal('modal-partner'));
+      // Render a generated link with a Copy button. clipboard.writeText() after
+      // an await loses the user gesture on Safari (silent failure), so copying
+      // happens on the button's OWN click, with a readonly field to select
+      // manually and an execCommand fallback.
+      let linkResultN = 0;
+      function showLinkResult(title, note, link, waText) {
+        const wa = 'https://wa.me/?text=' + encodeURIComponent(waText);
+        const cid = 'lr' + (linkResultN++);
+        $('pt-body').insertAdjacentHTML('afterbegin', `
+          <div class="card p-4 border border-brand-accent/40">
+            <p class="text-sm text-th-heading font-semibold mb-1">${title}</p>
+            ${note ? `<p class="text-xs text-th-faint mb-2">${note}</p>` : ''}
+            <div class="flex flex-wrap gap-2 items-center mb-2">
+              <input id="${cid}" readonly value="${esc(link)}" class="adm-input flex-1 min-w-0 text-xs" />
+              <button id="${cid}-c" class="btn-secondary text-sm px-4 min-h-[44px]">Copiar</button>
+            </div>
+            <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex min-h-[44px]">Enviar por WhatsApp</a>
+          </div>`);
+        const inp = $(cid);
+        inp.addEventListener('focus', () => inp.select());
+        $(cid + '-c').addEventListener('click', async () => {
+          inp.focus(); inp.select(); try { inp.setSelectionRange(0, 99999); } catch (e) {}
+          let ok = false;
+          try { await navigator.clipboard.writeText(link); ok = true; } catch (e) {}
+          if (!ok) { try { ok = document.execCommand('copy'); } catch (e) {} }
+          toast(ok ? 'Enlace copiado ✓' : 'Selecciónalo y cópialo a mano', ok);
+        });
+      }
+
       $('btn-invite').addEventListener('click', () => busy($('btn-invite'), async () => {
         const d = await api('/api/partners/invite', { method: 'POST' });
         if (!d.ok) { toast('Error: ' + (d.reason || ''), false); return; }
         const link = location.origin + d.url;
-        try { await navigator.clipboard.writeText(link); } catch (e) {}
-        const wa = 'https://wa.me/?text=' + encodeURIComponent('Hola, para colaborar con restoreLab rellena tu registro aquí: ' + link);
-        $('pt-body').insertAdjacentHTML('afterbegin', `
-          <div class="card p-4 border border-brand-accent/40">
-            <p class="text-sm text-th-heading font-semibold mb-1">Enlace de registro generado (copiado)</p>
-            <p class="text-xs text-th-faint break-all mb-2">${link}</p>
-            <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex">Enviar por WhatsApp</a>
-          </div>`);
-        toast('Enlace copiado ✓');
+        showLinkResult('Enlace de registro generado', '', link, 'Hola, para colaborar con restoreLab rellena tu registro aquí: ' + link);
         loadPartners();
       }, 'Generando…'));
       $('btn-refresh').addEventListener('click', () => { loadPartners(); loadOrders(); });
@@ -2013,16 +2034,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             const d2 = await api('/api/partners/invite', { method: 'POST', body: JSON.stringify({ id: btn.dataset.ptLink }) });
             if (!d2.ok) { toast('Error: ' + (d2.reason || ''), false); return; }
             const link = location.origin + d2.url;
-            try { await navigator.clipboard.writeText(link); } catch (e) {}
-            const wa = 'https://wa.me/?text=' + encodeURIComponent('Aquí tienes tu panel de restoreLab: ' + link);
-            $('pt-body').insertAdjacentHTML('afterbegin', `
-              <div class="card p-4 border border-brand-accent/40">
-                <p class="text-sm text-th-heading font-semibold mb-1">Nuevo enlace del panel (copiado)</p>
-                <p class="text-xs text-th-faint mb-2">El enlace anterior ya no funciona.</p>
-                <p class="text-xs text-th-faint break-all mb-2">${link}</p>
-                <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex min-h-[44px]">Enviar por WhatsApp</a>
-              </div>`);
-            toast('Enlace copiado ✓');
+            showLinkResult('Nuevo enlace del panel', 'El enlace anterior ya no funciona.', link, 'Aquí tienes tu panel de restoreLab: ' + link);
           }, 'Generando…')));
         document.querySelectorAll('[data-activate]').forEach((btn) =>
           btn.addEventListener('click', () => busy(btn, async () => {
