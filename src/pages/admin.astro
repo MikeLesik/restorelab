@@ -55,13 +55,13 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 <html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="robots" content="noindex, nofollow" />
     <title>restoreLab — Admin</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
   </head>
   <body class="bg-brand-dark min-h-screen text-th-body">
-    <div class="max-w-6xl mx-auto px-4 py-4 sm:py-6 pb-24">
+    <div class="adm-shell max-w-6xl mx-auto px-4 py-4 sm:py-6 pb-24">
 
       <!-- Header: brand + refresh; tabs on their own row (thumb-sized) -->
       <header class="mb-4">
@@ -404,6 +404,19 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       @media (prefers-reduced-motion: reduce) {
         #detail, #toast, #q-bar, #q-total, .adm-stagger > *, .adm-sla--late, .adm-shimmer { animation: none !important; }
       }
+
+      /* ── Mobile: notch/home-indicator safe areas + horizontally-scrollable
+            data tables so dense tables never crop off-screen ── */
+      .adm-shell { padding-top: max(1rem, env(safe-area-inset-top)); }
+      @media (min-width: 640px) { .adm-shell { padding-top: max(1.5rem, env(safe-area-inset-top)); } }
+      #btn-new { bottom: max(1.25rem, calc(env(safe-area-inset-bottom) + .35rem)); }
+      #toast { bottom: max(6rem, calc(env(safe-area-inset-bottom) + 5.5rem)); }
+      .adm-tw { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+      .adm-tw > table { white-space: nowrap; min-width: 100%; }
+      .adm-tw th, .adm-tw td { padding-right: .85rem; }
+      .adm-tw th:last-child, .adm-tw td:last-child { padding-right: 0; }
+      /* Modal shells honour the notch too when they scroll to the top edge */
+      #detail > .sticky { padding-top: env(safe-area-inset-top); }
     </style>
 
     <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT }}>
@@ -1699,7 +1712,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <div class="card p-4">
             <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Partners</p>
             ${d.partners.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
-            <table class="w-full text-sm tabular-nums">
+            <div class="adm-tw"><table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Partner</th><th>Trabajos</th><th>Rework</th><th>Media en curso</th></tr></thead>
               <tbody>${d.partners.map((p) => `
@@ -1710,7 +1723,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <td>${p.avg_in_progress_h == null ? '—' : p.avg_in_progress_h + 'h'}</td>
                 </tr>`).join('')}
               </tbody>
-            </table>`}
+            </table></div>`}
           </div>
 
           <div class="card p-4">
@@ -1726,7 +1739,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <button id="m-spend-add" class="text-sm text-brand-accent min-h-[44px]">+ fuente</button>
               <button id="m-spend-save" class="btn-secondary text-sm px-4 min-h-[44px]">Guardar gasto</button>
             </div>
-            <table class="w-full text-sm tabular-nums">
+            <div class="adm-tw"><table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Fuente</th><th>Creados</th><th>Reservados</th><th>CAC</th></tr></thead>
               <tbody>${Object.keys({ ...d.cac.created_by_source, ...d.cac.by_source }).map((src) => `
@@ -1737,7 +1750,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <td>${d.cac.by_source[src] != null ? badge(d.cac.by_source[src], T.cac_eur, true, '€') : '<span class="text-th-faint">—</span>'}</td>
                 </tr>`).join('')}
               </tbody>
-            </table>
+            </table></div>
           </div>`;
 
         $('m-spend-add').addEventListener('click', () => {
@@ -1843,7 +1856,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <div class="card p-4">
             <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Liquidación · ${esc(d.month)} <span class="normal-case">(trabajos aceptados)</span></p>
             ${ledger.length === 0 ? '<p class="text-th-faint text-sm">Sin trabajos de partner este mes.</p>' : `
-            <table class="w-full text-sm tabular-nums">
+            <div class="adm-tw"><table class="w-full text-sm tabular-nums">
               <thead><tr class="text-left text-th-faint border-b border-th-border/10">
                 <th class="py-1.5">Partner</th><th>Trabajos</th><th>Aceptados</th><th>GMV</th><th>%</th><th>Payout</th><th>Reworks</th></tr></thead>
               <tbody>${ledger.map((p) => `
@@ -1855,7 +1868,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                   <td>${p.rework_count}</td>
                 </tr>`).join('')}
               </tbody>
-            </table>`}
+            </table></div>`}
           </div>
           <div class="card p-4">
             <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">Partners</p>
