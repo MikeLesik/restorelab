@@ -80,8 +80,9 @@ export async function onRequestGet(context: {
     const activeJobs = orders
       .filter((o) => ACTIVE.includes(o.status as string))
       .map((o) => ({
-        code: o.code, status: o.status, service_slug: o.service_slug, size: o.size,
+        code: o.code, status: o.status, size: o.size, service_slug: o.service_slug,
         area_slug: o.area_slug, address: o.address, scheduled_at: o.scheduled_at,
+        accepted_at: o.accepted_at || null,
         client_first_name: String(o.client_name || '').split(' ')[0] || null,
         payout_eur: Math.round((Number(o.quote_eur) || 0) * pctOf(o) * 100) / 100,
       }));

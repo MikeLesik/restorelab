@@ -362,6 +362,12 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       });
 
       // ── Cabinet ──
+      async function reloadCabinet() {
+        try {
+          const d = await (await fetch('/api/socio/' + token)).json();
+          if (d.ok && d.partner.status === 'active') renderCabinet(d.partner, d.cabinet);
+        } catch (e) {}
+      }
       function renderCabinet(p, cab) {
         $('c-name').textContent = p.name || 'Tu cuenta';
         $('c-pct').textContent = p.payout_pct + '%';
@@ -372,15 +378,41 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         buildCalendar('c-calendar', cabDates);
         const jobs = cab?.active_jobs || [];
         const JOB_ST = { booked: 'Confirmado', assigned: 'Asignado a ti', in_progress: 'En curso', qc: 'En revisión' };
-        $('c-jobs').innerHTML = jobs.length ? jobs.map((j) => `
-          <button type="button" data-open-job="${j.code}" class="w-full text-left rounded-xl border border-th-border/10 p-3 hover:border-brand-accent/40 transition-colors">
-            <div class="flex items-baseline justify-between gap-2">
-              <span class="font-medium text-th-heading text-sm">${SKILL_NAMES[j.service_slug] || j.service_slug || 'Servicio'}</span>
-              <span class="font-display font-bold text-brand-whatsapp text-sm">${j.payout_eur}€</span>
-            </div>
-            <p class="text-xs text-th-muted mt-0.5">${[JOB_ST[j.status] || '', j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ')}</p>
-            <p class="text-xs text-brand-accent mt-1.5">Abrir y trabajar (checklist y fotos) →</p>
-          </button>`).join('') : '<p class="text-sm text-th-faint">Ahora mismo no tienes trabajos activos.</p>';
+        $('c-jobs').innerHTML = jobs.length ? jobs.map((j) => {
+          const meta = [JOB_ST[j.status] || '', j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ');
+          // Offered but not yet accepted → decide first. Otherwise → work it.
+          const pending = ['booked', 'assigned'].includes(j.status) && !j.accepted_at;
+          const foot = pending
+            ? `<div class="flex gap-2 mt-3">
+                 <button type="button" data-accept="${j.code}" class="btn-whatsapp text-sm px-4 py-2 flex-1">Aceptar</button>
+                 <button type="button" data-decline="${j.code}" class="btn-secondary text-sm px-4 py-2 text-red-400/90">Rechazar</button>
+               </div>
+               <p class="text-[11px] text-th-faint mt-1.5">Eres libre de rechazarlo. Si no te encaja, lo reasignamos sin problema.</p>`
+            : `<button type="button" data-open-job="${j.code}" class="text-xs text-brand-accent mt-2">Abrir y trabajar (checklist y fotos) →</button>`;
+          return `
+            <div class="rounded-xl border border-th-border/10 p-3">
+              <div class="flex items-baseline justify-between gap-2">
+                <span class="font-medium text-th-heading text-sm">${SKILL_NAMES[j.service_slug] || j.service_slug || 'Servicio'}</span>
+                <span class="font-display font-bold text-brand-whatsapp text-sm">${j.payout_eur}€</span>
+              </div>
+              <p class="text-xs text-th-muted mt-0.5">${meta}</p>
+              ${foot}
+            </div>`;
+        }).join('') : '<p class="text-sm text-th-faint">Ahora mismo no tienes trabajos activos.</p>';
+        async function respond(code, action) {
+          const r = await (await fetch('/api/socio/' + token + '/respond', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code, action }),
+          })).json();
+          return r.ok;
+        }
+        document.querySelectorAll('[data-accept]').forEach((btn) =>
+          btn.addEventListener('click', async () => { btn.disabled = true; if (await respond(btn.dataset.accept, 'accept')) reloadCabinet(); else btn.disabled = false; }));
+        document.querySelectorAll('[data-decline]').forEach((btn) =>
+          btn.addEventListener('click', async () => {
+            if (!confirm('¿Seguro que quieres rechazar este trabajo? Se lo pasaremos a otro partner.')) return;
+            btn.disabled = true; if (await respond(btn.dataset.decline, 'decline')) reloadCabinet(); else btn.disabled = false;
+          }));
         document.querySelectorAll('[data-open-job]').forEach((btn) =>
           btn.addEventListener('click', async () => {
             btn.style.opacity = '0.6';
