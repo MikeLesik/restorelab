@@ -47,6 +47,10 @@ const AREA_NAMES = Object.fromEntries(
         restore<span class="text-brand-accent">Lab</span> <span class="text-th-muted font-normal text-base">· Ficha de trabajo</span>
       </p>
 
+      <div id="j-loading" class="card p-6 text-center text-th-muted text-sm">
+        <span class="inline-block w-5 h-5 mr-2 align-middle rounded-full border-2 border-th-border/30 border-t-brand-accent animate-spin"></span>Cargando…
+      </div>
+
       <div id="job-error" class="hidden card p-6 text-center">
         <p class="text-th-body">Este enlace ya no es válido. Si crees que es un error, escríbenos.</p>
       </div>
@@ -62,7 +66,7 @@ const AREA_NAMES = Object.fromEntries(
           <p id="j-where" class="text-sm text-th-muted mt-1"></p>
           <a id="j-maps" href="#" target="_blank" rel="noopener" class="hidden inline-block text-sm text-brand-accent hover:underline mt-1.5">Abrir en Google Maps</a>
           <p id="j-client" class="text-sm text-th-muted mt-1"></p>
-          <p id="j-payout" class="hidden text-sm font-semibold text-brand-whatsapp mt-2"></p>
+          <p id="j-payout" class="hidden text-sm font-semibold text-green-400 mt-2"></p>
           <p id="j-notes" class="hidden text-sm text-th-body border-l-2 border-brand-gold pl-3 mt-3"></p>
           <div id="j-rework" class="hidden border-l-2 border-red-400 pl-3 mt-3">
             <p class="text-sm text-red-400 font-medium">⚠ Rework solicitado — corrige y repite las fotos DESPUÉS.</p>
@@ -83,31 +87,31 @@ const AREA_NAMES = Object.fromEntries(
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">Fotos ANTES <span class="text-th-faint font-normal text-sm">(mín. 2)</span></h2>
           <div id="j-before-grid" class="grid grid-cols-3 gap-2 my-2"></div>
-          <button data-upload="before" class="btn-secondary text-sm w-full py-2.5">+ Subir foto ANTES</button>
+          <button data-upload="before" class="btn-secondary text-sm w-full py-3 min-h-[44px]">+ Subir foto ANTES</button>
         </div>
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">Fotos DESPUÉS <span class="text-th-faint font-normal text-sm">(mín. 2)</span></h2>
           <div id="j-after-grid" class="grid grid-cols-3 gap-2 my-2"></div>
-          <button data-upload="after" class="btn-secondary text-sm w-full py-2.5">+ Subir foto DESPUÉS</button>
+          <button data-upload="after" class="btn-secondary text-sm w-full py-3 min-h-[44px]">+ Subir foto DESPUÉS</button>
         </div>
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-2">Notas para restoreLab</h2>
-          <textarea id="j-partner-notes" rows="3" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="Incidencias, espesores, lo que debamos saber…"></textarea>
+          <textarea id="j-partner-notes" rows="3" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-base text-th-heading" placeholder="Incidencias, espesores, lo que debamos saber…"></textarea>
         </div>
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">Extras para ofrecer al cliente</h2>
           <p class="text-xs text-th-muted mb-3">Ofrécelos en persona. Si el cliente dice que sí, márcalos aquí: se añaden al total y tú ganas el {ADDON_PARTNER_PCT}% de cada extra (más que en el trabajo base). Precio cerrado, no negocies.</p>
           <div id="j-addons" class="space-y-2"></div>
-          <p id="j-addons-earn" class="hidden text-sm text-brand-whatsapp font-semibold mt-3"></p>
+          <p id="j-addons-earn" class="hidden text-sm text-green-400 font-semibold mt-3"></p>
         </div>
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">¿Hace falta algo fuera de la lista?</h2>
           <p class="text-xs text-th-muted mb-2">Si ves que el coche necesita algo más de lo previsto, descríbelo aquí. Lo revisamos, hablamos con el cliente y lo añadimos al presupuesto. No cierres precios ni trabajos extra con el cliente directamente.</p>
-          <textarea id="j-extra" rows="2" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading" placeholder="p. ej. el paragolpes trasero necesita una pasada más de pulido"></textarea>
+          <textarea id="j-extra" rows="2" class="w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-base text-th-heading" placeholder="p. ej. el paragolpes trasero necesita una pasada más de pulido"></textarea>
           <button id="j-extra-send" class="btn-secondary w-full mt-2 py-2.5 text-sm">Proponer trabajo adicional</button>
           <p id="j-extra-ok" class="hidden text-sm text-brand-whatsapp mt-2">Enviado. Te diremos cómo seguir.</p>
         </div>
@@ -121,7 +125,7 @@ const AREA_NAMES = Object.fromEntries(
             <a id="j-pay-open" href="#" target="_blank" rel="noopener" class="btn-whatsapp w-full mb-2">Abrir para pagar →</a>
             <button id="j-pay-copy" class="btn-secondary w-full text-sm">Copiar enlace</button>
           </div>
-          <p id="j-pay-done" class="hidden text-sm text-brand-whatsapp font-semibold">✓ Ya está pagado. Nada más que cobrar.</p>
+          <p id="j-pay-done" class="hidden text-sm text-green-400 font-semibold">✓ Ya está pagado. Nada más que cobrar.</p>
         </div>
 
         <div class="card p-5">
@@ -138,7 +142,8 @@ const AREA_NAMES = Object.fromEntries(
 
       <div id="j-finished" class="hidden card p-6 text-center">
         <p class="font-display font-bold text-th-heading text-xl mb-2">¡Enviado a control de calidad!</p>
-        <p class="text-th-muted text-sm">Revisaremos las fotos. Si todo está bien, no tienes que hacer nada más.</p>
+        <p class="text-th-muted text-sm mb-4">Revisaremos las fotos. Si todo está bien, no tienes que hacer nada más.</p>
+        <button id="j-finished-back" class="btn-secondary w-full min-h-[44px] text-sm">← Volver a mis trabajos</button>
       </div>
     </div>
 
@@ -151,11 +156,12 @@ const AREA_NAMES = Object.fromEntries(
       let JOB = null;
 
       async function load() {
-        if (!token) { $('job-error').classList.remove('hidden'); return; }
+        if (!token) { $('j-loading').classList.add('hidden'); $('job-error').classList.remove('hidden'); return; }
         let d;
         try {
           d = await (await fetch('/api/job/' + token)).json();
         } catch (e) { d = { ok: false }; }
+        $('j-loading').classList.add('hidden');
         if (!d.ok) { $('job-error').classList.remove('hidden'); return; }
         const j = d.job;
         JOB = j;
@@ -257,7 +263,7 @@ const AREA_NAMES = Object.fromEntries(
               <p class="text-sm text-th-heading truncate">${a.name}</p>
               <p class="text-[11px] text-th-faint">${price}€ · tú ganas ${earn}€</p>
             </div>
-            <button type="button" data-addon="${a.slug}" data-on="${on ? '1' : ''}" class="shrink-0 text-xs px-3 py-2 rounded-lg ${on ? 'bg-brand-whatsapp text-white' : 'border border-th-border/20 text-th-body'}">${on ? '✓ Añadido' : '+ Añadir'}</button>
+            <button type="button" data-addon="${a.slug}" data-on="${on ? '1' : ''}" class="shrink-0 text-sm px-3.5 py-2.5 min-h-[44px] rounded-lg ${on ? 'bg-brand-whatsapp text-white' : 'border border-th-border/20 text-th-body'}">${on ? '✓ Añadido' : '+ Añadir'}</button>
           </div>`;
         }).join('');
         const total = current.reduce((s, a) => s + (Number(a.price_eur) || 0), 0);
@@ -391,6 +397,14 @@ const AREA_NAMES = Object.fromEntries(
         }
         $('job').classList.add('hidden');
         $('j-finished').classList.remove('hidden');
+      });
+
+      // No browser chrome in the standalone PWA — give an explicit way back to
+      // the cabinet (the referrer when opened via "Abrir y trabajar").
+      $('j-finished-back').addEventListener('click', () => {
+        if (document.referrer && /\/socio\/[a-f0-9]{32}/.test(document.referrer)) location.href = document.referrer;
+        else if (history.length > 1) history.back();
+        else location.href = '/socio';
       });
 
       load();

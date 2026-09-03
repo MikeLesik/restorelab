@@ -19,7 +19,7 @@ const SKILLS = es.pricing.categories
   .flatMap((c: any) => c.packages)
   .map((p: any) => ({ slug: p.slug, name: p.name }));
 
-const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-sm text-th-heading placeholder:text-th-faint focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent';
+const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.04] px-4 py-3 text-base text-th-heading placeholder:text-th-faint focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent';
 ---
 
 <!doctype html>
@@ -76,6 +76,10 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         restore<span class="text-brand-accent">Lab</span>
         <span class="text-th-muted font-normal text-base">· Socios</span>
       </p>
+
+      <div id="s-loading" class="card p-6 text-center text-th-muted text-sm">
+        <span class="inline-block w-5 h-5 mr-2 align-middle rounded-full border-2 border-th-border/30 border-t-brand-accent animate-spin"></span>Cargando…
+      </div>
 
       <div id="s-error" class="hidden card p-6 text-center">
         <p class="text-th-body">Este enlace no es válido. Si crees que es un error, escríbenos.</p>
@@ -195,7 +199,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
 
         <div class="grid grid-cols-2 gap-3">
           <div class="card p-4 text-center">
-            <p id="c-payout" class="font-display font-bold text-2xl text-brand-whatsapp tabular-nums"></p>
+            <p id="c-payout" class="font-display font-bold text-2xl text-green-400 tabular-nums"></p>
             <p class="text-[11px] text-th-faint">tu pago este mes</p>
           </div>
           <div class="card p-4 text-center">
@@ -281,9 +285,10 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       let uploadKind = null, uploadMulti = false;
 
       async function load() {
-        if (!token) return $('s-error').classList.remove('hidden');
+        if (!token) { $('s-loading').classList.add('hidden'); return $('s-error').classList.remove('hidden'); }
         let d;
         try { d = await (await fetch('/api/socio/' + token)).json(); } catch (e) { d = { ok: false }; }
+        $('s-loading').classList.add('hidden');
         if (!d.ok) return $('s-error').classList.remove('hidden');
         const p = d.partner;
         if (p.status === 'active') return renderCabinet(p, d.cabinet);
@@ -417,21 +422,23 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         const jobs = cab?.active_jobs || [];
         const JOB_ST = { booked: 'Confirmado', assigned: 'Asignado a ti', in_progress: 'En curso', qc: 'En revisión' };
         $('c-jobs').innerHTML = jobs.length ? jobs.map((j) => {
-          const meta = [JOB_ST[j.status] || '', j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ');
           // Offered but not yet accepted → decide first. Otherwise → work it.
           const pending = ['booked', 'assigned'].includes(j.status) && !j.accepted_at;
+          // Don't call an unaccepted offer "Asignado/Confirmado" while asking to accept.
+          const stLabel = pending ? 'Nuevo trabajo · por aceptar' : (JOB_ST[j.status] || '');
+          const meta = [stLabel, j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ');
           const foot = pending
             ? `<div class="flex gap-2 mt-3">
-                 <button type="button" data-accept="${j.code}" class="btn-whatsapp text-sm px-4 py-2 flex-1">Aceptar</button>
-                 <button type="button" data-decline="${j.code}" class="btn-secondary text-sm px-4 py-2 text-red-400/90">Rechazar</button>
+                 <button type="button" data-accept="${j.code}" class="btn-whatsapp text-sm px-4 py-3 min-h-[44px] flex-1">Aceptar</button>
+                 <button type="button" data-decline="${j.code}" class="btn-secondary text-sm px-4 py-3 min-h-[44px] text-red-400/90">Rechazar</button>
                </div>
                <p class="text-[11px] text-th-faint mt-1.5">Eres libre de rechazarlo. Si no te encaja, lo reasignamos sin problema.</p>`
-            : `<button type="button" data-open-job="${j.code}" class="text-xs text-brand-accent mt-2">Abrir y trabajar (checklist y fotos) →</button>`;
+            : `<button type="button" data-open-job="${j.code}" class="btn-primary w-full min-h-[44px] text-sm mt-3">Abrir y trabajar (checklist y fotos) →</button>`;
           return `
             <div class="rounded-xl border border-th-border/10 p-3">
               <div class="flex items-baseline justify-between gap-2">
                 <span class="font-medium text-th-heading text-sm">${SKILL_NAMES[j.service_slug] || j.service_slug || 'Servicio'}</span>
-                <span class="font-display font-bold text-brand-whatsapp text-sm">${j.payout_eur}€</span>
+                <span class="font-display font-bold text-green-400 text-sm">${j.payout_eur}€</span>
               </div>
               <p class="text-xs text-th-muted mt-0.5">${meta}</p>
               ${foot}

@@ -96,6 +96,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         <!-- Action chips: what needs me right now (rendered from data) -->
         <div id="chips" class="flex flex-wrap gap-2 mb-3"></div>
 
+        <!-- Always-visible search: the "client calls, find their order" path -->
+        <input id="f-search" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Buscar nombre, teléfono o código" aria-label="Buscar pedido" class="adm-input mb-3" />
+
         <!-- Filters: collapsed on mobile behind a toggle -->
         <div class="mb-1">
           <button id="filters-toggle" class="sm:hidden text-sm text-th-muted min-h-[44px] flex items-center gap-1.5">
@@ -156,7 +159,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       <!-- New order modal -->
       <div id="modal-new" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/80 backdrop-blur-md">
-        <div class="max-w-lg mx-auto px-4 py-10">
+        <div class="max-w-lg mx-auto px-4 py-10" style="padding-top:max(2.5rem,calc(env(safe-area-inset-top) + 1rem))">
           <div class="card p-6 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.7)]">
             <h2 class="font-display font-bold text-th-heading text-xl mb-1">Nuevo pedido manual</h2>
             <p class="text-th-faint text-xs mb-5">Disciplina: el 100% de los pedidos (también los que entran por WhatsApp) viven aquí — solo así las métricas serán reales.</p>
@@ -199,7 +202,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       <!-- New partner modal -->
       <div id="modal-partner" class="hidden fixed inset-0 z-50 overflow-y-auto bg-brand-dark/80 backdrop-blur-md">
-        <div class="max-w-lg mx-auto px-4 py-10">
+        <div class="max-w-lg mx-auto px-4 py-10" style="padding-top:max(2.5rem,calc(env(safe-area-inset-top) + 1rem))">
           <div class="card p-6 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.7)]">
             <h2 class="font-display font-bold text-th-heading text-xl mb-4">Nuevo partner</h2>
             <div class="space-y-3">
@@ -445,6 +448,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       .adm-tw th:last-child, .adm-tw td:last-child { padding-right: 0; }
       /* Modal shells honour the notch too when they scroll to the top edge */
       #detail > .sticky { padding-top: env(safe-area-inset-top); }
+      /* The sticky quote/pay money bar must clear the home indicator too */
+      #q-bar { padding-bottom: max(0.75rem, calc(env(safe-area-inset-bottom) + 0.35rem)); }
     </style>
 
     <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT }}>
@@ -587,7 +592,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
 
       function filtersActive() {
-        return !!($('f-status').value || $('f-channel').value || $('f-partner').value || $('f-month').value);
+        return !!($('f-status').value || $('f-channel').value || $('f-partner').value || $('f-month').value || ($('f-search')?.value || '').trim());
       }
 
       function skeleton() {
@@ -698,7 +703,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 ${o.status === 'booked' && !o.scheduled_at ? '<span class="text-brand-gold">📅 sin fecha</span>' : ''}
                 ${o.scheduled_at ? `<span class="text-th-muted">📅 ${fmtDate(o.scheduled_at)}</span>` : ''}
                 <span class="text-th-faint">${CHANNEL_ES[o.channel] || ''}</span>
-                <span class="adm-badge ${o.lang !== 'es' ? 'bg-brand-accent/20 text-brand-accent' : 'text-th-faint'}">${(o.lang || 'es').toUpperCase()}</span>
+                ${o.lang && o.lang !== 'es' ? `<span class="adm-badge bg-brand-accent/20 text-brand-accent">${o.lang.toUpperCase()}</span>` : ''}
                 <span class="ml-auto">${slaPill(o)}</span>
               </div>
             </button>
@@ -732,7 +737,18 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         document.querySelectorAll('[data-chip]').forEach((el) =>
           el.addEventListener('click', () => document.getElementById(el.dataset.chip)?.scrollIntoView({ behavior: 'smooth', block: 'start' })));
 
-        $('pipeline-count').textContent = orders.length + ' pedido' + (orders.length === 1 ? '' : 's');
+        // Client-side search over the loaded set — instant, no server round-trip.
+        // Chips above stay on the full set; only the rendered list is narrowed.
+        const term = ($('f-search')?.value || '').trim().toLowerCase();
+        const termDigits = term.replace(/\D/g, '');
+        const view = term ? orders.filter((o) =>
+          (o.client_name || '').toLowerCase().includes(term) ||
+          (o.code || '').toLowerCase().includes(term) ||
+          (termDigits.length >= 3 && (o.phone || '').replace(/\D/g, '').includes(termDigits))
+        ) : orders;
+        $('pipeline-count').textContent = term
+          ? `${view.length} de ${orders.length} pedidos`
+          : `${orders.length} pedido${orders.length === 1 ? '' : 's'}`;
         $('pipeline-updated').textContent = '';
         $('filters-dot').classList.toggle('hidden', !filtersActive());
         $('f-clear').classList.toggle('hidden', !filtersActive());
@@ -757,6 +773,17 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           return;
         }
 
+        // Search matched nothing in the loaded set.
+        if (view.length === 0) {
+          $('pipeline').innerHTML = `<div class="card p-8 text-center">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-th-surface/10 border border-th-border/10 grid place-items-center text-2xl">🔍</div>
+            <p class="text-th-muted text-sm mb-4">Sin resultados para «${esc(term)}».</p>
+            <button id="empty-search-clear" class="btn-secondary text-sm px-4 min-h-[44px]">Limpiar búsqueda</button>
+          </div>`;
+          $('empty-search-clear')?.addEventListener('click', () => { $('f-search').value = ''; renderPipeline(); });
+          return;
+        }
+
         const section = (s, list, showStatus) => list.length === 0 ? '' : `
           <section id="st-${s}">
             <h3 class="font-display text-sm font-semibold tracking-tight text-th-muted mb-2 flex items-center gap-1.5">
@@ -769,7 +796,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
         const bandHtml = (band) => {
           const parts = band.statuses.map((s) => {
-            let list = orders.filter((o) => o.status === s);
+            let list = view.filter((o) => o.status === s);
             if (s === 'new') list = [...list].sort((a, b) => a.created_at < b.created_at ? -1 : 1); // oldest first
             return section(s, list, false);
           }).filter(Boolean);
@@ -783,7 +810,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           </div>`;
         };
 
-        const closed = orders.filter((o) => CLOSED.includes(o.status));
+        const closed = view.filter((o) => CLOSED.includes(o.status));
         const closedHtml = closed.length === 0 ? '' : `
           <details class="pt-1">
             <summary class="text-sm text-th-muted cursor-pointer min-h-[44px] flex items-center">Cerrados · ${closed.length}</summary>
@@ -800,7 +827,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       }
 
       function clearFilters() {
-        ['f-status', 'f-channel', 'f-partner', 'f-month'].forEach((id) => { $(id).value = ''; });
+        ['f-status', 'f-channel', 'f-partner', 'f-month', 'f-search'].forEach((id) => { const el = $(id); if (el) el.value = ''; });
         loadOrders();
       }
 
@@ -892,12 +919,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 `<option value="${slug}" ${slug === it.slug ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}
             </select>
             <div class="flex gap-2 items-center">
-              <select data-qi="${i}" data-k="size" class="adm-input flex-1 ${PRICING.es.packages[it.slug]?.size_pricing && !it.size ? 'border-brand-gold/60' : ''}">
+              <select data-qi="${i}" data-k="size" class="adm-input flex-1 min-w-0 ${PRICING.es.packages[it.slug]?.size_pricing && !it.size ? 'border-brand-gold/60' : ''}">
                 <option value="">Tamaño…</option>
                 ${Object.entries(PRICING.es.sizes).map(([id, n]) =>
                   `<option value="${id}" ${id === it.size ? 'selected' : ''}>${esc(n)}</option>`).join('')}
               </select>
-              <span data-qprice="${i}" class="text-brand-accent font-semibold w-20 text-right">${priceOf(o.lang, it.slug, it.size) ?? 'a consultar'}${priceOf(o.lang, it.slug, it.size) != null ? '€' : ''}</span>
+              <span data-qprice="${i}" class="text-brand-accent font-semibold shrink-0 whitespace-nowrap text-right">${priceOf(o.lang, it.slug, it.size) ?? 'a consultar'}${priceOf(o.lang, it.slug, it.size) != null ? '€' : ''}</span>
               ${q.items.length > 1 ? `<button data-qdel="${i}" class="w-11 h-11 flex items-center justify-center rounded-lg text-th-faint hover:text-red-400" aria-label="Quitar línea">✕</button>` : ''}
             </div>
           </div>`;
@@ -1033,8 +1060,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           openDetail(current.id);
         });
         $('q-save-only')?.addEventListener('click', async () => {
-          if (await saveQuote(true)) {
-            toast('Presupuesto guardado ✓');
+          // Save the numbers as a DRAFT — do not advance to 'quoted' (that would
+          // read as "Presupuesto enviado" and start the follow-up chasing).
+          if (await saveQuote(false)) {
+            toast('Borrador guardado ✓');
             q = null;
             await loadOrders(true);
             openDetail(current.id);
@@ -1065,7 +1094,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const addLine = addT > 0 ? ` <span class="text-th-faint text-xs">(base ${o.quote_eur}€ + extras ${addT}€)</span>` : '';
         // Prominent, unmissable payment status at the top of the card.
         const statusBanner = covered
-          ? `<div class="rounded-xl bg-green-500/15 border border-green-500/30 px-3 py-2.5 mb-3"><span class="text-green-300 font-semibold text-sm">✓ Cobrado por completo</span> <span class="font-display font-bold tabular-nums text-green-300">${paid}€</span></div>`
+          ? `<div class="rounded-xl bg-green-500/15 border border-green-500/30 px-3 py-2.5 mb-3"><span class="text-green-400 font-semibold text-sm">✓ Cobrado por completo</span> <span class="font-display font-bold tabular-nums text-green-400">${paid}€</span></div>`
           : paid > 0
           ? `<div class="rounded-xl bg-brand-gold/15 border border-brand-gold/30 px-3 py-2.5 mb-3"><span class="text-brand-gold font-semibold text-sm">Señal recibida</span> <span class="font-display font-bold tabular-nums text-brand-gold">${paid}€</span> <span class="text-th-muted text-sm">· falta</span> <span class="font-display font-bold tabular-nums text-th-heading">${rest}€</span>${addLine}</div>`
           : `<div class="rounded-xl bg-th-surface/[0.06] border border-th-border/10 px-3 py-2.5 mb-3"><span class="text-th-muted text-sm">Sin cobrar todavía · total</span> <span class="font-display font-bold tabular-nums text-brand-accent">${total}€</span>${addLine}</div>`;
@@ -1260,7 +1289,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const match = (x) =>
           (!o.service_slug || !x.skills?.length || x.skills.includes(o.service_slug)) &&
           (!o.area_slug || !x.zones?.length || x.zones.includes(o.area_slug));
-        const trans = (TRANSITIONS[o.status] || []).filter((s) => s !== 'cancelled');
+        // 'assigned' is reached ONLY through the gated partner dropdown
+        // (#d-assign sets partner_id + RC/address/date gate + status). A generic
+        // status button would flip to 'assigned' with no partner — a broken state.
+        const trans = (TRANSITIONS[o.status] || []).filter((s) => s !== 'cancelled' && s !== 'assigned');
         const primary = trans[0];
         return `
           <div class="card p-4 sm:p-5 mt-4">
@@ -1703,7 +1735,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <span class="text-th-faint text-xs">límite ${higherIsBad ? '≤' : '≥'}${limit}${unit}</span>`;
       };
       const bar = (n, max) =>
-        `<span class="inline-block h-2 rounded bg-brand-accent/60 align-middle" style="width:${max ? Math.max(4, Math.round((n / max) * 120)) : 4}px"></span>`;
+        `<span class="inline-block h-2 rounded bg-brand-accent/60 align-middle shrink-0" style="width:${max ? Math.max(4, Math.round((n / max) * 72)) : 4}px"></span>`;
       function metricCard(title, html) {
         return `<div class="card p-4"><p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-1.5">${title}</p><div class="text-th-body text-sm">${html}</div></div>`;
       }
@@ -1711,7 +1743,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         const entries = Object.entries(obj).sort((a, b) => b[1] - a[1]);
         const max = entries[0]?.[1] || 0;
         return entries.map(([k, v]) =>
-          `<div class="flex items-center gap-2 py-0.5"><span class="w-44 truncate text-th-muted">${esc(labelFn ? labelFn(k) : k)}</span>${bar(v, max)}<span class="text-th-heading font-medium">${v}</span></div>`).join('') || '<span class="text-th-faint">—</span>';
+          `<div class="flex items-center gap-2 py-0.5"><span class="flex-1 min-w-0 truncate text-th-muted">${esc(labelFn ? labelFn(k) : k)}</span>${bar(v, max)}<span class="text-th-heading font-medium shrink-0 tabular-nums">${v}</span></div>`).join('') || '<span class="text-th-faint">—</span>';
       }
 
       async function loadMetrics() {
@@ -1772,9 +1804,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <p class="text-[11px] font-medium uppercase tracking-[0.08em] text-th-faint mb-2">CAC por fuente · gasto del mes</p>
             <div id="m-spend-rows" class="space-y-2 mb-2">
               ${spendRows.map(([src, val]) => `
-                <div class="flex gap-2 items-center" data-spend-row>
-                  <input type="text" value="${esc(src)}" placeholder="fuente (google, meta…)" class="adm-input w-40" data-spend-src />
-                  <input type="number" inputmode="numeric" value="${esc(val)}" min="0" step="1" placeholder="€" class="adm-input w-28" data-spend-amt />€
+                <div class="flex flex-wrap gap-2 items-center" data-spend-row>
+                  <input type="text" value="${esc(src)}" placeholder="fuente (google, meta…)" class="adm-input flex-1 min-w-[8rem]" data-spend-src />
+                  <input type="number" inputmode="numeric" value="${esc(val)}" min="0" step="1" placeholder="€" class="adm-input w-24 min-w-0" data-spend-amt />€
                 </div>`).join('')}
             </div>
             <div class="flex gap-2 mb-4">
@@ -1797,10 +1829,10 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
         $('m-spend-add').addEventListener('click', () => {
           const div = document.createElement('div');
-          div.className = 'flex gap-2 items-center';
+          div.className = 'flex flex-wrap gap-2 items-center';
           div.setAttribute('data-spend-row', '');
-          div.innerHTML = '<input type="text" placeholder="fuente" class="adm-input w-40" data-spend-src />' +
-            '<input type="number" inputmode="numeric" min="0" step="1" placeholder="€" class="adm-input w-28" data-spend-amt />€';
+          div.innerHTML = '<input type="text" placeholder="fuente" class="adm-input flex-1 min-w-[8rem]" data-spend-src />' +
+            '<input type="number" inputmode="numeric" min="0" step="1" placeholder="€" class="adm-input w-24 min-w-0" data-spend-amt />€';
           $('m-spend-rows').appendChild(div);
         });
         $('m-spend-save').addEventListener('click', () => busy($('m-spend-save'), async () => {
@@ -2018,6 +2050,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         STATUSES.map((s) => `<option value="${s}">${STATUS_ES[s]}</option>`).join('');
       ['f-status', 'f-channel', 'f-partner', 'f-month'].forEach((id) =>
         $(id).addEventListener('change', () => loadOrders()));
+      // Search is client-side over the already-loaded set — re-render, no reload.
+      $('f-search').addEventListener('input', () => { if (!$('view-pipeline').classList.contains('hidden')) renderPipeline(); });
 
       // Freshness: reload when Mike returns to the tab (no polling needed at
       // this volume), and show how stale the list is.

@@ -18,7 +18,7 @@
   --th-heading: 255 255 255;
   --th-body:    245 245 245;
   --th-muted:   180 180 180;
-  --th-faint:   120 120 120;
+  --th-faint:   142 142 142;      /* #8E8E8E — lifted from #787878 for AA on cards */
   --th-surface: 255 255 255;
   --th-border:  255 255 255;
 
