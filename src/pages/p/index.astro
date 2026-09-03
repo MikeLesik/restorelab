@@ -140,6 +140,7 @@ const AREA_NAMES = Object.fromEntries(
       const $ = (id) => document.getElementById(id);
       const token = (location.pathname.match(/^\/p\/([a-f0-9]{32})$/) || [])[1];
       let uploadKind = null;
+      let JOB = null;
 
       async function load() {
         if (!token) { $('job-error').classList.remove('hidden'); return; }
@@ -149,6 +150,7 @@ const AREA_NAMES = Object.fromEntries(
         } catch (e) { d = { ok: false }; }
         if (!d.ok) { $('job-error').classList.remove('hidden'); return; }
         const j = d.job;
+        JOB = j;
 
         $('j-code').textContent = j.code;
         $('j-status').textContent = j.status === 'qc' ? 'En control de calidad' : j.status === 'in_progress' ? 'En curso' : j.status === 'booked' ? 'Confirmado' : 'Asignado';
@@ -194,6 +196,11 @@ const AREA_NAMES = Object.fromEntries(
       }
 
       function renderPay(j) {
+        // Reset the section so add-on changes never leave a stale amount,
+        // link or "cobrado" state on screen.
+        $('j-pay-gen').classList.remove('hidden'); $('j-pay-gen').disabled = false;
+        $('j-pay-done').classList.add('hidden');
+        $('j-pay-link').classList.add('hidden');
         const out = Number(j.outstanding_eur) || 0;
         if (!(Number(j.quote_eur) > 0)) { $('j-pay-amount').textContent = 'Aún no hay presupuesto para cobrar.'; $('j-pay-gen').disabled = true; return; }
         if (out <= 0) { $('j-pay-gen').classList.add('hidden'); $('j-pay-done').classList.remove('hidden'); return; }
@@ -254,7 +261,21 @@ const AREA_NAMES = Object.fromEntries(
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ action, slug: btn.dataset.addon }),
               })).json();
-              if (d.ok) { renderAddons(d.addons); return; }
+              if (d.ok) {
+                renderAddons(d.addons);
+                // Keep the "Cobrar al cliente" total in sync with the new
+                // add-ons so it matches what Stripe will charge. Any link
+                // generated for the old amount is now stale — force a regen.
+                if (JOB) {
+                  JOB.addons = d.addons;
+                  JOB.addons_total = Number(d.addons_total) || 0;
+                  JOB.total_eur = Math.round(((Number(JOB.quote_eur) || 0) + JOB.addons_total) * 100) / 100;
+                  JOB.outstanding_eur = Math.round((JOB.total_eur - (Number(JOB.paid_eur) || 0)) * 100) / 100;
+                  JOB.payment_link = null;
+                  renderPay(JOB);
+                }
+                return;
+              }
             } catch (e) {}
             btn.disabled = false;
           }));
