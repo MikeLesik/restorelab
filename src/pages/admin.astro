@@ -292,6 +292,9 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         outline: none; border-color: rgb(var(--brand-accent)/.7);
         box-shadow: inset 0 1px 2px rgb(0 0 0/.3), 0 0 0 3px rgb(var(--brand-accent)/.22);
       }
+      /* Field eyebrow label for form grids (partner editor etc.) */
+      .adm-flabel { display: block; font-size: 11px; line-height: 1.2; margin-bottom: .3rem;
+        color: rgb(var(--th-faint)); text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
 
       .adm-badge {
         display: inline-flex; align-items: center; height: 1.5rem; gap: .35rem;
@@ -1951,25 +1954,31 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               ${partners.map((p) => `
                 <div class="rounded-xl border ${(p.status || 'active') === 'pending' ? 'border-brand-gold/40 bg-brand-gold/5' : 'border-th-border/10'} p-3" data-pt="${esc(p.id)}">
                   ${partnerStatusRow(p)}
-                  <div class="flex flex-wrap gap-2 items-center">
-                    <input data-f="name" value="${esc(p.name)}" class="adm-input w-40" />
-                    <input data-f="phone" value="${esc(p.phone || '')}" placeholder="teléfono" class="adm-input w-40" />
-                    <input data-f="payout_pct" type="number" inputmode="numeric" value="${p.payout_pct}" min="0" max="100" class="adm-input w-20" />%
-                    <label class="flex items-center gap-1.5 text-sm text-th-muted ml-2 min-h-[44px]">
-                      <input data-f="active" type="checkbox" ${p.active ? 'checked' : ''} class="w-5 h-5 accent-brand-accent" /> activo
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                    <label class="block"><span class="adm-flabel">Nombre</span>
+                      <input data-f="name" value="${esc(p.name)}" class="adm-input" /></label>
+                    <label class="block"><span class="adm-flabel">Teléfono</span>
+                      <input data-f="phone" type="tel" inputmode="tel" value="${esc(p.phone || '')}" placeholder="+34…" class="adm-input" /></label>
+                    <label class="block"><span class="adm-flabel">Payout (%)</span>
+                      <input data-f="payout_pct" type="number" inputmode="numeric" value="${p.payout_pct}" min="0" max="100" class="adm-input" /></label>
+                    <label class="block"><span class="adm-flabel">Email (facturas)</span>
+                      <input data-f="email" type="email" value="${esc(p.email || '')}" placeholder="jordi@…" class="adm-input" /></label>
+                    <label class="block sm:col-span-2"><span class="adm-flabel">Zonas (slugs, separados por coma)</span>
+                      <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="sant-cugat, terrassa" class="adm-input" /></label>
+                    <label class="block sm:col-span-2"><span class="adm-flabel">Servicios (slugs, separados por coma)</span>
+                      <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="single-stage, headlight-restoration" class="adm-input" /></label>
+                    <label class="block"><span class="adm-flabel">NIF / NIE</span>
+                      <input data-f="nif" value="${esc(p.nif || '')}" placeholder="X1234567L" class="adm-input" /></label>
+                    <label class="block"><span class="adm-flabel">Póliza RC hasta</span>
+                      <input data-f="rc_expiry" type="date" value="${esc(p.rc_expiry || '')}" class="adm-input" /></label>
+                  </div>
+                  <div class="flex flex-wrap items-center gap-3 mt-3">
+                    <label class="flex items-center gap-2 text-sm text-th-muted min-h-[44px]">
+                      <input data-f="active" type="checkbox" ${p.active ? 'checked' : ''} class="w-5 h-5 accent-brand-accent" /> Activo
                     </label>
-                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-xs px-3 min-h-[40px] ml-auto">Guardar</button>
-                  </div>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <input data-f="zones" value="${esc((p.zones || []).join(', '))}" placeholder="zonas (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
-                    <input data-f="skills" value="${esc((p.skills || []).join(', '))}" placeholder="servicios (slugs, coma)" class="adm-input flex-1 min-w-48 text-xs" />
-                  </div>
-                  <div class="flex flex-wrap gap-2 items-center mt-2">
-                    <input data-f="nif" value="${esc(p.nif || '')}" placeholder="NIF/NIE" class="adm-input w-32 text-xs" />
-                    <input data-f="email" value="${esc(p.email || '')}" placeholder="email (facturas)" class="adm-input flex-1 min-w-40 text-xs" />
-                    <label class="text-xs text-th-faint">RC hasta <input data-f="rc_expiry" type="date" value="${esc(p.rc_expiry || '')}" class="adm-input text-xs" /></label>
-                    ${rcExpired(p) ? '<span class="adm-badge bg-red-500/15 text-red-400">⚠ póliza vencida — no asignable</span>' : ''}
+                    ${rcExpired(p) ? '<span class="adm-badge bg-red-500/15 text-red-400">póliza vencida — no asignable</span>' : ''}
                     ${!p.rc_expiry ? '<span class="text-xs text-brand-gold">sin póliza RC registrada</span>' : ''}
+                    <button data-pt-save="${esc(p.id)}" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Guardar</button>
                   </div>
                 </div>`).join('')}
             </div>`}
