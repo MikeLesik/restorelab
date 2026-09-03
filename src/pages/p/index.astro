@@ -32,6 +32,14 @@ const AREA_NAMES = Object.fromEntries(
     <meta name="robots" content="noindex, nofollow" />
     <title>restoreLab — Trabajo</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <!-- Stays chrome-less when opened from the installed Socios app (the job
+         card itself is per-job and ephemeral, so it is not installed on its own). -->
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RL Trabajo" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body class="bg-brand-dark min-h-screen text-th-body">
     <div class="max-w-lg mx-auto px-4" style="padding-top:max(2rem,calc(env(safe-area-inset-top) + .5rem));padding-bottom:max(2rem,calc(env(safe-area-inset-bottom) + 1rem))">

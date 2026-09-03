@@ -30,6 +30,45 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
     <meta name="robots" content="noindex, nofollow" />
     <title>restoreLab — Socios</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <!-- Installable as a standalone home-screen app (PWA). The manifest is built
+         at runtime so each partner's installed icon opens THEIR own token URL. -->
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RL Socios" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      (function () {
+        try {
+          var m = {
+            id: location.pathname,
+            name: 'restoreLab · Socios',
+            short_name: 'RL Socios',
+            start_url: location.pathname,
+            scope: '/',
+            display: 'standalone',
+            orientation: 'portrait',
+            background_color: '#0A0A0A',
+            theme_color: '#0A0A0A',
+            lang: 'es',
+            icons: [
+              { src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+              { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+              { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+            ]
+          };
+          var blob = new Blob([JSON.stringify(m)], { type: 'application/manifest+json' });
+          var link = document.createElement('link');
+          link.rel = 'manifest';
+          link.href = URL.createObjectURL(blob);
+          document.head.appendChild(link);
+        } catch (e) { /* no PWA — the page still works as a normal tab */ }
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/rl-app-sw.js', { updateViaCache: 'none' }).catch(function () {});
+        }
+      })();
+    </script>
   </head>
   <body class="bg-brand-dark min-h-screen text-th-body">
     <div class="max-w-lg mx-auto px-4" style="padding-top:max(2rem,calc(env(safe-area-inset-top) + .5rem));padding-bottom:max(2rem,calc(env(safe-area-inset-bottom) + 1rem))">
