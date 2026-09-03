@@ -65,7 +65,10 @@ export async function onRequestGet(context: {
       .all();
     const orders = (res.results || []) as Record<string, unknown>[];
     const ACCEPTED = ['awaiting_payment', 'paid', 'done'];
-    const ACTIVE = ['assigned', 'in_progress', 'qc'];
+    // Any working order the partner is on, including 'booked' — the moment
+    // Mike assigns them (partner_id set) it shows, even before the status
+    // flips to 'assigned'.
+    const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc'];
     const pctOf = (o: Record<string, unknown>) =>
       (Number(o.payout_pct) || Number(p.payout_pct) || DEFAULT_PAYOUT_PCT) / 100;
     const monthAccepted = orders.filter(
@@ -126,6 +129,11 @@ export async function onRequestPost(context: {
   const prev = jsonCol(p.profile, {}) as Record<string, unknown>;
   const profile = { ...prev };
   if (b.availability !== undefined) profile.availability = str(b.availability, 500) || '';
+  if (b.available_dates !== undefined) {
+    profile.available_dates = Array.isArray(b.available_dates)
+      ? b.available_dates.filter((x) => /^\d{4}-\d{2}-\d{2}$/.test(String(x))).slice(0, 200)
+      : [];
+  }
   if (b.portfolio_url !== undefined) profile.portfolio_url = str(b.portfolio_url, 300) || '';
   if (b.years !== undefined) profile.years = str(b.years, 20) || '';
   if (b.products !== undefined) profile.products = str(b.products, 500) || '';

@@ -573,6 +573,8 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
 
       // Working uninsured is the one partner risk with no recovery path.
       const rcExpired = (p) => !!p?.rc_expiry && p.rc_expiry < new Date().toISOString().slice(0, 10);
+      // Partner marked this exact date free in their /socio calendar.
+      const availOn = (p, dateIso) => !!(p?.profile?.available_dates || []).includes(dateIso);
 
       function slaPill(o) {
         // The <=1h quote promise made visible: minutes on new leads.
@@ -1179,6 +1181,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           : '';
       }
 
+      // Who marked the order's scheduled day free in their calendar.
+      function availHint(o) {
+        if (!o.scheduled_at) return '';
+        const day = o.scheduled_at.slice(0, 10);
+        const free = partners.filter((x) => x.active && availOn(x, day)).map((x) => x.name);
+        return free.length
+          ? `<p class="text-xs text-brand-whatsapp mb-1.5">Libres ese día: ${esc(free.join(', '))}</p>`
+          : '<p class="text-xs text-th-faint mb-1.5">Ningún partner ha marcado libre ese día.</p>';
+      }
+
       function actionsHtml(o) {
         const p = partners.find((x) => x.id === o.partner_id);
         const activeP = partners.filter((x) => x.active);
@@ -1208,11 +1220,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
               <div>
                 <label class="text-xs text-th-faint block mb-1">Partner ${p ? '(actual: ' + esc(p.name) + ')' : ''}</label>
+                ${availHint(o)}
                 ${prevPartnerHint(o)}
                 <div class="flex gap-2">
                   <select id="d-partner" class="adm-input">
                     <option value="">—</option>
-                    ${activeP.map((x) => `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${match(x) ? '' : ' ⚠ fuera de skill/zona'}${rcExpired(x) ? ' ⛔ póliza vencida' : ''}</option>`).join('')}
+                    ${activeP.map((x) => { const day = o.scheduled_at ? o.scheduled_at.slice(0, 10) : null; return `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${day ? (availOn(x, day) ? ' ✓ libre ese día' : ' · sin marcar ese día') : ''}${match(x) ? '' : ' ⚠ fuera de skill/zona'}${rcExpired(x) ? ' ⛔ póliza vencida' : ''}</option>`; }).join('')}
                   </select>
                   <button id="d-assign" class="btn-secondary text-sm px-3">${o.status === 'booked' ? 'Asignar' : 'Guardar'}</button>
                 </div>

@@ -90,8 +90,14 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
           <p class="text-th-heading font-semibold">Tu experiencia</p>
           <input id="f-years" type="text" maxlength="20" placeholder="Años haciendo detailing" class={inputCls} />
           <textarea id="f-products" rows="2" maxlength="500" placeholder="Productos y herramientas que usas (marcas de pulido, máquina, cerámicos…)" class={inputCls}></textarea>
-          <textarea id="f-availability" rows="2" maxlength="500" placeholder="Tu disponibilidad (días, horas, si tienes coche propio…)" class={inputCls}></textarea>
+          <textarea id="f-availability" rows="2" maxlength="500" placeholder="Notas de disponibilidad (horas, si tienes coche propio…)" class={inputCls}></textarea>
           <input id="f-portfolio" type="url" maxlength="300" placeholder="Instagram o web con tus trabajos" class={inputCls} />
+        </div>
+
+        <div class="card p-5">
+          <p class="text-th-heading font-semibold mb-1">Días que puedes trabajar</p>
+          <p class="text-th-faint text-xs mb-3">Marca los días en los que estás disponible. Así te ofrecemos trabajos que encajan con tu calendario.</p>
+          <div id="f-calendar"></div>
         </div>
 
         <div class="card p-5">
@@ -166,8 +172,10 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         </div>
 
         <div class="card p-5">
-          <h2 class="font-display font-bold text-th-heading mb-2">Tu disponibilidad</h2>
-          <textarea id="c-availability" rows="2" class={inputCls}></textarea>
+          <h2 class="font-display font-bold text-th-heading mb-1">Días que puedes trabajar</h2>
+          <p class="text-th-faint text-xs mb-3">Mantén tu calendario al día. Te ofrecemos trabajos según los días que marques.</p>
+          <div id="c-calendar"></div>
+          <textarea id="c-availability" rows="2" placeholder="Notas de disponibilidad (horas, coche propio…)" class={`mt-3 ${inputCls}`}></textarea>
           <button id="c-avail-save" class="btn-secondary text-sm px-4 mt-2">Guardar</button>
         </div>
       </div>
@@ -195,6 +203,40 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       function getPhone(fullId) {
         const local = $(fullId).value.replace(/\D/g, '');
         return local ? '+' + $(fullId + '-cc').value + local : '';
+      }
+
+      // ── Availability calendar ──
+      let formDates = new Set(), cabDates = new Set();
+      const iso = (y, m, d) => y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      function buildCalendar(containerId, selected) {
+        const el = $(containerId);
+        const now = new Date(); now.setHours(0, 0, 0, 0);
+        const todayIso = iso(now.getFullYear(), now.getMonth(), now.getDate());
+        const dow = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+        let html = '';
+        for (let k = 0; k < 2; k++) {
+          const m = new Date(now.getFullYear(), now.getMonth() + k, 1);
+          const y = m.getFullYear(), mo = m.getMonth();
+          html += `<div class="mb-4"><p class="text-sm text-th-heading font-medium mb-1 capitalize">${m.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}</p>`;
+          html += '<div class="grid grid-cols-7 gap-1 text-center">' + dow.map((d) => `<div class="text-[10px] text-th-faint pb-1">${d}</div>`).join('');
+          const offset = (new Date(y, mo, 1).getDay() + 6) % 7;
+          for (let i = 0; i < offset; i++) html += '<div></div>';
+          const days = new Date(y, mo + 1, 0).getDate();
+          for (let day = 1; day <= days; day++) {
+            const di = iso(y, mo, day);
+            const past = di < todayIso;
+            const sel = selected.has(di);
+            html += `<button type="button" data-day="${di}" ${past ? 'disabled' : ''} class="aspect-square rounded-lg text-sm ${past ? 'text-th-faint/30' : sel ? 'bg-brand-whatsapp text-white font-semibold' : 'bg-th-surface/[0.06] text-th-body'}">${day}</button>`;
+          }
+          html += '</div></div>';
+        }
+        el.innerHTML = html;
+        el.querySelectorAll('[data-day]:not([disabled])').forEach((b) =>
+          b.addEventListener('click', () => {
+            const di = b.dataset.day;
+            selected.has(di) ? selected.delete(di) : selected.add(di);
+            buildCalendar(containerId, selected);
+          }));
       }
       const token = (location.pathname.match(/^\/socio\/([a-f0-9]{32})$/) || [])[1];
       let uploadKind = null, uploadMulti = false;
@@ -237,6 +279,8 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         (p.zones || []).forEach((z) => { const el = document.querySelector(`input[name="f-zone"][value="${z}"]`); if (el) el.checked = true; });
         (p.skills || []).forEach((s) => { const el = document.querySelector(`input[name="f-skill"][value="${s}"]`); if (el) el.checked = true; });
         if (pr.agreement_accepted_at) $('f-agree').checked = true;
+        formDates = new Set(pr.available_dates || []);
+        buildCalendar('f-calendar', formDates);
         buildUploaders(p.docs || []);
       }
 
@@ -304,6 +348,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
               rc_expiry: $('f-rc').value || null, alta_autonomo: $('f-alta').checked,
               years: $('f-years').value.trim(), products: $('f-products').value.trim(),
               availability: $('f-availability').value.trim(), portfolio_url: $('f-portfolio').value.trim(),
+              available_dates: [...formDates],
               zones, skills, agreement: true,
             }),
           })).json();
@@ -323,14 +368,17 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         $('c-payout').textContent = (cab?.payout_month ?? 0) + '€';
         $('c-done').textContent = cab?.jobs_done_month ?? 0;
         $('c-availability').value = (p.profile || {}).availability || '';
+        cabDates = new Set((p.profile || {}).available_dates || []);
+        buildCalendar('c-calendar', cabDates);
         const jobs = cab?.active_jobs || [];
+        const JOB_ST = { booked: 'Confirmado', assigned: 'Asignado a ti', in_progress: 'En curso', qc: 'En revisión' };
         $('c-jobs').innerHTML = jobs.length ? jobs.map((j) => `
           <div class="rounded-xl border border-th-border/10 p-3">
             <div class="flex items-baseline justify-between gap-2">
               <span class="font-medium text-th-heading text-sm">${SKILL_NAMES[j.service_slug] || j.service_slug || 'Servicio'}</span>
               <span class="font-display font-bold text-brand-whatsapp text-sm">${j.payout_eur}€</span>
             </div>
-            <p class="text-xs text-th-muted mt-0.5">${[j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ')}</p>
+            <p class="text-xs text-th-muted mt-0.5">${[JOB_ST[j.status] || '', j.client_first_name, ZONE_NAMES[j.area_slug] || '', j.scheduled_at ? new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : ''].filter(Boolean).join(' · ')}</p>
           </div>`).join('') : '<p class="text-sm text-th-faint">Ahora mismo no tienes trabajos activos.</p>';
         $('s-cabinet').classList.remove('hidden');
       }
@@ -340,7 +388,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         try {
           await fetch('/api/socio/' + token, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: $('c-name').textContent, availability: $('c-availability').value.trim() }),
+            body: JSON.stringify({ name: $('c-name').textContent, availability: $('c-availability').value.trim(), available_dates: [...cabDates] }),
           });
           btn.textContent = 'Guardado ✓';
           setTimeout(() => { btn.textContent = 'Guardar'; btn.disabled = false; }, 1500);
