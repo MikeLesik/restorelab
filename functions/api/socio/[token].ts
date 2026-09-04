@@ -10,7 +10,7 @@
  *                            Mike's activation); active partners can edit.
  */
 
-import { json, inert, notFound, sha256hex, addonsTotal, notifyOwner } from '../../_lib/orders';
+import { json, inert, notFound, sha256hex, addonsTotal, notifyOwner, partnerTopic } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 import { DEFAULT_PAYOUT_PCT, ADDON_PARTNER_PCT } from '../../../src/lib/unitEconomics';
 
@@ -91,7 +91,8 @@ export async function onRequestGet(context: {
     cabinet = { month, payout_month: payoutMonth, jobs_done_month: monthAccepted.length, active_jobs: activeJobs };
   }
 
-  return json({ ok: true, partner, cabinet });
+  const base = (env.NTFY_BASE || 'https://ntfy.sh').replace(/\/+$/, '');
+  return json({ ok: true, partner, cabinet, notify: { on: !!env.NOTIFY_WEBHOOK, topic: await partnerTopic(String(p.id)), base } });
 }
 
 export async function onRequestPost(context: {

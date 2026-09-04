@@ -36,9 +36,12 @@ export interface OrdersEnv {
   ORDERS_DB?: D1Database;
   PHOTOS?: R2Bucket;
   ADMIN_TOKEN?: string;
-  /** Push-notification URL for new public orders (ntfy.sh topic or any
-   *  endpoint accepting a plain-text POST). Inert until set. */
+  /** Push-notification URL for OWNER events (ntfy.sh topic URL or any
+   *  endpoint accepting a plain-text POST). Also the master gate: partner
+   *  pushes fire only when this is set. Inert until set. */
   NOTIFY_WEBHOOK?: string;
+  /** ntfy server base for PER-PARTNER topics (default https://ntfy.sh). */
+  NTFY_BASE?: string;
 }
 
 /**
@@ -70,6 +73,28 @@ export const STATUS_LABEL_ES: Record<string, string> = {
   in_progress: 'En curso', qc: 'Control calidad', awaiting_payment: 'A cobrar',
   paid: 'Pagado', done: 'Cerrado', cancelled: 'Cancelado',
 };
+
+/** Per-partner ntfy topic — unguessable (derived from the partner id, which is
+ *  never public). Shown to the partner in their cabinet so they can subscribe. */
+export async function partnerTopic(partnerId: string): Promise<string> {
+  return 'rl-p-' + (await sha256hex(partnerId)).slice(0, 20);
+}
+
+/** Push to a SINGLE partner's ntfy topic. Same gate as notifyOwner
+ *  (NOTIFY_WEBHOOK configured = notifications on); base = NTFY_BASE || ntfy.sh.
+ *  Never throws — a failed push must not fail the request. */
+export async function notifyPartner(env: OrdersEnv, partnerId: string | null | undefined, title: string, text: string): Promise<void> {
+  if (!env.NOTIFY_WEBHOOK || !partnerId) return;
+  const base = (env.NTFY_BASE || 'https://ntfy.sh').replace(/\/+$/, '');
+  try {
+    await fetch(`${base}/${await partnerTopic(partnerId)}`, {
+      method: 'POST',
+      headers: { Title: title, Priority: 'high', Tags: 'wrench' },
+      body: text,
+      signal: AbortSignal.timeout(4000),
+    });
+  } catch { /* best-effort */ }
+}
 
 // ── Responses ────────────────────────────────────────────────────────────────
 

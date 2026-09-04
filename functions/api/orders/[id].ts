@@ -9,7 +9,7 @@
 
 import {
   json, inert, notFound, adminAuthed, shapeOrder, logEvent, TRANSITIONS,
-  notifyOwner, orderLabel, STATUS_LABEL_ES,
+  notifyOwner, notifyPartner, orderLabel, STATUS_LABEL_ES,
 } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
@@ -236,6 +236,24 @@ export async function onRequestPatch(context: {
   } else if (changed.status) {
     const s = changed.status as { from: string; to: string };
     context.waitUntil(notifyOwner(env, `🔄 ${orderLabel(u)}`, `${STATUS_LABEL_ES[s.from] || s.from} → ${STATUS_LABEL_ES[s.to] || s.to}`));
+  }
+
+  // Partner-directed pushes: admin actions that concern the assigned partner
+  // land on the partner's own ntfy topic (two-way flow).
+  const pid = (u.partner_id as string) || null;
+  const s = changed.status as { from?: string; to?: string } | undefined;
+  const whenStr = u.scheduled_at ? new Date(u.scheduled_at as string).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : 'por confirmar';
+  if (changed.partner_id) {
+    // New assignment → the partner gets an offer to accept.
+    context.waitUntil(notifyPartner(env, changed.partner_id as string, `🆕 Nuevo trabajo ${u.code}`, `${whenStr}. Ábrelo en tu panel para aceptar o rechazar.`));
+  } else if (pid) {
+    if (s && s.from === 'qc' && s.to === 'in_progress') {
+      context.waitUntil(notifyPartner(env, pid, `↩ Rework ${u.code}`, changed.note ? String(changed.note) : 'Corrige y vuelve a subir las fotos DESPUÉS.'));
+    } else if (s && s.to === 'cancelled') {
+      context.waitUntil(notifyPartner(env, pid, `✖ ${u.code} cancelado`, 'El trabajo se ha cancelado.'));
+    }
+    if (changed.scheduled_at) context.waitUntil(notifyPartner(env, pid, `📅 Cambio de fecha ${u.code}`, `Nueva fecha: ${whenStr}`));
+    if (changed.address) context.waitUntil(notifyPartner(env, pid, `📍 Cambio de dirección ${u.code}`, String(u.address || '')));
   }
 
   return json({ ok: true, order: shapeOrder(u) });

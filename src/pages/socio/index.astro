@@ -214,6 +214,16 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
           <p class="text-xs text-th-faint mt-3">Cada trabajo te llega por WhatsApp con su enlace propio para el checklist y las fotos.</p>
         </div>
 
+        <div id="c-notify" class="hidden card p-5">
+          <h2 class="font-display font-bold text-th-heading mb-1">🔔 Avisos en el móvil</h2>
+          <p class="text-th-faint text-xs mb-3">Recibe un aviso cuando te asignen un trabajo, cambie la fecha/dirección o pidan un rework. Instala la app <b>ntfy</b> (gratis) y suscríbete a tu tema:</p>
+          <div class="flex gap-2 items-center mb-2">
+            <input id="c-notify-topic" readonly class={`flex-1 min-w-0 text-xs ${inputCls}`} />
+            <button id="c-notify-copy" type="button" class="btn-secondary text-sm px-4 min-h-[44px]">Copiar</button>
+          </div>
+          <a id="c-notify-open" href="#" target="_blank" rel="noopener" class="btn-whatsapp w-full text-sm">Abrir en ntfy →</a>
+        </div>
+
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">Días que puedes trabajar</h2>
           <p class="text-th-faint text-xs mb-3">Mantén tu calendario al día. Te ofrecemos trabajos según los días que marques.</p>
@@ -291,7 +301,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
         $('s-loading').classList.add('hidden');
         if (!d.ok) return $('s-error').classList.remove('hidden');
         const p = d.partner;
-        if (p.status === 'active') return renderCabinet(p, d.cabinet);
+        if (p.status === 'active') return renderCabinet(p, d.cabinet, d.notify);
         if (p.status === 'paused') return $('s-paused').classList.remove('hidden');
         populateForm(p);
         // Already submitted → confirmation + next steps (form stays available
@@ -408,14 +418,22 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       async function reloadCabinet() {
         try {
           const d = await (await fetch('/api/socio/' + token)).json();
-          if (d.ok && d.partner.status === 'active') renderCabinet(d.partner, d.cabinet);
+          if (d.ok && d.partner.status === 'active') renderCabinet(d.partner, d.cabinet, d.notify);
         } catch (e) {}
       }
-      function renderCabinet(p, cab) {
+      function renderCabinet(p, cab, notify) {
         $('c-name').textContent = p.name || 'Tu cuenta';
         $('c-pct').textContent = p.payout_pct + '%';
         $('c-payout').textContent = (cab?.payout_month ?? 0) + '€';
         $('c-done').textContent = cab?.jobs_done_month ?? 0;
+        // Push notifications: show the partner their personal ntfy topic.
+        if (notify && notify.on && notify.topic) {
+          $('c-notify-topic').value = notify.topic;
+          $('c-notify-open').href = (notify.base || 'https://ntfy.sh') + '/' + notify.topic;
+          $('c-notify').classList.remove('hidden');
+        } else {
+          $('c-notify').classList.add('hidden');
+        }
         $('c-availability').value = (p.profile || {}).availability || '';
         cabDates = new Set((p.profile || {}).available_dates || []);
         buildCalendar('c-calendar', cabDates);
@@ -483,6 +501,14 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
           btn.textContent = 'Guardado ✓';
           setTimeout(() => { btn.textContent = 'Guardar'; btn.disabled = false; }, 1500);
         } catch (e) { btn.disabled = false; }
+      });
+
+      $('c-notify-copy').addEventListener('click', () => {
+        const inp = $('c-notify-topic');
+        inp.focus(); inp.select(); try { inp.setSelectionRange(0, 99999); } catch (e) {}
+        navigator.clipboard.writeText(inp.value).catch(() => { try { document.execCommand('copy'); } catch (e) {} });
+        $('c-notify-copy').textContent = 'Copiado ✓';
+        setTimeout(() => { $('c-notify-copy').textContent = 'Copiar'; }, 1500);
       });
 
       load();
