@@ -569,15 +569,19 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           ...opts,
           headers: { 'Content-Type': 'application/json', 'x-admin-token': token(), ...(opts.headers || {}) },
         });
-        if (res.status === 404 && !path.includes('/api/orders/')) {
+        // Parse the body ONCE. A real auth failure returns the plaintext
+        // notFound() body ("Not found") so `data` stays null; a legit API 404
+        // that carries a JSON contract (e.g. {ok:false,reason:'not_found'}) must
+        // NOT wipe the token and kick us to the login screen.
+        let data = null;
+        try { data = await res.json(); } catch { /* non-JSON body */ }
+        if (res.status === 404 && data == null && !path.includes('/api/orders/')) {
           localStorage.removeItem('rl_admin_token');
           showLogin('Token incorrecto');
           throw new Error('unauthorized');
         }
-        // A wrong-token 404 on /api/orders/* returns a plaintext body (not JSON);
-        // never let res.json() throw an uncaught SyntaxError that dead-ends the UI.
-        try { return await res.json(); }
-        catch { return { ok: false, reason: res.ok ? 'bad_response' : 'unauthorized', status: res.status }; }
+        if (data != null) return data;
+        return { ok: false, reason: res.ok ? 'bad_response' : 'unauthorized', status: res.status };
       }
 
       let partners = [];
@@ -1645,29 +1649,38 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       // an await loses the user gesture on Safari (silent failure), so copying
       // happens on the button's OWN click, with a readonly field to select
       // manually and an execCommand fallback.
-      let linkResultN = 0;
+      // Centered modal overlay (not a card injected at the top of the scrollable
+      // tab) so the generated link is impossible to miss on mobile regardless of
+      // scroll position. Copy stays synchronous on the button's OWN click, with a
+      // readonly field + execCommand fallback, or Safari drops the clipboard write.
       function showLinkResult(title, note, link, waText) {
         const wa = 'https://wa.me/?text=' + encodeURIComponent(waText);
-        const cid = 'lr' + (linkResultN++);
-        $('pt-body').insertAdjacentHTML('afterbegin', `
-          <div class="card p-4 border border-brand-accent/40">
+        const ov = document.createElement('div');
+        ov.className = 'fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60';
+        ov.innerHTML = `
+          <div class="card p-5 w-full max-w-md border border-brand-accent/40" role="dialog" aria-modal="true">
             <p class="text-sm text-th-heading font-semibold mb-1">${title}</p>
-            ${note ? `<p class="text-xs text-th-faint mb-2">${note}</p>` : ''}
-            <div class="flex flex-wrap gap-2 items-center mb-2">
-              <input id="${cid}" readonly value="${esc(link)}" class="adm-input flex-1 min-w-0 text-xs" />
-              <button id="${cid}-c" class="btn-secondary text-sm px-4 min-h-[44px]">Copiar</button>
+            ${note ? `<p class="text-xs text-th-faint mb-3">${note}</p>` : ''}
+            <input id="lr-inp" readonly value="${esc(link)}" class="adm-input w-full text-xs mb-3" />
+            <div class="flex flex-wrap gap-2 items-center">
+              <button id="lr-copy" class="btn-primary text-sm px-4 min-h-[44px]">Copiar enlace</button>
+              <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex items-center min-h-[44px]">WhatsApp</a>
+              <button id="lr-close" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Cerrar</button>
             </div>
-            <a href="${wa}" target="_blank" rel="noopener" class="btn-whatsapp text-sm px-4 inline-flex min-h-[44px]">Enviar por WhatsApp</a>
-          </div>`);
-        const inp = $(cid);
+          </div>`;
+        document.body.appendChild(ov);
+        const inp = ov.querySelector('#lr-inp');
         inp.addEventListener('focus', () => inp.select());
-        $(cid + '-c').addEventListener('click', async () => {
+        ov.querySelector('#lr-copy').addEventListener('click', async () => {
           inp.focus(); inp.select(); try { inp.setSelectionRange(0, 99999); } catch (e) {}
           let ok = false;
           try { await navigator.clipboard.writeText(link); ok = true; } catch (e) {}
           if (!ok) { try { ok = document.execCommand('copy'); } catch (e) {} }
           toast(ok ? 'Enlace copiado ✓' : 'Selecciónalo y cópialo a mano', ok);
         });
+        const close = () => ov.remove();
+        ov.querySelector('#lr-close').addEventListener('click', close);
+        ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
       }
 
       $('btn-invite').addEventListener('click', () => busy($('btn-invite'), async () => {
