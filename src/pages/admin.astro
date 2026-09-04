@@ -657,20 +657,27 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       const availOn = (p, dateIso) => !!(p?.profile?.available_dates || []).includes(dateIso);
       const hasCalendar = (p) => Array.isArray(p?.profile?.available_dates) && p.profile.available_dates.length > 0;
       // 'free' = marked available · 'busy' = keeps a calendar but NOT this day
-      // · 'unknown' = never set a calendar (don't cry wolf on every assignment).
-      const availStatus = (p, dayIso) => !dayIso ? 'unknown' : availOn(p, dayIso) ? 'free' : hasCalendar(p) ? 'busy' : 'unknown';
-      const availOptLabel = (x, day) => { const s = availStatus(x, day); return s === 'free' ? ' ✓ libre ese día' : s === 'busy' ? ' ⛔ ocupado ese día' : ''; };
-      // Live warning under the assign dropdown: fires only for a real conflict
-      // (the partner keeps a calendar and this day is not on it).
+      // (hard conflict) · 'nocal' = never set a calendar (soft advisory) ·
+      // 'unknown' = no scheduled date yet.
+      const availStatus = (p, dayIso) => !dayIso ? 'unknown' : availOn(p, dayIso) ? 'free' : hasCalendar(p) ? 'busy' : 'nocal';
+      const availOptLabel = (x, day) => { const s = availStatus(x, day); return s === 'free' ? ' ✓ libre ese día' : s === 'busy' ? ' ⛔ ocupado ese día' : s === 'nocal' ? ' · sin calendario' : ''; };
+      // Live note under the assign dropdown: red hard warning on a real calendar
+      // conflict, softer gold advisory when the partner keeps no calendar.
       function updateAvailWarn() {
         const el = $('d-avail-warn'); if (!el) return;
         const sel = $('d-partner');
         const x = partners.find((p) => p.id === (sel && sel.value));
         const day = current && current.scheduled_at ? current.scheduled_at.slice(0, 10) : null;
-        if (x && day && availStatus(x, day) === 'busy') {
+        const st = x && day ? availStatus(x, day) : 'unknown';
+        if (st === 'busy') {
           el.textContent = '⚠ ' + x.name.split(' ')[0] + ' no marcó este día como libre — puede estar ocupado.';
-          el.classList.remove('hidden');
-        } else el.classList.add('hidden');
+          el.className = 'text-xs text-red-400 mt-1.5';
+        } else if (st === 'nocal') {
+          el.textContent = 'ℹ ' + x.name.split(' ')[0] + ' no mantiene calendario — confirma su disponibilidad.';
+          el.className = 'text-xs text-brand-gold mt-1.5';
+        } else {
+          el.className = 'hidden text-xs mt-1.5';
+        }
       }
 
       function slaPill(o) {

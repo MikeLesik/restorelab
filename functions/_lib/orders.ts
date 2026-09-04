@@ -50,15 +50,24 @@ export interface OrdersEnv {
  * headers are ntfy.sh conventions, harmlessly ignored by generic endpoints.
  * Never throws — notification failure must not fail the order.
  */
+// The ntfy Title is an HTTP header (ByteString / Latin-1). A raw emoji or
+// Cyrillic char there makes the Workers fetch() throw, silently dropping the
+// push. So the header stays a constant ASCII name and the full emoji/UTF-8
+// line rides in the BODY (bodies are UTF-8-safe). Never throws.
+async function ntfyPost(url: string, tags: string, title: string, text: string): Promise<void> {
+  try {
+    await fetch(url, {
+      method: 'POST',
+      headers: { Title: 'restoreLab', Priority: 'high', Tags: tags },
+      body: text ? `${title}\n${text}` : title,
+      signal: AbortSignal.timeout(4000),
+    });
+  } catch { /* best-effort — a failed push must never fail the request */ }
+}
+
 export async function notifyOwner(env: OrdersEnv, title: string, text: string): Promise<void> {
   if (!env.NOTIFY_WEBHOOK) return;
-  try {
-    await fetch(env.NOTIFY_WEBHOOK, {
-      method: 'POST',
-      headers: { Title: title, Priority: 'high', Tags: 'car' },
-      body: text,
-    });
-  } catch { /* best-effort */ }
+  await ntfyPost(env.NOTIFY_WEBHOOK, 'car', title, text);
 }
 
 /** Human label for owner pushes: "RL-O-1A2B · Laura". */
@@ -86,14 +95,7 @@ export async function partnerTopic(partnerId: string): Promise<string> {
 export async function notifyPartner(env: OrdersEnv, partnerId: string | null | undefined, title: string, text: string): Promise<void> {
   if (!env.NOTIFY_WEBHOOK || !partnerId) return;
   const base = (env.NTFY_BASE || 'https://ntfy.sh').replace(/\/+$/, '');
-  try {
-    await fetch(`${base}/${await partnerTopic(partnerId)}`, {
-      method: 'POST',
-      headers: { Title: title, Priority: 'high', Tags: 'wrench' },
-      body: text,
-      signal: AbortSignal.timeout(4000),
-    });
-  } catch { /* best-effort */ }
+  await ntfyPost(`${base}/${await partnerTopic(partnerId)}`, 'wrench', title, text);
 }
 
 // ── Responses ────────────────────────────────────────────────────────────────

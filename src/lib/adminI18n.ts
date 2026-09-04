@@ -1588,6 +1588,7 @@ export const ADMIN_I18N: AdminI18nRow[] = [
 
 export const ADMIN_I18N_TPL: AdminI18nRow[] = [
   { "es": "⚠ {} no marcó este día como libre — puede estar ocupado.", "ru": "⚠ {} не отметил этот день как свободный — возможно, занят.", "en": "⚠ {} hasn't marked this day as free — may be busy." },
+  { "es": "ℹ {} no mantiene calendario — confirma su disponibilidad.", "ru": "ℹ {} не ведёт календарь — уточни его доступность.", "en": "ℹ {} keeps no calendar — confirm their availability." },
   { "es": "⚠ {} no tiene libre ese día. Pulsa Asignar otra vez para hacerlo igualmente.", "ru": "⚠ У {} этот день не свободен. Нажми «Asignar» ещё раз, чтобы назначить всё равно.", "en": "⚠ {} isn't free that day. Press Assign again to assign anyway." },
   {
     "es": "¿Cancelar el pedido {}?",

@@ -226,7 +226,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
 
         <div class="card p-5">
           <h2 class="font-display font-bold text-th-heading mb-1">Días que puedes trabajar</h2>
-          <p class="text-th-faint text-xs mb-3">Mantén tu calendario al día. Te ofrecemos trabajos según los días que marques.</p>
+          <p class="text-th-faint text-xs mb-3">Mantén tu calendario al día. Te ofrecemos trabajos según los días que marques. Se guarda solo al tocar cada día.</p>
           <div id="c-calendar"></div>
           <textarea id="c-availability" rows="2" placeholder="Notas de disponibilidad (horas, coche propio…)" class={`mt-3 ${inputCls}`}></textarea>
           <button id="c-avail-save" class="btn-secondary text-sm px-4 mt-2">Guardar</button>
@@ -289,7 +289,23 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
             const di = b.dataset.day;
             selected.has(di) ? selected.delete(di) : selected.add(di);
             buildCalendar(containerId, selected);
+            // Cabinet calendar autosaves on every tap — the previous "green but
+            // never POSTed" state was silently wiped on the next re-render.
+            if (containerId === 'c-calendar') scheduleAvailSave();
           }));
+      }
+      let availSaveTimer = null;
+      function scheduleAvailSave() {
+        const b = $('c-avail-save');
+        if (b) b.textContent = 'Guardando…';
+        clearTimeout(availSaveTimer);
+        availSaveTimer = setTimeout(() => {
+          fetch('/api/socio/' + token, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: $('c-name').textContent, availability: $('c-availability').value.trim(), available_dates: [...cabDates] }),
+          }).then(() => { if (b) { b.textContent = 'Guardado ✓'; setTimeout(() => { b.textContent = 'Guardar'; }, 1200); } })
+            .catch(() => { if (b) b.textContent = 'Guardar'; });
+        }, 500);
       }
       const token = (location.pathname.match(/^\/socio\/([a-f0-9]{32})$/) || [])[1];
       let uploadKind = null, uploadMulti = false;
