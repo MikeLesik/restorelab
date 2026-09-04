@@ -654,6 +654,23 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       const rcExpired = (p) => !!p?.rc_expiry && p.rc_expiry < new Date().toISOString().slice(0, 10);
       // Partner marked this exact date free in their /socio calendar.
       const availOn = (p, dateIso) => !!(p?.profile?.available_dates || []).includes(dateIso);
+      const hasCalendar = (p) => Array.isArray(p?.profile?.available_dates) && p.profile.available_dates.length > 0;
+      // 'free' = marked available · 'busy' = keeps a calendar but NOT this day
+      // · 'unknown' = never set a calendar (don't cry wolf on every assignment).
+      const availStatus = (p, dayIso) => !dayIso ? 'unknown' : availOn(p, dayIso) ? 'free' : hasCalendar(p) ? 'busy' : 'unknown';
+      const availOptLabel = (x, day) => { const s = availStatus(x, day); return s === 'free' ? ' ✓ libre ese día' : s === 'busy' ? ' ⛔ ocupado ese día' : ''; };
+      // Live warning under the assign dropdown: fires only for a real conflict
+      // (the partner keeps a calendar and this day is not on it).
+      function updateAvailWarn() {
+        const el = $('d-avail-warn'); if (!el) return;
+        const sel = $('d-partner');
+        const x = partners.find((p) => p.id === (sel && sel.value));
+        const day = current && current.scheduled_at ? current.scheduled_at.slice(0, 10) : null;
+        if (x && day && availStatus(x, day) === 'busy') {
+          el.textContent = '⚠ ' + x.name.split(' ')[0] + ' no marcó este día como libre — puede estar ocupado.';
+          el.classList.remove('hidden');
+        } else el.classList.add('hidden');
+      }
 
       function slaPill(o) {
         // The <=1h quote promise made visible: minutes on new leads.
@@ -1341,10 +1358,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
                 <div class="flex gap-2">
                   <select id="d-partner" class="adm-input">
                     <option value="">—</option>
-                    ${activeP.map((x) => { const day = o.scheduled_at ? o.scheduled_at.slice(0, 10) : null; return `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${day ? (availOn(x, day) ? ' ✓ libre ese día' : ' · sin marcar ese día') : ''}${match(x) ? '' : ' ⚠ fuera de skill/zona'}${rcExpired(x) ? ' ⛔ póliza vencida' : ''}</option>`; }).join('')}
+                    ${activeP.map((x) => { const day = o.scheduled_at ? o.scheduled_at.slice(0, 10) : null; return `<option value="${esc(x.id)}" ${x.id === o.partner_id ? 'selected' : ''}>${esc(x.name)}${availOptLabel(x, day)}${match(x) ? '' : ' ⚠ fuera de skill/zona'}${rcExpired(x) ? ' ⛔ póliza vencida' : ''}</option>`; }).join('')}
                   </select>
                   <button id="d-assign" class="btn-secondary text-sm px-3">${o.status === 'booked' ? 'Asignar' : 'Guardar'}</button>
                 </div>
+                <p id="d-avail-warn" class="hidden text-xs text-red-400 mt-1.5"></p>
               </div>
               <div>
                 <label class="text-xs text-th-faint block mb-1">Agendar</label>
@@ -1549,14 +1567,18 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (d.ok) { toast('Pedido eliminado'); closeDetail(); }
           else toast('Error: ' + (d.reason || ''), false);
         }));
+        $('d-partner')?.addEventListener('change', () => { updateAvailWarn(); const b = $('d-assign'); if (b) b.dataset.ack = ''; });
+        updateAvailWarn();
         $('d-assign')?.addEventListener('click', () => busy($('d-assign'), async () => {
-          const body = { partner_id: $('d-partner').value || null };
-          const chosen = partners.find((x) => x.id === $('d-partner').value);
+          const btn = $('d-assign');
+          const pid = $('d-partner').value;
+          const body = { partner_id: pid || null };
+          const chosen = partners.find((x) => x.id === pid);
           if (chosen && rcExpired(chosen)) {
             toast('Póliza RC de ' + chosen.name.split(' ')[0] + ' vencida — renueva antes de asignar', false);
             return;
           }
-          if ($('d-partner').value && current.status === 'booked') {
+          if (pid && current.status === 'booked') {
             // A mobile job without address+date is undispatchable — hard gate.
             const missing = !current.address ? 'd-addr' : !current.scheduled_at ? 'd-sched' : null;
             if (missing) {
@@ -1566,6 +1588,16 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               return;
             }
             body.status = 'assigned';
+          }
+          // Availability conflict: the partner keeps a calendar and did NOT mark
+          // this day free. Warn once (the notification the owner asked for) and
+          // require a second click to assign anyway — Mike may know they're free.
+          const day = current.scheduled_at ? current.scheduled_at.slice(0, 10) : null;
+          if (chosen && day && availStatus(chosen, day) === 'busy' && btn.dataset.ack !== '1') {
+            btn.dataset.ack = '1';
+            updateAvailWarn();
+            toast('⚠ ' + chosen.name.split(' ')[0] + ' no tiene libre ese día. Pulsa Asignar otra vez para hacerlo igualmente.', false);
+            return;
           }
           const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
           if (d.ok) { toast('Partner guardado ✓'); openDetail(current.id, false); }
