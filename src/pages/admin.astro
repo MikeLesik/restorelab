@@ -11,6 +11,7 @@ import { TRANSITIONS, STATUSES } from '@/lib/orderPipeline';
 import { areaProfiles } from '@/lib/areaProfiles';
 import { WHATSAPP_NUMBER, SITE_URL } from '@/lib/constants';
 import { DEPOSIT_MIN_QUOTE_EUR, ADDON_PARTNER_PCT } from '@/lib/unitEconomics';
+import { ADMIN_I18N, ADMIN_I18N_TPL } from '@/lib/adminI18n';
 import PhoneField from '@/components/PhoneField.astro';
 
 import en from '@/content/en.json';
@@ -83,7 +84,14 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <p class="font-display font-bold text-th-heading text-xl">
             restore<span class="text-brand-accent">Lab</span>
           </p>
-          <button id="btn-refresh" class="btn-secondary text-sm px-4 min-h-[44px]">↻ Actualizar</button>
+          <div class="flex items-center gap-2">
+            <div id="lang-switch" class="flex rounded-lg border border-th-border/15 overflow-hidden text-xs font-medium" role="group" aria-label="Panel language" data-no-i18n>
+              <button type="button" data-lang="ru" class="px-2.5 py-2 min-h-[40px] text-th-muted">RU</button>
+              <button type="button" data-lang="en" class="px-2.5 py-2 min-h-[40px] text-th-muted border-l border-th-border/15">EN</button>
+              <button type="button" data-lang="es" class="px-2.5 py-2 min-h-[40px] text-th-muted border-l border-th-border/15">ES</button>
+            </div>
+            <button id="btn-refresh" class="btn-secondary text-sm px-4 min-h-[44px]">↻ Actualizar</button>
+          </div>
         </div>
         <div class="flex rounded-xl border border-th-border/15 overflow-hidden text-sm">
           <button id="tab-pipeline" class="flex-1 text-center py-2.5 min-h-[44px] bg-brand-accent/15 text-brand-accent">Pedidos</button>
@@ -461,7 +469,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       @media (min-width: 640px) { #filters .adm-input { width: auto; } }
     </style>
 
-    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT }}>
+    <script define:vars={{ TRANSITIONS, STATUSES, PRICING, AREAS, WA: WHATSAPP_NUMBER, SITE_URL, DEPOSIT_MIN: DEPOSIT_MIN_QUOTE_EUR, ADDON_PCT: ADDON_PARTNER_PCT, I18N: ADMIN_I18N, I18N_TPL: ADMIN_I18N_TPL }}>
       // ── Vocabulary ────────────────────────────────────────────────────────
       const STATUS_ES = {
         new: 'Por presupuestar', quoted: 'Presupuesto enviado', booked: 'Confirmado',
@@ -2141,6 +2149,100 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           $('pipeline-updated').textContent = m >= 1 ? `· actualizado hace ${m}m` : '';
         }
       }, 30000);
+
+      // Try to load straight away: behind Cloudflare Access the CF_Authorization
+      // cookie authorises the API with no token, so no prompt is shown. If the
+      // API answers 401/404 (no Access session and no token) the login gate
+      // appears (see api()'s handler) — the x-admin-token stays as a fallback.
+      // ── Panel i18n (RU / EN / ES) ─────────────────────────────────────────
+      // The admin source is Spanish; we translate the LIVE DOM by exact text
+      // match (I18N) plus a few {} wildcard templates (I18N_TPL) for the
+      // interpolated strings. The Spanish original is stashed per node so
+      // switching is fully reversible. Client-facing WhatsApp/lifecycle copy is
+      // never in the dictionary, so it always stays in the ORDER's language.
+      const I18N_LANGS = ['es', 'ru', 'en'];
+      const i18nExact = { ru: new Map(), en: new Map() };
+      for (const r of I18N) { i18nExact.ru.set(r.es, r.ru); i18nExact.en.set(r.es, r.en); }
+      const i18nTpl = I18N_TPL.map((r) => ({
+        re: new RegExp('^' + r.es.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\\{\\\}/g, '(.*?)') + '$'),
+        ru: r.ru.split('{}'), en: r.en.split('{}'),
+      }));
+      function i18nStr(es, lang) {
+        if (lang === 'es') return es;
+        const hit = i18nExact[lang].get(es);
+        if (hit != null) return hit;
+        for (const t of i18nTpl) {
+          const m = es.match(t.re);
+          if (!m) continue;
+          const parts = t[lang];
+          if (parts.length !== m.length) return es; // arity mismatch → keep ES
+          let out = parts[0];
+          for (let i = 1; i < parts.length; i++) out += m[i] + parts[i];
+          return out;
+        }
+        return es;
+      }
+      let i18nLang = localStorage.getItem('rl_admin_lang') || 'es';
+      if (!I18N_LANGS.includes(i18nLang)) i18nLang = 'es';
+      const I18N_SKIP = new Set(['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION']);
+      const I18N_ATTRS = ['placeholder', 'title', 'aria-label'];
+      function i18nTextNode(n) {
+        const raw = n.nodeValue;
+        if (!raw || !raw.trim()) return;
+        let es = n.__es;
+        if (es === undefined) { es = raw.trim(); n.__es = es; }
+        const lead = raw.slice(0, raw.length - raw.trimStart().length);
+        const tail = raw.slice(raw.trimEnd().length);
+        const next = lead + i18nStr(es, i18nLang) + tail;
+        if (n.nodeValue !== next) n.nodeValue = next;
+      }
+      function i18nEl(el) {
+        for (const a of I18N_ATTRS) {
+          if (!el.hasAttribute || !el.hasAttribute(a)) continue;
+          const k = '__es_' + a;
+          let es = el[k];
+          if (es === undefined) { es = (el.getAttribute(a) || '').trim(); el[k] = es; }
+          if (es) el.setAttribute(a, i18nStr(es, i18nLang));
+        }
+      }
+      function i18nWalk(root) {
+        if (!root) return;
+        if (root.nodeType === 3) { if (!(root.parentNode && root.parentNode.closest && root.parentNode.closest('[data-no-i18n]'))) i18nTextNode(root); return; }
+        if (root.nodeType !== 1 || I18N_SKIP.has(root.tagName) || (root.closest && root.closest('[data-no-i18n]'))) return;
+        i18nEl(root);
+        if (root.querySelectorAll) root.querySelectorAll('*').forEach((e) => { if (!I18N_SKIP.has(e.tagName) && !(e.closest && e.closest('[data-no-i18n]'))) i18nEl(e); });
+        const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode(n) {
+            const p = n.parentNode;
+            if (!p || I18N_SKIP.has(p.tagName) || (p.closest && p.closest('[data-no-i18n]'))) return NodeFilter.FILTER_REJECT;
+            return n.nodeValue && n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+          },
+        });
+        const nodes = [];
+        for (let n = tw.nextNode(); n; n = tw.nextNode()) nodes.push(n);
+        nodes.forEach(i18nTextNode);
+      }
+      const i18nObserver = new MutationObserver((muts) => {
+        if (i18nLang === 'es') return;
+        for (const m of muts) m.addedNodes && m.addedNodes.forEach(i18nWalk);
+      });
+      function i18nSetLang(lang) {
+        if (!I18N_LANGS.includes(lang)) lang = 'es';
+        i18nLang = lang;
+        localStorage.setItem('rl_admin_lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+        i18nWalk(document.body); // re-derives from the stashed ES originals each time
+        document.querySelectorAll('#lang-switch [data-lang]').forEach((b) => {
+          const on = b.dataset.lang === lang;
+          b.classList.toggle('bg-brand-accent/15', on);
+          b.classList.toggle('text-brand-accent', on);
+          b.classList.toggle('text-th-muted', !on);
+        });
+      }
+      document.querySelectorAll('#lang-switch [data-lang]').forEach((b) =>
+        b.addEventListener('click', () => i18nSetLang(b.dataset.lang)));
+      i18nObserver.observe(document.body, { childList: true, subtree: true });
+      i18nSetLang(i18nLang); // paint the stored language (and button state) on load
 
       // Try to load straight away: behind Cloudflare Access the CF_Authorization
       // cookie authorises the API with no token, so no prompt is shown. If the
