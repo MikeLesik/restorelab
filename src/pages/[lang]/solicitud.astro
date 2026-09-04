@@ -196,6 +196,7 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
     </section>
   </div>
 
+  <script is:inline src="/address-autocomplete.js"></script>
   <script define:vars={{ wa, PKG, AREAS, SIZES_DATA, UI: ui, WA_TEMPLATE: t.wa_messages.intake_success, LANG: lang }}>
     const $ = (id) => document.getElementById(id);
     const form = $('intake-form');
@@ -394,5 +395,8 @@ const inputCls = 'w-full rounded-xl border border-th-border/15 bg-th-surface/[0.
       $('intake-success').classList.remove('hidden');
       $('intake-success').scrollIntoView({ block: 'center', behavior: 'smooth' });
     });
+
+    // Address autocomplete (CartoCiudad via /api/geocode, same-origin).
+    if (window.RLAddress) RLAddress.attach($('intake-address'));
   </script>
 </BaseLayout>
