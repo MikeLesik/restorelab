@@ -19,11 +19,17 @@
 
 import { json, inert, notFound, sha256hex, logEvent, addonsTotal } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
+import { chargeOutstanding } from '../../_lib/stripe';
+import type { StripeEnv } from '../../_lib/stripe';
 import { ADDON_PARTNER_PCT } from '../../../src/lib/unitEconomics';
 
 // 'booked' included so a job assigned but not yet flipped to 'assigned' still
 // opens (the partner can work it straight from their cabinet).
 const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc'];
+// The card stays READABLE through payment so the partner can collect on site
+// and watch it flip to "paid" (the poll needs GET to survive awaiting_payment
+// and the paid moment). Write actions (accept/done) stay gated on ACTIVE.
+const ACTIVE_READ = ['booked', 'assigned', 'in_progress', 'qc', 'awaiting_payment', 'paid'];
 
 async function findByToken(env: OrdersEnv, token: string) {
   if (!/^[a-f0-9]{32}$/.test(token)) return null;
@@ -41,7 +47,7 @@ export async function onRequestGet(context: {
   const { env, params } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
   const order = await findByToken(env, params.token);
-  if (!order || !ACTIVE.includes(order.status as string)) return notFound();
+  if (!order || !ACTIVE_READ.includes(order.status as string)) return notFound();
 
   const photos: string[] = JSON.parse((order.photos as string) || '[]');
 
@@ -111,7 +117,7 @@ export async function onRequestGet(context: {
 
 export async function onRequestPost(context: {
   request: Request;
-  env: OrdersEnv;
+  env: StripeEnv;
   params: { token: string };
 }): Promise<Response> {
   const { request, env, params } = context;
@@ -167,5 +173,17 @@ export async function onRequestPost(context: {
   if (!hops.length && notes) {
     await logEvent(db, order.id as string, 'partner_note', { partner_notes: notes });
   }
-  return json({ ok: true, status });
+
+  // Auto-advance to on-site payment so the partner collects BEFORE leaving:
+  // once the work reaches QC, create the client's full payment link and move to
+  // awaiting_payment (online only — cash orders stay in QC for Mike). Falls back
+  // to QC silently if Stripe is inert or nothing is chargeable, so the partner
+  // still gets the "sent to QC" screen. Mike's photo review becomes an audit.
+  let payment: { url?: string; amount_eur?: number } | null = null;
+  if (status === 'qc' && order.payment_pref !== 'cash') {
+    const fresh = await db.prepare('SELECT * FROM orders WHERE id = ?').bind(order.id).first<Record<string, unknown>>();
+    const r = await chargeOutstanding(env, fresh as Record<string, unknown>, 'partner_done');
+    if (r.ok) { status = (r.status as OrderStatus) || status; payment = { url: r.url, amount_eur: r.amount_eur }; }
+  }
+  return json({ ok: true, status, payment });
 }

@@ -67,8 +67,9 @@ export async function onRequestGet(context: {
     const ACCEPTED = ['awaiting_payment', 'paid', 'done'];
     // Any working order the partner is on, including 'booked' — the moment
     // Mike assigns them (partner_id set) it shows, even before the status
-    // flips to 'assigned'.
-    const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc'];
+    // flips to 'assigned'. 'awaiting_payment' keeps the job visible while the
+    // partner collects on site; it drops off once 'paid' (their part is done).
+    const ACTIVE = ['booked', 'assigned', 'in_progress', 'qc', 'awaiting_payment'];
     const pctOf = (o: Record<string, unknown>) =>
       (Number(o.payout_pct) || Number(p.payout_pct) || DEFAULT_PAYOUT_PCT) / 100;
     // Base % on the quote + the higher add-on % on on-site upsells.

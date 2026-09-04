@@ -10,7 +10,9 @@
 import { json, inert, notFound, randomHex128, sha256hex, logEvent } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
 
-const WORKABLE = ['booked', 'assigned', 'in_progress', 'qc'];
+// awaiting_payment included so the partner can re-open the card from the
+// cabinet to finish collecting on site (show the pay link, watch it go paid).
+const WORKABLE = ['booked', 'assigned', 'in_progress', 'qc', 'awaiting_payment'];
 
 export async function onRequestPost(context: {
   request: Request;

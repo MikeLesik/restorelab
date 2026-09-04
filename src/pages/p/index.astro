@@ -145,6 +145,32 @@ const AREA_NAMES = Object.fromEntries(
         <p class="text-th-muted text-sm mb-4">Revisaremos las fotos. Si todo está bien, no tienes que hacer nada más.</p>
         <button id="j-finished-back" class="btn-secondary w-full min-h-[44px] text-sm">← Volver a mis trabajos</button>
       </div>
+
+      <div id="j-cobro" class="hidden card p-6">
+        <h2 class="font-display font-bold text-th-heading text-xl mb-1">Cobro en sitio</h2>
+        <p id="j-cobro-amount" class="text-sm text-th-muted mb-4"></p>
+
+        <div id="j-cobro-pay" class="hidden">
+          <p class="text-xs text-th-muted mb-2">Muéstrale el enlace al cliente para que pague ahora (tarjeta o Bizum). No te vayas hasta ver «Cobrado ✓».</p>
+          <a id="j-cobro-open" href="#" target="_blank" rel="noopener" class="btn-whatsapp w-full mb-2">Abrir enlace de pago →</a>
+          <button id="j-cobro-copy" class="btn-secondary w-full text-sm mb-3">Copiar enlace</button>
+        </div>
+
+        <button id="j-cobro-gen" class="hidden btn-primary w-full mb-3">Generar enlace de pago</button>
+        <p id="j-cobro-genmsg" class="hidden text-sm text-red-400 mb-3"></p>
+
+        <div id="j-cobro-wait" class="hidden items-center gap-2 text-sm text-th-muted mb-4">
+          <span class="inline-block w-4 h-4 rounded-full border-2 border-th-border/30 border-t-brand-accent animate-spin"></span>
+          Esperando el pago del cliente…
+        </div>
+
+        <div id="j-cobro-ok" class="hidden text-center mb-4">
+          <p class="text-green-400 font-display font-bold text-2xl mb-1">✓ Cobrado</p>
+          <p class="text-th-muted text-sm">Pago confirmado. Ya puedes irte del sitio.</p>
+        </div>
+
+        <button id="j-cobro-back" class="btn-secondary w-full min-h-[44px] text-sm">← Volver a mis trabajos</button>
+      </div>
     </div>
 
     <input id="j-file" type="file" accept="image/*" capture="environment" class="hidden" />
@@ -165,6 +191,9 @@ const AREA_NAMES = Object.fromEntries(
         if (!d.ok) { $('job-error').classList.remove('hidden'); return; }
         const j = d.job;
         JOB = j;
+
+        // On-site payment stage: a distinct focused screen, not the work view.
+        if (j.status === 'awaiting_payment' || j.status === 'paid') { renderCobro(j); return; }
 
         $('j-code').textContent = j.code;
         $('j-status').textContent = j.status === 'qc' ? 'En control de calidad' : j.status === 'in_progress' ? 'En curso' : j.status === 'booked' ? 'Confirmado' : 'Asignado';
@@ -395,8 +424,10 @@ const AREA_NAMES = Object.fromEntries(
           $('j-msg').classList.remove('hidden');
           return;
         }
-        $('job').classList.add('hidden');
-        $('j-finished').classList.remove('hidden');
+        // Auto-advanced to on-site payment → go collect before leaving.
+        // Otherwise (cash order / Stripe inert) it went to QC as before.
+        if (d.status === 'awaiting_payment') { load(); }
+        else { $('job').classList.add('hidden'); $('j-finished').classList.remove('hidden'); }
       });
 
       // No browser chrome in the standalone PWA — give an explicit way back to
@@ -406,6 +437,77 @@ const AREA_NAMES = Object.fromEntries(
         else if (history.length > 1) history.back();
         else location.href = '/socio';
       });
+
+      // ── On-site payment (cobro) ───────────────────────────────────────────
+      // After "Trabajo terminado" the order auto-advances to awaiting_payment;
+      // this screen shows the client's pay link and POLLS the job until Stripe's
+      // webhook flips it to "paid", then tells the partner they can leave.
+      let pollTimer = null;
+      function stopPoll() { if (pollTimer) { clearInterval(pollTimer); pollTimer = null; } }
+      function startPoll() {
+        if (pollTimer) return;
+        pollTimer = setInterval(async () => {
+          try {
+            const d = await (await fetch('/api/job/' + token)).json();
+            if (d.ok && d.job && (d.job.status === 'paid' || Number(d.job.outstanding_eur) <= 0)) {
+              JOB = d.job; renderCobro(d.job);
+            }
+          } catch (e) { /* keep polling */ }
+        }, 6000);
+      }
+      function goBack() {
+        stopPoll();
+        if (document.referrer && /\/socio\/[a-f0-9]{32}/.test(document.referrer)) location.href = document.referrer;
+        else if (history.length > 1) history.back();
+        else location.href = '/socio';
+      }
+      function renderCobro(j) {
+        $('j-loading').classList.add('hidden');
+        $('job').classList.add('hidden');
+        $('j-finished').classList.add('hidden');
+        $('job-error').classList.add('hidden');
+        $('j-cobro').classList.remove('hidden');
+        const show = (id, on) => $(id).classList.toggle('hidden', !on);
+        const out = Number(j.outstanding_eur) || 0;
+        const paid = j.status === 'paid' || out <= 0;
+        $('j-cobro-amount').textContent = paid
+          ? `Total ${j.total_eur}€ — cobrado.`
+          : (Number(j.paid_eur) > 0
+              ? `Total ${j.total_eur}€ · pagado ${j.paid_eur}€ · falta ${out}€`
+              : `El cliente paga ${out}€ (incluye extras).`);
+        if (paid) {
+          stopPoll();
+          show('j-cobro-ok', true); show('j-cobro-wait', false);
+          show('j-cobro-pay', false); show('j-cobro-gen', false); show('j-cobro-genmsg', false);
+          return;
+        }
+        show('j-cobro-ok', false);
+        $('j-cobro-wait').classList.remove('hidden'); $('j-cobro-wait').classList.add('flex');
+        if (j.payment_link) {
+          $('j-cobro-open').href = j.payment_link;
+          show('j-cobro-pay', true); show('j-cobro-gen', false);
+        } else {
+          show('j-cobro-pay', false); show('j-cobro-gen', true);
+        }
+        startPoll();
+      }
+      $('j-cobro-copy').addEventListener('click', () => {
+        navigator.clipboard.writeText($('j-cobro-open').href);
+        $('j-cobro-copy').textContent = 'Copiado ✓';
+        setTimeout(() => { $('j-cobro-copy').textContent = 'Copiar enlace'; }, 1500);
+      });
+      $('j-cobro-gen').addEventListener('click', async () => {
+        $('j-cobro-gen').disabled = true;
+        const old = $('j-cobro-gen').textContent; $('j-cobro-gen').textContent = 'Generando…';
+        $('j-cobro-genmsg').classList.add('hidden');
+        try {
+          const d = await (await fetch('/api/job/' + token + '/pay-link', { method: 'POST' })).json();
+          if (d.ok && d.url && JOB) { JOB.payment_link = d.url; renderCobro(JOB); }
+          else { $('j-cobro-genmsg').textContent = 'No se pudo generar el cobro (' + (d.reason || '') + ').'; $('j-cobro-genmsg').classList.remove('hidden'); }
+        } catch (e) { $('j-cobro-genmsg').textContent = 'Error de red. Inténtalo otra vez.'; $('j-cobro-genmsg').classList.remove('hidden'); }
+        $('j-cobro-gen').disabled = false; $('j-cobro-gen').textContent = old;
+      });
+      $('j-cobro-back').addEventListener('click', goBack);
 
       load();
     </script>
