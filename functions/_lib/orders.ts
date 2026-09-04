@@ -58,6 +58,19 @@ export async function notifyOwner(env: OrdersEnv, title: string, text: string): 
   } catch { /* best-effort */ }
 }
 
+/** Human label for owner pushes: "RL-O-1A2B · Laura". */
+export function orderLabel(o: Record<string, unknown>): string {
+  const name = String(o.client_name || '').split(' ')[0];
+  return `${o.code || o.id}${name ? ' · ' + name : ''}`;
+}
+
+/** Spanish status labels for owner pushes (server-side; not the client i18n). */
+export const STATUS_LABEL_ES: Record<string, string> = {
+  new: 'Nuevo', quoted: 'Presupuestado', booked: 'Confirmado', assigned: 'Asignado',
+  in_progress: 'En curso', qc: 'Control calidad', awaiting_payment: 'A cobrar',
+  paid: 'Pagado', done: 'Cerrado', cancelled: 'Cancelado',
+};
+
 // ── Responses ────────────────────────────────────────────────────────────────
 
 export const json = (body: unknown, status = 200): Response =>

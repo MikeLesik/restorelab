@@ -11,7 +11,7 @@
  * order's event log). Inert until STRIPE_WEBHOOK_SECRET is set.
  */
 
-import { json, inert, logEvent, safeEqual, addonsTotal, TRANSITIONS } from '../../_lib/orders';
+import { json, inert, logEvent, safeEqual, addonsTotal, TRANSITIONS, notifyOwner, orderLabel } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus, D1Database } from '../../_lib/orders';
 
 interface StripeEnv extends OrdersEnv {
@@ -44,6 +44,7 @@ async function alreadyProcessed(db: D1Database, orderId: string, sessionId: stri
 export async function onRequestPost(context: {
   request: Request;
   env: StripeEnv;
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env } = context;
   if (!env.STRIPE_WEBHOOK_SECRET) return inert('stripe_webhook_not_configured');
@@ -109,5 +110,7 @@ export async function onRequestPost(context: {
     ...(advance ? { status: { from, to: 'paid' } } : {}),
   });
 
+  context.waitUntil(notifyOwner(env, `💶 Pago recibido ${orderLabel(order)}`,
+    `${amountEur}€${advance ? ' · PAGADO ✓' : covered ? '' : ' (parcial)'}`));
   return json({ ok: true, paid_eur: newPaid, covered, advanced: !!advance });
 }

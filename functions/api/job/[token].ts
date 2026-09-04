@@ -17,7 +17,7 @@
  *                                    partner notes in the event.
  */
 
-import { json, inert, notFound, sha256hex, logEvent, addonsTotal } from '../../_lib/orders';
+import { json, inert, notFound, sha256hex, logEvent, addonsTotal, notifyOwner, orderLabel, STATUS_LABEL_ES } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { chargeOutstanding } from '../../_lib/stripe';
 import type { StripeEnv } from '../../_lib/stripe';
@@ -119,6 +119,7 @@ export async function onRequestPost(context: {
   request: Request;
   env: StripeEnv;
   params: { token: string };
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env, params } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
@@ -137,6 +138,7 @@ export async function onRequestPost(context: {
       const ts = new Date().toISOString();
       await db.prepare('UPDATE orders SET accepted_at = ? WHERE id = ?').bind(ts, order.id).run();
       await logEvent(db, order.id as string, 'partner_accepted', {});
+      context.waitUntil(notifyOwner(env, `✅ Partner aceptó ${orderLabel(order)}`, ''));
     }
     return json({ ok: true, accepted_at: order.accepted_at || new Date().toISOString() });
   }
@@ -147,6 +149,7 @@ export async function onRequestPost(context: {
     const text = typeof b.text === 'string' ? b.text.trim().slice(0, 800) : '';
     if (!text) return json({ ok: false, reason: 'empty' }, 400);
     await logEvent(db, order.id as string, 'partner_suggested_extra', { text, by: 'partner' });
+    context.waitUntil(notifyOwner(env, `🔧 Extra propuesto ${orderLabel(order)}`, text));
     return json({ ok: true });
   }
   if (b.action !== 'done') return json({ ok: false, reason: 'bad_action' }, 400);
@@ -185,5 +188,7 @@ export async function onRequestPost(context: {
     const r = await chargeOutstanding(env, fresh as Record<string, unknown>, 'partner_done');
     if (r.ok) { status = (r.status as OrderStatus) || status; payment = { url: r.url, amount_eur: r.amount_eur }; }
   }
+  context.waitUntil(notifyOwner(env, `🏁 Partner terminó ${orderLabel(order)}`,
+    `→ ${STATUS_LABEL_ES[status] || status}${payment ? ` · a cobrar ${payment.amount_eur}€ en sitio` : ''}`));
   return json({ ok: true, status, payment });
 }

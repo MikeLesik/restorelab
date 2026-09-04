@@ -9,6 +9,7 @@
 
 import {
   json, inert, notFound, adminAuthed, shapeOrder, logEvent, TRANSITIONS,
+  notifyOwner, orderLabel, STATUS_LABEL_ES,
 } from '../../_lib/orders';
 import type { OrdersEnv, OrderStatus } from '../../_lib/orders';
 import { fireStatusHooks } from '../../_lib/wa';
@@ -112,6 +113,7 @@ export async function onRequestPatch(context: {
   request: Request;
   env: OrdersEnv;
   params: { id: string };
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env, params } = context;
   if (!(await adminAuthed(request, env))) return notFound();
@@ -225,5 +227,16 @@ export async function onRequestPatch(context: {
     await fireStatusHooks(db, env, updated as Record<string, unknown>, (changed.status as any).to);
   }
 
-  return json({ ok: true, order: shapeOrder(updated as Record<string, unknown>) });
+  // Owner push (ntfy) for admin-cabinet events. Assignment first (most useful),
+  // otherwise the status transition. Inert until NOTIFY_WEBHOOK is set.
+  const u = updated as Record<string, unknown>;
+  if (changed.partner_id) {
+    const pn = (await db.prepare('SELECT name FROM partners WHERE id = ?').bind(changed.partner_id).first<{ name: string }>())?.name || '';
+    context.waitUntil(notifyOwner(env, `🧑‍🔧 ${orderLabel(u)} → ${pn.split(' ')[0]}`, `Asignado · ${STATUS_LABEL_ES[u.status as string] || u.status}`));
+  } else if (changed.status) {
+    const s = changed.status as { from: string; to: string };
+    context.waitUntil(notifyOwner(env, `🔄 ${orderLabel(u)}`, `${STATUS_LABEL_ES[s.from] || s.from} → ${STATUS_LABEL_ES[s.to] || s.to}`));
+  }
+
+  return json({ ok: true, order: shapeOrder(u) });
 }

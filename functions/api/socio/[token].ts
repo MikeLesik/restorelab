@@ -10,7 +10,7 @@
  *                            Mike's activation); active partners can edit.
  */
 
-import { json, inert, notFound, sha256hex, addonsTotal } from '../../_lib/orders';
+import { json, inert, notFound, sha256hex, addonsTotal, notifyOwner } from '../../_lib/orders';
 import type { OrdersEnv } from '../../_lib/orders';
 import { DEFAULT_PAYOUT_PCT, ADDON_PARTNER_PCT } from '../../../src/lib/unitEconomics';
 
@@ -98,6 +98,7 @@ export async function onRequestPost(context: {
   request: Request;
   env: OrdersEnv;
   params: { token: string };
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env, params } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
@@ -152,5 +153,21 @@ export async function onRequestPost(context: {
   sets.push('registered_at = COALESCE(registered_at, ?)'); binds.push(new Date().toISOString());
 
   await db.prepare(`UPDATE partners SET ${sets.join(', ')} WHERE id = ?`).bind(...binds, p.id).run();
+
+  // If the partner just updated their calendar and an already-assigned job now
+  // falls on a day they did NOT keep free, ping the owner to reassign/reagendar.
+  if (b.available_dates !== undefined && Array.isArray(profile.available_dates)) {
+    const free = new Set(profile.available_dates as string[]);
+    const jobs = await db
+      .prepare("SELECT code, scheduled_at FROM orders WHERE partner_id = ? AND status IN ('booked','assigned','in_progress') AND scheduled_at IS NOT NULL")
+      .bind(p.id)
+      .all();
+    for (const o of ((jobs.results || []) as Array<{ code: string; scheduled_at: string }>)) {
+      const day = String(o.scheduled_at).slice(0, 10);
+      if (!free.has(day)) {
+        context.waitUntil(notifyOwner(env, `📅 ${String(name).split(' ')[0]} ya no tiene libre ${day}`, `Tiene ${o.code} ese día — reasignar o reagendar`));
+      }
+    }
+  }
   return json({ ok: true, status: newStatus, first: curStatus === 'invited' });
 }

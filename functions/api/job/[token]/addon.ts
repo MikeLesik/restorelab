@@ -8,7 +8,7 @@
  * Allowed while the job is workable (booked → qc).
  */
 
-import { json, inert, notFound, sha256hex, logEvent, addonsTotal } from '../../../_lib/orders';
+import { json, inert, notFound, sha256hex, logEvent, addonsTotal, notifyOwner, orderLabel } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
 import es from '../../../../src/content/es.json';
 
@@ -29,6 +29,7 @@ export async function onRequestPost(context: {
   request: Request;
   env: OrdersEnv;
   params: { token: string };
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env, params } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
@@ -56,6 +57,7 @@ export async function onRequestPost(context: {
       const price = addonPrice(item, order.size);
       list.push({ slug: item.slug, name: item.name, price_eur: price });
       await logEvent(db, order.id as string, 'addon_added', { slug, price_eur: price, by: 'partner' });
+      context.waitUntil(notifyOwner(env, `➕ Extra vendido ${orderLabel(order)}`, `${item.name} · ${price}€`));
     }
   } else if (b.action === 'remove') {
     const before = list.length;

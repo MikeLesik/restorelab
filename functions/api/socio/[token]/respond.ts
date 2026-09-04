@@ -8,7 +8,7 @@
  * the decline is logged for the admin to see.
  */
 
-import { json, inert, notFound, sha256hex, logEvent } from '../../../_lib/orders';
+import { json, inert, notFound, sha256hex, logEvent, notifyOwner } from '../../../_lib/orders';
 import type { OrdersEnv } from '../../../_lib/orders';
 
 const OFFERED = ['booked', 'assigned'];
@@ -17,6 +17,7 @@ export async function onRequestPost(context: {
   request: Request;
   env: OrdersEnv;
   params: { token: string };
+  waitUntil(p: Promise<unknown>): void;
 }): Promise<Response> {
   const { request, env, params } = context;
   if (!env.ORDERS_DB) return inert('orders_db_not_configured');
@@ -45,6 +46,7 @@ export async function onRequestPost(context: {
     if (!order.accepted_at) {
       await db.prepare('UPDATE orders SET accepted_at = ? WHERE id = ?').bind(new Date().toISOString(), order.id).run();
       await logEvent(db, order.id as string, 'partner_accepted', { via: 'cabinet' });
+      context.waitUntil(notifyOwner(env, `✅ ${String(partner.name).split(' ')[0]} aceptó ${code}`, ''));
     }
     return json({ ok: true, accepted: true });
   }
@@ -56,6 +58,7 @@ export async function onRequestPost(context: {
       .bind(order.id)
       .run();
     await logEvent(db, order.id as string, 'partner_declined', { partner_id: partner.id, partner_name: partner.name });
+    context.waitUntil(notifyOwner(env, `❌ ${partner.name} rechazó ${code}`, 'Reasignar a otro partner'));
     return json({ ok: true, declined: true });
   }
 
