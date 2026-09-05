@@ -10,6 +10,28 @@
     });
   }
 
+  // The --th-* tokens are channel numbers meant for rgb(... / alpha) overlays,
+  // NOT solid colors — using them directly made the dropdown transparent. Inject
+  // a one-time theme-aware stylesheet with an OPAQUE background instead.
+  var styleInjected = false;
+  function ensureStyle() {
+    if (styleInjected) return;
+    styleInjected = true;
+    var css =
+      '.rl-ac-box{background:#0d0d1a;border:1px solid rgba(140,150,165,.28)}' +
+      '.rl-ac-item{color:#f0f2f7}.rl-ac-sub{color:#8a93a0}' +
+      ':root[data-theme="light"] .rl-ac-box{background:#fff;border-color:rgba(0,0,0,.12)}' +
+      ':root[data-theme="light"] .rl-ac-item{color:#0d0d1a}:root[data-theme="light"] .rl-ac-sub{color:#666}' +
+      '@media (prefers-color-scheme: light){' +
+      ':root:not([data-theme="dark"]) .rl-ac-box{background:#fff;border-color:rgba(0,0,0,.12)}' +
+      ':root:not([data-theme="dark"]) .rl-ac-item{color:#0d0d1a}' +
+      ':root:not([data-theme="dark"]) .rl-ac-sub{color:#666}}';
+    var s = document.createElement('style');
+    s.id = 'rl-ac-style';
+    s.textContent = css;
+    document.head.appendChild(s);
+  }
+
   function attach(input, opts) {
     opts = opts || {};
     if (!input || input.dataset.acWired) return;
@@ -25,11 +47,13 @@
     wrap.appendChild(input);
     input.style.width = '100%'; // fill the wrapper (it no longer flexes itself)
 
+    ensureStyle();
     var box = document.createElement('div');
     box.setAttribute('role', 'listbox');
+    box.className = 'rl-ac-box';
     box.style.cssText = 'position:absolute;z-index:70;left:0;right:0;top:calc(100% + 3px);' +
-      'background:var(--th-surface,#14181d);border:1px solid rgba(140,150,165,.25);border-radius:12px;' +
-      'overflow:hidden;display:none;box-shadow:0 12px 32px rgba(0,0,0,.45);max-height:300px;overflow-y:auto';
+      'border-radius:12px;overflow:hidden;overflow-y:auto;display:none;' +
+      'box-shadow:0 12px 32px rgba(0,0,0,.45);max-height:300px';
     wrap.appendChild(box);
 
     var timer = null, items = [], active = -1;
@@ -58,9 +82,9 @@
       box.innerHTML = items.map(function (r, i) {
         var sub = [r.postalCode, r.muni, r.province].filter(Boolean).join(' · ');
         return '<div data-i="' + i + '" role="option" style="padding:10px 12px;cursor:pointer;' +
-          'border-bottom:1px solid rgba(140,150,165,.10)">' +
-          '<div style="font-size:14px;color:var(--th-heading,#eef);line-height:1.3">' + esc(r.label) + '</div>' +
-          (sub ? '<div style="font-size:11px;color:var(--th-faint,#8a93a0);margin-top:1px">' + esc(sub) + '</div>' : '') +
+          'border-bottom:1px solid rgba(140,150,165,.12)">' +
+          '<div class="rl-ac-item" style="font-size:14px;line-height:1.3">' + esc(r.label) + '</div>' +
+          (sub ? '<div class="rl-ac-sub" style="font-size:11px;margin-top:1px">' + esc(sub) + '</div>' : '') +
           '</div>';
       }).join('');
       box.style.display = 'block';
