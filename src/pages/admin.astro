@@ -1392,6 +1392,24 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
               <input id="d-addr" type="text" maxlength="300" value="${esc(o.address || '')}" placeholder="calle y número, población" class="adm-input flex-1" />
               <button id="d-addr-save" class="btn-secondary text-sm px-3">Guardar</button>
             </div>
+            ${(() => { let ax = {}; try { ax = JSON.parse(o.addr_extra || '{}') || {}; } catch (e) {} return `
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <label class="block"><span class="adm-flabel">Tipo</span>
+                <select id="d-ax-type" class="adm-input">
+                  <option value="">—</option>
+                  <option value="casa" ${ax.type === 'casa' ? 'selected' : ''}>Casa</option>
+                  <option value="piso" ${ax.type === 'piso' ? 'selected' : ''}>Piso / edificio</option>
+                </select></label>
+              <label class="block"><span class="adm-flabel">Código postal</span>
+                <input id="d-ax-cp" value="${esc(ax.cp || '')}" inputmode="numeric" maxlength="10" class="adm-input" /></label>
+              <label class="block"><span class="adm-flabel">Piso</span>
+                <input id="d-ax-floor" value="${esc(ax.floor || '')}" maxlength="12" placeholder="3º" class="adm-input" /></label>
+              <label class="block"><span class="adm-flabel">Puerta</span>
+                <input id="d-ax-door" value="${esc(ax.door || '')}" maxlength="12" placeholder="2ª" class="adm-input" /></label>
+              <label class="block col-span-2"><span class="adm-flabel">Info adicional (portero, código, parking…)</span>
+                <input id="d-ax-info" value="${esc(ax.info || '')}" maxlength="200" class="adm-input" /></label>
+            </div>
+            <p class="text-[11px] text-th-faint mt-1">El botón «Guardar» de la dirección guarda también estos campos y las coordenadas.</p>`; })()}
             ${o.status === 'booked' && !o.address ? '<p class="text-xs text-brand-gold mt-1">Sin dirección no se puede asignar — pídela al confirmar la reserva.</p>' : ''}
             <label class="text-xs text-th-faint block mt-3 mb-1">Notas</label>
             <div class="flex gap-2">
@@ -1616,9 +1634,25 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           if (d.ok) { toast('Idioma: ' + $('d-lang').value.toUpperCase() + ' ✓'); openDetail(current.id, false); }
           else toast('Error al cambiar el idioma', false);
         });
-        if (window.RLAddress && $('d-addr')) RLAddress.attach($('d-addr'));
+        if (window.RLAddress && $('d-addr')) RLAddress.attach($('d-addr'), {
+          onSelect: (r) => { if (r.postalCode && $('d-ax-cp') && !$('d-ax-cp').value) $('d-ax-cp').value = r.postalCode; },
+        });
         $('d-addr-save')?.addEventListener('click', () => busy($('d-addr-save'), async () => {
-          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify({ address: $('d-addr').value.trim() || null }) });
+          const el = $('d-addr');
+          const body = { address: el.value.trim() || null };
+          // Coords only survive while the text still equals the picked address.
+          if (el.dataset.geoAddr && el.value.trim() === el.dataset.geoAddr) {
+            body.lat = el.dataset.lat ? Number(el.dataset.lat) : null;
+            body.lng = el.dataset.lng ? Number(el.dataset.lng) : null;
+          }
+          body.addr_extra = JSON.stringify({
+            type: $('d-ax-type')?.value || '',
+            floor: ($('d-ax-floor')?.value || '').trim(),
+            door: ($('d-ax-door')?.value || '').trim(),
+            cp: ($('d-ax-cp')?.value || '').trim(),
+            info: ($('d-ax-info')?.value || '').trim(),
+          });
+          const d = await api('/api/orders/' + current.id, { method: 'PATCH', body: JSON.stringify(body) });
           if (d.ok) { toast('Dirección guardada ✓'); openDetail(current.id, false); }
           else toast('Error al guardar la dirección', false);
         }));

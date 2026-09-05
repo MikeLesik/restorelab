@@ -93,6 +93,12 @@
       var r = items[i];
       if (!r) return;
       input.value = r.label;
+      // Stash the selection so the consumer can save coords/CP — but only trust
+      // them while the text still equals what was picked (manual edits void it).
+      input.dataset.geoAddr = r.label;
+      input.dataset.lat = (r.lat != null ? r.lat : '');
+      input.dataset.lng = (r.lng != null ? r.lng : '');
+      input.dataset.cp = (r.postalCode || '');
       close();
       input.dispatchEvent(new Event('input', { bubbles: true }));
       input.dispatchEvent(new Event('change', { bubbles: true }));

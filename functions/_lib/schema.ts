@@ -41,7 +41,10 @@ export const SCHEMA_STATEMENTS: string[] = [
     review_sent_at TEXT,
     notes TEXT,
     intake_token TEXT,
-    job_token_hash TEXT
+    job_token_hash TEXT,
+    lat REAL,
+    lng REAL,
+    addr_extra TEXT
   )`,
   `CREATE INDEX IF NOT EXISTS idx_orders_status ON orders(status)`,
   `CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at)`,
@@ -101,4 +104,7 @@ export const SCHEMA_ALTERS: string[] = [
   `ALTER TABLE partners ADD COLUMN docs TEXT`,
   `ALTER TABLE partners ADD COLUMN profile TEXT`,
   `ALTER TABLE orders ADD COLUMN addons TEXT`,
+  `ALTER TABLE orders ADD COLUMN lat REAL`,
+  `ALTER TABLE orders ADD COLUMN lng REAL`,
+  `ALTER TABLE orders ADD COLUMN addr_extra TEXT`,
 ];

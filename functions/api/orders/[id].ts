@@ -220,6 +220,15 @@ export async function onRequestPatch(context: {
   await db.prepare(`UPDATE orders SET ${sets.join(', ')} WHERE id = ?`).bind(...binds, orderId).run();
   await logEvent(db, orderId, changed.status ? 'status_changed' : 'updated', changed);
 
+  // Structured address details + coords live in their own columns (migration
+  // 0006). Best-effort so a DB that hasn't migrated yet never fails the PATCH.
+  if ('addr_extra' in b) {
+    try { await db.prepare('UPDATE orders SET addr_extra = ? WHERE id = ?').bind(typeof b.addr_extra === 'string' ? b.addr_extra.slice(0, 800) : null, orderId).run(); } catch { /* not migrated */ }
+  }
+  if ('lat' in b) {
+    try { await db.prepare('UPDATE orders SET lat = ?, lng = ? WHERE id = ?').bind(typeof b.lat === 'number' ? b.lat : null, typeof b.lng === 'number' ? b.lng : null, orderId).run(); } catch { /* not migrated */ }
+  }
+
   const updated = await db.prepare('SELECT * FROM orders WHERE id = ?').bind(orderId).first();
 
   // WhatsApp Cloud automation hooks (RL-450) — no-op until configured.
