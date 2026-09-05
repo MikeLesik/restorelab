@@ -153,6 +153,7 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
           <button id="btn-partner" class="btn-secondary text-sm px-4 min-h-[44px]">+ Partner</button>
           <button id="btn-invite" class="btn-primary text-sm px-4 min-h-[44px]">🔗 Enlace de registro</button>
           <button id="pt-csv" class="btn-secondary text-sm px-4 min-h-[44px] ml-auto">Liquidación CSV</button>
+          <button id="pt-migrate" class="btn-secondary text-sm px-3 min-h-[44px]" title="Aplica cambios de esquema pendientes (idempotente)">⚙ Migrar BD</button>
         </div>
         <div id="pt-body" class="space-y-6"><p class="text-th-muted text-sm">Cargando…</p></div>
       </div>
@@ -2199,6 +2200,11 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
       $('m-load').addEventListener('click', loadMetrics);
       $('m-csv').addEventListener('click', exportCsv);
       $('pt-load').addEventListener('click', loadPartnersTab);
+      $('pt-migrate')?.addEventListener('click', () => busy($('pt-migrate'), async () => {
+        const d = await api('/api/admin/migrate', { method: 'POST' });
+        if (d.ok) toast('BD migrada ✓ (' + (d.statements || 0) + ' sentencias)');
+        else toast('Error al migrar: ' + (d.reason || ''), false);
+      }, 'Migrando…'));
       $('pt-csv').addEventListener('click', exportLedgerCsv);
       $('filters-toggle').addEventListener('click', () => $('filters').classList.toggle('hidden'));
       $('f-clear').addEventListener('click', clearFilters);

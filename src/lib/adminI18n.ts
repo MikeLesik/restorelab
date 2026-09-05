@@ -9,6 +9,8 @@
 export interface AdminI18nRow { es: string; ru: string; en: string }
 
 export const ADMIN_I18N: AdminI18nRow[] = [
+  { "es": "⚙ Migrar BD", "ru": "⚙ Миграция БД", "en": "⚙ Migrate DB" },
+  { "es": "Migrando…", "ru": "Миграция…", "en": "Migrating…" },
   {
     "es": "¿Cómo paga el cliente?",
     "ru": "Как платит клиент?",
@@ -1587,6 +1589,8 @@ export const ADMIN_I18N: AdminI18nRow[] = [
 ];
 
 export const ADMIN_I18N_TPL: AdminI18nRow[] = [
+  { "es": "BD migrada ✓ ({} sentencias)", "ru": "БД мигрирована ✓ ({} операций)", "en": "DB migrated ✓ ({} statements)" },
+  { "es": "Error al migrar: {}", "ru": "Ошибка миграции: {}", "en": "Migration error: {}" },
   { "es": "⚠ {} no marcó este día como libre — puede estar ocupado.", "ru": "⚠ {} не отметил этот день как свободный — возможно, занят.", "en": "⚠ {} hasn't marked this day as free — may be busy." },
   { "es": "ℹ {} no mantiene calendario — confirma su disponibilidad.", "ru": "ℹ {} не ведёт календарь — уточни его доступность.", "en": "ℹ {} keeps no calendar — confirm their availability." },
   { "es": "⚠ {} no tiene libre ese día. Pulsa Asignar otra vez para hacerlo igualmente.", "ru": "⚠ У {} этот день не свободен. Нажми «Asignar» ещё раз, чтобы назначить всё равно.", "en": "⚠ {} isn't free that day. Press Assign again to assign anyway." },
