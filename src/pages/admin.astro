@@ -564,7 +564,12 @@ const SERVICE_OPTIONS = es.pricing.categories.map((c: any) => ({
         setTimeout(() => { try { inp.focus(); } catch (e) {} }, 60);
       }
       function hideLogin() { $('login').classList.add('hidden'); }
-      function boot() { return loadPartners().then(() => loadOrders()).catch(() => {}); }
+      function boot() {
+        // Auto-apply pending schema migrations on load (idempotent) so new
+        // columns exist without hunting for the "Migrar BD" button.
+        api('/api/admin/migrate', { method: 'POST' }).catch(() => {});
+        return loadPartners().then(() => loadOrders()).catch(() => {});
+      }
       $('login-form').addEventListener('submit', (e) => {
         e.preventDefault();
         const t = $('login-token').value.trim();
