@@ -100,7 +100,9 @@
       input.dataset.lng = (r.lng != null ? r.lng : '');
       input.dataset.cp = (r.postalCode || '');
       close();
-      input.dispatchEvent(new Event('input', { bubbles: true }));
+      clearTimeout(timer); // don't let the pending debounce reopen the list
+      // NB: no 'input' event — dispatching it would re-run the search and pop
+      // the dropdown right back up. 'change' is enough to notify listeners.
       input.dispatchEvent(new Event('change', { bubbles: true }));
       if (opts.onSelect) try { opts.onSelect(r); } catch (e) {}
       input.focus();

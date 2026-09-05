@@ -63,9 +63,14 @@ const AREA_NAMES = Object.fromEntries(
           </div>
           <p id="j-service" class="text-th-heading font-medium"></p>
           <p id="j-when" class="text-sm text-th-muted mt-1"></p>
-          <p id="j-where" class="text-sm text-th-muted mt-1"></p>
-          <p id="j-addr-extra" class="hidden text-sm text-th-body mt-1"></p>
-          <a id="j-maps" href="#" target="_blank" rel="noopener" class="hidden inline-block text-sm text-brand-accent hover:underline mt-1.5">Abrir en Google Maps</a>
+          <div class="mt-3 rounded-xl border border-th-border/15 bg-th-surface/[0.04] p-3">
+            <p class="text-[11px] uppercase tracking-[0.08em] text-th-faint mb-1">Dónde</p>
+            <p id="j-addr-main" class="text-th-heading font-medium leading-snug"></p>
+            <p id="j-addr-extra" class="hidden text-sm text-th-body mt-0.5"></p>
+            <p id="j-addr-info" class="hidden text-sm text-brand-gold mt-1"></p>
+            <p id="j-where" class="hidden text-xs text-th-faint mt-1"></p>
+            <a id="j-maps" href="#" target="_blank" rel="noopener" class="hidden btn-secondary w-full text-sm mt-2 min-h-[44px] flex items-center justify-center gap-1.5">📍 Cómo llegar</a>
+          </div>
           <p id="j-client" class="text-sm text-th-muted mt-1"></p>
           <p id="j-payout" class="hidden text-sm font-semibold text-green-400 mt-2"></p>
           <p id="j-notes" class="hidden text-sm text-th-body border-l-2 border-brand-gold pl-3 mt-3"></p>
@@ -203,16 +208,13 @@ const AREA_NAMES = Object.fromEntries(
         $('j-when').textContent = j.scheduled_at
           ? 'Cuándo: ' + new Date(j.scheduled_at).toLocaleString('es-ES', { dateStyle: 'full', timeStyle: 'short' })
           : 'Cuándo: por confirmar';
-        const where = [AREA_NAMES[j.area_slug] || j.area_slug, j.address].filter(Boolean).join(' · ');
-        $('j-where').textContent = where ? 'Dónde: ' + where : '';
-        // Exact pin from captured coords when available, else the address text.
-        if (j.lat != null && j.lng != null) {
-          $('j-maps').href = 'https://maps.google.com/?q=' + j.lat + ',' + j.lng;
-          $('j-maps').classList.remove('hidden');
-        } else if (j.address) {
-          $('j-maps').href = 'https://maps.google.com/?q=' + encodeURIComponent(j.address + ', ' + (AREA_NAMES[j.area_slug] || ''));
-          $('j-maps').classList.remove('hidden');
-        }
+        // Address block: main street line, structured details, highlighted
+        // on-site info, the zone, and a prominent "cómo llegar" button.
+        const zone = AREA_NAMES[j.area_slug] || j.area_slug || '';
+        $('j-addr-main').textContent = j.address || zone || 'Dirección por confirmar';
+        const zoneEl = $('j-where');
+        if (zone && j.address && j.address.indexOf(zone) === -1) { zoneEl.textContent = zone; zoneEl.classList.remove('hidden'); }
+        else zoneEl.classList.add('hidden');
         const ax = j.addr_extra || {};
         const axParts = [];
         if (ax.type) axParts.push(ax.type === 'casa' ? 'Casa' : 'Piso / edificio');
@@ -220,10 +222,19 @@ const AREA_NAMES = Object.fromEntries(
         if (fd) axParts.push(fd);
         if (ax.cp) axParts.push('CP ' + ax.cp);
         const axEl = $('j-addr-extra');
-        if (axParts.length || ax.info) {
-          axEl.textContent = axParts.join(' · ') + (ax.info ? (axParts.length ? ' — ' : '') + ax.info : '');
-          axEl.classList.remove('hidden');
-        } else axEl.classList.add('hidden');
+        if (axParts.length) { axEl.textContent = axParts.join(' · '); axEl.classList.remove('hidden'); }
+        else axEl.classList.add('hidden');
+        const infoEl = $('j-addr-info');
+        if (ax.info) { infoEl.textContent = 'ℹ ' + ax.info; infoEl.classList.remove('hidden'); }
+        else infoEl.classList.add('hidden');
+        // Exact pin from captured coords when available, else the address text.
+        if (j.lat != null && j.lng != null) {
+          $('j-maps').href = 'https://maps.google.com/?q=' + j.lat + ',' + j.lng;
+          $('j-maps').classList.remove('hidden');
+        } else if (j.address) {
+          $('j-maps').href = 'https://maps.google.com/?q=' + encodeURIComponent(j.address + ', ' + zone);
+          $('j-maps').classList.remove('hidden');
+        } else $('j-maps').classList.add('hidden');
         $('j-client').textContent = j.client_first_name ? 'Cliente: ' + j.client_first_name + ' (contacto solo vía restoreLab)' : '';
         if (j.payout_eur != null) {
           $('j-payout').textContent = 'Tu pago por este trabajo: ' + j.payout_eur + '€ (' + j.payout_pct + '% del presupuesto)';
