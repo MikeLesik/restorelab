@@ -1,8 +1,8 @@
 /* Address autocomplete widget (CartoCiudad via /api/geocode). Self-hosted so it
- * passes the CSP (script-src 'self'); styled with inline CSS vars (--th-*) that
- * exist on every page, so Tailwind purging never strips it. Usage:
- *   RLAddress.attach(inputEl, { onSelect(result) {} })
- * Idempotent per element. Works on the admin (#d-addr) and the intake form. */
+ * passes the CSP (script-src 'self'). The dropdown is appended to <body> with
+ * position:fixed so no ancestor stacking context / sibling card can clip or
+ * cover it. Usage:  RLAddress.attach(inputEl, { onSelect(result) {} })
+ * Idempotent per element. Used on the admin (#d-addr) and the intake form. */
 (function () {
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
@@ -10,9 +10,8 @@
     });
   }
 
-  // The --th-* tokens are channel numbers meant for rgb(... / alpha) overlays,
-  // NOT solid colors — using them directly made the dropdown transparent. Inject
-  // a one-time theme-aware stylesheet with an OPAQUE background instead.
+  // The --th-* tokens are channel numbers for rgb(... / alpha) overlays, NOT
+  // solid colors — so give the dropdown an explicit OPAQUE, theme-aware bg.
   var styleInjected = false;
   function ensureStyle() {
     if (styleInjected) return;
@@ -39,30 +38,55 @@
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('autocorrect', 'off');
     input.setAttribute('spellcheck', 'false');
-
-    var wrap = document.createElement('div');
-    wrap.style.position = 'relative';
-    wrap.style.flex = input.classList.contains('flex-1') ? '1' : '';
-    input.parentNode.insertBefore(wrap, input);
-    wrap.appendChild(input);
-    input.style.width = '100%'; // fill the wrapper (it no longer flexes itself)
-
     ensureStyle();
+
+    // Clean up any dropdown whose input was removed by a re-render (the admin
+    // rebuilds the order detail on every open) so boxes never pile up on body.
+    var stale = document.querySelectorAll('.rl-ac-box');
+    for (var i = 0; i < stale.length; i++) {
+      if (stale[i].__forInput && !stale[i].__forInput.isConnected) stale[i].remove();
+    }
+
     var box = document.createElement('div');
     box.setAttribute('role', 'listbox');
     box.className = 'rl-ac-box';
-    box.style.cssText = 'position:absolute;z-index:70;left:0;right:0;top:calc(100% + 3px);' +
-      'border-radius:12px;overflow:hidden;overflow-y:auto;display:none;' +
-      'box-shadow:0 12px 32px rgba(0,0,0,.45);max-height:300px';
-    wrap.appendChild(box);
+    box.__forInput = input;
+    box.style.cssText = 'position:fixed;z-index:2147483000;border-radius:12px;overflow:hidden;' +
+      'overflow-y:auto;display:none;box-shadow:0 14px 36px rgba(0,0,0,.5);max-height:min(320px,45vh)';
+    document.body.appendChild(box);
 
     var timer = null, items = [], active = -1;
 
-    function close() { box.style.display = 'none'; box.innerHTML = ''; items = []; active = -1; }
+    function place() {
+      if (!input.isConnected) { box.remove(); return; }
+      var r = input.getBoundingClientRect();
+      box.style.left = r.left + 'px';
+      box.style.width = r.width + 'px';
+      var below = window.innerHeight - r.bottom;
+      if (below < 220 && r.top > below) { // not enough room below → flip up
+        box.style.top = 'auto';
+        box.style.bottom = (window.innerHeight - r.top + 4) + 'px';
+      } else {
+        box.style.bottom = 'auto';
+        box.style.top = (r.bottom + 4) + 'px';
+      }
+    }
+    function onReflow() { if (box.style.display !== 'none') place(); }
+
+    function close() {
+      box.style.display = 'none'; box.innerHTML = ''; items = []; active = -1;
+      window.removeEventListener('scroll', onReflow, true);
+      window.removeEventListener('resize', onReflow);
+    }
+    function openBox() {
+      place(); box.style.display = 'block';
+      window.addEventListener('scroll', onReflow, true);
+      window.addEventListener('resize', onReflow);
+    }
 
     function highlight() {
       var rows = box.querySelectorAll('[data-i]');
-      for (var i = 0; i < rows.length; i++) rows[i].style.background = i === active ? 'rgba(120,140,170,.16)' : 'transparent';
+      for (var i = 0; i < rows.length; i++) rows[i].style.background = i === active ? 'rgba(120,140,170,.18)' : 'transparent';
     }
 
     function choose(i) {
@@ -87,8 +111,7 @@
           (sub ? '<div class="rl-ac-sub" style="font-size:11px;margin-top:1px">' + esc(sub) + '</div>' : '') +
           '</div>';
       }).join('');
-      box.style.display = 'block';
-      active = -1;
+      openBox();
       var rows = box.querySelectorAll('[data-i]');
       for (var k = 0; k < rows.length; k++) {
         (function (el) {
@@ -109,7 +132,7 @@
     }
 
     input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(run, 300); });
-    input.addEventListener('focus', function () { if (items.length) box.style.display = 'block'; });
+    input.addEventListener('focus', function () { if (items.length) openBox(); });
     input.addEventListener('blur', function () { setTimeout(close, 150); });
     input.addEventListener('keydown', function (e) {
       if (box.style.display === 'none') return;
